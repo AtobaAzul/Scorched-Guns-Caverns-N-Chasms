@@ -13,12 +13,12 @@ import top.ribs.scguns.Reference;
 import top.ribs.scguns.item.AmmoItem;
 import top.ribs.scguns.item.BlueprintItem;
 
+import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+
 public class Items {
-    public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
+    public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
-
-
     public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new AmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new AmmoItem(new Item.Properties()));
 

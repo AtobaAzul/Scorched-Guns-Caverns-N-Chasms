@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
+import net.atobaazul.scguns_cnc.registries.Entities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -16,12 +17,11 @@ import org.slf4j.Logger;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.init.ModEntities;
-import top.ribs.scguns.init.ModItems;
 import net.atobaazul.scguns_cnc.registries.Items;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(SCgunsCnC.MOD_ID)
-public class SCgunsCnC
+@Mod(SCGunsCnC.MOD_ID)
+public class SCGunsCnC
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "scguns_cnc";
@@ -29,7 +29,7 @@ public class SCgunsCnC
     ;
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public SCgunsCnC(FMLJavaModLoadingContext context)
+    public SCGunsCnC(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
@@ -46,13 +46,13 @@ public class SCgunsCnC
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         Items.REGISTER.register(modEventBus);
+        Entities.REGISTER.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         ProjectileManager.getInstance().registerFactory(Items.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ProjectileEntity(ModEntities.PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(Items.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ProjectileEntity(ModEntities.PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-
     }
 
     // Add the example block item to the building blocks tab

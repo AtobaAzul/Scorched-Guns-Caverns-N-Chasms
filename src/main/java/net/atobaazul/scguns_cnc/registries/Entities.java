@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -7,16 +8,16 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.Reference;
 
 import java.util.function.BiFunction;
 
+import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+
 public class Entities {
-    public static final DeferredRegister<EntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Reference.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
 
 
-    public static final RegistryObject<EntityType<HexRoundProjectileEntity>> HEX_PROJECTILE = registerBasic("hex_projectile", HexRoundProjectileEntity::new);
-
+    public static final RegistryObject<EntityType<HexRoundProjectileEntity>> HEX_ROUND_PROJECTILE = registerBasic("hex_round_projectile", HexRoundProjectileEntity::new);
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)
@@ -30,4 +31,5 @@ public class Entities {
                 .noSave()
                 .setShouldReceiveVelocityUpdates(true).build(id));
     }
+
 }
