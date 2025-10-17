@@ -19,6 +19,7 @@ public class Entities {
 
     public static final RegistryObject<EntityType<HexRoundProjectileEntity>> HEX_ROUND_PROJECTILE = registerBasic("hex_round_projectile", HexRoundProjectileEntity::new);
 
+    public static final RegistryObject<EntityType<HexRoundProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot", HexRoundProjectileEntity::new);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)
     {

@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
+import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
 import net.atobaazul.scguns_cnc.registries.Entities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import top.ribs.scguns.common.ProjectileManager;
+import top.ribs.scguns.entity.projectile.BuckshotProjectileEntity;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.init.ModEntities;
 import net.atobaazul.scguns_cnc.registries.Items;
@@ -51,8 +53,11 @@ public class SCGunsCnC
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        ProjectileManager.getInstance().registerFactory(Items.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ProjectileEntity(ModEntities.PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-        ProjectileManager.getInstance().registerFactory(Items.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ProjectileEntity(ModEntities.PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(Items.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(Items.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(Items.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BuckshotProjectileEntity(ModEntities.BUCKSHOT_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+
+
     }
 
     // Add the example block item to the building blocks tab

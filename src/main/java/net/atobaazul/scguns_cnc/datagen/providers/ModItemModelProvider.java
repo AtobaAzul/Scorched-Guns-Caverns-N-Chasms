@@ -22,6 +22,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(Items.HEX_ROUND);
         simpleItem(Items.COMPACT_HEX_ROUND);
         simpleItem(Items.GRAVEKEEPER_BLUEPRINT);
+        simpleItem(Items.NECROMIUM_GUN_FRAME);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
