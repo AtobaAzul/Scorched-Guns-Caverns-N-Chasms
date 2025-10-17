@@ -60,7 +60,7 @@
     "ejectsCasing": true,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns:small_brass_casing",
-    "casingParticle": "scguns:brass_casing",
+    "casingParticle": "scguns_cnc:hex_casing",
     "life": 35,
     "size": 0.05,
     "speed": 5.0,

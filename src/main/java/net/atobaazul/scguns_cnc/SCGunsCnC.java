@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
+import net.atobaazul.scguns_cnc.events.client.Particles;
 import net.atobaazul.scguns_cnc.registries.Entities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,6 +19,7 @@ import org.slf4j.Logger;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.projectile.BuckshotProjectileEntity;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
+import top.ribs.scguns.event.ModClientEventsBus;
 import top.ribs.scguns.init.ModEntities;
 import net.atobaazul.scguns_cnc.registries.Items;
 
@@ -49,6 +51,7 @@ public class SCGunsCnC
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         Items.REGISTER.register(modEventBus);
         Entities.REGISTER.register(modEventBus);
+        Particles.REGISTER.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
