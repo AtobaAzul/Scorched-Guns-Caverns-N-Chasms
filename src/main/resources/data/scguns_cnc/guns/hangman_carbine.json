@@ -59,7 +59,7 @@
     "armorPen": 1.0,
     "ejectsCasing": true,
     "item": "scguns_cnc:compact_hex_round",
-    "casingType": "scguns:small_brass_casing",
+    "casingType": "scguns_cnc:small_necromium_casing",
     "casingParticle": "scguns_cnc:hex_casing",
     "life": 35,
     "size": 0.05,

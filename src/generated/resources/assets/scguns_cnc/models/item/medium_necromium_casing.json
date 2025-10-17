@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "scguns_cnc:item/medium_necromium_casing"
+  }
+}

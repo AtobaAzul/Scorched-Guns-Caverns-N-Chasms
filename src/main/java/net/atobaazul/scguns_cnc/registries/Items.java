@@ -86,12 +86,17 @@ public class Items {
 
 
 
-
+    //blueprint
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
+
+    //arounds
     public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new AmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new AmmoItem(new Item.Properties()));
-
     public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new AmmoItem(new Item.Properties()));
+
+   //other items
     public static final RegistryObject<Item> NECROMIUM_GUN_FRAME = REGISTER.register("necromium_gun_frame", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SMALL_NECROMIUM_CASING = REGISTER.register("small_necromium_casing", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
 
 }
