@@ -58,7 +58,7 @@
     "damage": 7.5,
     "armorPen": 1.0,
     "ejectsCasing": true,
-    "item": "scguns:compact_advanced_round",
+    "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns:small_brass_casing",
     "casingParticle": "scguns:brass_casing",
     "life": 35,
@@ -69,7 +69,7 @@
   "reloads": {
     "emptyMagTimer": 30,
     "maxAmmo": 30,
-    "reloadItem": "cguns:compact_advanced_round",
+    "reloadItem": "scguns_cnc:compact_hex_round",
     "reloadTimer": 5,
     "reloadType": "scguns:mag_fed"
   },
