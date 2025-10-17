@@ -1,0 +1,82 @@
+{
+  "display": {
+    "flash": {
+      "size": 1.0,
+      "yOffset": 4.6,
+      "zOffset": -11.0,
+      "textureLocation": "muzzle_flash_1"
+    }
+  },
+  "general": {
+    "weaponType": "sniper",
+    "alwaysSpread": false,
+    "fireMode": "scguns:semi_automatic",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 22,
+    "recoilAngle": 4.7,
+    "recoilKick": 2.22,
+    "spread": 1.0,
+    "meleeDamage": 2.5,
+    "meleeCooldownTicks": 20,
+    "meleeReach": 3.5,
+    "hotBarrelRate": 32,
+    "criticalChance": 0.05,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.25
+  },
+  "modules": {
+    "attachments": {
+      "barrel": {
+        "yOffset": 4.6,
+        "zOffset": -12.5
+      },
+      "scope": {
+        "size": 0.7,
+        "yOffset": 5.3,
+        "zOffset": -1.5
+      },
+      "stock": {
+        "scale": 0.0
+      },
+      "underBarrel": {
+        "yOffset": 5.5,
+        "zOffset": -2.5
+      }
+    },
+    "zoom": {
+      "fovModifier": 0.6,
+      "yOffset": 5.9,
+      "zOffset": 6
+    }
+  },
+  "projectile": {
+    "advantage": "scguns:heavy",
+    "damage": 18.5,
+    "armorPen": 4.0,
+    "ejectsCasing": true,
+    "gravity": false  ,
+    "item": "scguns_cnc:hex_round",
+    "casingType": "scguns_cnc:medium_necromium_casing",
+    "casingParticle": "scguns_cnc:hex_casing",
+    "life": 60,
+    "size": 0.1,
+    "speed": 10.0,
+    "trailLengthMultiplier": 2.0
+  },
+  "reloads": {
+    "emptyMagTimer": 20,
+    "maxAmmo": 7,
+    "reloadItem": "scguns:gibbs_round",
+    "reloadTimer": 40,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns:item.heavy_rifle.fire",
+    "fire": "scguns:item.heavy_rifle.fire",
+    "reload": "scguns:item.gauss.reload",
+    "silencedFire": "scguns:item.bruiser.silenced_fire",
+    "flyby": "scguns:bullet.flyby1"
+  }
+}

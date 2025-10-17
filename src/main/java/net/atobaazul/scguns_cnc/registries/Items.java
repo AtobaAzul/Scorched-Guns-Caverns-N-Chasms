@@ -32,7 +32,7 @@ public class Items {
                     ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
             )
     );
- /*
+
     public static final RegistryObject<AnimatedGunItem> RIBCAGE = REGISTER.register("ribcage",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(800),
@@ -44,7 +44,7 @@ public class Items {
                     ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
             )
     );
-
+ /*
     public static final RegistryObject<AnimatedGunItem> BELLA = REGISTER.register("bella",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(800),
