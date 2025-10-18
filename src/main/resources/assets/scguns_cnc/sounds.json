@@ -1,0 +1,24 @@
+{
+
+  "item.hangman.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns:item/brass_pistol/fire"
+      }
+    ]
+  },
+  "item.ribcage.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "fireone": "scguns_cnc:item/ribcage/fire",
+        "firetwo": "scguns_cnc:item/ribcage/fire2",
+        "firethree": "scguns_cnc:item/ribcage/fire3"
+
+
+      }
+    ]
+  }
+
+}

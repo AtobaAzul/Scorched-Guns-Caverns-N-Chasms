@@ -3,7 +3,7 @@
     "flash": {
       "size": 1.0,
       "yOffset": 4.6,
-      "zOffset": -11.0,
+      "zOffset": -13.0,
       "textureLocation": "muzzle_flash_1"
     }
   },
@@ -29,7 +29,7 @@
     "attachments": {
       "barrel": {
         "yOffset": 4.6,
-        "zOffset": -12.5
+        "zOffset": -16.5
       },
       "scope": {
         "size": 0.7,
@@ -67,14 +67,14 @@
   "reloads": {
     "emptyMagTimer": 20,
     "maxAmmo": 7,
-    "reloadItem": "scguns:gibbs_round",
+    "reloadItem": "scguns_cnc:hex_round",
     "reloadTimer": 40,
     "reloadType": "scguns:mag_fed"
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
     "enchantedFire": "scguns:item.heavy_rifle.fire",
-    "fire": "scguns:item.heavy_rifle.fire",
+    "fire": "scguns_cnc:item.ribcage.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.bruiser.silenced_fire",
     "flyby": "scguns:bullet.flyby1"

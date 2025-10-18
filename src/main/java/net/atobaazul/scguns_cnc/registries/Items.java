@@ -55,7 +55,7 @@ public class Items {
                     ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
                     ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
             )
-    );
+    ); */
 
 
    public static final RegistryObject<AnimatedGunItem> REHEARSE = REGISTER.register("rehearse",
@@ -69,7 +69,7 @@ public class Items {
                     ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
             )
     );
-
+/*
      public static final RegistryObject<AnimatedGunItem> SILVER_LINING = REGISTER.register("silver_lining",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(800),

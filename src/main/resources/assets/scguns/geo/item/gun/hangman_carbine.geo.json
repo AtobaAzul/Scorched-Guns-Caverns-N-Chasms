@@ -945,7 +945,7 @@
 					]
 				},
 				{
-					"name": "basic_sights",
+					"name": "sights",
 					"parent": "gun_body",
 					"pivot": [1.5, -3, 4.5],
 					"cubes": [
@@ -1347,10 +1347,6 @@
 							}
 						}
 					]
-				},
-				{
-					"name": "bone",
-					"pivot": [0, -3.5, -9]
 				}
 			]
 		}
