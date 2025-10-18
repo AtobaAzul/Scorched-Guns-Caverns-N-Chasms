@@ -68,11 +68,11 @@ public class Items {
                     ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
             )
     );
-/*
-     public static final RegistryObject<AnimatedGunItem> SILVER_LINING = REGISTER.register("silver_lining",
+
+     public static final RegistryObject<AnimatedGunItem> SILVER_LINING = REGISTER.register("silverlining",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(800),
-                    "silver_lining", // Model path
+                    "silverlining", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end
@@ -81,7 +81,7 @@ public class Items {
             )
     );
 
-  */
+
 
 
 
