@@ -28,11 +28,6 @@
   },
   "modules": {
     "attachments": {
-      "scope": {
-        "size": 0.8,
-        "yOffset": 5.3,
-        "zOffset": 3.3
-      },
       "barrel": {
         "yOffset": 4,
         "zOffset": -13.4

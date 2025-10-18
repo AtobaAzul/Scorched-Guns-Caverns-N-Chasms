@@ -66,5 +66,51 @@
         "name": "scguns_cnc:item/bella/fire2"
       }
     ]
+  },
+
+  "item.silver_lining.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/silver_lining/shoot1"
+      },
+      {
+        "name": "scguns_cnc:item/silver_lining/shoot2"
+      },
+      {
+        "name": "scguns_cnc:item/silver_lining/shoot3"
+      }
+    ]
+  },
+  "item.silver_lining.pull1": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/silver_lining/loading_start"
+      }
+    ]
+  },
+  "item.silver_lining.pull2": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/silver_lining/loading_middle1"
+      },
+      {
+        "name": "scguns_cnc:item/silver_lining/loading_middle2"
+      },
+      {
+        "name": "scguns_cnc:item/silver_lining/loading_middle3"
+      },
+      {
+        "name": "scguns_cnc:item/silver_lining/loading_middle4"
+      }
+    ]
+  },
+  "item.silver_lining.pull3": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/silver_lining/loading_end"
+      }
+    ]
   }
+
 }

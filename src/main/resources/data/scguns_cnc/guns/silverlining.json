@@ -63,8 +63,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.airgun.fire",
-    "fire": "scguns:item.airgun.fire",
+    "enchantedFire": "item.silver_lining.fire",
+    "fire": "item.silver_lining.fire",
     "reload": "scguns:item.gauss.reload"
   }
 }

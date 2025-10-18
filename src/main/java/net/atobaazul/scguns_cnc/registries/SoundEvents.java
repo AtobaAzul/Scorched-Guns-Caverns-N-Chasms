@@ -16,6 +16,11 @@ public class SoundEvents {
     public static final RegistryObject<SoundEvent> BELLA_FIRE = register("item.bella.fire");
     public static final RegistryObject<SoundEvent> REHEARSE_FIRE = register("item.rehearse.fire");
 
+    public static final RegistryObject<SoundEvent> SILVERLINING_FIRE = register("item.silver_lining.fire");
+    public static final RegistryObject<SoundEvent> SILVERLINING_PULL_START = register("item.silver_lining.pull1");
+    public static final RegistryObject<SoundEvent> SILVERLINING_PULL_MIDDLE = register("item.silver_lining.pull2");
+    public static final RegistryObject<SoundEvent> SILVERLINING_PULL_END = register("item.silver_lining.pull3");
+
     private static RegistryObject<SoundEvent> register(String key) {
         return REGISTER.register(key, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, key)));
     }

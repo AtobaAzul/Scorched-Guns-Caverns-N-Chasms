@@ -121,13 +121,13 @@
 			},
 			"sound_effects": {
 				"0.125": {
-					"effect": "loading_start"
+					"effect": "SILVERLINING_PULL_START"
 				},
 				"0.2917": {
-					"effect": "loading_middle1"
+					"effect": "SILVERLINING_PULL_MIDDLE"
 				},
 				"0.5": {
-					"effect": "loading_end"
+					"effect": "SILVERLINING_PULL_END"
 				}
 			}
 		},
@@ -234,13 +234,13 @@
 			},
 			"sound_effects": {
 				"0.125": {
-					"effect": "loading_start"
+					"effect": "SILVERLINING_PULL_START"
 				},
 				"0.2917": {
-					"effect": "loading_middle1"
+					"effect": "SILVERLINING_PULL_MIDDLE"
 				},
 				"0.5": {
-					"effect": "loading_end"
+					"effect": "SILVERLINING_PULL_END"
 				}
 			}
 		},
@@ -435,13 +435,13 @@
 			},
 			"sound_effects": {
 				"0.1667": {
-					"effect": "pull_start"
+					"effect": "SILVERLINING_PULL_START"
 				},
 				"0.3333": {
-					"effect": "pull_middle"
+					"effect": "SILVERLINING_PULL_MIDDLE"
 				},
 				"0.5833": {
-					"effect": "pull_end"
+					"effect": "SILVERLINING_PULL_END"
 				}
 			}
 		},
