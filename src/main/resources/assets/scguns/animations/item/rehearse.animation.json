@@ -1061,11 +1061,11 @@
 					},
 					"position": {
 						"0.0": {
-							"post": [-0.25, 2.85, 4.4],
+							"post": [-0.25, 0.7, 1.5],
 							"lerp_mode": "catmullrom"
 						},
 						"0.2083": {
-							"post": [-0.25, 1, 2],
+							"post": [-0.25, 0, 2],
 							"lerp_mode": "catmullrom"
 						},
 						"0.2917": {
@@ -1196,15 +1196,15 @@
 					},
 					"position": {
 						"0.0": {
-							"post": [0, 0.5, 1],
+							"post": [0, 0, 1],
 							"lerp_mode": "catmullrom"
 						},
 						"0.2083": {
-							"post": [-0.25, 1, 2],
+							"post": [-0.25, 0.5, 1.5],
 							"lerp_mode": "catmullrom"
 						},
 						"0.2917": {
-							"post": [-0.2, 0, 2.22],
+							"post": [-0.2, 0, 1.22],
 							"lerp_mode": "catmullrom"
 						},
 						"0.375": {
