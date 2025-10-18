@@ -57,7 +57,7 @@
   },
   "reloads": {
     "emptyMagTimer": 10,
-    "maxAmmo": 4,
+    "maxAmmo": 10,
     "reloadAmount": 1,
     "reloadItem": "scguns_cnc:compact_hex_round",
     "reloadTimer": 20,
@@ -65,8 +65,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.greaser_smg.fire",
-    "fire": "scguns:item.greaser_smg.fire",
+    "enchantedFire": "scguns_cnc:item.bella.fire",
+    "fire": "scguns_cnc:item.bella.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
     "flyby": "scguns:bullet.flyby1"

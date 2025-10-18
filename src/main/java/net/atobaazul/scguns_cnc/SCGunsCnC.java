@@ -3,7 +3,9 @@ package net.atobaazul.scguns_cnc;
 import com.mojang.logging.LogUtils;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
 import net.atobaazul.scguns_cnc.events.client.Particles;
+import net.atobaazul.scguns_cnc.registries.CreativeTabs;
 import net.atobaazul.scguns_cnc.registries.Entities;
+import net.atobaazul.scguns_cnc.registries.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -52,6 +54,8 @@ public class SCGunsCnC
         Items.REGISTER.register(modEventBus);
         Entities.REGISTER.register(modEventBus);
         Particles.REGISTER.register(modEventBus);
+        SoundEvents.REGISTER.register(modEventBus);
+        CreativeTabs.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

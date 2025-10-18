@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -75,9 +76,14 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             DamageSource source = ModDamageTypes.Sources.projectile(this.level().registryAccess(), this, (LivingEntity) this.getOwner());
 
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
-                entity.hurt(source, damage);
+
+                entity.hurt(source, damage/2);
 
                 if (entity instanceof LivingEntity livingEntity) {
+                    entity.invulnerableTime = 0;
+                    entity.hurt(entity.damageSources().magic(), damage/2);
+                    SilverItem.causeMagicDamageParticles(livingEntity);
+
                     ResourceLocation effectLocation = this.getProjectile().getImpactEffect();
                     if (effectLocation != null) {
                         float effectChance = this.getProjectile().getImpactEffectChance();
