@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(Items.BLUNTSHOT);
         simpleItem(Items.SMALL_NECROMIUM_CASING);
         simpleItem(Items.MEDIUM_NECROMIUM_CASING);
+        simpleItem(Items.SILVER_BULLET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

@@ -22,6 +22,8 @@ public class CreativeTabs {
         addItemWithFullAmmo(pOutput, Items.BELLA.get());
         addItemWithFullAmmo(pOutput, Items.REHEARSE.get());
         addItemWithFullAmmo(pOutput, Items.SILVER_LINING.get());
+        addItemWithFullAmmo(pOutput, Items.KETERIYA.get());
+
 
         addItem(pOutput, Items.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, Items.HEX_ROUND.get());
@@ -30,6 +32,7 @@ public class CreativeTabs {
         addItem(pOutput, Items.NECROMIUM_GUN_FRAME.get());
         addItem(pOutput, Items.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, Items.MEDIUM_NECROMIUM_CASING.get());
+        addItem(pOutput, Items.SILVER_BULLET.get());
 
     }).build());
 
