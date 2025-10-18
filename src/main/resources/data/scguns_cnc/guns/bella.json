@@ -2,75 +2,65 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 5.5,
-      "zOffset": -9,
-      "textureLocation": "muzzle_flash_1"
+      "yOffset": 4.7,
+      "zOffset": -4.5,
+      "textureLocation": "muzzle_flash_5"
     }
   },
   "general": {
-    "weaponType": "smg",
-    "alwaysSpread": false,
-    "fireMode": "scguns:automatic",
+    "weaponType": "pistol",
+    "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
-    "baseGripType": "scguns:two_handed",
-    "rate": 3,
-    "recoilAngle": 2.25,
-    "recoilKick": 1,
-    "spread": 3.0,
+    "rate": 6,
+    "recoilAngle": 3.0,
+    "recoilKick": 1.4,
+    "spread": 1.5,
     "meleeDamage": 2.5,
-    "meleeCooldownTicks": 15,
+    "meleeCooldownTicks": 20,
     "meleeReach": 2.5,
-    "hotBarrelRate": 7,
-    "criticalChance": 0.06
-
+    "hotBarrelRate": 20,
+    "criticalChance": 0.1
   },
   "modules": {
     "attachments": {
-      "underBarrel": {
-        "yOffset": 5.5,
-        "zOffset": -2.5
-      },
       "barrel": {
-        "yOffset": 5.5,
-        "zOffset": -8.2
+        "yOffset": 4.5,
+        "zOffset": -5.2
       },
       "stock": {
         "scale": 0.0
       },
       "magazine": {
         "scale": 0.0
-      },
-      "scope": {
-        "size": 0.85,
-        "yOffset": 5.3,
-        "zOffset": 3.6
       }
     },
-
     "zoom": {
-      "fovModifier": 0.5,
-      "yOffset": 5.8,
-      "zOffset": 3
+      "fovModifier": 0.7,
+      "yOffset":5.2,
+      "zOffset": 0,
+      "xOffset": -0.5
     }
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 8.5,
-    "armorPen": 1.0,
-    "ejectsCasing": true,
+    "damage": 7.0,
+    "armorPen": 4.5,
+    "gravity": false,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns_cnc:small_necromium_casing",
     "casingParticle": "scguns_cnc:hex_casing",
-    "life": 35,
-    "size": 0.05,
-    "speed": 5.0,
+    "ejectsCasing": true,
+    "life": 60,
+    "size": 0.1,
+    "speed": 5.5,
     "trailLengthMultiplier": 2.0
   },
   "reloads": {
-    "emptyMagTimer": 30,
-    "maxAmmo": 30,
+    "emptyMagTimer": 10,
+    "maxAmmo": 4,
+    "reloadAmount": 1,
     "reloadItem": "scguns_cnc:compact_hex_round",
-    "reloadTimer": 5,
+    "reloadTimer": 20,
     "reloadType": "scguns:mag_fed"
   },
   "sounds": {

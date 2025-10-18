@@ -8,7 +8,7 @@
     }
   },
   "general": {
-    "weaponType": "pistol",
+    "weaponType": "magnum",
     "alwaysSpread": false,
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
