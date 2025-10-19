@@ -20,7 +20,8 @@ import top.ribs.scguns.item.GunItem;
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
     @Shadow
-    private static void fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun) {}
+    private static void fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun) {
+    }
 
     @Inject(method = "fireProjectiles", at = @At("HEAD"), remap = false)
     private static void scguns_cnc$fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun, CallbackInfo ci) {
@@ -36,6 +37,7 @@ public abstract class ServerPlayHandlerMixin {
             float f = -Mth.sin(yaw * ((float) Math.PI / 180F)) * Mth.cos(pitch * ((float) Math.PI / 180F));
             float f1 = -Mth.sin(pitch * ((float) Math.PI / 180F));
             float f2 = Mth.cos(yaw * ((float) Math.PI / 180F)) * Mth.cos(pitch * ((float) Math.PI / 180F));
+
             Vec3 motion = new Vec3(f, f1, f2);
             Vec3 spawnPos = player.getEyePosition().add(motion.x * 0.5, -0.1, motion.z * 0.5);
             arrow.setPos(spawnPos);
@@ -53,8 +55,8 @@ public abstract class ServerPlayHandlerMixin {
 
             world.addFreshEntity(arrow);
         } else {
+            System.out.println("not large arrow");
             fireProjectiles(world, player, heldItem, item, modifiedGun);
         }
     }
-
 }
