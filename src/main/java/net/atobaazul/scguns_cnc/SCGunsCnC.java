@@ -7,9 +7,9 @@ import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
 import net.atobaazul.scguns_cnc.events.client.Particles;
-import net.atobaazul.scguns_cnc.registries.CreativeTabs;
-import net.atobaazul.scguns_cnc.registries.Entities;
-import net.atobaazul.scguns_cnc.registries.SoundEvents;
+import net.atobaazul.scguns_cnc.registries.ModCreativeTabs;
+import net.atobaazul.scguns_cnc.registries.ModEntities;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,11 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import top.ribs.scguns.common.ProjectileManager;
-import top.ribs.scguns.entity.projectile.BuckshotProjectileEntity;
-import top.ribs.scguns.entity.projectile.ProjectileEntity;
-import top.ribs.scguns.event.ModClientEventsBus;
-import top.ribs.scguns.init.ModEntities;
-import net.atobaazul.scguns_cnc.registries.Items;
+import net.atobaazul.scguns_cnc.registries.ModItems;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
@@ -55,20 +51,20 @@ public class SCGunsCnC
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        Items.REGISTER.register(modEventBus);
-        Entities.REGISTER.register(modEventBus);
+        ModItems.REGISTER.register(modEventBus);
+        ModEntities.REGISTER.register(modEventBus);
         Particles.REGISTER.register(modEventBus);
-        SoundEvents.REGISTER.register(modEventBus);
-        CreativeTabs.register(modEventBus);
+        ModSoundEvents.REGISTER.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        ProjectileManager.getInstance().registerFactory(Items.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-        ProjectileManager.getInstance().registerFactory(Items.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-        ProjectileManager.getInstance().registerFactory(Items.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BluntshotProjectileEntity(Entities.BLUNTSHOT.get(), worldIn, entity, weapon, item, modifiedGun));
-        ProjectileManager.getInstance().registerFactory(CCItems.LARGE_ARROW.get(), (worldIn, entity, weapon, item, modifiedGun) -> new DummyProjectileEntity(Entities.DUMMY_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-        ProjectileManager.getInstance().registerFactory(Items.THE_HUNGER.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BloodShotProjectileEntity(Entities.BLOOD_SHOT.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BluntshotProjectileEntity(ModEntities.BLUNTSHOT.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(CCItems.LARGE_ARROW.get(), (worldIn, entity, weapon, item, modifiedGun) -> new DummyProjectileEntity(ModEntities.DUMMY_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.THE_HUNGER.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BloodShotProjectileEntity(ModEntities.BLOOD_SHOT.get(), worldIn, entity, weapon, item, modifiedGun));
     }
 
     // Add the example block item to the building blocks tab

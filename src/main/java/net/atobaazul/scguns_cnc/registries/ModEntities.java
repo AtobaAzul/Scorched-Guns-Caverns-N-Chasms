@@ -16,7 +16,7 @@ import java.util.function.BiFunction;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
-public class Entities {
+public class ModEntities {
     public static final DeferredRegister<EntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
 
 

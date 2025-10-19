@@ -1,6 +1,6 @@
 package net.atobaazul.scguns_cnc.events.client;
 
-import net.atobaazul.scguns_cnc.registries.Entities;
+import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,10 +17,10 @@ public class CnCGunEntityRenderers {
     public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event)
     {
 
-        event.registerEntityRenderer(Entities.HEX_ROUND_PROJECTILE.get(), ProjectileRenderer::new);
-        event.registerEntityRenderer(Entities.BLUNTSHOT.get(), ProjectileRenderer::new);
-        event.registerEntityRenderer(Entities.DUMMY_PROJECTILE.get(), ProjectileRenderer::new);
-        event.registerEntityRenderer(Entities.BLOOD_SHOT.get(), ProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.HEX_ROUND_PROJECTILE.get(), ProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.BLUNTSHOT.get(), ProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.DUMMY_PROJECTILE.get(), ProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.BLOOD_SHOT.get(), ProjectileRenderer::new);
 
     }
 }
