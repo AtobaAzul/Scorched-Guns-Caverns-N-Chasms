@@ -19,11 +19,7 @@ import top.ribs.scguns.item.GunItem;
 
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
-    @Shadow
-    private static void fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun) {
-    }
-
-    @Inject(method = "fireProjectiles", at = @At("HEAD"), remap = false)
+    @Inject(method = "fireProjectiles", at = @At("TAIL"), remap = false)
     private static void scguns_cnc$fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun, CallbackInfo ci) {
         System.out.println("firing");
         if (modifiedGun.getProjectile().getItem() == CCItems.LARGE_ARROW.get()) {
@@ -54,9 +50,6 @@ public abstract class ServerPlayHandlerMixin {
             arrow.pickup = Arrow.Pickup.ALLOWED;
 
             world.addFreshEntity(arrow);
-        } else {
-            System.out.println("not large arrow");
-            fireProjectiles(world, player, heldItem, item, modifiedGun);
         }
     }
 }

@@ -49,14 +49,14 @@
     "gravity": true  ,
     "item": "caverns_and_chasms:large_arrow",
     "life": 0,
-    "size": 0.1,
+    "size": 0.0,
     "speed": 13.0,
     "trailLengthMultiplier": 2.0
   },
   "reloads": {
     "emptyMagTimer": 10,
     "maxAmmo": 6,
-    "reloadItem": "minecraft:arrow",
+    "reloadItem": "caverns_and_chasms:large_arrow",
     "reloadTimer": 30,
     "reloadType": "scguns:mag_fed"
   },
