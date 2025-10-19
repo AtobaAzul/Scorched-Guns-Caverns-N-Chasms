@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.common.entity.BloodShotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
@@ -26,7 +27,7 @@ public class Entities {
     public static final RegistryObject<EntityType<DummyProjectileEntity>> DUMMY_PROJECTILE = registerBasic("dummy_projectile", DummyProjectileEntity::new);
 
 
-    public static final RegistryObject<EntityType<HexRoundProjectileEntity>> THE_HUNGER = registerBasic("hunger", HexRoundProjectileEntity::new);
+    public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)
