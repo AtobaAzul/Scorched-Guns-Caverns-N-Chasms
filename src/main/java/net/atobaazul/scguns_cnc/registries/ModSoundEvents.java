@@ -8,7 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
-public class SoundEvents {
+public class ModSoundEvents {
     public static final DeferredRegister<SoundEvent> REGISTER = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
 
     public static final RegistryObject<SoundEvent> HANGMAN_FIRE = register("item.hangman.fire");

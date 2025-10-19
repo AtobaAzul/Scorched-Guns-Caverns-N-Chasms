@@ -1,15 +1,9 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.Reference;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.AmmoItem;
 import top.ribs.scguns.item.BlueprintItem;
@@ -17,7 +11,7 @@ import top.ribs.scguns.item.animated.AnimatedGunItem;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
-public class Items {
+public class ModItems {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
 

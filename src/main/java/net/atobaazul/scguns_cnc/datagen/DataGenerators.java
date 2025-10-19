@@ -3,6 +3,7 @@ package net.atobaazul.scguns_cnc.datagen;
 import net.atobaazul.scguns_cnc.datagen.providers.ModBlockTagProvider;
 import net.atobaazul.scguns_cnc.datagen.providers.ModItemModelProvider;
 import net.atobaazul.scguns_cnc.datagen.providers.ModItemTagsProvider;
+import net.atobaazul.scguns_cnc.datagen.providers.ModLangProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -27,5 +28,6 @@ public class DataGenerators {
         ModBlockTagProvider blockTagProvider = generator.addProvider(event.includeServer(), new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModLangProvider(packOutput));
     }
 }

@@ -38,7 +38,7 @@
     }
   },
   "projectile": {
-    "advantage": "scguns:wither",
+    "advantage": "scguns:none",
     "damage": 2.5,
     "item": "scguns_cnc:bluntshot",
     "casingType": "caverns_and_chasms:silver_nugget",

@@ -1,7 +1,7 @@
 package net.atobaazul.scguns_cnc.mixin;
 
 
-import net.atobaazul.scguns_cnc.registries.Items;
+import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -43,7 +43,7 @@ public class MeleeAttackHandlerMixin {
         }
 
         LivingEntity raycastTarget = scguns_cnc$raycastForMeleeAttack(player, heldItem);
-        if (heldItem.is(Items.ANATHEMA.get())) {
+        if (heldItem.is(ModItems.ANATHEMA.get())) {
             if (raycastTarget != null) {
                 if (!player.isCreative()) {
                     CompoundTag tag = heldItem.getOrCreateTag();

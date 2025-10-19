@@ -1,6 +1,6 @@
 package net.atobaazul.scguns_cnc.datagen.providers;
 
-import net.atobaazul.scguns_cnc.registries.Items;
+import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -19,15 +19,15 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(Items.HEX_ROUND);
-        simpleItem(Items.COMPACT_HEX_ROUND);
-        simpleItem(Items.GRAVEKEEPER_BLUEPRINT);
-        simpleItem(Items.NECROMIUM_GUN_FRAME);
-        simpleItem(Items.BLUNTSHOT);
-        simpleItem(Items.SMALL_NECROMIUM_CASING);
-        simpleItem(Items.MEDIUM_NECROMIUM_CASING);
-        simpleItem(Items.SILVER_BULLET);
-        simpleItem(Items.THE_HUNGER);
+        simpleItem(ModItems.HEX_ROUND);
+        simpleItem(ModItems.COMPACT_HEX_ROUND);
+        simpleItem(ModItems.GRAVEKEEPER_BLUEPRINT);
+        simpleItem(ModItems.NECROMIUM_GUN_FRAME);
+        simpleItem(ModItems.BLUNTSHOT);
+        simpleItem(ModItems.SMALL_NECROMIUM_CASING);
+        simpleItem(ModItems.MEDIUM_NECROMIUM_CASING);
+        simpleItem(ModItems.SILVER_BULLET);
+        simpleItem(ModItems.THE_HUNGER);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
