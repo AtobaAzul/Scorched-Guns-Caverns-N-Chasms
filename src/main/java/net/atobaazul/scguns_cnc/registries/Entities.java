@@ -21,6 +21,9 @@ public class Entities {
 
     public static final RegistryObject<EntityType<HexRoundProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot", HexRoundProjectileEntity::new);
 
+    public static final RegistryObject<EntityType<HexRoundProjectileEntity>> THE_HUNGER = registerBasic("hunger", HexRoundProjectileEntity::new);
+
+
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)
     {
         return REGISTER.register(id, () -> EntityType.Builder.of(function::apply, MobCategory.MISC)

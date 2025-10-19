@@ -1,0 +1,66 @@
+{
+  "display": {
+    "flash": {
+      "size": 1.0,
+      "yOffset": 5.5,
+      "zOffset": -9,
+      "textureLocation": "muzzle_flash_1"
+    }
+  },
+  "general": {
+    "weaponType": "smg",
+    "alwaysSpread": false,
+    "fireMode": "scguns:automatic",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 3,
+    "recoilAngle": 2.25,
+    "recoilKick": 1,
+    "spread": 3.0,
+    "meleeDamage": 6.0,
+    "meleeReach": 3.5,
+    "meleeCooldownTicks": 15,
+    "hotBarrelRate": 30,
+    "criticalChance": 0.1,
+    "playerKnockBack": false,
+    "usesCustomMeleeAnimation": true
+
+  },
+  "modules": {
+    "attachments": {
+
+    },
+
+    "zoom": {
+      "fovModifier": 0.5,
+      "yOffset": 5.8,
+      "zOffset": 3
+    }
+  },
+  "projectile": {
+    "advantage": "scguns:none",
+    "damage": 8.5,
+    "armorPen": 1.0,
+    "ejectsCasing": true,
+    "item": "scguns_cnc:hunger",
+    "life": 35,
+    "size": 0.05,
+    "speed": 5.0,
+    "trailLengthMultiplier": 2.0
+  },
+  "reloads": {
+    "emptyMagTimer": 30,
+    "maxAmmo": 30,
+    "reloadItem": "scguns_cnc:hunger",
+    "reloadTimer": 5,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns_cnc:item.hangman_carbine.fire",
+    "fire": "scguns_cnc:item.hangman_carbine.fire",
+    "reload": "scguns:item.gauss.reload",
+    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
+    "flyby": "scguns:bullet.flyby1"
+  }
+}
