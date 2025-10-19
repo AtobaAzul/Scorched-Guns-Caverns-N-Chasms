@@ -23,7 +23,7 @@ public class CreativeTabs {
         addItemWithFullAmmo(pOutput, Items.REHEARSE.get());
         addItemWithFullAmmo(pOutput, Items.SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, Items.KETERIYA.get());
-
+        addItemWithFullAmmo(pOutput, Items.ANATHEMA.get());
 
         addItem(pOutput, Items.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, Items.HEX_ROUND.get());

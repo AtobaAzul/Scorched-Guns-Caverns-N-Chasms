@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import net.atobaazul.scguns_cnc.common.entity.BloodShotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
@@ -67,6 +68,7 @@ public class SCGunsCnC
         ProjectileManager.getInstance().registerFactory(Items.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(Items.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BluntshotProjectileEntity(Entities.BLUNTSHOT.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(CCItems.LARGE_ARROW.get(), (worldIn, entity, weapon, item, modifiedGun) -> new DummyProjectileEntity(Entities.DUMMY_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(Items.THE_HUNGER.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BloodShotProjectileEntity(Entities.BLOOD_SHOT.get(), worldIn, entity, weapon, item, modifiedGun));
     }
 
     // Add the example block item to the building blocks tab

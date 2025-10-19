@@ -41,8 +41,7 @@
     "advantage": "scguns:wither",
     "damage": 2.5,
     "item": "scguns_cnc:bluntshot",
-    "casingType": "scguns:small_copper_casing",
-    "casingParticle": "scguns:shell",
+    "casingType": "caverns_and_chasms:silver_nugget",
     "life": 5,
     "size": 0.075,
     "speed": 4.0,
@@ -63,3 +62,6 @@
     "reload": "scguns:item.gauss.reload"
   }
 }
+
+
+

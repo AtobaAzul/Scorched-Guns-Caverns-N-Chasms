@@ -2,8 +2,8 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 6,
-      "zOffset": -11,
+      "yOffset": 4,
+      "zOffset": -12,
       "textureLocation": "muzzle_flash_12"
     }
   },
@@ -38,7 +38,7 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 8.5,
+    "damage": 5.0,
     "ejectsCasing": true,
     "item": "scguns_cnc:hunger",
     "gravity": true,
@@ -52,12 +52,12 @@
     "maxAmmo": 30,
     "reloadItem": "scguns_cnc:hunger",
     "reloadTimer": 5,
-    "reloadType": "scguns:mag_fed"
+    "reloadType": "scguns:single_item"
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.hangman_carbine.fire",
-    "fire": "scguns_cnc:item.hangman_carbine.fire",
+    "enchantedFire": "caverns_and_chasms:entity.deeper.hurt",
+    "fire": "caverns_and_chasms:entity.deeper.hurt",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
     "flyby": "scguns:bullet.flyby1"
