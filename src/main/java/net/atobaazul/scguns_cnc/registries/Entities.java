@@ -1,5 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
+import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -19,7 +21,10 @@ public class Entities {
 
     public static final RegistryObject<EntityType<HexRoundProjectileEntity>> HEX_ROUND_PROJECTILE = registerBasic("hex_round_projectile", HexRoundProjectileEntity::new);
 
-    public static final RegistryObject<EntityType<HexRoundProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot", HexRoundProjectileEntity::new);
+    public static final RegistryObject<EntityType<BluntshotProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot_projectile", BluntshotProjectileEntity::new);
+
+    public static final RegistryObject<EntityType<DummyProjectileEntity>> DUMMY_PROJECTILE = registerBasic("dummy_projectile", DummyProjectileEntity::new);
+
 
     public static final RegistryObject<EntityType<HexRoundProjectileEntity>> THE_HUNGER = registerBasic("hunger", HexRoundProjectileEntity::new);
 
