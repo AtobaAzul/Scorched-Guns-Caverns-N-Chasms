@@ -2,9 +2,9 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 5.5,
-      "zOffset": -9,
-      "textureLocation": "muzzle_flash_1"
+      "yOffset": 6,
+      "zOffset": -11,
+      "textureLocation": "muzzle_flash_12"
     }
   },
   "general": {
@@ -19,12 +19,11 @@
     "spread": 3.0,
     "meleeDamage": 6.0,
     "meleeReach": 3.5,
-    "meleeCooldownTicks": 15,
+    "meleeCooldownTicks": 10,
     "hotBarrelRate": 30,
     "criticalChance": 0.1,
     "playerKnockBack": false,
     "usesCustomMeleeAnimation": true
-
   },
   "modules": {
     "attachments": {
@@ -40,12 +39,12 @@
   "projectile": {
     "advantage": "scguns:none",
     "damage": 8.5,
-    "armorPen": 1.0,
     "ejectsCasing": true,
     "item": "scguns_cnc:hunger",
-    "life": 35,
+    "gravity": true,
+    "life": 50,
     "size": 0.05,
-    "speed": 5.0,
+    "speed": 3.0,
     "trailLengthMultiplier": 2.0
   },
   "reloads": {

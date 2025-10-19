@@ -47,9 +47,8 @@
     "damage": 12.0,
     "ejectsCasing": false,
     "gravity": true  ,
-    "item": "minecraft:arrow",
-    "firesArrows": true,
-    "life": 20,
+    "item": "caverns_and_chasms:large_arrow",
+    "life": 0,
     "size": 0.1,
     "speed": 13.0,
     "trailLengthMultiplier": 2.0

@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
+import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
 import net.atobaazul.scguns_cnc.events.client.Particles;
 import net.atobaazul.scguns_cnc.registries.CreativeTabs;
@@ -62,9 +63,7 @@ public class SCGunsCnC
     {
         ProjectileManager.getInstance().registerFactory(Items.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(Items.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(Entities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-        ProjectileManager.getInstance().registerFactory(Items.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BuckshotProjectileEntity(ModEntities.BUCKSHOT_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
-
-
+        ProjectileManager.getInstance().registerFactory(Items.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BluntshotProjectileEntity(Entities.BLUNTSHOT.get(), worldIn, entity, weapon, item, modifiedGun));
     }
 
     // Add the example block item to the building blocks tab
