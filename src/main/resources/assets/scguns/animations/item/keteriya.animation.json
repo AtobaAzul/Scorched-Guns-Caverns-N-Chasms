@@ -170,14 +170,14 @@
 				}
 			},
 			"particle_effects": {
-				"0.625": {
-					"effect": "loaded"
-				},
 				"0.75": {
 					"effect": "loop_end"
 				},
 				"0.875": {
 					"effect": "end_reload"
+				},
+				"0.9167": {
+					"effect": "loaded"
 				},
 				"0.9583": {
 					"effect": "loop_end"
