@@ -2,7 +2,7 @@
   "display": {
     "flash": {
       "size": 1.5,
-      "yOffset": 3.8,
+      "yOffset": 4.7,
       "zOffset": -12.0,
       "textureLocation": "muzzle_flash_5"
     }
@@ -33,7 +33,7 @@
     },
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset": 5.6,
+      "yOffset": 5.7,
       "zOffset": 0.6
     }
   },

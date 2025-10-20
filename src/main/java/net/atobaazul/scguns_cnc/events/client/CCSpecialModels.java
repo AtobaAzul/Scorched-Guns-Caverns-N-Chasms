@@ -12,7 +12,32 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public enum CCSpecialModels {
-    ANATHEMA_MAIN("anathema/main"), HANGMAN_CARBINE_MAIN("hangman_carbine/main"), KETERIYA_MAIN("keteriya/main");
+  //Rehearse
+    REHEARSE_MAIN("rehearse/main"),
+    REHEARSE_DRUM("rehearse/drum"),
+    REHEARSE_STAN_BARREL("rehearse/stan_barrel"),
+    REHEARSE_EXT_BARREL("rehearse/ext_barrel"),
+    REHEARSE_STOCK_WEIGHTED("rehearse/heavy_stock"),
+    REHEARSE_STOCK_LIGHT("rehearse/light_stock"),
+    REHEARSE_STOCK_WOODEN("rehearse/wooden_stock"),
+    REHEARSE_STAN_GRIP("rehearse/stan_grip"),
+    REHEARSE_SILENCER("rehearse/silencer"),
+    REHEARSE_ADVANCED_SILENCER("rehearse/advanced_silencer"),
+    REHEARSE_MUZZLE_BRAKE("rehearse/muzzle_brake"),
+
+
+    RIBCAGE_MAIN("ribcage/main"),
+
+    SILVERLINGING_MAIN("silverlining/main"),
+
+    BELLA_MAIN("bella/main"),
+
+    HANGMAN_CARBINE_MAIN("hangman_carbine/main"),
+
+
+
+    ANATHEMA_MAIN("anathema/main"),
+    KETERIYA_MAIN("keteriya/main");
 
 
     /**

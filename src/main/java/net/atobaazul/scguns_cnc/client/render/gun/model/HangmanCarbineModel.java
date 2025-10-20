@@ -10,12 +10,12 @@ import top.ribs.scguns.client.render.gun.IOverrideModel;
 import top.ribs.scguns.client.util.RenderUtil;
 
 
-public class AnathemaModel implements IOverrideModel {
+public class HangmanCarbineModel implements IOverrideModel {
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
 
-        RenderUtil.renderModel(CCSpecialModels.ANATHEMA_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
+        RenderUtil.renderModel(CCSpecialModels.HANGMAN_CARBINE_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
 
 
     }

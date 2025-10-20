@@ -2,8 +2,8 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 4.7,
-      "zOffset": -4.5,
+      "yOffset": 4.6,
+      "zOffset": -4.6,
       "textureLocation": "muzzle_flash_5"
     }
   },
@@ -24,7 +24,7 @@
   "modules": {
     "attachments": {
       "barrel": {
-        "yOffset": 4.5,
+        "yOffset": 4.6,
         "zOffset": -5.2
       },
       "stock": {
