@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.common.entity.BloodShotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
 import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
@@ -16,12 +17,14 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import top.ribs.scguns.client.ClientHandler;
 import top.ribs.scguns.common.ProjectileManager;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 
@@ -56,6 +59,10 @@ public class SCGunsCnC
         Particles.REGISTER.register(modEventBus);
         ModSoundEvents.REGISTER.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            CCClientHandler.registerClientHandlers(modEventBus);
+        });
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

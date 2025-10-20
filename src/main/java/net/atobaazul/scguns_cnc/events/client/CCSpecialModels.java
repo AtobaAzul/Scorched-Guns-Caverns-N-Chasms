@@ -12,11 +12,7 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public enum CCSpecialModels {
-    ANATHEMA_MAIN("anathema/main"),
-    HANGMAN_CARBINE_MAIN("hangman_carbine/main"),
-    KETERIYA_MAIN("keteriya/main");
-
-
+    ANATHEMA_MAIN("anathema/main"), HANGMAN_CARBINE_MAIN("hangman_carbine/main"), KETERIYA_MAIN("keteriya/main");
 
 
     /**
@@ -34,23 +30,8 @@ public enum CCSpecialModels {
      *
      * @param modelName name of the model file
      */
-    SpecialModels(String modelName)
-    {
+    CCSpecialModels(String modelName) {
         this.modelLocation = new ResourceLocation(MOD_ID, "special/" + modelName);
-    }
-
-    /**
-     * Gets the model
-     *
-     * @return isolated model
-     */
-    public BakedModel getModel()
-    {
-        if(this.cachedModel == null)
-        {
-            this.cachedModel = Minecraft.getInstance().getModelManager().getModel(this.modelLocation);
-        }
-        return this.cachedModel;
     }
 
     /**
@@ -58,10 +39,8 @@ public enum CCSpecialModels {
      * load of the game.
      */
     @SubscribeEvent
-    public static void registerAdditional(ModelEvent.RegisterAdditional event)
-    {
-        for(SpecialModels model : values())
-        {
+    public static void registerAdditional(ModelEvent.RegisterAdditional event) {
+        for (CCSpecialModels model : values()) {
             event.register(model.modelLocation);
         }
     }
@@ -71,11 +50,21 @@ public enum CCSpecialModels {
      * have changed when a resource pack was applied, or if resources are reloaded.
      */
     @SubscribeEvent
-    public static void onBake(ModelEvent.BakingCompleted event)
-    {
-        for(SpecialModels model : values())
-        {
+    public static void onBake(ModelEvent.BakingCompleted event) {
+        for (CCSpecialModels model : values()) {
             model.cachedModel = null;
         }
+    }
+
+    /**
+     * Gets the model
+     *
+     * @return isolated model
+     */
+    public BakedModel getModel() {
+        if (this.cachedModel == null) {
+            this.cachedModel = Minecraft.getInstance().getModelManager().getModel(this.modelLocation);
+        }
+        return this.cachedModel;
     }
 }

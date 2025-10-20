@@ -43,7 +43,7 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 7.0,
+    "damage": 8.5,
     "gravity": false,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns_cnc:small_necromium_casing",

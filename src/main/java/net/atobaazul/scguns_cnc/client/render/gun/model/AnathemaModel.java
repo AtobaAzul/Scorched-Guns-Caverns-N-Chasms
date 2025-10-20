@@ -16,11 +16,6 @@ public class AnathemaModel implements IOverrideModel {
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
         RenderUtil.renderModel(CCSpecialModels.ANATHEMA_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
-
-        matrixStack.pushPose();
-        matrixStack.translate(0, -5.8 * 0.0625, 0);
-        matrixStack.popPose();
-
     }
 
     private double ease(double x) {
