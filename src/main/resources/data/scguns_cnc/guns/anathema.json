@@ -23,7 +23,8 @@
     "hotBarrelRate": 30,
     "criticalChance": 0.1,
     "playerKnockBack": false,
-    "usesCustomMeleeAnimation": true
+    "usesCustomMeleeAnimation": true,
+    "isSilenced": true
   },
   "modules": {
     "attachments": {
