@@ -31,6 +31,19 @@ public enum CCSpecialModels {
     SILVERLINGING_MAIN("silverlining/main"),
 
     BELLA_MAIN("bella/main"),
+    BELLA_STAN_MAGAZINE("bella/stan_magazine"),
+    BELLA_FAST_MAGAZINE("bella/fast_magazine"),
+    BELLA_EXT_MAGAZINE("bella/ext_magazine"),
+    BELLA_STAN_BARREL("bella/stan_barrel"),
+    BELLA_EXT_BARREL("bella/ext_barrel"),
+    BELLA_STOCK_WEIGHTED("bella/heavy_stock"),
+    BELLA_STOCK_LIGHT("bella/light_stock"),
+    BELLA_STOCK_WOODEN("bella/wooden_stock"),
+    BELLA_STAN_GRIP("bella/stan_grip"),
+    BELLA_SILENCER("bella/silencer"),
+    BELLA_ADVANCED_SILENCER("bella/advanced_silencer"),
+    BELLA_MUZZLE_BRAKE("bella/muzzle_brake"),
+
 
     HANGMAN_CARBINE_MAIN("hangman_carbine/main"),
 
