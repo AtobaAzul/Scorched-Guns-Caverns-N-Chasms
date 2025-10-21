@@ -36,13 +36,22 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
 
+        //tooltips
+        add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
+        add("tooltip.bluntshot.knockback", "Deals increased knockback to hit targets.");
+
+        //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");
 
+        //desc.
         add("scguns.desc.hangman_carbine", "Compact weapon that shines in close quarters combat, being the modern standard issue firearm of the Gravekeepers.");
         add("scguns.desc.silverlining", "The oldest weapon of the Gravekeeper arsenal, with its creation dating back to the very origins of the organization. It is still widely used as a assassin's weapon by the believers of the Holy Curse.");
         add("scguns.desc.bella", " The most commonly used kinetic solution employed by the Gravekeepers while they still existed in secrecy, being compact enough to be inconspicuous and was commonly used with a silencer. ");
         add("scguns.desc.ribcage", "The Ribcage heavy rifle is wildly used by Gravekeeper marksman, firing rounds capable of harming the very essence of its targets.");
         add("scguns.desc.rehearse", "In anticipation for a time were subtlety would be no longer needed, the Gravekeepers started expanding their arsenal with larger guns. The Rehearse became the first of newly developed guns for the new world.");
         add("scguns.desc.keteriya", "Capable of launching the user and its targets, it can used as a mobility tool to close the distance and deliver devastating blow with the attached axe blade.");
+
+        //misc.
+        add("scguns_cnc.jei.info.gravekeeper_blueprint", "Can be obtained from Graveyard structures.");
     }
 }

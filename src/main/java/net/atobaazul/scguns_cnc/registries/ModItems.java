@@ -1,5 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
+import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -107,9 +109,9 @@ public class ModItems {
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
     //arounds
-    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new AmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new AmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new AmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new BluntshotAmmoItem(new Item.Properties()));
 
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
