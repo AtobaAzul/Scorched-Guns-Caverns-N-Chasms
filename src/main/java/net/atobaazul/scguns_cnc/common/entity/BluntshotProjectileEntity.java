@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -39,4 +40,12 @@ public class BluntshotProjectileEntity extends ProjectileEntity {
         super.onHitEntity(entity, hitVec, startVec, endVec, headshot);
     }
 
+    @Override
+    protected void onProjectileTick() {
+        if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
+            if (this.tickCount % 3 == 0) {
+                this.level().addParticle(CCParticleTypes.MIME_SPARK.get(), true, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
+            }
+        }
+    }
 }

@@ -10,7 +10,6 @@
     "absolute": 0
   },
   "project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
-  "biomes": "#minecraft:has_structure/trail_ruins",
+  "biomes": "#minecraft:is_taiga",
   "use_expansion_hack": false
 }
-

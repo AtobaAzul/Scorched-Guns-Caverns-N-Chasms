@@ -72,8 +72,8 @@ public class ModItems {
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end
-                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
-                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+                    ModSoundEvents.SILVERLINING_PULL_MIDDLE.get(),      // Ejector sound pull
+                    ModSoundEvents.SILVERLINING_PULL_END.get()    // Ejector sound release
             )
     );
 

@@ -1,16 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "Q": {
-      "tag": "forge:ingots/necromium"
-    }
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "forge:ingots/necromium"
   },
-  "pattern": [
-    " Q ",
-    "Q Q",
-    "QQQ"
-  ],
+  "base": {
+    "item": "scguns:diamond_steel_gun_frame"
+  },
   "result": {
     "item": "scguns_cnc:necromium_gun_frame"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
   }
 }
