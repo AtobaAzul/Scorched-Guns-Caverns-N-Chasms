@@ -22,8 +22,8 @@
     "attachments": {
       "scope": {
         "size": 0.7,
-        "yOffset": 6.4,
-        "zOffset": 3.0
+        "yOffset": 6,
+        "zOffset": 1.0
       },
       "stock": {
         "scale": 0.0

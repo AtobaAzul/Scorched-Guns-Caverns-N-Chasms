@@ -23,7 +23,8 @@
     "hotBarrelRate": 30,
     "criticalChance": 0.1,
     "playerKnockBack": false,
-    "usesCustomMeleeAnimation": true
+    "usesCustomMeleeAnimation": true,
+    "isSilenced": true
   },
   "modules": {
     "attachments": {
@@ -59,6 +60,6 @@
     "enchantedFire": "caverns_and_chasms:entity.deeper.hurt",
     "fire": "caverns_and_chasms:entity.deeper.hurt",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire"
+    "silencedFire": "caverns_and_chasms:entity.deeper.hurt"
   }
 }

@@ -3,8 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"2": "scguns_cnc:item/hangman_carbine",
-		"particle": "scguns:item/m3_carabine"
+		"2": "scguns_cnc:item/hangman_carbine"
 	},
 	"elements": [
 		{

@@ -1,0 +1,91 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scguns_cnc:item/bella",
+		"particle": "scguns_cnc:item/bella"
+	},
+	"elements": [
+		{
+			"name": "extended_barrel",
+			"from": [7.5, 2.83579, 1],
+			"to": [8.5, 3.83579, 7],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 3.33579, 4]},
+			"faces": {
+				"north": {"uv": [5.5, 3.5, 5.75, 3.75], "texture": "#0"},
+				"east": {"uv": [4.25, 1.5, 5.75, 1.75], "texture": "#0"},
+				"south": {"uv": [5.75, 1.75, 6, 2], "texture": "#0"},
+				"west": {"uv": [4.25, 1.75, 5.75, 2], "texture": "#0"},
+				"up": {"uv": [1.75, 6, 1.5, 4.5], "texture": "#0"},
+				"down": {"uv": [2, 4.5, 1.75, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "extended_barrel",
+			"from": [7.95711, 2.87868, 6],
+			"to": [9.45711, 4.37868, 8],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.70711, 2.62868, 7]},
+			"faces": {
+				"north": {"uv": [6.75, 0, 7.125, 0.375], "texture": "#0"},
+				"east": {"uv": [6, 6, 6.5, 6.375], "texture": "#0"},
+				"south": {"uv": [1, 6.75, 1.375, 7.125], "texture": "#0"},
+				"west": {"uv": [6.25, 0, 6.75, 0.375], "texture": "#0"},
+				"up": {"uv": [1.375, 6.75, 1, 6.25], "texture": "#0"},
+				"down": {"uv": [6.625, 1, 6.25, 1.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "extended_barrel",
+			"from": [7.25, 2.58578, 0.5],
+			"to": [8.75, 4.08578, 1],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 3.33578, 0]},
+			"faces": {
+				"north": {"uv": [6.75, 1, 7.125, 1.375], "texture": "#0"},
+				"east": {"uv": [7.75, 3.25, 7.875, 3.625], "texture": "#0"},
+				"south": {"uv": [6.75, 2.5, 7.125, 2.875], "texture": "#0"},
+				"west": {"uv": [7.75, 3.75, 7.875, 4.125], "texture": "#0"},
+				"up": {"uv": [8.125, 4.375, 7.75, 4.25], "texture": "#0"},
+				"down": {"uv": [8.125, 4.5, 7.75, 4.625], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"firstperson_righthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"firstperson_lefthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"ground": {
+			"translation": [0, 9.5, -3.75],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"gui": {
+			"rotation": [74.02, -53.34, 70.48],
+			"translation": [-1, 6.25, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"fixed": {
+			"rotation": [90, 55, -90],
+			"translation": [1.5, 8.5, 0],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "extended_barrel",
+			"origin": [15.26287, -3.55233, -9.14767],
+			"color": 3,
+			"children": [0, 1, 2]
+		}
+	]
+}
