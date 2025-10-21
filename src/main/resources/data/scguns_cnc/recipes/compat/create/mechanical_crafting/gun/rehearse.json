@@ -1,0 +1,48 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "Q": {
+      "item": "scguns:gun_grip"
+    },
+    "C": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "item": "scguns:firing_unit"
+    },
+    "R": {
+      "item": "scguns:gun_magazine"
+    },
+    "S": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "H": {
+      "item": "scguns:gun_barrel"
+    },
+
+    "I": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "X": {
+      "tag": "forge:ingots/necromium"
+    },
+    "O": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    }
+  },
+  "pattern": [
+    "XIO  ",
+    "LRSH ",
+    "Q C  "
+  ],
+  "result": {
+    "item": "scguns_cnc:rehearse"
+  }
+}

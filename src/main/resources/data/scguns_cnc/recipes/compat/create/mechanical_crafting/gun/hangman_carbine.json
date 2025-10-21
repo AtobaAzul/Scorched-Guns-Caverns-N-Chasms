@@ -1,0 +1,47 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "Q": {
+      "item": "scguns:gun_grip"
+    },
+    "C": {
+      "tag": "forge:ingots/silver"
+    },
+    "L": {
+      "item": "scguns:rapid_firing_unit"
+    },
+    "R": {
+      "item": "scguns:gun_parts"
+    },
+    "S": {
+      "item": "scguns:gun_barrel"
+    },
+    "X": {
+      "item": "scguns:gun_magazine"
+    },
+    "V": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "P": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "K": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "CVP ",
+    "LRKS",
+    "Q X "
+  ],
+  "result": {
+    "item": "scguns_cnc:hangman_carbine"
+  }
+}

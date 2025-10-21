@@ -1,0 +1,17 @@
+{
+  "type": "scguns:powered_mechanical_pressing",
+  "processingTime": 10,
+  "energyUse": 500,
+  "ingredients": [
+    {
+      "item": "scguns:shotgun_shell"
+    },
+    {
+      "item": "caverns_and_chasms:spinel"
+    }
+  ],
+  "result": {
+    "item": "scguns_cnc:bluntshot",
+    "count": 2
+  }
+}

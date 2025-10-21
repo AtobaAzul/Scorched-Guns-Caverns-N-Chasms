@@ -1,0 +1,18 @@
+{
+  "type": "immersiveengineering:metal_press",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "energy": 2400,
+  "input": {
+    "tag": "forge:ingots/necromium"
+  },
+  "mold": "scguns:small_casing_mold",
+  "result": {
+    "count": 12,
+    "item": "scguns_cnc:small_necromium_casing"
+  }
+}

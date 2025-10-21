@@ -1,0 +1,30 @@
+{
+  "type": "scguns:gun_bench",
+  "result": {
+    "item": "scguns_cnc:silverlining",
+    "count": 1
+  },
+  "ingredients": {
+    "blueprint": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "gun_internal_1": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "gun_top_internal_1": {
+      "tag": "forge:ingots/silver"
+    },
+    "gun_internal_2": {
+      "item": "scguns:gun_magazine"
+    },
+    "gun_barrel_1": {
+      "item": "minecraft:crossbow"
+    },
+    "gun_grip": {
+      "item": "scguns:gun_grip"
+    },
+    "gun_magazine": {
+      "tag": "minecraft:planks"
+    }
+  }
+}

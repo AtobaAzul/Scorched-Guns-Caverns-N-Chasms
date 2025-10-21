@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "Q": {
+      "tag": "forge:ingots/necromium"
+    }
+  },
+  "pattern": [
+    " Q ",
+    "Q Q",
+    "QQQ"
+  ],
+  "result": {
+    "item": "scguns_cnc:necromium_gun_frame"
+  }
+}

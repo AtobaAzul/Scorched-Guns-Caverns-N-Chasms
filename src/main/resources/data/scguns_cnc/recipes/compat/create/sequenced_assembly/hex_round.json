@@ -1,0 +1,72 @@
+{
+  "type": "create:sequenced_assembly",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "scguns_cnc:medium_necromium_casing"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "scguns_cnc:hex_round"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "scguns_cnc:unfinished_hex_round"
+        },
+        [
+          {
+            "tag": "scguns:gunpowder_dust"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "scguns_cnc:unfinished_hex_round"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "scguns_cnc:unfinished_hex_round"
+        },
+        [
+          {
+            "item": "scguns_cnc:silver_bullet"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "scguns_cnc:unfinished_hex_round"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "scguns_cnc:unfinished_hex_round"
+        }
+      ],
+      "results": [
+        {
+          "item": "scguns_cnc:unfinished_hex_round"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "scguns_cnc:unfinished_hex_round"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:deploying",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "scguns:shotgun_shell"
+    },
+    {
+      "item": "caverns_and_chasms:spinel"
+    }
+  ],
+  "results": [
+    {
+      "item": "scguns_cnc:bluntshot",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "C": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "R": {
+      "item": "scguns:gun_magazine"
+    },
+    "S": {
+      "item": "minecraft:crossbow"
+    },
+    "A": {
+      "tag": "forge:ingots/silver"
+    },
+    "B": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "H": {
+      "item": "scguns:gun_grip"
+    }
+  },
+  "pattern": [
+    "AB ",
+    "LRS",
+    "H C"
+  ],
+  "result": {
+    "item": "scguns_cnc:silverlining"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "scguns:mechanical_pressing",
+  "processingTime": 15,
+  "ingredients": [
+    {
+      "item": "scguns_cnc:medium_necromium_casing"
+    },
+    {
+      "tag": "scguns:gunpowder_dust"
+    },
+    {
+      "item": "scguns_cnc:silver_bullet"
+    }
+  ],
+  "result": {
+    "item": "scguns_cnc:hex_round",
+    "count": 1
+  }
+}

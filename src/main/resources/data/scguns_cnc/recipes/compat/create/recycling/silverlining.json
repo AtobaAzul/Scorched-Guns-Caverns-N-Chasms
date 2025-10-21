@@ -1,0 +1,29 @@
+{
+  "type": "create:crushing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "scguns_cnc:silverlining"
+    }
+  ],
+  "processingTime": 250,
+  "results": [
+    {
+      "chance": 0.3,
+      "item": "caverns_and_chasms:necromium_ingot"
+    },
+    {
+      "chance": 0.3,
+      "item": "scguns:gun_grip"
+    },
+    {
+      "chance": 0.3,
+      "item": "scguns:gun_magazine"
+    }
+  ]
+}

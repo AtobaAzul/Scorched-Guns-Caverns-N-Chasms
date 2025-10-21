@@ -1,0 +1,45 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "Q": {
+      "item": "scguns:gun_grip"
+    },
+    "C":
+    {
+      "item": "caverns_and_chasms:silver_axe"
+    },
+    "L": {
+      "item": "scguns:firing_unit"
+    },
+    "R": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "S": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "M": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "X": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "O": {
+      "item": "scguns:gun_barrel"
+    }
+  },
+  "pattern": [
+    "XM  ",
+    "LRSO",
+    "Q C "
+  ],
+  "result": {
+    "item": "scguns_cnc:keteriya"
+  }
+}

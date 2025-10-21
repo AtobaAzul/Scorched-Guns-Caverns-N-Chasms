@@ -1,0 +1,23 @@
+{
+  "type": "create:deploying",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:ingots/necromium"
+    },
+    {
+      "item": "scguns:small_casing_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "scguns_cnc:small_necromium_casing",
+      "count": 14
+    }
+  ]
+}

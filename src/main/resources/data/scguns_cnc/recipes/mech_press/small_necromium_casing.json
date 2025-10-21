@@ -1,0 +1,16 @@
+{
+  "type": "scguns:mechanical_pressing",
+  "processingTime": 50,
+  "ingredients": [
+    {
+      "tag": "forge:ingots/necromium"
+    }
+  ],
+  "mold": {
+    "item": "scguns:small_casing_mold"
+  },
+  "result": {
+    "item": "scguns_cnc:small_necromium_casing",
+    "count": 14
+  }
+}

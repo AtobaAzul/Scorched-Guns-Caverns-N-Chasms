@@ -34,12 +34,6 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.SILVER_BULLET.get());
-
-        if (CREATE_ENABLED) {
-            addItem(pOutput, ModItems.UNFINISHED_HEX_ROUND.get());
-            addItem(pOutput, ModItems.UNFINISHED_COMPACT_HEX_ROUND.get());
-        }
-
     }).build());
 
     public static void register(IEventBus eventBus) {
