@@ -1,0 +1,4 @@
+CREDITS
+Third party assets were used.
+
+- Siege Camp, for the gun firing sounds.

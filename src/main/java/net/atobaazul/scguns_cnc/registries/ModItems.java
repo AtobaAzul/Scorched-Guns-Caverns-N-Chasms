@@ -8,7 +8,6 @@ import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.AmmoItem;
 import top.ribs.scguns.item.BlueprintItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
-import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
@@ -126,7 +125,7 @@ public class ModItems {
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {
-            return REGISTER.register(name, () -> new SequencedAssemblyItem(new Item.Properties()));
+            return REGISTER.register(name, () -> ModCompatItems.getSequencedItem(name));
         }
         return REGISTER.register(name, () -> new Item(new Item.Properties()));
     };

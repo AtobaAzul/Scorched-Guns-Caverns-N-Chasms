@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -49,6 +50,13 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             return damage * critMultiplier;
         } else {
             return damage;
+        }
+    }
+
+    @Override
+    protected void onProjectileTick() {
+        if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
+            this.level().addParticle(CCParticleTypes.SILVER_SPARK.get(), true, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
         }
     }
 
