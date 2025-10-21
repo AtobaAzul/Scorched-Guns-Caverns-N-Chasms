@@ -44,7 +44,7 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 12.0,
+    "damage": 13.0,
     "ejectsCasing": false,
     "gravity": true  ,
     "item": "caverns_and_chasms:large_arrow",
