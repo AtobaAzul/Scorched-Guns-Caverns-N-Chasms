@@ -33,6 +33,9 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.ANATHEMA, "Anathema");
 
+        addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
+        addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
+
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");
 
         add("scguns.desc.hangman_carbine", "Compact weapon that shines in close quarters combat, being the modern standard issue firearm of the Gravekeepers.");
