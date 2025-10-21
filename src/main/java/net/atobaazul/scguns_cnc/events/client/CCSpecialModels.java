@@ -52,6 +52,28 @@ public enum CCSpecialModels {
 
 
     SILVERLINGING_MAIN("silverlining/main"),
+    SILVERLINGING_STAN_MAGAZINE("silverlining/stand_mag"),
+    SILVERLINGING_FAST_MAGAZINE("silverlining/fast_mag"),
+    SILVERLINGING_EXT_MAGAZINE("silverlining/ext_mag"),
+    SILVERLINGING_STOCK_WEIGHTED("silverlining/heavy_stock"),
+    SILVERLINGING_STOCK_LIGHT("silverlining/light_stock"),
+    SILVERLINGING_STOCK_WOODEN("silverlining/wooden_stock"),
+    SILVERLINGING_NETHERITE_BAYONET("silverlining/netherite_bayonet"),
+    SILVERLINGING_DIAMOND_BAYONET("silverlining/diamond_bayonet"),
+    SILVERLINGING_ANTHRALITE_BAYONET("silverlining/anthralite_bayonet"),
+    SILVERLINGING_IRON_BAYONET("silverlining/iron_bayonet"),
+    SILVERLINGING_LIGHT_GRIP("silverlining/light_grip"),
+    SILVERLINGING_TACT_GRIP("silverlining/tact_grip"),
+
+
+
+
+
+
+
+
+
+
 
     BELLA_MAIN("bella/main"),
     BELLA_STAN_MAGAZINE("bella/stan_magazine"),
