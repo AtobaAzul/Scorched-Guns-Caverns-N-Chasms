@@ -28,6 +28,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MEDIUM_NECROMIUM_CASING);
         simpleItem(ModItems.SILVER_BULLET);
         simpleItem(ModItems.THE_HUNGER);
+
+        simpleItem(ModItems.UNFINISHED_HEX_ROUND);
+        simpleItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

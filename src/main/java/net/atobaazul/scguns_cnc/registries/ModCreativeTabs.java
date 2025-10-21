@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.init.ModCreativeModeTabs;
 
+import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 public class ModCreativeTabs {
@@ -33,6 +34,11 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.SILVER_BULLET.get());
+
+        if (CREATE_ENABLED) {
+            addItem(pOutput, ModItems.UNFINISHED_HEX_ROUND.get());
+            addItem(pOutput, ModItems.UNFINISHED_COMPACT_HEX_ROUND.get());
+        }
 
     }).build());
 

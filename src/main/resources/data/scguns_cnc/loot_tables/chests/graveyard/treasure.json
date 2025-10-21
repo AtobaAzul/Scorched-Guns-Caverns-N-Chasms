@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "scguns_cnc:chests/graveyard/generic"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:sequence",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:necromium_gun_frame",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.35
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "caverns_and_chasms:necromium_ingot",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.5
+                }
+              ]
+            }
+          ],
+          "functions": []
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "rolls": 6,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "caverns_and_chasms:living_flesh",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "caverns_and_chasms:bejeweled_apple",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

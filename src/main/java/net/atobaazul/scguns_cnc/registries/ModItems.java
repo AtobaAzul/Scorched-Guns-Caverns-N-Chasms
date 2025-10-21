@@ -8,7 +8,9 @@ import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.AmmoItem;
 import top.ribs.scguns.item.BlueprintItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
+import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 
+import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 public class ModItems {
@@ -119,4 +121,13 @@ public class ModItems {
     public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
+    public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
+
+    private static RegistryObject<Item> sequencedIngredient(String name) {
+        if (CREATE_ENABLED) {
+            return REGISTER.register(name, () -> new SequencedAssemblyItem(new Item.Properties()));
+        }
+        return REGISTER.register(name, () -> new Item(new Item.Properties()));
+    };
 }

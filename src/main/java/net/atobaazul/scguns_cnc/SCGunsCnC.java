@@ -52,8 +52,6 @@ public class SCGunsCnC
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         ModItems.REGISTER.register(modEventBus);
         ModEntities.REGISTER.register(modEventBus);
         Particles.REGISTER.register(modEventBus);
