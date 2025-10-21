@@ -27,6 +27,29 @@ public enum CCSpecialModels {
 
 
     RIBCAGE_MAIN("ribcage/main"),
+  RIBCAGE_STAN_BARREL("ribcage/stan_barrel"),
+  RIBCAGE_EXT_BARREL("ribcage/ext_barrel"),
+  RIBCAGE_STOCK_WEIGHTED("ribcage/heavy_stock"),
+  RIBCAGE_STOCK_LIGHT("ribcage/light_stock"),
+  RIBCAGE_STOCK_WOODEN("ribcage/wooden_stock"),
+  RIBCAGE_STAN_GRIP("ribcage/stan_grip"),
+  RIBCAGE_SILENCER("ribcage/silencer"),
+  RIBCAGE_ADVANCED_SILENCER("ribcage/advanced_silencer"),
+  RIBCAGE_MUZZLE_BRAKE("ribcage/muzzle_brake"),
+
+  RIBCAGE_NETHERITE_BAYONET("ribcage/netherite_bayonet"),
+  RIBCAGE_DIAMOND_BAYONET("ribcage/diamond_bayonet"),
+  RIBCAGE_ANTHRALITE_BAYONET("ribcage/anthralite_bayonet"),
+  RIBCAGE_IRON_BAYONET("ribcage/iron_bayonet"),
+  RIBCAGE_LIGHT_GRIP("ribcage/light_grip"),
+  RIBCAGE_TACT_GRIP("ribcage/tact_grip"),
+
+
+
+
+
+
+
 
     SILVERLINGING_MAIN("silverlining/main"),
 

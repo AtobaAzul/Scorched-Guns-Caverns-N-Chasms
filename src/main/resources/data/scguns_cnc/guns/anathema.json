@@ -60,6 +60,6 @@
     "enchantedFire": "caverns_and_chasms:entity.deeper.hurt",
     "fire": "caverns_and_chasms:entity.deeper.hurt",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire"
+    "silencedFire": "caverns_and_chasms:entity.deeper.hurt"
   }
 }
