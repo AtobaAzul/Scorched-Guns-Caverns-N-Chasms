@@ -69,6 +69,24 @@ public enum CCSpecialModels {
 
 
     HANGMAN_CARBINE_MAIN("hangman_carbine/main"),
+    HANGMAN_STAN_MAGAZINE("hangman_carbine/stand_mag"),
+    HANGMAN_FAST_MAGAZINE("hangman_carbine/fast_mag"),
+   HANGMAN_EXT_MAGAZINE("hangman_carbine/ext_mag"),
+   HANGMAN_STAN_BARREL("hangman_carbine/stand_barrel"),
+    HANGMAN_EXT_BARREL("hangman_carbine/ext_barrel"),
+    HANGMAN_STOCK_WEIGHTED("hangman_carbine/heavy_stock"),
+    HANGMAN_STOCK_LIGHT("hangman_carbine/light_stock"),
+    HANGMAN_STOCK_WOODEN("hangman_carbine/wooden_stock"),
+    HANGMAN_STAN_GRIP("hangman_carbine/stand_grip"),
+    HANGMAN_SILENCER("hangman_carbine/silencer"),
+    HANGMAN_ADVANCED_SILENCER("hangman_carbine/advanced_silencer"),
+    HANGMAN_MUZZLE_BRAKE("hangman_carbine/muzzle_brake"),
+   HANGMAN_NETHERITE_BAYONET("hangman_carbine/netherite_bayonet"),
+   HANGMAN_DIAMOND_BAYONET("hangman_carbine/diamond_bayonet"),
+    HANGMAN_ANTHRALITE_BAYONET("hangman_carbine/the_voices"),
+    HANGMAN_IRON_BAYONET("hangman_carbine/iron_bayonet"),
+    HANGMAN_LIGHT_GRIP("hangman_carbinee/light_grip"),
+    HANGMAN_TACT_GRIP("hangman_carbine/tact_grip"),
 
 
 
