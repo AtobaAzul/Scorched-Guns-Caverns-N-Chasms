@@ -121,13 +121,13 @@
 			},
 			"sound_effects": {
 				"0.125": {
-					"effect": "SILVERLINING_PULL_START"
+					"effect": "bolt_pull"
 				},
 				"0.2917": {
-					"effect": "SILVERLINING_PULL_MIDDLE"
+					"effect": "pull2"
 				},
 				"0.5": {
-					"effect": "SILVERLINING_PULL_END"
+					"effect": "bolt_release"
 				}
 			}
 		},
@@ -234,13 +234,13 @@
 			},
 			"sound_effects": {
 				"0.125": {
-					"effect": "SILVERLINING_PULL_START"
+					"effect": "bolt_pull"
 				},
 				"0.2917": {
-					"effect": "SILVERLINING_PULL_MIDDLE"
+					"effect": "pull2"
 				},
 				"0.5": {
-					"effect": "SILVERLINING_PULL_END"
+					"effect": "bolt_release"
 				}
 			}
 		},
@@ -435,13 +435,13 @@
 			},
 			"sound_effects": {
 				"0.1667": {
-					"effect": "SILVERLINING_PULL_START"
+					"effect": "bolt_pull"
 				},
 				"0.3333": {
-					"effect": "SILVERLINING_PULL_MIDDLE"
+					"effect": "pull2"
 				},
 				"0.5833": {
-					"effect": "SILVERLINING_PULL_END"
+					"effect": "bolt_release"
 				}
 			}
 		},
