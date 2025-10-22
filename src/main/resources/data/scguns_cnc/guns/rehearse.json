@@ -21,7 +21,7 @@
     "meleeCooldownTicks": 10,
     "meleeReach": 2.5,
     "hotBarrelRate": 24,
-    "criticalChance": 0.15,
+    "criticalChance": 0.2,
     "isRevolver": true,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.2
