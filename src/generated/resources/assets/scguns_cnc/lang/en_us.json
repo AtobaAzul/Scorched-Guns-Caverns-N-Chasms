@@ -25,7 +25,7 @@
   "scguns.desc.ribcage": "The Ribcage heavy rifle is wildly used by Gravekeeper marksman, firing rounds capable of harming the very essence of its targets.",
   "scguns.desc.silverlining": "The oldest weapon of the Gravekeeper arsenal, with its creation dating back to the very origins of the organization. It is still widely used as a assassin's weapon by the believers of the Holy Curse.",
   "scguns_cnc.jei.info.gravekeeper_blueprint": "Can be obtained from Graveyard structures.",
-  "tooltip.anathema": "Melee hits feed the \"gun\", restoring ammo",
+  "tooltip.anathema": "Melee hits feed the \"gun\", restoring ammo.",
   "tooltip.bluntshot.knockback": "Deals increased knockback to hit targets.",
   "tooltip.hex_round.magic_damage": "Deals half of the bullet damage as magic damage."
 }
