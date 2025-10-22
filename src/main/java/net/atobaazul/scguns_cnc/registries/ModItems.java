@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.registries;
 
 import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
+import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -93,7 +94,7 @@ public class ModItems {
 
 
     public static final RegistryObject<AnimatedGunItem> ANATHEMA = REGISTER.register("anathema",
-            () -> new AnimatedGunItem(
+            () -> new AnathemaGunItem(
                     new Item.Properties().stacksTo(1).durability(800),
                     "anathema", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out

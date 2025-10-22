@@ -39,6 +39,7 @@ public class ModLangProvider extends LanguageProvider {
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
         add("tooltip.bluntshot.knockback", "Deals increased knockback to hit targets.");
+        add("tooltip.anathema", "Melee hits feed the \"gun\", restoring ammo.");
 
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");
