@@ -35,6 +35,8 @@ public class ModLangProvider extends LanguageProvider {
 
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
+        addItem(ModItems.LESSER_STRAWMAN, "Wierd Doll");
+        addItem(ModItems.GRAVEKEEPER_FLARE, "Gravekeeper Flare");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
@@ -54,5 +56,9 @@ public class ModLangProvider extends LanguageProvider {
 
         //misc.
         add("scguns_cnc.jei.info.gravekeeper_blueprint", "Can be obtained from Graveyard structures.");
+        add("raid.announcement.scguns_cnc.gravekeeper", "The Gravekeepers arrived, the curse demand a sacrifice!");
+        add("raid.boss.scguns_cnc.gravekeeper", "Gravekeeper Herald");
+        add("item.scguns_cnc.lesser_strawman.tooltip", "A doll used in rituals. You feel it move when you're not looking.");
+        add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
     }
 }

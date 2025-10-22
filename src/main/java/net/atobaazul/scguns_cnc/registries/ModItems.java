@@ -10,6 +10,8 @@ import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.AmmoItem;
 import top.ribs.scguns.item.BlueprintItem;
+import top.ribs.scguns.item.RaidFlareItem;
+import top.ribs.scguns.item.TooltipItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
@@ -125,6 +127,14 @@ public class ModItems {
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
+
+    public static final RegistryObject<Item> GRAVEKEEPER_FLARE = REGISTER.register("gravekeeper_flare",
+            () -> new RaidFlareItem(new Item.Properties().stacksTo(16), "gravekeeper"));
+
+    public static final RegistryObject<Item> LESSER_STRAWMAN = REGISTER.register("lesser_strawman",
+            () -> new TooltipItem(new Item.Properties(),
+                    "item.scguns_cnc.lesser_strawman.tooltip",
+                    "item.scguns.found_in_raids"));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {

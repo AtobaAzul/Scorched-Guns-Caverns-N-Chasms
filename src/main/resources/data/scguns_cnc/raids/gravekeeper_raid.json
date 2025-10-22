@@ -1,0 +1,128 @@
+{
+  "raid_id": "gravekeeper",
+  "raid_level": 4,
+  "boss": {
+    "entity_type": "minecraft:wither_skeleton",
+    "custom_name": "translation:raid.boss.scguns_cnc.gravekeeper",
+    "fixed_health": 150.0,
+    "weapon": {
+      "item": "scguns_cnc:ribcage",
+      "drop_chance": 0.35
+    },
+    "armor": [
+      {
+        "item": "caverns_and_chasms:sanguine_helmet",
+        "slot": "head",
+        "drop_chance": 0.5
+      },
+      {
+        "item": "caverns_and_chasms:necromium_chestplate",
+        "slot": "chest",
+        "drop_chance": 0.25
+      },
+      {
+        "item": "caverns_and_chasms:necromium_leggings",
+        "slot": "legs",
+        "drop_chance": 0.25
+      },
+      {
+        "item": "caverns_and_chasms:necromium_boots",
+        "slot": "feet",
+        "drop_chance": 0.25
+      }
+    ],
+    "effects": [
+      {
+        "effect": "minecraft:regeneration",
+        "amplifier": 1,
+        "duration": -1,
+        "ambient": false,
+        "visible": false
+      },
+      {
+        "effect": "minecraft:glowing",
+        "amplifier": 1,
+        "duration": -1,
+        "ambient": true,
+        "visible": false
+      },
+      {
+        "effect": "minecraft:speed",
+        "amplifier": 1,
+        "duration": -1,
+        "ambient": true,
+        "visible": false
+      }
+    ],
+    "ai_difficulty": 8,
+    "ai_type": "TACTICAL",
+    "special_loot_table": "scguns_cnc:raids/gravekeeper_boss"
+  },
+  "henchmen": {
+    "types": [
+      {
+        "entity_type": "minecraft:skeleton",
+        "weight": 4.0,
+        "health_multiplier": 2.0,
+        "weapons": [
+          "scguns_cnc:hangman_carbine",
+          "scguns_cnc:bella",
+          "scguns_cnc:keteriya",
+          "caverns_and_chasms:silver_sword"
+        ],
+        "armor": [
+          {
+            "item": "caverns_and_chasms:sanguine_helmet",
+            "slot": "head",
+            "drop_chance": 0.3
+          },
+          {
+            "item": "caverns_and_chasms:silver_chestplate",
+            "slot": "chest",
+            "drop_chance": 0.25
+          },
+          {
+            "item": "caverns_and_chasms:silver_leggings",
+            "slot": "legs",
+            "drop_chance": 0.2
+          },
+          {
+            "item": "caverns_and_chasms:silver_boots",
+            "slot": "feet",
+            "drop_chance": 0.2
+          }
+        ],
+        "effects": [
+          {
+            "effect": "minecraft:speed",
+            "amplifier": 0,
+            "duration": -1,
+            "ambient": false,
+            "visible": false
+          },
+          {
+            "effect": "minecraft:resistance",
+            "amplifier": 0,
+            "duration": -1,
+            "ambient": true,
+            "visible": false
+          }
+        ],
+        "ai_difficulty": 6,
+        "ai_type": "TACTICAL"
+      }
+    ],
+    "spawn_interval_ticks": 300,
+    "max_alive": 14,
+    "spawn_radius": 20,
+    "spawn_attempts_per_wave": 4
+  },
+  "spawn_conditions": {
+    "min_players_nearby": 1,
+    "search_radius": 64,
+    "valid_dimensions": [
+      "minecraft:overworld"
+    ],
+    "announcement_message": "translation:raid.announcement.scguns_cnc.gravekeeper"
+  }
+}

@@ -31,6 +31,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.UNFINISHED_HEX_ROUND);
         simpleItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND);
+
+        simpleItem(ModItems.LESSER_STRAWMAN);
+        simpleItem(ModItems.GRAVEKEEPER_FLARE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

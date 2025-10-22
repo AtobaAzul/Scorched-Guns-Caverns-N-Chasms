@@ -64,6 +64,11 @@
           "type": "minecraft:item",
           "name": "caverns_and_chasms:bejeweled_apple",
           "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "scguns:blueprint_scrap",
+          "weight": 1
         }
       ]
     }

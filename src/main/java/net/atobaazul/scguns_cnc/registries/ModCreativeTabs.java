@@ -10,7 +10,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.init.ModCreativeModeTabs;
 
-import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 public class ModCreativeTabs {
@@ -34,6 +33,9 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.SILVER_BULLET.get());
+
+        addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());
+        addItem(pOutput, ModItems.LESSER_STRAWMAN.get());
     }).build());
 
     public static void register(IEventBus eventBus) {
