@@ -179,9 +179,6 @@ dependencies {
     implementation(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
     implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
-
-    //yungs api
-    implementation fg.deobf("curse.maven:yungs-api-421850:5769971")
 }
 
 
