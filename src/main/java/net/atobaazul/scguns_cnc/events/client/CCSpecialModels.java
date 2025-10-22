@@ -107,7 +107,7 @@ public enum CCSpecialModels {
    HANGMAN_DIAMOND_BAYONET("hangman_carbine/diamond_bayonet"),
     HANGMAN_ANTHRALITE_BAYONET("hangman_carbine/the_voices"),
     HANGMAN_IRON_BAYONET("hangman_carbine/iron_bayonet"),
-    HANGMAN_LIGHT_GRIP("hangman_carbinee/light_grip"),
+    HANGMAN_LIGHT_GRIP("hangman_carbine/light_grip"),
     HANGMAN_TACT_GRIP("hangman_carbine/tact_grip"),
 
 
