@@ -4,7 +4,7 @@
   "boss": {
     "entity_type": "minecraft:wither_skeleton",
     "custom_name": "translation:raid.boss.scguns_cnc.gravekeeper",
-    "fixed_health": 150.0,
+    "fixed_health": 180.0,
     "weapon": {
       "item": "scguns_cnc:ribcage",
       "drop_chance": 0.35
