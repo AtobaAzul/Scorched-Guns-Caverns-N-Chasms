@@ -120,13 +120,13 @@
 				}
 			},
 			"sound_effects": {
-				"0.125": {
+				"0.0833": {
 					"effect": "bolt_pull"
 				},
 				"0.2917": {
 					"effect": "pull2"
 				},
-				"0.5": {
+				"0.4167": {
 					"effect": "bolt_release"
 				}
 			}
@@ -233,13 +233,13 @@
 				}
 			},
 			"sound_effects": {
-				"0.125": {
+				"0.0833": {
 					"effect": "bolt_pull"
 				},
 				"0.2917": {
 					"effect": "pull2"
 				},
-				"0.5": {
+				"0.4167": {
 					"effect": "bolt_release"
 				}
 			}
@@ -434,13 +434,13 @@
 				}
 			},
 			"sound_effects": {
-				"0.1667": {
+				"0.0833": {
 					"effect": "bolt_pull"
 				},
 				"0.3333": {
 					"effect": "pull2"
 				},
-				"0.5833": {
+				"0.5": {
 					"effect": "bolt_release"
 				}
 			}
