@@ -25,6 +25,7 @@ public class CnCGunEntityRenderers {
         event.registerEntityRenderer(ModEntities.BLUNTSHOT.get(), ProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.DUMMY_PROJECTILE.get(), ProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.BLOOD_SHOT.get(), ProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.STRIKER_ROUND_PROJECTILE.get(), ProjectileRenderer::new);
 
     }
 }

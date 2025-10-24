@@ -1,8 +1,11 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
+import net.atobaazul.scguns_cnc.common.item.StrikerRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
+import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -107,15 +110,28 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> LUSTRE = REGISTER.register("lustre",
+            () -> new ZirconiumLaserGunItem(
+                    new Item.Properties().stacksTo(1).durability(1350).rarity(CCItems.FANCY),
+                    "lustre",
+                    ModSounds.MAG_OUT.get(),
+                    ModSounds.MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSounds.COPPER_GUN_JAM.get(),
+                    ModSounds.COPPER_GUN_JAM.get()
+            )
+    );
+
+
 
     //blueprint
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
-    //arounds
+    //rounds
     public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new BluntshotAmmoItem(new Item.Properties()));
-
+    public static final RegistryObject<Item> STRIKER_ROUND = REGISTER.register("striker_round", () -> new StrikerRoundAmmoItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
 

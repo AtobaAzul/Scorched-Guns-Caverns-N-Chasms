@@ -1,9 +1,6 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.atobaazul.scguns_cnc.common.entity.BloodShotProjectileEntity;
-import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
-import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
-import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
+import net.atobaazul.scguns_cnc.common.entity.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -28,6 +25,7 @@ public class ModEntities {
 
 
     public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);
+    public static final RegistryObject<EntityType<StrikerRoundProjectileEntity>> STRIKER_ROUND_PROJECTILE = registerBasic("striker_round_projectile", StrikerRoundProjectileEntity::new);
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)

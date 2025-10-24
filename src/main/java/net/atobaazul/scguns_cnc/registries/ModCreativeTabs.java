@@ -24,6 +24,7 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
+        addItemWithFullAmmo(pOutput, ModItems.LUSTRE.get());
 
         addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.HEX_ROUND.get());
