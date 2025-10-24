@@ -21,9 +21,7 @@ import top.ribs.scguns.item.GunItem;
 public abstract class ServerPlayHandlerMixin {
     @Inject(method = "fireProjectiles", at = @At("TAIL"), remap = false)
     private static void scguns_cnc$fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun, CallbackInfo ci) {
-        System.out.println("firing");
         if (modifiedGun.getProjectile().getItem() == CCItems.LARGE_ARROW.get()) {
-            System.out.println("is large arrow");
 
             LargeArrow arrow = new LargeArrow(world, player);
 
