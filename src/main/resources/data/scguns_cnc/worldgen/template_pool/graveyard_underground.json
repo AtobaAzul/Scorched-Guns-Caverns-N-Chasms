@@ -6,7 +6,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "scguns_cnc:graveyard_underground",
+        "location": "scguns_cnc:graveyard_underground_0",
         "projection": "rigid",
         "processors": {
           "processors": [
@@ -17,25 +17,26 @@
                   "Name": "minecraft:structure_block"
                 }
               ]
-            },
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:graveyard_underground_1",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
             {
-              "processor_type": "minecraft:rule",
-              "rules": [
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
                 {
-                  "input_predicate": {
-                    "block": "minecraft:polished_granite",
-                    "predicate_type": "minecraft:random_block_match",
-                    "probability": 1
-                  },
-                  "location_predicate": {
-                    "predicate_type": "minecraft:always_true"
-                  },
-                  "output_state": {
-                    "Name": "minecraft:air"
-                  }
+                  "Name": "minecraft:structure_block"
                 }
               ]
-
             }
           ]
         }

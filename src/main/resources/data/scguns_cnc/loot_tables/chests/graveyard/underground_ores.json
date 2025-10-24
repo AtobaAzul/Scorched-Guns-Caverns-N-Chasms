@@ -1,0 +1,50 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 8,
+        "max": 16
+      },
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "scguns:sulfur_dust",
+              "weight": 10
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns:niter_dust",
+              "weight": 10
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:coal",
+              "weight": 10
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns:vehement_coal",
+              "weight": 1
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 5
+          },
+          "add": false
+        }
+      ]
+    }
+  ]
+}
