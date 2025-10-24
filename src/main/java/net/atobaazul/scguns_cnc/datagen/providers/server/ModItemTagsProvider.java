@@ -1,6 +1,7 @@
-package net.atobaazul.scguns_cnc.datagen.providers;
+package net.atobaazul.scguns_cnc.datagen.providers.server;
 
 
+import com.teamabnormals.caverns_and_chasms.core.other.tags.CCItemTags;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -29,10 +30,10 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
         super(output, lookupProvider, blockTags, MOD_ID, existingFileHelper);
     }
 
+
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.ONE_HANDED_CARBINE).add(ModItems.REHEARSE.get());
-
 
         tag(AMMO)
             .add(ModItems.COMPACT_HEX_ROUND.get())
@@ -49,5 +50,13 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
         tag(SHOTGUN_AMMO)
             .add(ModItems.BLUNTSHOT.get());
 
+
+        tag(CCItemTags.PLACEABLE_ITEMS)
+                .add(top.ribs.scguns.init.ModItems.ANTHRALITE_INGOT.get())
+                .add(top.ribs.scguns.init.ModItems.SCORCHED_INGOT.get())
+                .add(top.ribs.scguns.init.ModItems.TREATED_IRON_INGOT.get())
+                .add(top.ribs.scguns.init.ModItems.TREATED_BRASS_INGOT.get())
+                .add(top.ribs.scguns.init.ModItems.DEPLETED_DIAMOND_STEEL_INGOT.get())
+                .add(top.ribs.scguns.init.ModItems.DIAMOND_STEEL_INGOT.get());
     }
 }

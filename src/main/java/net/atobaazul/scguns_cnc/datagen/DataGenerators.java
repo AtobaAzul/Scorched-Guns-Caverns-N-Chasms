@@ -1,9 +1,8 @@
 package net.atobaazul.scguns_cnc.datagen;
 
-import net.atobaazul.scguns_cnc.datagen.providers.ModBlockTagProvider;
-import net.atobaazul.scguns_cnc.datagen.providers.ModItemModelProvider;
-import net.atobaazul.scguns_cnc.datagen.providers.ModItemTagsProvider;
-import net.atobaazul.scguns_cnc.datagen.providers.ModLangProvider;
+import net.atobaazul.scguns_cnc.datagen.providers.client.ModItemModelProvider;
+import net.atobaazul.scguns_cnc.datagen.providers.client.ModLangProvider;
+import net.atobaazul.scguns_cnc.datagen.providers.server.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -25,9 +24,20 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        ModBuiltInEntriesProvider datapackEntries = new ModBuiltInEntriesProvider(packOutput, lookupProvider);
+        CompletableFuture<HolderLookup.Provider> provider = datapackEntries.getRegistryProvider();
+
+
+        boolean server = event.includeServer();
+        boolean client = event.includeClient();
+
         ModBlockTagProvider blockTagProvider = generator.addProvider(event.includeServer(), new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModLangProvider(packOutput));
+        generator.addProvider(server, new ModItemTagsProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(client, new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(client, new ModLangProvider(packOutput));
+        generator.addProvider(server, new ModLootTableProvider(packOutput));
+        generator.addProvider(client, new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(server, new ModEntityTagsProvider(packOutput, provider, existingFileHelper));
+
     }
 }

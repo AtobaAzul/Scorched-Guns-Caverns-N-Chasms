@@ -1,0 +1,6 @@
+{
+  "parent": "scguns_cnc:block/template_ingot_right_z_layer3",
+  "textures": {
+    "ingot": "scguns_cnc:block/anthralite_ingot"
+  }
+}

@@ -1,16 +1,12 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
+import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
-import net.atobaazul.scguns_cnc.common.entity.BloodShotProjectileEntity;
-import net.atobaazul.scguns_cnc.common.entity.BluntshotProjectileEntity;
-import net.atobaazul.scguns_cnc.common.entity.DummyProjectileEntity;
-import net.atobaazul.scguns_cnc.common.entity.HexRoundProjectileEntity;
+import net.atobaazul.scguns_cnc.common.entity.*;
 import net.atobaazul.scguns_cnc.events.client.Particles;
-import net.atobaazul.scguns_cnc.registries.ModCreativeTabs;
-import net.atobaazul.scguns_cnc.registries.ModEntities;
-import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
+import net.atobaazul.scguns_cnc.registries.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,9 +18,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import top.ribs.scguns.common.ProjectileManager;
-import net.atobaazul.scguns_cnc.registries.ModItems;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
@@ -35,6 +31,7 @@ public class SCGunsCnC
     // Directly reference a slf4j logger
     ;
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(ForgeRegistries.BLOCKS, new ModBlockSubRegistryHelper(helper)));
 
     public SCGunsCnC(FMLJavaModLoadingContext context)
     {
@@ -43,6 +40,7 @@ public class SCGunsCnC
 
         modEventBus.addListener(this::commonSetup);
 
+        REGISTRY_HELPER.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

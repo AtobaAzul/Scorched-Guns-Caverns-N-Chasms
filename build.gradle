@@ -154,6 +154,11 @@ repositories {
     maven { url "https://maven.ryanliptak.com/" }
     maven { url "https://maven.teamabnormals.com" }
     maven { url "https://dvs1.progwml6.com/files/maven/" }
+
+    //external mod dependencies. (Indev CC)
+    flatDir {
+        dir 'extra_libs'
+    }
 }
 
 
@@ -169,7 +174,7 @@ dependencies {
     implementation fg.deobf("curse.maven:curios-309927:5367944")
     //implementation fg.deobf("curse.maven:scorched-guns-802940:7090528")
     implementation fg.deobf("maven.modrinth:scorched-guns-2:0.5.2-1.20.1")
-    implementation fg.deobf("curse.maven:caverns-and-chasms-438005:6040957")
+    //implementation fg.deobf("curse.maven:caverns-and-chasms-438005:6040957")
     implementation fg.deobf("curse.maven:blueprint-382216:6408581")
 
 
@@ -187,6 +192,12 @@ dependencies {
 
     //yungs api
     implementation fg.deobf("curse.maven:yungs-api-421850:5769971")
+
+    //indev C&C
+    implementation "com.teamabnormals:caverns_and_chasms:1.20.1:2.1.0-beta2"
+
+    //aaaa
+    implementation fg.deobf("curse.maven:gallery-1173553:6321203")
 }
 
 

@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.datagen.providers;
+package net.atobaazul.scguns_cnc.datagen.providers.client;
 
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.data.PackOutput;

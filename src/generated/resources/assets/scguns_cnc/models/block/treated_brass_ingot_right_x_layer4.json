@@ -1,0 +1,6 @@
+{
+  "parent": "scguns_cnc:block/template_ingot_right_x_layer4",
+  "textures": {
+    "ingot": "scguns_cnc:block/treated_brass_ingot"
+  }
+}

@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.datagen.providers;
+package net.atobaazul.scguns_cnc.datagen.providers.client;
 
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.data.PackOutput;
@@ -32,10 +32,11 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.SILVER_LINING, "Silver Lining");
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.ANATHEMA, "Anathema");
+        addItem(ModItems.LUSTRE, "Lustre");
 
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
-        addItem(ModItems.LESSER_STRAWMAN, "Wierd Doll");
+        addItem(ModItems.LESSER_STRAWMAN, "Weird Doll");
         addItem(ModItems.GRAVEKEEPER_FLARE, "Gravekeeper Flare");
 
         //tooltips
