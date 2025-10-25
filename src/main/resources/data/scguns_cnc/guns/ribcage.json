@@ -53,6 +53,9 @@
   "projectile": {
     "advantage": "scguns:heavy",
     "damage": 18.5,
+    "damageFalloffStart": 35.0,
+    "damageFalloffEnd": 90.0,
+    "damageFalloffMinMultiplier": 0.85,
     "ejectsCasing": true,
     "gravity": false  ,
     "item": "scguns_cnc:hex_round",

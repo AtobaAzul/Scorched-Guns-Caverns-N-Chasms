@@ -25,15 +25,8 @@
         "yOffset": 6,
         "zOffset": 1.0
       },
-      "stock": {
-        "scale": 0.0
-      },
       "magazine": {
         "scale": 0.0
-      },
-      "underBarrel": {
-        "yOffset": 5.5,
-        "zOffset": -2.5
       }
     },
     "zoom": {
