@@ -55,6 +55,9 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.rehearse", "In anticipation for a time were subtlety would be no longer needed, the Gravekeepers started expanding their arsenal with larger guns. The Rehearse became the first of newly developed guns for the new world.");
         add("scguns.desc.keteriya", "Capable of launching the user and its targets, it can used as a mobility tool to close the distance and deliver devastating blow with the attached axe blade.");
 
+        add("gun_tier.scguns.gravekeeper", "Gravekeeper");
+        add("raid.scguns.gravekeeper", "Gravekeeper Raid");
+
         //misc.
         add("scguns_cnc.jei.info.gravekeeper_blueprint", "Can be obtained from Graveyard structures.");
         add("raid.announcement.scguns_cnc.gravekeeper", "The Gravekeepers arrived, the curse demand a sacrifice!");

@@ -56,6 +56,9 @@
   "projectile": {
     "advantage": "scguns:none",
     "damage": 7,
+    "damageFalloffStart": 11.0,
+    "damageFalloffEnd": 28.0,
+    "damageFalloffMinMultiplier": 0.45,
     "ejectsCasing": true,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns_cnc:small_necromium_casing",

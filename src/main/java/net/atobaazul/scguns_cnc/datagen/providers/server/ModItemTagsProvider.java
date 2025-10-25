@@ -1,8 +1,6 @@
 package net.atobaazul.scguns_cnc.datagen.providers.server;
 
-
 import com.teamabnormals.caverns_and_chasms.core.other.tags.CCItemTags;
-import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +16,8 @@ import top.ribs.scguns.init.ModTags;
 import java.util.concurrent.CompletableFuture;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+import static net.atobaazul.scguns_cnc.common.ModTags.*;
+import static net.atobaazul.scguns_cnc.registries.ModItems.*;
 
 
 public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvider {
@@ -34,21 +34,31 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(ModTags.Items.ONE_HANDED_CARBINE).add(ModItems.REHEARSE.get());
+        tag(ModTags.Items.ONE_HANDED_CARBINE).add(REHEARSE.get());
 
         tag(AMMO)
-            .add(ModItems.COMPACT_HEX_ROUND.get())
-            .add(ModItems.HEX_ROUND.get())
-            .add(ModItems.BLUNTSHOT.get());
+            .add(COMPACT_HEX_ROUND.get())
+            .add(HEX_ROUND.get())
+            .add(BLUNTSHOT.get());
 
 
         tag(PISTOL_AMMO)
-            .add(ModItems.COMPACT_HEX_ROUND.get());
+            .add(COMPACT_HEX_ROUND.get());
 
         tag(RIFLE_AMMO)
-            .add(ModItems.HEX_ROUND.get());
+            .add(HEX_ROUND.get());
 
         tag(SHOTGUN_AMMO)
-            .add(ModItems.BLUNTSHOT.get());
+            .add(BLUNTSHOT.get());
+
+        tag(GRAVEKEEPER_GUN_TIER)
+                .add(HANGMAN_CARBINE.get())
+                .add(RIBCAGE.get())
+                .add(BELLA.get())
+                .add(REHEARSE.get())
+                .add(SILVER_LINING.get())
+                .add(KETERIYA.get())
+                .add(ANATHEMA.get());
+
     }
 }
