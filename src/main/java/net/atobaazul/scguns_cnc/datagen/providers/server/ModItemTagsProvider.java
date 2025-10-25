@@ -1,6 +1,5 @@
 package net.atobaazul.scguns_cnc.datagen.providers.server;
 
-import com.teamabnormals.caverns_and_chasms.core.other.tags.CCItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -50,6 +49,15 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(SHOTGUN_AMMO)
             .add(BLUNTSHOT.get());
+
+        tag(GRAVEKEEPER_GUN_TIER)
+                .add(HANGMAN_CARBINE.get())
+                .add(RIBCAGE.get())
+                .add(BELLA.get())
+                .add(REHEARSE.get())
+                .add(SILVER_LINING.get())
+                .add(KETERIYA.get())
+                .add(ANATHEMA.get());
 
         tag(GRAVEKEEPER_GUN_TIER)
                 .add(HANGMAN_CARBINE.get())

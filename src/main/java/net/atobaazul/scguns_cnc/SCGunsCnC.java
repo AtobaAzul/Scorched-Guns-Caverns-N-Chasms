@@ -6,7 +6,10 @@ import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.common.entity.*;
 import net.atobaazul.scguns_cnc.events.client.Particles;
-import net.atobaazul.scguns_cnc.registries.*;
+import net.atobaazul.scguns_cnc.registries.ModCreativeTabs;
+import net.atobaazul.scguns_cnc.registries.ModEntities;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,7 +23,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+import top.ribs.scguns.client.screen.BlueprintScreen;
 import top.ribs.scguns.common.ProjectileManager;
+import net.atobaazul.scguns_cnc.registries.ModItems;
+import top.ribs.scguns.entity.player.GunTierRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
