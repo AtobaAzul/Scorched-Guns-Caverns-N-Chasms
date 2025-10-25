@@ -113,7 +113,10 @@ public enum CCSpecialModels {
 
 
     ANATHEMA_MAIN("anathema/main"),
-    KETERIYA_MAIN("keteriya/main");
+    KETERIYA_MAIN("keteriya/main"),
+    LUSTRE_MAIN("lustre/main");
+
+
 
 
     /**
