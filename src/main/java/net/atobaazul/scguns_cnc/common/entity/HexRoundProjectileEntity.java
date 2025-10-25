@@ -2,8 +2,6 @@ package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
@@ -16,14 +14,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.ribs.scguns.Config;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
-import top.ribs.scguns.init.ModTags;
 import top.ribs.scguns.init.ModDamageTypes;
+import top.ribs.scguns.init.ModTags;
 import top.ribs.scguns.item.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageBlood;
@@ -85,11 +82,11 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
 
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
 
-                entity.hurt(source, damage/2);
+                entity.hurt(source, damage / 2);
 
                 if (entity instanceof LivingEntity livingEntity) {
                     entity.invulnerableTime = 0;
-                    entity.hurt(entity.damageSources().magic(), damage/2);
+                    entity.hurt(entity.damageSources().magic(), damage / 2);
                     SilverItem.causeMagicDamageParticles(livingEntity);
 
                     ResourceLocation effectLocation = this.getProjectile().getImpactEffect();
@@ -100,24 +97,20 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
                             if (effect != null) {
                                 int duration = this.getProjectile().getImpactEffectDuration();
                                 if (headshot) {
-                                    duration = (int)(duration * HEADSHOT_EFFECT_DURATION_MULTIPLIER);
+                                    duration = (int) (duration * HEADSHOT_EFFECT_DURATION_MULTIPLIER);
                                 }
                                 if (entity instanceof LivingEntity livingTarget) {
                                     damage = applyProjectileProtection(livingTarget, damage);
                                     damage = calculateArmorBypassDamage(livingTarget, damage);
                                 }
-                                livingEntity.addEffect(new MobEffectInstance(
-                                        effect,
-                                        duration,
-                                        this.getProjectile().getImpactEffectAmplifier()
-                                ));
+                                livingEntity.addEffect(new MobEffectInstance(effect, duration, this.getProjectile().getImpactEffectAmplifier()));
                             }
                         }
                     }
                 }
             }
 
-            if(entity instanceof LivingEntity) {
+            if (entity instanceof LivingEntity) {
                 GunEnchantmentHelper.applyElementalPopEffect(this.getWeapon(), (LivingEntity) entity);
             }
         }
@@ -127,14 +120,5 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             PacketHandler.getPlayChannel().sendToPlayer(() -> (ServerPlayer) this.shooter, new S2CMessageProjectileHitEntity(hitVec.x, hitVec.y, hitVec.z, hitType, entity instanceof Player));
         }
         PacketHandler.getPlayChannel().sendToTracking(() -> entity, new S2CMessageBlood(hitVec.x, hitVec.y, hitVec.z, entity.getType()));
-    }
-
-    @Override
-    protected void onHitBlock(BlockState state, BlockPos pos, Direction face, double x, double y, double z) {
-        super.onHitBlock(state, pos, face, x, y, z);
-    }
-
-    @Override
-    public void onExpired() {
     }
 }
