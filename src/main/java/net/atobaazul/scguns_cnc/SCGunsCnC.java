@@ -31,16 +31,15 @@ public class SCGunsCnC
     // Directly reference a slf4j logger
     ;
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(ForgeRegistries.BLOCKS, new ModBlockSubRegistryHelper(helper)));
 
     public SCGunsCnC(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
 
-        modEventBus.addListener(this::commonSetup);
 
-        REGISTRY_HELPER.register(modEventBus);
+
+        modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

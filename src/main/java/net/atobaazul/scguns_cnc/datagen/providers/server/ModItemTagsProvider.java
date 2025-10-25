@@ -10,6 +10,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import top.ribs.scguns.init.ModTags;
@@ -49,14 +50,5 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(SHOTGUN_AMMO)
             .add(ModItems.BLUNTSHOT.get());
-
-
-        tag(CCItemTags.PLACEABLE_ITEMS)
-                .add(top.ribs.scguns.init.ModItems.ANTHRALITE_INGOT.get())
-                .add(top.ribs.scguns.init.ModItems.SCORCHED_INGOT.get())
-                .add(top.ribs.scguns.init.ModItems.TREATED_IRON_INGOT.get())
-                .add(top.ribs.scguns.init.ModItems.TREATED_BRASS_INGOT.get())
-                .add(top.ribs.scguns.init.ModItems.DEPLETED_DIAMOND_STEEL_INGOT.get())
-                .add(top.ribs.scguns.init.ModItems.DIAMOND_STEEL_INGOT.get());
     }
 }

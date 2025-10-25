@@ -3,10 +3,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id("org.spongepowered.mixin") version "0.7.+"
-
-
 }
 
 version = mod_version
@@ -167,17 +164,18 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("curse.maven:framework-549225:5692398")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    //jei
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+
+    //scguns
     implementation fg.deobf("curse.maven:geckolib-388172:7020955")
     implementation fg.deobf("curse.maven:curios-309927:5367944")
-    //implementation fg.deobf("curse.maven:scorched-guns-802940:7090528")
-    implementation fg.deobf("maven.modrinth:scorched-guns-2:0.5.2-1.20.1")
-    //implementation fg.deobf("curse.maven:caverns-and-chasms-438005:6040957")
-    implementation fg.deobf("curse.maven:blueprint-382216:6408581")
+    implementation fg.deobf("curse.maven:scorched-guns-802940:7144233")
 
-
+    //dummy mod for dps/damage testing.
     implementation fg.deobf("curse.maven:selene-499980:7119907")
     implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
 
@@ -193,11 +191,14 @@ dependencies {
     //yungs api
     implementation fg.deobf("curse.maven:yungs-api-421850:5769971")
 
-    //indev C&C
+    // C&C
+    implementation fg.deobf("curse.maven:blueprint-382216:6408581")
+    implementation fg.deobf("curse.maven:gallery-1173553:6321203")
+    //implementation fg.deobf("curse.maven:caverns-and-chasms-438005:6040957") //TODO: SWAP TO RELEASE VERSION.
     implementation "com.teamabnormals:caverns_and_chasms:1.20.1:2.1.0-beta2"
 
-    //aaaa
-    implementation fg.deobf("curse.maven:gallery-1173553:6321203")
+    //placeable ingots mod
+    implementation "net.atobaazul:cc_compat:1.0.0"
 }
 
 

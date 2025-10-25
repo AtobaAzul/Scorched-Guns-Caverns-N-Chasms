@@ -7,6 +7,7 @@ import net.atobaazul.scguns_cnc.common.item.StrikerRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
