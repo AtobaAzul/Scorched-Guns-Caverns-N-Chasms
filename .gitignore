@@ -26,3 +26,4 @@ forge*changelog.txt
 /.vscode
 /run-data
 /src/generated/resources/.cache
+/extra_libs
