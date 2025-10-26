@@ -61,14 +61,13 @@ public class SCGunsCnC
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             CCClientHandler.registerClientHandlers(modEventBus);
+            BlueprintScreen.registerLoreOnlyItem(new ResourceLocation(MOD_ID, "gravekeeper_blueprint"), "anathema");
         });
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         GunTierRegistry.register("gravekeeper", 6, "gravekeeper_gun_tier", 4);
-
-        BlueprintScreen.registerLoreOnlyItem(new ResourceLocation(MOD_ID, "gravekeeper_blueprint"), "anathema");
 
         ProjectileManager.getInstance().registerFactory(ModItems.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
