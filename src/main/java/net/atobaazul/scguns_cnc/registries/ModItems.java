@@ -7,7 +7,6 @@ import net.atobaazul.scguns_cnc.common.item.StrikerRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -115,8 +114,8 @@ public class ModItems {
             () -> new ZirconiumLaserGunItem(
                     new Item.Properties().stacksTo(1).durability(1350).rarity(CCItems.FANCY),
                     "lustre",
-                    ModSounds.MAG_OUT.get(),
-                    ModSounds.MAG_IN.get(),
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
                     ModSounds.RELOAD_END.get(),
                     ModSounds.COPPER_GUN_JAM.get(),
                     ModSounds.COPPER_GUN_JAM.get()

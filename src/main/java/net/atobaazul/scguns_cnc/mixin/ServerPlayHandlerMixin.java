@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.minecraft.server.level.ServerPlayer;

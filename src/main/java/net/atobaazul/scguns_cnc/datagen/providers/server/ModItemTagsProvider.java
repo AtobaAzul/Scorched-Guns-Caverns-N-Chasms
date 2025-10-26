@@ -60,5 +60,7 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(KETERIYA.get())
                 .add(ANATHEMA.get());
 
+
+        tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get());
     }
 }

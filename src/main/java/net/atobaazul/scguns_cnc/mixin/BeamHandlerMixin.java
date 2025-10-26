@@ -5,18 +5,12 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
 import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.ribs.scguns.client.handler.BeamHandler;
 import top.ribs.scguns.common.Gun;
-
-import static top.ribs.scguns.client.handler.BeamHandler.spawnBeamImpactParticles;
 
 
 @Mixin(BeamHandler.class)

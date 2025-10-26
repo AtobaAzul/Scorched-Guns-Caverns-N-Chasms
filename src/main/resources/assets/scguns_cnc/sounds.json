@@ -115,9 +115,33 @@
   "item.lustre.fire": {
     "sounds": [
       {
-        "name": "scguns_cnc:item/lustre/fire"
+        "name": "scguns_cnc:item/lustre/fire",
+        "volume": 0.6
+      }
+    ]
+  },
+  "item.lustre.jam": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/jam0"
+      },
+      {
+        "name": "scguns_cnc:item/lustre/jam1"
+      }
+    ]
+  },
+  "item.lustre.mag_in": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/mag_in"
+      }
+    ]
+  },
+  "item.lustre.mag_out": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/mag_out"
       }
     ]
   }
-
 }
