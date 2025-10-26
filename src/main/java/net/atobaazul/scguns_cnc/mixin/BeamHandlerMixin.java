@@ -3,8 +3,11 @@ package net.atobaazul.scguns_cnc.mixin;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCSoundEvents;
 import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -47,6 +50,8 @@ public abstract class BeamHandlerMixin {
                 world.addParticle(CCParticleTypes.SPARK.get(), false,
                         hitPos.x + offsetX, hitPos.y + offsetY, hitPos.z + offsetZ, dir.x+offsetX, dir.y+offsetY, dir.z+offsetZ);
             }
+
+            world.playSound(player, new BlockPos((int) hitPos.x, (int) hitPos.y, (int) hitPos.z), CCSoundEvents.MIME_IMPERSONATE.get(), SoundSource.PLAYERS);
         } else {
             original.call(world, hitPos, player);
         }
