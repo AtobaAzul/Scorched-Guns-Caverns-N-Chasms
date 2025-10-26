@@ -111,10 +111,10 @@ public enum CCSpecialModels {
     HANGMAN_TACT_GRIP("hangman_carbine/tact_grip"),
 
 
-
+    LUSTRE_MAIN("lustre/main"),
     ANATHEMA_MAIN("anathema/main"),
-    KETERIYA_MAIN("keteriya/main"),
-    LUSTRE_MAIN("lustre/main");
+    KETERIYA_MAIN("keteriya/main")
+;
 
 
 
