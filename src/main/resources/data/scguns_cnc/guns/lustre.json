@@ -45,7 +45,7 @@
     "advantage": "scguns:none",
     "damage": 12.0,
     "gravity": false,
-    "armorPen": 12.0,
+    "armorPen": 20.0,
     "ejectsCasing": false,
     "item": "scguns:energy_core",
     "life": 50,
