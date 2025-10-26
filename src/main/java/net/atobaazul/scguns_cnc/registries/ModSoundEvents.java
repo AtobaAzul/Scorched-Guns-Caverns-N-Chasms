@@ -15,6 +15,7 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> RIBCARE_FIRE = register("item.ribcage.fire");
     public static final RegistryObject<SoundEvent> BELLA_FIRE = register("item.bella.fire");
     public static final RegistryObject<SoundEvent> REHEARSE_FIRE = register("item.rehearse.fire");
+    public static final RegistryObject<SoundEvent> LUSTRE_FIRE = register("item.lustre.fire");
 
     public static final RegistryObject<SoundEvent> SILVERLINING_FIRE = register("item.silverlining.fire");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_START = register("item.silverlining.pull1");

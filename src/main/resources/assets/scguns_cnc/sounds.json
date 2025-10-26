@@ -111,6 +111,13 @@
         "name": "scguns_cnc:item/silverlining/loading_end"
       }
     ]
+  },
+  "item.lustre.fire": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/fire"
+      }
+    ]
   }
 
 }

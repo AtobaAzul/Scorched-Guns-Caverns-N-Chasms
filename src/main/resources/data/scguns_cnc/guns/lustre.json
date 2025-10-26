@@ -2,14 +2,14 @@
   "display": {
     "flash": {
       "size": 1.2,
-      "yOffset": 6.0,
-      "zOffset": -13.5,
-      "textureLocation": "muzzle_flash_8"
+      "yOffset": 8.0,
+      "zOffset": -12.5,
+      "textureLocation": "muzzle_flash_lustre"
     },
     "beamOrigin": {
       "horizontalOffset": 0.1,
-      "verticalOffset": -0.1,
-      "forwardOffset": 0.3,
+      "verticalOffset": 0.035,
+      "forwardOffset": 0.2,
       "aimHorizontalOffset": 0.0
     }
   },
@@ -62,8 +62,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.beam.fire",
-    "fire": "scguns:item.beam.fire",
+    "enchantedFire": "scguns_cnc:item.lustre.fire",
+    "fire": "scguns_cnc:item.lustre.fire",
     "reload": "scguns:item.flamethrower.reload"
   }
 }
