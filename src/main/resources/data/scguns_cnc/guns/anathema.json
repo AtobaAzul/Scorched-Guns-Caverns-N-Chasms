@@ -27,15 +27,9 @@
     "isSilenced": true
   },
   "modules": {
-    "attachments": {
 
-    },
 
-    "zoom": {
-      "fovModifier": 0.5,
-      "yOffset": 5.9,
-      "zOffset": 3
-    }
+
   },
   "projectile": {
     "advantage": "scguns:none",

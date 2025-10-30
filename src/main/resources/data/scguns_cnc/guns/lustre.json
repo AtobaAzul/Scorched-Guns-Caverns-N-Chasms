@@ -8,12 +8,13 @@
     },
     "beamOrigin": {
       "horizontalOffset": 0.1,
-      "verticalOffset": 0.035,
+      "verticalOffset": 0.065,
       "forwardOffset": 0.2,
       "aimHorizontalOffset": 0.0
     }
   },
   "general": {
+    "weaponType": "special",
     "hasCameraShake": false,
     "fireMode": "scguns:semi_beam",
     "beamColor": "#ffffff",
