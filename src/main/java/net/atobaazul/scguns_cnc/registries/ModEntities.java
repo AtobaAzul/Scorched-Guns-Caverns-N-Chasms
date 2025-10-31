@@ -8,6 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import top.ribs.scguns.entity.throwable.GrenadeEntity;
 
 import java.util.function.BiFunction;
 
@@ -22,6 +23,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BluntshotProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot_projectile", BluntshotProjectileEntity::new);
 
     public static final RegistryObject<EntityType<DummyProjectileEntity>> DUMMY_PROJECTILE = registerBasic("dummy_projectile", DummyProjectileEntity::new);
+
 
 
     public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);

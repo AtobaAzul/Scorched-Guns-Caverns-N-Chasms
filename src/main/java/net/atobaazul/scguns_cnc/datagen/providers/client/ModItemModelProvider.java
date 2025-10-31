@@ -34,6 +34,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.LESSER_STRAWMAN);
         simpleItem(ModItems.GRAVEKEEPER_FLARE);
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

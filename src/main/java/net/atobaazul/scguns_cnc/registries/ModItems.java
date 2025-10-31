@@ -3,6 +3,7 @@ package net.atobaazul.scguns_cnc.registries;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
+import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.StrikerRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
@@ -11,10 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.init.ModSounds;
-import top.ribs.scguns.item.AmmoItem;
-import top.ribs.scguns.item.BlueprintItem;
-import top.ribs.scguns.item.RaidFlareItem;
-import top.ribs.scguns.item.TooltipItem;
+import top.ribs.scguns.item.*;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
@@ -121,6 +119,9 @@ public class ModItems {
                     ModSounds.COPPER_GUN_JAM.get()
             )
     );
+
+    public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
+
 
 
 
