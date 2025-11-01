@@ -34,6 +34,8 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.SILVER_LINING.get(), new SilverliningModel());
         ModelOverrides.register(ModItems.RIBCAGE.get(), new RibcageModel());
         ModelOverrides.register(ModItems.REHEARSE.get(), new RehearseModel());
+        ModelOverrides.register(ModItems.LUSTRE.get(), new LustreModel());
+
 
     }}
 
