@@ -41,7 +41,6 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
     }
 
 
-
     @Override
     protected void onProjectileTick() {
         if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
@@ -49,12 +48,24 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         }
     }
 
+
+    //TODO: REMOVE THIS WHEN RIBS MAKES THIS PUBLIC.
+    float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
+        float chance = GunModifierHelper.getCriticalChance(weapon);
+        if (rand.nextFloat() < chance) {
+            float critMultiplier = this.modifiedGun.getProjectile().getCritDamageMultiplier();
+            return damage * critMultiplier;
+        }
+        return damage;
+    }
+
+
     @Override
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
         float damage = this.getDamage();
-       // float newDamage = this.getCriticalDamage(this.getWeapon(), this.random, damage);
-       // boolean critical = damage != newDamage;
-      //  damage = newDamage;
+        float newDamage = this.getCriticalDamage(this.getWeapon(), this.random, damage);
+        boolean critical = damage != newDamage;
+        damage = newDamage;
         ResourceLocation advantage = this.getProjectile().getAdvantage();
         damage *= advantageMultiplier(entity);
 
@@ -74,8 +85,6 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             DamageSource source = ModDamageTypes.Sources.projectile(this.level().registryAccess(), this, (LivingEntity) this.getOwner());
 
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
-
-                entity.hurt(source, damage / 2);
 
                 if (entity instanceof LivingEntity livingEntity) {
                     entity.invulnerableTime = 0;
@@ -101,6 +110,8 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
                         }
                     }
                 }
+
+                entity.hurt(source, damage / 2);
             }
 
             if (entity instanceof LivingEntity) {
@@ -108,10 +119,10 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             }
         }
 
-     /*   if (this.shooter instanceof Player) {
+        if (this.shooter instanceof Player) {
             int hitType = critical ? S2CMessageProjectileHitEntity.HitType.CRITICAL : headshot ? S2CMessageProjectileHitEntity.HitType.HEADSHOT : S2CMessageProjectileHitEntity.HitType.NORMAL;
             PacketHandler.getPlayChannel().sendToPlayer(() -> (ServerPlayer) this.shooter, new S2CMessageProjectileHitEntity(hitVec.x, hitVec.y, hitVec.z, hitType, entity instanceof Player));
-        } */
+        }
         PacketHandler.getPlayChannel().sendToTracking(() -> entity, new S2CMessageBlood(hitVec.x, hitVec.y, hitVec.z, entity.getType()));
     }
 }
