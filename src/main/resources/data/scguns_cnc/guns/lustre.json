@@ -24,9 +24,7 @@
     "gripType": "scguns:bazooka",
     "baseGripType": "scguns:bazooka",
     "rate": 8,
-    "recoilAngle": 5.0,
-    "recoilKick": 1.0,
-    "spread": 0.0,
+
     "meleeDamage": 4.0,
     "meleeCooldownTicks": 20,
     "hotBarrelRate": 10,
@@ -52,7 +50,10 @@
     "life": 50,
     "size": 1.0,
     "speed": 1.5,
-    "trailLengthMultiplier": 2.0
+    "trailLengthMultiplier": 2.0,
+    "recoilAngle": 5.0,
+    "recoilKick": 1.0,
+    "spread": 0.0
   },
   "reloads": {
     "emptyMagTimer": 10,

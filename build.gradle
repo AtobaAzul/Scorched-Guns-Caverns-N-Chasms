@@ -173,7 +173,7 @@ dependencies {
     //scguns
     implementation fg.deobf("curse.maven:geckolib-388172:7020955")
     implementation fg.deobf("curse.maven:curios-309927:5367944")
-    implementation fg.deobf("curse.maven:scorched-guns-802940:7144233")
+    implementation fg.deobf("curse.maven:scorched-guns-802940:7201155")
 
     //dummy mod for dps/damage testing.
     implementation fg.deobf("curse.maven:selene-499980:7119907")
