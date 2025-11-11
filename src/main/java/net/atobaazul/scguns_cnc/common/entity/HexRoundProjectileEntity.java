@@ -40,15 +40,7 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         super(entityType, worldIn, shooter, weapon, item, modifiedGun);
     }
 
-    float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
-        float chance = GunModifierHelper.getCriticalChance(weapon);
-        if (rand.nextFloat() < chance) {
-            float critMultiplier = this.modifiedGun.getGeneral().getCritDamageMultiplier();
-            return damage * critMultiplier;
-        } else {
-            return damage;
-        }
-    }
+
 
     @Override
     protected void onProjectileTick() {
@@ -60,11 +52,12 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
     @Override
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
         float damage = this.getDamage();
-        float newDamage = this.getCriticalDamage(this.getWeapon(), this.random, damage);
-        boolean critical = damage != newDamage;
-        damage = newDamage;
+       // float newDamage = this.getCriticalDamage(this.getWeapon(), this.random, damage);
+       // boolean critical = damage != newDamage;
+      //  damage = newDamage;
         ResourceLocation advantage = this.getProjectile().getAdvantage();
         damage *= advantageMultiplier(entity);
+
 
         boolean wasAlive = entity instanceof LivingEntity && entity.isAlive();
         if (headshot) {
@@ -115,10 +108,10 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             }
         }
 
-        if (this.shooter instanceof Player) {
+     /*   if (this.shooter instanceof Player) {
             int hitType = critical ? S2CMessageProjectileHitEntity.HitType.CRITICAL : headshot ? S2CMessageProjectileHitEntity.HitType.HEADSHOT : S2CMessageProjectileHitEntity.HitType.NORMAL;
             PacketHandler.getPlayChannel().sendToPlayer(() -> (ServerPlayer) this.shooter, new S2CMessageProjectileHitEntity(hitVec.x, hitVec.y, hitVec.z, hitType, entity instanceof Player));
-        }
+        } */
         PacketHandler.getPlayChannel().sendToTracking(() -> entity, new S2CMessageBlood(hitVec.x, hitVec.y, hitVec.z, entity.getType()));
     }
 }

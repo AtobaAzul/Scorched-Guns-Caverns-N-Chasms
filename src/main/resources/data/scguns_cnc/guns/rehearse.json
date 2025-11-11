@@ -9,22 +9,17 @@
   },
   "general": {
     "weaponType": "magnum",
-    "alwaysSpread": false,
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 18,
-    "recoilAngle": 5.0,
-    "recoilKick": 1.0,
-    "spread": 1.0,
+
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 10,
     "meleeReach": 2.5,
     "hotBarrelRate": 24,
-    "criticalChance": 0.2,
-    "isRevolver": true,
-    "playerKnockBack": true,
-    "playerKnockBackStrength": 0.2
+
+    "isRevolver": true
   },
   "modules": {
     "attachments": {
@@ -43,6 +38,11 @@
     }
   },
   "projectile": {
+    "alwaysSpread": false,
+    "criticalChance": 0.2,
+    "recoilAngle": 5.0,
+    "recoilKick": 1.0,
+    "spread": 1.0,
     "advantage": "scguns:none",
     "damage": 16.0,
     "damageFalloffStart": 23.0,
@@ -57,7 +57,9 @@
     "life": 35,
     "size": 1.0,
     "speed": 6.5,
-    "trailLengthMultiplier": 2.0
+    "trailLengthMultiplier": 2.0,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.2
   },
   "reloads": {
     "emptyMagTimer": 45,

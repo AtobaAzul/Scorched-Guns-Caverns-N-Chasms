@@ -3,14 +3,11 @@
   },
   "general": {
     "weaponType": "special",
-    "alwaysSpread": false,
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 13,
-    "recoilAngle": 1.0,
-    "recoilKick": 0.2,
-    "spread": 1.0,
+
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 20,
     "hotBarrelRate": 37,
@@ -36,6 +33,10 @@
     }
   },
   "projectile": {
+    "alwaysSpread": false,
+    "recoilAngle": 1.0,
+    "recoilKick": 0.2,
+    "spread": 1.0,
     "advantage": "scguns:none",
     "damage": 13.0,
     "ejectsCasing": false,
