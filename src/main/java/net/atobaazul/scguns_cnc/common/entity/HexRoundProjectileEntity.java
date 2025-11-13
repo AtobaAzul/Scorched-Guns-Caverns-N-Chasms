@@ -87,9 +87,9 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
 
                 if (entity instanceof LivingEntity livingEntity) {
-                    entity.invulnerableTime = 0;
                     entity.hurt(entity.damageSources().magic(), damage / 2);
                     SilverItem.causeMagicDamageParticles(livingEntity);
+                    entity.invulnerableTime = 0;
 
                     ResourceLocation effectLocation = this.getProjectile().getImpactEffect();
                     if (effectLocation != null) {
