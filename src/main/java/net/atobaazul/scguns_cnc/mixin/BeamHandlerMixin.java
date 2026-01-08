@@ -14,6 +14,9 @@ import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import top.ribs.scguns.client.handler.BeamHandler;
 import top.ribs.scguns.common.Gun;
+import top.ribs.scguns.item.animated.AnimatedGunItem;
+
+import static net.atobaazul.scguns_cnc.registries.ModItems.LUSTRE;
 
 
 @Mixin(BeamHandler.class)
@@ -25,8 +28,7 @@ public abstract class BeamHandlerMixin {
     @WrapMethod(method="spawnBeamImpactParticles", remap = false)
     private static void scguns_cnc$spawnBeamImpactParticles(ClientLevel world, Vec3 hitPos, Player player, Operation<Void> original) {
         ItemStack heldItem = player.getMainHandItem();
-        if (heldItem.getItem() instanceof ZirconiumLaserGunItem gunItem) {
-            Gun modifiedGun = gunItem.getModifiedGun(heldItem);
+        if (heldItem.getItem() instanceof AnimatedGunItem && heldItem.is(LUSTRE.get())) {
 
             for (int i = 0; i < 30; i++) {
                 Vec3 playerPos = player.getEyePosition();

@@ -109,7 +109,7 @@ public class ModItems {
     );
 
     public static final RegistryObject<AnimatedGunItem> LUSTRE = REGISTER.register("lustre",
-            () -> new ZirconiumLaserGunItem(
+            () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(1350).rarity(CCItems.FANCY),
                     "lustre",
                     ModSoundEvents.LUSTRE_MAG_OUT.get(),
