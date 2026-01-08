@@ -14,7 +14,7 @@
     }
   },
   "general": {
-    "weaponType": "special",
+    "weaponType": "laser",
     "hasCameraShake": false,
     "fireMode": "scguns:semi_beam",
     "beamColor": "#ffffff",
@@ -27,6 +27,7 @@
 
     "meleeDamage": 4.0,
     "meleeCooldownTicks": 20,
+    "meleeReach": 3.5,
     "hotBarrelRate": 10,
     "beamAmmoConsumptionDelay": 800,
     "beamDamageDelay": 0,
@@ -35,7 +36,8 @@
     "criticalChance": 0.05,
     "speedModifier": 0.8,
     "playerKnockBack": true,
-    "playerKnockBackStrength": 0.2
+    "playerKnockBackStrength": 0.2,
+    "beamMaxDistance": 100.0
   },
   "modules": {
   },
@@ -43,7 +45,6 @@
     "knockbackStrength": 0.0,
     "advantage": "scguns:none",
     "damage": 12.0,
-    "gravity": false,
     "armorPen": 20.0,
     "ejectsCasing": false,
     "item": "scguns:energy_core",
@@ -53,15 +54,16 @@
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 5.0,
     "recoilKick": 1.0,
-    "spread": 0.0
+    "spread": 0.0,
+    "criticalChance": 0.05
   },
   "reloads": {
-    "emptyMagTimer": 10,
+    "emptyMagTimer": 50,
     "maxAmmo": 30,
     "reloadItem": "scguns:energy_core",
     "reloadByproduct": "scguns:depleted_energy_core",
     "byproductChance": 0.5,
-    "reloadTimer": 10,
+    "reloadTimer": 27,
     "reloadType": "scguns:single_item"
   },
   "sounds": {
