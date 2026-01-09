@@ -638,6 +638,17 @@
 					}
 				}
 			},
+			"sound_effects": {
+				"0.4167": {
+					"effect": "reload_mag_out"
+				},
+				"1.1667": {
+					"effect": "reload_mag_in"
+				},
+				"1.625": {
+					"effect": "rack"
+				}
+			},
 			"particle_effects": {
 				"1.9583": {
 					"effect": "loaded"
