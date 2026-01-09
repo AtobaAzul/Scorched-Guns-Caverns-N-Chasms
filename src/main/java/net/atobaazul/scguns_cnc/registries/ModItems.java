@@ -115,8 +115,8 @@ public class ModItems {
                     ModSoundEvents.LUSTRE_MAG_OUT.get(),
                     ModSoundEvents.LUSTRE_MAG_IN.get(),
                     ModSounds.RELOAD_END.get(),
-                    ModSounds.COPPER_GUN_JAM.get(),
-                    ModSounds.COPPER_GUN_JAM.get()
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get()
             )
     );
 
