@@ -19,8 +19,7 @@
     "meleeCooldownTicks": 15,
     "meleeReach": 3,
     "hotBarrelRate": 7,
-    "criticalChance": 0.06
-
+    "criticalChance": 0.00
   },
   "modules": {
     "attachments": {
@@ -53,34 +52,34 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 7,
-    "damageFalloffStart": 17.0,
+    "damage": 12,
+    "damageFalloffStart": 24.0,
     "damageFalloffEnd": 36.0,
     "damageFalloffMinMultiplier": 0.45,
     "ejectsCasing": true,
-    "item": "scguns_cnc:compact_hex_round",
-    "casingType": "scguns_cnc:small_necromium_casing",
+    "item": "scguns_cnc:hex_round",
+    "casingType": "scguns_cnc:medium_necromium_casing",
     "casingParticle": "scguns_cnc:hex_casing",
     "life": 35,
     "size": 0.05,
-    "speed": 5.0,
+    "speed": 7.0,
     "trailLengthMultiplier": 2.0,
-    "recoilAngle": 2.25,
-    "recoilKick": 1,
+    "recoilAngle": 3.25,
+    "recoilKick": 2.0,
     "spread": 3.0,
     "alwaysSpread": false
   },
   "reloads": {
     "emptyMagTimer": 30,
-    "maxAmmo": 20,
-    "reloadItem": "scguns_cnc:compact_hex_round",
+    "maxAmmo": 10,
+    "reloadItem": "scguns_cnc:hex_round",
     "reloadTimer": 5,
     "reloadType": "scguns:mag_fed"
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
     "enchantedFire": "scguns_cnc:item.hangman_carbine.fire",
-    "fire": "scguns_cnc:item.hangman_carbine.fire",
+    "fire": "scguns_cnc:item.gallows.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
     "flyby": "scguns:bullet.flyby1"

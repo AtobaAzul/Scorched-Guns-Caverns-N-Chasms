@@ -92,7 +92,7 @@
   "sounds": {
     "cock": "scguns:item.pistol.cock",
     "enchantedFire": "scguns:item.boomstick.fire",
-    "fire": "scguns:item.boomstick.fire",
+    "fire": "scguns_cnc:item.keteriya.fire",
     "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
     "reload": "scguns:item.gauss.reload"
   }
