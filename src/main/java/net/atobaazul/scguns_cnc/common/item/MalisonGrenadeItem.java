@@ -38,7 +38,6 @@ public class MalisonGrenadeItem extends AmmoItem {
             if (duration == 10) {
                 player.level().playLocalSound(player.getX(), player.getY(), player.getZ(), (SoundEvent)ModSounds.ITEM_GRENADE_PIN.get(), SoundSource.PLAYERS, 1.0F, 1.0F, false);
             }
-
         }
     }
 

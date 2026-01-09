@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
 import net.atobaazul.scguns_cnc.common.entity.*;
+import net.atobaazul.scguns_cnc.common.entity.throwable.ThrowableMalisonGrenadeEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -8,7 +9,6 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.entity.throwable.GrenadeEntity;
 
 import java.util.function.BiFunction;
 
@@ -29,6 +29,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);
     public static final RegistryObject<EntityType<StrikerRoundProjectileEntity>> STRIKER_ROUND_PROJECTILE = registerBasic("striker_round_projectile", StrikerRoundProjectileEntity::new);
 
+    public static final RegistryObject<EntityType<ThrowableMalisonGrenadeEntity>> THROWABLE_MALISON_GRENADE = registerBasic("malison_grenade", ThrowableMalisonGrenadeEntity::new);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)
     {
