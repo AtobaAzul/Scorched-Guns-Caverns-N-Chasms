@@ -44,6 +44,8 @@
     "advantage": "scguns:none",
     "damage": 8.5,
     "damageFalloffStart": 12.0,
+    "criticalChance": 0.1,
+    "critDamageMultiplier": 3.0,
     "damageFalloffEnd": 30.0,
     "damageFalloffMinMultiplier": 0.45,
     "gravity": false,
