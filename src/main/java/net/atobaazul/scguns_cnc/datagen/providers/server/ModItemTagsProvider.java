@@ -25,6 +25,7 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
     private static final TagKey<Item> RIFLE_AMMO = ItemTags.create(new ResourceLocation("scguns", "rifle_ammo"));
     private static final TagKey<Item> SHOTGUN_AMMO = ItemTags.create(new ResourceLocation("scguns", "shotgun_ammo"));
     private static final TagKey<Item> AMMO = ItemTags.create(new ResourceLocation("scguns", "ammo"));
+    private static final TagKey<Item> EMPTY_CASING = ItemTags.create(new ResourceLocation("scguns", "empty_casing"));
 
     public ModItemTagsProvider(@NotNull PackOutput output, @NotNull CompletableFuture<HolderLookup.Provider> lookupProvider, @NotNull CompletableFuture<TagLookup<Block>> blockTags, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTags, MOD_ID, existingFileHelper);
@@ -34,6 +35,10 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.ONE_HANDED_CARBINE).add(REHEARSE.get());
+
+        tag(EMPTY_CASING)
+            .add(SMALL_NECROMIUM_CASING.get())
+            .add(MEDIUM_NECROMIUM_CASING.get());
 
         tag(AMMO)
             .add(COMPACT_HEX_ROUND.get())
@@ -51,23 +56,14 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
             .add(BLUNTSHOT.get());
 
         tag(GRAVEKEEPER_GUN_TIER)
-                .add(HANGMAN_CARBINE.get())
-                .add(RIBCAGE.get())
-                .add(BELLA.get())
-                .add(REHEARSE.get())
-                .add(SILVER_LINING.get())
-                .add(KETERIYA.get())
-                .add(ANATHEMA.get());
-
-        tag(GRAVEKEEPER_GUN_TIER)
-                .add(HANGMAN_CARBINE.get())
-                .add(RIBCAGE.get())
-                .add(BELLA.get())
-                .add(REHEARSE.get())
-                .add(SILVER_LINING.get())
-                .add(KETERIYA.get())
-                .add(ANATHEMA.get());
-
+            .add(HANGMAN_CARBINE.get())
+            .add(RIBCAGE.get())
+            .add(BELLA.get())
+            .add(REHEARSE.get())
+            .add(SILVER_LINING.get())
+            .add(KETERIYA.get())
+            .add(ANATHEMA.get())
+            .add(GALLOWS.get());
 
         tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get());
     }
