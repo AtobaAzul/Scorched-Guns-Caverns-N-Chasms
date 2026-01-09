@@ -33,6 +33,8 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.ANATHEMA, "Anathema");
         addItem(ModItems.LUSTRE, "Lustre");
+        addItem(ModItems.GALLOWS, "Gallows");
+
 
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
