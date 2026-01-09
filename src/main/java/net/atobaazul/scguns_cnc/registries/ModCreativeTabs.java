@@ -23,6 +23,7 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.REHEARSE.get());
         addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
+        addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
         addItemWithFullAmmo(pOutput, ModItems.LUSTRE.get());
 
