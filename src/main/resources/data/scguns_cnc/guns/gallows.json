@@ -78,7 +78,7 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.hangman_carbine.fire",
+    "enchantedFire": "scguns_cnc:item.gallows.fire",
     "fire": "scguns_cnc:item.gallows.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
