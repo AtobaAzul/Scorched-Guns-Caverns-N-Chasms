@@ -2,7 +2,7 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 4.3,
+      "yOffset": 4.5,
       "zOffset": -11.0,
       "textureLocation": "muzzle_flash_1"
     }
@@ -24,11 +24,17 @@
   "modules": {
     "attachments": {
       "barrel": {
-        "yOffset": 4.3,
+        "yOffset": 8.3,
         "zOffset": -13.4
       },
       "stock": {
         "scale": 0.0
+      },
+      "scope": {
+        "size": 1.1,
+        "yOffset": 5.2,
+        "zOffset": -0.7,
+        "xOffset": 0
       }
     },
     "zoom": {
@@ -36,6 +42,7 @@
       "yOffset": 5.8,
       "zOffset": 0.75
     }
+
   },
   "projectile": {
     "alwaysSpread": false,
