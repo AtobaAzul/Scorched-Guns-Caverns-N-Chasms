@@ -34,11 +34,7 @@
     },
     "K": {
       "item": "scguns_cnc:necromium_gun_frame"
-    },
-    "A": {
-      "item": "scguns:gun_magazine"
     }
-
   },
   "pattern": [
     "MKX ",
