@@ -198,5 +198,26 @@
                 "name": "scguns_cnc:item/lustre/mag_out"
             }
         ]
+    },
+    "item.anathema.fire": {
+        "subtitle": "subtitle.scguns.fire",
+        "sounds": [
+            {
+                "name": "scguns_cnc:item/anathema/fire0",
+                "volume": 0.8
+            },
+            {
+                "name": "scguns_cnc:item/anathema/fire1",
+                "volume": 0.8
+            },
+            {
+                "name": "scguns_cnc:item/anathema/fire2",
+                "volume": 0.8
+            },
+            {
+                "name": "scguns_cnc:item/anathema/fire3",
+                "volume": 0.8
+            }
+        ]
     }
 }
