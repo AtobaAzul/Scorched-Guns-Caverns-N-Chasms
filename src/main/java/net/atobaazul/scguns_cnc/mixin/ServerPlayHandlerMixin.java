@@ -1,6 +1,5 @@
 package net.atobaazul.scguns_cnc.mixin;
 
-import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.minecraft.nbt.CompoundTag;
@@ -11,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -19,8 +17,6 @@ import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import top.ribs.scguns.common.network.ServerPlayHandler;
 import top.ribs.scguns.item.GunItem;
-
-import static net.atobaazul.scguns_cnc.registries.ModItems.LUSTRE;
 
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
@@ -59,7 +55,6 @@ public abstract class ServerPlayHandlerMixin {
             //reset recharge counter on shoot.
             CompoundTag tag = heldItem.getOrCreateTag();
             tag.putInt("RechargeCounter", 0);
-
         }
     }
 }
