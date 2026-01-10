@@ -24,17 +24,24 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
         addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
+        addItemWithFullAmmo(pOutput, ModItems.NECROSIS.get());
+
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
         addItemWithFullAmmo(pOutput, ModItems.LUSTRE.get());
+
+        addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
         addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.HEX_ROUND.get());
         addItem(pOutput, ModItems.BLUNTSHOT.get());
+        addItem(pOutput, ModItems.HEXSHOT.get());
+        addItem(pOutput, ModItems.COPPER_SLUG.get());
         addItem(pOutput, ModItems.COMPACT_HEX_ROUND.get());
         addItem(pOutput, ModItems.NECROMIUM_GUN_FRAME.get());
         addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.SILVER_BULLET.get());
+        addItem(pOutput, ModItems.HEX_BUCKSHOT.get());
 
         addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());
         addItem(pOutput, ModItems.LESSER_STRAWMAN.get());

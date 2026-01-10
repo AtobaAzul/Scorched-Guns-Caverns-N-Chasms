@@ -43,7 +43,9 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
         tag(AMMO)
             .add(COMPACT_HEX_ROUND.get())
             .add(HEX_ROUND.get())
-            .add(BLUNTSHOT.get());
+            .add(BLUNTSHOT.get())
+            .add(COPPER_SLUG.get())
+            .add(HEXSHOT.get());
 
 
         tag(PISTOL_AMMO)
@@ -53,7 +55,9 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
             .add(HEX_ROUND.get());
 
         tag(SHOTGUN_AMMO)
-            .add(BLUNTSHOT.get());
+            .add(BLUNTSHOT.get())
+            .add(COPPER_SLUG.get())
+            .add(HEXSHOT.get());
 
         tag(GRAVEKEEPER_GUN_TIER)
             .add(HANGMAN_CARBINE.get())
@@ -63,7 +67,12 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
             .add(SILVER_LINING.get())
             .add(KETERIYA.get())
             .add(ANATHEMA.get())
-            .add(GALLOWS.get());
+            .add(GALLOWS.get())
+            .add(NECROSIS.get());
+
+
+        tag(GRAVEKEEPER_GUN_TIER)
+                .add(LUSTRE.get());
 
         tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get());
     }

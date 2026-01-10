@@ -27,6 +27,8 @@ public class ModEntities {
 
 
     public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);
+    public static final RegistryObject<EntityType<CopperSlugProjectileEntity>> COPPER_SLUG_PROJECTILE = registerBasic("copper_slug_projectile", CopperSlugProjectileEntity::new);
+
     public static final RegistryObject<EntityType<StrikerRoundProjectileEntity>> STRIKER_ROUND_PROJECTILE = registerBasic("striker_round_projectile", StrikerRoundProjectileEntity::new);
 
     public static final RegistryObject<EntityType<ThrowableMalisonGrenadeEntity>> THROWABLE_MALISON_GRENADE = registerBasic("malison_grenade", ThrowableMalisonGrenadeEntity::new);

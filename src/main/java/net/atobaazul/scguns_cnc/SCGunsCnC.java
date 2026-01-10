@@ -69,6 +69,7 @@ public class SCGunsCnC
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         GunTierRegistry.register("gravekeeper", 6, "gravekeeper_gun_tier", 4);
+        GunTierRegistry.register("vault", 6, "vault_gun_tier", 1);
 
         ProjectileManager.getInstance().registerFactory(ModItems.COMPACT_HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.HEX_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
@@ -76,6 +77,8 @@ public class SCGunsCnC
         ProjectileManager.getInstance().registerFactory(CCItems.LARGE_ARROW.get(), (worldIn, entity, weapon, item, modifiedGun) -> new DummyProjectileEntity(ModEntities.DUMMY_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.THE_HUNGER.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BloodShotProjectileEntity(ModEntities.BLOOD_SHOT.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.STRIKER_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new StrikerRoundProjectileEntity(ModEntities.STRIKER_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.COPPER_SLUG.get(), (worldIn, entity, weapon, item, modifiedGun) -> new CopperSlugProjectileEntity(ModEntities.COPPER_SLUG_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.HEXSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new CopperSlugProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
 
        // ProjectileManager.getInstance().registerFactory(ModItems.MALISON_GRENADE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GrenadeEntity(ModEntities.MALISON_GRENADE.get(), worldIn, entity, weapon, item, modifiedGun));
 

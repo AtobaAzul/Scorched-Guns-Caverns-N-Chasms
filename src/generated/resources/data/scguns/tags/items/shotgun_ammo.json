@@ -1,5 +1,7 @@
 {
   "values": [
-    "scguns_cnc:bluntshot"
+    "scguns_cnc:bluntshot",
+    "scguns_cnc:copper_slug",
+    "scguns_cnc:hexshot"
   ]
 }
