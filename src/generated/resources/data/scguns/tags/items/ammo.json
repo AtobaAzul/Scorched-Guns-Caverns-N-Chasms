@@ -2,6 +2,8 @@
   "values": [
     "scguns_cnc:compact_hex_round",
     "scguns_cnc:hex_round",
-    "scguns_cnc:bluntshot"
+    "scguns_cnc:bluntshot",
+    "scguns_cnc:copper_slug",
+    "scguns_cnc:hexshot"
   ]
 }
