@@ -24,7 +24,6 @@
     "gripType": "scguns:bazooka",
     "baseGripType": "scguns:bazooka",
     "rate": 8,
-
     "meleeDamage": 4.0,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
@@ -43,7 +42,7 @@
   },
   "projectile": {
     "knockbackStrength": 0.0,
-    "advantage": "scguns:none",
+    "advantage": "scguns:bot",
     "damage": 12.0,
     "armorPen": 20.0,
     "ejectsCasing": false,
