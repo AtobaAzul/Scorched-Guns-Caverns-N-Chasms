@@ -1,9 +1,12 @@
 package top.ribs.scguns.common.item.gun;
 
+import com.mrcrayfish.framework.api.network.LevelLocation;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
@@ -17,8 +20,15 @@ import net.minecraftforge.energy.IEnergyStorage;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import top.ribs.scguns.client.handler.ShootingHandler;
+import top.ribs.scguns.common.ReloadTracker;
+import top.ribs.scguns.init.ModSyncedDataKeys;
+import top.ribs.scguns.item.GunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.exosuit.ExoSuitCoreItem;
+import top.ribs.scguns.network.PacketHandler;
+import top.ribs.scguns.network.message.S2CMessageReload;
+import top.ribs.scguns.network.message.S2CMessageUpdateAmmo;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -28,8 +38,8 @@ import java.util.List;
 //gun item's class be under the 'top.ribs.scguns' packages! FOR SOME REASON!!!
 
 public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAnimatable, GeoItem {
-    static int energyRequired = 7500;
-    int counter = 0;
+    static int energyRequired = 5000;
+    int refillCooldown = 40;
 
     public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound) {
         super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
@@ -51,32 +61,48 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
 
-        counter++;
+        if (world instanceof ServerLevel) {
+            CompoundTag tag = stack.getOrCreateTag();
+            int currentAmmo = tag.getInt("AmmoCount");
+            int counter = tag.getInt("RechargeCounter");
+            LazyOptional<IEnergyStorage> capability = stack.getCapability(ForgeCapabilities.ENERGY);
 
-        CompoundTag tag = stack.getOrCreateTag();
-        int currentAmmo = tag.getInt("AmmoCount");
+            int energyStored = capability.map(IEnergyStorage::getEnergyStored).orElse(0);
+            if (energyStored >= energyRequired && currentAmmo < 30 && !tag.getBoolean("IsShooting")) {
+                tag.putInt("RechargeCounter", counter + 1);
 
-        LazyOptional<IEnergyStorage> capabilitiy = stack.getCapability(ForgeCapabilities.ENERGY);
+                if (counter > refillCooldown) {
+                    stack.getCapability(ForgeCapabilities.ENERGY).map(energyStorage -> {
+                        if (energyStorage.getEnergyStored() >= energyRequired) {
+                            energyStorage.extractEnergy(energyRequired, false);
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    });
 
-        int energyStored = capabilitiy.map(IEnergyStorage::getEnergyStored).orElse(0);
-        if (energyStored >= energyRequired && currentAmmo < 30) {
-            if (counter > 40) {
-                stack.getCapability(ForgeCapabilities.ENERGY).map(energyStorage -> {
-                    if (energyStorage.getEnergyStored() >= energyRequired) {
-                        energyStorage.extractEnergy(energyRequired, false);
-                        return true;
-                    } else {
-                        return false;
+
+                    int newAmmo = Math.min(Math.max(0, currentAmmo + 1), 30);
+                    tag.putInt("AmmoCount", newAmmo);
+                    tag.putInt("RechargeCounter", 0);
+
+                    if (entity instanceof ServerPlayer player) { //Double check if is serverplayer and the item in the slot that was ticked is still a gun.
+
+                        ModSyncedDataKeys.RELOADING.setValue(player, false);
+                        tag.remove("IsReloading");
+                        tag.remove("scguns:IsReloading");
+                        tag.remove("InCriticalReloadPhase");
+                        PacketHandler.getPlayChannel().sendToNearbyPlayers(() -> {
+                            return LevelLocation.create(player.level(), player.getX(), player.getY(), player.getZ(), 64.0);
+                        }, new S2CMessageUpdateAmmo(tag.getInt("AmmoCount")));
+                        PacketHandler.getPlayChannel().sendToNearbyPlayers(() -> {
+                            return LevelLocation.create(player.level(), player.getX(), player.getY(), player.getZ(), 64.0);
+                        }, new S2CMessageReload(false));
                     }
-                });
-
-                int newAmmo = Math.min(Math.max(0, currentAmmo + 1), 30);
-                tag.putInt("AmmoCount", newAmmo);
-
-                counter = 0;
+                }
+            } else {
+                tag.putInt("RechargeCounter", 0);
             }
-        } else {
-            counter = 0;
         }
     }
 

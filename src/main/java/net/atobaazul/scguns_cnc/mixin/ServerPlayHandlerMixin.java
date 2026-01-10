@@ -3,6 +3,7 @@ package net.atobaazul.scguns_cnc.mixin;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -15,8 +16,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.ribs.scguns.common.Gun;
+import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import top.ribs.scguns.common.network.ServerPlayHandler;
 import top.ribs.scguns.item.GunItem;
+
+import static net.atobaazul.scguns_cnc.registries.ModItems.LUSTRE;
 
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
@@ -49,6 +53,13 @@ public abstract class ServerPlayHandlerMixin {
             arrow.pickup = Arrow.Pickup.ALLOWED;
 
             world.addFreshEntity(arrow);
+        }
+
+        if (item instanceof RechargeableEnergyGunItem) {
+            //reset recharge counter on shoot.
+            CompoundTag tag = heldItem.getOrCreateTag();
+            tag.putInt("RechargeCounter", 0);
+
         }
     }
 }
