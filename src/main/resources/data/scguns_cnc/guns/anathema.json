@@ -13,7 +13,7 @@
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 5,
-    "meleeDamage": 6.0,
+    "meleeDamage": 8.0,
     "meleeReach": 3.5,
     "meleeCooldownTicks": 10,
     "hotBarrelRate": 30,
@@ -22,13 +22,8 @@
     "usesCustomMeleeAnimation": true,
     "isSilenced": true
   },
-  "modules": {
-
-
-
-  },
+  "modules": {},
   "projectile": {
-    "trailThickness": 0.5,
     "advantage": "scguns:none",
     "damage": 8.0,
     "ejectsCasing": true,
@@ -41,7 +36,11 @@
     "trailThickness": 0.1,
     "recoilAngle": 2.25,
     "recoilKick": 1,
-    "spread": 3.3
+    "spread": 3.3,
+    "impactEffect": "minecraft:poison",
+    "impactEffectDuration": 200,
+    "impactEffectChance": 1.0,
+    "impactEffectAmplifier": 0
   },
   "reloads": {
     "emptyMagTimer": 30,
