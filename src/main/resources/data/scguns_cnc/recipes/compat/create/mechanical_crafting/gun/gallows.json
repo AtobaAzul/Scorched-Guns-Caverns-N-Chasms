@@ -15,19 +15,16 @@
       "tag": "minecraft:planks"
     },
     "L": {
-      "item": "scguns:firing_unit"
+      "item": "scguns:rapid_firing_unit"
     },
     "R": {
       "item": "scguns:heavy_gun_parts"
     },
     "S": {
-      "item": "scguns:heavy_gun_barrel"
+      "item": "scguns:gun_barrel"
     },
     "J": {
       "item": "scguns:heavy_gun_barrel"
-    },
-    "M": {
-      "tag": "forge:ingots/silver"
     },
     "X": {
       "item": "scguns_cnc:gravekeeper_blueprint"
@@ -41,11 +38,11 @@
 
   },
   "pattern": [
-    "MKCX",
+    "CKCX",
     "LRJS",
     "Q A "
   ],
   "result": {
-    "item": "scguns_cnc:ribcage"
+    "item": "scguns_cnc:gallows"
   }
 }
