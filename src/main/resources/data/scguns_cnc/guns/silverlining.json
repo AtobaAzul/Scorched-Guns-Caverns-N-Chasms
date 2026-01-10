@@ -57,7 +57,7 @@
   "sounds": {
     "cock": "scguns:item.pistol.cock",
     "enchantedFire": "item.crossbow.shoot",
-    "fire": "item.crossbow.shoot",
+    "fire": "scguns_cnc:item.silverlining.fire",
     "reload": "scguns:item.gauss.reload"
   }
 }
