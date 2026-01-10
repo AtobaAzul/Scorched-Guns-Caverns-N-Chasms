@@ -35,17 +35,29 @@ import java.util.List;
 //gun item's class be under the 'top.ribs.scguns' packages! FOR SOME REASON!!!
 
 public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAnimatable, GeoItem {
-    static int energyRequired = 5000;
-    int refillCooldown = 40;
+    private final int energyRequired;
+    private final int refillCooldown;
+    private final int maxEnergy;
 
-    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound) {
+    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy) {
         super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
+        this.energyRequired = energyRequired;
+        this.refillCooldown = refillCooldown;
+        this.maxEnergy = maxEnergy;
+    }
+
+    public int getEnergyRequired() {
+        return this.energyRequired;
+    }
+
+    public int getRefillCooldown() {
+        return this.refillCooldown;
     }
 
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
         return new ICapabilityProvider() {
-            private final LazyOptional<IEnergyStorage> energy = LazyOptional.of(() -> new ExoSuitCoreItem.SimpleExoSuitEnergyStorage(stack, 100000));
+            private final LazyOptional<IEnergyStorage> energy = LazyOptional.of(() -> new ExoSuitCoreItem.SimpleExoSuitEnergyStorage(stack, maxEnergy));
 
             @Override
             public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
