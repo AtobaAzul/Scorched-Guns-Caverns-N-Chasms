@@ -1,12 +1,16 @@
 package net.atobaazul.scguns_cnc.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,6 +21,7 @@ import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import top.ribs.scguns.common.network.ServerPlayHandler;
 import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.network.message.C2SMessageShoot;
 
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
@@ -50,9 +55,16 @@ public abstract class ServerPlayHandlerMixin {
 
             world.addFreshEntity(arrow);
         }
+    }
 
-        if (item instanceof RechargeableEnergyGunItem) {
-            //reset recharge counter on shoot.
+    @WrapMethod(method="handleShoot", remap = false)
+    private static void scguns_cnc$handleShoot(C2SMessageShoot message, ServerPlayer player, Operation<Void> original) {
+        original.call(message,player);
+
+        Level world = player.level();
+        ItemStack heldItem = player.getItemInHand(InteractionHand.MAIN_HAND);
+
+        if (heldItem.getItem() instanceof RechargeableEnergyGunItem gunItem) {
             CompoundTag tag = heldItem.getOrCreateTag();
             tag.putInt("RechargeCounter", 0);
         }
