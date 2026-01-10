@@ -7,12 +7,12 @@
     }
   ],
   "ingredient": {
-    "item": "scguns_cnc:small_necromium_casing"
+    "item": "scguns:large_brass_casing"
   },
   "loops": 1,
   "results": [
     {
-      "item": "scguns_cnc:compact_hex_round"
+      "item": "scguns_cnc:copper_slug"
     }
   ],
   "sequence": [
@@ -20,17 +20,17 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "scguns_cnc:unfinished_compact_hex_round"
+          "item": "scguns_cnc:unfinished_copper_slug"
         },
         [
           {
-            "tag": "scguns:gunpowder_dust"
+            "tag": "forge:gunpowder"
           }
         ]
       ],
       "results": [
         {
-          "item": "scguns_cnc:unfinished_compact_hex_round"
+          "item": "scguns_cnc:unfinished_copper_slug"
         }
       ]
     },
@@ -38,17 +38,17 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "scguns_cnc:unfinished_compact_hex_round"
+          "item": "scguns_cnc:unfinished_copper_slug"
         },
         [
           {
-            "tag": "scguns_cnc:hex_bullet_tip"
+            "item": "minecraft:copper_block"
           }
         ]
       ],
       "results": [
         {
-          "item": "scguns_cnc:unfinished_compact_hex_round"
+          "item": "scguns_cnc:unfinished_copper_slug"
         }
       ]
     },
@@ -56,17 +56,17 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "scguns_cnc:unfinished_compact_hex_round"
+          "item": "scguns_cnc:unfinished_copper_slug"
         }
       ],
       "results": [
         {
-          "item": "scguns_cnc:unfinished_compact_hex_round"
+          "item": "scguns_cnc:unfinished_copper_slug"
         }
       ]
     }
   ],
   "transitionalItem": {
-    "item": "scguns_cnc:unfinished_compact_hex_round"
+    "item": "scguns_cnc:unfinished_copper_slug"
   }
 }

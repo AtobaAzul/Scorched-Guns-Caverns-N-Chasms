@@ -179,6 +179,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
+    public static final RegistryObject<Item> UNFINISHED_HEXSHOT = sequencedIngredient("unfinished_hexshot");
+    public static final RegistryObject<Item> UNFINISHED_COPPER_SLUG = sequencedIngredient("unfinished_copper_slug");
 
     public static final RegistryObject<Item> GRAVEKEEPER_FLARE = REGISTER.register("gravekeeper_flare",
             () -> new RaidFlareItem(new Item.Properties().stacksTo(16), "gravekeeper"));

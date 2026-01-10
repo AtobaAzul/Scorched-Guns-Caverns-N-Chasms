@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagEntry;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -26,6 +27,7 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
     private static final TagKey<Item> SHOTGUN_AMMO = ItemTags.create(new ResourceLocation("scguns", "shotgun_ammo"));
     private static final TagKey<Item> AMMO = ItemTags.create(new ResourceLocation("scguns", "ammo"));
     private static final TagKey<Item> EMPTY_CASING = ItemTags.create(new ResourceLocation("scguns", "empty_casing"));
+    private static final TagKey<Item> SILVER_NUGGETS = ItemTags.create(new ResourceLocation("forge", "nuggets/silver"));
 
     public ModItemTagsProvider(@NotNull PackOutput output, @NotNull CompletableFuture<HolderLookup.Provider> lookupProvider, @NotNull CompletableFuture<TagLookup<Block>> blockTags, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTags, MOD_ID, existingFileHelper);
@@ -70,8 +72,11 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
             .add(GALLOWS.get())
             .add(NECROSIS.get());
 
+        tag(HEX_BULLET_TIP)
+             .add(SILVER_BULLET.get())
+             .addOptionalTag(SILVER_NUGGETS);
 
-        tag(GRAVEKEEPER_GUN_TIER)
+        tag(VAULT_GUN_TIER)
                 .add(LUSTRE.get());
 
         tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get());

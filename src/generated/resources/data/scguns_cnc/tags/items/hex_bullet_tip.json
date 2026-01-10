@@ -1,0 +1,9 @@
+{
+  "values": [
+    "scguns_cnc:silver_bullet",
+    {
+      "id": "#forge:nuggets/silver",
+      "required": false
+    }
+  ]
+}
