@@ -238,11 +238,8 @@
 				}
 			},
 			"particle_effects": {
-				"2.25": {
+				"2.9": {
 					"effect": "loaded"
-				},
-				"2.4583": {
-					"effect": "end_reload"
 				}
 			}
 		},

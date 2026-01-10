@@ -6,7 +6,7 @@ import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.StrikerRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
-import net.atobaazul.scguns_cnc.common.item.gun.ZirconiumLaserGunItem;
+import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -108,9 +108,9 @@ public class ModItems {
             )
     );
 
-    public static final RegistryObject<AnimatedGunItem> LUSTRE = REGISTER.register("lustre",
-            () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(1350).rarity(CCItems.FANCY),
+    public static final RegistryObject<RechargeableEnergyGunItem> LUSTRE = REGISTER.register("lustre",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
                     "lustre",
                     ModSoundEvents.LUSTRE_MAG_OUT.get(),
                     ModSoundEvents.LUSTRE_MAG_IN.get(),
@@ -119,6 +119,7 @@ public class ModItems {
                     ModSoundEvents.LUSTRE_JAM.get()
             )
     );
+
 
     public static final RegistryObject<AnimatedGunItem> GALLOWS = REGISTER.register("gallows",
             () -> new AnimatedGunItem(
