@@ -133,6 +133,19 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> NECROSIS = REGISTER.register("necrosis",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "necrosis", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+
     public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
 
 
