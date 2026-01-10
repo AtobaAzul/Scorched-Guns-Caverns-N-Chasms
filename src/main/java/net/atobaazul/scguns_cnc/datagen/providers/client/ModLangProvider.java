@@ -25,6 +25,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.THE_HUNGER, "The Hunger");
         addItem(ModItems.HEXSHOT, "Hexshot Shell");
         addItem(ModItems.HEX_BUCKSHOT, "Hex Buckshot");
+        addItem(ModItems.COPPER_SLUG, "Copper Slug");
 
         //guns
         addItem(ModItems.HANGMAN_CARBINE, "Hangman Carabine");
@@ -38,9 +39,11 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.GALLOWS, "Gallows");
         addItem(ModItems.NECROSIS, "Necrosis");
 
-
+        addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
+        addItem(ModItems.UNFINISHED_HEXSHOT, "Unfinished Hexshot Shell");
+        addItem(ModItems.UNFINISHED_COPPER_SLUG, "Unfinished Copper Slug");
         addItem(ModItems.LESSER_STRAWMAN, "Weird Doll");
         addItem(ModItems.GRAVEKEEPER_FLARE, "Gravekeeper Flare");
 

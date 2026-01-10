@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:gunpowder"
+    },
+    {
+      "tag": "scguns_cnc:hex_bullet_tip"
+    },
+    {
+      "tag": "scguns_cnc:hex_bullet_tip"
+    },
+    {
+      "tag": "scguns_cnc:hex_bullet_tip"
+    },
+    {
+      "tag": "scguns_cnc:hex_bullet_tip"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "scguns_cnc:hex_buckshot"
+  }
+}

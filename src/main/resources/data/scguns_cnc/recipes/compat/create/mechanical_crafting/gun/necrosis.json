@@ -1,0 +1,51 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "Q": {
+      "item": "scguns:gun_grip"
+    },
+    "C": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "item": "scguns:firing_unit"
+    },
+    "R": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "S": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "J": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "M": {
+      "tag": "forge:ingots/silver"
+    },
+    "X": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "K": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "A": {
+      "item": "scguns:gun_magazine"
+    }
+
+  },
+  "pattern": [
+    "MKX ",
+    "LRJS",
+    "Q C "
+  ],
+  "result": {
+    "item": "scguns_cnc:necrosis"
+  }
+}

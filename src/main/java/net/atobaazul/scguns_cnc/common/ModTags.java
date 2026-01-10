@@ -13,6 +13,7 @@ public class ModTags {
 
     public static final TagKey<Item> GRAVEKEEPER_GUN_TIER = createSCGunsItemTag("gravekeeper_gun_tier");
     public static final TagKey<Item> VAULT_GUN_TIER = createSCGunsItemTag("vault_gun_tier");
+    public static final TagKey<Item> HEX_BULLET_TIP = createItemTag("hex_bullet_tip");
 
 
     private static TagKey<Block> createBlockTag(String tagName){
