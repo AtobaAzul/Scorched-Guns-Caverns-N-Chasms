@@ -5,6 +5,7 @@ import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -16,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.ribs.scguns.client.handler.MeleeAttackHandler;
+import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.item.GunItem;
 
 import java.util.Comparator;
@@ -46,6 +48,8 @@ public class MeleeAttackHandlerMixin {
         if (heldItem.is(ModItems.ANATHEMA.get())) {
             if (raycastTarget != null) {
                 if (!player.isCreative()) {
+                    raycastTarget.addEffect(new MobEffectInstance(ModEffects.LACERATED.get(), 200, 3, false, false, true));
+
                     CompoundTag tag = heldItem.getOrCreateTag();
                     int currentAmmo = tag.getInt("AmmoCount");
                     int newAmmo = Math.min(Math.max(0, currentAmmo + 3), 30);
