@@ -1,0 +1,11 @@
+{
+  "type": "scguns:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "caverns_and_chasms:chests/vault"
+    }
+  ],
+  "lootTable": "scguns_cnc:chests/vault_gun_loot"
+}
