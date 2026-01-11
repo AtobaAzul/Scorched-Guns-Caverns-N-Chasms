@@ -95,9 +95,6 @@
     "trailLengthMultiplier": 1.0,
     "trailThickness": 2.0
   },
-
-
-
   "reloads": {
     "emptyMagTimer": 50,
     "maxAmmo": 5,
@@ -107,9 +104,9 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.blackpowder.fire",
+    "enchantedFire": "scguns_cnc:item.keteriya.fire",
+    "fire": "scguns_cnc:item.keteriya.fire",
     "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
-    "fire": "scguns:item.blackpowder.fire",
     "reload": "scguns:item.gauss.reload"
   }
 }

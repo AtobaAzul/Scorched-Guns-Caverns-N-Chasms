@@ -9,25 +9,19 @@
   },
   "general": {
     "weaponType": "shotgun",
-
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 1,
-
-
     "meleeDamage": 12.0,
     "meleeReach": 3.5,
     "meleeCooldownTicks": 15,
     "hotBarrelRate": 30,
-
-
     "usesCustomMeleeAnimation": true,
     "allowAmmoChange": true
   },
   "modules": {
     "attachments": {
-
     },
     "zoom": {
       "fovModifier": 0.7,
@@ -35,9 +29,6 @@
       "zOffset": 0.6
     }
   },
-
-
-
   "projectile": {
     "advantage": "scguns:none",
     "damage": 2.5,
@@ -91,7 +82,7 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.boomstick.fire",
+    "enchantedFire": "scguns_cnc:item.keteriya.fire",
     "fire": "scguns_cnc:item.keteriya.fire",
     "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
     "reload": "scguns:item.gauss.reload"
