@@ -26,7 +26,8 @@
         "zOffset": -11.5
       },
       "scope": {
-        "yOffset": 5.5,
+        "size": 1.1,
+        "yOffset": 5.3,
         "zOffset": 3.7
       },
       "stock": {
