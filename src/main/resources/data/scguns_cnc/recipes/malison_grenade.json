@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "forge:nuggets/silver"
+    },
+    "B": {
+      "item": "scguns_cnc:hex_buckshot"
+    },
+    "C": {
+      "tag": "forge:ingots/necromium"
+    }
+  },
+  "pattern": [
+    " A ",
+    "BBB",
+    " C "
+  ],
+  "result": {
+    "item": "scguns_cnc:malison_grenade",
+    "count": 1
+  }
+}
