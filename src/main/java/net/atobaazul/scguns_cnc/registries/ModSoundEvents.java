@@ -12,6 +12,8 @@ public class ModSoundEvents {
     public static final DeferredRegister<SoundEvent> REGISTER = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
 
     public static final RegistryObject<SoundEvent> HANGMAN_FIRE = register("item.hangman.fire");
+    public static final RegistryObject<SoundEvent> HANGMAN_SILENCED_FIRE = register("item.hangman.silended_fire");
+
     public static final RegistryObject<SoundEvent> RIBCARE_FIRE = register("item.ribcage.fire");
     public static final RegistryObject<SoundEvent> BELLA_FIRE = register("item.bella.fire");
     public static final RegistryObject<SoundEvent> REHEARSE_FIRE = register("item.rehearse.fire");
