@@ -21,6 +21,14 @@
             }
         ]
     },
+    "item.malison_grenade.explode": {
+        "subtitle": "subtitles.entity.generic.explode",
+        "sounds": [
+            {
+                "name": "scguns_cnc:item/malison_grenade/explode"
+            }
+            ]
+    },
     "item.hangman_carbine.fire": {
         "subtitle": "subtitle.scguns.fire",
         "sounds": [

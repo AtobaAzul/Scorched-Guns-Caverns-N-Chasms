@@ -32,6 +32,9 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_MIDDLE = register("item.silverlining.pull2");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_END = register("item.silverlining.pull3");
 
+    public static final RegistryObject<SoundEvent> MALISON_EXPLOSION = register("item.malison_grenade.explode");
+
+
     private static RegistryObject<SoundEvent> register(String key) {
         return REGISTER.register(key, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, key)));
     }
