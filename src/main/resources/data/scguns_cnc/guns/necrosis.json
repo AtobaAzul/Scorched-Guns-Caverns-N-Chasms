@@ -104,8 +104,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.keteriya.fire",
-    "fire": "scguns_cnc:item.keteriya.fire",
+    "enchantedFire": "scguns_cnc:item.necrosis.fire",
+    "fire": "scguns_cnc:item.necrosis.fire",
     "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
     "reload": "scguns:item.gauss.reload"
   }
