@@ -28,6 +28,7 @@ public class ModCreativeTabs {
 
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
         addItemWithFullAmmo(pOutput, ModItems.LUSTRE.get());
+        addItemWithFullAmmo(pOutput, ModItems.ELECTROLASER_CARABINE.get());
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 

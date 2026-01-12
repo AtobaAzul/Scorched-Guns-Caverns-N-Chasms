@@ -13,12 +13,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "scguns_cnc:lustre",
-              "weight": 1
-            },
-            {
-              "type": "minecraft:item",
-              "name": "scguns_cnc:lustre",
+              "name": "scguns_cnc:electrolaser_carabine",
               "weight": 1
             }
           ]
