@@ -2,7 +2,7 @@
   "display": {
     "flash": {
       "size": 1.5,
-      "yOffset": 4.0,
+      "yOffset": 3.8,
       "zOffset": -12.0,
       "xOffset": -0.7,
       "textureLocation": "muzzle_flash_electrolaser_carabine"
