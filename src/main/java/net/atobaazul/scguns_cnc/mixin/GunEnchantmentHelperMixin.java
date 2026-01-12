@@ -19,7 +19,7 @@ public class GunEnchantmentHelperMixin {
             CompoundTag tag = weapon.getOrCreateTag();
             int shotCount = tag.getInt("ShotCount");
 
-            float extra_rate = 1 + ((float) shotCount / 50);
+            float extra_rate = 1 + ((float) shotCount / 30);
 
             return (int) Math.floor(rate * extra_rate);
         }
