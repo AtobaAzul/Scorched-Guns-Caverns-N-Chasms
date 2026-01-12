@@ -226,6 +226,11 @@
 				"0.5": {
 					"effect": "rack"
 				}
+			},
+			"particle_effects": {
+				"0.5": {
+					"effect": "eject_casing"
+				}
 			}
 		},
 		"aim_shoot": {
@@ -415,6 +420,11 @@
 			"sound_effects": {
 				"0.5": {
 					"effect": "rack"
+				}
+			},
+			"particle_effects": {
+				"0.5": {
+					"effect": "eject_casing"
 				}
 			}
 		},

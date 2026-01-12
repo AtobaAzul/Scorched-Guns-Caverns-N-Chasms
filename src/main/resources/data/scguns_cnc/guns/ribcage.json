@@ -27,7 +27,7 @@
         "zOffset": -16.5
       },
       "scope": {
-        "size": 1.1,
+        "size": 1.4,
         "yOffset": 5.3,
         "zOffset": -1.5
       },
@@ -52,6 +52,7 @@
     "damageFalloffEnd": 90.0,
     "damageFalloffMinMultiplier": 0.85,
     "ejectsCasing": true,
+    "ejectDuringReload": true,
     "gravity": false  ,
     "item": "scguns_cnc:hex_round",
     "casingType": "scguns_cnc:medium_necromium_casing",
