@@ -6,7 +6,7 @@
 				"identifier": "geometry.TapuyaISG",
 				"texture_width": 64,
 				"texture_height": 64,
-				"visible_bounds_width": 2,
+				"visible_bounds_width": 3,
 				"visible_bounds_height": 2,
 				"visible_bounds_offset": [0, 0, 0]
 			},
@@ -275,40 +275,6 @@
 					"name": "magazine",
 					"parent": "isg",
 					"pivot": [-2.00449, -4.75, 0.98774]
-				},
-				{
-					"name": "stand",
-					"parent": "magazine",
-					"pivot": [-0.59612, -4.75, 0.38878],
-					"cubes": [
-						{
-							"origin": [-6.99608, -5.25, -1.75227],
-							"size": [3, 1, 4.75],
-							"inflate": -0.025,
-							"pivot": [-4.00449, -4.75, 2.98774],
-							"rotation": [0, -18, 0],
-							"uv": {
-								"north": {"uv": [25, 3], "uv_size": [3, 1]},
-								"east": {"uv": [20, 23], "uv_size": [5, 1]},
-								"south": {"uv": [25, 23], "uv_size": [3, 1]},
-								"west": {"uv": [24, 12], "uv_size": [5, 1]},
-								"up": {"uv": [13, 0], "uv_size": [3, 5]},
-								"down": {"uv": [0, 21], "uv_size": [3, -5]}
-							}
-						},
-						{
-							"origin": [-4, -5.25, -2],
-							"size": [3, 1, 5],
-							"uv": {
-								"north": {"uv": [26, 4], "uv_size": [3, 1]},
-								"east": {"uv": [24, 13], "uv_size": [5, 1]},
-								"south": {"uv": [26, 5], "uv_size": [3, 1]},
-								"west": {"uv": [24, 14], "uv_size": [5, 1]},
-								"up": {"uv": [16, 0], "uv_size": [3, 5]},
-								"down": {"uv": [3, 21], "uv_size": [3, -5]}
-							}
-						}
-					]
 				},
 				{
 					"name": "ext",
