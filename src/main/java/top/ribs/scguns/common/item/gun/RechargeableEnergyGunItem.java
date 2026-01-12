@@ -89,6 +89,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         };
     }
 
+
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -190,7 +191,18 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
 
         int energyStored = getEnergyStored(stack);
         int maxEnergy = getMaxEnergyStored(stack);
+        CompoundTag tag = stack.getOrCreateTag();
+
+        float heat_level = tag.getInt("ShotCount") / 50f * 100f;
+
 
         tooltip.add(Component.translatable("tooltip.scguns.energy").append(": ").withStyle(ChatFormatting.GRAY).append(Component.literal(String.format("%,d", energyStored)).withStyle(ChatFormatting.BLUE)).append(Component.literal(" / ").withStyle(ChatFormatting.GRAY)).append(Component.literal(String.format("%,d", maxEnergy) + " FE").withStyle(ChatFormatting.BLUE)));
+
+        if (this.getUseFireRateRampUp()) {
+            tooltip.add(Component.translatable("tooltip.scguns_cnc.heat_level").append(": ").withStyle(ChatFormatting.GRAY).append(Component.literal(String.format("%.2f", heat_level)).withStyle(ChatFormatting.RED)).append(Component.literal("%").withStyle(ChatFormatting.RED)));
+        }
+
+        tooltip.add(Component.translatable(stack.getDescriptionId() + ".lore").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+
     }
 }

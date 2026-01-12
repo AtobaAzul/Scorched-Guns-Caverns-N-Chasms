@@ -54,6 +54,11 @@ public class ModLangProvider extends LanguageProvider {
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
         add("tooltip.bluntshot.knockback", "Deals increased knockback to hit targets.");
         add("tooltip.anathema", "Melee hits feed the \"gun\", restoring ammo.");
+        add("tooltip.scguns_cnc.heat_level", "Heat Level");
+
+        add("item.scguns_cnc.electrolaser_carabine.lore", "Rapid-fire rechargeable energy weapon with a welded rechargeable experimental Energy Core.\nOverheats during sustained fire, limiting fire rate.");
+        add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with a rechargeable Energy Core.\nEnergy Core can be swapped for immediate recharge.");
+
 
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");

@@ -7,6 +7,7 @@
   "item.scguns_cnc.compact_hex_round": "Compact Hex Round",
   "item.scguns_cnc.copper_slug": "Copper Slug",
   "item.scguns_cnc.electrolaser_carabine": "Electrolaser Carabine",
+  "item.scguns_cnc.electrolaser_carabine.lore": "Rapid-fire rechargeable energy weapon with a welded rechargeable experimental Energy Core.\nOverheats during sustained fire, limiting fire rate.",
   "item.scguns_cnc.gallows": "Gallows",
   "item.scguns_cnc.gravekeeper_blueprint": "Gravekeeper Blueprint",
   "item.scguns_cnc.gravekeeper_flare": "Gravekeeper Flare",
@@ -19,11 +20,12 @@
   "item.scguns_cnc.lesser_strawman": "Weird Doll",
   "item.scguns_cnc.lesser_strawman.tooltip": "A doll used in rituals. You feel it move when you're not looking.",
   "item.scguns_cnc.lustre": "Lustre",
+  "item.scguns_cnc.lustre.lore": "Repurposed laser cutter with a rechargeable Energy Core.\nEnergy Core can be swapped for immediate recharge.",
   "item.scguns_cnc.malison_grenade": "Malison Grenade",
   "item.scguns_cnc.medium_necromium_casing": "Necromium Casing",
   "item.scguns_cnc.necromium_gun_frame": "Necromium Gun Frame",
   "item.scguns_cnc.necrosis": "Necrosis",
-  "item.scguns_cnc.pulse_core": "Rapid-pulse Core",
+  "item.scguns_cnc.pulse_core": "Integrated Pulse Core",
   "item.scguns_cnc.rehearse": "Rehearse",
   "item.scguns_cnc.ribcage": "Ribcage",
   "item.scguns_cnc.silver_bullet": "Silver Bullet",
@@ -47,5 +49,6 @@
   "scguns_cnc.jei.info.gravekeeper_blueprint": "Can be obtained from Graveyard structures.",
   "tooltip.anathema": "Melee hits feed the \"gun\", restoring ammo.",
   "tooltip.bluntshot.knockback": "Deals increased knockback to hit targets.",
-  "tooltip.hex_round.magic_damage": "Deals half of the bullet damage as magic damage."
+  "tooltip.hex_round.magic_damage": "Deals half of the bullet damage as magic damage.",
+  "tooltip.scguns_cnc.heat_level": "Heat Level"
 }
