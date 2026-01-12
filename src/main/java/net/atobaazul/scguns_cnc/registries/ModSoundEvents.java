@@ -22,6 +22,7 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> NECROSIS_FIRE = register("item.necrosis.fire");
     public static final RegistryObject<SoundEvent> KETERIYA_FIRE = register("item.keteriya.fire");
     public static final RegistryObject<SoundEvent> GALLOWS_FIRE = register("item.gallows.fire");
+    public static final RegistryObject<SoundEvent> ELECTROLASER_CARABINE_FIRE = register("item.electrolaser_carabine.fire");
 
     public static final RegistryObject<SoundEvent> LUSTRE_FIRE = register("item.lustre.fire");
     public static final RegistryObject<SoundEvent> LUSTRE_JAM = register("item.lustre.jam");

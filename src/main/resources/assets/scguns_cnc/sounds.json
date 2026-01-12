@@ -258,5 +258,19 @@
         "volume": 0.8
       }
     ]
+  },
+  "item.electrolaser_carabine.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/electrolaser_carabine/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/electrolaser_carabine/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/electrolaser_carabine/fire2"
+      }
+    ]
   }
 }

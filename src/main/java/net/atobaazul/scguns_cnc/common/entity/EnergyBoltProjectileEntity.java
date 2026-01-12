@@ -73,11 +73,15 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
         super.tick();
         if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
             Vec3 startVec = this.position();
-            Vec3 dirVec = this.getDeltaMovement().normalize();
+            Vec3 dirVec = this.getDeltaMovement();
+            Vec3 endVec = startVec.add(dirVec);
 
-            for (int i = 0; i <= 10; i++) {
-                Vec3 pPos = startVec.add(dirVec.scale((double) i / 2));
-                this.level().addParticle(ModParticleTypes.ENERGY_BOLT_TRAIL.get(), true, pPos.x, pPos.y, pPos.z, 0, 0, 0);
+            for (float i = 0; i <= 10; i++) {
+                double x = startVec.x + (i / 10) * (endVec.x - startVec.x);
+                double y = startVec.y + (i / 10) * (endVec.y - startVec.y);
+                double z = startVec.z + (i / 10) * (endVec.z - startVec.z);
+
+                this.level().addParticle(ModParticleTypes.ENERGY_BOLT_TRAIL.get(), true, x, y, z, 0, 0, 0);
             }
         }
     }
