@@ -25,13 +25,16 @@
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
       {
-        "name": "scguns_cnc:item/necrosis/fire0"
+        "name": "scguns_cnc:item/necrosis/fire0",
+        "volume": 0.75
       },
       {
-        "name": "scguns_cnc:item/necrosis/fire1"
+        "name": "scguns_cnc:item/necrosis/fire1",
+        "volume": 0.75
       },
       {
-        "name": "scguns_cnc:item/necrosis/fire2"
+        "name": "scguns_cnc:item/necrosis/fire2",
+        "volume": 0.75
       }
     ]
   },

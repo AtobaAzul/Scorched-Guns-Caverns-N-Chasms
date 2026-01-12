@@ -4,6 +4,7 @@
     "scguns_cnc:hex_round",
     "scguns_cnc:bluntshot",
     "scguns_cnc:copper_slug",
-    "scguns_cnc:hexshot"
+    "scguns_cnc:hexshot",
+    "scguns_cnc:pulse_core"
   ]
 }

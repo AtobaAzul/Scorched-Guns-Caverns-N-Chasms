@@ -47,7 +47,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
             .add(HEX_ROUND.get())
             .add(BLUNTSHOT.get())
             .add(COPPER_SLUG.get())
-            .add(HEXSHOT.get());
+            .add(HEXSHOT.get())
+            .add(PULSE_CORE.get());
 
 
         tag(PISTOL_AMMO)
@@ -77,8 +78,10 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
              .addOptionalTag(SILVER_NUGGETS);
 
         tag(VAULT_GUN_TIER)
-                .add(LUSTRE.get());
+                .add(LUSTRE.get())
+                .add(ELECTROLASER_CARABINE.get());
 
-        tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get());
+        tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get())
+                .add(ELECTROLASER_CARABINE.get());
     }
 }

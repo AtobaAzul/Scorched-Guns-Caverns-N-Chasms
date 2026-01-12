@@ -1,14 +1,11 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
-import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.common.entity.*;
 import net.atobaazul.scguns_cnc.events.client.Particles;
-import net.atobaazul.scguns_cnc.registries.ModCreativeTabs;
-import net.atobaazul.scguns_cnc.registries.ModEntities;
-import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
+import net.atobaazul.scguns_cnc.registries.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,13 +18,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import top.ribs.scguns.client.screen.BlueprintScreen;
 import top.ribs.scguns.common.ProjectileManager;
-import net.atobaazul.scguns_cnc.registries.ModItems;
 import top.ribs.scguns.entity.player.GunTierRegistry;
-import top.ribs.scguns.entity.throwable.GrenadeEntity;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
@@ -59,6 +53,7 @@ public class SCGunsCnC
         Particles.REGISTER.register(modEventBus);
         ModSoundEvents.REGISTER.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             CCClientHandler.registerClientHandlers(modEventBus);
@@ -79,6 +74,7 @@ public class SCGunsCnC
         ProjectileManager.getInstance().registerFactory(ModItems.STRIKER_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new StrikerRoundProjectileEntity(ModEntities.STRIKER_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.COPPER_SLUG.get(), (worldIn, entity, weapon, item, modifiedGun) -> new CopperSlugProjectileEntity(ModEntities.COPPER_SLUG_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.HEXSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.PULSE_CORE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new EnergyBoltProjectileEntity(ModEntities.ENERGY_BOLT_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
 
        // ProjectileManager.getInstance().registerFactory(ModItems.MALISON_GRENADE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GrenadeEntity(ModEntities.MALISON_GRENADE.get(), worldIn, entity, weapon, item, modifiedGun));
 

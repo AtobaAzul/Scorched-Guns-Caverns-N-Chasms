@@ -10,7 +10,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,6 +24,8 @@ import top.ribs.scguns.network.message.C2SMessageShoot;
 
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
+    private static final int maxRate = 50;
+
     @Inject(method = "fireProjectiles", at = @At("TAIL"), remap = false)
     private static void scguns_cnc$fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun, CallbackInfo ci) {
         if (modifiedGun.getProjectile().getItem() == CCItems.LARGE_ARROW.get()) {
@@ -57,16 +58,21 @@ public abstract class ServerPlayHandlerMixin {
         }
     }
 
-    @WrapMethod(method="handleShoot", remap = false)
+    @WrapMethod(method = "handleShoot", remap = false)
     private static void scguns_cnc$handleShoot(C2SMessageShoot message, ServerPlayer player, Operation<Void> original) {
-        original.call(message,player);
+        original.call(message, player);
 
         Level world = player.level();
         ItemStack heldItem = player.getItemInHand(InteractionHand.MAIN_HAND);
 
         if (heldItem.getItem() instanceof RechargeableEnergyGunItem gunItem) {
             CompoundTag tag = heldItem.getOrCreateTag();
-            tag.putInt("RechargeCounter", 0);
+            tag.putInt("RechargeCounter", (int) Math.floor((gunItem.getRefillCooldown() * gunItem.getReloadRechargeTimeMult())));
+
+            if (gunItem.getUseFireRateRampUp()) {
+                int shotCount = tag.getInt("ShotCount");
+                tag.putInt("ShotCount", Math.min(shotCount + 1, maxRate));
+            }
         }
     }
 }

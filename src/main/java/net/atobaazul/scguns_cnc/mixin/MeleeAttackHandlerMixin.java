@@ -19,6 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.ribs.scguns.client.handler.MeleeAttackHandler;
 import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.util.GunModifierHelper;
 
 import java.util.Comparator;
 
@@ -52,7 +53,12 @@ public class MeleeAttackHandlerMixin {
 
                     CompoundTag tag = heldItem.getOrCreateTag();
                     int currentAmmo = tag.getInt("AmmoCount");
-                    int newAmmo = Math.min(Math.max(0, currentAmmo + 3), 30);
+
+                    GunItem gun = (GunItem) heldItem.getItem();
+
+                    int maxAmmo = GunModifierHelper.getModifiedAmmoCapacity(heldItem, gun.getModifiedGun(heldItem));
+
+                    int newAmmo = Math.min(Math.max(0, currentAmmo + 3), maxAmmo);
                     tag.putInt("AmmoCount", newAmmo);
                 }
             }

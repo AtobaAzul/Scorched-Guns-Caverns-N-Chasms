@@ -108,21 +108,6 @@ public class ModItems {
             )
     );
 
-    public static final RegistryObject<RechargeableEnergyGunItem> LUSTRE = REGISTER.register("lustre",
-            () -> new RechargeableEnergyGunItem(
-                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
-                    "lustre",
-                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
-                    ModSoundEvents.LUSTRE_MAG_IN.get(),
-                    ModSounds.RELOAD_END.get(),
-                    ModSoundEvents.LUSTRE_JAM.get(),
-                    ModSoundEvents.LUSTRE_JAM.get(),
-                    5000,
-                    40,
-                    300000
-            )
-    );
-
 
     public static final RegistryObject<AnimatedGunItem> GALLOWS = REGISTER.register("gallows",
             () -> new AnimatedGunItem(
@@ -148,6 +133,39 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<RechargeableEnergyGunItem> LUSTRE = REGISTER.register("lustre",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "lustre",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    5000,
+                    40,
+                    300000,
+                    2
+            )
+    );
+
+    public static final RegistryObject<RechargeableEnergyGunItem> ELECTROLASER_CARABINE = REGISTER.register("electrolaser_carabine",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "electrolaser_carabine",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    250,
+                    5,
+                    300000,
+                    10,
+                    true
+            )
+    );
+
 
     public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
 
@@ -167,6 +185,7 @@ public class ModItems {
     public static final RegistryObject<Item> STRIKER_ROUND = REGISTER.register("striker_round", () -> new StrikerRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SLUG = REGISTER.register("copper_slug", () -> new AmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new HexRoundAmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> PULSE_CORE = REGISTER.register("pulse_core", () -> new AmmoItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
 

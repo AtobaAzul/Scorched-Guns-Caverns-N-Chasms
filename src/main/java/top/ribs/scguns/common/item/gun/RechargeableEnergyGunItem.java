@@ -21,11 +21,13 @@ import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import top.ribs.scguns.init.ModSyncedDataKeys;
+import top.ribs.scguns.item.GunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.exosuit.ExoSuitCoreItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageReload;
 import top.ribs.scguns.network.message.S2CMessageUpdateAmmo;
+import top.ribs.scguns.util.GunModifierHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -38,12 +40,33 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
     private final int energyRequired;
     private final int refillCooldown;
     private final int maxEnergy;
+    private final float reloadRechargeTimeMult;
+    private final boolean useFireRateRampUp;
 
-    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy) {
+    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy, float reloadRechargeTimeMult) {
         super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
         this.energyRequired = energyRequired;
         this.refillCooldown = refillCooldown;
         this.maxEnergy = maxEnergy;
+        this.reloadRechargeTimeMult = reloadRechargeTimeMult;
+        this.useFireRateRampUp = false;
+    }
+
+    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy, float reloadRechargeTimeMult, boolean useFireRateRampUp) {
+        super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
+        this.energyRequired = energyRequired;
+        this.refillCooldown = refillCooldown;
+        this.maxEnergy = maxEnergy;
+        this.reloadRechargeTimeMult = reloadRechargeTimeMult;
+        this.useFireRateRampUp = useFireRateRampUp;
+    }
+
+    public boolean getUseFireRateRampUp() {
+        return this.useFireRateRampUp;
+    }
+
+    public float getReloadRechargeTimeMult() {
+        return this.reloadRechargeTimeMult;
     }
 
     public int getEnergyRequired() {
@@ -74,13 +97,25 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
             CompoundTag tag = stack.getOrCreateTag();
             int currentAmmo = tag.getInt("AmmoCount");
             int counter = tag.getInt("RechargeCounter");
+
+            if (useFireRateRampUp && entity.tickCount % 10 == 0) {
+                int shotCount = tag.getInt("ShotCount");
+                tag.putInt("ShotCount", Math.max(0, (int) shotCount - 1));
+            }
+
             LazyOptional<IEnergyStorage> capability = stack.getCapability(ForgeCapabilities.ENERGY);
 
-            int energyStored = capability.map(IEnergyStorage::getEnergyStored).orElse(0);
-            if (energyStored >= energyRequired && currentAmmo < 30 && !tag.getBoolean("IsShooting")) {
-                tag.putInt("RechargeCounter", counter + 1);
+            GunItem gun = (GunItem) stack.getItem();
 
-                if (counter > refillCooldown) {
+
+            int maxAmmo = GunModifierHelper.getModifiedAmmoCapacity(stack, gun.getModifiedGun(stack));
+
+
+            int energyStored = capability.map(IEnergyStorage::getEnergyStored).orElse(0);
+            if (energyStored >= energyRequired && currentAmmo < maxAmmo && !tag.getBoolean("IsShooting")) {
+                tag.putInt("RechargeCounter", counter - 1);
+
+                if (counter <= 0) {
                     stack.getCapability(ForgeCapabilities.ENERGY).map(energyStorage -> {
                         if (energyStorage.getEnergyStored() >= energyRequired) {
                             energyStorage.extractEnergy(energyRequired, false);
@@ -91,11 +126,11 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
                     });
 
 
-                    int newAmmo = Math.min(Math.max(0, currentAmmo + 1), 30);
+                    int newAmmo = Math.min(Math.max(0, currentAmmo + 1), maxAmmo);
                     tag.putInt("AmmoCount", newAmmo);
-                    tag.putInt("RechargeCounter", 0);
+                    tag.putInt("RechargeCounter", refillCooldown);
 
-                    if (entity instanceof ServerPlayer player) { //Double check if is serverplayer and the item in the slot that was ticked is still a gun.
+                    if (entity instanceof ServerPlayer player && player.getMainHandItem().getItem() == this) { //Double check if is serverplayer and the item in the slot that was ticked is still a gun.
 
                         ModSyncedDataKeys.RELOADING.setValue(player, false);
                         tag.remove("IsReloading");
@@ -110,7 +145,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
                     }
                 }
             } else {
-                tag.putInt("RechargeCounter", 0);
+                tag.putInt("RechargeCounter", refillCooldown);
             }
         }
     }

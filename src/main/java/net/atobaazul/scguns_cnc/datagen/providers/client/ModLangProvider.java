@@ -26,6 +26,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.HEXSHOT, "Hexshot Shell");
         addItem(ModItems.HEX_BUCKSHOT, "Hex Buckshot");
         addItem(ModItems.COPPER_SLUG, "Copper Slug");
+        addItem(ModItems.PULSE_CORE, "Rapid-pulse Core");
 
         //guns
         addItem(ModItems.HANGMAN_CARBINE, "Hangman Carabine");
@@ -36,6 +37,8 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.ANATHEMA, "Anathema");
         addItem(ModItems.LUSTRE, "Lustre");
+        addItem(ModItems.ELECTROLASER_CARABINE, "Electrolaser Carabine");
+
         addItem(ModItems.GALLOWS, "Gallows");
         addItem(ModItems.NECROSIS, "Necrosis");
 
