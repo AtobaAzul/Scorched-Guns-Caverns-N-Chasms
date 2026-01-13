@@ -11,8 +11,8 @@
   "general": {
     "weaponType": "lmg",
     "fireMode": "scguns:automatic",
-    "gripType": "scguns:mini_gun",
-    "baseGripType": "scguns:mini_gun",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
     "rate": 2,
     "meleeDamage": 3.5,
     "meleeCooldownTicks": 20,
@@ -23,6 +23,12 @@
   },
   "modules": {
     "attachments": {
+    },
+    "zoom": {
+      "fovModifier": 0.7,
+      "yOffset":5.4,
+      "zOffset": 0,
+      "xOffset": 0
     }
   },
   "projectile": {
