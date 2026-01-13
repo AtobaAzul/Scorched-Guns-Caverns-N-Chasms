@@ -1,0 +1,61 @@
+{
+  "display": {
+    "flash": {
+      "size": 1.5,
+      "yOffset": 2.9,
+      "zOffset": -12.5,
+      "xOffset": -0.7,
+      "textureLocation": "muzzle_flash_electrolaser_carabine"
+    }
+  },
+  "general": {
+    "weaponType": "lmg",
+    "fireMode": "scguns:automatic",
+    "gripType": "scguns:mini_gun",
+    "baseGripType": "scguns:mini_gun",
+    "rate": 2,
+    "meleeDamage": 3.5,
+    "meleeCooldownTicks": 20,
+    "meleeReach": 3.5,
+    "hotBarrelRate": 3,
+    "isRevolver": true,
+    "speedModifier": 0.85
+  },
+  "modules": {
+    "attachments": {
+    }
+  },
+  "projectile": {
+    "alwaysSpread": true,
+    "recoilAngle": 1.5,
+    "recoilKick": 0.5,
+    "spread": 1.5,
+    "criticalChance": 0.025,
+    "advantage": "scguns:none",
+    "damageFalloffStart": 18.0,
+    "damageFalloffEnd": 45.0,
+    "damageFalloffMinMultiplier": 0.65,
+    "damage": 6.5,
+    "armorPen": 1.0,
+    "gravity": false,
+    "item": "scguns_cnc:pulse_core",
+    "ejectsCasing": false,
+    "life": 10,
+    "size": 0.1,
+    "speed": 5.0,
+    "trailLengthMultiplier": 2.0
+  },
+  "reloads": {
+    "emptyMagTimer": 10,
+    "maxAmmo": 100,
+    "reloadItem": "scguns_cnc:pulse_core",
+    "reloadTimer": 60,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns_cnc:item.electrolaser_carabine.fire",
+    "fire": "scguns_cnc:item.electrolaser_carabine.fire",
+    "reload": "scguns:item.flamethrower.reload"
+  }
+}

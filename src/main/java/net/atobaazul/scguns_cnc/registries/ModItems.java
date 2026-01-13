@@ -167,6 +167,26 @@ public class ModItems {
     );
 
 
+    //placeholder test
+    public static final RegistryObject<RechargeableEnergyGunItem> ELC = REGISTER.register("elc",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "elc",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    750,
+                    5,
+                    300000,
+                    10,
+                    true
+            )
+    );
+
+
+
     public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
 
 

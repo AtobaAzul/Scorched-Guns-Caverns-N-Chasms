@@ -5,11 +5,12 @@
 			"loop": true,
 			"bones": {
 				"right_arm": {
-					"rotation": [90, 0, 0],
-					"position": [6, -4, 5]
+					"rotation": [90, 0, 180],
+					"position": [5.48271, -1.75911, 4.99127]
 				},
 				"left_arm": {
-					"scale": 0
+					"rotation": [122.60355, 14.94446, 100.74873],
+					"position": [-3.63336, -6.23544, -0.38956]
 				},
 				"gun_body": {
 					"position": [0, 0, -4]
@@ -21,11 +22,12 @@
 			"animation_length": 0.3333,
 			"bones": {
 				"right_arm": {
-					"rotation": [90, 0, 0],
-					"position": [6, -4, 5]
+					"rotation": [90, 0, 180],
+					"position": [5.48271, -1.75911, 4.99127]
 				},
 				"left_arm": {
-					"scale": 0
+					"rotation": [122.60355, 14.94446, 100.74873],
+					"position": [-3.63336, -6.23544, -0.38956]
 				},
 				"gun_body": {
 					"rotation": {
@@ -134,11 +136,12 @@
 			"animation_length": 0.3333,
 			"bones": {
 				"right_arm": {
-					"rotation": [90, 0, 0],
-					"position": [6, -4, 5]
+					"rotation": [90, 0, 180],
+					"position": [5.48271, -1.75911, 4.99127]
 				},
 				"left_arm": {
-					"scale": 0
+					"rotation": [122.60355, 14.94446, 100.74873],
+					"position": [-3.63336, -6.23544, -0.38956]
 				},
 				"gun_body": {
 					"rotation": {
@@ -218,11 +221,12 @@
 			"loop": true,
 			"bones": {
 				"right_arm": {
-					"rotation": [90, 0, 0],
-					"position": [6, -4, 5]
+					"rotation": [90, 0, 180],
+					"position": [5.48271, -1.75911, 4.99127]
 				},
 				"left_arm": {
-					"scale": 0
+					"rotation": [122.60355, 14.94446, 100.74873],
+					"position": [-3.63336, -6.23544, -0.38956]
 				},
 				"gun_body": {
 					"position": [0, 0, -4]
@@ -233,11 +237,12 @@
 			"animation_length": 0.25,
 			"bones": {
 				"right_arm": {
-					"rotation": [90, 0, 0],
-					"position": [6, -4, 5]
+					"rotation": [90, 0, 180],
+					"position": [5.48271, -1.75911, 4.99127]
 				},
 				"left_arm": {
-					"scale": 0
+					"rotation": [122.60355, 14.94446, 100.74873],
+					"position": [-3.63336, -6.23544, -0.38956]
 				},
 				"gun_body": {
 					"position": {
