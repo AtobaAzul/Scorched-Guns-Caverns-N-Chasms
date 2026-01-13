@@ -149,10 +149,10 @@ public class ModItems {
             )
     );
 
-    public static final RegistryObject<RechargeableEnergyGunItem> ELECTROLASER_CARABINE = REGISTER.register("electrolaser_carabine",
+    public static final RegistryObject<RechargeableEnergyGunItem> ELECTROLASER_AUTOCANNON = REGISTER.register("electrolaser_autocannon",
             () -> new RechargeableEnergyGunItem(
                     new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
-                    "electrolaser_carabine",
+                    "electrolaser_autocannon",
                     ModSoundEvents.LUSTRE_MAG_OUT.get(),
                     ModSoundEvents.LUSTRE_MAG_IN.get(),
                     ModSounds.RELOAD_END.get(),

@@ -4,11 +4,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagEntry;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import top.ribs.scguns.init.ModTags;
@@ -79,9 +77,9 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(VAULT_GUN_TIER)
                 .add(LUSTRE.get())
-                .add(ELECTROLASER_CARABINE.get());
+                .add(ELECTROLASER_AUTOCANNON.get());
 
         tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get())
-                .add(ELECTROLASER_CARABINE.get());
+                .add(ELECTROLASER_AUTOCANNON.get());
     }
 }
