@@ -2,15 +2,17 @@
   "display": {
     "flash": {
       "size": 1.5,
-      "yOffset": 2.9,
-      "zOffset": -12.5,
-      "xOffset": -0.7,
+      "yOffset": 3.6,
+      "zOffset": -16.5,
+      "xOffset": 0,
       "textureLocation": "muzzle_flash_electrolaser_carabine"
     }
   },
   "general": {
     "weaponType": "lmg",
-    "fireMode": "scguns:automatic",
+    "fireMode": "scguns:burst",
+    "burstAmount": 4,
+    "burstCooldown": 8,
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 2,
@@ -23,10 +25,15 @@
   },
   "modules": {
     "attachments": {
+      "scope": {
+        "size": 0.9,
+        "yOffset": 4.8,
+        "zOffset": 3.4
+      }
     },
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset":5.4,
+      "yOffset":5.8,
       "zOffset": 0,
       "xOffset": 0
     }
@@ -34,7 +41,7 @@
   "projectile": {
     "alwaysSpread": true,
     "recoilAngle": 1.5,
-    "recoilKick": 0.5,
+    "recoilKick": 0.6,
     "spread": 1.5,
     "criticalChance": 0.025,
     "advantage": "scguns:none",

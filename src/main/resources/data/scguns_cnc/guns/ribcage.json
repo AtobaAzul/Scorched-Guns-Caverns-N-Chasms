@@ -67,7 +67,8 @@
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.25,
     "recoilAngle": 4.7,
-    "recoilKick": 2.22
+    "recoilKick": 2.22,
+    "armorPen": 3.0
   },
   "reloads": {
     "emptyMagTimer": 20,

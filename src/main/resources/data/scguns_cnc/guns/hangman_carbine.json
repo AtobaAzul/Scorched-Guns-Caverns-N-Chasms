@@ -53,9 +53,9 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 7,
-    "damageFalloffStart": 11.0,
-    "damageFalloffEnd": 28.0,
+    "damage": 7.5,
+    "damageFalloffStart": 12.0,
+    "damageFalloffEnd": 29.0,
     "damageFalloffMinMultiplier": 0.45,
     "ejectsCasing": true,
     "item": "scguns_cnc:compact_hex_round",

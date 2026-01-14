@@ -55,7 +55,7 @@
     "damage": 12,
     "damageFalloffStart": 24.0,
     "damageFalloffEnd": 36.0,
-    "damageFalloffMinMultiplier": 0.45,
+    "damageFalloffMinMultiplier": 0.35,
     "ejectsCasing": true,
     "item": "scguns_cnc:hex_round",
     "casingType": "scguns_cnc:medium_necromium_casing",
@@ -67,7 +67,8 @@
     "recoilAngle": 3.25,
     "recoilKick": 2.0,
     "spread": 3.0,
-    "alwaysSpread": false
+    "alwaysSpread": false,
+    "armorPen": 1.0
   },
   "reloads": {
     "emptyMagTimer": 30,

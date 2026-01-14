@@ -58,7 +58,7 @@
     "damage": 28.5,
     "damageFalloffStart": 10.0,
     "damageFalloffEnd": 24.0,
-    "damageFalloffMinMultiplier": 0.35,
+    "damageFalloffMinMultiplier": 0.45,
     "ejectsCasing": true,
     "gravity": false,
     "item": "scguns_cnc:hexshot",
@@ -81,8 +81,8 @@
     "playerKnockBackStrength": 0.1,
     "knockbackStrength": 1.67,
     "damage": 20.0,
-    "damageFalloffStart": 32.0,
-    "damageFalloffEnd": 48.0,
+    "damageFalloffStart": 17.0,
+    "damageFalloffEnd": 40.0,
     "damageFalloffMinMultiplier": 0.8,
     "ejectsCasing": true,
     "gravity": true,
@@ -93,7 +93,8 @@
     "size": 0.1,
     "speed": 5.0,
     "trailLengthMultiplier": 1.0,
-    "trailThickness": 2.0
+    "trailThickness": 2.0,
+    "armorPen": 1.0
   },
   "reloads": {
     "emptyMagTimer": 50,
