@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import top.ribs.scguns.init.ModCreativeModeTabs;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
@@ -25,10 +26,10 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
         addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
         addItemWithFullAmmo(pOutput, ModItems.NECROSIS.get());
-
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
-        addItemWithFullAmmo(pOutput, ModItems.LUSTRE.get());
-        addItemWithFullAmmo(pOutput, ModItems.ELECTROLASER_CARABINE.get());
+
+        addEnergyGunWithFullAmmo(pOutput, ModItems.LUSTRE.get());
+        addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROLASER_AUTOCANNON.get());
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
@@ -58,5 +59,17 @@ public class ModCreativeTabs {
 
     private static void addItemWithFullAmmo(CreativeModeTab.Output output, Item item) {
         ModCreativeModeTabs.CreativeTabHelper.addItemWithFullAmmo(output, item);
+    }
+
+    private static void addEnergyGunWithFullAmmo(CreativeModeTab.Output output, Item item) {
+        if (item instanceof RechargeableEnergyGunItem gunItem) {
+            ItemStack stack = new ItemStack(gunItem);
+            stack.getOrCreateTag().putInt("Energy", gunItem.getMaxEnergyStored(stack));
+            stack.getOrCreateTag().putInt("AmmoCount", gunItem.getGun().getReloads().getMaxAmmo());
+            output.accept(stack);
+        } else {
+            output.accept(item);
+        }
+
     }
 }

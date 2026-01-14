@@ -37,7 +37,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.ANATHEMA, "Anathema");
         addItem(ModItems.LUSTRE, "Lustre");
-        addItem(ModItems.ELECTROLASER_CARABINE, "Electrolaser Carabine");
+        addItem(ModItems.ELECTROLASER_AUTOCANNON, "Electrolaser Autocannon");
 
         addItem(ModItems.GALLOWS, "Gallows");
         addItem(ModItems.NECROSIS, "Necrosis");
@@ -56,7 +56,7 @@ public class ModLangProvider extends LanguageProvider {
         add("tooltip.anathema", "Melee hits feed the \"gun\", restoring ammo.");
         add("tooltip.scguns_cnc.heat_level", "Heat Level");
 
-        add("item.scguns_cnc.electrolaser_carabine.lore", "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.");
+        add("item.scguns_cnc.electrolaser_autocannon.lore", "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.");
         add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with a rechargeable Energy Core.\nEnergy Core can be swapped for immediate recharge.");
 
 

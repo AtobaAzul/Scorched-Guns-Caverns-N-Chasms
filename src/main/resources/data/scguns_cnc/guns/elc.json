@@ -5,7 +5,7 @@
       "yOffset": 3.6,
       "zOffset": -16.5,
       "xOffset": 0,
-      "textureLocation": "muzzle_flash_electrolaser_carabine"
+      "textureLocation": "muzzle_flash_electrolaser"
     }
   },
   "general": {
@@ -67,8 +67,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.electrolaser_carabine.fire",
-    "fire": "scguns_cnc:item.electrolaser_carabine.fire",
+    "enchantedFire": "scguns_cnc:item.electrolaser_autocannon.fire",
+    "fire": "scguns_cnc:item.electrolaser_autocannon.fire",
     "reload": "scguns:item.flamethrower.reload"
   }
 }

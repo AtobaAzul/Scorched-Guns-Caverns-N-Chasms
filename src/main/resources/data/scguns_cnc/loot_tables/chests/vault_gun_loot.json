@@ -13,7 +13,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "scguns_cnc:electrolaser_carabine",
+              "name": "scguns_cnc:electrolaser_autocannon",
               "weight": 1
             }
           ]
