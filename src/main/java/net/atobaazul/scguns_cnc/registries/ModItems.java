@@ -159,9 +159,9 @@ public class ModItems {
                     ModSoundEvents.LUSTRE_JAM.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
                     750,
-                    5,
+                    2,
                     300000,
-                    10,
+                    50,
                     true
             )
     );
