@@ -20,7 +20,7 @@
 		},
 		"shoot": {
 			"loop": true,
-			"animation_length": 0.375,
+			"animation_length": 0.4167,
 			"bones": {
 				"gun_body": {
 					"rotation": {
@@ -44,7 +44,7 @@
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.375": {
+						"0.4167": {
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
@@ -70,7 +70,7 @@
 							"post": [0, 0.1, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.375": {
+						"0.4167": {
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}

@@ -60,6 +60,20 @@
       }
     ]
   },
+  "item.elc.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/elc/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/elc/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/elc/fire2"
+      }
+    ]
+  },
   "item.hangman_carbine.silenced_fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
