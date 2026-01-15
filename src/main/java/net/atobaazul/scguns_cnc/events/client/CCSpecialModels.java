@@ -111,6 +111,31 @@ public enum CCSpecialModels {
     HANGMAN_TACT_GRIP("hangman_carbine/tact_grip"),
 
 
+
+    GALLOWS_MAIN("gallows/main"),
+    GALLOWS_STAN_MAGAZINE("gallows/stand_mag"),
+    GALLOWS_FAST_MAGAZINE("gallows/fast_mag"),
+    GALLOWS_EXT_MAGAZINE("gallows/ext_mag"),
+    GALLOWS_STAN_BARREL("gallows/stand_barrel"),
+    GALLOWS_EXT_BARREL("gallows/ext_barrel"),
+    GALLOWS_STOCK_WEIGHTED("gallows/heavy_stock"),
+    GALLOWS_STOCK_LIGHT("gallows/light_stock"),
+    GALLOWS_STOCK_WOODEN("gallows/wooden_stock"),
+    GALLOWS_STAN_GRIP("gallows/stand_grip"),
+    GALLOWS_SILENCER("gallows"),
+    GALLOWS_ADVANCED_SILENCER("gallows/advanced_silencer"),
+    GALLOWS_MUZZLE_BRAKE("gallows/muzzle_brake"),
+    GALLOWS_NETHERITE_BAYONET("gallows/netherite_bayonet"),
+    GALLOWS_DIAMOND_BAYONET("gallows/diamond_bayonet"),
+    GALLOWS_ANTHRALITE_BAYONET("gallows/the_voices"),
+    GALLOWS_IRON_BAYONET("gallows/iron_bayonet"),
+    GALLOWS_LIGHT_GRIP("gallows/light_grip"),
+    GALLOWS_TACT_GRIP("gallows/tact_grip"),
+
+
+
+
+
     LUSTRE_MAIN("lustre/main"),
     ANATHEMA_MAIN("anathema/main"),
     KETERIYA_MAIN("keteriya/main")

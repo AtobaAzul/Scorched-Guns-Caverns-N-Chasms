@@ -8,8 +8,7 @@
     }
   },
   "general": {
-    "weaponType": "smg",
-
+    "weaponType": "rifle",
     "fireMode": "scguns:automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
@@ -64,8 +63,8 @@
     "size": 0.05,
     "speed": 7.0,
     "trailLengthMultiplier": 2.0,
-    "recoilAngle": 3.25,
-    "recoilKick": 2.0,
+    "recoilAngle": 4.25,
+    "recoilKick": 4.0,
     "spread": 3.0,
     "alwaysSpread": false,
     "armorPen": 1.0

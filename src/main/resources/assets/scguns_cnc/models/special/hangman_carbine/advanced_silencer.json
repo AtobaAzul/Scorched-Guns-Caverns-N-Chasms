@@ -3,35 +3,36 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"2": "scguns_cnc:item/hangman_carbine"
+		"0": "scguns:animated/gun/gallows",
+		"particle": "scguns:animated/gun/gallows"
 	},
 	"elements": [
 		{
 			"name": "advanced_silencer",
-			"from": [7.35304, 3.47301, -6.075],
-			"to": [8.85304, 4.97301, -1.5],
-			"rotation": {"angle": 45, "axis": "z", "origin": [8.05303, 4.09801, -4.5625]},
+			"from": [7.38902, 3.7, -8.3625],
+			"to": [8.88902, 5.2, -3.7875],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.08901, 4.325, -6.85]},
 			"faces": {
-				"north": {"uv": [4.5, 6.75, 4.875, 7.125], "texture": "#2"},
-				"east": {"uv": [4, 1.5, 5.125, 1.875], "texture": "#2"},
-				"south": {"uv": [6.75, 5.5, 7.125, 5.875], "texture": "#2"},
-				"west": {"uv": [4.25, 2.75, 5.375, 3.125], "texture": "#2"},
-				"up": {"uv": [3.625, 5.625, 3.25, 4.5], "texture": "#2"},
-				"down": {"uv": [4.875, 4, 4.5, 5.125], "texture": "#2"}
+				"north": {"uv": [3, 7.5, 3.375, 7.875], "texture": "#0"},
+				"east": {"uv": [5.25, 1.25, 6.375, 1.625], "texture": "#0"},
+				"south": {"uv": [7.5, 3.25, 7.875, 3.625], "texture": "#0"},
+				"west": {"uv": [5.25, 1.75, 6.375, 2.125], "texture": "#0"},
+				"up": {"uv": [5.625, 3.375, 5.25, 2.25], "texture": "#0"},
+				"down": {"uv": [0.875, 5.5, 0.5, 6.625], "texture": "#0"}
 			}
 		},
 		{
 			"name": "advanced_silencer",
-			"from": [7.52981, 3.82301, -1.5],
-			"to": [8.67981, 4.97301, -1],
-			"rotation": {"angle": 45, "axis": "z", "origin": [8.22981, 4.19801, -4.0625]},
+			"from": [7.56579, 4.05, -3.7875],
+			"to": [8.71579, 5.2, -3.2875],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.26579, 4.425, -6.35]},
 			"faces": {
-				"north": {"uv": [6.25, 4.5, 6.5, 4.75], "texture": "#2"},
-				"east": {"uv": [0, 9, 0.125, 9.25], "texture": "#2"},
-				"south": {"uv": [6.75, 6, 7, 6.25], "texture": "#2"},
-				"west": {"uv": [0.25, 9, 0.375, 9.25], "texture": "#2"},
-				"up": {"uv": [9.25, 0.625, 9, 0.5], "texture": "#2"},
-				"down": {"uv": [1, 9, 0.75, 9.125], "texture": "#2"}
+				"north": {"uv": [8.5, 1, 8.75, 1.25], "texture": "#0"},
+				"east": {"uv": [8.75, 8.25, 8.875, 8.5], "texture": "#0"},
+				"south": {"uv": [1.75, 8.5, 2, 8.75], "texture": "#0"},
+				"west": {"uv": [8.75, 8.5, 8.875, 8.75], "texture": "#0"},
+				"up": {"uv": [9, 8.875, 8.75, 8.75], "texture": "#0"},
+				"down": {"uv": [0.25, 9, 0, 9.125], "texture": "#0"}
 			}
 		}
 	],
@@ -68,8 +69,8 @@
 	"groups": [
 		{
 			"name": "advanced_silencer",
-			"origin": [8.29002, -5.225, 4.775],
-			"color": 7,
+			"origin": [8.34002, -4.375, 10.725],
+			"color": 2,
 			"children": [0, 1]
 		}
 	]
