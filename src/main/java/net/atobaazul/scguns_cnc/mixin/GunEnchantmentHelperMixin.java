@@ -15,11 +15,11 @@ public class GunEnchantmentHelperMixin {
     private static int scguns_cnc$getRate(ItemStack weapon, Gun modifiedGun, Operation<Integer> original) {
         int rate = original.call(weapon, modifiedGun);
 
-        if (weapon.getItem() instanceof RechargeableEnergyGunItem gunItem && gunItem.getUseFireRateRampUp()) {
+        if (weapon.getItem() instanceof RechargeableEnergyGunItem gunItem && gunItem.getUsesOverheat()) {
             CompoundTag tag = weapon.getOrCreateTag();
-            int shotCount = tag.getInt("ShotCount");
+            float heatLevel = tag.getFloat("HeatLevel");
 
-            float extra_rate = 1 + ((float) shotCount / 30);
+            float extra_rate = 1 + ((float) heatLevel / 30);
 
             return (int) Math.floor(rate * extra_rate);
         }

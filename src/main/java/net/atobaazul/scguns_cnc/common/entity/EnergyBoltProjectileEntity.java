@@ -69,10 +69,10 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
         spawnImpactParticles(this.level(), hitVec);
 
         ItemStack stack = this.getWeapon();
-        if (stack.getItem() instanceof RechargeableEnergyGunItem gunItem && gunItem.getUseFireRateRampUp()) {
+        if (stack.getItem() instanceof RechargeableEnergyGunItem gunItem && gunItem.getUsesOverheat()) {
             CompoundTag tag = stack.getOrCreateTag();
-            int shotCount = tag.getInt("ShotCount");
-            float igniteChance = shotCount / 50f;
+            float heatLevel = tag.getFloat("HeatLevel");
+            float igniteChance = heatLevel / 50f;
             if (entity instanceof LivingEntity livingEntity && igniteChance >= Math.random()) {
                 livingEntity.setSecondsOnFire(2);
             }

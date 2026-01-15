@@ -30,9 +30,6 @@ import top.ribs.scguns.network.message.C2SMessageShoot;
 
 import java.util.Objects;
 
-import static net.atobaazul.scguns_cnc.registries.ModItems.MEDIUM_NECROMIUM_CASING;
-import static net.atobaazul.scguns_cnc.registries.ModItems.SMALL_NECROMIUM_CASING;
-
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
     private static final int maxRate = 50;
@@ -109,9 +106,9 @@ public abstract class ServerPlayHandlerMixin {
             CompoundTag tag = heldItem.getOrCreateTag();
             tag.putInt("RechargeCounter", (int) Math.floor((gunItem.getRefillCooldown() * gunItem.getReloadRechargeTimeMult())));
 
-            if (gunItem.getUseFireRateRampUp()) {
-                int shotCount = tag.getInt("ShotCount");
-                tag.putInt("ShotCount", Math.min(shotCount + 1, maxRate));
+            if (gunItem.getUsesOverheat()) {
+                float heatLevel = tag.getFloat("HeatLevel");
+                tag.putFloat("HeatLevel", Math.min(heatLevel + 1, maxRate));
             }
         }
     }
