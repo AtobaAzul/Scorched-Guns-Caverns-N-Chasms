@@ -1,10 +1,13 @@
 package top.ribs.scguns.common.item.gun;
 
 import com.mrcrayfish.framework.api.network.LevelLocation;
+import net.atobaazul.scguns_cnc.client.render.gun.EmmisiveAnimatedGunRenderer;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -12,6 +15,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
@@ -20,6 +26,7 @@ import net.minecraftforge.energy.IEnergyStorage;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import top.ribs.scguns.client.render.gun.animated.AnimatedGunRenderer;
 import top.ribs.scguns.init.ModSyncedDataKeys;
 import top.ribs.scguns.item.GunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
@@ -31,6 +38,7 @@ import top.ribs.scguns.util.GunModifierHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Consumer;
 
 //You might be asking yourself "why is this file not under the net.atobaazul.scguns_cnc package?!"
 //Well, that's because of several things regarding reload and casing ejection packets EXPLICITLY requiring that the
@@ -42,6 +50,8 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
     private final int maxEnergy;
     private final float reloadRechargeTimeMult;
     private final boolean useFireRateRampUp;
+    private final String gunID;
+    private boolean useGlowMask = false;
 
     public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy, float reloadRechargeTimeMult) {
         super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
@@ -50,6 +60,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         this.maxEnergy = maxEnergy;
         this.reloadRechargeTimeMult = reloadRechargeTimeMult;
         this.useFireRateRampUp = false;
+        this.gunID = path;
     }
 
     public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy, float reloadRechargeTimeMult, boolean useFireRateRampUp) {
@@ -59,10 +70,17 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         this.maxEnergy = maxEnergy;
         this.reloadRechargeTimeMult = reloadRechargeTimeMult;
         this.useFireRateRampUp = useFireRateRampUp;
+        this.gunID = path;
     }
+
 
     public boolean getUseFireRateRampUp() {
         return this.useFireRateRampUp;
+    }
+
+    public RechargeableEnergyGunItem setUseGlowMask(boolean val) {
+        this.useGlowMask = val;
+        return this;
     }
 
     public float getReloadRechargeTimeMult() {
@@ -205,4 +223,24 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         tooltip.add(Component.translatable(stack.getDescriptionId() + ".lore").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
     }
+
+    private AnimatedGunRenderer getRenderer() {
+        return this.useGlowMask ? new EmmisiveAnimatedGunRenderer(new ResourceLocation("scguns", gunID)) : new AnimatedGunRenderer(new ResourceLocation("scguns", gunID));
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            private AnimatedGunRenderer renderer;
+
+            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+                if (this.renderer == null) {
+                    this.renderer = getRenderer();
+                }
+                return this.renderer;
+            }
+        });
+    }
+
 }

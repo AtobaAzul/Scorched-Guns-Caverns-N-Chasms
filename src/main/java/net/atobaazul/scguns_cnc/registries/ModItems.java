@@ -163,7 +163,7 @@ public class ModItems {
                     300000,
                     50,
                     true
-            )
+            ).setUseGlowMask(true)
     );
 
 
