@@ -49,7 +49,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
     private final int refillCooldown;
     private final int maxEnergy;
     private final float reloadRechargeTimeMult;
-    private final boolean useFireRateRampUp;
+    private final boolean useOverheat;
     private final String gunID;
     private boolean useGlowMask = false;
 
@@ -59,23 +59,23 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         this.refillCooldown = refillCooldown;
         this.maxEnergy = maxEnergy;
         this.reloadRechargeTimeMult = reloadRechargeTimeMult;
-        this.useFireRateRampUp = false;
+        this.useOverheat = false;
         this.gunID = path;
     }
 
-    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy, float reloadRechargeTimeMult, boolean useFireRateRampUp) {
+    public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, int energyRequired, int refillCooldown, int maxEnergy, float reloadRechargeTimeMult, boolean useOverheat) {
         super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
         this.energyRequired = energyRequired;
         this.refillCooldown = refillCooldown;
         this.maxEnergy = maxEnergy;
         this.reloadRechargeTimeMult = reloadRechargeTimeMult;
-        this.useFireRateRampUp = useFireRateRampUp;
+        this.useOverheat = useOverheat;
         this.gunID = path;
     }
 
 
-    public boolean getUseFireRateRampUp() {
-        return this.useFireRateRampUp;
+    public boolean getUsesOverheat() {
+        return this.useOverheat;
     }
 
     public RechargeableEnergyGunItem setUseGlowMask(boolean val) {
@@ -117,9 +117,9 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
             int currentAmmo = tag.getInt("AmmoCount");
             int counter = tag.getInt("RechargeCounter");
 
-            if (useFireRateRampUp && entity.tickCount % 10 == 0) {
-                int shotCount = tag.getInt("ShotCount");
-                tag.putInt("ShotCount", Math.max(0, (int) shotCount - 1));
+            if (useOverheat && entity.tickCount % 10 == 0) {
+                float heatLevel = tag.getFloat("HeatLevel");
+                tag.putFloat("HeatLevel", Math.max(0, (int) heatLevel - 1));
             }
 
             LazyOptional<IEnergyStorage> capability = stack.getCapability(ForgeCapabilities.ENERGY);
@@ -211,12 +211,12 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         int maxEnergy = getMaxEnergyStored(stack);
         CompoundTag tag = stack.getOrCreateTag();
 
-        float heat_level = tag.getInt("ShotCount") / 50f * 100f;
+        float heat_level = tag.getFloat("HeatLevel") / 50f * 100f;
 
 
         tooltip.add(Component.translatable("tooltip.scguns.energy").append(": ").withStyle(ChatFormatting.GRAY).append(Component.literal(String.format("%,d", energyStored)).withStyle(ChatFormatting.BLUE)).append(Component.literal(" / ").withStyle(ChatFormatting.GRAY)).append(Component.literal(String.format("%,d", maxEnergy) + " FE").withStyle(ChatFormatting.BLUE)));
 
-        if (this.getUseFireRateRampUp()) {
+        if (this.getUsesOverheat()) {
             tooltip.add(Component.translatable("tooltip.scguns_cnc.heat_level").append(": ").withStyle(ChatFormatting.GRAY).append(Component.literal(String.format("%.2f", heat_level)).withStyle(ChatFormatting.RED)).append(Component.literal("%").withStyle(ChatFormatting.RED)));
         }
 
