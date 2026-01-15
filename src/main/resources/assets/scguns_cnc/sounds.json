@@ -78,13 +78,16 @@
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
       {
-        "name": "scguns_cnc:item/hangman_carbine/silenced_fire0"
+        "name": "scguns_cnc:item/hangman_carbine/silenced_fire0",
+        "volume": 0.55
       },
       {
-        "name": "scguns_cnc:item/hangman_carbine/silenced_fire1"
+        "name": "scguns_cnc:item/hangman_carbine/silenced_fire1",
+        "volume": 0.50
       },
       {
-        "name": "scguns_cnc:item/hangman_carbine/silenced_fire2"
+        "name": "scguns_cnc:item/hangman_carbine/silenced_fire2",
+        "volume": 0.50
       }
     ]
   },
