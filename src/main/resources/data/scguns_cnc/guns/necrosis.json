@@ -46,6 +46,7 @@
   },
   "projectile": {
     "alwaysSpread": true,
+    "ejectDuringReload": true,
     "projectileAmount": 16,
     "recoilAngle": 10.0,
     "recoilKick": 3.0,
@@ -72,6 +73,7 @@
   },
   "projectile_1": {
     "projectileAmount": 1,
+    "ejectDuringReload": true,
     "alwaysSpread": false,
     "recoilAngle": 8.75,
     "recoilKick": 3.0,

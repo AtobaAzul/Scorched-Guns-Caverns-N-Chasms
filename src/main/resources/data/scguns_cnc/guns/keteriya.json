@@ -37,6 +37,7 @@
     "size": 0.075,
     "speed": 4.0,
     "trailLengthMultiplier": 2.0,
+    "ejectDuringReload": true,
     "alwaysSpread": true,
     "recoilAngle": 12.0,
     "recoilKick": 1,
@@ -44,11 +45,14 @@
     "criticalChance": 0.1,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.8,
+    "ejectsCasing": true,
+    "casingParticle": "scguns:iron_casing",
     "projectileAmount": 8
   },
   "projectile_1": {
     "projectileAmount": 18,
     "alwaysSpread": true,
+    "ejectDuringReload": true,
     "recoilAngle": 10.0,
     "recoilKick": 3.0,
     "spread": 6.0,
