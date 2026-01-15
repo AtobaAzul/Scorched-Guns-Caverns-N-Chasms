@@ -9,18 +9,15 @@
   },
   "general": {
     "weaponType": "smg",
-
     "fireMode": "scguns:automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 3,
-
     "meleeDamage": 2.5,
     "meleeCooldownTicks": 15,
     "meleeReach": 2.5,
     "hotBarrelRate": 7,
     "criticalChance": 0.06
-
   },
   "modules": {
     "attachments": {
@@ -44,7 +41,6 @@
         "zOffset": 3.6
       }
     },
-
     "zoom": {
       "fovModifier": 0.5,
       "yOffset": 5.8,
@@ -52,6 +48,7 @@
     }
   },
   "projectile": {
+    "alwaysSpread": true,
     "advantage": "scguns:none",
     "damage": 7.5,
     "damageFalloffStart": 12.0,
@@ -67,8 +64,7 @@
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 2.25,
     "recoilKick": 1,
-    "spread": 3.0,
-    "alwaysSpread": false
+    "spread": 3.0
   },
   "reloads": {
     "emptyMagTimer": 30,
