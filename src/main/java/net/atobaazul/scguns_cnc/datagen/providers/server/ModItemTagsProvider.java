@@ -48,6 +48,10 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
             .add(HEXSHOT.get())
             .add(PULSE_CORE.get());
 
+        tag(INCREASED_CASING_DROP_CHANCE)
+            .add(SMALL_NECROMIUM_CASING.get())
+            .add(MEDIUM_NECROMIUM_CASING.get());
+
 
         tag(PISTOL_AMMO)
             .add(COMPACT_HEX_ROUND.get());
