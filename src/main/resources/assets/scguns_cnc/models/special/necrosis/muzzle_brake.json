@@ -3,22 +3,22 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "scguns_cnc:item/gallows",
-		"particle": "scguns:animated/gun/gallows"
+		"0": "scguns_cnc:item/necrosis",
+		"particle": "scguns_cnc:item/necrosis"
 	},
 	"elements": [
 		{
-			"name": "default_mag",
-			"from": [7.5, 0.6, 6.25],
-			"to": [8.5, 4.1, 8.75],
-			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 2.35, 5.75]},
+			"name": "muzzle_brake",
+			"from": [6.975, 2.975, -5.525],
+			"to": [9.025, 5.025, -1.975],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 4, -3]},
 			"faces": {
-				"north": {"uv": [0.5, 6.75, 0.75, 7.625], "texture": "#0"},
-				"east": {"uv": [1.5, 4, 2.125, 4.875], "texture": "#0"},
-				"south": {"uv": [0.75, 6.75, 1, 7.625], "texture": "#0"},
-				"west": {"uv": [2.25, 4, 2.875, 4.875], "texture": "#0"},
-				"up": {"uv": [3, 7.875, 2.75, 7.25], "texture": "#0"},
-				"down": {"uv": [7.5, 3.25, 7.25, 3.875], "texture": "#0"}
+				"north": {"uv": [6.25, 7.5, 6.75, 8], "texture": "#0"},
+				"east": {"uv": [6.5, 0, 7.375, 0.5], "texture": "#0"},
+				"south": {"uv": [0, 7.75, 0.5, 8.25], "texture": "#0"},
+				"west": {"uv": [4.5, 6.5, 5.375, 7], "texture": "#0"},
+				"up": {"uv": [7, 6.125, 6.5, 5.25], "texture": "#0"},
+				"down": {"uv": [1.5, 6.75, 1, 7.625], "texture": "#0"}
 			}
 		}
 	],
@@ -54,9 +54,9 @@
 	},
 	"groups": [
 		{
-			"name": "default_mag",
-			"origin": [8, -6.65, 5.75],
-			"color": 5,
+			"name": "muzzle_brake",
+			"origin": [8.73996, 2.575, 3.6],
+			"color": 6,
 			"children": [0]
 		}
 	]

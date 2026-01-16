@@ -44,10 +44,27 @@ public enum CCSpecialModels {
   RIBCAGE_LIGHT_GRIP("ribcage/light_grip"),
   RIBCAGE_TACT_GRIP("ribcage/tact_grip"),
 
+//
 
+    NECROSIS_MAIN("necrosis/main"),
+    NECROSIS_STAN_BARREL("necrosis/stan_barrel"),
+    NECROSIS_EXT_BARREL("necrosis/ext_barrel"),
+    NECROSIS_STOCK_WEIGHTED("necrosis/heavy_stock"),
+    NECROSIS_STOCK_LIGHT("necrosis/light_stock"),
+    NECROSIS_STOCK_WOODEN("necrosis/wooden_stock"),
+    NECROSIS_STAN_GRIP("necrosis/stan_grip"),
+    NECROSIS_SILENCER("necrosis/silencer"),
+    NECROSIS_ADVANCED_SILENCER("necrosis/advanced_silencer"),
+    NECROSIS_MUZZLE_BRAKE("necrosis/muzzle_brake"),
 
+    NECROSIS_NETHERITE_BAYONET("necrosis/netherite_bayonet"),
+    NECROSIS_DIAMOND_BAYONET("necrosis/diamond_bayonet"),
+    NECROSIS_ANTHRALITE_BAYONET("necrosis/anthralite_bayonet"),
+    NECROSIS_IRON_BAYONET("necrosis/iron_bayonet"),
+    NECROSIS_LIGHT_GRIP("necrosis/light_grip"),
+    NECROSIS_TACT_GRIP("necrosis/tact_grip"),
 
-
+//
 
 
 
@@ -70,7 +87,7 @@ public enum CCSpecialModels {
 
 
 
-
+//
 
 
 
@@ -111,7 +128,7 @@ public enum CCSpecialModels {
     HANGMAN_TACT_GRIP("hangman_carbine/tact_grip"),
 
 
-
+//
     GALLOWS_MAIN("gallows/main"),
     GALLOWS_STAN_MAGAZINE("gallows/stand_mag"),
     GALLOWS_FAST_MAGAZINE("gallows/fast_mag"),

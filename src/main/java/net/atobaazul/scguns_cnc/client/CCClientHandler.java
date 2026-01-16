@@ -36,6 +36,8 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.REHEARSE.get(), new RehearseModel());
         ModelOverrides.register(ModItems.LUSTRE.get(), new LustreModel());
         ModelOverrides.register(ModItems.GALLOWS.get(), new GallowsModel());
+        ModelOverrides.register(ModItems.NECROSIS.get(), new NecrosisModel());
+
 
     }}
 
