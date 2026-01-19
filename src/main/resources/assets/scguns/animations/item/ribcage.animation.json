@@ -1085,6 +1085,11 @@
 						}
 					}
 				}
+			},
+			"sound_effects": {
+				"4.6": {
+					"effect": "reload_mag_out"
+				}
 			}
 		}
 	}

@@ -74,7 +74,7 @@
     "enchantedFire": "scguns_cnc:item.bella.fire",
     "fire": "scguns_cnc:item.bella.fire",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
+    "silencedFire": "scguns_cnc:item.bella.silenced_fire",
     "flyby": "scguns:bullet.flyby1"
   }
 }

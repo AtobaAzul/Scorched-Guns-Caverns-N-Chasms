@@ -38,14 +38,14 @@
       },
       "scope": {
         "size": 0.9,
-        "yOffset": 4.8,
+        "yOffset": 5.3,
         "zOffset": 3.4
       }
     },
 
     "zoom": {
       "fovModifier": 0.5,
-      "yOffset": 5.2,
+      "yOffset": 5.7,
       "zOffset": 3
     }
   },
