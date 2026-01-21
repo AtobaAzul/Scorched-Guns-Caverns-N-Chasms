@@ -201,6 +201,23 @@
       }
     ]
   },
+  "item.gallows.silenced_fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/gallows/silenced_fire0",
+        "volume": 0.65
+      },
+      {
+        "name": "scguns_cnc:item/gallows/silenced_fire1",
+        "volume": 0.65
+      },
+      {
+        "name": "scguns_cnc:item/gallows/silenced_fire2",
+        "volume": 0.65
+      }
+    ]
+  },
   "item.silverlining.pull1": {
     "sounds": [
       {
@@ -304,6 +321,20 @@
       },
       {
         "name": "scguns_cnc:item/electrolaser_autocannon/fire2"
+      }
+    ]
+  },
+  "item.flyby.silver_flyby": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/flyby/flyby0"
+      },
+      {
+        "name": "scguns_cnc:item/flyby/flyby1"
+      },
+      {
+        "name": "scguns_cnc:item/flyby/flyby2"
       }
     ]
   }

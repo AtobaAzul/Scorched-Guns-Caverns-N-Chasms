@@ -83,7 +83,7 @@
     "enchantedFire": "scguns_cnc:item.gallows.fire",
     "fire": "scguns_cnc:item.gallows.fire",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
+    "silencedFire": "scguns_cnc:item.gallows.silenced_fire",
     "flyby": "scguns:bullet.flyby1"
   }
 }

@@ -24,6 +24,8 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> NECROSIS_FIRE = register("item.necrosis.fire");
     public static final RegistryObject<SoundEvent> KETERIYA_FIRE = register("item.keteriya.fire");
     public static final RegistryObject<SoundEvent> GALLOWS_FIRE = register("item.gallows.fire");
+    public static final RegistryObject<SoundEvent> GALLOWS_SILENCED_FIRE = register("item.gallows.silenced_fire");
+
     public static final RegistryObject<SoundEvent> ELECTROLASER_AUTOCANNON_FIRE = register("item.electrolaser_autocannon.fire");
     public static final RegistryObject<SoundEvent> ELC_FIRE = register("item.elc.fire");
 
@@ -38,6 +40,8 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_END = register("item.silverlining.pull3");
 
     public static final RegistryObject<SoundEvent> MALISON_EXPLOSION = register("item.malison_grenade.explode");
+
+    public static final RegistryObject<SoundEvent> SILVER_FLYBY = register("item.flyby.silver_flyby");
 
 
     private static RegistryObject<SoundEvent> register(String key) {
