@@ -79,6 +79,6 @@
     "fire": "scguns_cnc:item.hangman_carbine.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns_cnc:item.hangman_carbine.silenced_fire",
-    "flyby": "scguns:bullet.flyby1"
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }

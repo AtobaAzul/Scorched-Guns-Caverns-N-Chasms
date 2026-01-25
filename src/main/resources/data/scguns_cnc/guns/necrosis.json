@@ -110,6 +110,7 @@
     "enchantedFire": "scguns_cnc:item.necrosis.fire",
     "fire": "scguns_cnc:item.necrosis.fire",
     "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
-    "reload": "scguns:item.gauss.reload"
+    "reload": "scguns:item.gauss.reload",
+    "flyby": "scguns:bullet.flyby1"
   }
 }

@@ -83,6 +83,6 @@
     "fire": "scguns_cnc:item.ribcage.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.bruiser.silenced_fire",
-    "flyby": "scguns:bullet.flyby1"
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }

@@ -81,6 +81,7 @@
     "enchantedFire": "scguns_cnc:item.rehearse.fire",
     "fire": "scguns_cnc:item.rehearse.fire",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns_cnc:item.rehearse.silenced_fire"
+    "silencedFire": "scguns_cnc:item.rehearse.silenced_fire",
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }

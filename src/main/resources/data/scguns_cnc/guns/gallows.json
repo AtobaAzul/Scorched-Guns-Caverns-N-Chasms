@@ -84,6 +84,6 @@
     "fire": "scguns_cnc:item.gallows.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns_cnc:item.gallows.silenced_fire",
-    "flyby": "scguns:bullet.flyby1"
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }
