@@ -62,7 +62,7 @@ public abstract class BrassMaskArmorItemMixin extends ArmorItem implements GeoIt
     }
 
 
-    @WrapMethod(method = "useOn", remap = false)
+    @WrapMethod(method = "useOn")
     private InteractionResult useOn(UseOnContext pContext, Operation<InteractionResult> original) {
         Player player = pContext.getPlayer();
         Level level = pContext.getLevel();
