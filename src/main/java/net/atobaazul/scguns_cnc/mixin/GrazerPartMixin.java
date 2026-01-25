@@ -23,7 +23,7 @@ public abstract class GrazerPartMixin extends PartEntity<AbstractGrazer> {
         super(parent);
     }
 
-    @WrapMethod(method="hurt", remap = false)
+    @WrapMethod(method="hurt")
     private boolean scguns_cnc$hurt(DamageSource source, float amount, Operation<Boolean> original) {
         AbstractGrazer grazer = this.getParent();
         Entity directentity = source.getDirectEntity();
