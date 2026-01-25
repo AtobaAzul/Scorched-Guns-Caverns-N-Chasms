@@ -49,15 +49,7 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         }
     }
 
-    float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
-        float chance = GunModifierHelper.getCriticalChance(weapon);
-        if (rand.nextFloat() < chance) {
-            float critMultiplier = this.modifiedGun.getProjectile().getCritDamageMultiplier();
-            return damage * critMultiplier;
-        } else {
-            return damage;
-        }
-    }
+
 
     @Override
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
