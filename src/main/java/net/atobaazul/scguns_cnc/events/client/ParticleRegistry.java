@@ -21,6 +21,7 @@ public class ParticleRegistry {
     {
 
         event.registerSpriteSet(Particles.HEX_CASING_PARTICLE.get(), CasingParticle.Provider::new);
+        event.registerSpriteSet(Particles.HEX_SHELL_PARTICLE.get(), CasingParticle.Provider::new);
 
     }
 

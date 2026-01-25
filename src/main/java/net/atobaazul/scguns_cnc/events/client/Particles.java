@@ -22,5 +22,6 @@ public class Particles {
 
 
         public static final RegistryObject<SimpleParticleType> HEX_CASING_PARTICLE = REGISTER.register("hex_casing", () -> new SimpleParticleType(true));
+        public static final RegistryObject<SimpleParticleType> HEX_SHELL_PARTICLE = REGISTER.register("hex_shell", () -> new SimpleParticleType(true));
 
     }
