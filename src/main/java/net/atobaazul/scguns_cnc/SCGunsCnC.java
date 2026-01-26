@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.common.entity.*;
-import net.atobaazul.scguns_cnc.events.client.Particles;
 import net.atobaazul.scguns_cnc.registries.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -50,7 +49,6 @@ public class SCGunsCnC
 
         ModItems.REGISTER.register(modEventBus);
         ModEntities.REGISTER.register(modEventBus);
-        Particles.REGISTER.register(modEventBus);
         ModSoundEvents.REGISTER.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
