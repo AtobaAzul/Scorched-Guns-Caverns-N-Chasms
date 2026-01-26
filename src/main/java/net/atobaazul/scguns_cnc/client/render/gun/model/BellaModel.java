@@ -2,13 +2,10 @@ package net.atobaazul.scguns_cnc.client.render.gun.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.atobaazul.scguns_cnc.events.client.CCSpecialModels;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.client.SpecialModels;
 import top.ribs.scguns.client.render.gun.IOverrideModel;
 import top.ribs.scguns.client.util.RenderUtil;
 import top.ribs.scguns.common.Gun;
@@ -17,9 +14,6 @@ import top.ribs.scguns.item.attachment.IAttachment;
 
 
 public class BellaModel implements IOverrideModel {
-
-
-
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
@@ -43,8 +37,6 @@ public class BellaModel implements IOverrideModel {
         // Render barrel attachments
         renderBarrelAttachments(matrixStack, buffer, stack, light, overlay);
 
-
-
         // Render magazine attachments
         if (Gun.hasAttachmentEquipped(stack, IAttachment.Type.MAGAZINE)) {
             if (Gun.getAttachment(IAttachment.Type.MAGAZINE, stack).getItem() == ModItems.EXTENDED_MAG.get())
@@ -56,8 +48,6 @@ public class BellaModel implements IOverrideModel {
         } else {
             RenderUtil.renderModel(CCSpecialModels.BELLA_STAN_MAGAZINE.getModel(), stack, matrixStack, buffer, light, overlay);
         }
-
-        // Render the moving part (bolt) when in use by the player
     }
 
     private void renderBarrelAttachments(PoseStack matrixStack, MultiBufferSource buffer, ItemStack stack, int light, int overlay) {
@@ -80,12 +70,5 @@ public class BellaModel implements IOverrideModel {
         if (!hasExtendedBarrel) {
             RenderUtil.renderModel(CCSpecialModels.BELLA_STAN_BARREL.getModel(), stack, matrixStack, buffer, light, overlay);
         }
-
-
-    }
-
-
-    private double ease(double x) {
-        return 1 - Math.pow(1 - (2 * x), 4);
     }
 }

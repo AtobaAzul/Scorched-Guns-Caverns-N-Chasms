@@ -15,12 +15,11 @@ public class GunEvents {
     public static void preShoot(GunFireEvent.Pre event) {
         Player player = event.getEntity();
         ItemStack heldItem = player.getMainHandItem();
-        if (!player.isCreative()) {
 
+        if (!player.isCreative()) {
             if ((heldItem.getItem() instanceof RechargeableEnergyGunItem) && player.isUnderWater()) {
                 event.setCanceled(true);
             }
         }
-
     }
 }

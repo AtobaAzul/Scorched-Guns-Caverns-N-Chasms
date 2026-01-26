@@ -17,12 +17,8 @@ public class SilverliningModel implements IOverrideModel {
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
-
         // Renders the static parts of the model.
         RenderUtil.renderModel(CCSpecialModels.SILVERLINGING_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
-
-        // Renders the iron sights if no scope is attached.
-
 
         // Render stock attachments
         renderStockAttachments(stack, matrixStack, buffer, light, overlay);
@@ -32,10 +28,6 @@ public class SilverliningModel implements IOverrideModel {
 
         // Render magazine attachments
         renderMagazineAttachments(stack, matrixStack, buffer, light, overlay);
-
-        // Render barrel and attachments with the new system
-
-
     }
 
     private void renderStockAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
@@ -48,7 +40,6 @@ public class SilverliningModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.SILVERLINGING_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
             else if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.SILVERLINGING_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
-
         }
     }
 
@@ -81,6 +72,4 @@ public class SilverliningModel implements IOverrideModel {
             RenderUtil.renderModel(CCSpecialModels.SILVERLINGING_STAN_MAGAZINE.getModel(), stack, matrixStack, buffer, light, overlay);
         }
     }
-
-
 }

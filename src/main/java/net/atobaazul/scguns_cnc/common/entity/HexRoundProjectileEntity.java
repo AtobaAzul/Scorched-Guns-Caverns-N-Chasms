@@ -4,7 +4,6 @@ import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -26,7 +25,6 @@ import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageBlood;
 import top.ribs.scguns.network.message.S2CMessageProjectileHitEntity;
 import top.ribs.scguns.util.GunEnchantmentHelper;
-import top.ribs.scguns.util.GunModifierHelper;
 
 public class HexRoundProjectileEntity extends ProjectileEntity {
     private static final float ADVANCED_SHIELD_DISABLE_CHANCE = 0.45f;
@@ -40,16 +38,12 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         super(entityType, worldIn, shooter, weapon, item, modifiedGun);
     }
 
-
-
     @Override
     protected void onProjectileTick() {
         if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
             this.level().addParticle(CCParticleTypes.SILVER_SPARK.get(), true, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
         }
     }
-
-
 
     @Override
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
@@ -59,7 +53,6 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         damage = newDamage;
         ResourceLocation advantage = this.getProjectile().getAdvantage();
         damage *= advantageMultiplier(entity);
-
 
         boolean wasAlive = entity instanceof LivingEntity && entity.isAlive();
         if (headshot) {
@@ -76,7 +69,6 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             DamageSource source = ModDamageTypes.Sources.projectile(this.level().registryAccess(), this, (LivingEntity) this.getOwner());
 
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
-
                 entity.hurt(source, damage / 2);
 
                 if (entity instanceof LivingEntity livingEntity) {

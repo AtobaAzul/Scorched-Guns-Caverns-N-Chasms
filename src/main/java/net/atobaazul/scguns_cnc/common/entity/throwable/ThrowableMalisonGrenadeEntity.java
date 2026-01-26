@@ -11,7 +11,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -25,10 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.entity.projectile.ProjectileEntity;
-import top.ribs.scguns.entity.throwable.GrenadeEntity;
 import top.ribs.scguns.entity.throwable.ThrowableGrenadeEntity;
-import top.ribs.scguns.entity.throwable.ThrowableItemEntity;
 
 import java.util.List;
 
@@ -53,9 +49,7 @@ public class ThrowableMalisonGrenadeEntity extends ThrowableGrenadeEntity {
         this.setItem(new ItemStack(ModItems.MALISON_GRENADE.get()));
         this.setMaxLife(maxCookTime);
         this.setShouldBounce(true);
-
     }
-
 
     private static double negRand() {
         return Math.random() > .5f ? -Math.random() : Math.random();
@@ -140,7 +134,6 @@ public class ThrowableMalisonGrenadeEntity extends ThrowableGrenadeEntity {
     public void tick() {
         super.tick();
         this.prevRotation = this.rotation;
-        double speed = this.getDeltaMovement().length();
         this.particleTick();
     }
 
@@ -239,7 +232,6 @@ public class ThrowableMalisonGrenadeEntity extends ThrowableGrenadeEntity {
         playExplosionSound(serverLevel, entity.position(), radius);
         spawnExplosionParticles(serverLevel, entity.position(), EXPLOSION_RADIUS);
         applyExplosionDamage(serverLevel, entity.position(), EXPLOSION_RADIUS, 30, this);
-
 
         double y = this.getY() + this.getType().getDimensions().height * 0.5;
 

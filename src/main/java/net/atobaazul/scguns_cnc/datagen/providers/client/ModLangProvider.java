@@ -59,7 +59,6 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.electrolaser_autocannon.lore", "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.");
         add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with an Energy Core recharge system.\nEnergy Core can be swapped for immediate recharge.");
 
-
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");
 
@@ -76,7 +75,8 @@ public class ModLangProvider extends LanguageProvider {
         add("raid.scguns.gravekeeper", "Gravekeeper Raid");
 
         //misc.
-        add("scguns_cnc.jei.info.gravekeeper_blueprint", "Can be obtained from Graveyard structures.");
+        add("scguns_cnc.jei.info.found_in_gravekeeper_structures", "Found in Gravekeeper structures.");
+        add("scguns_cnc.jei.info.found_in_vaults", "Found in underground Vaults.");
         add("raid.announcement.scguns_cnc.gravekeeper", "The Gravekeepers arrived, the curse demand a sacrifice!");
         add("raid.boss.scguns_cnc.gravekeeper", "Gravekeeper Herald");
         add("item.scguns_cnc.lesser_strawman.tooltip", "A doll used in rituals. You feel it move when you're not looking.");

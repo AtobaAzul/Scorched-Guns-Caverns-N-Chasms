@@ -7,7 +7,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import top.ribs.scguns.client.render.gun.ModelOverrides;
-import top.ribs.scguns.client.render.gun.model.RailworkerModel;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
@@ -25,7 +24,6 @@ public class CCClientHandler {
         registerModelOverrides();
     }
 
-
     private static void registerModelOverrides() {
         ModelOverrides.register(ModItems.HANGMAN_CARBINE.get(), new HangmanCarbineModel());
         ModelOverrides.register(ModItems.KETERIYA.get(), new KeteriyaModel());
@@ -37,7 +35,6 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.LUSTRE.get(), new LustreModel());
         ModelOverrides.register(ModItems.GALLOWS.get(), new GallowsModel());
         ModelOverrides.register(ModItems.NECROSIS.get(), new NecrosisModel());
-
-
-    }}
+    }
+}
 

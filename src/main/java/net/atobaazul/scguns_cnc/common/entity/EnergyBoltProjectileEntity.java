@@ -30,7 +30,6 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
         return Math.random() > .5f ? -Math.random() : Math.random();
     }
 
-
     private void spawnImpactParticles(Level world, Vec3 hitPos) {
         LivingEntity player = this.getShooter();
         ServerLevel serverLevel = (ServerLevel) world;
@@ -78,7 +77,6 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
             }
         }
     }
-
 
     @Override
     public void tick() {

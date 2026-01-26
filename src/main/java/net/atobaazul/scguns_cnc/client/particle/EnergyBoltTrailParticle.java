@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class EnergyBoltTrailParticle extends TurquoiseParticle {
     public EnergyBoltTrailParticle(ClientLevel level, boolean floor, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
         super(level, floor, x, y, z, xSpeed, ySpeed, zSpeed);
-        this.lifetime = (int) (this.random.nextInt(floor ? 60 : 20) + (floor ? 60 : 20)*0.125);
+        this.lifetime = (int) (this.random.nextInt(floor ? 60 : 20) + (floor ? 60 : 20) * 0.125);
 
     }
 

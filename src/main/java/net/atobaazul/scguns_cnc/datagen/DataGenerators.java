@@ -27,7 +27,6 @@ public class DataGenerators {
         ModBuiltInEntriesProvider datapackEntries = new ModBuiltInEntriesProvider(packOutput, lookupProvider);
         CompletableFuture<HolderLookup.Provider> provider = datapackEntries.getRegistryProvider();
 
-
         boolean server = event.includeServer();
         boolean client = event.includeClient();
 
@@ -36,6 +35,5 @@ public class DataGenerators {
         generator.addProvider(client, new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(client, new ModLangProvider(packOutput));
         generator.addProvider(server, new ModEntityTagsProvider(packOutput, provider, existingFileHelper));
-
     }
 }

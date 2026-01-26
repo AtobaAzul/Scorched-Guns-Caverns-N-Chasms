@@ -34,7 +34,10 @@ public class JEICCPlugin implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
-        //registration.addIngredientInfo(new ItemStack(ModItems.GRAVEKEEPER_BLUEPRINT.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.gravekeeper_blueprint"));
-        registration.addIngredientInfo(new ItemStack(ModItems.ANATHEMA.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.gravekeeper_blueprint"));
+        //registration.addIngredientInfo(new ItemStack(ModItems.GRAVEKEEPER_BLUEPRINT.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_gravekeeper_structures"));
+        registration.addIngredientInfo(new ItemStack(ModItems.ANATHEMA.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_gravekeeper_structures"));
+        registration.addIngredientInfo(new ItemStack(ModItems.LUSTRE.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_vaults"));
+        registration.addIngredientInfo(new ItemStack(ModItems.ELECTROLASER_AUTOCANNON.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_vaults"));
+
     }
 }

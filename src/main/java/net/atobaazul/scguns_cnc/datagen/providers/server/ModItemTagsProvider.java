@@ -34,56 +34,58 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(ModTags.Items.ONE_HANDED_CARBINE).add(REHEARSE.get());
+        tag(ModTags.Items.ONE_HANDED_CARBINE)
+                .add(REHEARSE.get());
 
         tag(EMPTY_CASING)
-            .add(SMALL_NECROMIUM_CASING.get())
-            .add(MEDIUM_NECROMIUM_CASING.get());
+                .add(SMALL_NECROMIUM_CASING.get())
+                .add(MEDIUM_NECROMIUM_CASING.get());
 
         tag(AMMO)
-            .add(COMPACT_HEX_ROUND.get())
-            .add(HEX_ROUND.get())
-            .add(BLUNTSHOT.get())
-            .add(COPPER_SLUG.get())
-            .add(HEXSHOT.get())
-            .add(PULSE_CORE.get());
+                .add(COMPACT_HEX_ROUND.get())
+                .add(HEX_ROUND.get())
+                .add(BLUNTSHOT.get())
+                .add(COPPER_SLUG.get())
+                .add(HEXSHOT.get())
+                .add(PULSE_CORE.get());
 
         tag(INCREASED_CASING_DROP_CHANCE)
-            .add(SMALL_NECROMIUM_CASING.get())
-            .add(MEDIUM_NECROMIUM_CASING.get());
+                .add(SMALL_NECROMIUM_CASING.get())
+                .add(MEDIUM_NECROMIUM_CASING.get());
 
 
         tag(PISTOL_AMMO)
-            .add(COMPACT_HEX_ROUND.get());
+                .add(COMPACT_HEX_ROUND.get());
 
         tag(RIFLE_AMMO)
-            .add(HEX_ROUND.get());
+                .add(HEX_ROUND.get());
 
         tag(SHOTGUN_AMMO)
-            .add(BLUNTSHOT.get())
-            .add(COPPER_SLUG.get())
-            .add(HEXSHOT.get());
+                .add(BLUNTSHOT.get())
+                .add(COPPER_SLUG.get())
+                .add(HEXSHOT.get());
 
         tag(GRAVEKEEPER_GUN_TIER)
-            .add(HANGMAN_CARBINE.get())
-            .add(RIBCAGE.get())
-            .add(BELLA.get())
-            .add(REHEARSE.get())
-            .add(SILVER_LINING.get())
-            .add(KETERIYA.get())
-            .add(ANATHEMA.get())
-            .add(GALLOWS.get())
-            .add(NECROSIS.get());
+                .add(HANGMAN_CARBINE.get())
+                .add(RIBCAGE.get())
+                .add(BELLA.get())
+                .add(REHEARSE.get())
+                .add(SILVER_LINING.get())
+                .add(KETERIYA.get())
+                .add(ANATHEMA.get())
+                .add(GALLOWS.get())
+                .add(NECROSIS.get());
 
         tag(HEX_BULLET_TIP)
-             .add(SILVER_BULLET.get())
-             .addOptionalTag(SILVER_NUGGETS);
+                .add(SILVER_BULLET.get())
+                .addOptionalTag(SILVER_NUGGETS);
 
         tag(VAULT_GUN_TIER)
                 .add(LUSTRE.get())
                 .add(ELECTROLASER_AUTOCANNON.get());
 
-        tag(ModTags.Items.HEAVY_WEAPON).add(LUSTRE.get())
+        tag(ModTags.Items.HEAVY_WEAPON)
+                .add(LUSTRE.get())
                 .add(ELECTROLASER_AUTOCANNON.get());
     }
 }

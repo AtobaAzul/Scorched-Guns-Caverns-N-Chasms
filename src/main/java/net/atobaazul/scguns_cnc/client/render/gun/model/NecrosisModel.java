@@ -14,14 +14,11 @@ import top.ribs.scguns.item.attachment.IAttachment;
 
 
 public class NecrosisModel implements IOverrideModel {
-
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
-
         // Renders the static parts of the model.
         RenderUtil.renderModel(CCSpecialModels.NECROSIS_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
-
 
         // Render stock attachments
         renderStockAttachments(stack, matrixStack, buffer, light, overlay);
@@ -29,12 +26,8 @@ public class NecrosisModel implements IOverrideModel {
         // Render under-barrel attachments
         renderUnderBarrelAttachments(stack, matrixStack, buffer, light, overlay);
 
-        // Render magazine attachments
-
         // Render barrel and attachments with the new system
         renderBarrelAndAttachments(stack, matrixStack, buffer, light, overlay);
-
-
     }
 
     private void renderStockAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
@@ -47,7 +40,6 @@ public class NecrosisModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.NECROSIS_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
             else if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.NECROSIS_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
-
         }
     }
 
@@ -68,8 +60,6 @@ public class NecrosisModel implements IOverrideModel {
         }
     }
 
-
-
     private void renderBarrelAndAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
         boolean hasExtendedBarrel = false;
 
@@ -87,9 +77,5 @@ public class NecrosisModel implements IOverrideModel {
         if (!hasExtendedBarrel) {
             RenderUtil.renderModel(CCSpecialModels.NECROSIS_STAN_BARREL.getModel(), stack, matrixStack, buffer, light, overlay);
         }
-    }
-
-    private double ease(double x) {
-        return 1 - Math.pow(1 - (2 * x), 4);
     }
 }

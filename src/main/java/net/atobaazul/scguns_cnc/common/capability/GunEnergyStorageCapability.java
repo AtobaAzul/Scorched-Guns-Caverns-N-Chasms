@@ -7,7 +7,7 @@ import net.minecraftforge.common.capabilities.AutoRegisterCapability;
 import net.minecraftforge.energy.IEnergyStorage;
 
 @AutoRegisterCapability
-public class GunEnergyStorageCapability implements IEnergyStorage  {
+public class GunEnergyStorageCapability implements IEnergyStorage {
     private final ItemStack stack;
     private final int capacity;
 

@@ -18,5 +18,4 @@ public class CopperSlugProjectileEntity extends ProjectileEntity {
     public CopperSlugProjectileEntity(EntityType<? extends Entity> entityType, Level worldIn, LivingEntity shooter, ItemStack weapon, GunItem item, Gun modifiedGun) {
         super(entityType, worldIn, shooter, weapon, item, modifiedGun);
     }
-
 }

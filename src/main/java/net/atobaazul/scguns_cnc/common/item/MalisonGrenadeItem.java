@@ -36,7 +36,7 @@ public class MalisonGrenadeItem extends AmmoItem {
         if (this.canCook()) {
             int duration = this.getUseDuration(stack) - count;
             if (duration == 10) {
-                player.level().playLocalSound(player.getX(), player.getY(), player.getZ(), (SoundEvent)ModSounds.ITEM_GRENADE_PIN.get(), SoundSource.PLAYERS, 1.0F, 1.0F, false);
+                player.level().playLocalSound(player.getX(), player.getY(), player.getZ(), ModSounds.ITEM_GRENADE_PIN.get(), SoundSource.PLAYERS, 1.0F, 1.0F, false);
             }
         }
     }
@@ -54,14 +54,14 @@ public class MalisonGrenadeItem extends AmmoItem {
 
     public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
         if (this.canCook() && !worldIn.isClientSide() && !entityLiving.isUnderWater()) {
-            if (!(entityLiving instanceof Player) || !((Player)entityLiving).isCreative()) {
+            if (!(entityLiving instanceof Player) || !((Player) entityLiving).isCreative()) {
                 stack.shrink(1);
             }
 
             ThrowableMalisonGrenadeEntity grenade = this.create(worldIn, entityLiving, 0);
             grenade.onDeath();
             if (entityLiving instanceof Player) {
-                ((Player)entityLiving).awardStat(Stats.ITEM_USED.get(this));
+                ((Player) entityLiving).awardStat(Stats.ITEM_USED.get(this));
             }
         }
 
@@ -72,30 +72,28 @@ public class MalisonGrenadeItem extends AmmoItem {
         if (!worldIn.isClientSide() && !entityLiving.isUnderWater()) {
             int duration = this.getUseDuration(stack) - timeLeft;
             if (duration >= 10) {
-                if (!(entityLiving instanceof Player) || !((Player)entityLiving).isCreative()) {
+                if (!(entityLiving instanceof Player) || !((Player) entityLiving).isCreative()) {
                     stack.shrink(1);
                 }
 
                 ThrowableMalisonGrenadeEntity grenade = this.create(worldIn, entityLiving, this.maxCookTime - duration);
-                grenade.shootFromRotation(entityLiving, entityLiving.getXRot(), entityLiving.getYRot(), 0.0F, Math.min(1.0F, (float)duration / 10.0F), 1.0F);
+                grenade.shootFromRotation(entityLiving, entityLiving.getXRot(), entityLiving.getYRot(), 0.0F, Math.min(1.0F, (float) duration / 10.0F), 1.0F);
                 worldIn.addFreshEntity(grenade);
                 this.onThrown(worldIn, grenade);
                 if (entityLiving instanceof Player) {
-                    ((Player)entityLiving).awardStat(Stats.ITEM_USED.get(this));
+                    ((Player) entityLiving).awardStat(Stats.ITEM_USED.get(this));
                 }
             }
         }
-
     }
 
     public ThrowableMalisonGrenadeEntity create(Level world, LivingEntity entity, int timeLeft) {
-        return new ThrowableMalisonGrenadeEntity (world, entity, timeLeft);
+        return new ThrowableMalisonGrenadeEntity(world, entity, timeLeft);
     }
 
     public boolean canCook() {
         return true;
     }
 
-    protected void onThrown(Level world, ThrowableMalisonGrenadeEntity entity) {
-    }
+    protected void onThrown(Level world, ThrowableMalisonGrenadeEntity entity) {}
 }

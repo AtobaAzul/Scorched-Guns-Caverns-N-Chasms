@@ -18,5 +18,4 @@ public class BloodShotProjectileEntity extends ProjectileEntity {
     public BloodShotProjectileEntity(EntityType<? extends Entity> entityType, Level worldIn, LivingEntity shooter, ItemStack weapon, GunItem item, Gun modifiedGun) {
         super(entityType, worldIn, shooter, weapon, item, modifiedGun);
     }
-
 }

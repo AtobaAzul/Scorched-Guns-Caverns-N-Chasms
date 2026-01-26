@@ -14,16 +14,12 @@ import top.ribs.scguns.item.attachment.IAttachment;
 
 
 public class GallowsModel implements IOverrideModel {
-
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
 
         // Renders the static parts of the model.
         RenderUtil.renderModel(CCSpecialModels.GALLOWS_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
-
-        // Renders the iron sights if no scope is attached.
-
 
         // Render stock attachments
         renderStockAttachments(stack, matrixStack, buffer, light, overlay);
@@ -36,8 +32,6 @@ public class GallowsModel implements IOverrideModel {
 
         // Render barrel and attachments with the new system
         renderBarrelAndAttachments(stack, matrixStack, buffer, light, overlay);
-
-
     }
 
     private void renderStockAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
@@ -50,7 +44,6 @@ public class GallowsModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.GALLOWS_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
             else if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.GALLOWS_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
-
         }
     }
 
@@ -101,9 +94,5 @@ public class GallowsModel implements IOverrideModel {
         if (!hasExtendedBarrel) {
             RenderUtil.renderModel(CCSpecialModels.GALLOWS_STAN_BARREL.getModel(), stack, matrixStack, buffer, light, overlay);
         }
-    }
-
-    private double ease(double x) {
-        return 1 - Math.pow(1 - (2 * x), 4);
     }
 }
