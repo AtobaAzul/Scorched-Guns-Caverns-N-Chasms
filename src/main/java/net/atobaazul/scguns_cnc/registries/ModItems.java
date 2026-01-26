@@ -4,7 +4,6 @@ import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
-import net.atobaazul.scguns_cnc.common.item.StrikerRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
@@ -202,7 +201,6 @@ public class ModItems {
     public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new BluntshotAmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> STRIKER_ROUND = REGISTER.register("striker_round", () -> new StrikerRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SLUG = REGISTER.register("copper_slug", () -> new AmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> PULSE_CORE = REGISTER.register("pulse_core", () -> new AmmoItem(new Item.Properties()));
