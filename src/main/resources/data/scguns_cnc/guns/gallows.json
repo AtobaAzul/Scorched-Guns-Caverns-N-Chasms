@@ -38,7 +38,7 @@
       },
       "scope": {
         "size": 0.9,
-        "yOffset": 5.3,
+        "yOffset": 5.2,
         "zOffset": 3.4
       }
     },
@@ -46,7 +46,7 @@
     "zoom": {
       "fovModifier": 0.5,
       "yOffset": 5.7,
-      "zOffset": 3
+      "zOffset": 1.5
     }
   },
   "projectile": {

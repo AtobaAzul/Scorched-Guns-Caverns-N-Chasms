@@ -6,7 +6,7 @@
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
-    "rate": 14,
+    "rate": 16,
 
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 18,
@@ -28,7 +28,7 @@
     },
     "zoom": {
       "fovModifier": 0.6,
-      "yOffset": 6.75,
+      "yOffset": 6.6,
       "zOffset": 4
     }
   },
