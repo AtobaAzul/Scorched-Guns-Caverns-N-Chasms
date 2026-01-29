@@ -546,7 +546,7 @@
 							"lerp_mode": "catmullrom"
 						},
 						"0.5833": {
-							"post": [0, 0, 1],
+							"post": [0, 0, 0.25],
 							"lerp_mode": "catmullrom"
 						},
 						"0.9167": {
@@ -1523,31 +1523,31 @@
 				"gun_body": {
 					"rotation": {
 						"0.0": {
-							"post": [-1, 0.1308, 2.99715],
+							"post": [0.99726, 0.02617, 2.99989],
 							"lerp_mode": "catmullrom"
 						},
-						"0.2083": {
+						"0.0833": {
 							"post": [1, 0.5, 0],
 							"lerp_mode": "catmullrom"
 						},
+						"0.1667": {
+							"post": [5, 0, 1],
+							"lerp_mode": "catmullrom"
+						},
 						"0.2917": {
-							"post": [-1.37515, 0.27301, -0.18728],
+							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"0.375": {
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.4167": {
-							"post": [1, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
 						"0.5417": {
-							"post": [-8, -0.21, -6.37],
+							"post": [-1, -0.21, -6.37],
 							"lerp_mode": "catmullrom"
 						},
 						"0.7083": {
-							"post": [-10, 0.03373, -9.4765],
+							"post": [-4, 0.03373, -9.4765],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
@@ -1560,24 +1560,20 @@
 							"post": [0, 0, 1],
 							"lerp_mode": "catmullrom"
 						},
-						"0.2083": {
-							"post": [-0.25, 0.5, 1.5],
-							"lerp_mode": "catmullrom"
-						},
-						"0.2917": {
-							"post": [-0.2, 0, 1.22],
+						"0.0833": {
+							"post": [-0.05, 0.5, 1.5],
 							"lerp_mode": "catmullrom"
 						},
 						"0.375": {
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.4167": {
-							"post": [0, 0, 0],
+						"0.625": {
+							"post": [0.18, 0.1, 0.55],
 							"lerp_mode": "catmullrom"
 						},
-						"0.625": {
-							"post": [-0.02, 0.1, 0.55],
+						"0.7083": {
+							"post": [0.26, 0.1, 0.57],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
@@ -1593,11 +1589,7 @@
 							"lerp_mode": "catmullrom"
 						},
 						"0.0833": {
-							"post": [-10, 0, -2],
-							"lerp_mode": "catmullrom"
-						},
-						"0.1667": {
-							"post": [-8, -1.84271, -2],
+							"post": [-6, 0, -2],
 							"lerp_mode": "catmullrom"
 						},
 						"0.2917": {
