@@ -20,7 +20,6 @@ import top.ribs.scguns.item.attachment.IAttachment;
 public class RehearseModel implements IOverrideModel {
     @SuppressWarnings("resource")
     @Override
-
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
         RenderUtil.renderModel(CCSpecialModels.REHEARSE_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
 
@@ -33,17 +32,18 @@ public class RehearseModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.REHEARSE_STOCK_WOODEN.getModel(), stack, matrixStack, buffer, light, overlay);
             if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.REHEARSE_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
-
         }
 
         renderBarrelAttachments(matrixStack, buffer, stack, light, overlay);
 
         float cooldown = 0.0F;
+
         if (entity.equals(Minecraft.getInstance().player)) {
             ItemCooldowns tracker = Minecraft.getInstance().player.getCooldowns();
             cooldown = tracker.getCooldownPercent(stack.getItem(), Minecraft.getInstance().getFrameTime());
             cooldown = (float) ease(cooldown);
         }
+
         matrixStack.pushPose();
         matrixStack.translate(0, -0.28, 0.36);
         float rotationAngle = -cooldown * 38;
@@ -75,8 +75,8 @@ public class RehearseModel implements IOverrideModel {
             RenderUtil.renderModel(CCSpecialModels.REHEARSE_STAN_BARREL.getModel(), stack, matrixStack, buffer, light, overlay);
         }
     }
+
     private double ease(double x) {
         return 1 - Math.pow(1 - x, 4);
     }
-
 }

@@ -1,5 +1,4 @@
 {
-
   "item.hangman.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
@@ -22,6 +21,31 @@
       }
     ]
   },
+  "item.necrosis.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/necrosis/fire0",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/necrosis/fire1",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/necrosis/fire2",
+        "volume": 1
+      }
+    ]
+  },
+  "item.malison_grenade.explode": {
+    "subtitle": "subtitles.entity.generic.explode",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/malison_grenade/explode"
+      }
+    ]
+  },
   "item.hangman_carbine.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
@@ -36,20 +60,54 @@
       }
     ]
   },
+  "item.hangman_carbine.silenced_fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/hangman_carbine/silenced_fire0",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/hangman_carbine/silenced_fire1",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/hangman_carbine/silenced_fire2",
+        "volume": 1
+      }
+    ]
+  },
   "item.rehearse.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
       {
         "name": "scguns_cnc:item/rehearse/fire0",
-        "volume": 0.75
+        "volume": 1
       },
       {
         "name": "scguns_cnc:item/rehearse/fire1",
-        "volume": 0.75
+        "volume": 1
       },
       {
         "name": "scguns_cnc:item/rehearse/fire2",
-        "volume": 0.75
+        "volume": 1
+      }
+    ]
+  },
+  "item.rehearse.silenced_fire": {
+    "subtitle": "subtitle.scguns.silenced_fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/rehearse/silenced_fire0",
+        "volume": 0.7
+      },
+      {
+        "name": "scguns_cnc:item/rehearse/silenced_fire1",
+        "volume": 0.7
+      },
+      {
+        "name": "scguns_cnc:item/rehearse/silenced_fire2",
+        "volume": 0.7
       }
     ]
   },
@@ -67,7 +125,23 @@
       }
     ]
   },
-
+  "item.bella.silenced_fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/bella/silenced_fire0",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/bella/silenced_fire1",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/bella/silenced_fire2",
+        "volume": 1
+      }
+    ]
+  },
   "item.silverlining.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
@@ -79,6 +153,54 @@
       },
       {
         "name": "scguns_cnc:item/silverlining/shoot3"
+      }
+    ]
+  },
+  "item.keteriya.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/keteriya/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/keteriya/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/keteriya/fire2"
+      }
+    ]
+  },
+  "item.gallows.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/gallows/fire0",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/gallows/fire1",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/gallows/fire2",
+        "volume": 1
+      }
+    ]
+  },
+  "item.gallows.silenced_fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/gallows/silenced_fire0",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/gallows/silenced_fire1",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/gallows/silenced_fire2",
+        "volume": 1
       }
     ]
   },
@@ -111,6 +233,40 @@
         "name": "scguns_cnc:item/silverlining/loading_end"
       }
     ]
+  },
+  "item.anathema.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/anathema/fire0",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/anathema/fire1",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/anathema/fire2",
+        "volume": 1
+      },
+      {
+        "name": "scguns_cnc:item/anathema/fire3",
+        "volume": 1
+      }
+    ]
+  },
+  "item.flyby.silver_flyby": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/flyby/flyby0"
+      },
+      {
+        "name": "scguns_cnc:item/flyby/flyby1"
+      },
+      {
+        "name": "scguns_cnc:item/flyby/flyby2"
+      }
+    ]
   }
-
 }

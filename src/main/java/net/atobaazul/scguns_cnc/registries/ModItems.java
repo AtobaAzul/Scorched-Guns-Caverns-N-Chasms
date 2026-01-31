@@ -2,16 +2,14 @@ package net.atobaazul.scguns_cnc.registries;
 
 import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
+import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.init.ModSounds;
-import top.ribs.scguns.item.AmmoItem;
-import top.ribs.scguns.item.BlueprintItem;
-import top.ribs.scguns.item.RaidFlareItem;
-import top.ribs.scguns.item.TooltipItem;
+import top.ribs.scguns.item.*;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
@@ -108,14 +106,38 @@ public class ModItems {
     );
 
 
+    public static final RegistryObject<AnimatedGunItem> GALLOWS = REGISTER.register("gallows",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "gallows", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+    public static final RegistryObject<AnimatedGunItem> NECROSIS = REGISTER.register("necrosis",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "necrosis", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
     //blueprint
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
-    //arounds
+    //rounds
     public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new BluntshotAmmoItem(new Item.Properties()));
-
+    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new HexRoundAmmoItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
 
@@ -124,9 +146,11 @@ public class ModItems {
     public static final RegistryObject<Item> SMALL_NECROMIUM_CASING = REGISTER.register("small_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
+    public static final RegistryObject<Item> UNFINISHED_HEXSHOT = sequencedIngredient("unfinished_hexshot");
 
     public static final RegistryObject<Item> GRAVEKEEPER_FLARE = REGISTER.register("gravekeeper_flare",
             () -> new RaidFlareItem(new Item.Properties().stacksTo(16), "gravekeeper"));
@@ -135,6 +159,8 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties(),
                     "item.scguns_cnc.lesser_strawman.tooltip",
                     "item.scguns.found_in_raids"));
+
+    public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {

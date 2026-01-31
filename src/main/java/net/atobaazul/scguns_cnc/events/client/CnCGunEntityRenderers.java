@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import top.ribs.scguns.client.render.entity.ProjectileRenderer;
 import top.ribs.scguns.client.render.gun.ModelOverrides;
+import top.ribs.scguns.client.render.entity.*;
+
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
@@ -20,11 +22,11 @@ public class CnCGunEntityRenderers {
     @SubscribeEvent
     public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event)
     {
-
         event.registerEntityRenderer(ModEntities.HEX_ROUND_PROJECTILE.get(), ProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.BLUNTSHOT.get(), ProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.DUMMY_PROJECTILE.get(), ProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.BLOOD_SHOT.get(), ProjectileRenderer::new);
 
+        event.registerEntityRenderer(ModEntities.THROWABLE_MALISON_GRENADE.get(), ThrowableGrenadeRenderer::new);
     }
 }

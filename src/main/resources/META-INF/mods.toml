@@ -68,7 +68,7 @@ description='''${mod_description}'''
 [[dependencies.${mod_id}]]
     modId="scguns"
     mandatory=true
-    versionRange="[0.5.4,0.6)"
+    versionRange="[0.5.5,0.6)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.${mod_id}]]

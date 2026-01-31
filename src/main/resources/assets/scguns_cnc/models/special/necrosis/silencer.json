@@ -1,0 +1,105 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scguns_cnc:item/necrosis",
+		"particle": "scguns_cnc:item/necrosis"
+	},
+	"elements": [
+		{
+			"name": "silencer",
+			"from": [7.38902, 3.3, -6.6375],
+			"to": [8.78902, 4.7, -6.0625],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.08901, 3.925, -5.6]},
+			"faces": {
+				"north": {"uv": [0.75, 8.75, 1.125, 9.125], "texture": "#0"},
+				"east": {"uv": [1, 9.75, 1.125, 10.125], "texture": "#0"},
+				"south": {"uv": [8.75, 1.5, 9.125, 1.875], "texture": "#0"},
+				"west": {"uv": [1.25, 9.75, 1.375, 10.125], "texture": "#0"},
+				"up": {"uv": [10.125, 1.375, 9.75, 1.25], "texture": "#0"},
+				"down": {"uv": [2.625, 9.75, 2.25, 9.875], "texture": "#0"}
+			}
+		},
+		{
+			"name": "silencer",
+			"from": [7.13902, 3.05, -6.0625],
+			"to": [9.03902, 4.95, -2.4875],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.08901, 3.925, -5.025]},
+			"faces": {
+				"north": {"uv": [7.75, 5, 8.25, 5.5], "texture": "#0"},
+				"east": {"uv": [1.5, 6.75, 2.375, 7.25], "texture": "#0"},
+				"south": {"uv": [7.75, 5.5, 8.25, 6], "texture": "#0"},
+				"west": {"uv": [6.75, 6.25, 7.625, 6.75], "texture": "#0"},
+				"up": {"uv": [7.25, 7.625, 6.75, 6.75], "texture": "#0"},
+				"down": {"uv": [7.5, 1.5, 7, 2.375], "texture": "#0"}
+			}
+		},
+		{
+			"name": "silencer",
+			"from": [6.68901, 2.075, -4.5125],
+			"to": [6.68901, 3.975, -4.0125],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 0.5], "texture": "#0"},
+				"east": {"uv": [9.25, 4.75, 9.375, 5.25], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 0.5], "texture": "#0"},
+				"west": {"uv": [5.25, 9.25, 5.375, 9.75], "texture": "#0"},
+				"up": {"uv": [0, 0.125, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 0.125], "texture": "#0"}
+			}
+		},
+		{
+			"name": "silencer",
+			"from": [9.36401, 2.575, -5.0375],
+			"to": [9.36401, 3.975, -4.5375],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 0.375], "texture": "#0"},
+				"east": {"uv": [1.5, 9.75, 1.625, 10.125], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 0.375], "texture": "#0"},
+				"west": {"uv": [9.75, 2.5, 9.875, 2.875], "texture": "#0"},
+				"up": {"uv": [0, 0.125, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 0.125], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"firstperson_righthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"firstperson_lefthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"ground": {
+			"translation": [0, 9.5, -3.75],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"gui": {
+			"rotation": [74.02, -53.34, 70.48],
+			"translation": [-1, 6.25, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"fixed": {
+			"rotation": [90, 55, -90],
+			"translation": [1.5, 8.5, 0],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "silencer",
+			"origin": [8.53497, 2.78, 3.075],
+			"color": 8,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

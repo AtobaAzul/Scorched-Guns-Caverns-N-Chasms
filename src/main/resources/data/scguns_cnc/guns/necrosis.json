@@ -1,0 +1,89 @@
+{
+  "display": {
+    "flash": {
+      "size": 1.35,
+      "yOffset": 4.0,
+      "zOffset": -9.2,
+      "textureLocation": "muzzle_flash_1"
+    }
+  },
+  "general": {
+    "weaponType": "shotgun",
+    "fireMode": "scguns:semi_automatic",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 20,
+    "meleeDamage": 3.0,
+    "meleeReach": 3.5,
+    "allowAmmoChange": false,
+    "meleeCooldownTicks": 20,
+    "hotBarrelRate": 30
+  },
+  "modules": {
+    "attachments": {
+      "barrel": {
+        "yOffset": 4.0,
+        "zOffset": -11.5
+      },
+      "scope": {
+        "size": 1.1,
+        "yOffset": 5.3,
+        "zOffset": 3.7
+      },
+      "stock": {
+        "scale": 0.0
+      },
+      "underBarrel": {
+        "yOffset": 1.0,
+        "zOffset": 1.0
+      }
+    },
+    "zoom": {
+      "fovModifier": 0.6,
+      "yOffset": 5.8,
+      "zOffset": 0.75
+    }
+  },
+  "projectile": {
+    "alwaysSpread": true,
+    "ejectDuringReload": true,
+    "projectileAmount": 16,
+    "recoilAngle": 10.0,
+    "recoilKick": 3.0,
+    "spread": 6.0,
+    "criticalChance": 0.05,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.25,
+    "knockbackStrength": 0.65,
+    "advantage": "scguns:none",
+    "damage": 28.5,
+    "damageFalloffStart": 10.0,
+    "damageFalloffEnd": 24.0,
+    "damageFalloffMinMultiplier": 0.45,
+    "ejectsCasing": true,
+    "gravity": false,
+    "item": "scguns_cnc:hexshot",
+    "casingType": "scguns_cnc:medium_necromium_casing",
+    "casingParticle": "scguns_cnc:hex_shell",
+    "life": 35,
+    "size": 0.05,
+    "speed": 4.0,
+    "trailLengthMultiplier": 2.0,
+    "trailThickness": 0.5
+  },
+  "reloads": {
+    "emptyMagTimer": 50,
+    "maxAmmo": 5,
+    "reloadItem": "scguns:shotgun_shell",
+    "reloadTimer": 20,
+    "reloadType": "scguns:manual"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns_cnc:item.necrosis.fire",
+    "fire": "scguns_cnc:item.necrosis.fire",
+    "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
+    "reload": "scguns:item.gauss.reload",
+    "flyby": "scguns:bullet.flyby1"
+  }
+}

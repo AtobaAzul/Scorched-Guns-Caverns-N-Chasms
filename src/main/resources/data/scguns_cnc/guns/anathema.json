@@ -12,8 +12,8 @@
     "fireMode": "scguns:automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
-    "rate": 3,
-    "meleeDamage": 6.0,
+    "rate": 5,
+    "meleeDamage": 8.0,
     "meleeReach": 3.5,
     "meleeCooldownTicks": 10,
     "hotBarrelRate": 30,
@@ -22,26 +22,25 @@
     "usesCustomMeleeAnimation": true,
     "isSilenced": true
   },
-  "modules": {
-
-
-
-  },
+  "modules": {},
   "projectile": {
-    "trailThickness": 0.5,
     "advantage": "scguns:none",
-    "damage": 5.0,
+    "damage": 8.0,
     "ejectsCasing": true,
     "item": "scguns_cnc:hunger",
     "gravity": true,
     "life": 50,
     "size": 0.05,
-    "speed": 1.5,
+    "speed": 2,
     "trailLengthMultiplier": 1.0,
     "trailThickness": 0.1,
     "recoilAngle": 2.25,
     "recoilKick": 1,
-    "spread": 3.0
+    "spread": 3.3,
+    "impactEffect": "minecraft:poison",
+    "impactEffectDuration": 200,
+    "impactEffectChance": 1.0,
+    "impactEffectAmplifier": 0
   },
   "reloads": {
     "emptyMagTimer": 30,
@@ -52,9 +51,9 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "caverns_and_chasms:entity.deeper.hurt",
-    "fire": "caverns_and_chasms:entity.deeper.hurt",
+    "enchantedFire": "scguns_cnc:item.anathema.fire",
+    "fire": "scguns_cnc:item.anathema.fire",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "caverns_and_chasms:entity.deeper.hurt"
+    "silencedFire": "scguns_cnc:item.anathema.fire"
   }
 }

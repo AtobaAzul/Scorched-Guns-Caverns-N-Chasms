@@ -44,6 +44,8 @@
     "advantage": "scguns:none",
     "damage": 8.5,
     "damageFalloffStart": 12.0,
+    "criticalChance": 0.1,
+    "critDamageMultiplier": 3.0,
     "damageFalloffEnd": 30.0,
     "damageFalloffMinMultiplier": 0.45,
     "gravity": false,
@@ -72,7 +74,7 @@
     "enchantedFire": "scguns_cnc:item.bella.fire",
     "fire": "scguns_cnc:item.bella.fire",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
-    "flyby": "scguns:bullet.flyby1"
+    "silencedFire": "scguns_cnc:item.bella.silenced_fire",
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }

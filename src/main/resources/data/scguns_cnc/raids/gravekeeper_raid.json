@@ -13,7 +13,14 @@
       {
         "item": "caverns_and_chasms:sanguine_helmet",
         "slot": "head",
-        "drop_chance": 0.0
+        "drop_chance": 0.0,
+        "nbt": {
+          "Trim": {
+            "material": "caverns_and_chasms:silver",
+            "pattern": "caverns_and_chasms:exile"
+          },
+          "EmissiveTrim": 1
+        }
       },
       {
         "item": "caverns_and_chasms:necromium_chestplate",
@@ -56,12 +63,28 @@
     ],
     "ai_difficulty": 8,
     "ai_type": "TACTICAL",
-    "special_loot_table": "scguns_cnc:raids/gravekeeper_boss"
+    "special_loot_table": "scguns_cnc:raids/gravekeeper_boss",
+    "mount": {
+      "entity_type": "caverns_and_chasms:saddled_grazer",
+      "health_multiplier": 3.0,
+      "armor": [],
+      "effects": [
+        {
+          "effect": "minecraft:speed",
+          "amplifier": 2,
+          "duration": -1,
+          "ambient": true,
+          "visible": false
+        }
+      ],
+      "drops_loot": true
+    }
+
   },
   "henchmen": {
     "types": [
       {
-        "entity_type": "minecraft:skeleton",
+        "entity_type": "minecraft:wither_skeleton",
         "weight": 4.0,
         "health_multiplier": 2.0,
         "weapons": [
@@ -121,7 +144,8 @@
     "min_players_nearby": 1,
     "search_radius": 64,
     "valid_dimensions": [
-      "minecraft:overworld"
+      "minecraft:overworld",
+      "minecraft:the_nether"
     ],
     "announcement_message": "translation:raid.announcement.scguns_cnc.gravekeeper"
   }

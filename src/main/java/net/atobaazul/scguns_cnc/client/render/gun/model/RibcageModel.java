@@ -2,10 +2,8 @@ package net.atobaazul.scguns_cnc.client.render.gun.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.atobaazul.scguns_cnc.events.client.CCSpecialModels;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import top.ribs.scguns.client.render.gun.IOverrideModel;
@@ -16,14 +14,12 @@ import top.ribs.scguns.item.attachment.IAttachment;
 
 
 public class RibcageModel implements IOverrideModel {
-
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
 
         // Renders the static parts of the model.
         RenderUtil.renderModel(CCSpecialModels.RIBCAGE_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
-
 
         // Render stock attachments
         renderStockAttachments(stack, matrixStack, buffer, light, overlay);
@@ -35,8 +31,6 @@ public class RibcageModel implements IOverrideModel {
 
         // Render barrel and attachments with the new system
         renderBarrelAndAttachments(stack, matrixStack, buffer, light, overlay);
-
-
     }
 
     private void renderStockAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
@@ -49,7 +43,6 @@ public class RibcageModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.RIBCAGE_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
             else if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.RIBCAGE_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
-
         }
     }
 
@@ -70,8 +63,6 @@ public class RibcageModel implements IOverrideModel {
         }
     }
 
-
-
     private void renderBarrelAndAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
         boolean hasExtendedBarrel = false;
 
@@ -89,9 +80,5 @@ public class RibcageModel implements IOverrideModel {
         if (!hasExtendedBarrel) {
             RenderUtil.renderModel(CCSpecialModels.RIBCAGE_STAN_BARREL.getModel(), stack, matrixStack, buffer, light, overlay);
         }
-    }
-
-    private double ease(double x) {
-        return 1 - Math.pow(1 - (2 * x), 4);
     }
 }

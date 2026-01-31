@@ -1,21 +1,30 @@
 package net.atobaazul.scguns_cnc.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import net.atobaazul.scguns_cnc.common.ModTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import top.ribs.scguns.Config;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.network.ServerPlayHandler;
+import top.ribs.scguns.event.GunEventBus;
+import top.ribs.scguns.init.ModEnchantments;
 import top.ribs.scguns.item.GunItem;
+
+import java.util.Objects;
 
 @Mixin(ServerPlayHandler.class)
 public abstract class ServerPlayHandlerMixin {
@@ -48,6 +57,35 @@ public abstract class ServerPlayHandlerMixin {
             arrow.pickup = Arrow.Pickup.ALLOWED;
 
             world.addFreshEntity(arrow);
+        }
+    }
+
+    @WrapMethod(method = "handleCasingEjection", remap = false)
+    private static void scguns_cnc$handleCasingEjection(ServerPlayer player, ItemStack heldItem, Gun modifiedGun, Level world, Operation<Void> original) {
+        if (Config.COMMON.gameplay.spawnCasings.get()) {
+            if (modifiedGun.getProjectile(heldItem).casingType != null && !player.getAbilities().instabuild && !modifiedGun.getProjectile(heldItem).ejectDuringReload()) {
+                ItemStack casingStack = new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(modifiedGun.getProjectile(heldItem).casingType)));
+                if (casingStack.is(ModTags.INCREASED_CASING_DROP_CHANCE)) {
+                    double baseChance = 0.50;
+                    int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SHELL_CATCHER.get(), heldItem);
+                    double finalChance = baseChance + (enchantmentLevel * 0.15);
+
+                    if (Math.random() < finalChance) {
+                        if (enchantmentLevel > 0) {
+                            if (!GunEventBus.addCasingDirectly(player, casingStack)) {
+                                GunEventBus.spawnCasingInWorld(world, player, casingStack);
+                            }
+                        } else {
+                            if (!GunEventBus.addCasingToPouch(player, casingStack)) {
+                                GunEventBus.spawnCasingInWorld(world, player, casingStack);
+                            }
+                        }
+                    }
+
+                } else {
+                    original.call(player, heldItem, modifiedGun, world);
+                }
+            }
         }
     }
 }

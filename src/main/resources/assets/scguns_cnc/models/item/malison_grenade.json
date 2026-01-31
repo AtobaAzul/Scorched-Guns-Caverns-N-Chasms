@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "0": "scguns_cnc:items/malison_grenade",
+    "particle": "scguns_cnc:items/malison_grenade"
+  },
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "scguns_cnc:item/malison_grenade_3d"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "firstperson_lefthand": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "thirdperson_righthand": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "thirdperson_lefthand": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "fixed": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "gui": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "ground": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    },
+    "frame": {
+      "parent": "scguns_cnc:item/malison_grenade_2d"
+    }
+  }
+}

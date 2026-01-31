@@ -167,7 +167,7 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
     implementation fg.deobf("curse.maven:geckolib-388172:7020955")
     implementation fg.deobf("curse.maven:curios-309927:5367944")
-    implementation fg.deobf("curse.maven:scorched-guns-802940:7201155")
+    implementation fg.deobf("curse.maven:scorched-guns-802940:7232063")
     implementation fg.deobf("curse.maven:caverns-and-chasms-438005:6040957")
     implementation fg.deobf("curse.maven:blueprint-382216:6408581")
 

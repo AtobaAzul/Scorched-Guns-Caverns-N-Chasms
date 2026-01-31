@@ -12,7 +12,7 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public enum CCSpecialModels {
-  //Rehearse
+    //Rehearse
     REHEARSE_MAIN("rehearse/main"),
     REHEARSE_DRUM("rehearse/drum"),
     REHEARSE_STAN_BARREL("rehearse/stan_barrel"),
@@ -25,32 +25,43 @@ public enum CCSpecialModels {
     REHEARSE_ADVANCED_SILENCER("rehearse/advanced_silencer"),
     REHEARSE_MUZZLE_BRAKE("rehearse/muzzle_brake"),
 
-
+    //Ribcage
     RIBCAGE_MAIN("ribcage/main"),
-  RIBCAGE_STAN_BARREL("ribcage/stan_barrel"),
-  RIBCAGE_EXT_BARREL("ribcage/ext_barrel"),
-  RIBCAGE_STOCK_WEIGHTED("ribcage/heavy_stock"),
-  RIBCAGE_STOCK_LIGHT("ribcage/light_stock"),
-  RIBCAGE_STOCK_WOODEN("ribcage/wooden_stock"),
-  RIBCAGE_STAN_GRIP("ribcage/stan_grip"),
-  RIBCAGE_SILENCER("ribcage/silencer"),
-  RIBCAGE_ADVANCED_SILENCER("ribcage/advanced_silencer"),
-  RIBCAGE_MUZZLE_BRAKE("ribcage/muzzle_brake"),
+    RIBCAGE_STAN_BARREL("ribcage/stan_barrel"),
+    RIBCAGE_EXT_BARREL("ribcage/ext_barrel"),
+    RIBCAGE_STOCK_WEIGHTED("ribcage/heavy_stock"),
+    RIBCAGE_STOCK_LIGHT("ribcage/light_stock"),
+    RIBCAGE_STOCK_WOODEN("ribcage/wooden_stock"),
+    RIBCAGE_STAN_GRIP("ribcage/stan_grip"),
+    RIBCAGE_SILENCER("ribcage/silencer"),
+    RIBCAGE_ADVANCED_SILENCER("ribcage/advanced_silencer"),
+    RIBCAGE_MUZZLE_BRAKE("ribcage/muzzle_brake"),
+    RIBCAGE_NETHERITE_BAYONET("ribcage/netherite_bayonet"),
+    RIBCAGE_DIAMOND_BAYONET("ribcage/diamond_bayonet"),
+    RIBCAGE_ANTHRALITE_BAYONET("ribcage/anthralite_bayonet"),
+    RIBCAGE_IRON_BAYONET("ribcage/iron_bayonet"),
+    RIBCAGE_LIGHT_GRIP("ribcage/light_grip"),
+    RIBCAGE_TACT_GRIP("ribcage/tact_grip"),
 
-  RIBCAGE_NETHERITE_BAYONET("ribcage/netherite_bayonet"),
-  RIBCAGE_DIAMOND_BAYONET("ribcage/diamond_bayonet"),
-  RIBCAGE_ANTHRALITE_BAYONET("ribcage/anthralite_bayonet"),
-  RIBCAGE_IRON_BAYONET("ribcage/iron_bayonet"),
-  RIBCAGE_LIGHT_GRIP("ribcage/light_grip"),
-  RIBCAGE_TACT_GRIP("ribcage/tact_grip"),
+    //Necrosis
+    NECROSIS_MAIN("necrosis/main"),
+    NECROSIS_STAN_BARREL("necrosis/stan_barrel"),
+    NECROSIS_EXT_BARREL("necrosis/ext_barrel"),
+    NECROSIS_STOCK_WEIGHTED("necrosis/heavy_stock"),
+    NECROSIS_STOCK_LIGHT("necrosis/light_stock"),
+    NECROSIS_STOCK_WOODEN("necrosis/wooden_stock"),
+    NECROSIS_STAN_GRIP("necrosis/stan_grip"),
+    NECROSIS_SILENCER("necrosis/silencer"),
+    NECROSIS_ADVANCED_SILENCER("necrosis/advanced_silencer"),
+    NECROSIS_MUZZLE_BRAKE("necrosis/muzzle_brake"),
+    NECROSIS_NETHERITE_BAYONET("necrosis/netherite_bayonet"),
+    NECROSIS_DIAMOND_BAYONET("necrosis/diamond_bayonet"),
+    NECROSIS_ANTHRALITE_BAYONET("necrosis/anthralite_bayonet"),
+    NECROSIS_IRON_BAYONET("necrosis/iron_bayonet"),
+    NECROSIS_LIGHT_GRIP("necrosis/light_grip"),
+    NECROSIS_TACT_GRIP("necrosis/tact_grip"),
 
-
-
-
-
-
-
-
+    //Silver lining
     SILVERLINGING_MAIN("silverlining/main"),
     SILVERLINGING_STAN_MAGAZINE("silverlining/stand_mag"),
     SILVERLINGING_FAST_MAGAZINE("silverlining/fast_mag"),
@@ -65,16 +76,7 @@ public enum CCSpecialModels {
     SILVERLINGING_LIGHT_GRIP("silverlining/light_grip"),
     SILVERLINGING_TACT_GRIP("silverlining/tact_grip"),
 
-
-
-
-
-
-
-
-
-
-
+    //Bella
     BELLA_MAIN("bella/main"),
     BELLA_STAN_MAGAZINE("bella/stan_magazine"),
     BELLA_FAST_MAGAZINE("bella/fast_magazine"),
@@ -89,12 +91,12 @@ public enum CCSpecialModels {
     BELLA_ADVANCED_SILENCER("bella/advanced_silencer"),
     BELLA_MUZZLE_BRAKE("bella/muzzle_brake"),
 
-
+    //hangman
     HANGMAN_CARBINE_MAIN("hangman_carbine/main"),
     HANGMAN_STAN_MAGAZINE("hangman_carbine/stand_mag"),
     HANGMAN_FAST_MAGAZINE("hangman_carbine/fast_mag"),
-   HANGMAN_EXT_MAGAZINE("hangman_carbine/ext_mag"),
-   HANGMAN_STAN_BARREL("hangman_carbine/stand_barrel"),
+    HANGMAN_EXT_MAGAZINE("hangman_carbine/ext_mag"),
+    HANGMAN_STAN_BARREL("hangman_carbine/stand_barrel"),
     HANGMAN_EXT_BARREL("hangman_carbine/ext_barrel"),
     HANGMAN_STOCK_WEIGHTED("hangman_carbine/heavy_stock"),
     HANGMAN_STOCK_LIGHT("hangman_carbine/light_stock"),
@@ -103,18 +105,39 @@ public enum CCSpecialModels {
     HANGMAN_SILENCER("hangman_carbine/silencer"),
     HANGMAN_ADVANCED_SILENCER("hangman_carbine/advanced_silencer"),
     HANGMAN_MUZZLE_BRAKE("hangman_carbine/muzzle_brake"),
-   HANGMAN_NETHERITE_BAYONET("hangman_carbine/netherite_bayonet"),
-   HANGMAN_DIAMOND_BAYONET("hangman_carbine/diamond_bayonet"),
+    HANGMAN_NETHERITE_BAYONET("hangman_carbine/netherite_bayonet"),
+    HANGMAN_DIAMOND_BAYONET("hangman_carbine/diamond_bayonet"),
     HANGMAN_ANTHRALITE_BAYONET("hangman_carbine/the_voices"),
     HANGMAN_IRON_BAYONET("hangman_carbine/iron_bayonet"),
     HANGMAN_LIGHT_GRIP("hangman_carbine/light_grip"),
     HANGMAN_TACT_GRIP("hangman_carbine/tact_grip"),
 
+    //Gallows
+    GALLOWS_MAIN("gallows/main"),
+    GALLOWS_STAN_MAGAZINE("gallows/stand_mag"),
+    GALLOWS_FAST_MAGAZINE("gallows/fast_mag"),
+    GALLOWS_EXT_MAGAZINE("gallows/ext_mag"),
+    GALLOWS_STAN_BARREL("gallows/stand_barrel"),
+    GALLOWS_EXT_BARREL("gallows/ext_barrel"),
+    GALLOWS_STOCK_WEIGHTED("gallows/heavy_stock"),
+    GALLOWS_STOCK_LIGHT("gallows/light_stock"),
+    GALLOWS_STOCK_WOODEN("gallows/wooden_stock"),
+    GALLOWS_STAN_GRIP("gallows/stand_grip"),
+    GALLOWS_SILENCER("gallows"),
+    GALLOWS_ADVANCED_SILENCER("gallows/advanced_silencer"),
+    GALLOWS_MUZZLE_BRAKE("gallows/muzzle_brake"),
+    GALLOWS_NETHERITE_BAYONET("gallows/netherite_bayonet"),
+    GALLOWS_DIAMOND_BAYONET("gallows/diamond_bayonet"),
+    GALLOWS_ANTHRALITE_BAYONET("gallows/the_voices"),
+    GALLOWS_IRON_BAYONET("gallows/iron_bayonet"),
+    GALLOWS_LIGHT_GRIP("gallows/light_grip"),
+    GALLOWS_TACT_GRIP("gallows/tact_grip"),
 
-
+    //Anathema
     ANATHEMA_MAIN("anathema/main"),
-    KETERIYA_MAIN("keteriya/main");
 
+    //Keteriya
+    KETERIYA_MAIN("keteriya/main");
 
     /**
      * The location of an item model in the [MOD_ID]/models/special/[NAME] folder

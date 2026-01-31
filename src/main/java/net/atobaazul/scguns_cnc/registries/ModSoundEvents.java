@@ -12,14 +12,28 @@ public class ModSoundEvents {
     public static final DeferredRegister<SoundEvent> REGISTER = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
 
     public static final RegistryObject<SoundEvent> HANGMAN_FIRE = register("item.hangman.fire");
+    public static final RegistryObject<SoundEvent> HANGMAN_SILENCED_FIRE = register("item.hangman.silended_fire");
+
     public static final RegistryObject<SoundEvent> RIBCARE_FIRE = register("item.ribcage.fire");
     public static final RegistryObject<SoundEvent> BELLA_FIRE = register("item.bella.fire");
+    public static final RegistryObject<SoundEvent> BELLA_SILENCED_FIRE = register("item.bella.silenced_fire");
+
     public static final RegistryObject<SoundEvent> REHEARSE_FIRE = register("item.rehearse.fire");
+    public static final RegistryObject<SoundEvent> REHEARSE_SILENCED_FIRE = register("item.rehearse.silenced_fire");
+    public static final RegistryObject<SoundEvent> ANATHEMA_FIRE = register("item.anathema.fire");
+    public static final RegistryObject<SoundEvent> NECROSIS_FIRE = register("item.necrosis.fire");
+    public static final RegistryObject<SoundEvent> KETERIYA_FIRE = register("item.keteriya.fire");
+    public static final RegistryObject<SoundEvent> GALLOWS_FIRE = register("item.gallows.fire");
+    public static final RegistryObject<SoundEvent> GALLOWS_SILENCED_FIRE = register("item.gallows.silenced_fire");
 
     public static final RegistryObject<SoundEvent> SILVERLINING_FIRE = register("item.silverlining.fire");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_START = register("item.silverlining.pull1");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_MIDDLE = register("item.silverlining.pull2");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_END = register("item.silverlining.pull3");
+
+    public static final RegistryObject<SoundEvent> MALISON_EXPLOSION = register("item.malison_grenade.explode");
+
+    public static final RegistryObject<SoundEvent> SILVER_FLYBY = register("item.flyby.silver_flyby");
 
     private static RegistryObject<SoundEvent> register(String key) {
         return REGISTER.register(key, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, key)));

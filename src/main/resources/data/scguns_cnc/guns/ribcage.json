@@ -2,7 +2,7 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 4.7,
+      "yOffset": 3.7,
       "zOffset": -13.5,
       "textureLocation": "muzzle_flash_1"
     }
@@ -23,12 +23,12 @@
   "modules": {
     "attachments": {
       "barrel": {
-        "yOffset": 4.7,
+        "yOffset": 3.7,
         "zOffset": -16.5
       },
       "scope": {
-        "size": 1.1,
-        "yOffset": 5.3,
+        "size": 1.7,
+        "yOffset": 4.7,
         "zOffset": -1.5
       },
       "stock": {
@@ -41,7 +41,7 @@
     },
     "zoom": {
       "fovModifier": 0.6,
-      "yOffset": 5.9,
+      "yOffset": 5.4,
       "zOffset": 6
     }
   },
@@ -52,6 +52,7 @@
     "damageFalloffEnd": 90.0,
     "damageFalloffMinMultiplier": 0.85,
     "ejectsCasing": true,
+    "ejectDuringReload": true,
     "gravity": false  ,
     "item": "scguns_cnc:hex_round",
     "casingType": "scguns_cnc:medium_necromium_casing",
@@ -66,7 +67,8 @@
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.25,
     "recoilAngle": 4.7,
-    "recoilKick": 2.22
+    "recoilKick": 2.22,
+    "armorPen": 3.0
   },
   "reloads": {
     "emptyMagTimer": 20,
@@ -81,6 +83,6 @@
     "fire": "scguns_cnc:item.ribcage.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.bruiser.silenced_fire",
-    "flyby": "scguns:bullet.flyby1"
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }

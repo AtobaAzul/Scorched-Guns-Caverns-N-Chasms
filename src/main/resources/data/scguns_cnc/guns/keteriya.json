@@ -9,28 +9,23 @@
   },
   "general": {
     "weaponType": "shotgun",
-
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 1,
-
-
     "meleeDamage": 12.0,
     "meleeReach": 3.5,
     "meleeCooldownTicks": 15,
     "hotBarrelRate": 30,
-
-
-    "usesCustomMeleeAnimation": true
+    "usesCustomMeleeAnimation": true,
+    "allowAmmoChange": true
   },
   "modules": {
     "attachments": {
-
     },
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset": 5.7,
+      "yOffset": 6.3,
       "zOffset": 0.6
     }
   },
@@ -42,6 +37,7 @@
     "size": 0.075,
     "speed": 4.0,
     "trailLengthMultiplier": 2.0,
+    "ejectDuringReload": true,
     "alwaysSpread": true,
     "recoilAngle": 12.0,
     "recoilKick": 1,
@@ -49,19 +45,48 @@
     "criticalChance": 0.1,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.8,
+    "ejectsCasing": true,
+    "casingParticle": "scguns:iron_casing",
     "projectileAmount": 8
+  },
+  "projectile_1": {
+    "projectileAmount": 18,
+    "alwaysSpread": true,
+    "ejectDuringReload": true,
+    "recoilAngle": 10.0,
+    "recoilKick": 3.0,
+    "spread": 6.0,
+    "criticalChance": 0.05,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.25,
+    "knockbackStrength": 0.75,
+    "damageFalloffStart": 7.0,
+    "damageFalloffEnd": 18.0,
+    "damageFalloffMinMultiplier": 0.35,
+    "advantage": "scguns:none",
+    "damage": 18.5,
+    "ejectsCasing": true,
+    "item": "scguns:shotgun_shell",
+    "casingType": "scguns:small_copper_casing",
+    "casingParticle": "scguns:shell",
+    "ejectDuringReload": true,
+    "life": 45,
+    "size": 0.05,
+    "speed": 5.0,
+    "trailLengthMultiplier": 2.0,
+    "trailThickness": 0.5
   },
   "reloads": {
     "emptyMagTimer": 15,
     "maxAmmo": 1,
-    "reloadItem": "scguns_cnc:bluntshot",
+    "item": "scguns_cnc:bluntshot",
     "reloadTimer": 20,
     "reloadType": "scguns:mag_fed"
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.boomstick.fire",
-    "fire": "scguns:item.boomstick.fire",
+    "enchantedFire": "scguns_cnc:item.keteriya.fire",
+    "fire": "scguns_cnc:item.keteriya.fire",
     "silencedFire": "scguns:item.combat_shotgun.silenced_fire",
     "reload": "scguns:item.gauss.reload"
   }

@@ -9,18 +9,15 @@
   },
   "general": {
     "weaponType": "smg",
-
     "fireMode": "scguns:automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 3,
-
     "meleeDamage": 2.5,
     "meleeCooldownTicks": 15,
     "meleeReach": 2.5,
     "hotBarrelRate": 7,
     "criticalChance": 0.06
-
   },
   "modules": {
     "attachments": {
@@ -44,18 +41,18 @@
         "zOffset": 3.6
       }
     },
-
     "zoom": {
       "fovModifier": 0.5,
-      "yOffset": 5.8,
+      "yOffset": 5.6,
       "zOffset": 3
     }
   },
   "projectile": {
+    "alwaysSpread": true,
     "advantage": "scguns:none",
-    "damage": 7,
-    "damageFalloffStart": 11.0,
-    "damageFalloffEnd": 28.0,
+    "damage": 7.5,
+    "damageFalloffStart": 12.0,
+    "damageFalloffEnd": 29.0,
     "damageFalloffMinMultiplier": 0.45,
     "ejectsCasing": true,
     "item": "scguns_cnc:compact_hex_round",
@@ -67,8 +64,7 @@
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 2.25,
     "recoilKick": 1,
-    "spread": 3.0,
-    "alwaysSpread": false
+    "spread": 3.0
   },
   "reloads": {
     "emptyMagTimer": 30,
@@ -82,7 +78,7 @@
     "enchantedFire": "scguns_cnc:item.hangman_carbine.fire",
     "fire": "scguns_cnc:item.hangman_carbine.fire",
     "reload": "scguns:item.gauss.reload",
-    "silencedFire": "scguns:item.makeshift_rifle.silenced_fire",
-    "flyby": "scguns:bullet.flyby1"
+    "silencedFire": "scguns_cnc:item.hangman_carbine.silenced_fire",
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
   }
 }

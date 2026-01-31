@@ -14,9 +14,6 @@ public class AnathemaModel implements IOverrideModel {
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
-
         RenderUtil.renderModel(CCSpecialModels.ANATHEMA_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
-
-
     }
 }
