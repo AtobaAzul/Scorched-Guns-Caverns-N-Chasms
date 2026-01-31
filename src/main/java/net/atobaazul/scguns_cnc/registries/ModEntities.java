@@ -17,15 +17,10 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
 
-
+    //bullet projectiles
     public static final RegistryObject<EntityType<HexRoundProjectileEntity>> HEX_ROUND_PROJECTILE = registerBasic("hex_round_projectile", HexRoundProjectileEntity::new);
-
     public static final RegistryObject<EntityType<BluntshotProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot_projectile", BluntshotProjectileEntity::new);
-
     public static final RegistryObject<EntityType<DummyProjectileEntity>> DUMMY_PROJECTILE = registerBasic("dummy_projectile", DummyProjectileEntity::new);
-
-
-
     public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);
     public static final RegistryObject<EntityType<CopperSlugProjectileEntity>> COPPER_SLUG_PROJECTILE = registerBasic("copper_slug_projectile", CopperSlugProjectileEntity::new);
     public static final RegistryObject<EntityType<EnergyBoltProjectileEntity>> ENERGY_BOLT_PROJECTILE = registerBasic("energy_bolt_projectile", EnergyBoltProjectileEntity::new);
@@ -43,5 +38,4 @@ public class ModEntities {
                 .noSave()
                 .setShouldReceiveVelocityUpdates(true).build(id));
     }
-
 }

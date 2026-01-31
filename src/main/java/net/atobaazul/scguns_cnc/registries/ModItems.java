@@ -184,16 +184,6 @@ public class ModItems {
             )
     );
 
-
-
-    public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
-
-
-
-
-
-
-
     //blueprint
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
@@ -226,6 +216,8 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties(),
                     "item.scguns_cnc.lesser_strawman.tooltip",
                     "item.scguns.found_in_raids"));
+
+    public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {
