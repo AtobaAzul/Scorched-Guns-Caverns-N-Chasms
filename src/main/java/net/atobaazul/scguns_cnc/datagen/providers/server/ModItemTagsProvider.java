@@ -74,7 +74,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(KETERIYA.get())
                 .add(ANATHEMA.get())
                 .add(GALLOWS.get())
-                .add(NECROSIS.get());
+                .add(NECROSIS.get())
+                .add(MORTICIAN.get());
 
         tag(HEX_BULLET_TIP)
                 .add(SILVER_BULLET.get())
@@ -82,10 +83,10 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(VAULT_GUN_TIER)
                 .add(LUSTRE.get())
-                .add(ELECTROLASER_AUTOCANNON.get());
+                .add(ELECTROTHERMAL_AUTOCANNON.get());
 
         tag(ModTags.Items.HEAVY_WEAPON)
                 .add(LUSTRE.get())
-                .add(ELECTROLASER_AUTOCANNON.get());
+                .add(ELECTROTHERMAL_AUTOCANNON.get());
     }
 }

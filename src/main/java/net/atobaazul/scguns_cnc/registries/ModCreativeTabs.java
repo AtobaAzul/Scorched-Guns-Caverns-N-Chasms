@@ -21,6 +21,7 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.HANGMAN_CARBINE.get());
         addItemWithFullAmmo(pOutput, ModItems.RIBCAGE.get());
         addItemWithFullAmmo(pOutput, ModItems.BELLA.get());
+        addItemWithFullAmmo(pOutput, ModItems.MORTICIAN.get());
         addItemWithFullAmmo(pOutput, ModItems.REHEARSE.get());
         addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
@@ -29,7 +30,7 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
 
         addEnergyGunWithFullAmmo(pOutput, ModItems.LUSTRE.get());
-        addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROLASER_AUTOCANNON.get());
+        addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROTHERMAL_AUTOCANNON.get());
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
