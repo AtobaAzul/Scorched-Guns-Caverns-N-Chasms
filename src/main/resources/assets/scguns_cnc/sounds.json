@@ -341,6 +341,20 @@
       }
     ]
   },
+  "item.cacophony.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/cacophony/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/cacophony/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/cacophony/fire2"
+      }
+    ]
+  },
   "item.flyby.silver_flyby": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [

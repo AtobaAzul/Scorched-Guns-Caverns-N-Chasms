@@ -27,6 +27,7 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
         addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
         addItemWithFullAmmo(pOutput, ModItems.NECROSIS.get());
+        addItemWithFullAmmo(pOutput, ModItems.CACOPHONY.get());
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
 
         addEnergyGunWithFullAmmo(pOutput, ModItems.LUSTRE.get());
