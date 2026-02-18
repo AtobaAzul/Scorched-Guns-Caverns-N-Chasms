@@ -70,6 +70,18 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> CACOPHONY = REGISTER.register("cacophony",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "cacophony", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
    public static final RegistryObject<AnimatedGunItem> REHEARSE = REGISTER.register("rehearse",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(800),
