@@ -65,7 +65,7 @@
     "alwaysSpread": false,
     "criticalChance": 0.05,
     "playerKnockBack": true,
-    "playerKnockBackStrength": 0.25,
+    "playerKnockBackStrength": 0.15,
     "recoilAngle": 4.7,
     "recoilKick": 2.22,
     "armorPen": 3.0
