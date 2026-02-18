@@ -72,6 +72,7 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.keteriya", "Capable of launching the user and its targets, it can used as a mobility tool to close the distance and deliver devastating blow with the attached axe blade.");
         add("scguns.desc.gallows", "High-power automatic rifle, ideal for swiftly neutralizing targets. Typically used by Gravekeepers's executioner firing squads.");
         add("scguns.desc.necrosis", "Heavy combat shotgun designed to be used by Gravekeeper dungeon guards, capable of firing both Hexshot for close combat and Copper Slugs for medium range.");
+        add("scguns.desc.mortician", "Standard Gravekeeper sidearm, typically given to neophytes and other lesser Gravekeepers.");
 
         add("gun_tier.scguns.gravekeeper", "Gravekeeper");
         add("raid.scguns.gravekeeper", "Gravekeeper Raid");
