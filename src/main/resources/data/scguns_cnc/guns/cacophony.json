@@ -27,8 +27,8 @@
         "zOffset": -2.5
       },
       "barrel": {
-        "yOffset": 5.0,
-        "zOffset": -8.2
+        "yOffset": 4.0,
+        "zOffset": -20
       },
       "stock": {
         "scale": 0.0
@@ -38,8 +38,8 @@
       },
       "scope": {
         "size": 0.9,
-        "yOffset": 5.2,
-        "zOffset": 3.4
+        "yOffset": 4.8,
+        "zOffset": 3.0
       }
     },
 
