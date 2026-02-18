@@ -36,12 +36,14 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.REHEARSE, "Rehearse");
         addItem(ModItems.SILVER_LINING, "Silver Lining");
         addItem(ModItems.KETERIYA, "Keteriya");
-        addItem(ModItems.ANATHEMA, "Anathema");
-        addItem(ModItems.LUSTRE, "Lustre");
-        addItem(ModItems.ELECTROTHERMAL_AUTOCANNON, "Electrothermal Autocannon");
-
         addItem(ModItems.GALLOWS, "Gallows");
         addItem(ModItems.NECROSIS, "Necrosis");
+        addItem(ModItems.CACOPHONY, "Cacophony");
+
+        addItem(ModItems.ANATHEMA, "Anathema");
+
+        addItem(ModItems.LUSTRE, "Lustre");
+        addItem(ModItems.ELECTROTHERMAL_AUTOCANNON, "Electrothermal Autocannon");
 
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");

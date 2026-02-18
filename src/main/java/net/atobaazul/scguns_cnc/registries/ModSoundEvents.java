@@ -40,6 +40,7 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_END = register("item.silverlining.pull3");
 
     public static final RegistryObject<SoundEvent> MORTICIAN_FIRE = register("item.mortician.fire");
+    public static final RegistryObject<SoundEvent> CACOPHONY_FIRE = register("item.cacophony.fire");
 
     public static final RegistryObject<SoundEvent> MALISON_EXPLOSION = register("item.malison_grenade.explode");
 

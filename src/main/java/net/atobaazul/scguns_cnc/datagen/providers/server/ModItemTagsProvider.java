@@ -75,7 +75,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(ANATHEMA.get())
                 .add(GALLOWS.get())
                 .add(NECROSIS.get())
-                .add(MORTICIAN.get());
+                .add(MORTICIAN.get())
+                .add(CACOPHONY.get());
 
         tag(HEX_BULLET_TIP)
                 .add(SILVER_BULLET.get())

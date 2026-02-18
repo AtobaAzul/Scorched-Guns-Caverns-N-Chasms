@@ -3,7 +3,7 @@
     "flash": {
       "size": 1.0,
       "yOffset": 4.0,
-      "zOffset": -12,
+      "zOffset": -17,
       "textureLocation": "muzzle_flash_1"
     }
   },
@@ -17,7 +17,7 @@
     "meleeDamage": 2.5,
     "meleeCooldownTicks": 15,
     "meleeReach": 3,
-    "hotBarrelRate": 7,
+    "hotBarrelRate": 20,
     "criticalChance": 0.00
   },
   "modules": {
@@ -68,20 +68,21 @@
     "spread": 3.0,
     "alwaysSpread": false,
     "armorPen": 1.0,
+    "speedModifier": 0.8,
     "playerKnockBack": true,
-    "playerKnockBackStrength": 0.15
+    "playerKnockBackStrength": 0.0525
   },
   "reloads": {
     "emptyMagTimer": 30,
-    "maxAmmo": 10,
+    "maxAmmo": 30,
     "reloadItem": "scguns_cnc:hex_round",
     "reloadTimer": 5,
     "reloadType": "scguns:mag_fed"
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.gallows.fire",
-    "fire": "scguns_cnc:item.gallows.fire",
+    "enchantedFire": "scguns_cnc:item.cacophony.fire",
+    "fire": "scguns_cnc:item.cacophony.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns_cnc:item.gallows.silenced_fire",
     "flyby": "scguns_cnc:item.flyby.silver_flyby"
