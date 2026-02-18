@@ -22,6 +22,7 @@ public class ModParticleTypes {
     public static final RegistryObject<SimpleParticleType> ENERGY_BOLT_IMPACT = registerSimpleParticleType(true, "energy_bolt_impact");
     public static final RegistryObject<SimpleParticleType> HEX_CASING_PARTICLE = registerSimpleParticleType(true, "hex_casing");
     public static final RegistryObject<SimpleParticleType> HEX_SHELL_PARTICLE = registerSimpleParticleType(true, "hex_shell");
+    public static final RegistryObject<SimpleParticleType> SILVER_LINKS = registerSimpleParticleType(true, "silver_links");
 
     private static RegistryObject<SimpleParticleType> registerSimpleParticleType(boolean alwaysShow, String name) {
         return PARTICLE_TYPES.register(name, () -> new SimpleParticleType(alwaysShow));
@@ -35,6 +36,7 @@ public class ModParticleTypes {
             event.registerSpriteSet(ENERGY_BOLT_IMPACT.get(), EnergyBoltTrailParticle.Provider::new);
             event.registerSpriteSet(HEX_CASING_PARTICLE.get(), CasingParticle.Provider::new);
             event.registerSpriteSet(HEX_SHELL_PARTICLE.get(), CasingParticle.Provider::new);
+            event.registerSpriteSet(SILVER_LINKS.get(), CasingParticle.Provider::new);
         }
     }
 }

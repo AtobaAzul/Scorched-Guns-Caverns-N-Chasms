@@ -2,8 +2,8 @@
   "display": {
     "flash": {
       "size": 1.0,
-      "yOffset": 5.0,
-      "zOffset": -9,
+      "yOffset": 4.0,
+      "zOffset": -12,
       "textureLocation": "muzzle_flash_1"
     }
   },
