@@ -31,13 +31,13 @@
       },
       "scope": {
         "size": 1.7,
-        "yOffset": 5.5,
-        "zOffset": -1
+        "yOffset": 5,
+        "zOffset": 2
       }
     },
     "zoom": {
       "fovModifier": 0.6,
-      "yOffset":5.8,
+      "yOffset":5.3,
       "zOffset": 2,
       "xOffset": 0
     }
@@ -60,8 +60,8 @@
     "speed": 5.5,
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 3.0,
-    "recoilKick": 1.4,
-    "spread": 1.5
+    "recoilKick": 1.6,
+    "spread": 1.7
   },
   "reloads": {
     "emptyMagTimer": 10,
