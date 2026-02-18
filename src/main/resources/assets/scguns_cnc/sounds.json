@@ -310,17 +310,34 @@
       }
     ]
   },
-  "item.electrolaser_autocannon.fire": {
+  "item.electrothermal_autocannon.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
       {
-        "name": "scguns_cnc:item/electrolaser_autocannon/fire0"
+        "name": "scguns_cnc:item/electrothermal_autocannon/fire0"
       },
       {
-        "name": "scguns_cnc:item/electrolaser_autocannon/fire1"
+        "name": "scguns_cnc:item/electrothermal_autocannon/fire1"
       },
       {
-        "name": "scguns_cnc:item/electrolaser_autocannon/fire2"
+        "name": "scguns_cnc:item/electrothermal_autocannon/fire2"
+      }
+    ]
+  },
+  "item.mortician.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/mortician/fire0",
+        "volume": 1.25
+      },
+      {
+        "name": "scguns_cnc:item/mortician/fire1",
+        "volume": 1.25
+      },
+      {
+        "name": "scguns_cnc:item/mortician/fire2",
+        "volume": 1.25
       }
     ]
   },

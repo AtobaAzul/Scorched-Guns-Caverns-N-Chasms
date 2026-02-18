@@ -37,7 +37,7 @@ public class JEICCPlugin implements IModPlugin {
         //registration.addIngredientInfo(new ItemStack(ModItems.GRAVEKEEPER_BLUEPRINT.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_gravekeeper_structures"));
         registration.addIngredientInfo(new ItemStack(ModItems.ANATHEMA.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_gravekeeper_structures"));
         registration.addIngredientInfo(new ItemStack(ModItems.LUSTRE.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_vaults"));
-        registration.addIngredientInfo(new ItemStack(ModItems.ELECTROLASER_AUTOCANNON.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_vaults"));
+        registration.addIngredientInfo(new ItemStack(ModItems.ELECTROTHERMAL_AUTOCANNON.get()), VanillaTypes.ITEM_STACK, getTranslation("jei.info.found_in_vaults"));
 
     }
 }

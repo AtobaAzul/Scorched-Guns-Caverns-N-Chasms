@@ -1,0 +1,20 @@
+{
+  "type": "yungsapi:yung_jigsaw",
+  "start_pool": "scguns_cnc:soul_outpost",
+  "size": 30,
+  "max_distance_from_center": 64,
+  "spawn_overrides": {},
+  "terrain_adaptation": "beard_box",
+  "start_height": {
+    "type": "minecraft:uniform",
+    "min_inclusive": {
+      "absolute": 35
+    },
+    "max_inclusive": {
+      "absolute": 60
+    }
+  },
+  "step": "underground_decoration",
+  "biomes": "#minecraft:has_structure/nether_fossil",
+  "use_expansion_hack": false
+}
