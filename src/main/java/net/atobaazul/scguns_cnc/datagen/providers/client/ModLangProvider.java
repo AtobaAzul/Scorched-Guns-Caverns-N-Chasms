@@ -75,6 +75,7 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.gallows", "High-power automatic rifle, ideal for swiftly neutralizing targets. Typically used by Gravekeepers's executioner firing squads.");
         add("scguns.desc.necrosis", "Heavy combat shotgun designed to be used by Gravekeeper dungeon guards, capable of firing both Hexshot for close combat and Copper Slugs for medium range.");
         add("scguns.desc.mortician", "Standard Gravekeeper sidearm, typically given to neophytes and other lesser Gravekeepers.");
+        add("scguns.desc.cacophony", "Gravekeeper light machine gun, capable of shredding even the most heavily armored enemies. The unique sound produced from its gas vent earned it its nickname.");
 
         add("gun_tier.scguns.gravekeeper", "Gravekeeper");
         add("raid.scguns.gravekeeper", "Gravekeeper Raid");
