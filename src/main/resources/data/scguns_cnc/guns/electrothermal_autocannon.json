@@ -17,7 +17,7 @@
     "meleeDamage": 3.5,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
-    "hotBarrelRate": 3,
+    "hotBarrelRate": 1,
     "isRevolver": true,
     "speedModifier": 0.85
   },

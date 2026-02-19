@@ -26,7 +26,7 @@ import top.ribs.scguns.entity.projectile.LightningProjectileEntity;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.event.GunProjectileHitEvent;
 
-import static com.teamabnormals.caverns_and_chasms.core.other.CCEvents.playTinDeflectEffects;
+import static com.teamabnormals.caverns_and_chasms.core.other.CCEvents.playRicochetEffects;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID)
@@ -123,7 +123,7 @@ public class TinBounceProjectileEvent {
                         float pitchmultiplier = soundtype == CCSoundEvents.CCSoundTypes.STORAGE_DUCT ? 0.5F : 1.0F;
 
 
-                        playTinDeflectEffects(level, location, movement.reverse().normalize(), speed, soundevent, pitchmultiplier, random);
+                        playRicochetEffects(level, location, movement.reverse().normalize(), speed, soundevent, pitchmultiplier, random);
 
                         if (!level.isClientSide) {
                             ServerLevel serverLevel = (ServerLevel) level;
@@ -158,7 +158,7 @@ public class TinBounceProjectileEvent {
                     projectile.setDeltaMovement(reflect);
                     projectile.tick();
 
-                    CCEvents.playTinDeflectEffects(level, location, reflect.reverse().normalize(), movement.lengthSqr(), random);
+                    CCEvents.playRicochetEffects(level, location, reflect.reverse().normalize(), movement.lengthSqr(), random);
                     if (!level.isClientSide) {
                         ServerLevel serverLevel = (ServerLevel) level;
 
