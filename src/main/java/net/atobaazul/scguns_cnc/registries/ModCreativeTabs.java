@@ -32,6 +32,7 @@ public class ModCreativeTabs {
 
         addEnergyGunWithFullAmmo(pOutput, ModItems.LUSTRE.get());
         addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROTHERMAL_AUTOCANNON.get());
+        addEnergyGunWithFullAmmo(pOutput, ModItems.SCATTERER.get());
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 

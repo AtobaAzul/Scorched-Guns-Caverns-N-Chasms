@@ -13,8 +13,11 @@
             },
             {
               "type": "minecraft:item",
-              "name": "scguns_cnc:electrothermal_autocannon",
-              "weight": 1
+              "name": "scguns_cnc:electrothermal_autocannon"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:scatterer"
             }
           ]
         }
