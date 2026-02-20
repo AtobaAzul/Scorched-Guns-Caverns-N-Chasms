@@ -54,7 +54,7 @@
     "damage": 16.0,
     "damageFalloffStart": 23.0,
     "damageFalloffEnd": 46.0,
-    "damageFalloffMinMultiplier": 0.6,
+    "damageFalloffMinMultiplier": 0.65,
     "ejectsCasing": true,
     "gravity": false,
     "item": "scguns_cnc:hex_round",
