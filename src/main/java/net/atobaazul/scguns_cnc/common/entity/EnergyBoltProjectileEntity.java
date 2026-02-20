@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.atobaazul.scguns_cnc.registries.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -54,6 +55,19 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
 
             serverLevel.sendParticles(ModParticleTypes.ENERGY_BOLT_IMPACT.get(), hitPos.x + offsetX, hitPos.y + offsetY, hitPos.z + offsetZ, 1, dir.x + offsetX, dir.y + offsetY, dir.z + offsetZ, 1);
         }
+    }
+
+    @Override
+    public float getaFloat() {
+        if (this.getWeapon().is(ModItems.SCATTERER.get())) {
+            float initialDamage = (this.projectile.getDamage() + this.additionalDamage + this.attributeAdditionalDamage);
+            initialDamage *= (float) this.attributeDamageMultiplier;
+            if (this.projectile.isDamageReduceOverLife()) {
+                float modifier = ((float) this.projectile.getLife() - (float) (this.tickCount - 1)) / (float) this.projectile.getLife();
+                initialDamage *= modifier;
+            }
+            return initialDamage;
+        } else return super.getaFloat();
     }
 
     @Override

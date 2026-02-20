@@ -43,7 +43,7 @@
   "projectile": {
     "knockbackStrength": 0.0,
     "advantage": "scguns:bot",
-    "damage": 12.0,
+    "damage": 18.0,
     "armorPen": 20.0,
     "ejectsCasing": false,
     "item": "scguns:energy_core",
@@ -58,7 +58,7 @@
   },
   "reloads": {
     "emptyMagTimer": 50,
-    "maxAmmo": 30,
+    "maxAmmo": 15,
     "reloadItem": "scguns:energy_core",
     "reloadByproduct": "scguns:depleted_energy_core",
     "byproductChance": 0.5,

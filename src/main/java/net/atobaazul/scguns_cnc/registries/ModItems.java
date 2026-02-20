@@ -178,7 +178,7 @@ public class ModItems {
                     ModSounds.RELOAD_END.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
-                    5000,
+                    10000,
                     40,
                     300000,
                     2
