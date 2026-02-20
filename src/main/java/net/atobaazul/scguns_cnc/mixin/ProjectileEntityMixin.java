@@ -17,7 +17,7 @@ public class ProjectileEntityMixin {
     @WrapMethod(method="calculateChargeSpreadMultiplier", remap = false)
     private float scguns_cnc$calculateChargeSpreadMultiplier(float chargeProgress, Operation<Float> original) {
         ItemStack weapon = this.shooter.getMainHandItem();
-        if (weapon.is(ModItems.ELC.get())) {
+        if (weapon.is(ModItems.SCATTERER.get())) {
             chargeProgress = Mth.clamp(chargeProgress, 0.0F, 1.0F);
             float minChargeSpreadMultiplier = 0.3F;
             float maxChargeSpreadMultiplier = 2.0F;
@@ -30,7 +30,7 @@ public class ProjectileEntityMixin {
     @WrapMethod(method = "calculateChargeSpeedMultiplier", remap = false)
     private float scguns_cnc$calculateChargeSpeedMultiplier(float chargeProgress, Operation<Float> original) {
         ItemStack weapon = this.shooter.getMainHandItem();
-        if (weapon.is(ModItems.ELC.get())) {
+        if (weapon.is(ModItems.SCATTERER.get())) {
             return 1.0F;
         }
         return original.call(chargeProgress);

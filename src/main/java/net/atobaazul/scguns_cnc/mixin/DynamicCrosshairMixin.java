@@ -16,7 +16,7 @@ public class DynamicCrosshairMixin {
     private float scguns_cnc$calculateChargeSpreadMultiplier(float chargeProgress, Gun modifiedGun, Operation<Float> original) {
         ItemStack gun = Minecraft.getInstance().player.getMainHandItem();
 
-        if (gun.is(ModItems.ELC.get())) {
+        if (gun.is(ModItems.SCATTERER.get())) {
             chargeProgress = Mth.clamp(chargeProgress, 0.0f, 1.0f);
 
             float weaponSpreadPenalty = 3.0f;

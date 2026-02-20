@@ -70,7 +70,7 @@ public abstract class ServerPlayHandlerMixin {
             arrow.pickup = Arrow.Pickup.ALLOWED;
 
             world.addFreshEntity(arrow);
-        } else if (heldItem.is(ModItems.ELC.get())) {
+        } else if (heldItem.is(ModItems.SCATTERER.get())) {
             float chargeProgress = player.getPersistentData().getFloat("ChargeProgress");
             CompoundTag tag = heldItem.getOrCreateTag();
             int currentAmmo = tag.getInt("AmmoCount");
@@ -164,7 +164,7 @@ public abstract class ServerPlayHandlerMixin {
 
     @WrapMethod(method = "consumeAmmo", remap = false)
     private static void scguns_cnc$consumeAmmo(ServerPlayer player, ItemStack heldItem, Operation<Void> original) {
-        if (heldItem.is(ModItems.ELC.get())) {
+        if (heldItem.is(ModItems.SCATTERER.get())) {
             if (heldItem.getItem() instanceof GunItem gunItem) {
 
                 Gun modifiedGun = gunItem.getModifiedGun(heldItem);

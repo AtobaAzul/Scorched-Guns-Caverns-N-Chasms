@@ -67,8 +67,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.elc.fire",
-    "fire": "scguns_cnc:item.elc.fire",
+    "enchantedFire": "scguns_cnc:item.scatterer.fire",
+    "fire": "scguns_cnc:item.scatterer.fire",
     "reload": "scguns:item.flamethrower.reload"
   }
 }
