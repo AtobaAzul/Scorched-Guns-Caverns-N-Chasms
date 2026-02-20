@@ -84,7 +84,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(VAULT_GUN_TIER)
                 .add(LUSTRE.get())
-                .add(ELECTROTHERMAL_AUTOCANNON.get());
+                .add(ELECTROTHERMAL_AUTOCANNON.get())
+                .add(SCATTERER.get());
 
         tag(ModTags.Items.HEAVY_WEAPON)
                 .add(LUSTRE.get())

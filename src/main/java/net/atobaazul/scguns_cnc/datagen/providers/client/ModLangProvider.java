@@ -44,6 +44,7 @@ public class ModLangProvider extends LanguageProvider {
 
         addItem(ModItems.LUSTRE, "Lustre");
         addItem(ModItems.ELECTROTHERMAL_AUTOCANNON, "Electrothermal Autocannon");
+        addItem(ModItems.SCATTERER, "Scatterer");
 
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
@@ -61,6 +62,7 @@ public class ModLangProvider extends LanguageProvider {
 
         add("item.scguns_cnc.electrothermal_autocannon.lore", "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.");
         add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with an Energy Core recharge system.\nEnergy Core can be swapped for immediate recharge.");
+        add("item.scguns_cnc.scatterer.lore", "Compact electrothermal energy weapon, capable of firing single precise shots or large inaccurate bursts of plasma.");
 
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");

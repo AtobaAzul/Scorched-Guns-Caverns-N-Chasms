@@ -191,21 +191,21 @@ public class ModItems {
     );
 
 
-    //placeholder test
-    public static final RegistryObject<RechargeableEnergyGunItem> ELC = REGISTER.register("elc",
+    //Scatterer
+    public static final RegistryObject<RechargeableEnergyGunItem> SCATTERER = REGISTER.register("scatterer",
             () -> new RechargeableEnergyGunItem(
                     new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
-                    "elc",
+                    "scatterer",
                     ModSoundEvents.LUSTRE_MAG_OUT.get(),
                     ModSoundEvents.LUSTRE_MAG_IN.get(),
                     ModSounds.RELOAD_END.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
-                    750,
+                    1000,
                     5,
-                    300000,
-                    10,
-                    true
+                    80000,
+                    15,
+                    false
             )
     );
 

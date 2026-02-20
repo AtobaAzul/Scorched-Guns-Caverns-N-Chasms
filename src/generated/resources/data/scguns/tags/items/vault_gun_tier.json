@@ -1,6 +1,7 @@
 {
   "values": [
     "scguns_cnc:lustre",
-    "scguns_cnc:electrothermal_autocannon"
+    "scguns_cnc:electrothermal_autocannon",
+    "scguns_cnc:scatterer"
   ]
 }

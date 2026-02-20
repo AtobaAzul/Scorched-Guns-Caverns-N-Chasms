@@ -50,7 +50,7 @@
     "maxAmmo": 100,
     "reloadItem": "scguns_cnc:pulse_core",
     "reloadTimer": 60,
-    "reloadType": "scguns:mag_fed"
+    "reloadType": "scguns:single_item"
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
