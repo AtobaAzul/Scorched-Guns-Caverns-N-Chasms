@@ -35,9 +35,9 @@
     },
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset":5.2,
+      "yOffset":5.1,
       "zOffset": 0,
-      "xOffset": -0.5
+      "xOffset": 0
     }
   },
   "projectile": {
@@ -47,7 +47,7 @@
     "criticalChance": 0.1,
     "critDamageMultiplier": 3.0,
     "damageFalloffEnd": 30.0,
-    "damageFalloffMinMultiplier": 0.45,
+    "damageFalloffMinMultiplier": 0.60,
     "gravity": false,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns_cnc:small_necromium_casing",
