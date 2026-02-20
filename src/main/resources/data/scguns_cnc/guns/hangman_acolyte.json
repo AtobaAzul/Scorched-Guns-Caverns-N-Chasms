@@ -1,0 +1,73 @@
+{
+  "display": {
+    "flash": {
+      "size": 0.7,
+      "yOffset": 5.4,
+      "zOffset": -13,
+      "textureLocation": "muzzle_flash_1"
+    }
+  },
+  "general": {
+    "weaponType": "smg",
+    "fireMode": "scguns:automatic",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 3,
+    "meleeDamage": 4.5,
+    "meleeCooldownTicks": 15,
+    "meleeReach": 3.5,
+    "hotBarrelRate": 3,
+    "criticalChance": 0.06,
+    "isSilenced": true,
+    "usesCustomMeleeAnimation": true
+  },
+  "modules": {
+    "attachments": {
+
+      "scope": {
+        "size": 0.85,
+        "yOffset": 5.3,
+        "zOffset": 3.6
+      }
+    },
+    "zoom": {
+      "fovModifier": 0.5,
+      "yOffset": 5.7,
+      "zOffset": 3
+    }
+  },
+  "projectile": {
+    "alwaysSpread": true,
+    "advantage": "scguns:none",
+    "damage": 7.5,
+    "damageFalloffStart": 15.0,
+    "damageFalloffEnd": 25.0,
+    "damageFalloffMinMultiplier": 0.55,
+    "ejectsCasing": true,
+    "item": "scguns_cnc:compact_hex_round",
+    "casingType": "scguns_cnc:small_necromium_casing",
+    "casingParticle": "scguns_cnc:hex_casing",
+    "life": 35,
+    "size": 0.05,
+    "speed": 5.0,
+    "trailLengthMultiplier": 2.0,
+    "recoilAngle": 2.25,
+    "recoilKick": 1,
+    "spread": 3.0
+  },
+  "reloads": {
+    "emptyMagTimer": 30,
+    "maxAmmo": 30,
+    "reloadItem": "scguns_cnc:compact_hex_round",
+    "reloadTimer": 5,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns_cnc:item.hangman_carbine.fire",
+    "fire": "scguns_cnc:item.hangman_carbine.fire",
+    "reload": "scguns:item.gauss.reload",
+    "silencedFire": "scguns_cnc:item.hangman_carbine.silenced_fire",
+    "flyby": "scguns_cnc:item.flyby.silver_flyby"
+  }
+}
