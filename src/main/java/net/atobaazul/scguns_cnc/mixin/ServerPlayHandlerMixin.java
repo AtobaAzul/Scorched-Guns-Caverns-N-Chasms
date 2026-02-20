@@ -2,9 +2,12 @@ package net.atobaazul.scguns_cnc.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.mrcrayfish.framework.api.network.LevelLocation;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.ModTags;
+import net.atobaazul.scguns_cnc.registries.ModItems;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
@@ -16,17 +19,21 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.Unique;
 import top.ribs.scguns.Config;
 import top.ribs.scguns.common.Gun;
+import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import top.ribs.scguns.common.network.ServerPlayHandler;
+import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.event.GunEventBus;
 import top.ribs.scguns.init.ModEnchantments;
+import top.ribs.scguns.interfaces.IProjectileFactory;
 import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.C2SMessageShoot;
+import top.ribs.scguns.network.message.S2CMessageBulletTrail;
+import top.ribs.scguns.util.GunEnchantmentHelper;
 
 import java.util.Objects;
 
@@ -34,8 +41,8 @@ import java.util.Objects;
 public abstract class ServerPlayHandlerMixin {
     private static final int maxRate = 50;
 
-    @Inject(method = "fireProjectiles", at = @At("TAIL"), remap = false)
-    private static void scguns_cnc$fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun, CallbackInfo ci) {
+    @WrapMethod(method = "fireProjectiles", remap = false)
+    private static void scguns_cnc$fireProjectiles(Level world, ServerPlayer player, ItemStack heldItem, GunItem item, Gun modifiedGun, Operation<Void> original) {
         if (modifiedGun.getProjectile().getItem() == CCItems.LARGE_ARROW.get()) {
 
             LargeArrow arrow = new LargeArrow(world, player);
@@ -63,8 +70,50 @@ public abstract class ServerPlayHandlerMixin {
             arrow.pickup = Arrow.Pickup.ALLOWED;
 
             world.addFreshEntity(arrow);
+        } else if (heldItem.is(ModItems.ELC.get())) {
+            float chargeProgress = player.getPersistentData().getFloat("ChargeProgress");
+            CompoundTag tag = heldItem.getOrCreateTag();
+            int currentAmmo = tag.getInt("AmmoCount");
+
+            int count = Math.min(currentAmmo, Mth.floor(Mth.lerp(chargeProgress, 1, modifiedGun.getProjectile().getProjectileAmount())));
+            Gun.Projectile projectileProps = modifiedGun.getProjectile(heldItem);
+            ProjectileEntity[] spawnedProjectiles = new ProjectileEntity[count];
+
+            for (int i = 0; i < count; i++) {
+                IProjectileFactory factory = ProjectileManager.getInstance().getFactory(ForgeRegistries.ITEMS.getKey(projectileProps.getItem()));
+                ProjectileEntity projectileEntity = factory.create(world, player, heldItem, item, modifiedGun);
+                projectileEntity.setWeapon(heldItem);
+                projectileEntity.setAdditionalDamage(Gun.getAdditionalDamage(heldItem));
+                world.addFreshEntity(projectileEntity);
+                spawnedProjectiles[i] = projectileEntity;
+                projectileEntity.tick();
+            }
+
+            if (!projectileProps.shouldHideProjectile()) {
+                scguns_cnc$sendProjectileTrail(player, spawnedProjectiles, projectileProps, false);
+            }
+        } else {
+            original.call(world, player, heldItem, item, modifiedGun);
         }
     }
+
+    @Unique
+    private static void scguns_cnc$sendProjectileTrail(ServerPlayer player, ProjectileEntity[] projectiles, Gun.Projectile projectileProps, boolean b) {
+        if (projectileProps.shouldHideTrail()) {
+            return;
+        }
+
+        double spawnX = player.getX();
+        double spawnY = player.getY() + 1.0;
+        double spawnZ = player.getZ();
+        double radius = Config.COMMON.network.projectileTrackingRange.get();
+        ParticleOptions data = GunEnchantmentHelper.getParticle(player.getMainHandItem());
+
+        S2CMessageBulletTrail messageBulletTrail = new S2CMessageBulletTrail(projectiles, projectileProps, player.getId(), data, true);
+
+        PacketHandler.getPlayChannel().sendToNearbyPlayers(() -> LevelLocation.create(player.level(), spawnX, spawnY, spawnZ, radius), messageBulletTrail);
+    }
+
 
     @WrapMethod(method = "handleCasingEjection", remap = false)
     private static void scguns_cnc$handleCasingEjection(ServerPlayer player, ItemStack heldItem, Gun modifiedGun, Level world, Operation<Void> original) {
@@ -110,6 +159,34 @@ public abstract class ServerPlayHandlerMixin {
                 float heatLevel = tag.getFloat("HeatLevel");
                 tag.putFloat("HeatLevel", Math.min(heatLevel + 1, maxRate));
             }
+        }
+    }
+
+    @WrapMethod(method = "consumeAmmo", remap = false)
+    private static void scguns_cnc$consumeAmmo(ServerPlayer player, ItemStack heldItem, Operation<Void> original) {
+        if (heldItem.is(ModItems.ELC.get())) {
+            if (heldItem.getItem() instanceof GunItem gunItem) {
+
+                Gun modifiedGun = gunItem.getModifiedGun(heldItem);
+
+                float chargeProgress = player.getPersistentData().getFloat("ChargeProgress");
+
+                int count = (int) Math.floor(Mth.lerp(chargeProgress, 1, modifiedGun.getProjectile().getProjectileAmount()));
+
+                if (!player.isCreative()) {
+                    CompoundTag tag = heldItem.getOrCreateTag();
+                    if (!tag.getBoolean("IgnoreAmmo")) {
+                        int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RECLAIMED.get(), heldItem);
+                        if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
+                            int currentAmmo = tag.getInt("AmmoCount");
+                            tag.putInt("AmmoCount", Math.max(0, currentAmmo - count));
+                        }
+                    }
+                }
+
+            }
+        } else {
+            original.call(player, heldItem);
         }
     }
 }

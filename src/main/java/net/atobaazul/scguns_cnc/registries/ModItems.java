@@ -205,7 +205,7 @@ public class ModItems {
                     5,
                     300000,
                     10,
-                    true
+                    false
             )
     );
 

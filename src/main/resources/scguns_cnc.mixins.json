@@ -6,9 +6,11 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BrassMaskArmorItemMixin",
+    "DynamicCrosshairMixin",
     "GrazerPartMixin",
     "GunEnchantmentHelperMixin",
     "MeleeAttackHandlerMixin",
+    "ProjectileEntityMixin",
     "ServerPlayHandlerMixin"
   ],
   "injectors": {
