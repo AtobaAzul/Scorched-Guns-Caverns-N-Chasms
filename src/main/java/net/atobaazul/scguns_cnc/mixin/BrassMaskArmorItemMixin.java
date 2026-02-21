@@ -23,6 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import software.bernie.geckolib.animatable.GeoItem;
 import top.ribs.scguns.Config;
 import top.ribs.scguns.item.animated.BrassMaskArmorItem;
@@ -33,7 +34,8 @@ public abstract class BrassMaskArmorItemMixin extends ArmorItem implements GeoIt
         super(p_40386_, p_266831_, p_40388_);
     }
 
-    private boolean scguns_cnc$isValidHomUnculusStructure(Level level, BlockPos pos) {
+    @Unique
+    private boolean scguns_cnc$isValidHomunculusStructure(Level level, BlockPos pos) {
         BlockState clickedBlock = level.getBlockState(pos);
         if (!clickedBlock.is(CCBlocks.SANGUINE_BLOCK.get())) {
             return false;
@@ -44,6 +46,7 @@ public abstract class BrassMaskArmorItemMixin extends ArmorItem implements GeoIt
         return level.getBlockState(pos.below()).is(CCBlocks.SANGUINE_BLOCK.get());
     }
 
+    @Unique
     private void scguns_cnc$spawnCreationEffects(ServerLevel level, BlockPos pos) {
         for (int i = 0; i < 20; i++) {
             double x = pos.getX() + 0.5 + (level.random.nextDouble() - 0.5) * 2.0;
@@ -69,7 +72,7 @@ public abstract class BrassMaskArmorItemMixin extends ArmorItem implements GeoIt
         BlockPos pos = pContext.getClickedPos();
         boolean disableVillagers = Config.COMMON.gameplay.disableVillagerSpawning.get();
 
-        if (player != null && player.isShiftKeyDown() && scguns_cnc$isValidHomUnculusStructure(level, pos) && !disableVillagers) {
+        if (player != null && player.isShiftKeyDown() && scguns_cnc$isValidHomunculusStructure(level, pos) && !disableVillagers) {
             if (!level.isClientSide()) {
                 if (!player.getAbilities().instabuild) {
                     pContext.getItemInHand().shrink(1);
