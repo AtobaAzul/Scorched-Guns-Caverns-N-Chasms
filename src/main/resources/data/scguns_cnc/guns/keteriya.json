@@ -13,7 +13,7 @@
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 1,
-    "meleeDamage": 12.0,
+    "meleeDamage": 8.0,
     "meleeReach": 3.5,
     "meleeCooldownTicks": 15,
     "hotBarrelRate": 30,

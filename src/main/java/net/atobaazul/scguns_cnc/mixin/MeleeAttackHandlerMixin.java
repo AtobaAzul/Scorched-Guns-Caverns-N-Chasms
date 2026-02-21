@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.mixin;
 
 
+import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -48,9 +49,9 @@ public class MeleeAttackHandlerMixin {
         LivingEntity raycastTarget = scguns_cnc$raycastForMeleeAttack(player, heldItem);
         if (heldItem.is(ModItems.ANATHEMA.get())) {
             if (raycastTarget != null) {
-                if (!player.isCreative()) {
-                    raycastTarget.addEffect(new MobEffectInstance(ModEffects.LACERATED.get(), 200, 3, false, false, true));
+                raycastTarget.addEffect(new MobEffectInstance(ModEffects.LACERATED.get(), 200, 3, false, false, true));
 
+                if (!player.isCreative()) {
                     CompoundTag tag = heldItem.getOrCreateTag();
                     int currentAmmo = tag.getInt("AmmoCount");
 
@@ -61,6 +62,12 @@ public class MeleeAttackHandlerMixin {
                     int newAmmo = Math.min(Math.max(0, currentAmmo + 3), maxAmmo);
                     tag.putInt("AmmoCount", newAmmo);
                 }
+            }
+        } else if (heldItem.is(ModItems.HANGMAN_ACOLYTE.get()) || heldItem.is(ModItems.KETERIYA.get())) {
+            if (raycastTarget != null) {
+                raycastTarget.invulnerableTime = 0;
+                raycastTarget.hurt(raycastTarget.damageSources().magic(), 4);
+                SilverItem.causeMagicDamageParticles(raycastTarget);
             }
         }
     }
