@@ -1,0 +1,98 @@
+{
+  "name": "scguns_cnc:necropolis/house_ruin",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:necropolis/house_ruin/ruins",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                },
+                {
+                  "Name": "minecraft:yellow_concrete"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 2 ,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:necropolis/house_ruin/house",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                },
+                {
+                  "Name": "minecraft:yellow_concrete"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:necropolis/house_ruin/garden",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                },
+                {
+                  "Name": "minecraft:yellow_concrete"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:necropolis/house_ruin/lab",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                },
+                {
+                  "Name": "minecraft:yellow_concrete"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

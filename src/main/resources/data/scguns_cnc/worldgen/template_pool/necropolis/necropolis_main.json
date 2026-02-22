@@ -1,0 +1,29 @@
+{
+  "name": "scguns_cnc:necropolis/necropolis_main",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:necropolis/main/corner/northwest",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                },
+                {
+                  "Name": "minecraft:yellow_concrete"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

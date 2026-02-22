@@ -1,0 +1,15 @@
+{
+  "type": "yungsapi:yung_jigsaw",
+  "start_pool": "scguns_cnc:necropolis/necropolis_main",
+  "size": 60,
+  "max_distance_from_center": 64,
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_box",
+  "start_height": {
+    "absolute": 0
+  },
+  "project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
+  "biomes": "#minecraft:is_taiga",
+  "use_expansion_hack": false
+}

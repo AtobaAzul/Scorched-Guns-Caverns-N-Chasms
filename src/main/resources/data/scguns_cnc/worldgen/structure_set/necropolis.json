@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 83411767,
+    "separation": 32,
+    "spacing": 50
+  },
+  "structures": [
+    {
+      "structure": "scguns_cnc:necropolis",
+      "weight": 1
+    }
+  ]
+}
