@@ -6,7 +6,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "MeleeAttackHandlerMixin",
-    "ServerPlayHandlerMixin"
+    "ServerPlayHandlerMixin",
+    "StructureTemplateMixin",
+    "accessor.StructureProcessorAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
