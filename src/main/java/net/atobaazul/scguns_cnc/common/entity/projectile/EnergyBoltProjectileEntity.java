@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.common.entity;
+package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.atobaazul.scguns_cnc.registries.ModParticleTypes;

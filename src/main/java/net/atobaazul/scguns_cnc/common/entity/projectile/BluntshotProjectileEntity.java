@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.common.entity;
+package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
 import net.minecraft.core.BlockPos;

@@ -1,7 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.atobaazul.scguns_cnc.common.entity.*;
-import net.atobaazul.scguns_cnc.common.entity.throwable.ThrowableMalisonGrenadeEntity;
+import net.atobaazul.scguns_cnc.common.entity.projectile.*;
+import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowableMalisonGrenadeEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

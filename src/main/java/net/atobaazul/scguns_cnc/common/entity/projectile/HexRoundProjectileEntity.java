@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.common.entity;
+package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;

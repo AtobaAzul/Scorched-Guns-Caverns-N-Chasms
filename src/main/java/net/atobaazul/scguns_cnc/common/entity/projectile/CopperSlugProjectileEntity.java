@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.common.entity;
+package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
