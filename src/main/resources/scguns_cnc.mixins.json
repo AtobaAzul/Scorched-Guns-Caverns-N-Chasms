@@ -11,7 +11,9 @@
     "GunEnchantmentHelperMixin",
     "MeleeAttackHandlerMixin",
     "ProjectileEntityMixin",
-    "ServerPlayHandlerMixin"
+    "ServerPlayHandlerMixin",
+    "StructureTemplateMixin",
+    "accessor.StructureProcessorAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
