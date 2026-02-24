@@ -22,7 +22,7 @@ public class GunEnchantmentHelperMixin {
             CompoundTag tag = weapon.getOrCreateTag();
             float heatLevel = tag.getFloat("HeatLevel");
 
-            float extra_rate = 1 + ((float) heatLevel / 30);
+            float extra_rate = 1 + ((float) heatLevel / 15);
 
             return (int) Math.floor(rate * extra_rate);
         }
