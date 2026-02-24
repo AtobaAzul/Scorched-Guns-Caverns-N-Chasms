@@ -9,18 +9,17 @@
     }
   },
   "general": {
-    "weaponType": "lmg",
+    "weaponType": "pistol",
     "fireMode": "scguns:pulse",
-    "fireTimer": 25,
+    "fireTimer": 40,
     "gripType": "scguns:one_handed",
     "baseGripType": "scguns:one_handed",
-    "rate": 15,
+    "rate": 4,
     "meleeDamage": 3.5,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
     "hotBarrelRate": 3,
-    "isRevolver": true,
-    "speedModifier": 0.85
+    "isRevolver": false
   },
   "modules": {
     "attachments": {
@@ -47,7 +46,7 @@
     "damageFalloffStart": 10.0,
     "damageFalloffEnd": 24.0,
     "damageFalloffMinMultiplier": 0.65,
-    "damage": 12,
+    "damage": 6.5,
     "armorPen": 1.0,
     "gravity": false,
     "item": "scguns_cnc:pulse_core",

@@ -218,7 +218,7 @@ public class ModItems {
                     80000,
                     10,
                     false
-            )
+            ).setUseGlowMask(true)
     );
 
     //blueprint
