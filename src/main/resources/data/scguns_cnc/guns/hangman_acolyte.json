@@ -37,7 +37,7 @@
     }
   },
   "projectile": {
-    "alwaysSpread": true,
+    "alwaysSpread": false,
     "advantage": "scguns:none",
     "damage": 7.5,
     "damageFalloffStart": 15.0,
@@ -49,10 +49,10 @@
     "casingParticle": "scguns_cnc:hex_casing",
     "life": 35,
     "size": 0.05,
-    "speed": 5.0,
-    "trailLengthMultiplier": 2.0,
-    "recoilAngle": 2.25,
-    "recoilKick": 1,
+    "speed": 5.2,
+    "trailLengthMultiplier": 2.2,
+    "recoilAngle": 2,
+    "recoilKick": 0.8,
     "spread": 3.0
   },
   "reloads": {
