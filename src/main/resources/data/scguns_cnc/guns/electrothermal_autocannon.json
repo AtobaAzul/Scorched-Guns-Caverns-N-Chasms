@@ -13,7 +13,7 @@
     "fireMode": "scguns:automatic",
     "gripType": "scguns:mini_gun",
     "baseGripType": "scguns:mini_gun",
-    "rate": 2,
+    "rate": 1,
     "meleeDamage": 3.5,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,

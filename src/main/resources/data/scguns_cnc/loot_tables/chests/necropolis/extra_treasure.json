@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "scguns_cnc:chests/graveyard/generic"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "scguns_cnc:chests/graveyard/treasure"
+        }
+      ]
+    }
+  ]
+}

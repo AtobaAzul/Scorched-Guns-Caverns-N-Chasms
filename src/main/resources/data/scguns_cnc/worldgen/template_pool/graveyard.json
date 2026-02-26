@@ -17,6 +17,9 @@
                   "Name": "minecraft:structure_block"
                 }
               ]
+            },
+            {
+              "processor_type": "scguns_cnc:waterlogged_processor"
             }
           ]
         }

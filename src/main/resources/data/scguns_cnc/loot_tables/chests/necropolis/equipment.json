@@ -1,0 +1,511 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 8.0,
+        "max": 12.0
+      },
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "minecraft:rotten_flesh"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 80,
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.5,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:treated_brass_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:treated_brass_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:cog_mace"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:grandle_og"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:diamond_steel_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:diamond_steel_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:diamond_steel_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "scguns:treated_brass_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:leather_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:leather_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:leather_leggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:leather_leggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_leggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_leggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_leggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_leggings"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:leather_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "functions": [
+
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:leather_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:chainmail_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.8,
+                "min": 0.3
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "name": "minecraft:golden_boots"
+        }
+      ]
+    }
+  ]
+}

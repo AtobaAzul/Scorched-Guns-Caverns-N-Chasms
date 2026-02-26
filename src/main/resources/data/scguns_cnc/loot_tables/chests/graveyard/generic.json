@@ -5,15 +5,6 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:loot_table",
-          "name": "scguns:blocks/supply_crate"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
           "type": "minecraft:sequence",
           "children": [
             {
