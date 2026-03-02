@@ -55,7 +55,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.LESSER_STRAWMAN, "Weird Doll");
         addItem(ModItems.GRAVEKEEPER_FLARE, "Gravekeeper Flare");
         addItem(ModItems.VAULT_GUN_PARTS, "Experimental Components");
-        addItem(ModItems.LUSTRE_PART, "Zirconium Laser Optics");
+        addItem(ModItems.LUSTRE_PART, "Zirconia Laser Optics");
         addItem(ModItems.ELECTROTHERMAL_PART, "Rapid Plasma Injector");
         addItem(ModItems.SCATTERER_PART, "Plasma Accumulator");
 
