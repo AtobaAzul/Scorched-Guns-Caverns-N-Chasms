@@ -429,6 +429,42 @@
 							"lerp_mode": "catmullrom"
 						}
 					}
+				},
+				"gun_body2": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.0417": {
+							"post": [-0.00027, -0.0625, -0.9375],
+							"lerp_mode": "catmullrom"
+						},
+						"0.0833": {
+							"post": [0, -0.1, -2],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [0.0008, -0.05966, -2.19189],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [0.0008, 0.06159, 0.62122],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 0.1, 1],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
 				}
 			},
 			"sound_effects": {
