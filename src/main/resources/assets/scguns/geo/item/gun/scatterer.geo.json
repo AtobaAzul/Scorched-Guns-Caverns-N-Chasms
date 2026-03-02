@@ -16,11 +16,6 @@
 					"pivot": [-0.875, -7.5, 1]
 				},
 				{
-					"name": "attachment_bone",
-					"parent": "gun_body",
-					"pivot": [2.5227, -7.07744, 3.2398]
-				},
-				{
 					"name": "right_arm",
 					"parent": "gun_body",
 					"pivot": [-6, -5.8432, 3.00305],
@@ -427,6 +422,11 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "attachment_bone",
+					"parent": "gun_body2",
+					"pivot": [2.5227, -7.07744, 3.2398]
 				}
 			]
 		}
