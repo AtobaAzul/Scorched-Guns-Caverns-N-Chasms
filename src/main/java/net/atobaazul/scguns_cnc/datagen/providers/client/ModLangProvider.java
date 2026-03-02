@@ -54,6 +54,10 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.UNFINISHED_COPPER_SLUG, "Unfinished Copper Slug");
         addItem(ModItems.LESSER_STRAWMAN, "Weird Doll");
         addItem(ModItems.GRAVEKEEPER_FLARE, "Gravekeeper Flare");
+        addItem(ModItems.VAULT_GUN_PARTS, "Experimental Components");
+        addItem(ModItems.LUSTRE_PART, "Zirconium Laser Optics");
+        addItem(ModItems.ELECTROTHERMAL_PART, "Rapid Plasma Injector");
+        addItem(ModItems.SCATTERER_PART, "Plasma Accumulator");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
@@ -89,6 +93,11 @@ public class ModLangProvider extends LanguageProvider {
         add("raid.announcement.scguns_cnc.gravekeeper", "The Gravekeepers arrived, the curse demand a sacrifice!");
         add("raid.boss.scguns_cnc.gravekeeper", "Gravekeeper Herald");
         add("item.scguns_cnc.lesser_strawman.tooltip", "A doll used in rituals. You feel it move when you're not looking.");
+        add("item.scguns_cnc.vault_gun_parts.tooltip", "An array of unusually advanced electrical gizmos and doodads used as micro-controllers for standard T.I.N. devices.");
+        add("item.scguns_cnc.lustre_part.tooltip", "Technological Innovation Nucleus' advanced optics are highly sought after due to their exceptional quality, and the tools required for their fabrication no longer existing.");
+        add("item.scguns_cnc.electrothermal_part.tooltip", "Technological Innovation Nucleus' plasma power project was cancelled and repurposed into military applications after growing tensions between COG and Asghar demanded more weapons of war.");
+        add("item.scguns_cnc.scatterer_part.tooltip", "Technological Innovation Nucleus' plasma systems are create usable plasma from the very air, revolutionizing plasma technology.");
+
         add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
     }
 }

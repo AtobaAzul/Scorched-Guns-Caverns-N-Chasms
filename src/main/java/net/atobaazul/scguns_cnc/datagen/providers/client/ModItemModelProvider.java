@@ -40,6 +40,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(LESSER_STRAWMAN);
         simpleItem(GRAVEKEEPER_FLARE);
+        simpleItem(VAULT_GUN_PARTS);
+        simpleItem(LUSTRE_PART);
+        simpleItem(ELECTROTHERMAL_PART);
+        simpleItem(SCATTERER_PART);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

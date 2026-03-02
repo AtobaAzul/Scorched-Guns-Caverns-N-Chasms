@@ -9,22 +9,43 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "scguns_cnc:lustre"
+              "name": "scguns_cnc:vault_gun_parts"
             },
             {
               "type": "minecraft:item",
-              "name": "scguns_cnc:electrothermal_autocannon"
+              "name": "scguns_cnc:lustre_part"
             },
             {
               "type": "minecraft:item",
-              "name": "scguns_cnc:scatterer"
+              "name": "scguns_cnc:electrothermal_part"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:scatterer_part"
             }
           ]
         }
       ],
       "functions": [
+
+      ]
+    },{
+      "rolls": 1,
+      "entries": [
         {
-          "function": "minecraft:enchant_randomly"
+          "type": "minecraft:item",
+          "name": "scguns:blueprint_scrap"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 4,
+            "max": 6
+          },
+          "add": true
         }
       ]
     }

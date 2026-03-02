@@ -1,0 +1,38 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "pattern": [
+    "AB  ",
+    "CDEB",
+    "F A "
+  ],
+  "key": {
+    "A": {
+      "item": "scguns:treated_iron_ingot"
+    },
+    "B": {
+      "tag": "forge:ingots/tin"
+    },
+    "C": {
+      "item": "scguns_cnc:vault_gun_parts"
+    },
+    "D": {
+      "item": "scguns_cnc:scatterer_part"
+    },
+    "E": {
+      "tag": "forge:storage_blocks/tin"
+    },
+    "F": {
+      "item": "scguns:gun_grip"
+    }
+  },
+  "result": {
+    "item": "scguns_cnc:scatterer"
+  }
+}
