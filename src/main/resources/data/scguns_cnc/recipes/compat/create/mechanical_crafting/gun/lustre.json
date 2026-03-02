@@ -1,0 +1,38 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "pattern": [
+    "AAA ",
+    "BCDE",
+    "F F "
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:ingots/tin"
+    },
+    "B": {
+      "tag": "forge:storage_blocks/tin"
+    },
+    "C": {
+      "item": "scguns_cnc:vault_gun_parts"
+    },
+    "D": {
+      "item": "scguns_cnc:lustre_part"
+    },
+    "E": {
+      "item": "caverns_and_chasms:zirconia"
+    },
+    "F": {
+      "item": "scguns:gun_grip"
+    }
+  },
+  "result": {
+    "item": "scguns_cnc:lustre"
+  }
+}

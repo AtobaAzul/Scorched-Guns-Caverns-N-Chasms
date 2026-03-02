@@ -253,6 +253,24 @@ public class ModItems {
             () -> new TooltipItem(new Item.Properties(),
                     "item.scguns_cnc.lesser_strawman.tooltip",
                     "item.scguns.found_in_raids"));
+    public static final RegistryObject<Item> VAULT_GUN_PARTS = REGISTER.register("vault_gun_parts",
+            () -> new TooltipItem(new Item.Properties().rarity(CCItems.FANCY),
+                    "item.scguns_cnc.vault_gun_parts.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
+    public static final RegistryObject<Item> LUSTRE_PART = REGISTER.register("lustre_part",
+            () -> new TooltipItem(new Item.Properties().rarity(CCItems.FANCY),
+                    "item.scguns_cnc.lustre_part.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
+
+    public static final RegistryObject<Item> ELECTROTHERMAL_PART = REGISTER.register("electrothermal_part",
+            () -> new TooltipItem(new Item.Properties().rarity(CCItems.FANCY),
+                    "item.scguns_cnc.electrothermal_part.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
+
+    public static final RegistryObject<Item> SCATTERER_PART = REGISTER.register("scatterer_part",
+            () -> new TooltipItem(new Item.Properties().rarity(CCItems.FANCY),
+                    "item.scguns_cnc.scatterer_part.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
 
     public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
 

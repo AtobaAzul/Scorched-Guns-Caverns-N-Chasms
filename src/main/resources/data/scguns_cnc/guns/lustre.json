@@ -44,7 +44,7 @@
     "knockbackStrength": 0.0,
     "advantage": "scguns:bot",
     "damage": 18.0,
-    "armorPen": 20.0,
+    "armorPen": 100.0,
     "ejectsCasing": false,
     "item": "scguns:energy_core",
     "life": 50,

@@ -38,10 +38,10 @@ public class ModCreativeTabs {
 
         addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.HEX_ROUND.get());
+        addItem(pOutput, ModItems.COMPACT_HEX_ROUND.get());
         addItem(pOutput, ModItems.BLUNTSHOT.get());
         addItem(pOutput, ModItems.HEXSHOT.get());
         addItem(pOutput, ModItems.COPPER_SLUG.get());
-        addItem(pOutput, ModItems.COMPACT_HEX_ROUND.get());
         addItem(pOutput, ModItems.NECROMIUM_GUN_FRAME.get());
         addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
@@ -50,6 +50,12 @@ public class ModCreativeTabs {
 
         addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());
         addItem(pOutput, ModItems.LESSER_STRAWMAN.get());
+
+        addItem(pOutput, ModItems.VAULT_GUN_PARTS.get());
+        addItem(pOutput, ModItems.LUSTRE_PART.get());
+        addItem(pOutput, ModItems.ELECTROTHERMAL_PART.get());
+        addItem(pOutput, ModItems.SCATTERER_PART.get());
+
     }).build());
 
     public static void register(IEventBus eventBus) {

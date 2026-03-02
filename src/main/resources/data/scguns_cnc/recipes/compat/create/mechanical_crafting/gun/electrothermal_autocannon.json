@@ -1,0 +1,35 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "pattern": [
+    "AAB ",
+    "CDCA",
+    "B E "
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:ingots/tin"
+    },
+    "B": {
+      "item": "scguns:gun_grip"
+    },
+    "C": {
+      "tag": "forge:storage_blocks/tin"
+    },
+    "D": {
+      "item": "scguns_cnc:vault_gun_parts"
+    },
+    "E": {
+      "item": "scguns_cnc:electrothermal_part"
+    }
+  },
+  "result": {
+    "item": "scguns_cnc:electrothermal_autocannon"
+  }
+}
