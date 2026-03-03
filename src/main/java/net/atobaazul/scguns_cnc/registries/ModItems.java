@@ -182,7 +182,7 @@ public class ModItems {
                     40,
                     300000,
                     2
-            )
+            ).setUseGlowMask(true)
     );
 
     public static final RegistryObject<RechargeableEnergyGunItem> ELECTROTHERMAL_AUTOCANNON = REGISTER.register("electrothermal_autocannon",
