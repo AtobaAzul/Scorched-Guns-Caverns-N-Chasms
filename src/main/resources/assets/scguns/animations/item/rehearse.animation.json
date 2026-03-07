@@ -482,18 +482,16 @@
 						"0.7917": [5.69329, -3.44341, 5.10264],
 						"0.9167": [5.75, -3, 6]
 					}
-				},
-				"cylinder_magazine": {
-					"rotation": {
-						"0.0": [0, 0, -60],
-						"0.5417": [0, 0, -60],
-						"0.7083": [0, 0, 0]
-					}
 				}
 			},
 			"sound_effects": {
 				"0.5833": {
 					"effect": "reload_mag_in"
+				}
+			},
+			"particle_effects": {
+				"0.5833": {
+					"effect": "rotate_cylinder"
 				}
 			}
 		},
@@ -708,13 +706,6 @@
 						"0.9167": [5.75, -3, 6]
 					}
 				},
-				"cylinder_magazine": {
-					"rotation": {
-						"0.0": [0, 0, -60],
-						"0.5417": [0, 0, -60],
-						"0.7083": [0, 0, 0]
-					}
-				},
 				"gun_body3": {
 					"rotation": {
 						"0.0": {
@@ -739,6 +730,11 @@
 			"sound_effects": {
 				"0.5833": {
 					"effect": "reload_mag_in"
+				}
+			},
+			"particle_effects": {
+				"0.5833": {
+					"effect": "rotate_cylinder"
 				}
 			}
 		},
@@ -1521,18 +1517,16 @@
 						},
 						"1.0": [5.5, -3.55, 6]
 					}
-				},
-				"cylinder_magazine": {
-					"rotation": {
-						"0.0": [0, 0, -60],
-						"0.5417": [0, 0, -60],
-						"0.7083": [0, 0, 0]
-					}
 				}
 			},
 			"sound_effects": {
 				"0.5833": {
 					"effect": "reload_mag_in"
+				}
+			},
+			"particle_effects": {
+				"0.5833": {
+					"effect": "rotate_cylinder"
 				}
 			}
 		},
@@ -1696,13 +1690,6 @@
 						"1.0": [5.5, -3.55, 6]
 					}
 				},
-				"cylinder_magazine": {
-					"rotation": {
-						"0.0": [0, 0, -60],
-						"0.5417": [0, 0, -60],
-						"0.7083": [0, 0, 0]
-					}
-				},
 				"gun_body3": {
 					"rotation": {
 						"0.0": {
@@ -1735,6 +1722,11 @@
 			"sound_effects": {
 				"0.5833": {
 					"effect": "reload_mag_in"
+				}
+			},
+			"particle_effects": {
+				"0.5833": {
+					"effect": "rotate_cylinder"
 				}
 			}
 		},

@@ -31,7 +31,7 @@
     },
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset":5.8,
+      "yOffset":6,
       "zOffset": 0,
       "xOffset": 0
     }
