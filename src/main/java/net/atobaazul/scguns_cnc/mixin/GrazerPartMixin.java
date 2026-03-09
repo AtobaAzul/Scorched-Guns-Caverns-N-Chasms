@@ -28,32 +28,8 @@ public abstract class GrazerPartMixin extends PartEntity<AbstractGrazer> {
         AbstractGrazer grazer = this.getParent();
         Entity directentity = source.getDirectEntity();
         if (directentity instanceof KrahgRoundProjectileEntity || directentity instanceof OsborneSlugProjectileEntity || directentity instanceof LightningProjectileEntity) {
-            AABB aabb = this.getBoundingBox().inflate(0.3D);
-            Vec3 attackerpos = directentity.getEyePosition();
-            Vec3 partpos = new Vec3(this.getX(), this.getY(0.5D), this.getZ());
-
-            Vec3 location = aabb.clip(attackerpos, attackerpos.add(directentity.getViewVector(1.0F).scale(partpos.subtract(attackerpos).length() + this.getDimensions(Pose.STANDING).height * 0.5D + 0.3D))).or(() -> aabb.clip(attackerpos, partpos)).orElse(partpos);
-            Vec3 normal = grazer.calculateDeflectionNormal(location);
-
-            CCEvents.playRicochetEffects(this.level(), location, normal, 0.8F, this.random);
-
             return grazer.hurt(source, amount);
         }
         return original.call(source, amount);
-    }
-
-    @Override
-    protected void defineSynchedData() {
-
-    }
-
-    @Override
-    protected void readAdditionalSaveData(CompoundTag pCompound) {
-
-    }
-
-    @Override
-    protected void addAdditionalSaveData(CompoundTag pCompound) {
-
     }
 }
