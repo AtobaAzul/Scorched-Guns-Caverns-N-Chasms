@@ -133,6 +133,39 @@ public enum CCSpecialModels {
     GALLOWS_LIGHT_GRIP("gallows/light_grip"),
     GALLOWS_TACT_GRIP("gallows/tact_grip"),
 
+    //Mortician
+
+    MORTICIAN_MAIN("mortician/main"),
+    MORTICIAN_STAN_MAGAZINE("mortician/stan_magazine"),
+    MORTICIAN_FAST_MAGAZINE("mortician/fast_magazine"),
+    MORTICIAN_EXT_MAGAZINE("mortician/ext_magazine"),
+    MORTICIAN_STAN_BARREL("mortician/stan_barrel"),
+    MORTICIAN_EXT_BARREL("mortician/ext_barrel"),
+    MORTICIAN_SILENCER("mortician/silencer"),
+    MORTICIAN_ADVANCED_SILENCER("mortician/advanced_silencer"),
+    MORTICIAN_MUZZLE_BRAKE("mortician/muzzle_brake"),
+
+    CACOPHONY_MAIN("cacophony/main"),
+    CACOPHONY_STAN_MAGAZINE("cacophony/stand_mag"),
+    CACOPHONY_FAST_MAGAZINE("cacophony/fast_mag"),
+    CACOPHONY_EXT_MAGAZINE("cacophony/ext_mag"),
+    CACOPHONY_STAN_BARREL("cacophony/stand_barrel"),
+    CACOPHONY_EXT_BARREL("cacophony/ext_barrel"),
+    CACOPHONY_STOCK_WEIGHTED("cacophony/heavy_stock"),
+    CACOPHONY_STOCK_LIGHT("cacophony/light_stock"),
+    CACOPHONY_STOCK_WOODEN("cacophony/wooden_stock"),
+    CACOPHONY_STAN_GRIP("cacophony/stand_grip"),
+    CACOPHONY_SILENCER("cacophony"),
+    CACOPHONY_ADVANCED_SILENCER("cacophony/advanced_silencer"),
+    CACOPHONY_MUZZLE_BRAKE("cacophony/muzzle_brake"),
+    CACOPHONY_NETHERITE_BAYONET("cacophony/netherite_bayonet"),
+    CACOPHONY_DIAMOND_BAYONET("cacophony/diamond_bayonet"),
+    CACOPHONY_ANTHRALITE_BAYONET("cacophony/the_voices"),
+    CACOPHONY_IRON_BAYONET("cacophony/iron_bayonet"),
+    CACOPHONY_LIGHT_GRIP("cacophony/light_grip"),
+    CACOPHONY_TACT_GRIP("cacophony/tact_grip"),
+
+
     //Lustre
     LUSTRE_MAIN("lustre/main"),
 
