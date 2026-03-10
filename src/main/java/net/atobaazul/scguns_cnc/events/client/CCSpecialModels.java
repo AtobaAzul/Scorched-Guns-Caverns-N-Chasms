@@ -173,7 +173,13 @@ public enum CCSpecialModels {
     ANATHEMA_MAIN("anathema/main"),
 
     //Keteriya
-    KETERIYA_MAIN("keteriya/main");
+    KETERIYA_MAIN("keteriya/main"),
+
+     //Electrothermal Autocannon
+     EAUTOCANNON_MAIN("electrothermal_autocannon/main"),
+
+    //Scatterer
+    SCATTERER_MAIN("scatterer/main");
 
     /**
      * The location of an item model in the [MOD_ID]/models/special/[NAME] folder

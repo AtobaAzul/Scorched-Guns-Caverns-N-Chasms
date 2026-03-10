@@ -37,6 +37,8 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.NECROSIS.get(), new NecrosisModel());
         ModelOverrides.register(ModItems.MORTICIAN.get(), new MorticianModel());
         ModelOverrides.register(ModItems.CACOPHONY.get(), new CacophonyModel());
+        ModelOverrides.register(ModItems.ELECTROTHERMAL_AUTOCANNON.get(), new EAutocannonModel());
+        ModelOverrides.register(ModItems.SCATTERER.get(), new ScattererModel());
 
     }
 }
