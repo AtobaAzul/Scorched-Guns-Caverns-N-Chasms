@@ -18,17 +18,20 @@ public class ModCreativeTabs {
 
 
     public static final RegistryObject<CreativeModeTab> SCGUNS_CNC_TAB = CREATIVE_MODE_TABS.register("scguns_cnc_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RIBCAGE.get())).title(Component.translatable("creativetab.scguns_cnc_tab")).displayItems((pParameters, pOutput) -> {
-        addItemWithFullAmmo(pOutput, ModItems.HANGMAN_CARBINE.get());
-        addItemWithFullAmmo(pOutput, ModItems.RIBCAGE.get());
-        addItemWithFullAmmo(pOutput, ModItems.BELLA.get());
         addItemWithFullAmmo(pOutput, ModItems.MORTICIAN.get());
+        addItemWithFullAmmo(pOutput, ModItems.BELLA.get());
         addItemWithFullAmmo(pOutput, ModItems.REHEARSE.get());
-        addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
-        addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
-        addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
-        addItemWithFullAmmo(pOutput, ModItems.NECROSIS.get());
-        addItemWithFullAmmo(pOutput, ModItems.CACOPHONY.get());
+
         addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
+        addItemWithFullAmmo(pOutput, ModItems.HANGMAN_CARBINE.get());
+        addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
+        addItemWithFullAmmo(pOutput, ModItems.CACOPHONY.get());
+
+        addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
+        addItemWithFullAmmo(pOutput, ModItems.NECROSIS.get());
+
+        addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
+        addItemWithFullAmmo(pOutput, ModItems.RIBCAGE.get());
 
         addEnergyGunWithFullAmmo(pOutput, ModItems.LUSTRE.get());
         addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROTHERMAL_AUTOCANNON.get());
@@ -36,7 +39,6 @@ public class ModCreativeTabs {
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
-        addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.HEX_ROUND.get());
         addItem(pOutput, ModItems.COMPACT_HEX_ROUND.get());
         addItem(pOutput, ModItems.BLUNTSHOT.get());
@@ -48,6 +50,7 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.SILVER_BULLET.get());
         addItem(pOutput, ModItems.HEX_BUCKSHOT.get());
 
+        addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());
         addItem(pOutput, ModItems.LESSER_STRAWMAN.get());
 
@@ -55,7 +58,6 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.LUSTRE_PART.get());
         addItem(pOutput, ModItems.ELECTROTHERMAL_PART.get());
         addItem(pOutput, ModItems.SCATTERER_PART.get());
-
     }).build());
 
     public static void register(IEventBus eventBus) {
