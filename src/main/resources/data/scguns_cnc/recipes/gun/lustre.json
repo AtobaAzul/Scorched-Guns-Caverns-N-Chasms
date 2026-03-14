@@ -15,7 +15,7 @@
       "tag": "forge:ingots/tin"
     },
     "gun_top_internal_2": {
-      "tag": "forge:ingots/tin"
+      "item": "scguns:treated_iron_block"
     },
     "gun_barrel_2": {
       "item": "caverns_and_chasms:zirconia"
@@ -27,7 +27,7 @@
       "item": "scguns_cnc:lustre_part"
     },
     "gun_top_barrel_1": {
-      "tag": "forge:ingots/tin"
+      "item": "scguns:treated_iron_ingot"
     },
     "gun_magazine": {
       "item": "scguns:gun_grip"

@@ -8,27 +8,33 @@
   ],
   "acceptMirrored": true,
   "pattern": [
-    "AAA ",
-    "BCDE",
-    "F F "
+    "ABC ",
+    "DEFG",
+    "H H "
   ],
   "key": {
     "A": {
       "tag": "forge:ingots/tin"
     },
     "B": {
-      "tag": "forge:storage_blocks/tin"
+      "item": "scguns:treated_iron_block"
     },
     "C": {
-      "item": "scguns_cnc:vault_gun_parts"
+      "item": "scguns:treated_iron_ingot"
     },
     "D": {
-      "item": "scguns_cnc:lustre_part"
+      "tag": "forge:storage_blocks/tin"
     },
     "E": {
-      "item": "caverns_and_chasms:zirconia"
+      "item": "scguns_cnc:vault_gun_parts"
     },
     "F": {
+      "item": "scguns_cnc:lustre_part"
+    },
+    "G": {
+      "item": "caverns_and_chasms:zirconia"
+    },
+    "H": {
       "item": "scguns:gun_grip"
     }
   },

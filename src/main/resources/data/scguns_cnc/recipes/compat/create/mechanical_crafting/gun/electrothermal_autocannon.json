@@ -8,24 +8,30 @@
   ],
   "acceptMirrored": true,
   "pattern": [
-    "AAB ",
-    "CDCA",
-    "B E "
+    "ABC ",
+    "DEFB",
+    "C G "
   ],
   "key": {
     "A": {
-      "tag": "forge:ingots/tin"
+      "item": "scguns:treated_iron_ingot"
     },
     "B": {
-      "item": "scguns:gun_grip"
+      "tag": "forge:ingots/tin"
     },
     "C": {
-      "tag": "forge:storage_blocks/tin"
+      "item": "scguns:gun_grip"
     },
     "D": {
-      "item": "scguns_cnc:vault_gun_parts"
+      "tag": "forge:storage_blocks/tin"
     },
     "E": {
+      "item": "scguns_cnc:vault_gun_parts"
+    },
+    "F": {
+      "item": "scguns:treated_iron_block"
+    },
+    "G": {
       "item": "scguns_cnc:electrothermal_part"
     }
   },

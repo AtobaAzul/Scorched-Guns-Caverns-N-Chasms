@@ -12,7 +12,7 @@
       "item": "scguns_cnc:vault_gun_parts"
     },
     "gun_top_internal_1": {
-      "tag": "forge:ingots/tin"
+      "item": "scguns:treated_iron_ingot"
     },
     "gun_top_internal_2": {
       "tag": "forge:ingots/tin"
@@ -24,7 +24,7 @@
       "item": "scguns:gun_grip"
     },
     "gun_barrel_1": {
-      "tag": "forge:storage_blocks/tin"
+      "item": "scguns:treated_iron_block"
     },
     "gun_top_barrel_1": {
       "item": "scguns:gun_grip"

@@ -26,6 +26,9 @@
     "gun_barrel_1": {
       "tag": "forge:storage_blocks/tin"
     },
+    "gun_top_barrel_1": {
+      "item": "scguns:treated_iron_ingot"
+    },
     "gun_magazine": {
       "item": "scguns:treated_iron_ingot"
     }
