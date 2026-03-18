@@ -1,20 +1,24 @@
 package net.atobaazul.scguns_cnc.events;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
+import com.teamabnormals.caverns_and_chasms.common.block.TinSoundType;
+import com.teamabnormals.caverns_and_chasms.common.block.TinplateBlock;
 import com.teamabnormals.caverns_and_chasms.common.entity.animal.grazer.AbstractGrazer;
 import com.teamabnormals.caverns_and_chasms.common.entity.animal.grazer.GrazerPart;
 import com.teamabnormals.caverns_and_chasms.core.other.CCDataProcessors;
-import com.teamabnormals.caverns_and_chasms.core.other.CCEvents;
 import com.teamabnormals.caverns_and_chasms.core.other.tags.CCBlockTags;
 import com.teamabnormals.caverns_and_chasms.core.other.tags.CCEntityTypeTags;
-import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCSoundEvents;
+import net.atobaazul.scguns_cnc.common.entity.projectile.BouncingProjectileEntity;
+import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.util.GrazerExtension;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.Direction.Axis;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.TargetBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -23,6 +27,7 @@ import net.minecraftforge.fml.common.Mod;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.event.GunProjectileHitEvent;
 
+import static com.teamabnormals.caverns_and_chasms.core.other.CCEvents.playRicochetEffects;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID)
@@ -64,11 +69,22 @@ public class TinBounceProjectileEvent {
                 }
             }
 
-            if (flag) {
+            boolean bonus = data.getValue(CCDataProcessors.BONUS_DEFLECT);
+            boolean ricoshotRound = projectile.getType() == ModEntities.RICOSHOT_ROUND_PROJECTILE.get();
+
+
+            if (flag || bonus || ricoshotRound) {
+                data.setValue(CCDataProcessors.RICOCHETS, data.getValue(CCDataProcessors.RICOCHETS) + 1);
+                if (!flag) {
+                    data.setValue(CCDataProcessors.BONUS_DEFLECT, false);
+                } else if (state.getBlock() instanceof TinplateBlock) {
+                    data.setValue(CCDataProcessors.BONUS_DEFLECT, true);
+                }
+
                 double speed = movement.lengthSqr();
                 if (direction != Direction.UP || speed > 0.04D) {
                     Vec3 location = hitResult.getLocation();
-                    Direction.Axis axis = direction.getAxis();
+                    Axis axis = direction.getAxis();
                     int i = blockHitResult.getDirection().getAxisDirection().getStep();
 
                     double j = 0.65D;
@@ -79,53 +95,44 @@ public class TinBounceProjectileEvent {
                         k = 0.9D;
                     }
 
-                    if (state.is(CCBlockTags.WEAKER_DEFLECT_VELOCITY)) {
+                    if (state.is(CCBlockTags.WEAKER_DEFLECT_VELOCITY) || bonus) {
                         j -= 0.25D;
                         k -= 0.25D;
                     }
 
-                    if (state.getBlock() instanceof TargetBlock targetBlock) {
-                        //targetBlock.onProjectileHit(level, state, blockHitResult.withPosition(pos), projectile);
-                    }
-
-                    if (axis == Direction.Axis.X) {
+                    if (axis == Axis.X) {
                         data.setValue(CCDataProcessors.DEFLECT_X, -movement.x * j);
                         data.setValue(CCDataProcessors.DEFLECT_Y, movement.y * k);
                         data.setValue(CCDataProcessors.DEFLECT_Z, movement.z * k);
                         projectile.setPos(location.x + 0.01D * i, location.y, location.z);
-                        projectile.setDeltaMovement(new Vec3(-movement.x * j, movement.y * k, movement.z * k));
-
-                    } else if (axis == Direction.Axis.Y) {
+                    } else if (axis == Axis.Y) {
                         data.setValue(CCDataProcessors.DEFLECT_X, movement.x * k);
                         data.setValue(CCDataProcessors.DEFLECT_Y, -movement.y * j);
                         data.setValue(CCDataProcessors.DEFLECT_Z, movement.z * k);
                         projectile.setPos(location.x, i == 1 ? location.y : location.y - 0.01D, location.z);
-                        projectile.setDeltaMovement(new Vec3(movement.x * k, -movement.y * j, movement.z * k));
-
-                    } else if (axis == Direction.Axis.Z) {
+                    } else if (axis == Axis.Z) {
                         data.setValue(CCDataProcessors.DEFLECT_X, movement.x * k);
                         data.setValue(CCDataProcessors.DEFLECT_Y, movement.y * k);
                         data.setValue(CCDataProcessors.DEFLECT_Z, -movement.z * j);
                         projectile.setPos(location.x, location.y, location.z + 0.01D * i);
-                        projectile.setDeltaMovement(new Vec3(movement.x * k, movement.y * k, -movement.z * j));
-
                     }
-                    projectile.tick();
                     data.setValue(CCDataProcessors.SHOULD_DEFLECT, true);
+                    projectile.setDeltaMovement(Vec3.ZERO);
 
-
-                    if (!level.isClientSide) {
-                        ServerLevel serverLevel = (ServerLevel) level;
-                        CCEvents.playRicochetEffects(level, location, movement.reverse().normalize(), speed, random, true);
-
-                        for (int l = 0; l < 3; ++l) {
-
-
-                            //WHYYYYYYY
-                            serverLevel.sendParticles(CCParticleTypes.SPARK.get(), location.x, location.y, location.z, 5, .15, .15, .15, 0.2);
-                        }
+                    if (ricoshotRound && projectile instanceof BouncingProjectileEntity bProjectile) {
+                        bProjectile.addBounceCritChance(.5f);
                     }
+
+                    projectile.tick(); //Since Gun Projectiles don't have the original method used here (checkInsideBlocks) we'll just tick the projectile.
+
+                    SoundType soundType = state.getBlock().getSoundType(state, level, pos, null);
+                    SoundEvent soundEvent = ricoshotRound ? CCSoundEvents.RICOCHET_ARROW_DEFLECT.get() : bonus ? CCSoundEvents.TINPLATE_SECOND_DEFLECT.get() : soundType instanceof TinSoundType tinSoundType ? tinSoundType.getDeflectSound() : CCSoundEvents.TIN_DEFLECT.get();
+                    playRicochetEffects(level, location, movement.reverse().normalize(), speed, soundEvent, soundType == CCSoundEvents.CCSoundTypes.STORAGE_DUCT ? 0.5F : 1.0F, random, true);
+
+
                     event.setCanceled(true);
+
+
                 }
             }
         } else if (hitResult.getType() == HitResult.Type.ENTITY) {
@@ -135,6 +142,8 @@ public class TinBounceProjectileEvent {
                 GrazerExtension eGrazer = (GrazerExtension) grazerpart.getParent();
 
                 if (!eGrazer.scguns_cnc$bulletProjectileJustDeflected(projectile)) {
+                    data.setValue(CCDataProcessors.RICOCHETS, data.getValue(CCDataProcessors.RICOCHETS) + 1);
+
                     AABB aabb = grazerpart.getBoundingBox().inflate(0.3D);
                     Vec3 location = aabb.clip(projectile.position(), projectile.position().add(projectile.getDeltaMovement())).or(() -> aabb.clip(projectile.position(), new Vec3(grazerpart.getX(), grazerpart.getY(0.5D), grazerpart.getZ()))).orElse(projectile.position());
                     Vec3 normal = grazer.calculateDeflectionNormal(location);
@@ -146,16 +155,9 @@ public class TinBounceProjectileEvent {
                     projectile.setPos(location.x + normal.x * 0.01D, location.y + normal.y * 0.01D, location.z + normal.z * 0.01D);
 
                     data.setValue(CCDataProcessors.SHOULD_DEFLECT, true);
-                    projectile.setDeltaMovement(reflect);
+                    projectile.setDeltaMovement(Vec3.ZERO);
 
-                    if (!level.isClientSide) {
-                        ServerLevel serverLevel = (ServerLevel) level;
-                        CCEvents.playRicochetEffects(level, location, movement.reverse().normalize(), movement.lengthSqr(), random, true);
-
-                        for (int l = 0; l < 3; ++l) {
-                            serverLevel.sendParticles(CCParticleTypes.SPARK.get(), location.x, location.y, location.z, 5, .15, .15, .15, 0.2);
-                        }
-                    }
+                    playRicochetEffects(level, location, movement.reverse().normalize(), movement.lengthSqr(), CCSoundEvents.GRAZER_DEFLECT.get(), 1.0F, random, true);
                 }
 
                 eGrazer.scguns_cnc$addDeflectedBulletProjectile(projectile);

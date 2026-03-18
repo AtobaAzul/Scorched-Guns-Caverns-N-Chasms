@@ -49,6 +49,7 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.SILVER_BULLET.get());
         addItem(pOutput, ModItems.HEX_BUCKSHOT.get());
+        addItem(pOutput, ModItems.RICOSHOT_ROUND.get());
 
         addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());

@@ -240,6 +240,7 @@ public class ModItems {
     public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");

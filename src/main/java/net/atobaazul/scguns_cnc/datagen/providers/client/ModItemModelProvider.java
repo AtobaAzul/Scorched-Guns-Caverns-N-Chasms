@@ -32,6 +32,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(HEXSHOT);
         simpleItem(HEX_BUCKSHOT);
         simpleItem(PULSE_CORE);
+        simpleItem(RICOSHOT_ROUND);
 
         simpleItem(UNFINISHED_HEX_ROUND);
         simpleItem(UNFINISHED_COMPACT_HEX_ROUND);

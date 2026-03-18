@@ -27,6 +27,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.HEX_BUCKSHOT, "Hex Buckshot");
         addItem(ModItems.COPPER_SLUG, "Copper Slug");
         addItem(ModItems.PULSE_CORE, "Integrated Pulse Core");
+        addItem(ModItems.RICOSHOT_ROUND, "RicoShot Round");
 
         //guns
         addItem(ModItems.HANGMAN_CARBINE, "Hangman Carabine");
