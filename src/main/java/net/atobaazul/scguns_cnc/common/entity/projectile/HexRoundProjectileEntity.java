@@ -41,7 +41,7 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
     @Override
     protected void onProjectileTick() {
         if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
-            this.level().addParticle(CCParticleTypes.SILVER_SPARK.get(), true, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
+            this.level().addParticle(CCParticleTypes.LIGHT_GRAY_SPARKLER_SPARK.getFirst().get(), true, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
         }
     }
 
