@@ -221,6 +221,20 @@ public class ModItems {
             ).setUseGlowMask(true)
     );
 
+    //Iron Partisan
+    public static final RegistryObject<AnimatedGunItem> IRON_PARTISAN = REGISTER.register("iron_partisan",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "iron_partisan", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+
     //blueprint
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
