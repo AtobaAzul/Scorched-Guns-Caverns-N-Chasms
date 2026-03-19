@@ -60,6 +60,9 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.ELECTROTHERMAL_PART, "Rapid Plasma Injector");
         addItem(ModItems.SCATTERER_PART, "Plasma Accumulator");
 
+        addItem(ModItems.IRON_PARTISAN, "Iron Partisan");
+
+
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
         add("tooltip.bluntshot.knockback", "Deals increased knockback to hit targets.");
