@@ -1,8 +1,6 @@
 package net.atobaazul.scguns_cnc.registries;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
-import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
-import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
@@ -252,11 +250,11 @@ public class ModItems {
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
     //rounds
-    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new BluntshotAmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
+    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
+    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new TooltipItem(new Item.Properties(), "tooltip.bluntshot.knockback"));
     public static final RegistryObject<Item> COPPER_SLUG = REGISTER.register("copper_slug", () -> new AmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new HexRoundAmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
     public static final RegistryObject<Item> PULSE_CORE = REGISTER.register("pulse_core", () -> new AmmoItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
@@ -267,12 +265,13 @@ public class ModItems {
     public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.ricoshot_round.crit_chance"));
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
     public static final RegistryObject<Item> UNFINISHED_HEXSHOT = sequencedIngredient("unfinished_hexshot");
     public static final RegistryObject<Item> UNFINISHED_COPPER_SLUG = sequencedIngredient("unfinished_copper_slug");
+    public static final RegistryObject<Item> UNFINISHED_RICOSHOT_ROUND = sequencedIngredient("unfinished_ricoshot_round");
 
     public static final RegistryObject<Item> GRAVEKEEPER_FLARE = REGISTER.register("gravekeeper_flare",
             () -> new RaidFlareItem(new Item.Properties().stacksTo(16), "gravekeeper"));

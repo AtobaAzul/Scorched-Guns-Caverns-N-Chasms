@@ -36,7 +36,7 @@
   "item.scguns_cnc.pulse_core": "Integrated Pulse Core",
   "item.scguns_cnc.rehearse": "Rehearse",
   "item.scguns_cnc.ribcage": "Ribcage",
-  "item.scguns_cnc.ricoshot_round": "RicoShot Round",
+  "item.scguns_cnc.ricoshot_round": "Ricoshot Round",
   "item.scguns_cnc.scatterer": "Scatterer",
   "item.scguns_cnc.scatterer.lore": "Compact electrothermal energy weapon, capable of firing single precise shots or large inaccurate bursts of plasma.",
   "item.scguns_cnc.scatterer_part": "Plasma Accumulator",
@@ -48,6 +48,7 @@
   "item.scguns_cnc.unfinished_copper_slug": "Unfinished Copper Slug",
   "item.scguns_cnc.unfinished_hex_round": "Unfinished Hex Round",
   "item.scguns_cnc.unfinished_hexshot": "Unfinished Hexshot Shell",
+  "item.scguns_cnc.unfinished_ricoshot_round": "Unfinished Ricoshot Round",
   "item.scguns_cnc.vault_gun_parts": "Experimental Components",
   "item.scguns_cnc.vault_gun_parts.tooltip": "An array of unusually advanced electrical gizmos and doodads used as micro-controllers for standard T.I.N. devices.",
   "raid.announcement.scguns_cnc.gravekeeper": "The Gravekeepers arrived, the curse demand a sacrifice!",
@@ -69,5 +70,6 @@
   "tooltip.anathema": "Melee hits feed the \"gun\", restoring ammo.",
   "tooltip.bluntshot.knockback": "Deals increased knockback to hit targets.",
   "tooltip.hex_round.magic_damage": "Deals half of the bullet damage as magic damage.",
+  "tooltip.ricoshot_round.crit_chance": "Increases crit chance and damage by 50% for every ricochet.",
   "tooltip.scguns_cnc.heat_level": "Heat Level"
 }

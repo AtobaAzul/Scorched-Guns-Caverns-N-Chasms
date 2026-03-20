@@ -27,7 +27,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.HEX_BUCKSHOT, "Hex Buckshot");
         addItem(ModItems.COPPER_SLUG, "Copper Slug");
         addItem(ModItems.PULSE_CORE, "Integrated Pulse Core");
-        addItem(ModItems.RICOSHOT_ROUND, "RicoShot Round");
+        addItem(ModItems.RICOSHOT_ROUND, "Ricoshot Round");
 
         //guns
         addItem(ModItems.HANGMAN_CARBINE, "Hangman Carabine");
@@ -53,6 +53,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
         addItem(ModItems.UNFINISHED_HEXSHOT, "Unfinished Hexshot Shell");
         addItem(ModItems.UNFINISHED_COPPER_SLUG, "Unfinished Copper Slug");
+        addItem(ModItems.UNFINISHED_RICOSHOT_ROUND, "Unfinished Ricoshot Round");
         addItem(ModItems.LESSER_STRAWMAN, "Weird Doll");
         addItem(ModItems.GRAVEKEEPER_FLARE, "Gravekeeper Flare");
         addItem(ModItems.VAULT_GUN_PARTS, "Experimental Components");
@@ -68,6 +69,7 @@ public class ModLangProvider extends LanguageProvider {
         add("tooltip.bluntshot.knockback", "Deals increased knockback to hit targets.");
         add("tooltip.anathema", "Melee hits feed the \"gun\", restoring ammo.");
         add("tooltip.scguns_cnc.heat_level", "Heat Level");
+        add("tooltip.ricoshot_round.crit_chance", "Increases crit chance and damage by 50% for every ricochet.");
 
         add("item.scguns_cnc.electrothermal_autocannon.lore", "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.");
         add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with an Energy Core recharge system.\nEnergy Core can be swapped for immediate recharge.");

@@ -47,7 +47,7 @@
     "recoilKick": 2.22,
     "spread": 1.0,
     "criticalChance": 0.05,
-    "critDamageMultiplier": 3.0,
+    "critDamageMultiplier": 1.0,
     "damageFalloffStart": 25.0,
     "damageFalloffEnd": 50.0,
     "damageFalloffMinMultiplier": 0.85,
@@ -76,7 +76,6 @@
       "enchantedFire": "scguns:item.new_rifle.fire_2",
       "fire": "scguns:item.new_rifle.fire_2",
       "reload": "scguns:item.gauss.reload",
-      "silencedFire": "scguns:item.bruiser.silenced_fire",
-      "flyby": "scguns:bullet.flyby1"
+      "silencedFire": "scguns:item.bruiser.silenced_fire"
   }
 }

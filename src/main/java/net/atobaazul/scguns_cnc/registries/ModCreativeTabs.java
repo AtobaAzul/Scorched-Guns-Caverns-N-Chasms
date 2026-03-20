@@ -37,6 +37,8 @@ public class ModCreativeTabs {
         addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROTHERMAL_AUTOCANNON.get());
         addEnergyGunWithFullAmmo(pOutput, ModItems.SCATTERER.get());
 
+        addItemWithFullAmmo(pOutput, ModItems.IRON_PARTISAN.get());
+
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
         addItem(pOutput, ModItems.HEX_ROUND.get());
@@ -44,12 +46,12 @@ public class ModCreativeTabs {
         addItem(pOutput, ModItems.BLUNTSHOT.get());
         addItem(pOutput, ModItems.HEXSHOT.get());
         addItem(pOutput, ModItems.COPPER_SLUG.get());
+        addItem(pOutput, ModItems.RICOSHOT_ROUND.get());
         addItem(pOutput, ModItems.NECROMIUM_GUN_FRAME.get());
         addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
         addItem(pOutput, ModItems.SILVER_BULLET.get());
         addItem(pOutput, ModItems.HEX_BUCKSHOT.get());
-        addItem(pOutput, ModItems.RICOSHOT_ROUND.get());
 
         addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
         addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());

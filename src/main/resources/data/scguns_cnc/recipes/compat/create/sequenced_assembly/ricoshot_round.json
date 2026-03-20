@@ -7,12 +7,12 @@
     }
   ],
   "ingredient": {
-    "item": "scguns:large_brass_casing"
+    "item": "scguns:medium_brass_casing"
   },
   "loops": 1,
   "results": [
     {
-      "item": "scguns_cnc:copper_slug"
+      "item": "scguns_cnc:ricoshot_round"
     }
   ],
   "sequence": [
@@ -20,17 +20,17 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "scguns_cnc:unfinished_copper_slug"
+          "item": "scguns_cnc:unfinished_ricoshot_round"
         },
         [
           {
-            "item": "minecraft:copper_block"
+            "tag": "forge:nuggets/tin"
           }
         ]
       ],
       "results": [
         {
-          "item": "scguns_cnc:unfinished_copper_slug"
+          "item": "scguns_cnc:unfinished_ricoshot_round"
         }
       ]
     },
@@ -38,17 +38,17 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "scguns_cnc:unfinished_copper_slug"
+          "item": "scguns_cnc:unfinished_ricoshot_round"
         },
         [
           {
-            "tag": "forge:gunpowder"
+            "tag": "scguns:gunpowder_dust"
           }
         ]
       ],
       "results": [
         {
-          "item": "scguns_cnc:unfinished_copper_slug"
+          "item": "scguns_cnc:unfinished_ricoshot_round"
         }
       ]
     },
@@ -56,17 +56,17 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "scguns_cnc:unfinished_copper_slug"
+          "item": "scguns_cnc:unfinished_ricoshot_round"
         }
       ],
       "results": [
         {
-          "item": "scguns_cnc:unfinished_copper_slug"
+          "item": "scguns_cnc:unfinished_ricoshot_round"
         }
       ]
     }
   ],
   "transitionalItem": {
-    "item": "scguns_cnc:unfinished_copper_slug"
+    "item": "scguns_cnc:unfinished_ricoshot_round"
   }
 }

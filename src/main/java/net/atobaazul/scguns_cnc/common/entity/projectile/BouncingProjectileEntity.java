@@ -42,14 +42,10 @@ public class BouncingProjectileEntity extends ProjectileEntity {
 
     @Override
     public float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
-        System.out.println("get crit damage");
-        System.out.println("base chance: " + GunModifierHelper.getCriticalChance(weapon));
-        System.out.println("bounce increase: " + this.getBounceCritChance());
         float chance = GunModifierHelper.getCriticalChance(weapon) + this.getBounceCritChance();
-        System.out.println("total crit chance: " + chance);
 
         if (rand.nextFloat() < chance) {
-            float critMultiplier = this.modifiedGun.getProjectile().getCritDamageMultiplier();
+            float critMultiplier = this.modifiedGun.getProjectile().getCritDamageMultiplier() + this.getBounceCritChance();
             return damage * critMultiplier;
         } else {
             return damage;

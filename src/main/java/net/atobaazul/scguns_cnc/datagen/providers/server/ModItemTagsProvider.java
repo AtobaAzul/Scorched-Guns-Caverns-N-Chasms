@@ -47,7 +47,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(BLUNTSHOT.get())
                 .add(COPPER_SLUG.get())
                 .add(HEXSHOT.get())
-                .add(PULSE_CORE.get());
+                .add(PULSE_CORE.get())
+                .add(RICOSHOT_ROUND.get());
 
         tag(INCREASED_CASING_DROP_CHANCE)
                 .add(SMALL_NECROMIUM_CASING.get())
@@ -58,7 +59,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(COMPACT_HEX_ROUND.get());
 
         tag(RIFLE_AMMO)
-                .add(HEX_ROUND.get());
+                .add(HEX_ROUND.get())
+                .add(RICOSHOT_ROUND.get());
 
         tag(SHOTGUN_AMMO)
                 .add(BLUNTSHOT.get())
@@ -91,5 +93,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
         tag(ModTags.Items.HEAVY_WEAPON)
                 .add(LUSTRE.get())
                 .add(ELECTROTHERMAL_AUTOCANNON.get());
+
+        tag(ModTags.Items.IRON_GUN_TIER)
+                .add(IRON_PARTISAN.get());
     }
 }

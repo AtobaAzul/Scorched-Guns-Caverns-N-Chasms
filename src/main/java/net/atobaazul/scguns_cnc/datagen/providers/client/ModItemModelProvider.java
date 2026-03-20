@@ -38,6 +38,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(UNFINISHED_COMPACT_HEX_ROUND);
         simpleItem(UNFINISHED_HEXSHOT);
         simpleItem(UNFINISHED_COPPER_SLUG);
+        simpleItem(UNFINISHED_RICOSHOT_ROUND);
 
         simpleItem(LESSER_STRAWMAN);
         simpleItem(GRAVEKEEPER_FLARE);
