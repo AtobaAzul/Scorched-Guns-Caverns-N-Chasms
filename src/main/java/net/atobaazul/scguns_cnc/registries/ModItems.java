@@ -232,11 +232,23 @@ public class ModItems {
             )
     );
 
-    //Iron Partisan
+    //Recur
     public static final RegistryObject<AnimatedGunItem> RECUR = REGISTER.register("recur",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(800),
                     "recur", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+    //Rascal
+    public static final RegistryObject<AnimatedGunItem> RASCAL = REGISTER.register("rascal",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "rascal", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end

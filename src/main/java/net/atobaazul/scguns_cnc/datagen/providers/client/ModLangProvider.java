@@ -50,6 +50,7 @@ public class ModLangProvider extends LanguageProvider {
 
         addItem(ModItems.IRON_PARTISAN, "Iron Partisan");
         addItem(ModItems.RECUR, "Recur");
+        addItem(ModItems.RASCAL, "Rascal");
 
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");

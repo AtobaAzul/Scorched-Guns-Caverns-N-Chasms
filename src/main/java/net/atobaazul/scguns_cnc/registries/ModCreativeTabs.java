@@ -39,6 +39,7 @@ public class ModCreativeTabs {
 
         addItemWithFullAmmo(pOutput, ModItems.IRON_PARTISAN.get());
         addItemWithFullAmmo(pOutput, ModItems.RECUR.get());
+        addItemWithFullAmmo(pOutput, ModItems.RASCAL.get());
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
