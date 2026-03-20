@@ -48,6 +48,9 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.ELECTROTHERMAL_AUTOCANNON, "Electrothermal Autocannon");
         addItem(ModItems.SCATTERER, "Scatterer");
 
+        addItem(ModItems.IRON_PARTISAN, "Iron Partisan");
+        addItem(ModItems.RECUR, "Recur");
+
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
@@ -60,8 +63,6 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.LUSTRE_PART, "Zirconia Laser Optics");
         addItem(ModItems.ELECTROTHERMAL_PART, "Rapid Plasma Injector");
         addItem(ModItems.SCATTERER_PART, "Plasma Accumulator");
-
-        addItem(ModItems.IRON_PARTISAN, "Iron Partisan");
 
 
         //tooltips

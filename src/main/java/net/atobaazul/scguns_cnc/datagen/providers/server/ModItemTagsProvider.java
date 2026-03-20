@@ -31,7 +31,6 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
         super(output, lookupProvider, blockTags, MOD_ID, existingFileHelper);
     }
 
-
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.ONE_HANDED_CARBINE)
@@ -96,5 +95,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(ModTags.Items.IRON_GUN_TIER)
                 .add(IRON_PARTISAN.get());
+
+        tag(ModTags.Items.DIAMOND_STEEL_GUN_TIER)
+                .add(RECUR.get());
     }
 }

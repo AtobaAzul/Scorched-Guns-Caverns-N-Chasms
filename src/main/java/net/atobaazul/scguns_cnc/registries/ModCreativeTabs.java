@@ -38,6 +38,7 @@ public class ModCreativeTabs {
         addEnergyGunWithFullAmmo(pOutput, ModItems.SCATTERER.get());
 
         addItemWithFullAmmo(pOutput, ModItems.IRON_PARTISAN.get());
+        addItemWithFullAmmo(pOutput, ModItems.RECUR.get());
 
         addItem(pOutput, ModItems.MALISON_GRENADE.get());
 
