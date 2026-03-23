@@ -101,5 +101,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(ModTags.Items.TREATED_BRASS_GUN_TIER)
                 .add(RASCAL.get());
+
+        tag(ModTags.Items.SCORCHED_GUN_TIER)
+                .add(CHARYBDIS.get());
     }
 }
