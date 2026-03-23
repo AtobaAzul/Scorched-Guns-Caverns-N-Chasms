@@ -25,8 +25,8 @@
       },
       "scope": {
         "size": 0.8,
-        "yOffset": 5.6,
-        "zOffset": 4.8
+        "yOffset": 5.5,
+        "zOffset": 3.5
       },
       "stock": {
         "scale": 0.0
@@ -57,7 +57,7 @@
     "gravity": false  ,
     "item": "scguns_cnc:ricoshot_round",
     "casingType": "scguns:medium_brass_casing",
-    "casingParticle": "scguns:medium_brass_casing",
+    "casingParticle": "scguns:brass_casing",
     "life": 60,
     "size": 0.1,
     "speed": 5.0,
