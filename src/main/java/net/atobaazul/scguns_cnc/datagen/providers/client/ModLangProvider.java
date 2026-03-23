@@ -92,6 +92,10 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.mortician", "Standard Gravekeeper sidearm, typically given to neophytes and other lesser Gravekeepers.");
         add("scguns.desc.cacophony", "Gravekeeper light machine gun, capable of shredding even the most heavily armored enemies. The unique sound produced from its gas vent earned it its nickname.");
 
+        add("scguns.desc.iron_partisan", "One of the first prototype guns developed to fire the, then in early in development, RicoShot rounds, mostly constructed using repurposed parts from Iron series of rifles.\nFew original units were ever made and no Partisan were ever fielded in combat before the collapse of FAC.");
+        add("scguns.desc.rascal", "Compact burst-fire rifle for close-quarters engagements that don't require worrying about what and where you're hitting.");
+        add("scguns.desc.recur", "A reverse-engineering of COG's \"Rascal\" rifle. Tt still keeps its utility as a chaotic close-quarters rifle.");
+
         add("gun_tier.scguns.gravekeeper", "Gravekeeper");
         add("raid.scguns.gravekeeper", "Gravekeeper Raid");
 
@@ -101,7 +105,7 @@ public class ModLangProvider extends LanguageProvider {
         add("raid.announcement.scguns_cnc.gravekeeper", "The Gravekeepers arrived, the curse demand a sacrifice!");
         add("raid.boss.scguns_cnc.gravekeeper", "Gravekeeper Herald");
         add("item.scguns_cnc.lesser_strawman.tooltip", "A doll used in rituals. You feel it move when you're not looking.");
-        add("item.scguns_cnc.vault_gun_parts.tooltip", "An array of unusually advanced electrical gizmos and doodads used as micro-controllers for standard T.I.N. devices.");
+        add("item.scguns_cnc.vault_gun_parts.tooltip", "An array of unusually advanced electrical gizmos and doodads used as general parts for standard T.I.N. devices.");
         add("item.scguns_cnc.lustre_part.tooltip", "Technological Innovation Nucleus' advanced optics are highly sought after due to their exceptional quality, and the tools required for their fabrication no longer existing.");
         add("item.scguns_cnc.electrothermal_part.tooltip", "Technological Innovation Nucleus' plasma power project was cancelled and repurposed into military applications after growing tensions between COG and Asghar demanded more weapons of war.");
         add("item.scguns_cnc.scatterer_part.tooltip", "Technological Innovation Nucleus' plasma systems are create usable plasma from the very air, revolutionizing plasma technology.");
