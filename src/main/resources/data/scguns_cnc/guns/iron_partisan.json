@@ -51,7 +51,7 @@
     "damageFalloffStart": 25.0,
     "damageFalloffEnd": 50.0,
     "damageFalloffMinMultiplier": 0.85,
-    "advantage": "scguns:heavy",
+    "advantage": "scguns:none",
     "damage": 8,
     "armorPen": 2.0,
     "ejectsCasing": true,

@@ -48,13 +48,14 @@
   "projectile": {
     "recoilAngle": 1,
     "recoilKick": 1.22,
-    "spread": 1.0,
+    "spread": 2.5,
     "criticalChance": 0.05,
+    "alwaysSpread": true,
     "critDamageMultiplier": 3.0,
     "damageFalloffStart": 25.0,
     "damageFalloffEnd": 50.0,
     "damageFalloffMinMultiplier": 0.85,
-    "advantage": "scguns:heavy",
+    "advantage": "scguns:none",
     "damage": 9,
     "armorPen": 2.0,
     "ejectsCasing": true,
@@ -69,7 +70,7 @@
   },
   "reloads": {
     "emptyMagTimer": 10,
-    "maxAmmo": 9,
+    "maxAmmo": 12,
     "reloadItem": "scguns:advanced_round",
     "reloadTimer": 35,
     "reloadType": "scguns:mag_fed"
