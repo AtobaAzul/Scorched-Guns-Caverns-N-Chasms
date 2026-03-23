@@ -67,7 +67,7 @@ public class MeleeAttackHandlerMixin {
             if (raycastTarget != null) {
                 raycastTarget.invulnerableTime = 0;
                 raycastTarget.hurt(raycastTarget.damageSources().magic(), 4);
-                SilverItem.causeMagicDamageParticles(raycastTarget);
+                SilverItem.causeMagicParticles(raycastTarget, false);
             }
         }
     }
