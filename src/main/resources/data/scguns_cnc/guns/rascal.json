@@ -62,7 +62,7 @@
     "gravity": false  ,
     "item": "scguns_cnc:ricoshot_round",
     "casingType": "scguns:medium_brass_casing",
-    "casingParticle": "scguns:medium_brass_casing",
+    "casingParticle": "scguns:brass_casing",
     "life": 60,
     "size": 0.1,
     "speed": 5.0,
