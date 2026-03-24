@@ -39,7 +39,7 @@ public abstract class BeamHandlerMixin {
                 double offsetZ = (world.random.nextDouble() - 0.5) * 0.2;
 
 
-                world.addParticle(CCParticleTypes.SPARK.get(), false,
+                world.addParticle(CCParticleTypes.TIN_SPARK.get(), false,
                         hitPos.x + offsetX, hitPos.y + offsetY, hitPos.z + offsetZ, mirroredVelocity.x+offsetX, mirroredVelocity.y+offsetY, mirroredVelocity.z+offsetZ);
             }
 
@@ -48,7 +48,7 @@ public abstract class BeamHandlerMixin {
                 double offsetX = (world.random.nextDouble() - 0.5) * 0.2;
                 double offsetY = (world.random.nextDouble() - 0.5) * 0.2;
                 double offsetZ = (world.random.nextDouble() - 0.5) * 0.2;
-                world.addParticle(CCParticleTypes.SPARK.get(), false,
+                world.addParticle(CCParticleTypes.TIN_SPARK.get(), false,
                         hitPos.x + offsetX, hitPos.y + offsetY, hitPos.z + offsetZ, dir.x+offsetX, dir.y+offsetY, dir.z+offsetZ);
             }
 

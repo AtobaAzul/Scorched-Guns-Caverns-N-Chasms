@@ -187,7 +187,7 @@ public class ThrowableMalisonGrenadeEntity extends ThrowableGrenadeEntity {
                 entity.hurt(damageSource, damage);
                 if (entity instanceof LivingEntity livingEntity) {
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400, 1));
-                    SilverItem.causeMagicDamageParticles(livingEntity);
+                    SilverItem.causeMagicParticles(livingEntity, false);
                 }
                 entity.invulnerableTime = 0;
 
