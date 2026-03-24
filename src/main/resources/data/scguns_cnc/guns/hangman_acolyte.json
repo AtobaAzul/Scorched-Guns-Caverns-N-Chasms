@@ -53,7 +53,7 @@
     "trailLengthMultiplier": 2.2,
     "recoilAngle": 2,
     "recoilKick": 0.8,
-    "spread": 3.0
+    "spread": 2.5
   },
   "reloads": {
     "emptyMagTimer": 30,

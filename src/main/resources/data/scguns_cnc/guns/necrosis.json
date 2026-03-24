@@ -12,7 +12,7 @@
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
-    "rate": 20,
+    "rate": 18,
     "meleeDamage": 3.0,
     "meleeReach": 3.5,
     "allowAmmoChange": true,

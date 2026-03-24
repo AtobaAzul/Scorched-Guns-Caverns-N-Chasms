@@ -49,6 +49,7 @@
   },
   "projectile": {
     "alwaysSpread": true,
+    "criticalChance": 0.05,
     "advantage": "scguns:none",
     "damage": 7.5,
     "damageFalloffStart": 12.0,
@@ -64,7 +65,7 @@
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 2.25,
     "recoilKick": 1,
-    "spread": 3.0
+    "spread": 2.75
   },
   "reloads": {
     "emptyMagTimer": 30,
