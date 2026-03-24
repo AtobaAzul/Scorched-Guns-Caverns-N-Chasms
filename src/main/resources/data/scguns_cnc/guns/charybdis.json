@@ -16,11 +16,12 @@
     "weaponType": "pistol",
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:one_handed",
-    "rate": 4,
+    "rate": 8,
     "meleeDamage": 2.5,
     "meleeCooldownTicks": 10,
     "meleeReach": 2.5,
-    "hotBarrelRate": 14
+    "hotBarrelRate": 14,
+    "isRevolver": true
   },
   "modules": {
     "attachments": {
@@ -32,24 +33,19 @@
         "size": 0.7,
         "yOffset": 6.35,
         "zOffset": 2.25
-      },
-      "magazine": {
-        "scale": 0.0
-      },
-      "stock": {
-        "scale": 0.0
       }
+
     },
     "zoom": {
       "fovModifier": 0.6,
-      "yOffset": 6.75,
+      "yOffset": 6.5,
       "zOffset": -1.5
     }
   },
   "projectile": {
     "advantage": "scguns:none",
-    "recoilAngle": 1.5,
-    "recoilKick": 1.0,
+    "recoilAngle": 1.75,
+    "recoilKick": 3,
     "spread": 1.0,
     "criticalChance": 0.2,
     "damage": 16.0,
