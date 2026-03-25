@@ -31,15 +31,15 @@
       },
       "scope": {
         "size": 0.7,
-        "yOffset": 6.35,
-        "zOffset": 2.25
+        "yOffset": 6,
+        "zOffset": 0.25
       }
 
     },
     "zoom": {
       "fovModifier": 0.6,
       "yOffset": 6.5,
-      "zOffset": -1.5
+      "zOffset": 2
     }
   },
   "projectile": {
@@ -47,7 +47,7 @@
     "recoilAngle": 1.75,
     "recoilKick": 3,
     "spread": 1.0,
-    "criticalChance": 0.2,
+    "criticalChance": 0,
     "damage": 16.0,
     "damageFalloffStart": 24.0,
     "damageFalloffEnd": 40.0,
@@ -55,7 +55,7 @@
     "armorPen": 2.0,
     "gravity": false,
     "item": "scguns_cnc:ricoshot_round",
-    "ejectsCasing": true,
+    "ejectsCasing": false,
     "casingType": "scguns:small_brass_casing",
     "casingParticle": "scguns:brass_casing",
     "life": 80,

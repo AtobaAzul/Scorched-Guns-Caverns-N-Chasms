@@ -63,7 +63,7 @@
   },
   "reloads": {
     "emptyMagTimer": 10,
-    "maxAmmo": 10,
+    "maxAmmo": 12,
     "reloadAmount": 1,
     "reloadItem": "scguns_cnc:compact_hex_round",
     "reloadTimer": 20,
