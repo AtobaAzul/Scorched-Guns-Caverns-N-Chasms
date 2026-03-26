@@ -1,0 +1,44 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns:treated_brass_frame_gun_frame"
+    },
+    "B": {
+      "item": "scguns:treated_brass_ingot"
+    },
+    "D": {
+      "item": "scguns:rapid_firing_unit"
+    },
+    "E": {
+      "item": "scguns:gun_parts"
+    },
+    "F": {
+      "item": "scguns:gun_barrel"
+    },
+    "G": {
+      "item": "scguns:gun_grip"
+    },
+    "H": {
+      "item": "scguns:treated_brass_blueprint"
+    },
+    "I": {
+      "item": "scguns:gun_magazine"
+    }
+  },
+  "pattern": [
+    "AB ",
+    "DEF",
+    "GHI"
+  ],
+  "result": {
+    "item": "scguns_cnc:rascal"
+  }
+}

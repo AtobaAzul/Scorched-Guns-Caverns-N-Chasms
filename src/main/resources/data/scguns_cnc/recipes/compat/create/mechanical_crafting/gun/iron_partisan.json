@@ -1,0 +1,47 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns:iron_gun_frame"
+    },
+    "B": {
+      "tag": "forge:ingots/iron"
+    },
+    "C": {
+      "tag": "minecraft:planks"
+    },
+    "D": {
+      "item": "scguns:firing_unit"
+    },
+    "E": {
+      "item": "scguns:gun_parts"
+    },
+    "F": {
+      "item": "scguns:gun_barrel"
+    },
+    "G": {
+      "item": "scguns:gun_grip"
+    },
+    "H": {
+      "item": "scguns:iron_blueprint"
+    },
+    "I": {
+      "item": "scguns:gun_magazine"
+    }
+  },
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "result": {
+    "item": "scguns_cnc:iron_partisan"
+  }
+}
