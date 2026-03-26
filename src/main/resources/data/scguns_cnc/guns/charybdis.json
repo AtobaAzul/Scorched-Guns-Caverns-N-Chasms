@@ -60,7 +60,7 @@
     "casingParticle": "scguns:brass_casing",
     "life": 80,
     "size": 0.05,
-    "speed": 40.0,
+    "speed": 8.0,
     "trailLengthMultiplier": 2.0
   },
   "reloads": {
