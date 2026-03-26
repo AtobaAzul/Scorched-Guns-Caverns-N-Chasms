@@ -1,5 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import com.google.common.collect.Lists;
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -10,60 +12,67 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import top.ribs.scguns.init.ModCreativeModeTabs;
+import top.ribs.scguns.item.GunItem;
+
+import java.util.ArrayList;
+import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+import static net.atobaazul.scguns_cnc.registries.ModItems.*;
+import static net.minecraft.world.item.crafting.Ingredient.of;
+import static top.ribs.scguns.init.ModItems.*;
 
 public class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
 
     public static final RegistryObject<CreativeModeTab> SCGUNS_CNC_TAB = CREATIVE_MODE_TABS.register("scguns_cnc_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RIBCAGE.get())).title(Component.translatable("creativetab.scguns_cnc_tab")).displayItems((pParameters, pOutput) -> {
-        addItemWithFullAmmo(pOutput, ModItems.MORTICIAN.get());
-        addItemWithFullAmmo(pOutput, ModItems.BELLA.get());
-        addItemWithFullAmmo(pOutput, ModItems.REHEARSE.get());
+        addItemWithFullAmmo(pOutput, MORTICIAN.get());
+        addItemWithFullAmmo(pOutput, BELLA.get());
+        addItemWithFullAmmo(pOutput, REHEARSE.get());
 
-        addItemWithFullAmmo(pOutput, ModItems.ANATHEMA.get());
-        addItemWithFullAmmo(pOutput, ModItems.HANGMAN_CARBINE.get());
-        addItemWithFullAmmo(pOutput, ModItems.GALLOWS.get());
-        addItemWithFullAmmo(pOutput, ModItems.CACOPHONY.get());
+        addItemWithFullAmmo(pOutput, ANATHEMA.get());
+        addItemWithFullAmmo(pOutput, HANGMAN_CARBINE.get());
+        addItemWithFullAmmo(pOutput, GALLOWS.get());
+        addItemWithFullAmmo(pOutput, CACOPHONY.get());
 
-        addItemWithFullAmmo(pOutput, ModItems.KETERIYA.get());
-        addItemWithFullAmmo(pOutput, ModItems.NECROSIS.get());
+        addItemWithFullAmmo(pOutput, KETERIYA.get());
+        addItemWithFullAmmo(pOutput, NECROSIS.get());
 
-        addItemWithFullAmmo(pOutput, ModItems.SILVER_LINING.get());
-        addItemWithFullAmmo(pOutput, ModItems.RIBCAGE.get());
+        addItemWithFullAmmo(pOutput, SILVER_LINING.get());
+        addItemWithFullAmmo(pOutput, RIBCAGE.get());
 
-        addEnergyGunWithFullAmmo(pOutput, ModItems.LUSTRE.get());
-        addEnergyGunWithFullAmmo(pOutput, ModItems.ELECTROTHERMAL_AUTOCANNON.get());
-        addEnergyGunWithFullAmmo(pOutput, ModItems.SCATTERER.get());
+        addEnergyGunWithFullAmmo(pOutput, LUSTRE.get());
+        addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
+        addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());
 
-        addItemWithFullAmmo(pOutput, ModItems.IRON_PARTISAN.get());
-        addItemWithFullAmmo(pOutput, ModItems.RECUR.get());
-        addItemWithFullAmmo(pOutput, ModItems.RASCAL.get());
-        addItemWithFullAmmo(pOutput, ModItems.CHARYBDIS.get());
+        addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());
+        addItemWithFullAmmo(pOutput, RECUR.get());
+        addItemWithFullAmmo(pOutput, RASCAL.get());
+        addItemWithFullAmmo(pOutput, CHARYBDIS.get());
 
-        addItem(pOutput, ModItems.MALISON_GRENADE.get());
+        addItem(pOutput, MALISON_GRENADE.get());
 
-        addItem(pOutput, ModItems.HEX_ROUND.get());
-        addItem(pOutput, ModItems.COMPACT_HEX_ROUND.get());
-        addItem(pOutput, ModItems.BLUNTSHOT.get());
-        addItem(pOutput, ModItems.HEXSHOT.get());
-        addItem(pOutput, ModItems.COPPER_SLUG.get());
-        addItem(pOutput, ModItems.RICOSHOT_ROUND.get());
-        addItem(pOutput, ModItems.NECROMIUM_GUN_FRAME.get());
-        addItem(pOutput, ModItems.SMALL_NECROMIUM_CASING.get());
-        addItem(pOutput, ModItems.MEDIUM_NECROMIUM_CASING.get());
-        addItem(pOutput, ModItems.SILVER_BULLET.get());
-        addItem(pOutput, ModItems.HEX_BUCKSHOT.get());
+        addItem(pOutput, HEX_ROUND.get());
+        addItem(pOutput, COMPACT_HEX_ROUND.get());
+        addItem(pOutput, BLUNTSHOT.get());
+        addItem(pOutput, HEXSHOT.get());
+        addItem(pOutput, COPPER_SLUG.get());
+        addItem(pOutput, RICOSHOT_ROUND.get());
+        addItem(pOutput, NECROMIUM_GUN_FRAME.get());
+        addItem(pOutput, SMALL_NECROMIUM_CASING.get());
+        addItem(pOutput, MEDIUM_NECROMIUM_CASING.get());
+        addItem(pOutput, SILVER_BULLET.get());
+        addItem(pOutput, HEX_BUCKSHOT.get());
 
-        addItem(pOutput, ModItems.GRAVEKEEPER_BLUEPRINT.get());
-        addItem(pOutput, ModItems.GRAVEKEEPER_FLARE.get());
-        addItem(pOutput, ModItems.LESSER_STRAWMAN.get());
+        addItem(pOutput, GRAVEKEEPER_BLUEPRINT.get());
+        addItem(pOutput, GRAVEKEEPER_FLARE.get());
+        addItem(pOutput, LESSER_STRAWMAN.get());
 
-        addItem(pOutput, ModItems.VAULT_GUN_PARTS.get());
-        addItem(pOutput, ModItems.LUSTRE_PART.get());
-        addItem(pOutput, ModItems.ELECTROTHERMAL_PART.get());
-        addItem(pOutput, ModItems.SCATTERER_PART.get());
+        addItem(pOutput, VAULT_GUN_PARTS.get());
+        addItem(pOutput, LUSTRE_PART.get());
+        addItem(pOutput, ELECTROTHERMAL_PART.get());
+        addItem(pOutput, SCATTERER_PART.get());
     }).build());
 
     public static void register(IEventBus eventBus) {

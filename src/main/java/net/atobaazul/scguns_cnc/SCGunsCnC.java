@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCBlocks;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
@@ -45,6 +46,7 @@ public class SCGunsCnC {
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             CCClientHandler.registerClientHandlers(modEventBus);
             BlueprintScreen.registerLoreOnlyItem(new ResourceLocation(MOD_ID, "gravekeeper_blueprint"), "anathema");
+            //ModItems.setupTabEditors();
         });
     }
 
@@ -70,6 +72,7 @@ public class SCGunsCnC {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(ModItems::setupTabEditors);
         }
     }
 }

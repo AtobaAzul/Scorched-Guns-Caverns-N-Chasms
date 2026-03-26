@@ -1,5 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import com.google.common.collect.Lists;
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
@@ -8,14 +10,21 @@ import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import top.ribs.scguns.init.ModCreativeModeTabs;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.*;
 import top.ribs.scguns.item.animated.AnimatedDiamondSteelGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import java.util.ArrayList;
+import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+import static net.minecraft.world.item.crafting.Ingredient.of;
+import static top.ribs.scguns.init.ModItems.*;
+import static top.ribs.scguns.init.ModItems.ADVANCED_BULLET;
 import static top.ribs.scguns.util.Constants.*;
 
 public class ModItems {
@@ -340,5 +349,50 @@ public class ModItems {
     public static class ModRarity {
         public static final net.minecraft.world.item.Rarity EXSANGUINATED = net.minecraft.world.item.Rarity.create("scguns_cnc.exsanguinated", style -> style.withColor(0x584f7c));
         public static final net.minecraft.world.item.Rarity VAULT_RELIC = net.minecraft.world.item.Rarity.create("scguns_cnc.vault_relic", style -> style.withColor(0x8ed2e5));
+    }
+
+    public static void setupTabEditors() {
+        CreativeModeTabContentsPopulator.mod(MOD_ID)
+                .tab(ModCreativeModeTabs.SCORCHED_GUNS_TAB.getKey())
+                .addStacksAfter(of(SHARD_CULLER.get()), getAllGunsGunWithFulLAmmoAndEnergy(MORTICIAN, BELLA, REHEARSE, ANATHEMA, HANGMAN_CARBINE, GALLOWS, CACOPHONY, KETERIYA, NECROSIS, SILVER_LINING, RIBCAGE))
+                .addStacksAfter(of(DOZIER_RL.get()), getAllGunsGunWithFulLAmmoAndEnergy(LUSTRE, SCATTERER, ELECTROTHERMAL_AUTOCANNON))
+                .addStacksAfter(of(PRIMA_MATERIA.get()), getAllGunsGunWithFulLAmmoAndEnergy(CHARYBDIS))
+                .addStacksAfter(of(GRANDLE.get()), getAllGunsGunWithFulLAmmoAndEnergy(RASCAL)).
+                addStacksAfter(of(IRON_SPEAR.get()), getAllGunsGunWithFulLAmmoAndEnergy(IRON_PARTISAN))
+                .addStacksAfter(of(PRUSH_GUN.get()), getAllGunsGunWithFulLAmmoAndEnergy(RECUR))
+                .tab(ModCreativeModeTabs.SCORCHED_ITEMS_TAB.getKey())
+                .addItemsAfter(of(DIAMOND_STEEL_BLUEPRINT.get()), GRAVEKEEPER_BLUEPRINT)
+                .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE, ELECTROTHERMAL_PART, SCATTERER_PART)
+                .addItemsAfter(of(DIAMOND_STEEL_GUN_FRAME.get()), NECROMIUM_GUN_FRAME)
+                .addItemsAfter(of(CERIMONIAL_COD.get()), LESSER_STRAWMAN)
+                .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE)
+                .addItemsAfter(of(MEDIUM_DIAMOND_STEEL_CASING.get()), SMALL_NECROMIUM_CASING, MEDIUM_NECROMIUM_CASING)
+                .addItemsAfter(of(GIBBS_ROUND.get()), COMPACT_HEX_ROUND, HEX_ROUND)
+                .addItemsAfter(of(BEARPACK_SHELL.get()), HEXSHOT, COPPER_SLUG, BLUNTSHOT)
+                .addItemsAfter(of(ADVANCED_ROUND.get()), RICOSHOT_ROUND)
+                .addItemsAfter(of(DIAMOND_STEEL_FLARE.get()), GRAVEKEEPER_FLARE)
+                .addItemsAfter(of(BUCKSHOT.get()), HEX_BUCKSHOT)
+                .addItemsAfter(of(ADVANCED_BULLET.get()), SILVER_BULLET);
+    }
+
+    @SafeVarargs
+    public static Supplier<ItemStack>[] getAllGunsGunWithFulLAmmoAndEnergy(RegistryObject<? extends GunItem>... items) {
+        ArrayList<Supplier<ItemStack>> stacks = Lists.newArrayList();
+
+        for (RegistryObject<? extends GunItem> item : items) {
+            Item _item = item.get();
+            ItemStack stack = new ItemStack(_item);
+
+            if (_item instanceof RechargeableEnergyGunItem gunItem) {
+                stack.getOrCreateTag().putInt("Energy", gunItem.getMaxEnergyStored(stack));
+            }
+            GunItem gunItem = (GunItem) _item;
+            stack.getOrCreateTag().putInt("AmmoCount", gunItem.getGun().getReloads().getMaxAmmo());
+
+            stacks.add(() -> stack);
+        }
+
+
+        return stacks.toArray(new Supplier[stacks.size()]);
     }
 }
