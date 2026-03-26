@@ -53,7 +53,7 @@ public abstract class ProjectileEntityMixin extends Entity implements IEntityAdd
         IDataManager data = (IDataManager) this;
         if (data.getValue(CCDataProcessors.SHOULD_DEFLECT)) {
 
-            this.setDeltaMovement(data.getValue(CCDataProcessors.DEFLECT_X), data.getValue(CCDataProcessors.DEFLECT_Y), data.getValue(CCDataProcessors.DEFLECT_Z));
+            //this.setDeltaMovement(data.getValue(CCDataProcessors.DEFLECT_X), data.getValue(CCDataProcessors.DEFLECT_Y), data.getValue(CCDataProcessors.DEFLECT_Z));
             data.setValue(CCDataProcessors.SHOULD_DEFLECT, false);
         }
     }

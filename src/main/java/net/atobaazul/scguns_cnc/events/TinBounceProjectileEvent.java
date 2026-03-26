@@ -31,6 +31,7 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID)
 public class TinBounceProjectileEvent {
+
     @SubscribeEvent
     public static void onProjectileHit(GunProjectileHitEvent event) {
         Level level = event.getProjectile().level();
@@ -99,24 +100,28 @@ public class TinBounceProjectileEvent {
                         k -= 0.25D;
                     }
 
+                    double dX = 0;
+                    double dY= 0;
+                    double dZ= 0;
+
                     if (axis == Axis.X) {
-                        data.setValue(CCDataProcessors.DEFLECT_X, -movement.x * j);
-                        data.setValue(CCDataProcessors.DEFLECT_Y, movement.y * k);
-                        data.setValue(CCDataProcessors.DEFLECT_Z, movement.z * k);
+                        dX = -movement.x * j;
+                        dY = movement.y * k;
+                        dZ = movement.z * k;
                         projectile.setPos(location.x + 0.01D * i, location.y, location.z);
                     } else if (axis == Axis.Y) {
-                        data.setValue(CCDataProcessors.DEFLECT_X, movement.x * k);
-                        data.setValue(CCDataProcessors.DEFLECT_Y, -movement.y * j);
-                        data.setValue(CCDataProcessors.DEFLECT_Z, movement.z * k);
+                        dX = movement.x * k;
+                        dY =  -movement.y * j;
+                        dZ =  movement.z * k;
                         projectile.setPos(location.x, i == 1 ? location.y : location.y - 0.01D, location.z);
                     } else if (axis == Axis.Z) {
-                        data.setValue(CCDataProcessors.DEFLECT_X, movement.x * k);
-                        data.setValue(CCDataProcessors.DEFLECT_Y, movement.y * k);
-                        data.setValue(CCDataProcessors.DEFLECT_Z, -movement.z * j);
+                        dX =  movement.x * k;
+                        dY =  movement.y * k;
+                        dZ =  -movement.z * j;
                         projectile.setPos(location.x, location.y, location.z + 0.01D * i);
                     }
                     data.setValue(CCDataProcessors.SHOULD_DEFLECT, true);
-                    projectile.setDeltaMovement(Vec3.ZERO);
+                    projectile.setDeltaMovement(dX, dY, dZ);
 
                     if (ricoshotRound && projectile instanceof BouncingProjectileEntity bProjectile) {
                         bProjectile.addBounceCritChance(.5f);
@@ -148,13 +153,14 @@ public class TinBounceProjectileEvent {
                     Vec3 normal = grazer.calculateDeflectionNormal(location);
                     Vec3 reflect = movement.subtract(normal.scale(movement.dot(normal) * 2.0D));
 
-                    data.setValue(CCDataProcessors.DEFLECT_X, reflect.x * 0.65D);
-                    data.setValue(CCDataProcessors.DEFLECT_Y, reflect.y * 0.65D);
-                    data.setValue(CCDataProcessors.DEFLECT_Z, reflect.z * 0.65D);
+                    double dX =  reflect.x * 0.65D;
+                    double dY =   reflect.y * 0.65D;
+                    double dZ =   reflect.z * 0.65D;
+
                     projectile.setPos(location.x + normal.x * 0.01D, location.y + normal.y * 0.01D, location.z + normal.z * 0.01D);
 
                     data.setValue(CCDataProcessors.SHOULD_DEFLECT, true);
-                    projectile.setDeltaMovement(Vec3.ZERO);
+                    projectile.setDeltaMovement(dX, dY, dZ);
 
                     playRicochetEffects(level, location, movement.reverse().normalize(), movement.lengthSqr(), CCSoundEvents.GRAZER_DEFLECT.get(), 1.0F, random, true);
                 }
