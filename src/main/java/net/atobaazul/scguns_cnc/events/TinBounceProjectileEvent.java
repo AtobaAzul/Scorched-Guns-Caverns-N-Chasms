@@ -2,7 +2,6 @@ package net.atobaazul.scguns_cnc.events;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.caverns_and_chasms.common.block.TinSoundType;
-import com.teamabnormals.caverns_and_chasms.common.block.TinplateBlock;
 import com.teamabnormals.caverns_and_chasms.common.entity.animal.grazer.AbstractGrazer;
 import com.teamabnormals.caverns_and_chasms.common.entity.animal.grazer.GrazerPart;
 import com.teamabnormals.caverns_and_chasms.core.other.CCDataProcessors;
@@ -77,7 +76,7 @@ public class TinBounceProjectileEvent {
                 data.setValue(CCDataProcessors.RICOCHETS, data.getValue(CCDataProcessors.RICOCHETS) + 1);
                 if (!flag) {
                     data.setValue(CCDataProcessors.BONUS_DEFLECT, false);
-                } else if (state.getBlock() instanceof TinplateBlock) {
+                } else if (state.is(CCBlockTags.HAS_BONUS_DEFLECT)) {
                     data.setValue(CCDataProcessors.BONUS_DEFLECT, true);
                 }
 
