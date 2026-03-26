@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
+import net.atobaazul.scguns_cnc.registries.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -10,6 +11,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.item.GunItem;
@@ -52,10 +54,30 @@ public class BouncingProjectileEntity extends ProjectileEntity {
         }
     }
 
+    private void doTrailParticles(int num, Vec3 startPos, Vec3 endPos) {
+        for (float i = 0; i <= num; i++) {
+            float t = i / (num - 1);
+
+            double tx = startPos.x + t * (endPos.x - startPos.x);
+            double ty = startPos.y + t * (endPos.y - startPos.y);
+            double tz = startPos.z + t * (endPos.z - startPos.z);
+
+            this.level().addParticle(CCParticleTypes.EXPOSED_FLOODLIGHT_DUST.get(), true, tx, ty, tz, 0, 0, 0);
+        }
+    }
+
+
+    Vec3 oldPos = null;
     @Override
     protected void onProjectileTick() {
         if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
             this.level().addParticle(CCParticleTypes.SPARKLER_SPARK.getFirst().get(), true, this.getX(), this.getY(), this.getZ(), this.getDeltaMovement().x, this.getDeltaMovement().y, this.getDeltaMovement().z);
+            Vec3 newPos = this.position();
+
+            if (oldPos != null) {
+                doTrailParticles(10, oldPos, newPos);
+            }
+            oldPos = newPos;
         }
     }
 }

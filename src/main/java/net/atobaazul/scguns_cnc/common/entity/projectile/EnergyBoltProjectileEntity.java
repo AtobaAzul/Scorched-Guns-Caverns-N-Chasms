@@ -92,21 +92,33 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
         }
     }
 
+
+    private void doTrailParticles(int num, Vec3 startPos, Vec3 endPos) {
+        for (float i = 0; i <= num; i++) {
+            float t = i / (num - 1);
+
+            double tx = startPos.x + t * (endPos.x - startPos.x);
+            double ty = startPos.y + t * (endPos.y - startPos.y);
+            double tz = startPos.z + t * (endPos.z - startPos.z);
+
+            this.level().addParticle(ModParticleTypes.ENERGY_BOLT_TRAIL.get(), true, tx, ty, tz, 0, 0, 0);
+        }
+    }
+
+
+    Vec3 oldPos = null;
+
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide && (this.tickCount > 1 && this.tickCount < this.life)) {
-            Vec3 startVec = this.position();
-            Vec3 dirVec = this.getDeltaMovement();
-            Vec3 endVec = startVec.add(dirVec);
+        if (this.level().isClientSide) {
 
-            for (float i = 0; i <= 10; i++) {
-                double x = startVec.x + (i / 10) * (endVec.x - startVec.x);
-                double y = startVec.y + (i / 10) * (endVec.y - startVec.y);
-                double z = startVec.z + (i / 10) * (endVec.z - startVec.z);
+            Vec3 newPos = this.position();
 
-                this.level().addParticle(ModParticleTypes.ENERGY_BOLT_TRAIL.get(), true, x, y, z, 0, 0, 0);
+            if (oldPos != null) {
+                doTrailParticles(20, oldPos, newPos);
             }
+            oldPos = newPos;
         }
     }
 }
