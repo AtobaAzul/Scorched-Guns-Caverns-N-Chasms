@@ -52,15 +52,15 @@
     "damageFalloffMinMultiplier": 0.85,
     "advantage": "scguns:none",
     "damage": 10,
-    "armorPen": 2.0,
+    "armorPen": 2.5,
     "ejectsCasing": true,
     "gravity": false  ,
     "item": "scguns_cnc:ricoshot_round",
     "casingType": "scguns:medium_brass_casing",
     "casingParticle": "scguns:brass_casing",
-    "life": 60,
+    "life": 40,
     "size": 0.1,
-    "speed": 5.0,
+    "speed": 7.75,
     "trailLengthMultiplier": 2.0
   },
   "reloads": {
