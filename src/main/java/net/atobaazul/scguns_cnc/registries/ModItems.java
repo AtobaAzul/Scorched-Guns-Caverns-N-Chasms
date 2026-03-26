@@ -16,8 +16,7 @@ import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
-import static top.ribs.scguns.util.Constants.DIAMOND_STEEL;
-import static top.ribs.scguns.util.Constants.TREATED_BRASS;
+import static top.ribs.scguns.util.Constants.*;
 
 public class ModItems {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
@@ -264,7 +263,7 @@ public class ModItems {
     //Charybdis
     public static final RegistryObject<AnimatedScorchedGunItem> CHARYBDIS = REGISTER.register("charybdis",
             () -> new AnimatedScorchedGunItem(
-                    new Item.Properties().stacksTo(1).durability(2400),
+                    new Item.Properties().stacksTo(1).durability(2400).rarity(SCORCHED),
                     "charybdis",
                     ModSounds.MAG_OUT.get(),
                     ModSounds.MAG_IN.get(),

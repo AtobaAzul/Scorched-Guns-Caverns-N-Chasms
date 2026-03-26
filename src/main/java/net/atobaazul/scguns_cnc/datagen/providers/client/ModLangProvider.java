@@ -51,6 +51,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.IRON_PARTISAN, "Iron Partisan");
         addItem(ModItems.RECUR, "Recur");
         addItem(ModItems.RASCAL, "Rascal");
+        addItem(ModItems.CHARYBDIS, "Charybdis");
 
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
@@ -95,6 +96,7 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.iron_partisan", "One of the first prototype guns developed to fire the, then in early in development, RicoShot rounds, mostly constructed using repurposed parts from Iron series of rifles.\nFew original units were ever made and no Partisan were ever fielded in combat before the collapse of FAC.");
         add("scguns.desc.rascal", "Compact burst-fire rifle for close-quarters engagements that don't require worrying about what and where you're hitting.");
         add("scguns.desc.recur", "A reverse-engineering of COG's \"Rascal\" rifle. Tt still keeps its utility as a chaotic close-quarters rifle.");
+        add("scguns.desc.charybdis", "The boardroom's ultimate marksmanship test, control its chaos and you will achieve otherworldly destruction.");
 
         add("gun_tier.scguns.gravekeeper", "Gravekeeper");
         add("raid.scguns.gravekeeper", "Gravekeeper Raid");
