@@ -371,5 +371,21 @@
         "name": "scguns_cnc:item/flyby/flyby2"
       }
     ]
+  },
+  "item.charybdis.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/charybdis/fire",
+        "pitch": 0.9
+      },
+      {
+        "name": "scguns_cnc:item/charybdis/fire"
+      },
+      {
+        "name": "scguns_cnc:item/charybdis/fire",
+        "pitch": 1.1
+      }
+    ]
   }
 }

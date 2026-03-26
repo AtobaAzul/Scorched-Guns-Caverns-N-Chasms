@@ -72,8 +72,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.iron_pistol.fire",
-    "fire": "scguns:item.iron_pistol.fire",
+    "enchantedFire": "scguns_cnc:item.charybdis.fire",
+    "fire": "scguns_cnc:item.charybdis.fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns:item.bruiser.silenced_fire"
   }
