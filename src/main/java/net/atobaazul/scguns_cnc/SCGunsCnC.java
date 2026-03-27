@@ -1,7 +1,6 @@
 package net.atobaazul.scguns_cnc;
 
 import com.mojang.logging.LogUtils;
-import com.teamabnormals.caverns_and_chasms.core.registry.CCBlocks;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
@@ -13,6 +12,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -48,6 +48,10 @@ public class SCGunsCnC {
             BlueprintScreen.registerLoreOnlyItem(new ResourceLocation(MOD_ID, "gravekeeper_blueprint"), "anathema");
             //ModItems.setupTabEditors();
         });
+
+        context.registerConfig(ModConfig.Type.COMMON, ModConfigs.COMMON_SPEC);
+        context.registerConfig(ModConfig.Type.CLIENT, ModConfigs.CLIENT_SPEC);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
