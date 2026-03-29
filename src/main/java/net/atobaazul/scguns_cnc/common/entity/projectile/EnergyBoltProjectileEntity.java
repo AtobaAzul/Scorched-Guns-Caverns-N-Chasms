@@ -116,7 +116,7 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
             Vec3 newPos = this.position();
 
             if (oldPos != null) {
-                doTrailParticles(20, oldPos, newPos);
+                doTrailParticles(10, oldPos, newPos);
             }
             oldPos = newPos;
         }

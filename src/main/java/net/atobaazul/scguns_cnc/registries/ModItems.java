@@ -5,6 +5,7 @@ import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulat
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
+import net.minecraft.nbt.CompoundTag;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,9 +19,11 @@ import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
+import static net.atobaazul.scguns_cnc.SCGunsCnC.LOGGER;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 import static top.ribs.scguns.init.ModItems.*;
@@ -353,13 +356,7 @@ public class ModItems {
 
     public static void setupTabEditors() {
         CreativeModeTabContentsPopulator.mod(MOD_ID)
-                .tab(ModCreativeModeTabs.SCORCHED_GUNS_TAB.getKey())
-                .addStacksAfter(of(SHARD_CULLER.get()), getAllGunsGunWithFulLAmmoAndEnergy(MORTICIAN, BELLA, REHEARSE, ANATHEMA, HANGMAN_CARBINE, GALLOWS, CACOPHONY, KETERIYA, NECROSIS, SILVER_LINING, RIBCAGE))
-                .addStacksAfter(of(DOZIER_RL.get()), getAllGunsGunWithFulLAmmoAndEnergy(LUSTRE, SCATTERER, ELECTROTHERMAL_AUTOCANNON))
-                .addStacksAfter(of(PRIMA_MATERIA.get()), getAllGunsGunWithFulLAmmoAndEnergy(CHARYBDIS))
-                .addStacksAfter(of(GRANDLE.get()), getAllGunsGunWithFulLAmmoAndEnergy(RASCAL)).
-                addStacksAfter(of(IRON_SPEAR.get()), getAllGunsGunWithFulLAmmoAndEnergy(IRON_PARTISAN))
-                .addStacksAfter(of(PRUSH_GUN.get()), getAllGunsGunWithFulLAmmoAndEnergy(RECUR))
+                //Also see events.CreativeTabEvent. Guns are added there because of ammo count not working properly here.
                 .tab(ModCreativeModeTabs.SCORCHED_ITEMS_TAB.getKey())
                 .addItemsAfter(of(DIAMOND_STEEL_BLUEPRINT.get()), GRAVEKEEPER_BLUEPRINT)
                 .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE, ELECTROTHERMAL_PART, SCATTERER_PART)
@@ -377,18 +374,29 @@ public class ModItems {
 
     @SafeVarargs
     public static Supplier<ItemStack>[] getAllGunsGunWithFulLAmmoAndEnergy(RegistryObject<? extends GunItem>... items) {
+        System.out.println("getAllGunsWithFullAmmoAndEnergy");
+        System.out.println(Arrays.toString(items));
+
         ArrayList<Supplier<ItemStack>> stacks = Lists.newArrayList();
 
         for (RegistryObject<? extends GunItem> item : items) {
             Item _item = item.get();
-            ItemStack stack = new ItemStack(_item);
+            ItemStack stack = _item.getDefaultInstance();
+            CompoundTag tag = stack.getOrCreateTag();
 
-            if (_item instanceof RechargeableEnergyGunItem gunItem) {
-                stack.getOrCreateTag().putInt("Energy", gunItem.getMaxEnergyStored(stack));
+            if (_item instanceof GunItem gunItem) {
+                gunItem.getGun().serializeNBT();
+                LOGGER.debug("GunItem: {}", gunItem);
+                LOGGER.debug("Gun: {}", gunItem.getGun());
+                LOGGER.debug("Reloads: {}", gunItem.getGun().getReloads());
+                LOGGER.debug("MaxAmmo: {}", gunItem.getGun().getReloads().getMaxAmmo());
+
+
+                if (_item instanceof RechargeableEnergyGunItem energyGunItem) {
+                    tag.putInt("Energy", energyGunItem.getMaxEnergyStored(stack));
+                }
+                tag.putInt("AmmoCount", gunItem.getGun().getReloads().getMaxAmmo());
             }
-            GunItem gunItem = (GunItem) _item;
-            stack.getOrCreateTag().putInt("AmmoCount", gunItem.getGun().getReloads().getMaxAmmo());
-
             stacks.add(() -> stack);
         }
 
