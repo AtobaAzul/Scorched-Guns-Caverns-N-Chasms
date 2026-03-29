@@ -359,7 +359,7 @@ public class ModItems {
                 //Also see events.CreativeTabEvent. Guns are added there because of ammo count not working properly here.
                 .tab(ModCreativeModeTabs.SCORCHED_ITEMS_TAB.getKey())
                 .addItemsAfter(of(DIAMOND_STEEL_BLUEPRINT.get()), GRAVEKEEPER_BLUEPRINT)
-                .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE, ELECTROTHERMAL_PART, SCATTERER_PART)
+                .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE_PART, ELECTROTHERMAL_PART, SCATTERER_PART)
                 .addItemsAfter(of(DIAMOND_STEEL_GUN_FRAME.get()), NECROMIUM_GUN_FRAME)
                 .addItemsAfter(of(CERIMONIAL_COD.get()), LESSER_STRAWMAN)
                 .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE)
@@ -370,37 +370,5 @@ public class ModItems {
                 .addItemsAfter(of(DIAMOND_STEEL_FLARE.get()), GRAVEKEEPER_FLARE)
                 .addItemsAfter(of(BUCKSHOT.get()), HEX_BUCKSHOT)
                 .addItemsAfter(of(ADVANCED_BULLET.get()), SILVER_BULLET);
-    }
-
-    @SafeVarargs
-    public static Supplier<ItemStack>[] getAllGunsGunWithFulLAmmoAndEnergy(RegistryObject<? extends GunItem>... items) {
-        System.out.println("getAllGunsWithFullAmmoAndEnergy");
-        System.out.println(Arrays.toString(items));
-
-        ArrayList<Supplier<ItemStack>> stacks = Lists.newArrayList();
-
-        for (RegistryObject<? extends GunItem> item : items) {
-            Item _item = item.get();
-            ItemStack stack = _item.getDefaultInstance();
-            CompoundTag tag = stack.getOrCreateTag();
-
-            if (_item instanceof GunItem gunItem) {
-                gunItem.getGun().serializeNBT();
-                LOGGER.debug("GunItem: {}", gunItem);
-                LOGGER.debug("Gun: {}", gunItem.getGun());
-                LOGGER.debug("Reloads: {}", gunItem.getGun().getReloads());
-                LOGGER.debug("MaxAmmo: {}", gunItem.getGun().getReloads().getMaxAmmo());
-
-
-                if (_item instanceof RechargeableEnergyGunItem energyGunItem) {
-                    tag.putInt("Energy", energyGunItem.getMaxEnergyStored(stack));
-                }
-                tag.putInt("AmmoCount", gunItem.getGun().getReloads().getMaxAmmo());
-            }
-            stacks.add(() -> stack);
-        }
-
-
-        return stacks.toArray(new Supplier[stacks.size()]);
     }
 }
