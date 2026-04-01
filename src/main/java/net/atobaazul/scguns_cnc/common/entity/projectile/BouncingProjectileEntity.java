@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.registries.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -44,6 +45,8 @@ public class BouncingProjectileEntity extends ProjectileEntity {
 
     @Override
     public float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
+        SCGunsCnC.LOGGER.debug("base chance + extra bounce chance: {} + {}", GunModifierHelper.getCriticalChance(weapon), this.getBounceCritChance());
+
         float chance = GunModifierHelper.getCriticalChance(weapon) + this.getBounceCritChance();
 
         if (rand.nextFloat() < chance) {

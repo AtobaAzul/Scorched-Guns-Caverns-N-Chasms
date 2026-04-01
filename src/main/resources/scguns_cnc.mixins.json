@@ -12,6 +12,7 @@
     "GunEnchantmentHelperMixin",
     "MeleeAttackHandlerMixin",
     "ProjectileEntityMixin",
+    "ProjectileHelperMixin",
     "ServerPlayHandlerMixin",
     "StructureTemplateMixin",
     "accessor.StructureProcessorAccessor"
