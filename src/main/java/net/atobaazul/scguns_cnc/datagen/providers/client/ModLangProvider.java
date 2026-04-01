@@ -110,7 +110,7 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.vault_gun_parts.tooltip", "An array of unusually advanced electrical gizmos and doodads used as general parts for standard T.I.N. devices.");
         add("item.scguns_cnc.lustre_part.tooltip", "Technological Innovation Nucleus' advanced optics are highly sought after due to their exceptional quality, and the tools required for their fabrication no longer existing.");
         add("item.scguns_cnc.electrothermal_part.tooltip", "Technological Innovation Nucleus' plasma power project was cancelled and repurposed into military applications after growing tensions between COG and Asghar demanded more weapons of war.");
-        add("item.scguns_cnc.scatterer_part.tooltip", "Technological Innovation Nucleus' plasma systems are create usable plasma from the very air, revolutionizing plasma technology.");
+        add("item.scguns_cnc.scatterer_part.tooltip", "Technological Innovation Nucleus' plasma systems are able to create usable plasma from the very air, revolutionizing plasma technology.");
 
         add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
     }
