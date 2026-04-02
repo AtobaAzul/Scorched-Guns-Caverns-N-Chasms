@@ -217,8 +217,7 @@ dependencies {
     implementation fg.deobf("curse.maven:gallery-1173553:6321203")
     implementation fg.deobf("curse.maven:caverns-and-chasms-438005:7858283")
 
-    //placeable ingots mod TODO: SWAP TO RELEASE VERSION.
-    implementation fg.deobf("net.atobaazul:cc_compat:1.0.0")
+    implementation fg.deobf("curse.maven:caverns-chasms-ingot-compat-1374190:7858419")
 }
 
 
