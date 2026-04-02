@@ -1,8 +1,7 @@
 package net.atobaazul.scguns_cnc.common.item;
 
 
-import net.atobaazul.scguns_cnc.common.entity.throwable.ThrowableMalisonGrenadeEntity;
-import net.minecraft.sounds.SoundEvent;
+import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowableMalisonGrenadeEntity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;

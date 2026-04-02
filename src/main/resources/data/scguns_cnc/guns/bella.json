@@ -1,7 +1,7 @@
 {
   "display": {
     "flash": {
-      "size": 1.0,
+      "size": 0.8,
       "yOffset": 4.5,
       "zOffset": -4.9,
       "textureLocation": "muzzle_flash_5"
@@ -35,19 +35,19 @@
     },
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset":5.2,
+      "yOffset":5.1,
       "zOffset": 0,
-      "xOffset": -0.5
+      "xOffset": 0
     }
   },
   "projectile": {
     "advantage": "scguns:none",
     "damage": 8.5,
-    "damageFalloffStart": 12.0,
+    "damageFalloffStart": 15.0,
     "criticalChance": 0.1,
     "critDamageMultiplier": 3.0,
-    "damageFalloffEnd": 30.0,
-    "damageFalloffMinMultiplier": 0.45,
+    "damageFalloffEnd": 45.0,
+    "damageFalloffMinMultiplier": 0.60,
     "gravity": false,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns_cnc:small_necromium_casing",
@@ -63,7 +63,7 @@
   },
   "reloads": {
     "emptyMagTimer": 10,
-    "maxAmmo": 10,
+    "maxAmmo": 12,
     "reloadAmount": 1,
     "reloadItem": "scguns_cnc:compact_hex_round",
     "reloadTimer": 20,

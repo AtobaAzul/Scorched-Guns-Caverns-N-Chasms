@@ -1,19 +1,34 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.atobaazul.scguns_cnc.common.item.BluntshotAmmoItem;
-import net.atobaazul.scguns_cnc.common.item.HexRoundAmmoItem;
+import com.google.common.collect.Lists;
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
+import net.minecraft.nbt.CompoundTag;
+import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import top.ribs.scguns.init.ModCreativeModeTabs;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.*;
+import top.ribs.scguns.item.animated.AnimatedDiamondSteelGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
+import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
+import static net.atobaazul.scguns_cnc.SCGunsCnC.LOGGER;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+import static net.minecraft.world.item.crafting.Ingredient.of;
+import static top.ribs.scguns.init.ModItems.*;
+import static top.ribs.scguns.init.ModItems.ADVANCED_BULLET;
+import static top.ribs.scguns.util.Constants.*;
 
 public class ModItems {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
@@ -21,8 +36,20 @@ public class ModItems {
 
  public static final RegistryObject<AnimatedGunItem> HANGMAN_CARBINE = REGISTER.register("hangman_carbine",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
                     "hangman_carbine", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+    public static final RegistryObject<AnimatedGunItem> HANGMAN_ACOLYTE = REGISTER.register("hangman_acolyte",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
+                    "hangman_acolyte", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end
@@ -33,7 +60,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> RIBCAGE = REGISTER.register("ribcage",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "ribcage", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -45,8 +72,33 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> BELLA = REGISTER.register("bella",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "bella", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+
+    public static final RegistryObject<AnimatedGunItem> MORTICIAN = REGISTER.register("mortician",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    "mortician", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+    public static final RegistryObject<AnimatedGunItem> CACOPHONY = REGISTER.register("cacophony",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(1200).rarity(ModRarity.EXSANGUINATED),
+                    "cacophony", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end
@@ -57,7 +109,7 @@ public class ModItems {
 
    public static final RegistryObject<AnimatedGunItem> REHEARSE = REGISTER.register("rehearse",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "rehearse", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -69,7 +121,7 @@ public class ModItems {
 
      public static final RegistryObject<AnimatedGunItem> SILVER_LINING = REGISTER.register("silverlining",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "silverlining", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -82,7 +134,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> KETERIYA = REGISTER.register("keteriya",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "keteriya", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -95,7 +147,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> ANATHEMA = REGISTER.register("anathema",
             () -> new AnathemaGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "anathema", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -108,7 +160,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> GALLOWS = REGISTER.register("gallows",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "gallows", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -120,7 +172,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> NECROSIS = REGISTER.register("necrosis",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800),
+                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
                     "necrosis", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -130,14 +182,121 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<RechargeableEnergyGunItem> LUSTRE = REGISTER.register("lustre",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "lustre",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    10000,
+                    40,
+                    300000,
+                    2
+            ).setUseGlowMask(true)
+    );
+
+    public static final RegistryObject<RechargeableEnergyGunItem> ELECTROTHERMAL_AUTOCANNON = REGISTER.register("electrothermal_autocannon",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "electrothermal_autocannon",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    750,
+                    2,
+                    300000,
+                    50,
+                    true
+            ).setUseGlowMask(true)
+    );
+
+
+    //Scatterer
+    public static final RegistryObject<RechargeableEnergyGunItem> SCATTERER = REGISTER.register("scatterer",
+            () -> new RechargeableEnergyGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "scatterer",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    1000,
+                    10,
+                    80000,
+                    10,
+                    false
+            ).setUseGlowMask(true)
+    );
+
+    //Iron Partisan
+    public static final RegistryObject<AnimatedGunItem> IRON_PARTISAN = REGISTER.register("iron_partisan",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800),
+                    "iron_partisan", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+    //Recur
+    public static final RegistryObject<AnimatedDiamondSteelGunItem> RECUR = REGISTER.register("recur",
+            () -> new AnimatedDiamondSteelGunItem(
+                    new Item.Properties().stacksTo(1).durability(800).rarity(DIAMOND_STEEL),
+                    "recur", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+    //Rascal
+    public static final RegistryObject<AnimatedGunItem> RASCAL = REGISTER.register("rascal",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(800).rarity(TREATED_BRASS),
+                    "rascal", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+    //Charybdis
+    public static final RegistryObject<AnimatedScorchedGunItem> CHARYBDIS = REGISTER.register("charybdis",
+            () -> new AnimatedScorchedGunItem(
+                    new Item.Properties().stacksTo(1).durability(2400).rarity(SCORCHED),
+                    "charybdis",
+                    ModSounds.MAG_OUT.get(),
+                    ModSounds.MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSounds.COPPER_GUN_JAM.get(),
+                    ModSounds.COPPER_GUN_JAM.get()
+            )
+    );
+
+
+
     //blueprint
-    public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1).rarity(ModRarity.EXSANGUINATED)));
 
     //rounds
-    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new HexRoundAmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new BluntshotAmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new HexRoundAmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
+    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
+    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new TooltipItem(new Item.Properties(), "tooltip.bluntshot.knockback"));
+    public static final RegistryObject<Item> COPPER_SLUG = REGISTER.register("copper_slug", () -> new AmmoItem(new Item.Properties()));
+    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
+    public static final RegistryObject<Item> PULSE_CORE = REGISTER.register("pulse_core", () -> new AmmoItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
 
@@ -147,20 +306,41 @@ public class ModItems {
     public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.ricoshot_round.crit_chance"));
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
     public static final RegistryObject<Item> UNFINISHED_HEXSHOT = sequencedIngredient("unfinished_hexshot");
+    public static final RegistryObject<Item> UNFINISHED_COPPER_SLUG = sequencedIngredient("unfinished_copper_slug");
+    public static final RegistryObject<Item> UNFINISHED_RICOSHOT_ROUND = sequencedIngredient("unfinished_ricoshot_round");
 
     public static final RegistryObject<Item> GRAVEKEEPER_FLARE = REGISTER.register("gravekeeper_flare",
             () -> new RaidFlareItem(new Item.Properties().stacksTo(16), "gravekeeper"));
 
     public static final RegistryObject<Item> LESSER_STRAWMAN = REGISTER.register("lesser_strawman",
-            () -> new TooltipItem(new Item.Properties(),
+            () -> new TooltipItem(new Item.Properties().rarity(ModRarity.EXSANGUINATED),
                     "item.scguns_cnc.lesser_strawman.tooltip",
                     "item.scguns.found_in_raids"));
+    public static final RegistryObject<Item> VAULT_GUN_PARTS = REGISTER.register("vault_gun_parts",
+            () -> new TooltipItem(new Item.Properties().rarity(ModRarity.VAULT_RELIC),
+                    "item.scguns_cnc.vault_gun_parts.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
+    public static final RegistryObject<Item> LUSTRE_PART = REGISTER.register("lustre_part",
+            () -> new TooltipItem(new Item.Properties().rarity(ModRarity.VAULT_RELIC),
+                    "item.scguns_cnc.lustre_part.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
 
-    public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32), 20 * 3));
+    public static final RegistryObject<Item> ELECTROTHERMAL_PART = REGISTER.register("electrothermal_part",
+            () -> new TooltipItem(new Item.Properties().rarity(ModRarity.VAULT_RELIC),
+                    "item.scguns_cnc.electrothermal_part.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
+
+    public static final RegistryObject<Item> SCATTERER_PART = REGISTER.register("scatterer_part",
+            () -> new TooltipItem(new Item.Properties().rarity(ModRarity.VAULT_RELIC),
+                    "item.scguns_cnc.scatterer_part.tooltip",
+                    "scguns_cnc.jei.info.found_in_vaults"));
+
+    public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32).rarity(ModRarity.EXSANGUINATED), 20 * 3));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {
@@ -168,4 +348,27 @@ public class ModItems {
         }
         return REGISTER.register(name, () -> new Item(new Item.Properties()));
     };
+
+    public static class ModRarity {
+        public static final net.minecraft.world.item.Rarity EXSANGUINATED = net.minecraft.world.item.Rarity.create("scguns_cnc.exsanguinated", style -> style.withColor(0x584f7c));
+        public static final net.minecraft.world.item.Rarity VAULT_RELIC = net.minecraft.world.item.Rarity.create("scguns_cnc.vault_relic", style -> style.withColor(0x8ed2e5));
+    }
+
+    public static void setupTabEditors() {
+        CreativeModeTabContentsPopulator.mod(MOD_ID)
+                //Also see events.CreativeTabEvent. Guns are added there because of ammo count not working properly here.
+                .tab(ModCreativeModeTabs.SCORCHED_ITEMS_TAB.getKey())
+                .addItemsAfter(of(DIAMOND_STEEL_BLUEPRINT.get()), GRAVEKEEPER_BLUEPRINT)
+                .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE_PART, ELECTROTHERMAL_PART, SCATTERER_PART)
+                .addItemsAfter(of(DIAMOND_STEEL_GUN_FRAME.get()), NECROMIUM_GUN_FRAME)
+                .addItemsAfter(of(CERIMONIAL_COD.get()), LESSER_STRAWMAN)
+                .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE)
+                .addItemsAfter(of(MEDIUM_DIAMOND_STEEL_CASING.get()), SMALL_NECROMIUM_CASING, MEDIUM_NECROMIUM_CASING)
+                .addItemsAfter(of(GIBBS_ROUND.get()), COMPACT_HEX_ROUND, HEX_ROUND)
+                .addItemsAfter(of(BEARPACK_SHELL.get()), HEXSHOT, COPPER_SLUG, BLUNTSHOT)
+                .addItemsAfter(of(ADVANCED_ROUND.get()), RICOSHOT_ROUND)
+                .addItemsAfter(of(DIAMOND_STEEL_FLARE.get()), GRAVEKEEPER_FLARE)
+                .addItemsAfter(of(BUCKSHOT.get()), HEX_BUCKSHOT)
+                .addItemsAfter(of(ADVANCED_BULLET.get()), SILVER_BULLET);
+    }
 }

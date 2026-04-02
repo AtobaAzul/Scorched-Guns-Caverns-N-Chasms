@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "caverns_and_chasms:silver_shovel"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "caverns_and_chasms:silver_pickaxe"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "caverns_and_chasms:silver_axe"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "caverns_and_chasms:silver_hoe"
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_damage",
+          "damage": {
+            "type": "minecraft:uniform",
+            "min": 0.3,
+            "max": 0.5
+          }
+        }
+      ]
+    }
+  ]
+}

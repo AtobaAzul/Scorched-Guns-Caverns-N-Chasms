@@ -5,12 +5,22 @@
   "refmap": "scguns_cnc.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AbstractGrazerMixin",
+    "BrassMaskArmorItemMixin",
+    "DynamicCrosshairMixin",
+    "GrazerPartMixin",
+    "GunEnchantmentHelperMixin",
     "MeleeAttackHandlerMixin",
+    "ProjectileEntityMixin",
+    "ProjectileHelperMixin",
     "ServerPlayHandlerMixin",
     "StructureTemplateMixin",
     "accessor.StructureProcessorAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "BeamHandlerMixin"
+  ]
 }

@@ -1,0 +1,72 @@
+{
+  "type": "create:sequenced_assembly",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "scguns:large_brass_casing"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "scguns_cnc:copper_slug"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "scguns_cnc:unfinished_copper_slug"
+        },
+        [
+          {
+            "item": "minecraft:copper_block"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "scguns_cnc:unfinished_copper_slug"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "scguns_cnc:unfinished_copper_slug"
+        },
+        [
+          {
+            "tag": "forge:gunpowder"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "scguns_cnc:unfinished_copper_slug"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "scguns_cnc:unfinished_copper_slug"
+        }
+      ],
+      "results": [
+        {
+          "item": "scguns_cnc:unfinished_copper_slug"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "scguns_cnc:unfinished_copper_slug"
+  }
+}

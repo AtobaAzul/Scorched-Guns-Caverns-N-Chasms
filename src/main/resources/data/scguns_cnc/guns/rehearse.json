@@ -17,9 +17,7 @@
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 10,
     "meleeReach": 2.5,
-    "hotBarrelRate": 24,
-
-    "isRevolver": true
+    "hotBarrelRate": 24
   },
   "modules": {
     "attachments": {
@@ -54,7 +52,7 @@
     "damage": 16.0,
     "damageFalloffStart": 23.0,
     "damageFalloffEnd": 46.0,
-    "damageFalloffMinMultiplier": 0.6,
+    "damageFalloffMinMultiplier": 0.65,
     "ejectsCasing": true,
     "gravity": false,
     "item": "scguns_cnc:hex_round",
@@ -66,7 +64,7 @@
     "speed": 6.5,
     "trailLengthMultiplier": 2.0,
     "playerKnockBack": true,
-    "playerKnockBackStrength": 0.2,
+    "playerKnockBackStrength": 0.1,
     "armorPen": 2.0
   },
   "reloads": {

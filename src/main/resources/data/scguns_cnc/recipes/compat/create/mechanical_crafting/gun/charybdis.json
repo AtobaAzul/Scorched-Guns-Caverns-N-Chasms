@@ -1,0 +1,41 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns:scorched_blueprint"
+    },
+    "B": {
+      "item": "scguns:scorched_gun_frame"
+    },
+    "C": {
+      "item": "scguns:firing_unit"
+    },
+    "D": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "E": {
+      "item": "scguns:gun_magazine"
+    },
+    "F": {
+      "item": "scguns:gun_barrel"
+    },
+    "G": {
+      "item": "scguns:gun_grip"
+    }
+  },
+  "pattern": [
+    "AB  ",
+    "CDEF",
+    "G   "
+  ],
+  "result": {
+    "item": "scguns_cnc:charybdis"
+  }
+}

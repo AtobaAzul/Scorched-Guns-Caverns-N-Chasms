@@ -28,15 +28,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MEDIUM_NECROMIUM_CASING);
         simpleItem(SILVER_BULLET);
         simpleItem(THE_HUNGER);
+        simpleItem(COPPER_SLUG);
         simpleItem(HEXSHOT);
         simpleItem(HEX_BUCKSHOT);
+        simpleItem(PULSE_CORE);
+        simpleItem(RICOSHOT_ROUND);
 
         simpleItem(UNFINISHED_HEX_ROUND);
         simpleItem(UNFINISHED_COMPACT_HEX_ROUND);
         simpleItem(UNFINISHED_HEXSHOT);
+        simpleItem(UNFINISHED_COPPER_SLUG);
+        simpleItem(UNFINISHED_RICOSHOT_ROUND);
 
         simpleItem(LESSER_STRAWMAN);
         simpleItem(GRAVEKEEPER_FLARE);
+        simpleItem(VAULT_GUN_PARTS);
+        simpleItem(LUSTRE_PART);
+        simpleItem(ELECTROTHERMAL_PART);
+        simpleItem(SCATTERER_PART);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

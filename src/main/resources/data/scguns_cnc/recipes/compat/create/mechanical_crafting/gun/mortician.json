@@ -1,0 +1,45 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "Q": {
+      "item": "scguns:gun_grip"
+    },
+    "C": {
+      "tag": "forge:ingots/necromium"
+    },
+    "L": {
+      "item": "scguns:firing_unit"
+    },
+    "R": {
+      "item": "scguns:gun_parts"
+    },
+    "S": {
+      "item": "scguns:gun_barrel"
+    },
+    "X": {
+      "item": "scguns:gun_magazine"
+    },
+
+    "P": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "K": {
+      "tag": "forge:ingots/silver"
+    }
+  },
+  "pattern": [
+    "CP  ",
+    "LRKS",
+    "Q X "
+  ],
+  "result": {
+    "item": "scguns_cnc:bella"
+  }
+}

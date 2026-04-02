@@ -1,7 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.atobaazul.scguns_cnc.common.entity.*;
-import net.atobaazul.scguns_cnc.common.entity.throwable.ThrowableMalisonGrenadeEntity;
+import net.atobaazul.scguns_cnc.common.entity.projectile.*;
+import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowableMalisonGrenadeEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -22,6 +22,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BluntshotProjectileEntity>> BLUNTSHOT = registerBasic("bluntshot_projectile", BluntshotProjectileEntity::new);
     public static final RegistryObject<EntityType<DummyProjectileEntity>> DUMMY_PROJECTILE = registerBasic("dummy_projectile", DummyProjectileEntity::new);
     public static final RegistryObject<EntityType<BloodShotProjectileEntity>> BLOOD_SHOT = registerBasic("blood_shot_projectile", BloodShotProjectileEntity::new);
+    public static final RegistryObject<EntityType<CopperSlugProjectileEntity>> COPPER_SLUG_PROJECTILE = registerBasic("copper_slug_projectile", CopperSlugProjectileEntity::new);
+    public static final RegistryObject<EntityType<EnergyBoltProjectileEntity>> ENERGY_BOLT_PROJECTILE = registerBasic("energy_bolt_projectile", EnergyBoltProjectileEntity::new);
+    public static final RegistryObject<EntityType<BouncingProjectileEntity>> RICOSHOT_ROUND_PROJECTILE = registerBasic("ricoshot_round_projectile", BouncingProjectileEntity::new);
 
     public static final RegistryObject<EntityType<ThrowableMalisonGrenadeEntity>> THROWABLE_MALISON_GRENADE = registerBasic("malison_grenade", ThrowableMalisonGrenadeEntity::new);
 

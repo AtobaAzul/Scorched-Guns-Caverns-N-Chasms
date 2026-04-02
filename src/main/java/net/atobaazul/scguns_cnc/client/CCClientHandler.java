@@ -32,8 +32,14 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.SILVER_LINING.get(), new SilverliningModel());
         ModelOverrides.register(ModItems.RIBCAGE.get(), new RibcageModel());
         ModelOverrides.register(ModItems.REHEARSE.get(), new RehearseModel());
+        ModelOverrides.register(ModItems.LUSTRE.get(), new LustreModel());
         ModelOverrides.register(ModItems.GALLOWS.get(), new GallowsModel());
         ModelOverrides.register(ModItems.NECROSIS.get(), new NecrosisModel());
+        ModelOverrides.register(ModItems.MORTICIAN.get(), new MorticianModel());
+        ModelOverrides.register(ModItems.CACOPHONY.get(), new CacophonyModel());
+        ModelOverrides.register(ModItems.ELECTROTHERMAL_AUTOCANNON.get(), new EAutocannonModel());
+        ModelOverrides.register(ModItems.SCATTERER.get(), new ScattererModel());
+
     }
 }
 

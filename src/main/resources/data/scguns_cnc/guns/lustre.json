@@ -1,0 +1,74 @@
+{
+  "display": {
+    "flash": {
+      "size": 1.2,
+      "yOffset": 8.0,
+      "zOffset": -12.5,
+      "textureLocation": "muzzle_flash_lustre"
+    },
+    "beamOrigin": {
+      "horizontalOffset": 0.1,
+      "verticalOffset": 0.065,
+      "forwardOffset": 0.2,
+      "aimHorizontalOffset": 0.0
+    }
+  },
+  "general": {
+    "weaponType": "laser",
+    "hasCameraShake": false,
+    "fireMode": "scguns:semi_beam",
+    "beamColor": "#ffffff",
+    "secondaryBeamColor": "#ffd981",
+    "enchantedBeamColor": "#ffffff",
+    "enchantedSecondaryBeamColor": "#ffd981",
+    "gripType": "scguns:bazooka",
+    "baseGripType": "scguns:bazooka",
+    "rate": 8,
+    "meleeDamage": 4.0,
+    "meleeCooldownTicks": 20,
+    "meleeReach": 3.5,
+    "hotBarrelRate": 10,
+    "beamAmmoConsumptionDelay": 800,
+    "beamDamageDelay": 0,
+    "enableMining": false,
+    "miningSpeed": 1.0,
+    "criticalChance": 0.05,
+    "speedModifier": 0.8,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.2,
+    "beamMaxDistance": 100.0
+  },
+  "modules": {
+  },
+  "projectile": {
+    "knockbackStrength": 0.0,
+    "advantage": "scguns:bot",
+    "damage": 18.0,
+    "armorPen": 100.0,
+    "ejectsCasing": false,
+    "item": "scguns:energy_core",
+    "life": 50,
+    "size": 1.0,
+    "speed": 1.5,
+    "trailLengthMultiplier": 2.0,
+    "recoilAngle": 5.0,
+    "recoilKick": 1.0,
+    "spread": 0.0,
+    "criticalChance": 0.05
+  },
+  "reloads": {
+    "emptyMagTimer": 50,
+    "maxAmmo": 10,
+    "reloadItem": "scguns:energy_core",
+    "reloadByproduct": "scguns:depleted_energy_core",
+    "byproductChance": 0.5,
+    "reloadTimer": 27,
+    "reloadType": "scguns:single_item"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns_cnc:item.lustre.fire",
+    "fire": "scguns_cnc:item.lustre.fire",
+    "reload": "scguns:item.flamethrower.reload"
+  }
+}

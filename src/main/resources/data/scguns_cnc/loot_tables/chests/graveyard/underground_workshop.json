@@ -1,0 +1,112 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:anathema",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.5
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "caverns_and_chasms:living_flesh",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 3
+                  },
+                  "add": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 6
+      },
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "scguns:gun_grip"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns:gun_parts"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns:gun_barrel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 5,
+        "max": 10
+      },
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:small_necromium_casing",
+              "weight": 1
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:medium_necromium_casing",
+              "weight": 1
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:silver_bullet",
+              "weight": 15
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          },
+          "add": false
+        }
+      ]
+    }
+  ]
+}

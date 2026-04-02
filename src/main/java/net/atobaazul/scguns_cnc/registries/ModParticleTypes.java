@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.client.particle.EnergyBoltTrailParticle;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,8 +18,11 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 public class ModParticleTypes {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
 
+    public static final RegistryObject<SimpleParticleType> ENERGY_BOLT_TRAIL = registerSimpleParticleType(true, "energy_bolt_trail");
+    public static final RegistryObject<SimpleParticleType> ENERGY_BOLT_IMPACT = registerSimpleParticleType(true, "energy_bolt_impact");
     public static final RegistryObject<SimpleParticleType> HEX_CASING_PARTICLE = registerSimpleParticleType(true, "hex_casing");
     public static final RegistryObject<SimpleParticleType> HEX_SHELL_PARTICLE = registerSimpleParticleType(true, "hex_shell");
+    public static final RegistryObject<SimpleParticleType> SILVER_LINKS = registerSimpleParticleType(true, "silver_links");
 
     private static RegistryObject<SimpleParticleType> registerSimpleParticleType(boolean alwaysShow, String name) {
         return PARTICLE_TYPES.register(name, () -> new SimpleParticleType(alwaysShow));
@@ -28,8 +32,11 @@ public class ModParticleTypes {
     public static class RegisterParticles {
         @SubscribeEvent
         public static void registerParticleTypes(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ENERGY_BOLT_TRAIL.get(), EnergyBoltTrailParticle.StepProvider::new);
+            event.registerSpriteSet(ENERGY_BOLT_IMPACT.get(), EnergyBoltTrailParticle.Provider::new);
             event.registerSpriteSet(HEX_CASING_PARTICLE.get(), CasingParticle.Provider::new);
             event.registerSpriteSet(HEX_SHELL_PARTICLE.get(), CasingParticle.Provider::new);
+            event.registerSpriteSet(SILVER_LINKS.get(), CasingParticle.Provider::new);
         }
     }
 }

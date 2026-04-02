@@ -1,0 +1,41 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "pattern": [
+    "ABC ",
+    "DEFB",
+    "C G "
+  ],
+  "key": {
+    "A": {
+      "item": "scguns:treated_iron_ingot"
+    },
+    "B": {
+      "tag": "forge:ingots/tin"
+    },
+    "C": {
+      "item": "scguns:gun_grip"
+    },
+    "D": {
+      "tag": "forge:storage_blocks/tin"
+    },
+    "E": {
+      "item": "scguns_cnc:vault_gun_parts"
+    },
+    "F": {
+      "item": "scguns:treated_iron_block"
+    },
+    "G": {
+      "item": "scguns_cnc:electrothermal_part"
+    }
+  },
+  "result": {
+    "item": "scguns_cnc:electrothermal_autocannon"
+  }
+}

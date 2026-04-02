@@ -50,13 +50,30 @@
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
       {
-        "name": "scguns_cnc:item/hangman_carbine/fire0"
+        "name": "scguns_cnc:item/hangman_carbine/fire0",
+        "volume": 0.6
       },
       {
-        "name": "scguns_cnc:item/hangman_carbine/fire1"
+        "name": "scguns_cnc:item/hangman_carbine/fire1",
+        "volume": 0.7
       },
       {
-        "name": "scguns_cnc:item/hangman_carbine/fire2"
+        "name": "scguns_cnc:item/hangman_carbine/fire2",
+        "volume": 0.6
+      }
+    ]
+  },
+  "item.scatterer.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/scatterer/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/scatterer/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/scatterer/fire2"
       }
     ]
   },
@@ -234,6 +251,47 @@
       }
     ]
   },
+  "item.lustre.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/fire0",
+        "volume": 0.6
+      },
+      {
+        "name": "scguns_cnc:item/lustre/fire1",
+        "volume": 0.6
+      },
+      {
+        "name": "scguns_cnc:item/lustre/fire2",
+        "volume": 0.6
+      }
+    ]
+  },
+  "item.lustre.jam": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/jam0"
+      },
+      {
+        "name": "scguns_cnc:item/lustre/jam1"
+      }
+    ]
+  },
+  "item.lustre.mag_in": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/mag_in"
+      }
+    ]
+  },
+  "item.lustre.mag_out": {
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/lustre/mag_out"
+      }
+    ]
+  },
   "item.anathema.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
@@ -255,6 +313,51 @@
       }
     ]
   },
+  "item.electrothermal_autocannon.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/electrothermal_autocannon/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/electrothermal_autocannon/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/electrothermal_autocannon/fire2"
+      }
+    ]
+  },
+  "item.mortician.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/mortician/fire0",
+        "volume": 1.25
+      },
+      {
+        "name": "scguns_cnc:item/mortician/fire1",
+        "volume": 1.25
+      },
+      {
+        "name": "scguns_cnc:item/mortician/fire2",
+        "volume": 1.25
+      }
+    ]
+  },
+  "item.cacophony.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/cacophony/fire0"
+      },
+      {
+        "name": "scguns_cnc:item/cacophony/fire1"
+      },
+      {
+        "name": "scguns_cnc:item/cacophony/fire2"
+      }
+    ]
+  },
   "item.flyby.silver_flyby": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
@@ -266,6 +369,22 @@
       },
       {
         "name": "scguns_cnc:item/flyby/flyby2"
+      }
+    ]
+  },
+  "item.charybdis.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/charybdis/fire",
+        "pitch": 0.9
+      },
+      {
+        "name": "scguns_cnc:item/charybdis/fire"
+      },
+      {
+        "name": "scguns_cnc:item/charybdis/fire",
+        "pitch": 1.1
       }
     ]
   }

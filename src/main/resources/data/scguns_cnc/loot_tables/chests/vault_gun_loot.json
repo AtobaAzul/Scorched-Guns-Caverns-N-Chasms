@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:vault_gun_parts"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:lustre_part"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:electrothermal_part"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "scguns_cnc:scatterer_part"
+            }
+          ]
+        }
+      ],
+      "functions": [
+
+      ]
+    },{
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "scguns:blueprint_scrap"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 4,
+            "max": 6
+          },
+          "add": true
+        }
+      ]
+    }
+  ]
+}

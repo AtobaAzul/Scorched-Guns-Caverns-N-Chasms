@@ -6,7 +6,7 @@
     "custom_name": "translation:raid.boss.scguns_cnc.gravekeeper",
     "fixed_health": 180.0,
     "weapon": {
-      "item": "scguns_cnc:ribcage",
+      "item": "scguns_cnc:cacophony",
       "drop_chance": 0.35
     },
     "armor": [
@@ -91,6 +91,9 @@
           "scguns_cnc:hangman_carbine",
           "scguns_cnc:bella",
           "scguns_cnc:keteriya",
+          "scguns_cnc:mortician",
+          "scguns_cnc:gallows",
+          "scguns_cnc:necrosis",
           "caverns_and_chasms:silver_sword"
         ],
         "armor": [

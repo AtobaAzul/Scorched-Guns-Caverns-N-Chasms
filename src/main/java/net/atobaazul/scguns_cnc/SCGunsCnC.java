@@ -3,17 +3,16 @@ package net.atobaazul.scguns_cnc;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
-import net.atobaazul.scguns_cnc.common.entity.*;
+import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.registries.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -47,7 +46,12 @@ public class SCGunsCnC {
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             CCClientHandler.registerClientHandlers(modEventBus);
             BlueprintScreen.registerLoreOnlyItem(new ResourceLocation(MOD_ID, "gravekeeper_blueprint"), "anathema");
+            //ModItems.setupTabEditors();
         });
+
+        context.registerConfig(ModConfig.Type.COMMON, ModConfigs.COMMON_SPEC);
+        context.registerConfig(ModConfig.Type.CLIENT, ModConfigs.CLIENT_SPEC);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -59,7 +63,10 @@ public class SCGunsCnC {
         ProjectileManager.getInstance().registerFactory(ModItems.BLUNTSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BluntshotProjectileEntity(ModEntities.BLUNTSHOT.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(CCItems.LARGE_ARROW.get(), (worldIn, entity, weapon, item, modifiedGun) -> new DummyProjectileEntity(ModEntities.DUMMY_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.THE_HUNGER.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BloodShotProjectileEntity(ModEntities.BLOOD_SHOT.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.COPPER_SLUG.get(), (worldIn, entity, weapon, item, modifiedGun) -> new CopperSlugProjectileEntity(ModEntities.COPPER_SLUG_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.HEXSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.PULSE_CORE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new EnergyBoltProjectileEntity(ModEntities.ENERGY_BOLT_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.RICOSHOT_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BouncingProjectileEntity(ModEntities.RICOSHOT_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
 
         // ProjectileManager.getInstance().registerFactory(ModItems.MALISON_GRENADE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GrenadeEntity(ModEntities.MALISON_GRENADE.get(), worldIn, entity, weapon, item, modifiedGun));
     }
@@ -69,6 +76,7 @@ public class SCGunsCnC {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(ModItems::setupTabEditors);
         }
     }
 }

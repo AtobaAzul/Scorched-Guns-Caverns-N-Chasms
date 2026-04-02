@@ -1,8 +1,8 @@
 {
   "display": {
     "flash": {
-      "size": 1.0,
-      "yOffset": 5.5,
+      "size": 0.8,
+      "yOffset": 5.4,
       "zOffset": -9,
       "textureLocation": "muzzle_flash_1"
     }
@@ -16,13 +16,13 @@
     "meleeDamage": 2.5,
     "meleeCooldownTicks": 15,
     "meleeReach": 2.5,
-    "hotBarrelRate": 7,
+    "hotBarrelRate": 3,
     "criticalChance": 0.06
   },
   "modules": {
     "attachments": {
       "underBarrel": {
-        "yOffset": 5.5,
+        "yOffset": 5.4,
         "zOffset": -2.5
       },
       "barrel": {
@@ -49,6 +49,7 @@
   },
   "projectile": {
     "alwaysSpread": true,
+    "criticalChance": 0.05,
     "advantage": "scguns:none",
     "damage": 7.5,
     "damageFalloffStart": 12.0,
@@ -64,7 +65,7 @@
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 2.25,
     "recoilKick": 1,
-    "spread": 3.0
+    "spread": 2.75
   },
   "reloads": {
     "emptyMagTimer": 30,

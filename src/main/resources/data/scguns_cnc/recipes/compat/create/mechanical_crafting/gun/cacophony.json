@@ -1,0 +1,47 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "B": {
+      "tag": "forge:ingots/necromium"
+    },
+    "C": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "D": {
+      "item": "scguns:rapid_firing_unit"
+    },
+    "E": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "F": {
+      "tag": "forge:storage_blocks/silver"
+    },
+    "G": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "H": {
+      "item": "scguns:gun_grip"
+    },
+    "I": {
+      "item": "scguns:gun_magazine"
+    }
+  },
+  "pattern": [
+    "ABC ",
+    "DEFG",
+    "H I "
+  ],
+  "result": {
+    "item": "scguns_cnc:cacophony"
+  }
+}

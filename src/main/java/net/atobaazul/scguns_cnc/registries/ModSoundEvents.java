@@ -26,10 +26,21 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> GALLOWS_FIRE = register("item.gallows.fire");
     public static final RegistryObject<SoundEvent> GALLOWS_SILENCED_FIRE = register("item.gallows.silenced_fire");
 
+    public static final RegistryObject<SoundEvent> ELECTROTHERMAL_AUTOCANNON_FIRE = register("item.electrothermal_autocannon.fire");
+    public static final RegistryObject<SoundEvent> SCATTERER_FIRE = register("item.scatterer.fire");
+
+    public static final RegistryObject<SoundEvent> LUSTRE_FIRE = register("item.lustre.fire");
+    public static final RegistryObject<SoundEvent> LUSTRE_JAM = register("item.lustre.jam");
+    public static final RegistryObject<SoundEvent> LUSTRE_MAG_IN = register("item.lustre.mag_in");
+    public static final RegistryObject<SoundEvent> LUSTRE_MAG_OUT = register("item.lustre.mag_out");
+
     public static final RegistryObject<SoundEvent> SILVERLINING_FIRE = register("item.silverlining.fire");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_START = register("item.silverlining.pull1");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_MIDDLE = register("item.silverlining.pull2");
     public static final RegistryObject<SoundEvent> SILVERLINING_PULL_END = register("item.silverlining.pull3");
+
+    public static final RegistryObject<SoundEvent> MORTICIAN_FIRE = register("item.mortician.fire");
+    public static final RegistryObject<SoundEvent> CACOPHONY_FIRE = register("item.cacophony.fire");
 
     public static final RegistryObject<SoundEvent> MALISON_EXPLOSION = register("item.malison_grenade.explode");
 

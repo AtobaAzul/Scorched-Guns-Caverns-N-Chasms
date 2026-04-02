@@ -31,7 +31,6 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
         super(output, lookupProvider, blockTags, MOD_ID, existingFileHelper);
     }
 
-
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.ONE_HANDED_CARBINE)
@@ -45,7 +44,10 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(COMPACT_HEX_ROUND.get())
                 .add(HEX_ROUND.get())
                 .add(BLUNTSHOT.get())
-                .add(HEXSHOT.get());
+                .add(COPPER_SLUG.get())
+                .add(HEXSHOT.get())
+                .add(PULSE_CORE.get())
+                .add(RICOSHOT_ROUND.get());
 
         tag(INCREASED_CASING_DROP_CHANCE)
                 .add(SMALL_NECROMIUM_CASING.get())
@@ -56,10 +58,12 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(COMPACT_HEX_ROUND.get());
 
         tag(RIFLE_AMMO)
-                .add(HEX_ROUND.get());
+                .add(HEX_ROUND.get())
+                .add(RICOSHOT_ROUND.get());
 
         tag(SHOTGUN_AMMO)
                 .add(BLUNTSHOT.get())
+                .add(COPPER_SLUG.get())
                 .add(HEXSHOT.get());
 
         tag(GRAVEKEEPER_GUN_TIER)
@@ -71,10 +75,34 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(KETERIYA.get())
                 .add(ANATHEMA.get())
                 .add(GALLOWS.get())
-                .add(NECROSIS.get());
+                .add(NECROSIS.get())
+                .add(MORTICIAN.get())
+                .add(CACOPHONY.get())
+                .add(HANGMAN_ACOLYTE.get());
 
         tag(HEX_BULLET_TIP)
                 .add(SILVER_BULLET.get())
                 .addOptionalTag(SILVER_NUGGETS);
+
+        tag(VAULT_GUN_TIER)
+                .add(LUSTRE.get())
+                .add(ELECTROTHERMAL_AUTOCANNON.get())
+                .add(SCATTERER.get());
+
+        tag(ModTags.Items.HEAVY_WEAPON)
+                .add(LUSTRE.get())
+                .add(ELECTROTHERMAL_AUTOCANNON.get());
+
+        tag(ModTags.Items.IRON_GUN_TIER)
+                .add(IRON_PARTISAN.get());
+
+        tag(ModTags.Items.DIAMOND_STEEL_GUN_TIER)
+                .add(RECUR.get());
+
+        tag(ModTags.Items.TREATED_BRASS_GUN_TIER)
+                .add(RASCAL.get());
+
+        tag(ModTags.Items.SCORCHED_GUN_TIER)
+                .add(CHARYBDIS.get());
     }
 }

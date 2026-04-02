@@ -1,0 +1,36 @@
+{
+  "type": "scguns:gun_bench",
+  "result": {
+    "item": "scguns_cnc:iron_partisan",
+    "count": 1
+  },
+  "ingredients": {
+    "blueprint": {
+      "item": "scguns:iron_blueprint"
+    },
+    "gun_internal_1": {
+      "item": "scguns:firing_unit"
+    },
+    "gun_internal_2": {
+      "item": "scguns:gun_parts"
+    },
+    "gun_top_internal_1": {
+      "item": "scguns:iron_gun_frame"
+    },
+    "gun_top_internal_2": {
+      "tag": "forge:ingots/iron"
+    },
+    "gun_grip": {
+      "item": "scguns:gun_grip"
+    },
+    "gun_barrel_1": {
+      "item": "scguns:gun_barrel"
+    },
+    "gun_top_barrel_1": {
+      "tag": "minecraft:planks"
+    },
+    "gun_magazine": {
+      "item": "scguns:gun_magazine"
+    }
+  }
+}

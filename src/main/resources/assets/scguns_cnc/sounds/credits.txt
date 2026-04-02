@@ -1,4 +1,5 @@
 CREDITS
 Third party assets were used.
 
-- Siege Camp, for the gun firing sounds.
+- Siege Camp, for several gun firing sounds.
+- Overhype Studios for the "Lustre" firing sounds.

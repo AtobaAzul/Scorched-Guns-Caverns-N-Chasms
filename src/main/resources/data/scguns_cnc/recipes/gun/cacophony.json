@@ -1,0 +1,36 @@
+{
+  "type": "scguns:gun_bench",
+  "result": {
+    "item": "scguns_cnc:cacophony",
+    "count": 1
+  },
+  "ingredients": {
+    "blueprint": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    },
+    "gun_top_internal_1": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "gun_top_internal_2": {
+      "tag": "forge:ingots/necromium"
+    },
+    "gun_internal_1": {
+      "item": "scguns:rapid_firing_unit"
+    },
+    "gun_internal_2": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "gun_barrel_2": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "gun_grip": {
+      "item": "scguns:gun_grip"
+    },
+    "gun_barrel_1": {
+      "tag": "forge:storage_blocks/silver"
+    },
+    "gun_magazine": {
+      "item": "scguns:gun_magazine"
+    }
+  }
+}
