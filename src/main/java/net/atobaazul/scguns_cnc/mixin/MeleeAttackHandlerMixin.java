@@ -52,8 +52,6 @@ public class MeleeAttackHandlerMixin {
                 raycastTarget.addEffect(new MobEffectInstance(ModEffects.LACERATED.get(), 200, 3, false, false, true));
 
                 if (!player.isCreative()) {
-                    raycastTarget.addEffect(new MobEffectInstance(ModEffects.LACERATED.get(), 200, 3, false, false, true));
-
                     CompoundTag tag = heldItem.getOrCreateTag();
                     int currentAmmo = tag.getInt("AmmoCount");
 
