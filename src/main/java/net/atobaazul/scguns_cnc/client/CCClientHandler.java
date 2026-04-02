@@ -40,6 +40,12 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.ELECTROTHERMAL_AUTOCANNON.get(), new EAutocannonModel());
         ModelOverrides.register(ModItems.SCATTERER.get(), new ScattererModel());
 
+        ModelOverrides.register(ModItems.CHARYBDIS.get(), new CharybdisModel());
+        ModelOverrides.register(ModItems.RASCAL.get(), new RascalModel());
+        ModelOverrides.register(ModItems.RECUR.get(), new RecurModel());
+        ModelOverrides.register(ModItems.IRON_PARTISAN.get(), new IronPartisanModel());
+
+
     }
 }
 

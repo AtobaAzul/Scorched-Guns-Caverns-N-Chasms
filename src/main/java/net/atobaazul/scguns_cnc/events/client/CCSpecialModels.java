@@ -123,7 +123,7 @@ public enum CCSpecialModels {
     GALLOWS_STOCK_LIGHT("gallows/light_stock"),
     GALLOWS_STOCK_WOODEN("gallows/wooden_stock"),
     GALLOWS_STAN_GRIP("gallows/stand_grip"),
-    GALLOWS_SILENCER("gallows"),
+    GALLOWS_SILENCER("gallows/silencer"),
     GALLOWS_ADVANCED_SILENCER("gallows/advanced_silencer"),
     GALLOWS_MUZZLE_BRAKE("gallows/muzzle_brake"),
     GALLOWS_NETHERITE_BAYONET("gallows/netherite_bayonet"),
@@ -166,6 +166,15 @@ public enum CCSpecialModels {
     CACOPHONY_TACT_GRIP("cacophony/tact_grip"),
 
 
+    //Charybdis,
+    CHARYBDIS_MAIN("charybdis/main"),
+    CHARYBDIS_STAN_BARREL("charybdis/stan_barrel"),
+    CHARYBDIS_EXT_BARREL("charybdis/ext_barrel"),
+    CHARYBDIS_SILENCER("charybdis/silencer"),
+    CHARYBDIS_ADVANCED_SILENCER("charybdis/advanced_silencer"),
+    CHARYBDIS_MUZZLE_BRAKE("charybdis/muzzle_brake"),
+
+
     //Lustre
     LUSTRE_MAIN("lustre/main"),
 
@@ -179,7 +188,54 @@ public enum CCSpecialModels {
      EAUTOCANNON_MAIN("electrothermal_autocannon/main"),
 
     //Scatterer
-    SCATTERER_MAIN("scatterer/main");
+    SCATTERER_MAIN("scatterer/main"),
+
+    //RASCAL
+    RASCAL_MAIN("rascal/main"),
+    RASCAL_STAN_MAGAZINE("rascal/stand_mag"),
+    RASCAL_FAST_MAGAZINE("rascal/fast_mag"),
+    RASCAL_EXT_MAGAZINE("rascal/ext_mag"),
+    RASCAL_STAN_BARREL("rascal/stand_barrel"),
+    RASCAL_EXT_BARREL("rascal/ext_barrel"),
+    RASCAL_STOCK_WEIGHTED("rascal/heavy_stock"),
+    RASCAL_STOCK_LIGHT("rascal/light_stock"),
+    RASCAL_STOCK_WOODEN("rascal/wooden_stock"),
+    RASCAL_STAN_GRIP("rascal/stand_grip"),
+    RASCAL_SILENCER("rascal/silencer"),
+    RASCAL_ADVANCED_SILENCER("rascal/advanced_silencer"),
+    RASCAL_MUZZLE_BRAKE("rascal/muzzle_brake"),
+    //RECUR
+    RECUR_MAIN("recur/main"),
+    RECUR_STAN_MAGAZINE("recur/stand_mag"),
+    RECUR_FAST_MAGAZINE("recur/fast_mag"),
+    RECUR_EXT_MAGAZINE("recur/ext_mag"),
+    RECUR_STAN_BARREL("recur/stand_barrel"),
+    RECUR_EXT_BARREL("recur/ext_barrel"),
+    RECUR_STOCK_WEIGHTED("recur/heavy_stock"),
+    RECUR_STOCK_LIGHT("recur/light_stock"),
+    RECUR_STOCK_WOODEN("recur/wooden_stock"),
+    RECUR_STAN_GRIP("recur/stand_grip"),
+    RECUR_SILENCER("recur/silencer"),
+    RECUR_ADVANCED_SILENCER("recur/advanced_silencer"),
+    RECUR_MUZZLE_BRAKE("recur/muzzle_brake"),
+
+
+    //RECUR
+    IRON_PARTISAN_MAIN("iron_partisan/main"),
+    IRON_PARTISAN_STAN_MAGAZINE("iron_partisan/stand_mag"),
+    IRON_PARTISAN_FAST_MAGAZINE("iron_partisan/fast_mag"),
+    IRON_PARTISAN_EXT_MAGAZINE("iron_partisan/ext_mag"),
+    IRON_PARTISAN_STAN_BARREL("iron_partisan/stand_barrel"),
+    IRON_PARTISAN_EXT_BARREL("iron_partisan/ext_barrel"),
+    IRON_PARTISAN_STOCK_WEIGHTED("iron_partisan/heavy_stock"),
+    IRON_PARTISAN_STOCK_LIGHT("iron_partisan/light_stock"),
+    IRON_PARTISAN_STOCK_WOODEN("iron_partisan/wooden_stock"),
+    IRON_PARTISAN_STAN_GRIP("iron_partisan/stand_grip"),
+    IRON_PARTISAN_SILENCER("iron_partisan/silencer"),
+    IRON_PARTISAN_ADVANCED_SILENCER("iron_partisan/advanced_silencer"),
+    IRON_PARTISAN_MUZZLE_BRAKE("iron_partisan/muzzle_brake");
+
+
 
     /**
      * The location of an item model in the [MOD_ID]/models/special/[NAME] folder

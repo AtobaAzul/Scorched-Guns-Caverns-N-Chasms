@@ -1,0 +1,120 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scguns_cnc:item/iron_partisan",
+		"particle": "scguns_cnc:item/iron_partisan"
+	},
+	"elements": [
+		{
+			"name": "standard_barrel",
+			"from": [7.44725, 3.79767, 0.85233],
+			"to": [8.44725, 4.79767, 8.70233],
+			"rotation": {"angle": -45, "axis": "z", "origin": [7.79725, 4.14767, -2.39767]},
+			"faces": {
+				"north": {"uv": [4.75, 9.5, 5, 9.75], "texture": "#0"},
+				"east": {"uv": [5.25, 0.5, 7.25, 0.75], "texture": "#0"},
+				"south": {"uv": [5, 9.5, 5.25, 9.75], "texture": "#0"},
+				"west": {"uv": [5.25, 0.75, 7.25, 1], "texture": "#0"},
+				"up": {"uv": [3, 7, 2.75, 5], "texture": "#0"},
+				"down": {"uv": [1.75, 5.25, 1.5, 7.25], "texture": "#0"}
+			}
+		},
+		{
+			"name": "standard_barrel",
+			"from": [7.74825, 2.64867, 2.85333],
+			"to": [8.44625, 3.34667, 7.85133],
+			"rotation": {"angle": -45, "axis": "z", "origin": [7.79725, 2.99767, -3.39767]},
+			"faces": {
+				"north": {"uv": [10.5, 9.5, 10.625, 9.625], "texture": "#0"},
+				"east": {"uv": [8.25, 5, 9.5, 5.125], "texture": "#0"},
+				"south": {"uv": [9.75, 10.5, 9.875, 10.625], "texture": "#0"},
+				"west": {"uv": [8.25, 5.25, 9.5, 5.375], "texture": "#0"},
+				"up": {"uv": [6.875, 9.25, 6.75, 8], "texture": "#0"},
+				"down": {"uv": [7.125, 8, 7, 9.25], "texture": "#0"}
+			}
+		},
+		{
+			"name": "standard_barrel",
+			"from": [7.7, 2.94767, 2.45233],
+			"to": [8.3, 3.84767, 2.75233],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0.75, 10.25, 0.875, 10.5], "texture": "#0"},
+				"east": {"uv": [10.25, 0.75, 10.375, 1], "texture": "#0"},
+				"south": {"uv": [10.25, 1, 10.375, 1.25], "texture": "#0"},
+				"west": {"uv": [1.25, 10.25, 1.375, 10.5], "texture": "#0"},
+				"up": {"uv": [10.625, 9.875, 10.5, 9.75], "texture": "#0"},
+				"down": {"uv": [10.125, 10.5, 10, 10.625], "texture": "#0"}
+			}
+		},
+		{
+			"name": "standard_barrel",
+			"from": [7.64725, 2.54767, 2.35233],
+			"to": [8.54725, 3.44767, 2.85233],
+			"rotation": {"angle": -45, "axis": "z", "origin": [7.79725, 2.99767, -3.89767]},
+			"faces": {
+				"north": {"uv": [9.5, 5, 9.75, 5.25], "texture": "#0"},
+				"east": {"uv": [10.25, 1.25, 10.375, 1.5], "texture": "#0"},
+				"south": {"uv": [9.5, 5.25, 9.75, 5.5], "texture": "#0"},
+				"west": {"uv": [1.5, 10.25, 1.625, 10.5], "texture": "#0"},
+				"up": {"uv": [10.5, 1.625, 10.25, 1.5], "texture": "#0"},
+				"down": {"uv": [2, 10.25, 1.75, 10.375], "texture": "#0"}
+			}
+		},
+		{
+			"name": "standard_barrel",
+			"from": [7.32831, 3.57892, 0.48358],
+			"to": [8.62831, 4.87892, 0.93358],
+			"rotation": {"angle": -45, "axis": "z", "origin": [7.90331, 4.15392, 4.40858]},
+			"faces": {
+				"north": {"uv": [4, 8.5, 4.375, 8.875], "texture": "#0"},
+				"east": {"uv": [5.75, 9.75, 5.875, 10.125], "texture": "#0"},
+				"south": {"uv": [8.5, 5.5, 8.875, 5.875], "texture": "#0"},
+				"west": {"uv": [9.75, 6.25, 9.875, 6.625], "texture": "#0"},
+				"up": {"uv": [7.125, 9.875, 6.75, 9.75], "texture": "#0"},
+				"down": {"uv": [10.125, 6.75, 9.75, 6.875], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"firstperson_righthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"firstperson_lefthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"ground": {
+			"translation": [0, 9.5, -3.75],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"gui": {
+			"rotation": [74.02, -53.34, 70.48],
+			"translation": [-1, 6.25, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"fixed": {
+			"rotation": [90, 55, -90],
+			"translation": [1.5, 8.5, 0],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "standard_barrel",
+			"origin": [8.01287, -4.15233, -1.69767],
+			"scope": 0,
+			"color": 9,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}
