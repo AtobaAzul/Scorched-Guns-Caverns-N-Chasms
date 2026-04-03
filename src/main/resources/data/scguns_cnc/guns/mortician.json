@@ -47,7 +47,7 @@
     "damage": 9.5,
     "damageFalloffStart": 10.0,
     "criticalChance": 0.1,
-    "critDamageMultiplier": 0.25,
+    "critDamageMultiplier": 1.25,
     "damageFalloffEnd": 25.0,
     "damageFalloffMinMultiplier": 0.50,
     "gravity": false,

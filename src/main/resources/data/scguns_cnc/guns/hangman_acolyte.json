@@ -39,7 +39,9 @@
   "projectile": {
     "alwaysSpread": false,
     "advantage": "scguns:none",
-    "damage": 7.5,
+    "damage": 8,
+    "criticalChance": 0.25,
+    "critDamageMultiplier": 1.75,
     "damageFalloffStart": 15.0,
     "damageFalloffEnd": 25.0,
     "damageFalloffMinMultiplier": 0.55,
@@ -50,8 +52,8 @@
     "life": 35,
     "size": 0.05,
     "speed": 5.2,
-    "trailLengthMultiplier": 2.2,
-    "recoilAngle": 2,
+    "trailLengthMultiplier": 2.5,
+    "recoilAngle": 1.5,
     "recoilKick": 0.8,
     "spread": 2.5
   },
