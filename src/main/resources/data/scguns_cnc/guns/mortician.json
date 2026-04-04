@@ -12,7 +12,7 @@
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:one_handed",
     "baseGripType": "scguns:one_handed",
-    "rate": 4,
+    "rate": 3,
     "meleeDamage": 2.5,
     "meleeCooldownTicks": 20,
     "meleeReach": 2.5,

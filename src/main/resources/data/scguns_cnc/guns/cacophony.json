@@ -61,15 +61,16 @@
     "life": 35,
     "size": 0.05,
     "speed": 7.0,
-    "trailLengthMultiplier": 2.0,
+    "trailLengthMultiplier": 3.0,
     "recoilAngle": 5.45,
     "recoilKick": 2.0,
     "spread": 3.0,
     "alwaysSpread": false,
-    "armorPen": 1.0,
+    "armorPen": 1.5,
     "speedModifier": 0.8,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.0525
+
   },
   "reloads": {
     "emptyMagTimer": 30,

@@ -65,7 +65,7 @@
     "trailLengthMultiplier": 2.0,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.1,
-    "armorPen": 2.0
+    "armorPen": 3.0
   },
   "reloads": {
     "emptyMagTimer": 45,

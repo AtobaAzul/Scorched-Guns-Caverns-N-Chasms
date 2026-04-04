@@ -67,7 +67,7 @@
     "recoilKick": 4.0,
     "spread": 3.0,
     "alwaysSpread": false,
-    "armorPen": 1.0,
+    "armorPen": 2.0,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.05
   },
