@@ -174,10 +174,6 @@ public class TinBounceProjectileEvent {
                         //inherit Projectile, we cannot call this. VVV
                         //originalState.onProjectileHit(level, originalState, blockHitResult, projectile);
 
-                        if (ricoshotBullet && projectile instanceof BouncingProjectileEntity bProjectile) {
-                            LOGGER.debug("Add crit chance to bullet");
-                            bProjectile.addBounceCritChance(.5f);
-                        }
 
                         event.setCanceled(true);
                     }
@@ -231,6 +227,15 @@ public class TinBounceProjectileEvent {
             } else if (blockState.is(CCBlockTags.HAS_BONUS_DEFLECT)) {
                 data.setValue(CCDataProcessors.BONUS_DEFLECT, true);
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onProjectileDeflectPre(BulletDeflectEvent.Pre event) {
+        ProjectileEntity projectile = event.getProjectile();
+
+        if (projectile instanceof BouncingProjectileEntity bProjectile) {
+            bProjectile.addBounceCritChance(.5f);
         }
     }
 }

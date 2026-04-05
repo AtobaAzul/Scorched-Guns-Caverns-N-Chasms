@@ -45,8 +45,6 @@ public class BouncingProjectileEntity extends ProjectileEntity {
 
     @Override
     public float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
-        SCGunsCnC.LOGGER.debug("base chance + extra bounce chance: {} + {}", GunModifierHelper.getCriticalChance(weapon), this.getBounceCritChance());
-
         float chance = GunModifierHelper.getCriticalChance(weapon) + this.getBounceCritChance();
 
         if (rand.nextFloat() < chance) {
