@@ -28,6 +28,7 @@ import net.minecraft.world.phys.*;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import top.ribs.scguns.entity.projectile.LightningProjectileEntity;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.event.GunProjectileHitEvent;
 
@@ -90,6 +91,9 @@ public class TinBounceProjectileEvent {
         IDataManager data = (IDataManager) projectile;
         HitResult hitResult = event.getRayTrace();
         Vec3 movement = projectile.getDeltaMovement();
+
+        //Crashes. Also, instanceof check because it's not actually registered as an entity.
+        if (projectile instanceof LightningProjectileEntity) return;
 
         boolean ricoshotBullet = projectile.getType() == ModEntities.RICOSHOT_ROUND_PROJECTILE.get();
 
