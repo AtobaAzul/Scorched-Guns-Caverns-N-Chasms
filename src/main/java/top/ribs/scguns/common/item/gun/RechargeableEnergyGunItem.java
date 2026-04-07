@@ -224,6 +224,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
 
     }
 
+    @OnlyIn(Dist.CLIENT)
     private AnimatedGunRenderer getRenderer() {
         return this.useGlowMask ? new EmmisiveAnimatedGunRenderer(new ResourceLocation("scguns", gunID)) : new AnimatedGunRenderer(new ResourceLocation("scguns", gunID));
     }
@@ -231,6 +232,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
     @OnlyIn(Dist.CLIENT)
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+
         consumer.accept(new IClientItemExtensions() {
             private AnimatedGunRenderer renderer;
 
