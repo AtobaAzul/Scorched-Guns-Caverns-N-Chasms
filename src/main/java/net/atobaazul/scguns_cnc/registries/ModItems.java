@@ -228,7 +228,7 @@ public class ModItems {
                     ModSoundEvents.LUSTRE_JAM.get(),
                     1000,
                     10,
-                    80000,
+                    144000,
                     10,
                     false
             ).setUseGlowMask(true)
