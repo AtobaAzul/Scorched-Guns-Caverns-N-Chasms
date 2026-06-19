@@ -36,7 +36,7 @@ public class ModItems {
 
  public static final RegistryObject<AnimatedGunItem> HANGMAN_CARBINE = REGISTER.register("hangman_carbine",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1400).rarity(ModRarity.EXSANGUINATED),
                     "hangman_carbine", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -48,7 +48,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> HANGMAN_ACOLYTE = REGISTER.register("hangman_acolyte",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(2600).rarity(ModRarity.EXSANGUINATED),
                     "hangman_acolyte", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -60,7 +60,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> RIBCAGE = REGISTER.register("ribcage",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1500).rarity(ModRarity.EXSANGUINATED),
                     "ribcage", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -72,7 +72,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> BELLA = REGISTER.register("bella",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1200).rarity(ModRarity.EXSANGUINATED),
                     "bella", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -85,7 +85,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> MORTICIAN = REGISTER.register("mortician",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
                     "mortician", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -97,7 +97,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> CACOPHONY = REGISTER.register("cacophony",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(1200).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1700).rarity(ModRarity.EXSANGUINATED),
                     "cacophony", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -109,7 +109,7 @@ public class ModItems {
 
    public static final RegistryObject<AnimatedGunItem> REHEARSE = REGISTER.register("rehearse",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(2000).rarity(ModRarity.EXSANGUINATED),
                     "rehearse", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -121,7 +121,7 @@ public class ModItems {
 
      public static final RegistryObject<AnimatedGunItem> SILVER_LINING = REGISTER.register("silverlining",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1800).rarity(ModRarity.EXSANGUINATED),
                     "silverlining", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -134,7 +134,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> KETERIYA = REGISTER.register("keteriya",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1950).rarity(ModRarity.EXSANGUINATED),
                     "keteriya", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -160,7 +160,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> GALLOWS = REGISTER.register("gallows",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1800).rarity(ModRarity.EXSANGUINATED),
                     "gallows", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -172,7 +172,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> NECROSIS = REGISTER.register("necrosis",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(1300).rarity(ModRarity.EXSANGUINATED),
                     "necrosis", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -250,7 +250,7 @@ public class ModItems {
     //Recur
     public static final RegistryObject<AnimatedDiamondSteelGunItem> RECUR = REGISTER.register("recur",
             () -> new AnimatedDiamondSteelGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(DIAMOND_STEEL),
+                    new Item.Properties().stacksTo(1).durability(1100).rarity(DIAMOND_STEEL),
                     "recur", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -262,7 +262,7 @@ public class ModItems {
     //Rascal
     public static final RegistryObject<AnimatedGunItem> RASCAL = REGISTER.register("rascal",
             () -> new AnimatedGunItem(
-                    new Item.Properties().stacksTo(1).durability(800).rarity(TREATED_BRASS),
+                    new Item.Properties().stacksTo(1).durability(1100).rarity(TREATED_BRASS),
                     "rascal", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
