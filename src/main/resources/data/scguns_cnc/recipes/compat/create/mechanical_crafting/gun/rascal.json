@@ -9,7 +9,7 @@
   "acceptMirrored": true,
   "key": {
     "A": {
-      "item": "scguns:treated_brass_frame_gun_frame"
+      "item": "scguns:treated_brass_gun_frame"
     },
     "B": {
       "item": "scguns:treated_brass_ingot"
