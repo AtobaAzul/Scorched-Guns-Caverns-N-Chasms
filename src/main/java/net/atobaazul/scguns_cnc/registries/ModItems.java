@@ -182,6 +182,18 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> EXHUMER = REGISTER.register("exhumer",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(150).rarity(ModRarity.EXSANGUINATED),
+                    "exhumer", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
     public static final RegistryObject<RechargeableEnergyGunItem> LUSTRE = REGISTER.register("lustre",
             () -> new RechargeableEnergyGunItem(
                     new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),

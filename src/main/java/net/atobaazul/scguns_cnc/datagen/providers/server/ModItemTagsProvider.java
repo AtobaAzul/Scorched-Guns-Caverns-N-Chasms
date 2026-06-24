@@ -78,7 +78,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(NECROSIS.get())
                 .add(MORTICIAN.get())
                 .add(CACOPHONY.get())
-                .add(HANGMAN_ACOLYTE.get());
+                .add(HANGMAN_ACOLYTE.get())
+                .add(EXHUMER.get());
 
         tag(HEX_BULLET_TIP)
                 .add(SILVER_BULLET.get())
@@ -91,7 +92,9 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(ModTags.Items.HEAVY_WEAPON)
                 .add(LUSTRE.get())
-                .add(ELECTROTHERMAL_AUTOCANNON.get());
+                .add(ELECTROTHERMAL_AUTOCANNON.get())
+                .add(EXHUMER.get());
+
 
         tag(ModTags.Items.IRON_GUN_TIER)
                 .add(IRON_PARTISAN.get());

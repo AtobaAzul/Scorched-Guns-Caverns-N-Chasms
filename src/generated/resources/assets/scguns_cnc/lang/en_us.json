@@ -12,6 +12,7 @@
   "item.scguns_cnc.electrothermal_autocannon.lore": "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.",
   "item.scguns_cnc.electrothermal_part": "Rapid Plasma Injector",
   "item.scguns_cnc.electrothermal_part.tooltip": "Technological Innovation Nucleus' plasma power project was cancelled and repurposed into military applications after growing tensions between COG and Asghar demanded more weapons of war.",
+  "item.scguns_cnc.exhumer": "Exhumer",
   "item.scguns_cnc.gallows": "Gallows",
   "item.scguns_cnc.gravekeeper_blueprint": "Gravekeeper Blueprint",
   "item.scguns_cnc.gravekeeper_flare": "Gravekeeper Flare",
