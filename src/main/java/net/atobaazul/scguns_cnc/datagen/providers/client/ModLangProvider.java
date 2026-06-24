@@ -41,6 +41,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.NECROSIS, "Necrosis");
         addItem(ModItems.CACOPHONY, "Cacophony");
         addItem(ModItems.HANGMAN_ACOLYTE, "Hangman Acolyte");
+        addItem(ModItems.EXHUMER, "Exhumer");
 
         addItem(ModItems.ANATHEMA, "Anathema");
 

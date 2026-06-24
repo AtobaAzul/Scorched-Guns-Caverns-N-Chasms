@@ -1,0 +1,63 @@
+{
+  "display": {
+    "flash": {
+      "size": 2.0,
+      "yOffset": 3.8,
+      "zOffset": -25.0,
+      "textureLocation": "muzzle_flash_5"
+    }
+  },
+  "general": {
+    "weaponType": "sniper",
+    "fireMode": "scguns:semi_automatic",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 20,
+    "meleeDamage": 4.0,
+    "meleeReach": 4.5,
+    "meleeCooldownTicks": 20,
+    "hotBarrelRate": 99
+  },
+  "modules": {},
+  "projectile": {
+    "alwaysSpread": false,
+    "recoilAngle": 10.0,
+    "recoilKick": 5.0,
+    "spread": 0.0,
+    "criticalChance": 0.05,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.5,
+    "knockbackStrength": 4.0,
+    "damageFalloffStart": 40.0,
+    "damageFalloffEnd": 100.0,
+    "damageFalloffMinMultiplier": 0.9,
+    "advantage": "scguns:heavy",
+    "damage": 65.0,
+    "armorPen": 2.0,
+    "ejectsCasing": true,
+    "gravity": false  ,
+    "item": "scguns:osborne_slug",
+    "casingType": "scguns:large_iron_casing",
+    "casingParticle": "scguns:iron_casing",
+    "ejectDuringReload": true,
+    "life": 100,
+    "size": 1.0,
+    "speed": 14.0,
+    "trailLengthMultiplier": 2.0
+  },
+  "reloads": {
+    "emptyMagTimer": 10,
+    "maxAmmo": 1  ,
+    "reloadItem": "scguns:osborne_slug",
+    "reloadTimer": 70,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns_cnc:item.exhumer.fire",
+    "fire": "scguns_cnc:item.exhumer.fire",
+    "reload": "scguns:item.gauss.reload",
+    "silencedFire": "scguns_cnc:item.exhumer.fire",
+    "flyby": "scguns:bullet.flyby1"
+  }
+}

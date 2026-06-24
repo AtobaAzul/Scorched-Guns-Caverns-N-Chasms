@@ -42,6 +42,9 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, RIBCAGE.get());
 
+        addItemWithFullAmmo(pOutput, EXHUMER.get());
+
+
         addEnergyGunWithFullAmmo(pOutput, LUSTRE.get());
         addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
         addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());

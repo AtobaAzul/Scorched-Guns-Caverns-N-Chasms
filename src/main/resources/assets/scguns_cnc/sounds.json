@@ -387,5 +387,21 @@
         "pitch": 1.1
       }
     ]
+  },
+  "item.exhumer.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/exhumer/fire",
+        "pitch": 0.9
+      },
+      {
+        "name": "scguns_cnc:item/exhumer/fire"
+      },
+      {
+        "name": "scguns_cnc:item/exhumer/fire",
+        "pitch": 1.1
+      }
+    ]
   }
 }
