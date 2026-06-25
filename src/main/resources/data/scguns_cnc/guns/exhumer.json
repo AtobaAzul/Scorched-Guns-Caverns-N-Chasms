@@ -10,8 +10,8 @@
   "general": {
     "weaponType": "sniper",
     "fireMode": "scguns:semi_automatic",
-    "gripType": "scguns:two_handed",
-    "baseGripType": "scguns:two_handed",
+    "gripType": "scguns:bazooka",
+    "baseGripType": "scguns:bazooka",
     "rate": 20,
     "meleeDamage": 4.0,
     "meleeReach": 4.5,

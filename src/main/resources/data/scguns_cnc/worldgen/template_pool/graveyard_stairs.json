@@ -1,0 +1,29 @@
+{
+  "name": "scguns_cnc:catacomb_stairs",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:graveyard_v2/stairs",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "scguns_cnc:waterlogged_processor"
+            },
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
