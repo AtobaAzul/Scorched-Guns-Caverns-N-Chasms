@@ -33,7 +33,7 @@
     "damageFalloffMinMultiplier": 0.9,
     "advantage": "scguns:heavy",
     "damage": 65.0,
-    "armorPen": 2.0,
+    "armorPen": 10.0,
     "ejectsCasing": true,
     "gravity": false  ,
     "item": "scguns:osborne_slug",

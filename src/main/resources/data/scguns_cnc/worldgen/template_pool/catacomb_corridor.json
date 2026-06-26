@@ -3,9 +3,12 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
-        "element_type": "minecraft:single_pool_element",
+        "element_type": "yungsapi:yung_single_element",
+        "enhanced_terrain_adaptation": {
+          "type": "yungsapi:none"
+        },
         "location": "scguns_cnc:graveyard_v2/catacombs/room_0",
         "projection": "rigid",
         "processors": {
@@ -26,7 +29,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/room_1",
@@ -49,7 +52,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/room_2",
@@ -72,7 +75,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/connector_0",
@@ -95,7 +98,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/connector_1",
@@ -118,7 +121,7 @@
       }
     },
     {
-      "weight": 2,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/connector_2",
@@ -187,7 +190,7 @@
       }
     },
     {
-      "weight": 2,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/dead_end",
