@@ -50,6 +50,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.ELECTROTHERMAL_AUTOCANNON, "Electrothermal Autocannon");
         addItem(ModItems.SCATTERER, "Scatterer");
 
+        addItem(ModItems.HUMMER, "Hummer");
         addItem(ModItems.IRON_PARTISAN, "Iron Partisan");
         addItem(ModItems.RECUR, "Recur");
         addItem(ModItems.RASCAL, "Rascal");

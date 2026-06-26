@@ -272,6 +272,19 @@ public class ModItems {
             )
     );
 
+    //Hummer
+    public static final RegistryObject<AnimatedGunItem> HUMMER = REGISTER.register("hummer",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(600),
+                    "hummer", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
     //Recur
     public static final RegistryObject<AnimatedDiamondSteelGunItem> RECUR = REGISTER.register("recur",
             () -> new AnimatedDiamondSteelGunItem(
