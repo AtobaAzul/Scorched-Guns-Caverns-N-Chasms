@@ -34,6 +34,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.RIBCAGE, "Ribcage");
         addItem(ModItems.BELLA, "Bella");
         addItem(ModItems.MORTICIAN, "Mortician");
+        addItem(ModItems.MORTICIAN_ACOLYTE, "Mortician Acolyte");
         addItem(ModItems.REHEARSE, "Rehearse");
         addItem(ModItems.SILVER_LINING, "Silver Lining");
         addItem(ModItems.KETERIYA, "Keteriya");
