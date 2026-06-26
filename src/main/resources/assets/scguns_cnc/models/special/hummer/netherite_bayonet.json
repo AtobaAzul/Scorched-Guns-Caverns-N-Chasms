@@ -1,0 +1,105 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scguns_cnc:item/hummer",
+		"particle": "scguns_cnc:item/hummer"
+	},
+	"elements": [
+		{
+			"name": "netherite_bayonet",
+			"from": [7.22829, 3.43536, 3.05],
+			"to": [8.57829, 4.78536, 3.6],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.0283, 4.23536, 3.3375]},
+			"faces": {
+				"north": {"uv": [7.75, 5.5, 8.125, 5.875], "texture": "#0"},
+				"east": {"uv": [3.5, 9.5, 3.625, 9.875], "texture": "#0"},
+				"south": {"uv": [5.75, 7.75, 6.125, 8.125], "texture": "#0"},
+				"west": {"uv": [9.5, 3.5, 9.625, 3.875], "texture": "#0"},
+				"up": {"uv": [4.625, 9.625, 4.25, 9.5], "texture": "#0"},
+				"down": {"uv": [9.875, 4.25, 9.5, 4.375], "texture": "#0"}
+			}
+		},
+		{
+			"name": "netherite_bayonet",
+			"from": [7.26366, 2.575, 3.075],
+			"to": [8.76366, 4.075, 3.575],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.25, 10]},
+			"faces": {
+				"north": {"uv": [6.25, 7.75, 6.625, 8.125], "texture": "#0"},
+				"east": {"uv": [3.75, 9.5, 3.875, 9.875], "texture": "#0"},
+				"south": {"uv": [7.75, 6.5, 8.125, 6.875], "texture": "#0"},
+				"west": {"uv": [5, 9.5, 5.125, 9.875], "texture": "#0"},
+				"up": {"uv": [9.875, 4.625, 9.5, 4.5], "texture": "#0"},
+				"down": {"uv": [9.875, 5.5, 9.5, 5.625], "texture": "#0"}
+			}
+		},
+		{
+			"name": "netherite_bayonet",
+			"from": [7.63866, 1.575, 3.075],
+			"to": [8.38866, 2.575, 3.575],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.25, 10]},
+			"faces": {
+				"north": {"uv": [1, 9, 1.25, 9.25], "texture": "#0"},
+				"east": {"uv": [6.75, 9.75, 6.875, 10], "texture": "#0"},
+				"south": {"uv": [9, 1, 9.25, 1.25], "texture": "#0"},
+				"west": {"uv": [9.75, 6.75, 9.875, 7], "texture": "#0"},
+				"up": {"uv": [7.75, 9.875, 7.5, 9.75], "texture": "#0"},
+				"down": {"uv": [8, 9.75, 7.75, 9.875], "texture": "#0"}
+			}
+		},
+		{
+			"name": "netherite_bayonet",
+			"from": [8.01366, 1, -6],
+			"to": [8.01366, 2.55, 4.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.25, 10]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 0.375], "texture": "#0"},
+				"east": {"uv": [0, 1, 2.625, 1.375], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 0.375], "texture": "#0"},
+				"up": {"uv": [0, 0, 0, 2.625], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 2.625], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 6.75, -7],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"firstperson_righthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"firstperson_lefthand": {
+			"translation": [-4.5, 9.5, -1]
+		},
+		"ground": {
+			"translation": [0, 9.5, -3.75],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"gui": {
+			"rotation": [74.02, -53.34, 70.48],
+			"translation": [-1, 6.25, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"fixed": {
+			"rotation": [90, 55, -90],
+			"translation": [1.5, 8.5, 0],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "netherite_bayonet",
+			"origin": [0, -10.4, -0.9],
+			"scope": 0,
+			"color": 4,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

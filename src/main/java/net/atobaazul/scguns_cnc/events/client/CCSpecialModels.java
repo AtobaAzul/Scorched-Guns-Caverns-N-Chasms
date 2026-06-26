@@ -174,6 +174,9 @@ public enum CCSpecialModels {
     CHARYBDIS_ADVANCED_SILENCER("charybdis/advanced_silencer"),
     CHARYBDIS_MUZZLE_BRAKE("charybdis/muzzle_brake"),
 
+    //hummer
+
+    EXHUMER_MAIN("exhumer/main"),
 
     //Lustre
     LUSTRE_MAIN("lustre/main"),
@@ -233,7 +236,24 @@ public enum CCSpecialModels {
     IRON_PARTISAN_STAN_GRIP("iron_partisan/stand_grip"),
     IRON_PARTISAN_SILENCER("iron_partisan/silencer"),
     IRON_PARTISAN_ADVANCED_SILENCER("iron_partisan/advanced_silencer"),
-    IRON_PARTISAN_MUZZLE_BRAKE("iron_partisan/muzzle_brake");
+    IRON_PARTISAN_MUZZLE_BRAKE("iron_partisan/muzzle_brake"),
+
+    HUMMER_MAIN("hummer/main"),
+    HUMMER_STAN_BARREL("hummer/stan_barrel"),
+    HUMMER_EXT_BARREL("hummer/ext_barrel"),
+    HUMMER_STOCK_WEIGHTED("hummer/heavy_stock"),
+    HUMMER_STOCK_LIGHT("hummer/light_stock"),
+    HUMMER_STOCK_WOODEN("hummer/wooden_stock"),
+    HUMMER_STAN_GRIP("hummer/stan_grip"),
+    HUMMER_SILENCER("hummer/silencer"),
+    HUMMER_ADVANCED_SILENCER("hummer/advanced_silencer"),
+    HUMMER_MUZZLE_BRAKE("hummer/muzzle_brake"),
+    HUMMER_NETHERITE_BAYONET("hummer/netherite_bayonet"),
+    HUMMER_DIAMOND_BAYONET("hummer/diamond_bayonet"),
+    HUMMER_ANTHRALITE_BAYONET("hummer/anthralite_bayonet"),
+    HUMMER_IRON_BAYONET("hummer/iron_bayonet"),
+    HUMMER_LIGHT_GRIP("hummer/light_grip"),
+    HUMMER_TACT_GRIP("hummer/tact_grip");
 
 
 

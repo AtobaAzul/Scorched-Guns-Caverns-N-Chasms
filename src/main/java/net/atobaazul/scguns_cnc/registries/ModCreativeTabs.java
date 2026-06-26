@@ -49,10 +49,12 @@ public class ModCreativeTabs {
         addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
         addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());
 
+        addItemWithFullAmmo(pOutput, HUMMER.get());
         addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());
         addItemWithFullAmmo(pOutput, RECUR.get());
         addItemWithFullAmmo(pOutput, RASCAL.get());
         addItemWithFullAmmo(pOutput, CHARYBDIS.get());
+
 
         addItem(pOutput, MALISON_GRENADE.get());
 
