@@ -1,0 +1,96 @@
+{
+  "name": "scguns_cnc:graveyard_road",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "yungsapi:yung_single_element",
+        "modifiers": [
+          {
+            "condition": {
+              "type": "yungsapi:always_true"
+            },
+            "target_selector": {
+              "type": "yungsapi:self"
+            },
+            "actions": [
+              {
+                "type": "yungsapi:delay_generation"
+              }
+            ]
+          }
+        ],
+        "location": "scguns_cnc:graveyard_v2/graveyard_road_0",
+        "projection": "terrain_matching",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:rule",
+              "rules": [
+                {
+                  "input_predicate": {
+                    "block": "minecraft:coarse_dirt",
+                    "predicate_type": "minecraft:random_block_match",
+                    "probability": 0.5
+                  },
+                  "location_predicate": {
+                    "predicate_type": "minecraft:always_true"
+                  },
+                  "output_state": {
+                    "Name": "caverns_and_chasms:rocky_dirt"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "yungsapi:yung_single_element",
+        "modifiers": [
+          {
+            "condition": {
+              "type": "yungsapi:always_true"
+            },
+            "target_selector": {
+              "type": "yungsapi:self"
+            },
+            "actions": [
+              {
+                "type": "yungsapi:delay_generation"
+              }
+            ]
+          }
+        ],
+        "location": "scguns_cnc:graveyard_v2/graveyard_road_1",
+        "projection": "terrain_matching",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:rule",
+              "rules": [
+                {
+                  "input_predicate": {
+                    "block": "minecraft:coarse_dirt",
+                    "predicate_type": "minecraft:random_block_match",
+                    "probability": 0.5
+                  },
+                  "location_predicate": {
+                    "predicate_type": "minecraft:always_true"
+                  },
+                  "output_state": {
+                    "Name": "caverns_and_chasms:rocky_dirt"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
