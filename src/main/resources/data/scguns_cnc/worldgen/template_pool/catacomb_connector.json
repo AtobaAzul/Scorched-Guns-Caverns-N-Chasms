@@ -139,6 +139,52 @@
           ]
         }
       }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:graveyard_v2/catacombs/corridor_6",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "scguns_cnc:waterlogged_processor"
+            },
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "scguns_cnc:graveyard_v2/catacombs/corridor_7",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "scguns_cnc:waterlogged_processor"
+            },
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ]
 }
