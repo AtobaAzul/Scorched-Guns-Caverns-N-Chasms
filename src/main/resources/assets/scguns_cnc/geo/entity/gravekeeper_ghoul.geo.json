@@ -64,19 +64,6 @@
 					]
 				},
 				{
-					"name": "mouth2",
-					"parent": "Head",
-					"pivot": [17, 27.5, -5.35904]
-				},
-				{
-					"name": "teefu",
-					"parent": "mouth2",
-					"pivot": [17, 27.5, -5.35904],
-					"cubes": [
-						{"origin": [1.6125, 27, -5.2875], "size": [1, 1, 4], "inflate": -0.025, "pivot": [0, 27.75, -3.2875], "rotation": [0, 90, 0], "uv": [72, 22]}
-					]
-				},
-				{
 					"name": "mouth",
 					"parent": "Head",
 					"pivot": [0, 27.775, -4],
