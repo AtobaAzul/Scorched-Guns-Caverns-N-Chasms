@@ -20,7 +20,6 @@ import org.slf4j.Logger;
 import top.ribs.scguns.client.screen.BlueprintScreen;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.player.GunTierRegistry;
-import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
