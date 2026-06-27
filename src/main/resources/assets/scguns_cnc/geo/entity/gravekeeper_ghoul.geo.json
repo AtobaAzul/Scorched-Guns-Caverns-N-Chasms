@@ -84,8 +84,13 @@
 					]
 				},
 				{
-					"name": "Right Arm",
+					"name": "arms",
 					"parent": "Body",
+					"pivot": [0, 22, 0]
+				},
+				{
+					"name": "Right Arm",
+					"parent": "arms",
 					"pivot": [-5, 22, 0],
 					"cubes": [
 						{"origin": [-8, 21, -2], "size": [4, 3, 4], "inflate": 0.35, "pivot": [-6, 22.5, 0], "rotation": [0, 0, -1], "uv": [48, 63]},
@@ -101,7 +106,7 @@
 				},
 				{
 					"name": "Left Arm",
-					"parent": "Body",
+					"parent": "arms",
 					"pivot": [5, 22, 0],
 					"cubes": [
 						{"origin": [4, 21, -2], "size": [4, 3, 4], "inflate": 0.35, "pivot": [6, 22.5, 0], "rotation": [0, 0, 1], "uv": [64, 9]},
