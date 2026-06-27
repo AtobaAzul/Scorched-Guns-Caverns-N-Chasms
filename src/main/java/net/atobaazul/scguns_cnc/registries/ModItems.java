@@ -6,6 +6,7 @@ import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -379,6 +380,9 @@ public class ModItems {
                     "scguns_cnc.jei.info.found_in_vaults"));
 
     public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32).rarity(ModRarity.EXSANGUINATED), 20 * 3));
+
+    //mob spawn eggs.
+    public static final RegistryObject<Item> GRAVEKEEPER_GHOUL_SPAWN_EGG = REGISTER.register("gravekeeper_ghoul_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_GHOUL, 0x4f6655, 0xa2acc2, new Item.Properties()));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {

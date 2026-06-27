@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.datagen.providers.client;
 
+import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -46,6 +47,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(LUSTRE_PART);
         simpleItem(ELECTROTHERMAL_PART);
         simpleItem(SCATTERER_PART);
+
+        withExistingParent(GRAVEKEEPER_GHOUL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

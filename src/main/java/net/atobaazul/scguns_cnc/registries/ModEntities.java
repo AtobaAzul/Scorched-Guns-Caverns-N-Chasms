@@ -1,7 +1,9 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowableMalisonGrenadeEntity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -39,4 +41,11 @@ public class ModEntities {
                 .noSave()
                 .setShouldReceiveVelocityUpdates(true).build(id));
     }
+
+    //mobs
+
+    public static final RegistryObject<EntityType<GravekeeperGhoulEntity>> GRAVEKEEPER_GHOUL = REGISTER.register("gravekeeper_ghoul", () -> EntityType.Builder.of(GravekeeperGhoulEntity::new, MobCategory.MONSTER)
+            .sized(1,1)
+            .build(new ResourceLocation(MOD_ID, "gravekeeper_ghoul").toString())
+    );
 }

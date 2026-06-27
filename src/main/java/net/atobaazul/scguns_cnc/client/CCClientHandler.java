@@ -1,7 +1,10 @@
 package net.atobaazul.scguns_cnc.client;
 
+import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperGhoulEntityRenderer;
 import net.atobaazul.scguns_cnc.client.render.gun.model.*;
+import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.registries.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -48,6 +51,7 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.IRON_PARTISAN.get(), new IronPartisanModel());
         ModelOverrides.register(ModItems.HUMMER.get(), new HummerModel());
 
+        EntityRenderers.register(ModEntities.GRAVEKEEPER_GHOUL.get(), GravekeeperGhoulEntityRenderer::new);
     }
 }
 
