@@ -6,10 +6,12 @@
       "weight": 2,
       "element": {
         "element_type": "yungsapi:yung_single_element",
+        "max_count": 1,
         "enhanced_terrain_adaptation": {
           "type": "yungsapi:none"
         },
         "location": "scguns_cnc:graveyard_v2/catacombs/room_0",
+        "name": "reflection",
         "projection": "rigid",
         "processors": {
           "processors": [
@@ -31,8 +33,10 @@
     {
       "weight": 2,
       "element": {
-        "element_type": "minecraft:single_pool_element",
+        "element_type": "yungsapi:yung_single_element",
+        "max_count": 1,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_1",
+        "name": "forge",
         "projection": "rigid",
         "processors": {
           "processors": [
@@ -54,8 +58,10 @@
     {
       "weight": 2,
       "element": {
-        "element_type": "minecraft:single_pool_element",
+        "element_type": "yungsapi:yung_single_element",
+        "max_count": 1,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_2",
+        "name": "brewer",
         "projection": "rigid",
         "processors": {
           "processors": [
@@ -77,8 +83,10 @@
     {
       "weight": 2,
       "element": {
-        "element_type": "minecraft:single_pool_element",
+        "element_type": "yungsapi:yung_single_element",
+        "max_count": 1,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_3",
+        "name": "armory",
         "projection": "rigid",
         "processors": {
           "processors": [
@@ -100,8 +108,10 @@
     {
       "weight": 2,
       "element": {
-        "element_type": "minecraft:single_pool_element",
+        "element_type": "yungsapi:yung_single_element",
+        "max_count": 1,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_4",
+        "name": "shooting_range",
         "projection": "rigid",
         "processors": {
           "processors": [
@@ -123,7 +133,7 @@
     {
       "weight": 2,
       "element": {
-        "element_type": "minecraft:single_pool_element",
+        "element_type": "yungsapi:yung_single_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/room_5",
         "projection": "rigid",
         "max_count": 1,
