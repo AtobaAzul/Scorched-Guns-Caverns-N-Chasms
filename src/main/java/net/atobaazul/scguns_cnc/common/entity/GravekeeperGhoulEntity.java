@@ -26,7 +26,7 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.ATTACK_DAMAGE, 3.0f).add(Attributes.ARMOR, 5f).add(Attributes.MOVEMENT_SPEED, 0.3f).add(Attributes.ATTACK_SPEED, 1.0f).build();
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.ATTACK_DAMAGE, 3.0f).add(Attributes.ARMOR, 5f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 1.0f).build();
     }
 
     @Override
