@@ -21,6 +21,12 @@ public class TooltipGunItem extends AnimatedGunItem {
         this.secondaryTooltipKey = secondaryTooltipKey;
     }
 
+    public TooltipGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, String tooltipKey) {
+        super(properties, path, reloadSoundMagOut, reloadSoundMagIn, reloadSoundEnd, boltPullSound, boltReleaseSound);
+        this.tooltipKey = tooltipKey;
+        this.secondaryTooltipKey = null;
+    }
+
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         if (this.tooltipKey != null && !this.tooltipKey.isEmpty()) {
             tooltip.add(Component.translatable(this.tooltipKey).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
