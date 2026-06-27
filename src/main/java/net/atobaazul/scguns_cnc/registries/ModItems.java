@@ -5,6 +5,7 @@ import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulat
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
+import net.atobaazul.scguns_cnc.common.item.gun.TooltipGunItem;
 import net.minecraft.nbt.CompoundTag;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
@@ -47,14 +48,15 @@ public class ModItems {
     );
 
     public static final RegistryObject<AnimatedGunItem> HANGMAN_ACOLYTE = REGISTER.register("hangman_acolyte",
-            () -> new AnimatedGunItem(
+            () -> new TooltipGunItem(
                     new Item.Properties().stacksTo(1).durability(2600).rarity(ModRarity.EXSANGUINATED),
                     "hangman_acolyte", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end
                     ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
-                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+                    ModSounds.COPPER_GUN_JAM.get(),    // Ejector sound release
+                    "tooltip.acolyte.lore"
             )
     );
 
@@ -96,14 +98,15 @@ public class ModItems {
     );
 
     public static final RegistryObject<AnimatedGunItem> MORTICIAN_ACOLYTE = REGISTER.register("mortician_acolyte",
-            () -> new AnimatedGunItem(
+            () -> new TooltipGunItem(
                     new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
                     "mortician_acolyte", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end
                     ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
-                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+                    ModSounds.COPPER_GUN_JAM.get(),    // Ejector sound release
+                    "tooltip.acolyte.lore"
             )
     );
 

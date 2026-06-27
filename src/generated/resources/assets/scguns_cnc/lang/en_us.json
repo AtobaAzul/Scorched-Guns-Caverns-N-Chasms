@@ -77,6 +77,7 @@
   "scguns.desc.silverlining": "The oldest weapon of the Gravekeeper arsenal, with its creation dating back to the very origins of the organization. It is still widely used as a assassin's weapon by the believers of the Holy Curse.",
   "scguns_cnc.jei.info.found_in_gravekeeper_structures": "Found in Gravekeeper structures.",
   "scguns_cnc.jei.info.found_in_vaults": "Found in underground Vaults.",
+  "tooltip.acolyte.lore": "Blasphemy against the Moon",
   "tooltip.anathema": "Melee hits feed the \"gun\", restoring ammo.",
   "tooltip.bluntshot.knockback": "Deals increased knockback to hit targets.",
   "tooltip.hex_round.magic_damage": "Deals half of the bullet damage as magic damage.",
