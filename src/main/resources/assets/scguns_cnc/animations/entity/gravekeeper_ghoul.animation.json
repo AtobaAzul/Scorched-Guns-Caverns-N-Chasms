@@ -1259,26 +1259,9 @@
 				}
 			}
 		},
-		"debug": {
-			"loop": true,
-			"bones": {
-				"Right Leg": {
-					"rotation": [0, 0, 22.5]
-				},
-				"Left Leg": {
-					"rotation": [0, 0, -22.5]
-				},
-				"Right Arm": {
-					"rotation": [0, 0, 90]
-				},
-				"Left Arm": {
-					"rotation": [0, 0, -90]
-				}
-			}
-		},
 		"shoot": {
 			"loop": true,
-			"animation_length": 0.1,
+			"animation_length": 0.2,
 			"bones": {
 				"Waist": {
 					"rotation": {
@@ -1290,25 +1273,16 @@
 					}
 				},
 				"Head": {
-					"rotation": {
-						"0.0": {
-							"post": [-5.8052, -22.1399, 4.1141],
-							"lerp_mode": "catmullrom"
-						},
-						"0.1": {
-							"post": [-10.80524, -22.13991, 4.11405],
-							"lerp_mode": "catmullrom"
-						}
-					}
+					"rotation": [0, -25, 0]
 				},
 				"Body": {
 					"rotation": {
 						"0.0": {
-							"post": [2, 0, 0],
+							"post": [1, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.1": {
-							"post": [5, 0, 0],
+						"0.2": {
+							"post": [2, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
 					}
@@ -1319,7 +1293,7 @@
 							"post": [-61.7151, -30.2119, -10.6387],
 							"lerp_mode": "catmullrom"
 						},
-						"0.1": {
+						"0.2": {
 							"post": [-58.71507, -30.21192, -10.6387],
 							"lerp_mode": "catmullrom"
 						}
@@ -1331,7 +1305,7 @@
 							"post": [-69.9079, 24.518, -1.3806],
 							"lerp_mode": "catmullrom"
 						},
-						"0.1": {
+						"0.2": {
 							"post": [-65.90791, 24.51797, -1.38059],
 							"lerp_mode": "catmullrom"
 						}
@@ -1389,9 +1363,8 @@
 				},
 				"item_bone": {
 					"rotation": {
-						"0.1": {
-							"pre": [12.5892, 2.3225, 7.7301],
-							"post": [12.5892, 2.3225, 7.7301],
+						"0.0": {
+							"post": [42.5892, 2.3225, 7.7301],
 							"lerp_mode": "catmullrom"
 						}
 					},
@@ -1402,6 +1375,26 @@
 							"lerp_mode": "catmullrom"
 						}
 					}
+				}
+			}
+		},
+		"debug": {
+			"loop": true,
+			"bones": {
+				"Right Leg": {
+					"rotation": [0, 0, 22.5]
+				},
+				"Left Leg": {
+					"rotation": [0, 0, -22.5]
+				},
+				"Body": {
+					"rotation": [30, 0, 0]
+				},
+				"Right Arm": {
+					"rotation": [0, 0, 90]
+				},
+				"Left Arm": {
+					"rotation": [0, 0, -90]
 				}
 			}
 		}
