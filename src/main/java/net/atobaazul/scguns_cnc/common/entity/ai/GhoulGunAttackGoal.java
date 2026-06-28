@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.item.ItemStack;
@@ -60,6 +61,8 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
     protected static final float ROTATION_SPEED = 15.0F;
     private int shot_count = 1;
+    private boolean canMelee = false;
+    private int melee_timer = 0;
 
     public GhoulGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
         this.shooter = shooter;
@@ -197,6 +200,9 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             if (heldItem.getTag().getInt("AmmoCount") <= 0) {
                 if (!this.isReloading) {
+                    if (this.shooter instanceof GravekeeperGunnerEntity animatable) {
+                        animatable.triggerAnim("Reload", "reload");
+                    }
                     if (this.aiType == AIType.TACTICAL) {
                         Vec3 coverLocation = findCoverLocation();
                         this.shooter.getNavigation().moveTo(coverLocation.x, coverLocation.y, coverLocation.z, this.speedModifier);
@@ -243,6 +249,16 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 this.aimingStabilityTimer = 0;
                 isRetreating = true;
 
+                if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer-- <= 0 ) {
+                    this.shooter.getLookControl().setLookAt(target);
+                    updateSmoothRotation(target);
+                    if (this.shooter instanceof GravekeeperGunnerEntity animatable) {
+                        animatable.triggerAnim("Melee", "melee");
+                    }
+                    target.hurt(this.shooter.damageSources().mobAttack(this.shooter), (float) this.shooter.getAttributeBaseValue(Attributes.ATTACK_DAMAGE));
+                    this.melee_timer = 20;
+                }
+
                 if (this.aiType == AIType.SMART && distanceToTarget > ((this.minRange * this.minRange) * 0.8)) {
                     this.shooter.getNavigation().stop();
                     isRetreating = false;
@@ -270,7 +286,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 }
             }
 
-            if (canSeeTarget && !isRetreating && !isMovingFast) {
+            if (canSeeTarget && !isMovingFast) {
                 updateSmoothRotation(target);
                 if (this.aimingStabilityTimer < MIN_AIM_TIME) {
                     this.aimingStabilityTimer++;
@@ -289,7 +305,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     !isMovingFast &&
                     this.shooter.getNavigation().isDone();
 
-            if (inRange && canSeeTarget && this.seeTime >= 5 && isStableAndAimed) {
+            if (canSeeTarget && this.seeTime >= 5 && isStableAndAimed) {
                 if (this.shooter.getMainHandItem().getTag().getInt("AmmoCount") > 0) {
                     if (--this.attackTime <= 0) {
                         if (!this.shooter.hasEffect(ModEffects.BLINDED.get())) {
@@ -300,6 +316,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             }
         }
     }
+
 
     private void updateSmoothRotation(LivingEntity target) {
         Vec3 targetPos = target.position().add(0, target.getEyeHeight() * 0.8, 0);
@@ -336,11 +353,12 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
         AIGunEvent.performGunAttack(this.shooter, target, heldItem, gun, this.accuracyModifier);
 
         int baseRate = gun.getGeneral().getRate();
+        int ammoCount = gun.getReloads().getMaxAmmo();
         float configMultiplier = Config.COMMON.gameplay.mobFireRateMultiplier.get().floatValue();
 
         this.attackTime = (int)(baseRate * configMultiplier);
 
-        if (this.shot_count > 3) {
+        if (this.shot_count >= Math.floor((double) ammoCount /5)) {
             this.attackTime = this.attackTime + 15;
             this.shot_count = 0;
         }

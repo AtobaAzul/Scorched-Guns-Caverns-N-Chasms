@@ -11,16 +11,24 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraftforge.registries.RegistryObject;
 import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
+import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -32,8 +40,8 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 30D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.ARMOR, 10f)
+                .add(Attributes.ATTACK_DAMAGE, 8.0f)
+                .add(Attributes.ARMOR, 18f)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.FOLLOW_RANGE, 48D)
@@ -46,9 +54,17 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
         return this.geoCache;
     }
 
+    public List<RegistryObject<? extends GunItem>> availableGuns = List.of(
+            ModItems.HANGMAN_CARBINE,
+            ModItems.NECROSIS,
+            ModItems.GALLOWS
+    );
+
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        this.setItemSlot(EquipmentSlot.MAINHAND, ModItems.HANGMAN_CARBINE.get().getDefaultInstance());
+        GunItem selectedGun = availableGuns.get((int) Math.floor(Math.random() * availableGuns.size())).get();
+
+        this.setItemSlot(EquipmentSlot.MAINHAND, selectedGun.getDefaultInstance());
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
 

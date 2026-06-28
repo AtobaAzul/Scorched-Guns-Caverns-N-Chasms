@@ -30,8 +30,11 @@ import top.ribs.scguns.entity.ai.AIType;
 
 public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnimatable, GeoEntity {
     public static final RawAnimation SHOOT = RawAnimation.begin().thenPlay("shoot");
+    public static final RawAnimation MELEE = RawAnimation.begin().thenPlay("melee");
+    public static final RawAnimation RELOAD = RawAnimation.begin().thenPlay("reload");
     public static final RawAnimation WALK_ALERT = RawAnimation.begin().thenLoop("move.walk.alert");
     public static final RawAnimation IDLE_ALERT = RawAnimation.begin().thenLoop("misc.idle.alert");
+
     private static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
 
     protected GravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
@@ -56,7 +59,7 @@ public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnim
         updateAggroState();
     }
 
-    private boolean hasAggro() {
+    public boolean hasAggro() {
         return this.entityData.get(DATA_AGGRO) == (byte) 1;
     }
 
@@ -72,7 +75,11 @@ public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnim
             return state.setAndContinue(hasAggro() ? IDLE_ALERT : DefaultAnimations.IDLE);
         }));
 
+        controllers.add(new AnimationController<>(this, "Melee", 1, state -> PlayState.STOP).triggerableAnim("melee", MELEE));
+
         controllers.add(new AnimationController<>(this, "Shoot", 0, state -> PlayState.STOP).triggerableAnim("shoot", SHOOT));
+        controllers.add(new AnimationController<>(this, "Reload", 1, state -> PlayState.STOP).triggerableAnim("reload", RELOAD));
+
     }
 
     @Override
