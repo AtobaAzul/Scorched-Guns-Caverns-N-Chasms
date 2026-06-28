@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import software.bernie.geckolib.cache.object.GeoBone;
@@ -37,4 +38,9 @@ public class GravekeeperGhoulEntityRenderer extends GeoEntityRenderer<Gravekeepe
             }
         });
     }
+
+
+
+
+
 }

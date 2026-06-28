@@ -1,13 +1,16 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -26,7 +29,14 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.ATTACK_DAMAGE, 3.0f).add(Attributes.ARMOR, 5f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 1.0f).build();
+        return Monster.createMonsterAttributes()
+                .add(Attributes.MAX_HEALTH, 30D)
+                .add(Attributes.ATTACK_DAMAGE, 3.0f)
+                .add(Attributes.ARMOR, 5f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.FOLLOW_RANGE, 48D)
+                .build();
     }
 
     @Override
@@ -36,7 +46,7 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        EntityEquipmentConfig.equipEntity(this, "scguns:adjudicator"); //TEMP
+        this.setItemSlot(EquipmentSlot.MAINHAND, ModItems.HANGMAN_CARBINE.get().getDefaultInstance());
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
 

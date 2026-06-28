@@ -10,6 +10,7 @@
     "DynamicCrosshairMixin",
     "GrazerPartMixin",
     "GunEnchantmentHelperMixin",
+    "GunnerMobSpawnerMixin",
     "MeleeAttackHandlerMixin",
     "ProjectileEntityMixin",
     "ProjectileHelperMixin",
