@@ -1259,6 +1259,23 @@
 				}
 			}
 		},
+		"debug": {
+			"loop": true,
+			"bones": {
+				"Right Leg": {
+					"rotation": [0, 0, 22.5]
+				},
+				"Left Leg": {
+					"rotation": [0, 0, -22.5]
+				},
+				"Right Arm": {
+					"rotation": [0, 0, 90]
+				},
+				"Left Arm": {
+					"rotation": [0, 0, -90]
+				}
+			}
+		},
 		"shoot": {
 			"loop": true,
 			"animation_length": 0.1,
