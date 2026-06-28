@@ -91,7 +91,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             case COWARD -> 1.5F;
         };
 
-        float difficultyBonus = 1.0F + ((difficulty - 1) * 0.3F);
+        float difficultyBonus = 0.75F + ((difficulty - 1) * 0.3F);
         this.accuracyModifier = baseAccuracy * difficultyBonus;
 
         this.burstAmount = 10 + (difficulty / 2);
@@ -202,7 +202,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                         this.shooter.getNavigation().moveTo(coverLocation.x, coverLocation.y, coverLocation.z, this.speedModifier);
                     }
                     this.isReloading = true;
-                    this.reloadTick = gun.getReloads().getReloadTimer()+20;
+                    this.reloadTick = gun.getReloads().getReloadTimer()+40;
                     this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(),
                             ModSounds.ITEM_PISTOL_RELOAD.get(), SoundSource.HOSTILE, 1.0F, 1F);
                 } else if (this.reloadTick == 0) {
@@ -243,7 +243,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 this.aimingStabilityTimer = 0;
                 isRetreating = true;
 
-                if (this.aiType == AIType.SMART && distanceToTarget > (this.minRange * this.minRange * 0.8)) {
+                if (this.aiType == AIType.SMART && distanceToTarget > ((this.minRange * this.minRange) * 0.8)) {
                     this.shooter.getNavigation().stop();
                     isRetreating = false;
                 }
@@ -340,7 +340,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         this.attackTime = (int)(baseRate * configMultiplier);
 
-        if (this.shot_count > 5) {
+        if (this.shot_count > 3) {
             this.attackTime = this.attackTime + 15;
             this.shot_count = 0;
         }

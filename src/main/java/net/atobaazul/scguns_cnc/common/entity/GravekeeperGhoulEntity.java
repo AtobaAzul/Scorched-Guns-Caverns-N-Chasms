@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -32,10 +33,11 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 30D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.ARMOR, 5f)
+                .add(Attributes.ARMOR, 10f)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.FOLLOW_RANGE, 48D)
+                .add(CCAttributes.MAGIC_PROTECTION.get(), 0.5f)
                 .build();
     }
 

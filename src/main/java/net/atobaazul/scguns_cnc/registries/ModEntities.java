@@ -45,7 +45,7 @@ public class ModEntities {
     //mobs
 
     public static final RegistryObject<EntityType<GravekeeperGhoulEntity>> GRAVEKEEPER_GHOUL = REGISTER.register("gravekeeper_ghoul", () -> EntityType.Builder.of(GravekeeperGhoulEntity::new, MobCategory.MONSTER)
-            .sized(0.9f,1.8f)
+            .sized(0.8f,2.0f)
             .build(new ResourceLocation(MOD_ID, "gravekeeper_ghoul").toString())
     );
 }
