@@ -411,6 +411,8 @@ public class ModItems {
                 .addItemsAfter(of(ADVANCED_ROUND.get()), RICOSHOT_ROUND)
                 .addItemsAfter(of(DIAMOND_STEEL_FLARE.get()), GRAVEKEEPER_FLARE)
                 .addItemsAfter(of(BUCKSHOT.get()), HEX_BUCKSHOT)
-                .addItemsAfter(of(ADVANCED_BULLET.get()), SILVER_BULLET);
+                .addItemsAfter(of(ADVANCED_BULLET.get()), SILVER_BULLET)
+                .addItemsAfter(of(SCAMPLER_SPAWN_EGG.get()), GRAVEKEEPER_GHOUL_SPAWN_EGG);
+
     }
 }

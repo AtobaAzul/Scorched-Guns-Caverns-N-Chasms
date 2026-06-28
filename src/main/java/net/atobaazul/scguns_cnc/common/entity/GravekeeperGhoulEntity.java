@@ -37,7 +37,7 @@ public class GravekeeperGhoulEntity extends GravekeeperGunnerEntity implements G
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.FOLLOW_RANGE, 48D)
-                .add(CCAttributes.MAGIC_PROTECTION.get(), 0.5f)
+                .add(CCAttributes.MAGIC_PROTECTION.get(), 1f)
                 .build();
     }
 

@@ -70,7 +70,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         if (gunStack.getItem() instanceof GunItem gunItem) {
             Gun gun = gunItem.getModifiedGun(gunStack);
-            this.idealRange = gun.getIdealAttackRange()*2;
+            this.idealRange = gun.getIdealAttackRange()*4;
             this.minRange = gun.getMinAttackRange();
         } else {
             this.idealRange = 15.0;

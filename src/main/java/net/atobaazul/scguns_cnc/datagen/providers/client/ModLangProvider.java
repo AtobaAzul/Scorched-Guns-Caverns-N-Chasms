@@ -1,8 +1,12 @@
 package net.atobaazul.scguns_cnc.datagen.providers.client;
 
+import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.LanguageProvider;
+
+import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
@@ -69,6 +73,11 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.ELECTROTHERMAL_PART, "Rapid Plasma Injector");
         addItem(ModItems.SCATTERER_PART, "Plasma Accumulator");
 
+        //spawn eggs
+        addItem(ModItems.GRAVEKEEPER_GHOUL_SPAWN_EGG, "Gravekeeper Ghoul Spawn Egg");
+
+        //entities!
+        addEntityType(ModEntities.GRAVEKEEPER_GHOUL, "Gravekeeper Ghoul");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
