@@ -1260,7 +1260,6 @@
 			}
 		},
 		"shoot": {
-			"loop": true,
 			"animation_length": 0.2,
 			"bones": {
 				"Waist": {
@@ -1364,7 +1363,7 @@
 				"item_bone": {
 					"rotation": {
 						"0.0": {
-							"post": [42.5892, 2.3225, 7.7301],
+							"post": [22.5892, 2.3225, 7.7301],
 							"lerp_mode": "catmullrom"
 						}
 					},
