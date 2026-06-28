@@ -90,6 +90,10 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with an Energy Core recharge system.\nEnergy Core can be swapped for immediate recharge.");
         add("item.scguns_cnc.scatterer.lore", "Compact electrothermal energy weapon, capable of firing single precise shots or large inaccurate bursts of plasma.");
 
+        add("tooltip.acolyte.lore", "Blasphemy against the Moon");
+
+
+
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");
 
