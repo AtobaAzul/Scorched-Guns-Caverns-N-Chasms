@@ -1,11 +1,10 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import com.google.common.collect.Lists;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
-import net.atobaazul.scguns_cnc.common.item.gun.TooltipGunItem;
+import top.ribs.scguns.common.item.gun.TooltipGunItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
@@ -19,13 +18,8 @@ import top.ribs.scguns.item.*;
 import top.ribs.scguns.item.animated.AnimatedDiamondSteelGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
-import static net.atobaazul.scguns_cnc.SCGunsCnC.LOGGER;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 import static top.ribs.scguns.init.ModItems.*;
