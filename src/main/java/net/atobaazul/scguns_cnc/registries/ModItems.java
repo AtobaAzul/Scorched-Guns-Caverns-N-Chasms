@@ -15,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.init.ModCreativeModeTabs;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.*;
+import top.ribs.scguns.item.animated.AnimatedAirGunItem;
 import top.ribs.scguns.item.animated.AnimatedDiamondSteelGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
@@ -194,7 +195,7 @@ public class ModItems {
     );
 
     public static final RegistryObject<AnimatedGunItem> DEAD_DRAFT = REGISTER.register("dead_draft",
-            () -> new AnimatedGunItem(
+            () -> new AnimatedAirGunItem(
                     new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
                     "dead_draft", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out

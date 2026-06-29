@@ -33,7 +33,7 @@
     }
   },
   "projectile": {
-    "energyUse": 50.0,
+    "energyUse": 75.0,
     "alwaysSpread": false,
     "recoilAngle": 1.75,
     "recoilKick": 1.5,
