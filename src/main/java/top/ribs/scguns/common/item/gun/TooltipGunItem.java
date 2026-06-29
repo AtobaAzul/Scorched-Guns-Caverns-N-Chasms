@@ -1,4 +1,4 @@
-package net.atobaazul.scguns_cnc.common.item.gun;
+package top.ribs.scguns.common.item.gun;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,6 +11,9 @@ import top.ribs.scguns.item.animated.AnimatedGunItem;
 import javax.annotation.Nullable;
 import java.util.List;
 
+//You might be asking yourself "why is this file not under the net.atobaazul.scguns_cnc package?!"
+//Well, that's because of several things regarding reload and casing ejection packets EXPLICITLY requiring that the
+//gun item's class be under the 'top.ribs.scguns' packages! FOR SOME REASON!!!
 public class TooltipGunItem extends AnimatedGunItem {
     private final String tooltipKey;
     private final String secondaryTooltipKey;
