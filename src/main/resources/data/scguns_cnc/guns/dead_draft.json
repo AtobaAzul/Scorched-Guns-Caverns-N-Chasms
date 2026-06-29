@@ -1,0 +1,71 @@
+{
+  "display": {
+  },
+  "general": {
+    "weaponType": "rifle",
+
+    "fireMode": "scguns:semi_automatic",
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 6,
+    "meleeDamage": 3.5,
+    "meleeCooldownTicks": 20,
+    "meleeReach": 3.5,
+    "enableGunLight": false,
+    "isSilenced": true
+  },
+  "modules": {
+    "attachments": {
+      "scope": {
+        "size": 0.8,
+        "yOffset": 5.8,
+        "zOffset": -4
+      },
+      "stock": {
+        "scale": 0.0
+      }
+
+    },
+    "zoom": {
+      "fovModifier": 0.6,
+      "yOffset": 6,
+      "zOffset": 7
+    }
+  },
+  "projectile": {
+    "energyUse": 50.0,
+    "alwaysSpread": false,
+    "recoilAngle": 1.75,
+    "recoilKick": 1.5,
+    "spread": 1.0,
+    "hotBarrelRate": 50,
+    "criticalChance": 0.05,
+    "advantage": "scguns:none",
+    "damage": 30.0,
+    "damageFalloffStart": 15.0,
+    "damageFalloffEnd": 40.0,
+    "damageFalloffMinMultiplier": 0.25,
+    "ejectsCasing": false,
+    "gravity": false,
+    "item": "scguns_cnc:silver_bullet",
+    "life": 100,
+    "size": 1.0,
+    "speed": 12.0,
+    "trailLengthMultiplier": 0.2,
+    "trailThickness": 0.5
+  },
+  "reloads": {
+    "emptyMagTimer": 30,
+    "maxAmmo": 1,
+    "reloadItem": "scguns_cnc:silver_bullet",
+    "reloadTimer": 30,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns:item.airgun.fire",
+    "fire": "scguns:item.airgun.fire",
+    "reload": "scguns:item.gauss.reload",
+    "flyby": "scguns:bullet.flyby1"
+  }
+}

@@ -55,7 +55,9 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
 
         tag(PISTOL_AMMO)
-                .add(COMPACT_HEX_ROUND.get());
+                .add(COMPACT_HEX_ROUND.get())
+                .add(SILVER_BULLET.get());
+
 
         tag(RIFLE_AMMO)
                 .add(HEX_ROUND.get())
@@ -79,7 +81,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
                 .add(MORTICIAN.get())
                 .add(CACOPHONY.get())
                 .add(HANGMAN_ACOLYTE.get())
-                .add(EXHUMER.get());
+                .add(EXHUMER.get())
+                .add(DEAD_DRAFT.get());
 
         tag(HEX_BULLET_TIP)
                 .add(SILVER_BULLET.get())
@@ -107,5 +110,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(ModTags.Items.SCORCHED_GUN_TIER)
                 .add(CHARYBDIS.get());
+
+        tag(ModTags.Items.COPPER_GUN_TIER)
+                .add(HUMMER.get());
     }
 }

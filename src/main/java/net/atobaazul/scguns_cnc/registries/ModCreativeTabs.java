@@ -41,6 +41,7 @@ public class ModCreativeTabs {
 
         addItemWithFullAmmo(pOutput, SILVER_LINING.get());
         addItemWithFullAmmo(pOutput, RIBCAGE.get());
+        addItemWithFullAmmo(pOutput, DEAD_DRAFT.get());
 
         addItemWithFullAmmo(pOutput, EXHUMER.get());
 

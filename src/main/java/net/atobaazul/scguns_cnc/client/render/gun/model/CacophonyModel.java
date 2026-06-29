@@ -44,6 +44,9 @@ public class CacophonyModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.CACOPHONY_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
             else if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.CACOPHONY_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
+            else {
+                RenderUtil.renderModel(CCSpecialModels.CACOPHONY_STAN_GRIP.getModel(), stack, matrixStack, buffer, light, overlay);
+            }
         }
     }
 

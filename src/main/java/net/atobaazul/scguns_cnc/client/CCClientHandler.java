@@ -44,6 +44,7 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.SCATTERER.get(), new ScattererModel());
 
         ModelOverrides.register(ModItems.EXHUMER.get(), new ExhumerModel());
+        ModelOverrides.register(ModItems.DEAD_DRAFT.get(), new DeadDraftModel());
 
         ModelOverrides.register(ModItems.CHARYBDIS.get(), new CharybdisModel());
         ModelOverrides.register(ModItems.RASCAL.get(), new RascalModel());

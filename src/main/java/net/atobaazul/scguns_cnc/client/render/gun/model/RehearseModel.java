@@ -32,6 +32,9 @@ public class RehearseModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.REHEARSE_STOCK_WOODEN.getModel(), stack, matrixStack, buffer, light, overlay);
             if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.REHEARSE_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
+            else {
+                RenderUtil.renderModel(CCSpecialModels.REHEARSE_EXT_BARREL.getModel(), stack, matrixStack, buffer, light, overlay);
+            }
         }
 
         renderBarrelAttachments(matrixStack, buffer, stack, light, overlay);
@@ -44,13 +47,7 @@ public class RehearseModel implements IOverrideModel {
             cooldown = (float) ease(cooldown);
         }
 
-        matrixStack.pushPose();
-        matrixStack.translate(0, -0.28, 0.36);
-        float rotationAngle = -cooldown * 38;
-        matrixStack.mulPose(Axis.XP.rotationDegrees(rotationAngle));
-        matrixStack.translate(0, 0.28, -0.36);
-        RenderUtil.renderModel(SpecialModels.SEQUOIA_HAMMER.getModel(), stack, matrixStack, buffer, light, overlay);
-        matrixStack.popPose();
+
 
         RenderUtil.renderModel(CCSpecialModels.REHEARSE_DRUM.getModel(), stack, matrixStack, buffer, light, overlay);
     }

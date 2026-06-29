@@ -199,6 +199,18 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> DEAD_DRAFT = REGISTER.register("dead_draft",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
+                    "dead_draft", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
     public static final RegistryObject<AnimatedGunItem> EXHUMER = REGISTER.register("exhumer",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(150).rarity(ModRarity.EXSANGUINATED),
@@ -326,6 +338,8 @@ public class ModItems {
                     ModSounds.COPPER_GUN_JAM.get()
             )
     );
+
+
 
 
 

@@ -222,8 +222,20 @@ public enum CCSpecialModels {
     RECUR_ADVANCED_SILENCER("recur/advanced_silencer"),
     RECUR_MUZZLE_BRAKE("recur/muzzle_brake"),
 
+    //Dead Draft
+    DEAD_DRAFT_MAIN("dead_draft/main"),
+    DEAD_DRAFT_STOCK_WEIGHTED("dead_draft/heavy_stock"),
+    DEAD_DRAFT_STOCK_LIGHT("dead_draft/light_stock"),
+    DEAD_DRAFT_STOCK_WOODEN("dead_draft/wooden_stock"),
+    DEAD_DRAFT_STAN_GRIP("dead_draft/stand_grip"),
+    DEAD_DRAFT_SIGHTS("dead_draft/sights"),
+    DEAD_DRAFT_NO_SIGHTS("dead_draft/no_sights"),
 
-    //RECUR
+
+
+
+
+    //Iron Partisan
     IRON_PARTISAN_MAIN("iron_partisan/main"),
     IRON_PARTISAN_STAN_MAGAZINE("iron_partisan/stand_mag"),
     IRON_PARTISAN_FAST_MAGAZINE("iron_partisan/fast_mag"),
@@ -237,6 +249,8 @@ public enum CCSpecialModels {
     IRON_PARTISAN_SILENCER("iron_partisan/silencer"),
     IRON_PARTISAN_ADVANCED_SILENCER("iron_partisan/advanced_silencer"),
     IRON_PARTISAN_MUZZLE_BRAKE("iron_partisan/muzzle_brake"),
+
+    //Hummer
 
     HUMMER_MAIN("hummer/main"),
     HUMMER_STAN_BARREL("hummer/stan_barrel"),

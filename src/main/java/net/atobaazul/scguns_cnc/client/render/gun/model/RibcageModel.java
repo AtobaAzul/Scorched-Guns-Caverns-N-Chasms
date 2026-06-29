@@ -43,7 +43,10 @@ public class RibcageModel implements IOverrideModel {
                 RenderUtil.renderModel(CCSpecialModels.RIBCAGE_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
             else if (Gun.getAttachment(IAttachment.Type.STOCK, stack).getItem() == ModItems.BUMP_STOCK.get())
                 RenderUtil.renderModel(CCSpecialModels.RIBCAGE_STOCK_WEIGHTED.getModel(), stack, matrixStack, buffer, light, overlay);
-        }
+            else {
+                RenderUtil.renderModel(CCSpecialModels.RIBCAGE_STAN_GRIP.getModel(), stack, matrixStack, buffer, light, overlay);
+            }
+       }
     }
 
     private void renderUnderBarrelAttachments(ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
