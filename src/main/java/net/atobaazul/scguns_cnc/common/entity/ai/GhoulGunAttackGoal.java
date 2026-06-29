@@ -153,7 +153,10 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
     public void tick() {
         LivingEntity target = this.shooter.getTarget();
         ItemStack heldItem = this.shooter.getMainHandItem();
-
+        this.melee_timer--;
+        if (this.melee_timer == 0) {
+            this.melee_timer = 0;
+        }
         if (this.shooter.hasEffect(ModEffects.BLINDED.get()) || this.shooter.hasEffect(ModEffects.DEAFENED.get()))
             this.isPanicked = true;
 
@@ -225,7 +228,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             boolean inRange = distanceToTarget <= this.attackRadiusSqr;
             boolean tooClose = distanceToTarget < (this.minRange * this.minRange);
-            boolean isRetreating = false;
             boolean isMovingFast = this.shooter.getDeltaMovement().horizontalDistanceSqr() > 0.01;
             boolean isNavigating = !this.shooter.getNavigation().isDone();
 
@@ -240,18 +242,23 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 this.shouldStrafe = false;
                 this.strafingTime = -1;
                 this.aimingStabilityTimer = 0;
-            } else if (tooClose && this.aiType != AIType.RECKLESS) {
+            } else if (tooClose && this.aiType != AIType.RECKLESS ) {
                 Vec3 awayVector = this.shooter.position().subtract(target.position()).normalize();
                 Vec3 retreatPos = this.shooter.position().add(awayVector.scale(2.0));
-                this.shooter.getNavigation().moveTo(retreatPos.x, retreatPos.y, retreatPos.z, this.speedModifier * 0.8);
+
+                if (this.melee_timer > 0) {
+                    this.shooter.getLookControl().setLookAt(target);
+                    this.shooter.getNavigation().stop();
+                } else {
+                    this.shooter.getNavigation().moveTo(retreatPos.x, retreatPos.y, retreatPos.z, this.speedModifier * 0.8);
+                }
+
                 this.shouldStrafe = false;
                 this.strafingTime = -1;
                 this.aimingStabilityTimer = 0;
-                isRetreating = true;
 
-                if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer-- <= 0 ) {
+                if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer <= 0 ) {
                     this.shooter.getLookControl().setLookAt(target);
-                    updateSmoothRotation(target);
                     if (this.shooter instanceof GravekeeperGunnerEntity animatable) {
                         animatable.triggerAnim("Melee", "melee");
                     }
@@ -261,7 +268,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
                 if (this.aiType == AIType.SMART && distanceToTarget > ((this.minRange * this.minRange) * 0.8)) {
                     this.shooter.getNavigation().stop();
-                    isRetreating = false;
                 }
             } else {
                 this.shooter.getNavigation().stop();
