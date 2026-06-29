@@ -5,8 +5,35 @@
     {
       "weight": 1,
       "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "scguns_cnc:graveyard_v2/stairs",
+        "element_type": "yungsapi:yung_single_element",
+        "location": "scguns_cnc:graveyard_v2/stairs_loop",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "scguns_cnc:waterlogged_processor"
+            },
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                {
+                  "Name": "minecraft:structure_block"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "yungsapi:yung_single_element",
+        "condition": {
+          "type": "yungsapi:altitude",
+          "top_cutoff_y": 15
+        },
+        "location": "scguns_cnc:graveyard_v2/stairs_end",
         "projection": "rigid",
         "processors": {
           "processors": [

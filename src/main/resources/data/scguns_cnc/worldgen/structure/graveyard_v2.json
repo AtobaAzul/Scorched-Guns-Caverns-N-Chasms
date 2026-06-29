@@ -7,7 +7,7 @@
   "step": "surface_structures",
   "start_jigsaw_name": "scguns_cnc:anchor",
   "start_height": {
-    "absolute": 0
+    "absolute": 1
   },
   "project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
   "biomes": "#minecraft:is_taiga",
