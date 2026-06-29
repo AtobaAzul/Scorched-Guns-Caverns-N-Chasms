@@ -49,30 +49,30 @@ public class GravekeeperGhoulModel extends GeoModel<GravekeeperGhoulEntity> {
 
         if (arms != null && waist != null) {
 
-            if (animationState.isCurrentAnimation(IDLE_ALERT) || animationState.isCurrentAnimation(WALK_ALERT) || animationState.isCurrentAnimation(SHOOT))
-            {
+            //if (animationState.isCurrentAnimation(IDLE_ALERT) || animationState.isCurrentAnimation(WALK_ALERT) || animationState.isCurrentAnimation(SHOOT))
+            //{
                 arms.setRotX(((entityData.headPitch()) * Mth.DEG_TO_RAD)* 1f);
                 arms.setRotY(((entityData.netHeadYaw()) * Mth.DEG_TO_RAD)* 0.5f);
 
-                //waist.setRotX(((entityData.headPitch()) * Mth.DEG_TO_RAD)* 0.5f);
+                waist.setRotX(((entityData.headPitch()) * Mth.DEG_TO_RAD)* 0.5f);
                 waist.setRotY(((entityData.netHeadYaw()) * Mth.DEG_TO_RAD)* 0.5f);
 
                 if (head != null) {
                     //cancel out effects of waist moving with head
-                    //float wX = waist.getRotX();
+                    float wX = waist.getRotX();
                     float wY = waist.getRotY();
 
-                    //float hX = head.getRotX();
+                    float hX = head.getRotX();
                     float hY = head.getRotY();
 
-                    //head.setRotX(hX-wX);
+                    head.setRotX(hX-wX);
                     head.setRotY(hY-wY);
                 }
-            } else {
-                arms.setRotX(0);
-                arms.setRotY(0);
-                waist.setRotX(0);
-            }
+            //} else {
+            //    arms.setRotX(0);
+            //    arms.setRotY(0);
+            //    waist.setRotX(0);
+            //}
         }
     }
 }

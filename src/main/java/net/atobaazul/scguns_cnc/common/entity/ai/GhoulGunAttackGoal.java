@@ -266,9 +266,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     this.melee_timer = 20;
                 }
 
-                if (this.aiType == AIType.SMART && distanceToTarget > ((this.minRange * this.minRange) * 0.8)) {
-                    this.shooter.getNavigation().stop();
-                }
+
             } else {
                 this.shooter.getNavigation().stop();
                 if (this.aiType != AIType.RECKLESS) {
@@ -342,6 +340,8 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         this.shooter.setYRot(newYaw);
         this.shooter.setXRot(newPitch);
+        this.shooter.setYHeadRot(newYaw);
+
         this.shooter.yBodyRot = newYaw;
         this.shooter.yBodyRotO = this.shooter.yBodyRot;
         this.shooter.yHeadRot = newYaw;
