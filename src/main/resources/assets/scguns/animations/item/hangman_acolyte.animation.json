@@ -571,7 +571,7 @@
 				}
 			},
 			"particle_effects": {
-				"2.0": {
+				"1.9583": {
 					"effect": "loaded"
 				}
 			}
