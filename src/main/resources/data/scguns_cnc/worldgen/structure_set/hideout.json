@@ -2,12 +2,12 @@
   "placement": {
     "type": "minecraft:random_spread",
     "salt": 83442867,
-    "separation": 8,
-    "spacing": 34
+    "separation": 12,
+    "spacing": 46
   },
   "structures": [
     {
-      "structure": "scguns_cnc:graveyard_v2",
+      "structure": "scguns_cnc:hideout",
       "weight": 1
     }
   ]
