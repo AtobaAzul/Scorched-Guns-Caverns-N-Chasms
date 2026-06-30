@@ -4,10 +4,7 @@ import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -25,13 +22,35 @@ import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.item.GunItem;
 
 public abstract class AbstractGravekeeperGunnerEntity extends Monster implements GeoAnimatable, GeoEntity {
     public static final RawAnimation SHOOT = RawAnimation.begin().thenPlay("shoot");
+    public static final RawAnimation GUN_MELEE = RawAnimation.begin().thenPlay("gun_melee");
     public static final RawAnimation MELEE = RawAnimation.begin().thenPlay("melee");
+
     public static final RawAnimation RELOAD = RawAnimation.begin().thenPlay("reload");
     public static final RawAnimation WALK_ALERT = RawAnimation.begin().thenLoop("move.walk.alert");
     public static final RawAnimation IDLE_ALERT = RawAnimation.begin().thenLoop("misc.idle.alert");
+
+    //melee swordsman anims
+    public static final RawAnimation WALK_MELEE_ALERT = RawAnimation.begin().thenLoop("move.walk.alert_melee");
+    public static final RawAnimation IDLE_MELEE_ALERT = RawAnimation.begin().thenLoop("misc.idle.alert_melee");
+    public static final RawAnimation WALK_MELEE = RawAnimation.begin().thenLoop("move.walk_melee");
+    public static final RawAnimation IDLE_MELEE = RawAnimation.begin().thenLoop("misc.idle_melee");
+
+
+    /*
+        Anims
+
+        shoot
+        melee
+        reload
+        move.walk.alert
+        move.walk
+        misc.idle.alert
+        misc.idle
+     */
 
     private static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
 
@@ -65,19 +84,26 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         this.entityData.set(DATA_AGGRO, this.getTarget() != null ? (byte) 1 : (byte) 0);
     }
 
+
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "Walk/Run/Idle", 2, state -> {
-            if (state.isMoving()) return state.setAndContinue(hasAggro() ? WALK_ALERT : DefaultAnimations.WALK);
+        boolean hasMeleeWeapon = !(this.getMainHandItem().getItem() instanceof GunItem);
 
-            return state.setAndContinue(hasAggro() ? IDLE_ALERT : DefaultAnimations.IDLE);
+        controllers.add(new AnimationController<>(this, "Walk/Run/Idle", 2, state -> {
+            if (AbstractGravekeeperGunnerEntity.this.swinging) return state.setAndContinue(MELEE);
+
+            if (state.isMoving()) return state.setAndContinue(hasAggro() ? hasMeleeWeapon ? WALK_MELEE_ALERT : WALK_ALERT : hasMeleeWeapon ? WALK_MELEE : DefaultAnimations.WALK);
+
+            return state.setAndContinue(hasAggro() ? hasMeleeWeapon ? IDLE_MELEE_ALERT : IDLE_ALERT : hasMeleeWeapon ? IDLE_MELEE : DefaultAnimations.IDLE);
         }));
 
-        controllers.add(new AnimationController<>(this, "Melee", 1, state -> PlayState.STOP).triggerableAnim("melee", MELEE));
+
+        controllers.add(new AnimationController<>(this, "Gun Melee", 1, state -> PlayState.STOP).triggerableAnim("gun_melee", GUN_MELEE));
 
         controllers.add(new AnimationController<>(this, "Shoot", 0, state -> PlayState.STOP).triggerableAnim("shoot", SHOOT));
         controllers.add(new AnimationController<>(this, "Reload", 1, state -> PlayState.STOP).triggerableAnim("reload", RELOAD));
     }
+
 
     @Override
     public void registerGoals() {

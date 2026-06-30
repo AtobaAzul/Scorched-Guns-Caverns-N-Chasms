@@ -38,6 +38,7 @@ public class GravekeeperNeophyteModel extends GeoModel<GravekeeperNeophyteEntity
         CoreGeoBone arms = getAnimationProcessor().getBone("arms");
         CoreGeoBone waist = getAnimationProcessor().getBone("Waist");
 
+
         EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
 
         if (head != null) {

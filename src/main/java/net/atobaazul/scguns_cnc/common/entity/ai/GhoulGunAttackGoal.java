@@ -258,7 +258,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer <= 0 ) {
                     this.shooter.getLookControl().setLookAt(target);
                     if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
-                        animatable.triggerAnim("Melee", "melee");
+                        animatable.triggerAnim("Gun Melee", "gun_melee");
                     }
                     target.hurt(this.shooter.damageSources().mobAttack(this.shooter), (float) this.shooter.getAttributeBaseValue(Attributes.ATTACK_DAMAGE));
                     this.melee_timer = 20;

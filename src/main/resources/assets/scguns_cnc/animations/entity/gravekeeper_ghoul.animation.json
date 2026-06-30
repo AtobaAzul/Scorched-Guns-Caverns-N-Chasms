@@ -2009,7 +2009,7 @@
 				}
 			}
 		},
-		"melee": {
+		"gun_melee": {
 			"animation_length": 0.5,
 			"bones": {
 				"Waist": {
