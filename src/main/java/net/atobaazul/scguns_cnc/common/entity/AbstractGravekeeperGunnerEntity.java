@@ -9,7 +9,6 @@ import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.constant.DefaultAnimations;
@@ -28,7 +26,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import top.ribs.scguns.entity.ai.AIType;
 
-public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnimatable, GeoEntity {
+public abstract class AbstractGravekeeperGunnerEntity extends Monster implements GeoAnimatable, GeoEntity {
     public static final RawAnimation SHOOT = RawAnimation.begin().thenPlay("shoot");
     public static final RawAnimation MELEE = RawAnimation.begin().thenPlay("melee");
     public static final RawAnimation RELOAD = RawAnimation.begin().thenPlay("reload");
@@ -37,7 +35,7 @@ public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnim
 
     private static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
 
-    protected GravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
+    protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
         super(p_33002_, p_33003_);
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
     }
@@ -79,7 +77,6 @@ public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnim
 
         controllers.add(new AnimationController<>(this, "Shoot", 0, state -> PlayState.STOP).triggerableAnim("shoot", SHOOT));
         controllers.add(new AnimationController<>(this, "Reload", 1, state -> PlayState.STOP).triggerableAnim("reload", RELOAD));
-
     }
 
     @Override
@@ -91,6 +88,6 @@ public abstract class GravekeeperGunnerEntity extends Monster implements GeoAnim
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new HurtByTargetGoal(this, GravekeeperGunnerEntity.class).setAlertOthers(GravekeeperGunnerEntity.class));
+        this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }
 }

@@ -76,6 +76,7 @@ public class ModLangProvider extends LanguageProvider {
 
         //spawn eggs
         addItem(ModItems.GRAVEKEEPER_GHOUL_SPAWN_EGG, "Gravekeeper Ghoul Spawn Egg");
+        addItem(ModItems.GRAVEKEEPER_NEOPHYTE_SPAWN_EGG, "Gravekeeper Neophyte Spawn Egg");
 
         //entities!
         addEntityType(ModEntities.GRAVEKEEPER_GHOUL, "Gravekeeper Ghoul");

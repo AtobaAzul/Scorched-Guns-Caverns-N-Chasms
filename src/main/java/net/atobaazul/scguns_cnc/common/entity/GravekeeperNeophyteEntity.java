@@ -4,7 +4,10 @@ import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
@@ -20,10 +23,10 @@ import top.ribs.scguns.item.GunItem;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
+public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    public GravekeeperGhoulEntity(EntityType<? extends GravekeeperGhoulEntity> entityType, Level level) {
+    public GravekeeperNeophyteEntity(EntityType<? extends GravekeeperNeophyteEntity> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -45,18 +48,14 @@ public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity impl
     }
 
     public List<RegistryObject<? extends GunItem>> availableGuns = List.of(
-            ModItems.HANGMAN_CARBINE,
-            ModItems.NECROSIS,
-            ModItems.GALLOWS
+            ModItems.MORTICIAN
     );
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        GunItem selectedGun = availableGuns.get((int) Math.floor(Math.random() * availableGuns.size())).get();
+        //GunItem selectedGun = availableGuns.get((int) Math.floor(Math.random() * availableGuns.size())).get();
 
-        this.setItemSlot(EquipmentSlot.MAINHAND, selectedGun.getDefaultInstance());
+        this.setItemSlot(EquipmentSlot.MAINHAND, ModItems.MORTICIAN.get().getDefaultInstance());
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
-
-
 }

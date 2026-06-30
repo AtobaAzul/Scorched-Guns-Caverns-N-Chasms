@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.client;
 
 import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperGhoulEntityRenderer;
+import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperNeophyteEntityRenderer;
 import net.atobaazul.scguns_cnc.client.render.gun.model.*;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.registries.ModItems;
@@ -53,6 +54,7 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.HUMMER.get(), new HummerModel());
 
         EntityRenderers.register(ModEntities.GRAVEKEEPER_GHOUL.get(), GravekeeperGhoulEntityRenderer::new);
+        EntityRenderers.register(ModEntities.GRAVEKEEPER_NEOPHYTE.get(), GravekeeperNeophyteEntityRenderer::new);
     }
 }
 

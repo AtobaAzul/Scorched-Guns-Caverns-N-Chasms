@@ -1,7 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity.ai;
 
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperGunnerEntity;
+import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -13,7 +12,6 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import top.ribs.scguns.Config;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.entity.ai.AIGunEvent;
@@ -203,7 +201,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             if (heldItem.getTag().getInt("AmmoCount") <= 0) {
                 if (!this.isReloading) {
-                    if (this.shooter instanceof GravekeeperGunnerEntity animatable) {
+                    if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                         animatable.triggerAnim("Reload", "reload");
                     }
                     if (this.aiType == AIType.TACTICAL) {
@@ -259,7 +257,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
                 if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer <= 0 ) {
                     this.shooter.getLookControl().setLookAt(target);
-                    if (this.shooter instanceof GravekeeperGunnerEntity animatable) {
+                    if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                         animatable.triggerAnim("Melee", "melee");
                     }
                     target.hurt(this.shooter.damageSources().mobAttack(this.shooter), (float) this.shooter.getAttributeBaseValue(Attributes.ATTACK_DAMAGE));
@@ -369,7 +367,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             this.shot_count = 0;
         }
 
-        if (this.shooter instanceof GravekeeperGunnerEntity animatable) {
+        if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
             animatable.triggerAnim("Shoot", "shoot");
         }
 

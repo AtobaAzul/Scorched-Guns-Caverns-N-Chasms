@@ -81,6 +81,8 @@ public class ModCreativeTabs {
         addItem(pOutput, SCATTERER_PART.get());
 
         addItem(pOutput, GRAVEKEEPER_GHOUL_SPAWN_EGG.get());
+        addItem(pOutput, GRAVEKEEPER_NEOPHYTE_SPAWN_EGG.get());
+
     }).build());
 
     public static void register(IEventBus eventBus) {

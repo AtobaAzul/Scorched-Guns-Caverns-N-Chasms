@@ -127,7 +127,7 @@
 				}
 			}
 		},
-		"idle": {
+		"misc.idle": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {
@@ -224,7 +224,7 @@
 				}
 			}
 		},
-		"idle.alert": {
+		"misc.idle.alert": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {
