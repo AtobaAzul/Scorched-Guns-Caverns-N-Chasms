@@ -181,15 +181,15 @@
 				"Right Arm": {
 					"rotation": {
 						"0.0": {
-							"post": [0, 0, 0],
+							"post": [-3, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
-							"post": [0, 0, 2],
+							"post": [-1.9988, 0.0698, 1.9988],
 							"lerp_mode": "catmullrom"
 						},
 						"2.0": {
-							"post": [0, 0, 0],
+							"post": [-3, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
 					},
@@ -326,10 +326,10 @@
 					}
 				},
 				"Right Leg": {
-					"rotation": [0, 0, 1]
+					"rotation": [3.9992, -0.0697, 4.9974]
 				},
 				"Left Leg": {
-					"rotation": [-2.9995, -0.0523, -0.9986]
+					"rotation": [-5.9953, -0.2091, -2.9917]
 				},
 				"item_bone": {
 					"rotation": [45, 0, 0],
@@ -463,7 +463,7 @@
 				}
 			}
 		},
-		"melee": {
+		"gun_melee": {
 			"animation_length": 0.5,
 			"bones": {
 				"Waist": {
@@ -691,10 +691,10 @@
 					}
 				},
 				"Right Leg": {
-					"rotation": [0, 0, 1]
+					"rotation": [3.9992, -0.0697, 4.9974]
 				},
 				"Left Leg": {
-					"rotation": [-2.9995, -0.0523, -0.9986]
+					"rotation": [-5.9953, -0.2091, -2.9917]
 				},
 				"item_bone": {
 					"rotation": {
