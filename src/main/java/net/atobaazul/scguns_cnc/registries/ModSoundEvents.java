@@ -46,6 +46,9 @@ public class ModSoundEvents {
 
     public static final RegistryObject<SoundEvent> SILVER_FLYBY = register("item.flyby.silver_flyby");
 
+    public static final RegistryObject<SoundEvent> GRAVEKEEPER_GHOUL_AMBIENT = register("entity.gravekeeper_ghoul.ambient");
+
+
     private static RegistryObject<SoundEvent> register(String key) {
         return REGISTER.register(key, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, key)));
     }

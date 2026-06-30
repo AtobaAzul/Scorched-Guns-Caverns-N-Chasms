@@ -12,23 +12,30 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.Witch;
+import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.entity.monster.*;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
@@ -42,6 +49,7 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
         super(entityType, level);
         availableGuns = List.of(
                 ModItems.MORTICIAN,
+                ModItems.BELLA,
                 CCItems.SILVER_AXE,
                 CCItems.SILVER_SWORD
         );
@@ -75,6 +83,8 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
         }
     }
 
+
+
     @Override
     public void registerGoals() {
         ItemStack mainHandItem = this.getMainHandItem();
@@ -83,16 +93,35 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
         } else {
             this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.5, false));
         }
+        this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.9D));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
+        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, AbstractIllager.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, AdjudicatorEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, DissidentEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, CogKnightEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, CogMinionEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, PraetorEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, ScampTankEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SubjugatorEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SkyCarrierEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SupplyScampEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, TraumaUnitEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SignalBeaconEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, BlundererEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, Witch.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, Ravager.class, false));
+
         this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        Item selectedWeapon = this.availableGuns.get((int) Math.floor(Math.random() * this.availableGuns.size())).get();
+        Item selectedWeapon = this.availableGuns.get((int) Math.floor(Math.random() * this.availableGuns.size())). get();
         this.setItemSlot(EquipmentSlot.MAINHAND, selectedWeapon.getDefaultInstance());
 
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);

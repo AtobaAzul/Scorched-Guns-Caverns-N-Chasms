@@ -80,6 +80,7 @@ public class ModLangProvider extends LanguageProvider {
 
         //entities!
         addEntityType(ModEntities.GRAVEKEEPER_GHOUL, "Gravekeeper Ghoul");
+        addEntityType(ModEntities.GRAVEKEEPER_NEOPHYTE, "Gravekeeper Neophyte");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
@@ -93,8 +94,6 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.scatterer.lore", "Compact electrothermal energy weapon, capable of firing single precise shots or large inaccurate bursts of plasma.");
 
         add("tooltip.acolyte.lore", "Blasphemy against the Moon");
-
-
 
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");
@@ -131,5 +130,8 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.scatterer_part.tooltip", "Technological Innovation Nucleus' plasma systems are able to create usable plasma from the very air, revolutionizing plasma technology.");
 
         add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
+
+        add("subtitles.scguns_cnc.gravekeeper_ghoul.ambient", "Gravekeeper sighs");
+
     }
 }

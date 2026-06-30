@@ -403,5 +403,22 @@
         "pitch": 1.1
       }
     ]
+  },
+  "entity.gravekeeper_ghoul.ambient": {
+    "subtitle": "subtitle.scguns_cnc.gravekeeper_ghoul.ambient",
+    "sounds": [
+      {
+        "name": "random/breath",
+        "pitch": 0.8
+      },
+      {
+        "name": "random/breath",
+        "pitch": 0.7
+      },
+      {
+        "name": "random/breath",
+        "pitch": 0.6
+      }
+    ]
   }
 }

@@ -2,7 +2,10 @@ package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.registries.ModItems;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -49,6 +52,11 @@ public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity impl
             ModItems.NECROSIS,
             ModItems.GALLOWS
     );
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSoundEvents.GRAVEKEEPER_GHOUL_AMBIENT.get();
+    }
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {

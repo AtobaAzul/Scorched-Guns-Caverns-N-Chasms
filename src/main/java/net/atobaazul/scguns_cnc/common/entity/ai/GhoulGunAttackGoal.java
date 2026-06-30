@@ -254,17 +254,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 this.shouldStrafe = false;
                 this.strafingTime = -1;
                 this.aimingStabilityTimer = 0;
-
-                if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer <= 0 ) {
-                    this.shooter.getLookControl().setLookAt(target);
-                    if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
-                        animatable.triggerAnim("Gun Melee", "gun_melee");
-                    }
-                    target.hurt(this.shooter.damageSources().mobAttack(this.shooter), (float) this.shooter.getAttributeBaseValue(Attributes.ATTACK_DAMAGE));
-                    this.melee_timer = 20;
-                }
-
-
             } else {
                 this.shooter.getNavigation().stop();
                 if (this.aiType != AIType.RECKLESS) {
@@ -307,7 +296,15 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     !isMovingFast &&
                     this.shooter.getNavigation().isDone();
 
-            if (canSeeTarget && this.seeTime >= 5 && isStableAndAimed) {
+            if (target.distanceToSqr(this.shooter) < 3.5*3.5 && this.melee_timer <= 0 ) {
+                this.shooter.getLookControl().setLookAt(target);
+                if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
+                    animatable.triggerAnim("Gun Melee", "gun_melee");
+                }
+                target.hurt(this.shooter.damageSources().mobAttack(this.shooter), (float) this.shooter.getAttributeBaseValue(Attributes.ATTACK_DAMAGE));
+                this.melee_timer = 20;
+                this.attackTime = this.attackTime + 15;
+            }else if (canSeeTarget && this.seeTime >= 5 && isStableAndAimed) {
                 if (this.shooter.getMainHandItem().getTag().getInt("AmmoCount") > 0) {
                     if (--this.attackTime <= 0) {
                         if (!this.shooter.hasEffect(ModEffects.BLINDED.get())) {
