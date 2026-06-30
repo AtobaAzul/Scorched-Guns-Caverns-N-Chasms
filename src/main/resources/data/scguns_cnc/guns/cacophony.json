@@ -50,7 +50,7 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 12,
+    "damage": 10,
     "damageFalloffStart": 20.0,
     "damageFalloffEnd": 40.0,
     "damageFalloffMinMultiplier": 0.35,
