@@ -2,9 +2,12 @@ buildscript {
     repositories {
         maven { url = "https://files.minecraftforge.net/maven" }
         maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
+        maven { url = 'https://maven.parchmentmc.org' }
+
     }
     dependencies {
         classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "5.1.+", changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
         classpath group: "org.spongepowered", name: "mixingradle", version: "0.7-SNAPSHOT"
     }
 }
@@ -14,6 +17,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id("org.spongepowered.mixin") version "0.7.+"
 }
 
@@ -22,6 +26,7 @@ apply plugin: "eclipse"
 apply plugin: "idea"
 apply plugin: "maven-publish"
 apply plugin: "org.spongepowered.mixin"
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 version = mod_version
 group = mod_group_id
