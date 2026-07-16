@@ -13,6 +13,8 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -31,20 +33,21 @@ import top.ribs.scguns.entity.ai.AIType;
 import top.ribs.scguns.entity.monster.*;
 import top.ribs.scguns.item.GunItem;
 
+import java.util.List;
+
 public abstract class AbstractGravekeeperGunnerEntity extends Monster implements GeoAnimatable, GeoEntity {
     public static final RawAnimation SHOOT = RawAnimation.begin().thenPlay("shoot");
     public static final RawAnimation GUN_MELEE = RawAnimation.begin().thenPlay("gun_melee");
     public static final RawAnimation MELEE = RawAnimation.begin().thenPlay("melee");
-
     public static final RawAnimation RELOAD = RawAnimation.begin().thenPlay("reload");
     public static final RawAnimation WALK_ALERT = RawAnimation.begin().thenLoop("move.walk.alert");
     public static final RawAnimation IDLE_ALERT = RawAnimation.begin().thenLoop("misc.idle.alert");
-
     //melee swordsman anims
     public static final RawAnimation WALK_MELEE_ALERT = RawAnimation.begin().thenLoop("move.walk.alert_melee");
     public static final RawAnimation IDLE_MELEE_ALERT = RawAnimation.begin().thenLoop("misc.idle.alert_melee");
     public static final RawAnimation WALK_MELEE = RawAnimation.begin().thenLoop("move.walk_melee");
     public static final RawAnimation IDLE_MELEE = RawAnimation.begin().thenLoop("misc.idle_melee");
+    private static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
 
 
     /*
@@ -58,8 +61,26 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         misc.idle.alert
         misc.idle
      */
-
-    private static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
+    private static final double ALLIANCE_RANGE = 32.0;
+    private static final int ALERT_RANGE_Y = 10;
+    public List<?> hitList = List.of(
+            AbstractVillager.class,
+            AbstractIllager.class,
+            AdjudicatorEntity.class,
+            DissidentEntity.class,
+            CogKnightEntity.class,
+            CogMinionEntity.class,
+            PraetorEntity.class,
+            ScampTankEntity.class,
+            SubjugatorEntity.class,
+            SkyCarrierEntity.class,
+            SupplyScampEntity.class,
+            TraumaUnitEntity.class,
+            SignalBeaconEntity.class,
+            BlundererEntity.class,
+            Witch.class,
+            Ravager.class
+    );
     private int ticksUntilNextAlert = 40;
 
     protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
@@ -92,7 +113,6 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         this.entityData.set(DATA_AGGRO, this.getTarget() != null ? (byte) 1 : (byte) 0);
     }
 
-
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         boolean hasMeleeWeapon = !(this.getMainHandItem().getItem() instanceof GunItem);
@@ -100,7 +120,8 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         controllers.add(new AnimationController<>(this, "Walk/Run/Idle", 2, state -> {
             if (AbstractGravekeeperGunnerEntity.this.swinging) return state.setAndContinue(MELEE);
 
-            if (state.isMoving()) return state.setAndContinue(hasAggro() ? hasMeleeWeapon ? WALK_MELEE_ALERT : WALK_ALERT : hasMeleeWeapon ? WALK_MELEE : DefaultAnimations.WALK);
+            if (state.isMoving())
+                return state.setAndContinue(hasAggro() ? hasMeleeWeapon ? WALK_MELEE_ALERT : WALK_ALERT : hasMeleeWeapon ? WALK_MELEE : DefaultAnimations.WALK);
 
             return state.setAndContinue(hasAggro() ? hasMeleeWeapon ? IDLE_MELEE_ALERT : IDLE_ALERT : hasMeleeWeapon ? IDLE_MELEE : DefaultAnimations.IDLE);
         }));
@@ -123,14 +144,11 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
             --this.ticksUntilNextAlert;
         } else {
             //if (this.getSensing().hasLineOfSight(this.getTarget())) {
-                this.alertAllies();
+            this.alertAllies();
             //}
             this.ticksUntilNextAlert = 20 + this.random.nextInt(20);
         }
     }
-
-    private static final double ALLIANCE_RANGE = 32.0;
-    private static final int ALERT_RANGE_Y = 10;
 
     private void alertAllies() {
         AABB alertArea = AABB.unitCubeFromLowerCorner(this.position()).inflate(ALLIANCE_RANGE, ALERT_RANGE_Y, ALLIANCE_RANGE);
@@ -168,19 +186,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, AbstractIllager.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, AdjudicatorEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, DissidentEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, CogKnightEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, CogMinionEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, PraetorEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, ScampTankEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SubjugatorEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SkyCarrierEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SupplyScampEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, TraumaUnitEntity.class, false));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, SignalBeaconEntity.class, false));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.contains(entity.getClass())));
 
         this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }

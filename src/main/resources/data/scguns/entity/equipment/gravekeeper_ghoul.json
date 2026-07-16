@@ -1,0 +1,30 @@
+{
+  "id": "scguns_cnc:gravekeeper_ghoul",
+  "equipment_chance": 1.0,
+  "items": [
+    {
+      "item": "scguns_cnc:hangman_carbine",
+      "weight": 3.0,
+      "drop_chance": 0.05,
+      "min_durability": 0.2,
+      "max_durability": 0.3,
+      "slot": "mainhand"
+    },
+    {
+      "item": "scguns_cnc:necrosis",
+      "weight": 1.0,
+      "drop_chance": 0.05,
+      "min_durability": 0.2,
+      "max_durability": 0.3,
+      "slot": "mainhand"
+    },
+    {
+      "item": "scguns_cnc:gallows",
+      "weight": 2.0,
+      "drop_chance": 0.05,
+      "min_durability": 0.2,
+      "max_durability": 0.3,
+      "slot": "mainhand"
+    }
+  ]
+}

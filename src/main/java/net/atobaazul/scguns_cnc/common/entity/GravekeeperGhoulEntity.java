@@ -1,27 +1,25 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
-import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraftforge.registries.RegistryObject;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.util.GeckoLibUtil;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.config.EntityEquipmentConfig;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -47,12 +45,6 @@ public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity impl
         return this.geoCache;
     }
 
-    public List<RegistryObject<? extends GunItem>> availableGuns = List.of(
-            ModItems.HANGMAN_CARBINE,
-            ModItems.NECROSIS,
-            ModItems.GALLOWS
-    );
-
     @Override
     protected SoundEvent getAmbientSound() {
         return ModSoundEvents.GRAVEKEEPER_GHOUL_AMBIENT.get();
@@ -60,11 +52,8 @@ public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity impl
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        GunItem selectedGun = availableGuns.get((int) Math.floor(Math.random() * availableGuns.size())).get();
+        EntityEquipmentConfig.equipEntity(this, "scguns_cnc:gravekeeper_ghoul");
 
-        this.setItemSlot(EquipmentSlot.MAINHAND, selectedGun.getDefaultInstance());
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
-
-
 }
