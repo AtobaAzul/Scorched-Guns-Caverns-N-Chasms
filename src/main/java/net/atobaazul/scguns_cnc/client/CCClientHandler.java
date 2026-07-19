@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.client;
 
 import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperGhoulEntityRenderer;
+import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperHeraldEntityRenderer;
 import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperNeophyteEntityRenderer;
 import net.atobaazul.scguns_cnc.client.render.gun.model.*;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
@@ -55,6 +56,8 @@ public class CCClientHandler {
 
         EntityRenderers.register(ModEntities.GRAVEKEEPER_GHOUL.get(), GravekeeperGhoulEntityRenderer::new);
         EntityRenderers.register(ModEntities.GRAVEKEEPER_NEOPHYTE.get(), GravekeeperNeophyteEntityRenderer::new);
+        EntityRenderers.register(ModEntities.GRAVEKEEPER_HERALD.get(), GravekeeperHeraldEntityRenderer::new);
+
     }
 }
 

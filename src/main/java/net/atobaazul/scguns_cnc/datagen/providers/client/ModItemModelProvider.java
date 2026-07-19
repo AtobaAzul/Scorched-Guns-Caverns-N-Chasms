@@ -50,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         withExistingParent(GRAVEKEEPER_GHOUL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(GRAVEKEEPER_NEOPHYTE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(GRAVEKEEPER_HERALD_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
     }
 

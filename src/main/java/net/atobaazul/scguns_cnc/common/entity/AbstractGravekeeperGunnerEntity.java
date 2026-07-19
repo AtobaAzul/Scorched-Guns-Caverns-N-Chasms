@@ -47,7 +47,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
     public static final RawAnimation IDLE_MELEE_ALERT = RawAnimation.begin().thenLoop("misc.idle.alert_melee");
     public static final RawAnimation WALK_MELEE = RawAnimation.begin().thenLoop("move.walk_melee");
     public static final RawAnimation IDLE_MELEE = RawAnimation.begin().thenLoop("misc.idle_melee");
-    private static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
+    public static final EntityDataAccessor<Byte> DATA_AGGRO = SynchedEntityData.defineId(Mob.class, EntityDataSerializers.BYTE);
 
 
     /*
