@@ -1,14 +1,17 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
-import net.atobaazul.scguns_cnc.common.entity.ai.HeraldGunAttackGoal;
+import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -35,9 +38,12 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.entity.ai.GunAttackGoal;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
+import java.util.Objects;
+import java.util.UUID;
 
 public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -60,7 +66,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.ATTACK_SPEED, 2f)
                 .add(Attributes.FOLLOW_RANGE, 48D)
-                .add(CCAttributes.LIFESTEAL.get(), 0.5d)
+                .add(CCAttributes.LIFESTEAL.get(), 0.5D)
 
                 .build();
     }
@@ -74,7 +80,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public boolean hurt(DamageSource pSource, float pAmount) {
         boolean ret = super.hurt(pSource, pAmount);
 
-        if (!isEnraged() && this.getHealth() / this.getMaxHealth() <= 0.5) {
+        if (!isEnraged() && this.getHealth() / this.getMaxHealth() <= 0.25) {
             enrage();
         }
 
@@ -85,6 +91,9 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public void enrage() {
         setEnraged((byte) 1);
         this.enrage_timer = 45; //2.5s, matching anim length
+
+        this.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 45, 5, false, false));
+        this.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 45, 5, false, false));
 
         //TODO: SOUND
         this.setItemSlot(EquipmentSlot.MAINHAND, Items.AIR.getDefaultInstance());
@@ -108,9 +117,6 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         if (isEnraged() && this.enrage_timer > 0) {
             this.enrage_timer--;
         }
-
-        System.out.println(this.enrage_timer);
-        System.out.println(isEnraged());
     }
 
     public boolean isEnraged() {
@@ -150,9 +156,9 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         super.setItemSlot(equipmentSlot, itemStack);
         if (itemStack.getItem() instanceof GunItem) {
             this.goalSelector.removeAllGoals((goal) -> goal instanceof MeleeAttackGoal);
-            this.goalSelector.addGoal(1, new HeraldGunAttackGoal<>(this, itemStack, 2.0F, AIType.SMART, 1));
+            this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, itemStack, 2.0F, AIType.SMART, 1));
         } else {
-            this.goalSelector.removeAllGoals((goal) -> goal instanceof HeraldGunAttackGoal);
+            this.goalSelector.removeAllGoals((goal) -> goal instanceof GhoulGunAttackGoal);
             this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false));
         }
     }
@@ -161,7 +167,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public void registerGoals() {
         ItemStack mainHandItem = this.getMainHandItem();
         if (mainHandItem.getItem() instanceof GunItem) {
-            this.goalSelector.addGoal(1, new HeraldGunAttackGoal<>(this, mainHandItem, 2.0F, AIType.SMART, 1));
+            this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, mainHandItem, 2.0F, AIType.SMART, 1));
         } else {
             this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false));
         }
@@ -177,9 +183,21 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }
 
+    private static final UUID LIFESTEAL_UUID = UUID.fromString("d4c7f9a2-8b3e-4a1c-9d6e-2f8c4b1a5e3d");
+
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         EntityEquipmentConfig.equipEntity(this, "scguns_cnc:gravekeeper_herald");
+
+        ItemStack itemStack = this.getMainHandItem();
+
+        if (itemStack.getItem() instanceof GunItem) {
+            this.goalSelector.removeAllGoals((goal) -> goal instanceof MeleeAttackGoal);
+            this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, itemStack, 2.0F, AIType.SMART, 1));
+        } else {
+            this.goalSelector.removeAllGoals((goal) -> goal instanceof GhoulGunAttackGoal);
+            this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false));
+        }
 
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
