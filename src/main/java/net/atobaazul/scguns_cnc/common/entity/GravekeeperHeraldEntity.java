@@ -1,13 +1,13 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
-import com.teamabnormals.caverns_and_chasms.common.item.SanguineArmorItem;
-import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
+import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -25,6 +25,7 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.PatrollingMonster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -43,7 +44,6 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
 import top.ribs.scguns.entity.ai.AIType;
 import top.ribs.scguns.init.ModEffects;
-import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
@@ -54,6 +54,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public static final RawAnimation WALK_ENRAGED = RawAnimation.begin().thenLoop("move.walk.enraged");
     public static final RawAnimation IDLE_ENRAGED = RawAnimation.begin().thenLoop("misc.idle.enraged");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+    boolean summonedRaidParty = false;
     private int enrage_timer = 0;
     private boolean reassesedGoals = false;
 
@@ -62,14 +63,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 60D)
-                .add(Attributes.ATTACK_DAMAGE, 6.0f)
-                .add(Attributes.ARMOR, 18f)
-                .add(Attributes.MOVEMENT_SPEED, 0.2f)
-                .add(Attributes.ATTACK_SPEED, 2f)
-                .add(Attributes.FOLLOW_RANGE, 48D)
-                .build();
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 60D).add(Attributes.ATTACK_DAMAGE, 6.0f).add(Attributes.ARMOR, 18f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
     }
 
     @Override
@@ -122,6 +116,26 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         this.entityData.define(DATA_ENRAGED, (byte) 0);
     }
 
+    public void summonRaidParty() {
+        summonedRaidParty = true;
+        System.out.println("Summon Raid Party");
+        for (int i = 0; i <= 5; i++) {
+            GravekeeperNeophyteEntity neophyte = ModEntities.GRAVEKEEPER_NEOPHYTE.get().create(this.level());
+            neophyte.setPos(this.position());
+            ServerLevel serverLevel = (ServerLevel) this.level();
+            neophyte.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(this.blockPosition()), MobSpawnType.PATROL, null, null);
+            serverLevel.addFreshEntity(neophyte);
+        }
+
+        for (int i = 0; i < 3; i++) {
+            GravekeeperGhoulEntity ghoul = ModEntities.GRAVEKEEPER_GHOUL.get().create(this.level());
+            ghoul.setPos(this.position());
+            ServerLevel serverLevel = (ServerLevel) this.level();
+            ghoul.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(this.blockPosition()), MobSpawnType.PATROL, null, null);
+            serverLevel.addFreshEntity(ghoul);
+        }
+    }
+
     @Override
     public void tick() {
         super.tick();
@@ -135,9 +149,15 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
             if (!reassesedGoals) {
                 registerCustomGoals();
             }
+            if (isRaidBoss() && !summonedRaidParty) {
+                summonRaidParty();
+            }
         }
     }
 
+    public boolean isRaidBoss() {
+        return this.getTags().stream().anyMatch(tag -> tag.equals("RaidBoss"));
+    }
 
     public boolean isEnraged() {
         return this.entityData.get(DATA_ENRAGED) == (byte) 1;
@@ -204,9 +224,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     @Override
-    public void registerGoals() {
-    }
-
+    public void registerGoals() {}
 
 
     //@Override
@@ -231,6 +249,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.contains(entity.getClass())));
         this.targetSelector.addGoal(4, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
+
     }
 
 
@@ -245,6 +264,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public void addAdditionalSaveData(@NotNull CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.putBoolean("Enraged", isEnraged());
+        tag.putBoolean("SummonedRaidParty", summonedRaidParty);
     }
 
     @Override
@@ -252,5 +272,6 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         super.readAdditionalSaveData(tag);
 
         setEnraged(tag.getBoolean("Enraged") ? (byte) 1 : (byte) 0);
+        summonedRaidParty = tag.getBoolean("SummonedRaidParty");
     }
 }

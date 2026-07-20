@@ -2,42 +2,13 @@
   "raid_id": "gravekeeper",
   "raid_level": 4,
   "boss": {
-    "entity_type": "minecraft:wither_skeleton",
-    "custom_name": "translation:raid.boss.scguns_cnc.gravekeeper",
-    "fixed_health": 180.0,
+    "entity_type": "scguns_cnc:gravekeeper_herald",
+    "custom_name": "translation:entity.scguns_cnc.gravekeeper_herald",
+    "fixed_health": 120.0,
     "weapon": {
-      "item": "scguns_cnc:cacophony",
-      "drop_chance": 0.35
+      "item": "scguns_cnc:anathema",
+      "drop_chance": 0.1
     },
-    "armor": [
-      {
-        "item": "caverns_and_chasms:sanguine_helmet",
-        "slot": "head",
-        "drop_chance": 0.0,
-        "nbt": {
-          "Trim": {
-            "material": "caverns_and_chasms:silver",
-            "pattern": "caverns_and_chasms:exile"
-          },
-          "EmissiveTrim": 1
-        }
-      },
-      {
-        "item": "caverns_and_chasms:necromium_chestplate",
-        "slot": "chest",
-        "drop_chance": 0.25
-      },
-      {
-        "item": "caverns_and_chasms:necromium_leggings",
-        "slot": "legs",
-        "drop_chance": 0.25
-      },
-      {
-        "item": "caverns_and_chasms:necromium_boots",
-        "slot": "feet",
-        "drop_chance": 0.25
-      }
-    ],
     "effects": [
       {
         "effect": "minecraft:regeneration",
@@ -52,96 +23,20 @@
         "duration": -1,
         "ambient": true,
         "visible": false
-      },
-      {
-        "effect": "minecraft:speed",
-        "amplifier": 1,
-        "duration": -1,
-        "ambient": true,
-        "visible": false
       }
     ],
     "ai_difficulty": 8,
-    "ai_type": "TACTICAL",
-    "special_loot_table": "scguns_cnc:raids/gravekeeper_boss",
-    "mount": {
-      "entity_type": "caverns_and_chasms:saddled_grazer",
-      "health_multiplier": 3.0,
-      "armor": [],
-      "effects": [
-        {
-          "effect": "minecraft:speed",
-          "amplifier": 2,
-          "duration": -1,
-          "ambient": true,
-          "visible": false
-        }
-      ],
-      "drops_loot": true
-    }
-
+    "ai_type": "SMART",
+    "special_loot_table": "scguns_cnc:raids/gravekeeper_boss"
   },
   "henchmen": {
     "types": [
-      {
-        "entity_type": "minecraft:wither_skeleton",
-        "weight": 4.0,
-        "health_multiplier": 2.0,
-        "weapons": [
-          "scguns_cnc:hangman_carbine",
-          "scguns_cnc:bella",
-          "scguns_cnc:keteriya",
-          "scguns_cnc:mortician",
-          "scguns_cnc:gallows",
-          "scguns_cnc:necrosis",
-          "caverns_and_chasms:silver_sword"
-        ],
-        "armor": [
-          {
-            "item": "caverns_and_chasms:sanguine_helmet",
-            "slot": "head",
-            "drop_chance": 0.3
-          },
-          {
-            "item": "caverns_and_chasms:silver_chestplate",
-            "slot": "chest",
-            "drop_chance": 0.25
-          },
-          {
-            "item": "caverns_and_chasms:silver_leggings",
-            "slot": "legs",
-            "drop_chance": 0.2
-          },
-          {
-            "item": "caverns_and_chasms:silver_boots",
-            "slot": "feet",
-            "drop_chance": 0.2
-          }
-        ],
-        "effects": [
-          {
-            "effect": "minecraft:speed",
-            "amplifier": 0,
-            "duration": -1,
-            "ambient": false,
-            "visible": false
-          },
-          {
-            "effect": "minecraft:resistance",
-            "amplifier": 0,
-            "duration": -1,
-            "ambient": true,
-            "visible": false
-          }
-        ],
-        "ai_difficulty": 6,
-        "ai_type": "TACTICAL"
-      }
+
     ],
-    "spawn_interval_ticks": 300,
-    "max_alive": 14,
-    "spawn_radius": 20,
-    "spawn_attempts_per_wave": 4
+    "spawn_interval_ticks": 1200,
+    "max_alive": 0,
+    "spawn_radius": 30,
+    "spawn_attempts_per_wave": 8
   },
   "spawn_conditions": {
     "min_players_nearby": 1,
