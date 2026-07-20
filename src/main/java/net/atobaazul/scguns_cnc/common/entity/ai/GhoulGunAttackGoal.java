@@ -13,6 +13,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import top.ribs.scguns.Config;
 import top.ribs.scguns.common.Gun;
@@ -68,6 +70,11 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
         } else {
             this.idealRange = 15.0;
             this.minRange = 8.0;
+        }
+
+        if (this.shooter instanceof GravekeeperHeraldEntity) {
+            this.idealRange = 10.0;
+            this.minRange = 0.0;
         }
 
         this.attackRadiusSqr = (float) (this.idealRange * this.idealRange);
@@ -157,6 +164,15 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             boolean canSeeTarget = this.shooter.getSensing().hasLineOfSight(target);
             boolean sawTargetPreviously = this.seeTime > 0;
 
+            HitResult raycast = this.shooter.pick(this.idealRange, 0.0F, false);
+
+            if (raycast.getType() == HitResult.Type.ENTITY) {
+                EntityHitResult entityHit = (EntityHitResult) raycast;
+                if (entityHit.getEntity() instanceof AbstractGravekeeperGunnerEntity) {
+                    canSeeTarget = false;
+                }
+            }
+
             if (canSeeTarget != sawTargetPreviously) {
                 this.seeTime = 0;
             }
@@ -191,12 +207,12 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             if (heldItem.getTag() != null && heldItem.getTag().getInt("AmmoCount") <= 0) {
                 if (!this.isReloading) {
-                    if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable && !(this.shooter instanceof GravekeeperHeraldEntity)) {
+                    if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                         animatable.triggerAnim("Reload", "reload");
                     }
 
                     if (this.shooter instanceof GravekeeperHeraldEntity) {
-                        this.shooter.hurt(this.shooter.damageSources().mobAttack(this.shooter), 8.0f);
+                        this.shooter.hurt(this.shooter.damageSources().mobAttack(this.shooter), 15.0f);
                     }
 
                     if (this.aiType == AIType.TACTICAL) {
@@ -280,6 +296,8 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             } else {
                 this.aimingStabilityTimer = 0;
             }
+
+
 
             boolean isStableAndAimed = this.aimingStabilityTimer >= MIN_AIM_TIME;
             boolean canShootWhileMoving = this.aiType == AIType.RECKLESS || (this.aiType != AIType.SMART && !isNavigating);

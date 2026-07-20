@@ -11,7 +11,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -38,37 +37,25 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
 import top.ribs.scguns.entity.ai.AIType;
-import top.ribs.scguns.entity.ai.GunAttackGoal;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
-import java.util.Objects;
-import java.util.UUID;
 
 public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
-    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public static final EntityDataAccessor<Byte> DATA_ENRAGED = SynchedEntityData.defineId(GravekeeperHeraldEntity.class, EntityDataSerializers.BYTE);
+    public static final RawAnimation ENRAGE = RawAnimation.begin().thenPlay("enrage");
+    public static final RawAnimation WALK_ENRAGED = RawAnimation.begin().thenLoop("move.walk.enraged");
+    public static final RawAnimation IDLE_ENRAGED = RawAnimation.begin().thenLoop("misc.idle.enraged");
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     private int enrage_timer = 0;
+    private boolean reassesedGoals = false;
 
     public GravekeeperHeraldEntity(EntityType<? extends GravekeeperHeraldEntity> entityType, Level level) {
         super(entityType, level);
     }
 
-    public static final RawAnimation ENRAGE = RawAnimation.begin().thenPlay("enrage");
-    public static final RawAnimation WALK_ENRAGED = RawAnimation.begin().thenLoop("move.walk.enraged");
-    public static final RawAnimation IDLE_ENRAGED = RawAnimation.begin().thenLoop("misc.idle.enraged");
-
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 40D)
-                .add(Attributes.ATTACK_DAMAGE, 6.0f)
-                .add(Attributes.ARMOR, 18f)
-                .add(Attributes.MOVEMENT_SPEED, 0.2f)
-                .add(Attributes.ATTACK_SPEED, 2f)
-                .add(Attributes.FOLLOW_RANGE, 48D)
-                .add(CCAttributes.LIFESTEAL.get(), 0.5D)
-
-                .build();
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40D).add(Attributes.ATTACK_DAMAGE, 6.0f).add(Attributes.ARMOR, 18f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).add(CCAttributes.LIFESTEAL.get(), 0.5D).build();
     }
 
     @Override
@@ -86,7 +73,6 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
 
         return ret;
     }
-
 
     public void enrage() {
         setEnraged((byte) 1);
@@ -114,10 +100,19 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     @Override
     public void tick() {
         super.tick();
-        if (isEnraged() && this.enrage_timer > 0) {
-            this.enrage_timer--;
+        if (!this.level().isClientSide) {
+            if (isEnraged() && this.enrage_timer > 0) {
+                this.enrage_timer--;
+            }
+
+            this.setSprinting(isEnraged() && !isImmobile() && !swinging && (this.getDeltaMovement().x > 0 || this.getDeltaMovement().z > 0));
+
+            if (!reassesedGoals) {
+                registerCustomGoals();
+            }
         }
     }
+
 
     public boolean isEnraged() {
         return this.entityData.get(DATA_ENRAGED) == (byte) 1;
@@ -126,8 +121,6 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public void setEnraged(byte val) {
         this.entityData.set(DATA_ENRAGED, val);
     }
-
-
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -148,56 +141,49 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         controllers.add(new AnimationController<>(this, "Shoot", 0, state -> PlayState.STOP).triggerableAnim("shoot", SHOOT));
         controllers.add(new AnimationController<>(this, "Reload", 1, state -> PlayState.STOP).triggerableAnim("reload", RELOAD));
         controllers.add(new AnimationController<>(this, "Enrage", 1, state -> PlayState.STOP).triggerableAnim("enrage", ENRAGE));
-
     }
 
     @Override
     public void setItemSlot(EquipmentSlot equipmentSlot, ItemStack itemStack) {
+        ItemStack oldItem = this.getMainHandItem();
         super.setItemSlot(equipmentSlot, itemStack);
-        if (itemStack.getItem() instanceof GunItem) {
-            this.goalSelector.removeAllGoals((goal) -> goal instanceof MeleeAttackGoal);
-            this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, itemStack, 2.0F, AIType.SMART, 1));
-        } else {
-            this.goalSelector.removeAllGoals((goal) -> goal instanceof GhoulGunAttackGoal);
-            this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false));
+        if (equipmentSlot.equals(EquipmentSlot.MAINHAND) && !itemStack.is(oldItem.getItem()) && reassesedGoals) {
+            this.reassesedGoals = false;
         }
     }
 
     @Override
     public void registerGoals() {
+    }
+
+    //@Override
+    //not using standard register goals because it runs before mainhand items and pretty much everything else is setup.
+    //so we run it once when the entity ticks instead.
+    public void registerCustomGoals() {
+        this.reassesedGoals = true;
+        this.goalSelector.removeAllGoals(goal -> true);
+
         ItemStack mainHandItem = this.getMainHandItem();
         if (mainHandItem.getItem() instanceof GunItem) {
             this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, mainHandItem, 2.0F, AIType.SMART, 1));
         } else {
             this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false));
         }
+
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.9D));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.contains(entity.getClass())));
-
-        this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
+        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.contains(entity.getClass())));
+        this.targetSelector.addGoal(4, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }
 
-    private static final UUID LIFESTEAL_UUID = UUID.fromString("d4c7f9a2-8b3e-4a1c-9d6e-2f8c4b1a5e3d");
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         EntityEquipmentConfig.equipEntity(this, "scguns_cnc:gravekeeper_herald");
-
-        ItemStack itemStack = this.getMainHandItem();
-
-        if (itemStack.getItem() instanceof GunItem) {
-            this.goalSelector.removeAllGoals((goal) -> goal instanceof MeleeAttackGoal);
-            this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, itemStack, 2.0F, AIType.SMART, 1));
-        } else {
-            this.goalSelector.removeAllGoals((goal) -> goal instanceof GhoulGunAttackGoal);
-            this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false));
-        }
 
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }

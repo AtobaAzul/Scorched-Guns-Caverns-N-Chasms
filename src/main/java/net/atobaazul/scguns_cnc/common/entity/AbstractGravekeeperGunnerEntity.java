@@ -63,24 +63,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
      */
     private static final double ALLIANCE_RANGE = 32.0;
     private static final int ALERT_RANGE_Y = 10;
-    public List<?> hitList = List.of(
-            AbstractVillager.class,
-            AbstractIllager.class,
-            AdjudicatorEntity.class,
-            DissidentEntity.class,
-            CogKnightEntity.class,
-            CogMinionEntity.class,
-            PraetorEntity.class,
-            ScampTankEntity.class,
-            SubjugatorEntity.class,
-            SkyCarrierEntity.class,
-            SupplyScampEntity.class,
-            TraumaUnitEntity.class,
-            SignalBeaconEntity.class,
-            BlundererEntity.class,
-            Witch.class,
-            Ravager.class
-    );
+    public List<?> hitList = List.of(AbstractVillager.class, AbstractIllager.class, AdjudicatorEntity.class, DissidentEntity.class, CogKnightEntity.class, CogMinionEntity.class, PraetorEntity.class, ScampTankEntity.class, SubjugatorEntity.class, SkyCarrierEntity.class, SupplyScampEntity.class, TraumaUnitEntity.class, SignalBeaconEntity.class, BlundererEntity.class, Witch.class, Ravager.class);
     private int ticksUntilNextAlert = 40;
 
     protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
@@ -153,12 +136,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
     private void alertAllies() {
         AABB alertArea = AABB.unitCubeFromLowerCorner(this.position()).inflate(ALLIANCE_RANGE, ALERT_RANGE_Y, ALLIANCE_RANGE);
         if (this.getTarget() != null) {
-            this.level().getEntitiesOfClass(AbstractGravekeeperGunnerEntity.class, alertArea, EntitySelector.NO_SPECTATORS)
-                    .stream()
-                    .filter(entity -> entity != this)
-                    .filter(entity -> entity.getTarget() == null)
-                    .filter(entity -> !entity.isAlliedTo(this.getTarget()))
-                    .forEach(entity -> entity.setTarget(this.getTarget()));
+            this.level().getEntitiesOfClass(AbstractGravekeeperGunnerEntity.class, alertArea, EntitySelector.NO_SPECTATORS).stream().filter(entity -> entity != this).filter(entity -> entity.getTarget() == null).filter(entity -> !entity.isAlliedTo(this.getTarget())).forEach(entity -> entity.setTarget(this.getTarget()));
         }
     }
 
@@ -178,6 +156,8 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
 
     @Override
     public void registerGoals() {
+        this.goalSelector.removeAllGoals(goal -> true);
+
         ItemStack mainHandItem = this.getMainHandItem();
 
         this.goalSelector.addGoal(0, new FloatGoal(this));
