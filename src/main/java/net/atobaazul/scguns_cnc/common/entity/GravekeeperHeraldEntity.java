@@ -3,10 +3,14 @@ package net.atobaazul.scguns_cnc.common.entity;
 import com.teamabnormals.caverns_and_chasms.common.item.SanguineArmorItem;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -38,6 +42,8 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.init.ModEffects;
+import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
@@ -57,7 +63,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 40D)
+                .add(Attributes.MAX_HEALTH, 60D)
                 .add(Attributes.ATTACK_DAMAGE, 6.0f)
                 .add(Attributes.ARMOR, 18f)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
@@ -94,10 +100,13 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         this.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 45, 5, false, false));
         this.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 45, 5, false, false));
 
-        //TODO: SOUND
         if (this.level().getRandom().nextFloat() < this.handDropChances[EquipmentSlot.MAINHAND.getIndex()]) {
             this.spawnAtLocation(this.getMainHandItem());
         }
+
+        this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ITEM_BREAK, SoundSource.HOSTILE, 2.0F, 1F);
+        this.level().playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.GRAVEKEEPER_HERALD_ENRAGE.get(), SoundSource.HOSTILE, 0.33F, 0.5F);
+
         this.setItemSlot(EquipmentSlot.MAINHAND, Items.AIR.getDefaultInstance());
         this.triggerAnim("Enrage", "enrage");
     }
@@ -136,6 +145,32 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
 
     public void setEnraged(byte val) {
         this.entityData.set(DATA_ENRAGED, val);
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSoundEvents.GRAVEKEEPER_HERALD_AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return ModSoundEvents.GRAVEKEEPER_HERALD_HURT.get();
+    }
+
+    @Override
+    public boolean doHurtTarget(Entity entity) {
+        boolean ret = super.doHurtTarget(entity);
+
+        if (entity instanceof LivingEntity living) {
+            living.addEffect(new MobEffectInstance(ModEffects.LACERATED.get(), 100, 0, false, true));
+        }
+
+        return ret;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSoundEvents.GRAVEKEEPER_HERALD_DEATH.get();
     }
 
     @Override

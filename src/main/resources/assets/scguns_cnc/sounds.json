@@ -420,5 +420,58 @@
         "pitch": 0.6
       }
     ]
+  },
+  "entity.gravekeeper_herald.ambient": {
+    "subtitle": "subtitle.scguns_cnc.gravekeeper_herald.ambient",
+    "sounds": [
+      {
+        "name": "scguns_cnc:entity/herald/ambient",
+        "pitch": 0.8
+      },
+      {
+        "name": "scguns_cnc:entity/herald/ambient",
+        "pitch": 0.7
+      },
+      {
+        "name": "scguns_cnc:entity/herald/ambient",
+        "pitch": 0.6
+      }
+    ]
+  },
+  "entity.gravekeeper_herald.hurt": {
+    "subtitle": "subtitle.scguns_cnc.gravekeeper_herald.hurt",
+    "sounds": [
+      {
+        "name": "scguns_cnc:entity/herald/hurt0"
+      },
+      {
+        "name": "scguns_cnc:entity/herald/hurt1"
+      },
+      {
+        "name": "scguns_cnc:entity/herald/hurt2"
+      }
+    ]
+  },
+  "entity.gravekeeper_herald.death": {
+    "subtitle": "subtitle.scguns_cnc.gravekeeper_herald.death",
+    "sounds": [
+      {
+        "name": "scguns_cnc:entity/herald/death0"
+      },
+      {
+        "name": "scguns_cnc:entity/herald/death1"
+      },
+      {
+        "name": "scguns_cnc:entity/herald/death2"
+      }
+    ]
+  },
+  "entity.gravekeeper_herald.enrage": {
+    "subtitle": "subtitle.scguns_cnc.gravekeeper_herald.death",
+    "sounds": [
+      {
+        "name": "scguns_cnc:entity/herald/enrage"
+      }
+    ]
   }
 }

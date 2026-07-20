@@ -49,6 +49,12 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> GRAVEKEEPER_GHOUL_AMBIENT = register("entity.gravekeeper_ghoul.ambient");
 
 
+    public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_AMBIENT = register("entity.gravekeeper_herald.ambient");
+    public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_DEATH = register("entity.gravekeeper_herald.death");
+    public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_ENRAGE = register("entity.gravekeeper_herald.enrage");
+    public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_HURT = register("entity.gravekeeper_herald.hurt");
+
+
     private static RegistryObject<SoundEvent> register(String key) {
         return REGISTER.register(key, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, key)));
     }

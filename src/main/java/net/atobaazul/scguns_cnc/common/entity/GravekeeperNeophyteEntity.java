@@ -1,7 +1,9 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -61,6 +63,11 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
         if (equipmentSlot.equals(EquipmentSlot.MAINHAND) && !itemStack.is(oldItem.getItem()) && reassesedGoals) {
             this.reassesedGoals = false;
         }
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSoundEvents.GRAVEKEEPER_GHOUL_AMBIENT.get();
     }
 
     @Override
