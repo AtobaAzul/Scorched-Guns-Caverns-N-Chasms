@@ -64,7 +64,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
     private static final double ALLIANCE_RANGE = 32.0;
     private static final int ALERT_RANGE_Y = 10;
     public List<?> hitList = List.of(AbstractVillager.class, AbstractIllager.class, AdjudicatorEntity.class, DissidentEntity.class, CogKnightEntity.class, CogMinionEntity.class, PraetorEntity.class, ScampTankEntity.class, SubjugatorEntity.class, SkyCarrierEntity.class, SupplyScampEntity.class, TraumaUnitEntity.class, SignalBeaconEntity.class, BlundererEntity.class, Witch.class, Ravager.class);
-    private int ticksUntilNextAlert = 40;
+    private int ticksUntilNextAlert = 20;
 
     protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
         super(p_33002_, p_33003_);
@@ -96,10 +96,11 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         this.entityData.set(DATA_AGGRO, this.getTarget() != null ? (byte) 1 : (byte) 0);
     }
 
+
+
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         boolean hasMeleeWeapon = !(this.getMainHandItem().getItem() instanceof GunItem);
-
         controllers.add(new AnimationController<>(this, "Walk/Run/Idle", 2, state -> {
             if (AbstractGravekeeperGunnerEntity.this.swinging) return state.setAndContinue(MELEE);
 

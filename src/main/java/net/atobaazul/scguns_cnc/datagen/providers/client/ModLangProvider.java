@@ -82,6 +82,7 @@ public class ModLangProvider extends LanguageProvider {
         //entities!
         addEntityType(ModEntities.GRAVEKEEPER_GHOUL, "Gravekeeper Ghoul");
         addEntityType(ModEntities.GRAVEKEEPER_NEOPHYTE, "Gravekeeper Neophyte");
+        addEntityType(ModEntities.GRAVEKEEPER_HERALD, "Gravekeeper Herald");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
@@ -132,7 +133,7 @@ public class ModLangProvider extends LanguageProvider {
 
         add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
 
-        add("subtitles.scguns_cnc.gravekeeper_ghoul.ambient", "Gravekeeper sighs");
+        add("subtitle.scguns_cnc.gravekeeper_ghoul.ambient", "Gravekeeper sighs");
 
     }
 }

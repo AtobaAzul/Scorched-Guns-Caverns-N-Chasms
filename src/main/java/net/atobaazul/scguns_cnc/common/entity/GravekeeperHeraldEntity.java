@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import com.teamabnormals.caverns_and_chasms.common.item.SanguineArmorItem;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
 import net.minecraft.nbt.CompoundTag;
@@ -55,7 +56,14 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40D).add(Attributes.ATTACK_DAMAGE, 6.0f).add(Attributes.ARMOR, 18f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).add(CCAttributes.LIFESTEAL.get(), 0.5D).build();
+        return Monster.createMonsterAttributes()
+                .add(Attributes.MAX_HEALTH, 40D)
+                .add(Attributes.ATTACK_DAMAGE, 6.0f)
+                .add(Attributes.ARMOR, 18f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .add(Attributes.ATTACK_SPEED, 2f)
+                .add(Attributes.FOLLOW_RANGE, 48D)
+                .build();
     }
 
     @Override
@@ -74,6 +82,11 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         return ret;
     }
 
+    @Override
+    protected void setItemSlotAndDropWhenKilled(EquipmentSlot pSlot, ItemStack pStack) {
+        super.setItemSlotAndDropWhenKilled(pSlot, pStack);
+    }
+
     public void enrage() {
         setEnraged((byte) 1);
         this.enrage_timer = 45; //2.5s, matching anim length
@@ -82,6 +95,9 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         this.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 45, 5, false, false));
 
         //TODO: SOUND
+        if (this.level().getRandom().nextFloat() < this.handDropChances[EquipmentSlot.MAINHAND.getIndex()]) {
+            this.spawnAtLocation(this.getMainHandItem());
+        }
         this.setItemSlot(EquipmentSlot.MAINHAND, Items.AIR.getDefaultInstance());
         this.triggerAnim("Enrage", "enrage");
     }
@@ -156,6 +172,8 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     public void registerGoals() {
     }
 
+
+
     //@Override
     //not using standard register goals because it runs before mainhand items and pretty much everything else is setup.
     //so we run it once when the entity ticks instead.
@@ -171,7 +189,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         }
 
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.9D));
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, isEnraged() ? 2.0D : 0.9D));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 

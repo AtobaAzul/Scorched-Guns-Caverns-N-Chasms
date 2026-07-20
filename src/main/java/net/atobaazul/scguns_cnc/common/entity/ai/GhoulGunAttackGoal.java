@@ -212,7 +212,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     }
 
                     if (this.shooter instanceof GravekeeperHeraldEntity) {
-                        this.shooter.hurt(this.shooter.damageSources().mobAttack(this.shooter), 15.0f);
+                        this.shooter.hurt(this.shooter.damageSources().generic(), 10.0f);
                     }
 
                     if (this.aiType == AIType.TACTICAL) {
@@ -321,7 +321,8 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     this.reloadTick = 0;
                 }
 
-                target.hurt(this.shooter.damageSources().mobAttack(this.shooter), (float) this.shooter.getAttributeBaseValue(Attributes.ATTACK_DAMAGE));
+                this.shooter.doHurtTarget(target);
+
                 this.melee_timer = 20;
                 this.attackTime = this.attackTime + 15;
             } else if (canSeeTarget && this.seeTime >= 5 && isStableAndAimed) {

@@ -11,12 +11,13 @@ import net.minecraftforge.fml.common.Mod;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class EntityAttributeEvents {
+public class ModEntityEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntities.GRAVEKEEPER_GHOUL.get(), GravekeeperGhoulEntity.setAttributes());
         event.put(ModEntities.GRAVEKEEPER_NEOPHYTE.get(), GravekeeperNeophyteEntity.setAttributes());
         event.put(ModEntities.GRAVEKEEPER_HERALD.get(), GravekeeperHeraldEntity.setAttributes());
-
     }
+
+
 }
