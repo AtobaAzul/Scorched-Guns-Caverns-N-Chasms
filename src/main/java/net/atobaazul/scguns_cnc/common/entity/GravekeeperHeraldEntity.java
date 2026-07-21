@@ -63,7 +63,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 60D).add(Attributes.ATTACK_DAMAGE, 6.0f).add(Attributes.ARMOR, 18f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 60D).add(Attributes.KNOCKBACK_RESISTANCE, 0.33f).add(Attributes.ATTACK_DAMAGE, 6.0f).add(Attributes.ARMOR, 18f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
     }
 
     @Override
