@@ -18,6 +18,7 @@ import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
+import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
 
@@ -44,7 +45,10 @@ public class GravekeeperGhoulEntity extends AbstractGravekeeperGunnerEntity impl
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        EntityEquipmentConfig.equipEntity(this, "scguns_cnc:gravekeeper_ghoul");
+        //check for structures.
+        if (!(this.getMainHandItem().getItem() instanceof GunItem)) {
+            EntityEquipmentConfig.equipEntity(this, "scguns_cnc:gravekeeper_ghoul");
+        }
 
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }

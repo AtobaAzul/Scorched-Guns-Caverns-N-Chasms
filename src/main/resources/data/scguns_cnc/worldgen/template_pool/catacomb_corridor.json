@@ -34,7 +34,7 @@
       "weight": 2,
       "element": {
         "element_type": "yungsapi:yung_single_element",
-        "max_count": 1,
+        "max_count": 2,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_1",
         "name": "forge",
         "projection": "rigid",
@@ -59,7 +59,7 @@
       "weight": 2,
       "element": {
         "element_type": "yungsapi:yung_single_element",
-        "max_count": 1,
+        "max_count": 2,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_2",
         "name": "brewer",
         "projection": "rigid",
@@ -84,7 +84,7 @@
       "weight": 2,
       "element": {
         "element_type": "yungsapi:yung_single_element",
-        "max_count": 1,
+        "max_count": 2,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_3",
         "name": "armory",
         "projection": "rigid",
@@ -109,7 +109,7 @@
       "weight": 2,
       "element": {
         "element_type": "yungsapi:yung_single_element",
-        "max_count": 1,
+        "max_count": 2,
         "location": "scguns_cnc:graveyard_v2/catacombs/room_4",
         "name": "shooting_range",
         "projection": "rigid",
@@ -136,7 +136,7 @@
         "element_type": "yungsapi:yung_single_element",
         "location": "scguns_cnc:graveyard_v2/catacombs/room_5",
         "projection": "rigid",
-        "max_count": 1,
+        "max_count": 2,
         "name": "portal_room",
         "processors": {
           "processors": [

@@ -63,7 +63,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
      */
     private static final double ALLIANCE_RANGE = 32.0;
     private static final int ALERT_RANGE_Y = 10;
-    public List<?> hitList = List.of(AbstractVillager.class, AbstractIllager.class, AdjudicatorEntity.class, DissidentEntity.class, CogKnightEntity.class, CogMinionEntity.class, PraetorEntity.class, ScampTankEntity.class, SubjugatorEntity.class, SkyCarrierEntity.class, SupplyScampEntity.class, TraumaUnitEntity.class, SignalBeaconEntity.class, BlundererEntity.class, Witch.class, Ravager.class);
+    public List<Class<? extends LivingEntity>> hitList = List.of(AbstractVillager.class, AbstractIllager.class, AdjudicatorEntity.class, DissidentEntity.class, CogKnightEntity.class, CogMinionEntity.class, PraetorEntity.class, ScampTankEntity.class, SubjugatorEntity.class, SkyCarrierEntity.class, SupplyScampEntity.class, TraumaUnitEntity.class, SignalBeaconEntity.class, BlundererEntity.class, Witch.class, Ravager.class);
     private int ticksUntilNextAlert = 20;
 
     protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
@@ -95,7 +95,6 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
     public void updateAggroState() {
         this.entityData.set(DATA_AGGRO, this.getTarget() != null ? (byte) 1 : (byte) 0);
     }
-
 
 
     @Override
@@ -167,7 +166,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.contains(entity.getClass())));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.stream().anyMatch((clazz) -> clazz.isInstance(entity))));
 
         this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }

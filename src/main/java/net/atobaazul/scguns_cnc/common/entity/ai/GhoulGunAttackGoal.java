@@ -1,10 +1,12 @@
 package net.atobaazul.scguns_cnc.common.entity.ai;
 
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
+import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.LivingEntity;
@@ -235,7 +237,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             boolean inRange = distanceToTarget <= this.attackRadiusSqr;
             boolean tooClose = distanceToTarget < (this.minRange * this.minRange);
-            boolean isMovingFast = this.shooter.getDeltaMovement().horizontalDistanceSqr() > 0.01;
+            boolean isMovingFast = false; //this.shooter.getDeltaMovement().horizontalDistanceSqr() > 0.01;
             boolean isNavigating = !this.shooter.getNavigation().isDone();
 
             if (!inRange || !canSeeTarget) {
@@ -303,10 +305,14 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             boolean canShootWhileMoving = this.aiType == AIType.RECKLESS || (this.aiType != AIType.SMART && !isNavigating);
             boolean smartShouldShoot = this.aiType == AIType.SMART && !isNavigating && !isMovingFast && this.shooter.getNavigation().isDone();
 
-            if (target.distanceToSqr(this.shooter) < 3.5 * 3.5 && this.melee_timer <= 0) {
+            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                     animatable.triggerAnim("Gun Melee", "gun_melee");
+                }
+
+                if (this.shooter instanceof GravekeeperGhoulEntity) {
+                    this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(), SoundEvents.GENERIC_EAT, SoundSource.HOSTILE, 1.0F, 0.4F);
                 }
 
                 if (heldItem.getItem() instanceof AnathemaGunItem) {
