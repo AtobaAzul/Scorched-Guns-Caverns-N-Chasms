@@ -237,7 +237,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             boolean inRange = distanceToTarget <= this.attackRadiusSqr;
             boolean tooClose = distanceToTarget < (this.minRange * this.minRange);
-            boolean isMovingFast = this.shooter.getDeltaMovement().horizontalDistanceSqr() > 0.01;
+            boolean isMovingFast = false; //this.shooter.getDeltaMovement().horizontalDistanceSqr() > 0.01;
             boolean isNavigating = !this.shooter.getNavigation().isDone();
 
             if (!inRange || !canSeeTarget) {
