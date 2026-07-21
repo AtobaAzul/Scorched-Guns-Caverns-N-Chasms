@@ -38,7 +38,7 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20D).add(Attributes.ATTACK_DAMAGE, 1.0f).add(Attributes.ARMOR, 7f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20D).add(Attributes.ATTACK_DAMAGE, 4.5f).add(Attributes.ARMOR, 7f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
     }
 
     @Override

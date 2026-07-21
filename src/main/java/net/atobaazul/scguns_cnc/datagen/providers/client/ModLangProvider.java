@@ -134,6 +134,10 @@ public class ModLangProvider extends LanguageProvider {
         add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
 
         add("subtitle.scguns_cnc.gravekeeper_ghoul.ambient", "Gravekeeper sighs");
+        add("subtitle.scguns_cnc.gravekeeper_herald.hurt", "Herald hurts");
+        add("subtitle.scguns_cnc.gravekeeper_herald.ambient", "Herald beckons");
+        add("subtitle.scguns_cnc.gravekeeper_herald.death", "Herald dies");
+        add("subtitle.scguns_cnc.gravekeeper_herald.enrage", "Herald cries out");
 
     }
 }
