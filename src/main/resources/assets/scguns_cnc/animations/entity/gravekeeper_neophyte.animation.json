@@ -133,8 +133,8 @@
 					"position": [-1, -3, -3]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -238,8 +238,8 @@
 					"position": [-1, -3, -3]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -344,8 +344,8 @@
 					"position": [-1, -3, -3]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -474,8 +474,8 @@
 					"position": [-1, -3, -3]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -620,8 +620,8 @@
 					"position": [-1, -3, -3]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -724,8 +724,8 @@
 					"position": [-1, -3, -3]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -840,8 +840,8 @@
 					}
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598],
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598],
 					"scale": 0
 				}
 			}
@@ -950,8 +950,8 @@
 					"rotation": [-5, 0, 0]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -1062,8 +1062,8 @@
 					"position": [-1, -8.99178, -2.68598]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -1199,8 +1199,8 @@
 					"position": [-1, -8.99178, -2.68598]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -1317,8 +1317,8 @@
 					}
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -1471,8 +1471,8 @@
 					}
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -1608,8 +1608,8 @@
 					"position": [-1, -8.99178, -2.68598]
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598]
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598]
 				}
 			}
 		},
@@ -1762,8 +1762,8 @@
 					}
 				},
 				"offhand_item_bone": {
-					"rotation": [45, 0, 0],
-					"position": [-1, -8.99178, -2.68598],
+					"rotation": [0, 0, 0],
+					"position": [1, -8.99178, -2.68598],
 					"scale": 0
 				}
 			}
