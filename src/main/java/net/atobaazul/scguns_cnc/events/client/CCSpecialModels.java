@@ -187,7 +187,14 @@ public enum CCSpecialModels {
     //Keteriya
     KETERIYA_MAIN("keteriya/main"),
 
-     //Electrothermal Autocannon
+    //Hangman_Acolyte
+    HANGMAN_ACOLYTE_MAIN("hangman_acolyte/main"),
+
+    //Mortician_Acolyte
+    MORTICIAN_ACOLYTE_MAIN("mortician_acolyte/main"),
+
+
+    //Electrothermal Autocannon
      EAUTOCANNON_MAIN("electrothermal_autocannon/main"),
 
     //Scatterer
