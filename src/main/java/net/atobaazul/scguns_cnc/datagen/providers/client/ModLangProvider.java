@@ -77,11 +77,13 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.GRAVEKEEPER_GHOUL_SPAWN_EGG, "Gravekeeper Ghoul Spawn Egg");
         addItem(ModItems.GRAVEKEEPER_NEOPHYTE_SPAWN_EGG, "Gravekeeper Neophyte Spawn Egg");
         addItem(ModItems.GRAVEKEEPER_HERALD_SPAWN_EGG, "Gravekeeper Herald Spawn Egg");
+        addItem(ModItems.GRAVEKEEPER_ACOLYTE_SPAWN_EGG, "Gravekeeper Acolyte Spawn Egg");
 
         //entities!
         addEntityType(ModEntities.GRAVEKEEPER_GHOUL, "Gravekeeper Ghoul");
         addEntityType(ModEntities.GRAVEKEEPER_NEOPHYTE, "Gravekeeper Neophyte");
         addEntityType(ModEntities.GRAVEKEEPER_HERALD, "Gravekeeper Herald");
+        addEntityType(ModEntities.GRAVEKEEPER_ACOLYTE, "Gravekeeper Acolyte");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");

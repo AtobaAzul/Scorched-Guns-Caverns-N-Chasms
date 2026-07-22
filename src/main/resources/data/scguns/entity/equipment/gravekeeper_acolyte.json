@@ -1,0 +1,22 @@
+{
+  "id": "scguns_cnc:gravekeeper_acolyte",
+  "equipment_chance": 1.0,
+  "items": [
+    {
+      "item": "scguns_cnc:hangman_acolyte",
+      "weight": 1.0,
+      "drop_chance": 0.1,
+      "min_durability": 0.2,
+      "max_durability": 0.3,
+      "slot": "mainhand"
+    },
+    {
+      "item": "scguns_cnc:mortician_acolyte",
+      "weight": 1.0,
+      "drop_chance": 0.1,
+      "min_durability": 0.2,
+      "max_durability": 0.3,
+      "slot": "mainhand"
+    }
+  ]
+}

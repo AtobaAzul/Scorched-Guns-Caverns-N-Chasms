@@ -423,6 +423,7 @@ public class ModItems {
     public static final RegistryObject<Item> GRAVEKEEPER_GHOUL_SPAWN_EGG = REGISTER.register("gravekeeper_ghoul_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_GHOUL, 0x4f6655, 0xa2acc2, new Item.Properties()));
     public static final RegistryObject<Item> GRAVEKEEPER_NEOPHYTE_SPAWN_EGG = REGISTER.register("gravekeeper_neophyte_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_NEOPHYTE, 0x433634, 0x495b4e, new Item.Properties()));
     public static final RegistryObject<Item> GRAVEKEEPER_HERALD_SPAWN_EGG = REGISTER.register("gravekeeper_herald_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_HERALD, 0x945162, 0xa2acc2, new Item.Properties()));
+    public static final RegistryObject<Item> GRAVEKEEPER_ACOLYTE_SPAWN_EGG = REGISTER.register("gravekeeper_acolyte_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_ACOLYTE, 0x2596be, 0xa2acc2, new Item.Properties()));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {
@@ -452,7 +453,7 @@ public class ModItems {
                 .addItemsAfter(of(DIAMOND_STEEL_FLARE.get()), GRAVEKEEPER_FLARE)
                 .addItemsAfter(of(BUCKSHOT.get()), HEX_BUCKSHOT)
                 .addItemsAfter(of(ADVANCED_BULLET.get()), SILVER_BULLET)
-                .addItemsAfter(of(SCAMPLER_SPAWN_EGG.get()), GRAVEKEEPER_GHOUL_SPAWN_EGG, GRAVEKEEPER_NEOPHYTE_SPAWN_EGG, GRAVEKEEPER_HERALD_SPAWN_EGG);
+                .addItemsAfter(of(SCAMPLER_SPAWN_EGG.get()), GRAVEKEEPER_GHOUL_SPAWN_EGG, GRAVEKEEPER_NEOPHYTE_SPAWN_EGG, GRAVEKEEPER_HERALD_SPAWN_EGG, GRAVEKEEPER_ACOLYTE_SPAWN_EGG);
 
     }
 }

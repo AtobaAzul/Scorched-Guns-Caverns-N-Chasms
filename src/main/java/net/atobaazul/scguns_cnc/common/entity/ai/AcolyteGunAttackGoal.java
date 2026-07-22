@@ -1,24 +1,28 @@
 package net.atobaazul.scguns_cnc.common.entity.ai;
 
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
+import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import top.ribs.scguns.Config;
+import top.ribs.scguns.common.FireMode;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.entity.ai.AIGunEvent;
 import top.ribs.scguns.entity.ai.AIType;
@@ -28,12 +32,14 @@ import top.ribs.scguns.item.GunItem;
 
 import static top.ribs.scguns.event.GunEventBus.ejectCasing;
 
-public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
-    protected static final int MIN_AIM_TIME = 10;
+public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
+    protected static final int MIN_AIM_TIME = 5;
     protected static final float ROTATION_SPEED = 15.0F;
     protected final T shooter;
     protected final double speedModifier;
     protected final float attackRadiusSqr;
+    private final boolean canMelee = false;
+    private final int default_potion_cd = 20 * 3;
     protected int seeTime;
     protected int attackTime;
     protected double idealRange;
@@ -55,29 +61,27 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
     protected int burstAmount;
     protected int burstTimer = 1;
     private int shot_count = 1;
-    private final boolean canMelee = false;
     private int melee_timer = 0;
+    private int potion_timer;
 
-    public GhoulGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
+    public AcolyteGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
         this.shooter = shooter;
         this.speedModifier = speedModifier;
         this.attackTime = -1;
         this.aiType = aiType;
+        this.potion_timer = 0;
+
         shooter.addTag("AI_" + aiType.name());
 
         if (gunStack.getItem() instanceof GunItem gunItem) {
             Gun gun = gunItem.getModifiedGun(gunStack);
             this.idealRange = gun.getIdealAttackRange() * 4;
-            this.minRange = gun.getMinAttackRange();
+            this.minRange = gun.getMinAttackRange() * 0.1;
         } else {
             this.idealRange = 15.0;
-            this.minRange = 8.0;
+            this.minRange = 4.0;
         }
 
-        if (this.shooter instanceof GravekeeperHeraldEntity) {
-            this.idealRange = 10.0;
-            this.minRange = 0.0;
-        }
 
         this.attackRadiusSqr = (float) (this.idealRange * this.idealRange);
 
@@ -87,10 +91,9 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         float baseAccuracy = switch (aiType) {
             case TACTICAL -> 2.5F;
-            case SMART -> 2.2F;
+            case SMART, COWARD -> 1.5F;
             case DEFAULT -> 2.0F;
             case RECKLESS -> 1.2F;
-            case COWARD -> 1.5F;
         };
 
         float difficultyBonus = 0.75F + ((difficulty - 1) * 0.3F);
@@ -148,6 +151,47 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
         return true;
     }
 
+    public boolean isTargetInRangeForPotion(LivingEntity target) {
+        double distanceToTarget = this.shooter.distanceToSqr(target.getX(), target.getY(), target.getZ());
+        return distanceToTarget <= 10 * 10 && distanceToTarget > 4.5 * 4.5;
+    }
+
+    public void throwPotion(LivingEntity target) {
+        this.potion_timer = this.default_potion_cd;
+        this.attackTime = 30;
+        this.melee_timer = 10;
+
+        LivingEntity shooter = this.shooter;
+        Vec3 vec3 = target.getDeltaMovement();
+        double d0 = target.getX() + vec3.x - shooter.getX();
+        double d1 = target.getEyeY() - (double) 1.1F - shooter.getY();
+        double d2 = target.getZ() + vec3.z - shooter.getZ();
+        double d3 = Math.sqrt(d0 * d0 + d2 * d2);
+
+        Potion potion = Potions.HARMING;
+
+        if (!target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+            potion = Potions.SLOWNESS;
+        } else if (!target.hasEffect(MobEffects.WEAKNESS)) {
+            potion = Potions.WEAKNESS;
+        }
+
+        ThrownPotion thrownpotion = new ThrownPotion(shooter.level(), shooter);
+        thrownpotion.setItem(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), potion));
+        thrownpotion.setXRot(thrownpotion.getXRot() - -20.0F);
+        thrownpotion.shoot(d0, d1 + d3 * 0.2D, d2, 0.75F, 8.0F);
+
+        if (!shooter.isSilent()) {
+            shooter.level().playSound(null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.WITCH_THROW, shooter.getSoundSource(), 1.0F, 0.8F + shooter.getRandom().nextFloat() * 0.4F);
+        }
+
+        if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
+            animatable.triggerAnim("Throw", "throw");
+        }
+
+        shooter.level().addFreshEntity(thrownpotion);
+    }
+
     @Override
     public void tick() {
         LivingEntity target = this.shooter.getTarget();
@@ -155,6 +199,10 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         if (this.melee_timer > 0) {
             this.melee_timer--;
+        }
+
+        if (this.potion_timer > 0) {
+            this.potion_timer--;
         }
 
         if (this.shooter.hasEffect(ModEffects.BLINDED.get()) || this.shooter.hasEffect(ModEffects.DEAFENED.get()))
@@ -214,9 +262,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                         animatable.triggerAnim("Reload", "reload");
                     }
 
-                    if (this.shooter instanceof GravekeeperHeraldEntity) {
-                        this.shooter.hurt(this.shooter.damageSources().generic(), 10.0f);
-                    }
 
                     if (this.aiType == AIType.TACTICAL) {
                         Vec3 coverLocation = findCoverLocation();
@@ -238,7 +283,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             boolean inRange = distanceToTarget <= this.attackRadiusSqr;
             boolean tooClose = distanceToTarget < (this.minRange * this.minRange);
-            boolean isMovingFast = false; //this.shooter.getDeltaMovement().horizontalDistanceSqr() > 0.01;
             boolean isNavigating = !this.shooter.getNavigation().isDone();
 
             if (!inRange || !canSeeTarget) {
@@ -289,31 +333,25 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 }
             }
 
-            if (canSeeTarget && !isMovingFast) {
+            if (canSeeTarget) {
                 updateSmoothRotation(target);
                 if (this.aimingStabilityTimer < MIN_AIM_TIME) {
                     this.aimingStabilityTimer++;
                 }
-            } else if (canSeeTarget && this.aiType == AIType.SMART && isNavigating) {
-                this.aimingStabilityTimer = 0;
             } else {
                 this.aimingStabilityTimer = 0;
             }
 
-
-
             boolean isStableAndAimed = this.aimingStabilityTimer >= MIN_AIM_TIME;
-            boolean canShootWhileMoving = this.aiType == AIType.RECKLESS || (this.aiType != AIType.SMART && !isNavigating);
-            boolean smartShouldShoot = this.aiType == AIType.SMART && !isNavigating && !isMovingFast && this.shooter.getNavigation().isDone();
+
+            if (isTargetInRangeForPotion(target) && this.potion_timer <= 0) {
+                throwPotion(target);
+            }
 
             if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                     animatable.triggerAnim("Gun Melee", "gun_melee");
-                }
-
-                if (this.shooter instanceof GravekeeperGhoulEntity) {
-                    this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(), SoundEvents.GENERIC_EAT, SoundSource.HOSTILE, 1.0F, 0.4F);
                 }
 
                 if (heldItem.getItem() instanceof AnathemaGunItem) {
@@ -383,11 +421,13 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         int baseRate = gun.getGeneral().getRate();
         int ammoCount = gun.getReloads().getMaxAmmo();
+        boolean isBurst = gun.getGeneral().getFireMode().equals(FireMode.BURST);
+        int burstCount = gun.getGeneral().getBurstAmount();
         float configMultiplier = Config.COMMON.gameplay.mobFireRateMultiplier.get().floatValue();
 
-        this.attackTime = (int) (baseRate * configMultiplier);
+        this.attackTime = (int) (baseRate * configMultiplier) + 1;
 
-        if (this.shot_count >= Math.floor((double) ammoCount / 5)) {
+        if (isBurst && this.shot_count >= burstCount || !isBurst && this.shot_count >= ammoCount) {
             this.attackTime = this.attackTime + 15;
             this.shot_count = 0;
         }
@@ -397,7 +437,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
         }
 
         this.shot_count++;
-
 
         consumeAmmo(heldItem);
         if (this.shooter.getMainHandItem().getItem() instanceof GunItem) {

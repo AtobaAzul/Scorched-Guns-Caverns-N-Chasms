@@ -1,5 +1,6 @@
 {
   "creativetab.scguns_cnc_tab": "Scorched Guns: Caverns & Chasms",
+  "entity.scguns_cnc.gravekeeper_acolyte": "Gravekeeper Acolyte",
   "entity.scguns_cnc.gravekeeper_ghoul": "Gravekeeper Ghoul",
   "entity.scguns_cnc.gravekeeper_herald": "Gravekeeper Herald",
   "entity.scguns_cnc.gravekeeper_neophyte": "Gravekeeper Neophyte",
@@ -18,6 +19,7 @@
   "item.scguns_cnc.electrothermal_part.tooltip": "Technological Innovation Nucleus' plasma power project was cancelled and repurposed into military applications after growing tensions between COG and Asghar demanded more weapons of war.",
   "item.scguns_cnc.exhumer": "Exhumer",
   "item.scguns_cnc.gallows": "Gallows",
+  "item.scguns_cnc.gravekeeper_acolyte_spawn_egg": "Gravekeeper Acolyte Spawn Egg",
   "item.scguns_cnc.gravekeeper_blueprint": "Gravekeeper Blueprint",
   "item.scguns_cnc.gravekeeper_flare": "Gravekeeper Flare",
   "item.scguns_cnc.gravekeeper_ghoul_spawn_egg": "Gravekeeper Ghoul Spawn Egg",
