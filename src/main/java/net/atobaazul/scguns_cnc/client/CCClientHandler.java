@@ -44,6 +44,7 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.CACOPHONY.get(), new CacophonyModel());
         ModelOverrides.register(ModItems.ELECTROTHERMAL_AUTOCANNON.get(), new EAutocannonModel());
         ModelOverrides.register(ModItems.SCATTERER.get(), new ScattererModel());
+        ModelOverrides.register(ModItems.HANGMAN_ACOLYTE.get(), new HangmanAcolyte());
 
         ModelOverrides.register(ModItems.EXHUMER.get(), new ExhumerModel());
         ModelOverrides.register(ModItems.DEAD_DRAFT.get(), new DeadDraftModel());
