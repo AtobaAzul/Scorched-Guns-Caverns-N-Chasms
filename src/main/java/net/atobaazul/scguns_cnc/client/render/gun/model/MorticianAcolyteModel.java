@@ -10,10 +10,10 @@ import top.ribs.scguns.client.render.gun.IOverrideModel;
 import top.ribs.scguns.client.util.RenderUtil;
 
 
-public class HangmanAcolyte implements IOverrideModel {
+public class MorticianAcolyteModel implements IOverrideModel {
     @SuppressWarnings("resource")
     @Override
     public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, LivingEntity entity, PoseStack matrixStack, MultiBufferSource buffer, int light, int overlay) {
-        RenderUtil.renderModel(CCSpecialModels.HANGMAN_ACOLYTE_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
+        RenderUtil.renderModel(CCSpecialModels.MORTICIAN_ACOLYTE_MAIN.getModel(), stack, matrixStack, buffer, light, overlay);
     }
 }

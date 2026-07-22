@@ -190,7 +190,11 @@ public enum CCSpecialModels {
     //Hangman_Acolyte
     HANGMAN_ACOLYTE_MAIN("hangman_acolyte/main"),
 
-     //Electrothermal Autocannon
+    //Mortician_Acolyte
+    MORTICIAN_ACOLYTE_MAIN("mortician_acolyte/main"),
+
+
+    //Electrothermal Autocannon
      EAUTOCANNON_MAIN("electrothermal_autocannon/main"),
 
     //Scatterer
