@@ -131,6 +131,19 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> SCHISMATIC_REHEARSE = REGISTER.register("schismatic_rehearse",
+            () -> new TooltipGunItem(
+                    new Item.Properties().stacksTo(1).durability(2000).rarity(ModRarity.EXSANGUINATED),
+                    "schismatic_rehearse", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get(),    // Ejector sound release
+                    "tooltip.schismatic.lore"
+            )
+    );
+
      public static final RegistryObject<AnimatedGunItem> SILVER_LINING = REGISTER.register("silverlining",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(1800).rarity(ModRarity.EXSANGUINATED),
@@ -179,6 +192,19 @@ public class ModItems {
                     ModSounds.RELOAD_END.get(),           // Reload sound end
                     ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
                     ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
+    public static final RegistryObject<AnimatedGunItem> SCHISMATIC_GALLOWS = REGISTER.register("schismatic_gallows",
+            () -> new TooltipGunItem(
+                    new Item.Properties().stacksTo(1).durability(1800).rarity(ModRarity.EXSANGUINATED),
+                    "schismatic_gallows", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get(),    // Ejector sound release
+                    "tooltip.schismatic.lore"
             )
     );
 

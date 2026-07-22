@@ -1,17 +1,20 @@
 {
   "values": [
     "scguns_cnc:hangman_carbine",
+    "scguns_cnc:hangman_acolyte",
     "scguns_cnc:ribcage",
     "scguns_cnc:bella",
     "scguns_cnc:rehearse",
+    "scguns_cnc:schismatic_rehearse",
     "scguns_cnc:silverlining",
     "scguns_cnc:keteriya",
     "scguns_cnc:anathema",
     "scguns_cnc:gallows",
+    "scguns_cnc:schismatic_gallows",
     "scguns_cnc:necrosis",
     "scguns_cnc:mortician",
+    "scguns_cnc:mortician_acolyte",
     "scguns_cnc:cacophony",
-    "scguns_cnc:hangman_acolyte",
     "scguns_cnc:exhumer",
     "scguns_cnc:dead_draft"
   ]

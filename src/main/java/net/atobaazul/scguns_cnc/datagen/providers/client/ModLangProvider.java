@@ -3,10 +3,7 @@ package net.atobaazul.scguns_cnc.datagen.providers.client;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.LanguageProvider;
-
-import java.util.function.Supplier;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
@@ -40,9 +37,11 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.MORTICIAN, "Mortician");
         addItem(ModItems.MORTICIAN_ACOLYTE, "Mortician Acolyte");
         addItem(ModItems.REHEARSE, "Rehearse");
+        addItem(ModItems.SCHISMATIC_REHEARSE, "Schismatic Rehearse");
         addItem(ModItems.SILVER_LINING, "Silver Lining");
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.GALLOWS, "Gallows");
+        addItem(ModItems.SCHISMATIC_GALLOWS, "Schismatic Gallows");
         addItem(ModItems.NECROSIS, "Necrosis");
         addItem(ModItems.CACOPHONY, "Cacophony");
         addItem(ModItems.HANGMAN_ACOLYTE, "Hangman Acolyte");
@@ -96,6 +95,7 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.scatterer.lore", "Compact electrothermal energy weapon, capable of firing single precise shots or large inaccurate bursts of plasma.");
 
         add("tooltip.acolyte.lore", "Blasphemy against the Moon");
+        add("tooltip.schismatic.lore", "Hidden from the Sun");
 
         //tab
         add("creativetab.scguns_cnc_tab", "Scorched Guns: Caverns & Chasms");

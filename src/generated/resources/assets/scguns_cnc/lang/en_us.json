@@ -54,6 +54,8 @@
   "item.scguns_cnc.scatterer.lore": "Compact electrothermal energy weapon, capable of firing single precise shots or large inaccurate bursts of plasma.",
   "item.scguns_cnc.scatterer_part": "Plasma Accumulator",
   "item.scguns_cnc.scatterer_part.tooltip": "Technological Innovation Nucleus' plasma systems are able to create usable plasma from the very air, revolutionizing plasma technology.",
+  "item.scguns_cnc.schismatic_gallows": "Schismatic Gallows",
+  "item.scguns_cnc.schismatic_rehearse": "Schismatic Rehearse",
   "item.scguns_cnc.silver_bullet": "Silver Bullet",
   "item.scguns_cnc.silverlining": "Silver Lining",
   "item.scguns_cnc.small_necromium_casing": "Small Necromium Casing",
@@ -94,5 +96,6 @@
   "tooltip.bluntshot.knockback": "Deals increased knockback to hit targets.",
   "tooltip.hex_round.magic_damage": "Deals half of the bullet damage as magic damage.",
   "tooltip.ricoshot_round.crit_chance": "Increases crit chance and damage by 50% for every ricochet.",
-  "tooltip.scguns_cnc.heat_level": "Heat Level"
+  "tooltip.scguns_cnc.heat_level": "Heat Level",
+  "tooltip.schismatic.lore": "Hidden from the Sun"
 }

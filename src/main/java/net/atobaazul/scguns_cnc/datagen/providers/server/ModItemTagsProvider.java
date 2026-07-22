@@ -70,17 +70,20 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(GRAVEKEEPER_GUN_TIER)
                 .add(HANGMAN_CARBINE.get())
+                .add(HANGMAN_ACOLYTE.get())
                 .add(RIBCAGE.get())
                 .add(BELLA.get())
                 .add(REHEARSE.get())
+                .add(SCHISMATIC_REHEARSE.get())
                 .add(SILVER_LINING.get())
                 .add(KETERIYA.get())
                 .add(ANATHEMA.get())
                 .add(GALLOWS.get())
+                .add(SCHISMATIC_GALLOWS.get())
                 .add(NECROSIS.get())
                 .add(MORTICIAN.get())
+                .add(MORTICIAN_ACOLYTE.get())
                 .add(CACOPHONY.get())
-                .add(HANGMAN_ACOLYTE.get())
                 .add(EXHUMER.get())
                 .add(DEAD_DRAFT.get());
 

@@ -28,12 +28,17 @@ public class ModCreativeTabs {
 
     public static final RegistryObject<CreativeModeTab> SCGUNS_CNC_TAB = CREATIVE_MODE_TABS.register("scguns_cnc_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RIBCAGE.get())).title(Component.translatable("creativetab.scguns_cnc_tab")).displayItems((pParameters, pOutput) -> {
         addItemWithFullAmmo(pOutput, MORTICIAN.get());
+        addItemWithFullAmmo(pOutput, MORTICIAN_ACOLYTE.get());
         addItemWithFullAmmo(pOutput, BELLA.get());
         addItemWithFullAmmo(pOutput, REHEARSE.get());
+        addItemWithFullAmmo(pOutput, SCHISMATIC_REHEARSE.get());
 
         addItemWithFullAmmo(pOutput, ANATHEMA.get());
         addItemWithFullAmmo(pOutput, HANGMAN_CARBINE.get());
+        addItemWithFullAmmo(pOutput, HANGMAN_ACOLYTE.get());
+
         addItemWithFullAmmo(pOutput, GALLOWS.get());
+        addItemWithFullAmmo(pOutput, SCHISMATIC_GALLOWS.get());
         addItemWithFullAmmo(pOutput, CACOPHONY.get());
 
         addItemWithFullAmmo(pOutput, KETERIYA.get());
