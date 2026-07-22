@@ -86,6 +86,11 @@
 					]
 				},
 				{
+					"name": "offhand_item_bone",
+					"parent": "Left Arm",
+					"pivot": [5, 22, 0]
+				},
+				{
 					"name": "Right Leg",
 					"parent": "Peasant",
 					"pivot": [-1.9, 12, 0],
