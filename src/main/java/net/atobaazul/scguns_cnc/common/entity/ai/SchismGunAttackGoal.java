@@ -7,17 +7,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
-import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -26,20 +20,22 @@ import top.ribs.scguns.common.FireMode;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.entity.ai.AIGunEvent;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.entity.throwable.ThrowableGrenadeEntity;
+import top.ribs.scguns.entity.throwable.ThrowableNailBombEntity;
 import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.GunItem;
 
 import static top.ribs.scguns.event.GunEventBus.ejectCasing;
 
-public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
+public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
     protected static final int MIN_AIM_TIME = 5;
     protected static final float ROTATION_SPEED = 15.0F;
     protected final T shooter;
     protected final double speedModifier;
     protected final float attackRadiusSqr;
     private final boolean canMelee = false;
-    private final int default_potion_cd = 20 * 3;
+    private final int default_grenade_cd = 20 * 3;
     protected int seeTime;
     protected int attackTime;
     protected double idealRange;
@@ -62,14 +58,14 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
     protected int burstTimer = 1;
     private int shot_count = 1;
     private int melee_timer = 0;
-    private int potion_timer;
+    private int grenade_timer;
 
-    public AcolyteGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
+    public SchismGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
         this.shooter = shooter;
         this.speedModifier = speedModifier;
         this.attackTime = -1;
         this.aiType = aiType;
-        this.potion_timer = 0;
+        this.grenade_timer = 0;
 
         shooter.addTag("AI_" + aiType.name());
 
@@ -151,13 +147,13 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
         return true;
     }
 
-    public boolean isTargetInRangeForPotion(LivingEntity target) {
+    public boolean isTargetInRangeForGrenade(LivingEntity target) {
         double distanceToTarget = this.shooter.distanceToSqr(target.getX(), target.getY(), target.getZ());
         return distanceToTarget <= 10 * 10 && distanceToTarget > 4.5 * 4.5;
     }
 
-    public void throwPotion(LivingEntity target) {
-        this.potion_timer = this.default_potion_cd;
+    public void throwGrenade(LivingEntity target) {
+        this.grenade_timer = this.default_grenade_cd;
         this.attackTime = 30;
         this.melee_timer = 10;
 
@@ -168,18 +164,16 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
         double d2 = target.getZ() + vec3.z - shooter.getZ();
         double d3 = Math.sqrt(d0 * d0 + d2 * d2);
 
-        Potion potion = Potions.HARMING;
 
-        if (!target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-            potion = Potions.SLOWNESS;
-        } else if (!target.hasEffect(MobEffects.WEAKNESS)) {
-            potion = Potions.WEAKNESS;
+        ThrowableGrenadeEntity grenade;
+        if (this.shooter.getRandom().nextFloat() >= 0.5) {
+           grenade = new ThrowableNailBombEntity(this.shooter.level(), this.shooter, 10);
+        } else {
+            grenade = new ThrowableGrenadeEntity(this.shooter.level(), this.shooter, 40);
         }
 
-        ThrownPotion thrownpotion = new ThrownPotion(shooter.level(), shooter);
-        thrownpotion.setItem(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), potion));
-        thrownpotion.setXRot(thrownpotion.getXRot() - -20.0F);
-        thrownpotion.shoot(d0, d1 + d3 * 0.2D, d2, 0.75F, 8.0F);
+        grenade.shoot(d0, d1 + d3 * 0.2D, d2, 0.75F, 8.0F);
+        grenade.setXRot(grenade.getXRot() - -20.0F);
 
         if (!shooter.isSilent()) {
             shooter.level().playSound(null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.WITCH_THROW, shooter.getSoundSource(), 1.0F, 0.8F + shooter.getRandom().nextFloat() * 0.4F);
@@ -189,7 +183,7 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
             animatable.triggerAnim("Throw", "throw");
         }
 
-        shooter.level().addFreshEntity(thrownpotion);
+        shooter.level().addFreshEntity(grenade);
     }
 
     @Override
@@ -197,12 +191,21 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
         LivingEntity target = this.shooter.getTarget();
         ItemStack heldItem = this.shooter.getMainHandItem();
 
+        System.out.println("minRange: " + this.minRange);
+
+
+        if (grenade_timer <= 0) {
+            this.minRange = 12;
+        } else {
+            this.minRange = 4;
+        }
+
         if (this.melee_timer > 0) {
             this.melee_timer--;
         }
 
-        if (this.potion_timer > 0) {
-            this.potion_timer--;
+        if (this.grenade_timer > 0) {
+            this.grenade_timer--;
         }
 
         if (this.shooter.hasEffect(ModEffects.BLINDED.get()) || this.shooter.hasEffect(ModEffects.DEAFENED.get()))
@@ -344,14 +347,14 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             boolean isStableAndAimed = this.aimingStabilityTimer >= MIN_AIM_TIME;
 
-            if (isTargetInRangeForPotion(target) && this.potion_timer <= 0 && canSeeTarget) {
-                throwPotion(target);
+            if (isTargetInRangeForGrenade(target) && this.grenade_timer <= 0 && canSeeTarget) {
+                throwGrenade(target);
             }
 
             if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
-                    animatable.triggerAnim("Gun Melee", "gun_melee");
+                    animatable.triggerAnim("Offhand Melee", "offhand_melee");
                 }
 
                 if (heldItem.getItem() instanceof AnathemaGunItem) {

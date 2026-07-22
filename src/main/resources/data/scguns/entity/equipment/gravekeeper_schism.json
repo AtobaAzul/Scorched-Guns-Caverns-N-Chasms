@@ -1,0 +1,30 @@
+{
+  "id": "scguns_cnc:gravekeeper_schism",
+  "equipment_chance": 1.0,
+  "items": [
+    {
+      "item": "scguns_cnc:schismatic_gallows",
+      "weight": 1.0,
+      "drop_chance": 0.1,
+      "min_durability": 0.2,
+      "max_durability": 0.3,
+      "slot": "mainhand"
+    },
+    {
+      "item": "scguns_cnc:schismatic_rehearse",
+      "weight": 1.0,
+      "drop_chance": 0.1,
+      "min_durability": 0.5,
+      "max_durability": 0.9,
+      "slot": "mainhand"
+    },
+    {
+      "item": "caverns_and_chasms:silver_pickaxe",
+      "weight": 1.0,
+      "drop_chance": 1.0,
+      "min_durability": 0.5,
+      "max_durability": 0.9,
+      "slot": "offhand"
+    }
+  ]
+}

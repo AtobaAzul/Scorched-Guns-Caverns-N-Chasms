@@ -1,9 +1,6 @@
 package net.atobaazul.scguns_cnc.events.server.entity;
 
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperAcolyteEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperNeophyteEntity;
+import net.atobaazul.scguns_cnc.common.entity.*;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +16,7 @@ public class ModEntityEvents {
         event.put(ModEntities.GRAVEKEEPER_NEOPHYTE.get(), GravekeeperNeophyteEntity.setAttributes());
         event.put(ModEntities.GRAVEKEEPER_HERALD.get(), GravekeeperHeraldEntity.setAttributes());
         event.put(ModEntities.GRAVEKEEPER_ACOLYTE.get(), GravekeeperAcolyteEntity.setAttributes());
+        event.put(ModEntities.GRAVEKEEPER_SCHISM.get(), GravekeeperSchismEntity.setAttributes());
 
     }
 

@@ -1,9 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperAcolyteEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
-import net.atobaazul.scguns_cnc.common.entity.GravekeeperNeophyteEntity;
+import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperSchismEntityRenderer;
+import net.atobaazul.scguns_cnc.common.entity.*;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowableMalisonGrenadeEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -65,5 +63,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GravekeeperAcolyteEntity>> GRAVEKEEPER_ACOLYTE = REGISTER.register("gravekeeper_acolyte", () -> EntityType.Builder.of(GravekeeperAcolyteEntity::new, MobCategory.MONSTER)
             .sized(0.8f,2.0f)
             .build(new ResourceLocation(MOD_ID, "gravekeeper_acolyte").toString())
+    );
+
+    public static final RegistryObject<EntityType<GravekeeperSchismEntity>> GRAVEKEEPER_SCHISM = REGISTER.register("gravekeeper_schism", () -> EntityType.Builder.of(GravekeeperSchismEntity::new, MobCategory.MONSTER)
+            .sized(0.8f,2.0f)
+            .build(new ResourceLocation(MOD_ID, "gravekeeper_schism").toString())
     );
 }
