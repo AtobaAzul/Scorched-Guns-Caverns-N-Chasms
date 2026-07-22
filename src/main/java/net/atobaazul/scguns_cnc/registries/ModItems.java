@@ -424,7 +424,7 @@ public class ModItems {
     public static final RegistryObject<Item> GRAVEKEEPER_NEOPHYTE_SPAWN_EGG = REGISTER.register("gravekeeper_neophyte_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_NEOPHYTE, 0x433634, 0x495b4e, new Item.Properties()));
     public static final RegistryObject<Item> GRAVEKEEPER_HERALD_SPAWN_EGG = REGISTER.register("gravekeeper_herald_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_HERALD, 0x945162, 0xa2acc2, new Item.Properties()));
     public static final RegistryObject<Item> GRAVEKEEPER_ACOLYTE_SPAWN_EGG = REGISTER.register("gravekeeper_acolyte_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_ACOLYTE, 0x0a1f2f, 0xa2acc2, new Item.Properties()));
-    public static final RegistryObject<Item> GRAVEKEEPER_SCHISM_SPAWN_EGG = REGISTER.register("gravekeeper_schism_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_SCHISM, 0x0a1f2f, 0xa2acc2, new Item.Properties()));
+    public static final RegistryObject<Item> GRAVEKEEPER_SCHISM_SPAWN_EGG = REGISTER.register("gravekeeper_schism_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_SCHISM, 0x0a1f2f, 0x2596be, new Item.Properties()));
 
     private static RegistryObject<Item> sequencedIngredient(String name) {
         if (CREATE_ENABLED) {

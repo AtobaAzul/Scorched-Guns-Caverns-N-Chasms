@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity.ai;
 
+import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,7 @@ import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.entity.ai.AIGunEvent;
 import top.ribs.scguns.entity.ai.AIType;
 import top.ribs.scguns.entity.throwable.ThrowableGrenadeEntity;
+import top.ribs.scguns.entity.throwable.ThrowableHellfireBombEntity;
 import top.ribs.scguns.entity.throwable.ThrowableNailBombEntity;
 import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.init.ModSounds;
@@ -33,9 +35,9 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
     protected static final float ROTATION_SPEED = 15.0F;
     protected final T shooter;
     protected final double speedModifier;
-    protected final float attackRadiusSqr;
+    protected float attackRadiusSqr;
     private final boolean canMelee = false;
-    private final int default_grenade_cd = 20 * 3;
+    private final int default_grenade_cd = 20 * 8;
     protected int seeTime;
     protected int attackTime;
     protected double idealRange;
@@ -167,7 +169,7 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         ThrowableGrenadeEntity grenade;
         if (this.shooter.getRandom().nextFloat() >= 0.5) {
-           grenade = new ThrowableNailBombEntity(this.shooter.level(), this.shooter, 10);
+           grenade = new ThrowableHellfireBombEntity(this.shooter.level(), this.shooter, 10);
         } else {
             grenade = new ThrowableGrenadeEntity(this.shooter.level(), this.shooter, 40);
         }
@@ -191,14 +193,19 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
         LivingEntity target = this.shooter.getTarget();
         ItemStack heldItem = this.shooter.getMainHandItem();
 
-        System.out.println("minRange: " + this.minRange);
-
 
         if (grenade_timer <= 0) {
-            this.minRange = 12;
-        } else {
             this.minRange = 4;
+            this.idealRange = 9.5;
+        } else {
+            this.minRange = 12;
+            this.idealRange = 15;
         }
+
+        this.attackRadiusSqr = (float) (this.idealRange * this.idealRange);
+
+        System.out.println("minRange: " + this.minRange);
+        System.out.println("idealRange: " + this.idealRange);
 
         if (this.melee_timer > 0) {
             this.melee_timer--;
@@ -369,8 +376,12 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
                     this.reloadTick = 0;
                 }
 
-                this.shooter.doHurtTarget(target);
-
+                boolean hit = this.shooter.doHurtTarget(target);
+                if (hit) {
+                    target.invulnerableTime = 0;
+                    target.hurt(this.shooter.damageSources().magic(), 2);
+                    SilverItem.causeMagicParticles(target, false);
+                }
                 this.melee_timer = 20;
                 this.attackTime = this.attackTime + 15;
             } else if (canSeeTarget && this.seeTime >= 5 && isStableAndAimed) {

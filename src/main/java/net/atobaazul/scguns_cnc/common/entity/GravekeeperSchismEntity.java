@@ -44,7 +44,7 @@ public class GravekeeperSchismEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.ATTACK_DAMAGE, 5f).add(Attributes.ARMOR, 12f).add(Attributes.MOVEMENT_SPEED, 0.25f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.ATTACK_DAMAGE, 8f).add(Attributes.ARMOR, 12f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
     }
 
 
@@ -72,7 +72,7 @@ public class GravekeeperSchismEntity extends AbstractGravekeeperGunnerEntity imp
         this.goalSelector.removeAllGoals(goal -> true);
 
         ItemStack mainHandItem = this.getMainHandItem();
-        this.goalSelector.addGoal(1, new SchismGunAttackGoal<>(this, mainHandItem, 2.0F, AIType.SMART, 1));
+        this.goalSelector.addGoal(1, new SchismGunAttackGoal<>(this, mainHandItem, 1.8F, AIType.SMART, 1));
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.9D));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
