@@ -21,7 +21,7 @@
     {
       "item": "caverns_and_chasms:silver_pickaxe",
       "weight": 1.0,
-      "drop_chance": 1.0,
+      "drop_chance": 0.2,
       "min_durability": 0.5,
       "max_durability": 0.9,
       "slot": "offhand"

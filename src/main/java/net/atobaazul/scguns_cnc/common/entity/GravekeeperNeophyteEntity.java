@@ -2,8 +2,11 @@ package net.atobaazul.scguns_cnc.common.entity;
 
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -15,16 +18,20 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.entity.player.PlayerGunProgression;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
@@ -49,6 +56,22 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
                 registerCustomGoals();
             }
         }
+    }
+
+    public static boolean checkValidProgressionSpawn(ServerLevel level, BlockPos pos) {
+        Player nearestPlayer = level.getNearestPlayer(pos.getX(), pos.getY(), pos.getZ(), 128, true);
+
+        if (nearestPlayer == null) {
+            return false;
+        }
+
+        PlayerGunProgression progression = PlayerGunProgression.get(nearestPlayer);
+
+        return progression.getCurrentRaidLevel() >= 4;
+    }
+
+    public static boolean checkAcolyteSpawnRules(EntityType<?> monster, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return !level.getBlockState(pos.below()).is(Blocks.NETHER_WART_BLOCK) && !level.getBlockState(pos.below()).is(Blocks.WARPED_WART_BLOCK) && random.nextFloat() > 0.66 && checkValidProgressionSpawn((ServerLevel) level, pos);
     }
 
     @Override

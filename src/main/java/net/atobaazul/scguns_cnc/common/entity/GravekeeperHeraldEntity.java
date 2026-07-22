@@ -118,7 +118,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
 
     public void summonRaidParty() {
         summonedRaidParty = true;
-        System.out.println("Summon Raid Party");
+
         for (int i = 0; i <= 5; i++) {
             GravekeeperNeophyteEntity neophyte = ModEntities.GRAVEKEEPER_NEOPHYTE.get().create(this.level());
             neophyte.setPos(this.position());
