@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.events.server.entity;
 
+import net.atobaazul.scguns_cnc.common.entity.GravekeeperAcolyteEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperNeophyteEntity;
@@ -17,6 +18,8 @@ public class ModEntityEvents {
         event.put(ModEntities.GRAVEKEEPER_GHOUL.get(), GravekeeperGhoulEntity.setAttributes());
         event.put(ModEntities.GRAVEKEEPER_NEOPHYTE.get(), GravekeeperNeophyteEntity.setAttributes());
         event.put(ModEntities.GRAVEKEEPER_HERALD.get(), GravekeeperHeraldEntity.setAttributes());
+        event.put(ModEntities.GRAVEKEEPER_ACOLYTE.get(), GravekeeperAcolyteEntity.setAttributes());
+
     }
 
 

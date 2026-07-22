@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.registries;
 
+import net.atobaazul.scguns_cnc.common.entity.GravekeeperAcolyteEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperNeophyteEntity;
@@ -59,5 +60,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GravekeeperHeraldEntity>> GRAVEKEEPER_HERALD = REGISTER.register("gravekeeper_herald", () -> EntityType.Builder.of(GravekeeperHeraldEntity::new, MobCategory.MONSTER)
             .sized(0.8f,2.0f)
             .build(new ResourceLocation(MOD_ID, "gravekeeper_herald").toString())
+    );
+
+    public static final RegistryObject<EntityType<GravekeeperAcolyteEntity>> GRAVEKEEPER_ACOLYTE = REGISTER.register("gravekeeper_acolyte", () -> EntityType.Builder.of(GravekeeperAcolyteEntity::new, MobCategory.MONSTER)
+            .sized(0.8f,2.0f)
+            .build(new ResourceLocation(MOD_ID, "gravekeeper_acolyte").toString())
     );
 }

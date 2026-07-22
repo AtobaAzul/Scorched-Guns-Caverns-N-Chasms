@@ -91,8 +91,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns_cnc:item.mortician.fire",
-    "fire": "scguns_cnc:item.mortician.fire",
+    "enchantedFire": "scguns_cnc:item.bella.silenced_fire",
+    "fire": "scguns_cnc:item.bella.silenced_fire",
     "reload": "scguns:item.gauss.reload",
     "silencedFire": "scguns_cnc:item.bella.silenced_fire",
     "flyby": "scguns_cnc:item.flyby.silver_flyby"
