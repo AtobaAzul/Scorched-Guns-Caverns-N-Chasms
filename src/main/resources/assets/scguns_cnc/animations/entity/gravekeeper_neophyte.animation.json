@@ -134,7 +134,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -239,7 +239,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -345,7 +345,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -475,7 +475,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -621,7 +621,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -725,7 +725,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -841,7 +841,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598],
+					"position": [1, -10.99178, -3.68598],
 					"scale": 0
 				}
 			}
@@ -951,7 +951,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -1063,7 +1063,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -1200,7 +1200,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -1318,7 +1318,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -1472,7 +1472,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -1609,7 +1609,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598]
+					"position": [1, -10.99178, -3.68598]
 				}
 			}
 		},
@@ -1762,7 +1762,7 @@
 				},
 				"offhand_item_bone": {
 					"rotation": [0, 0, 0],
-					"position": [1, -8.99178, -2.68598],
+					"position": [1, -10.99178, -3.68598],
 					"scale": 0
 				}
 			}
