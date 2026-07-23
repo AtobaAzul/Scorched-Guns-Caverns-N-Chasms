@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#forge:with_default_monster_spawns",
+  "spawners": {
+    "type": "scguns_cnc:gravekeeper_schism",
+    "weight": 2,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -198,14 +198,12 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
             this.minRange = 4;
             this.idealRange = 9.5;
         } else {
-            this.minRange = 12;
+            this.minRange = 2;
             this.idealRange = 15;
         }
 
         this.attackRadiusSqr = (float) (this.idealRange * this.idealRange);
 
-        System.out.println("minRange: " + this.minRange);
-        System.out.println("idealRange: " + this.idealRange);
 
         if (this.melee_timer > 0) {
             this.melee_timer--;
