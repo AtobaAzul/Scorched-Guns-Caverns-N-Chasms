@@ -44,8 +44,8 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.SCATTERER.get(), new ScattererModel());
         ModelOverrides.register(ModItems.HANGMAN_ACOLYTE.get(), new HangmanAcolyteModel());
         ModelOverrides.register(ModItems.MORTICIAN_ACOLYTE.get(), new MorticianAcolyteModel());
-
-
+        ModelOverrides.register(ModItems.SCHISMATIC_GALLOWS.get(), new SchismaticGallowsModel());
+        ModelOverrides.register(ModItems.SCHISMATIC_REHEARSE.get(), new SchismaticRehearseModel());
         ModelOverrides.register(ModItems.EXHUMER.get(), new ExhumerModel());
         ModelOverrides.register(ModItems.DEAD_DRAFT.get(), new DeadDraftModel());
 

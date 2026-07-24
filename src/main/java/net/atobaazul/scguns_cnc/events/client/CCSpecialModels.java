@@ -194,6 +194,11 @@ public enum CCSpecialModels {
     MORTICIAN_ACOLYTE_MAIN("mortician_acolyte/main"),
 
 
+    //Schi Gallows
+    SCHISMATIC_GALLOWS_MAIN("schismatic_gallows/main"),
+    //Schi Gallows
+    SCHISMATIC_REHEARSE_MAIN("schismatic_rehearse/main"),
+
     //Electrothermal Autocannon
      EAUTOCANNON_MAIN("electrothermal_autocannon/main"),
 
