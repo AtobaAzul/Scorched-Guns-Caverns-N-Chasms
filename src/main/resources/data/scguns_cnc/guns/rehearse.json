@@ -22,7 +22,7 @@
   "modules": {
     "attachments": {
       "barrel": {
-        "yOffset": 8.3,
+        "yOffset": 4.5,
         "zOffset": -13.4
       },
       "stock": {
