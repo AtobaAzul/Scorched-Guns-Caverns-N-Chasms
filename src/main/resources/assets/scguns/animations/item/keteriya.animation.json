@@ -851,23 +851,6 @@
 				}
 			}
 		},
-		"idle3": {
-			"loop": true,
-			"bones": {
-				"left_arm": {
-					"rotation": [-16.93839, -4.46375, 8.16499],
-					"position": [-5.5, 0, 8]
-				},
-				"right_arm": {
-					"rotation": [-2.5, 0, 0],
-					"position": [6, 1, 1]
-				},
-				"gun_body": {
-					"rotation": [-94.55303, -27.45263, -45.4794],
-					"position": [4, 0, -9]
-				}
-			}
-		},
 		"idle2": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 0.5,
