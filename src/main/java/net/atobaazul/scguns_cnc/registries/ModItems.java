@@ -347,6 +347,18 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<AnimatedGunItem> GUNDASHU = REGISTER.register("gundashu",
+            () -> new AnimatedGunItem(
+                    new Item.Properties().stacksTo(1).durability(1100),
+                    "gundashu", // Model path
+                    ModSounds.MAG_OUT.get(),        // Reload sound mag out
+                    ModSounds.MAG_IN.get(),         // Reload sound mag in
+                    ModSounds.RELOAD_END.get(),           // Reload sound end
+                    ModSounds.COPPER_GUN_JAM.get(),      // Ejector sound pull
+                    ModSounds.COPPER_GUN_JAM.get()    // Ejector sound release
+            )
+    );
+
     //Charybdis
     public static final RegistryObject<AnimatedScorchedGunItem> CHARYBDIS = REGISTER.register("charybdis",
             () -> new AnimatedScorchedGunItem(
