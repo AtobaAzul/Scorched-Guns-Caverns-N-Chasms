@@ -368,18 +368,8 @@
 					"pivot": [-0.00188, -5.97875, 3.24059]
 				},
 				{
-					"name": "barrels",
-					"parent": "gun_body3",
-					"pivot": [0, -4, -13.9]
-				},
-				{
-					"name": "standard_barrel",
-					"parent": "barrels",
-					"pivot": [0, -5, -7]
-				},
-				{
 					"name": "sights",
-					"parent": "barrels",
+					"parent": "gun_body3",
 					"pivot": [0.01402, -2.60304, 3.92665],
 					"cubes": [
 						{
@@ -495,11 +485,6 @@
 							}
 						}
 					]
-				},
-				{
-					"name": "muzzle_brake",
-					"parent": "barrels",
-					"pivot": [-0.73996, -3.875, -5.4]
 				}
 			]
 		}

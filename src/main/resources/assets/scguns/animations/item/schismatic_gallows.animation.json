@@ -303,7 +303,7 @@
 		},
 		"draw": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.5,
+			"animation_length": 0.5833,
 			"bones": {
 				"gun_body": {
 					"rotation": {
@@ -384,7 +384,7 @@
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.5": {
+						"0.5833": {
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
