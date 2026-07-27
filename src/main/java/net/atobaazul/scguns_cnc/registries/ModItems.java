@@ -347,10 +347,10 @@ public class ModItems {
             )
     );
 
-    public static final RegistryObject<AnimatedGunItem> GUNDASHU = REGISTER.register("gundashu",
+    public static final RegistryObject<AnimatedGunItem> FUSILLADE = REGISTER.register("fusillade",
             () -> new AnimatedGunItem(
                     new Item.Properties().stacksTo(1).durability(1100),
-                    "gundashu", // Model path
+                    "fusillade", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
                     ModSounds.RELOAD_END.get(),           // Reload sound end

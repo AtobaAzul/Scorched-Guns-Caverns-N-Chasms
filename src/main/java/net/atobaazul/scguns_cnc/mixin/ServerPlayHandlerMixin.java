@@ -18,6 +18,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import top.ribs.scguns.Config;
@@ -73,9 +74,30 @@ public abstract class ServerPlayHandlerMixin {
         } else if (heldItem.is(ModItems.SCATTERER.get())) {
             float chargeProgress = player.getPersistentData().getFloat("ChargeProgress");
             CompoundTag tag = heldItem.getOrCreateTag();
-            int currentAmmo = tag.getInt("AmmoCount");
+            int currentAmmo = player.isCreative() ? modifiedGun.getProjectile().getProjectileAmount() : tag.getInt("AmmoCount");
 
             int count = Math.min(currentAmmo, Mth.floor(Mth.lerp(chargeProgress, 1, modifiedGun.getProjectile().getProjectileAmount())));
+            Gun.Projectile projectileProps = modifiedGun.getProjectile(heldItem);
+            ProjectileEntity[] spawnedProjectiles = new ProjectileEntity[count];
+
+            for (int i = 0; i < count; i++) {
+                IProjectileFactory factory = ProjectileManager.getInstance().getFactory(ForgeRegistries.ITEMS.getKey(projectileProps.getItem()));
+                ProjectileEntity projectileEntity = factory.create(world, player, heldItem, item, modifiedGun);
+                projectileEntity.setWeapon(heldItem);
+                projectileEntity.setAdditionalDamage(Gun.getAdditionalDamage(heldItem));
+                world.addFreshEntity(projectileEntity);
+                spawnedProjectiles[i] = projectileEntity;
+                projectileEntity.tick();
+            }
+
+            if (!projectileProps.shouldHideProjectile()) {
+                scguns_cnc$sendProjectileTrail(player, spawnedProjectiles, projectileProps, false);
+            }
+        } else if (heldItem.is(ModItems.FUSILLADE.get())) {
+            CompoundTag tag = heldItem.getOrCreateTag();
+            int currentAmmo = player.isCreative() ? modifiedGun.getProjectile().getProjectileAmount() : tag.getInt("AmmoCount");
+
+            int count = Math.min(currentAmmo, modifiedGun.getProjectile().getProjectileAmount());
             Gun.Projectile projectileProps = modifiedGun.getProjectile(heldItem);
             ProjectileEntity[] spawnedProjectiles = new ProjectileEntity[count];
 
@@ -136,7 +158,6 @@ public abstract class ServerPlayHandlerMixin {
                             }
                         }
                     }
-
                 } else {
                     original.call(player, heldItem, modifiedGun, world);
                 }
@@ -163,7 +184,7 @@ public abstract class ServerPlayHandlerMixin {
     }
 
     @WrapMethod(method = "consumeAmmo", remap = false)
-    private static void scguns_cnc$consumeAmmo(ServerPlayer player, ItemStack heldItem, Operation<Void> original) {
+    private static void scguns_cnc$consumeAmmo(ServerPlayer player, @NotNull ItemStack heldItem, Operation<Void> original) {
         if (heldItem.is(ModItems.SCATTERER.get())) {
             if (heldItem.getItem() instanceof GunItem gunItem) {
 
@@ -184,6 +205,23 @@ public abstract class ServerPlayHandlerMixin {
                     }
                 }
 
+            }
+        } else if (heldItem.is(ModItems.FUSILLADE.get())) {
+            if (heldItem.getItem() instanceof GunItem gunItem) {
+                Gun modifiedGun = gunItem.getModifiedGun(heldItem);
+                CompoundTag tag = heldItem.getOrCreateTag();
+                int currentAmmo = tag.getInt("AmmoCount");
+
+                int count = Math.min(currentAmmo, modifiedGun.getProjectile().getProjectileAmount());
+
+                if (!player.isCreative()) {
+                    if (!tag.getBoolean("IgnoreAmmo")) {
+                        int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RECLAIMED.get(), heldItem);
+                        if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
+                            tag.putInt("AmmoCount", Math.max(0, currentAmmo - count));
+                        }
+                    }
+                }
             }
         } else {
             original.call(player, heldItem);

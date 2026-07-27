@@ -59,6 +59,7 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.RECUR, "Recur");
         addItem(ModItems.RASCAL, "Rascal");
         addItem(ModItems.CHARYBDIS, "Charybdis");
+        addItem(ModItems.FUSILLADE, "Fusillade");
 
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
@@ -115,11 +116,14 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.necrosis", "Heavy combat shotgun designed to be used by Gravekeeper dungeon guards, capable of firing both Hexshot for close combat and Copper Slugs for medium range.");
         add("scguns.desc.mortician", "Standard Gravekeeper sidearm, typically given to neophytes and other lesser Gravekeepers.");
         add("scguns.desc.cacophony", "Gravekeeper light machine gun, capable of shredding even the most heavily armored enemies. The unique sound produced from its gas vent earned it its nickname.");
+        add("scguns.desc.exhumer", "Gravekeeper infantry support gun, designed to quickly remove cadavers from their mechanized metal coffins.");
+        add("scguns.desc.dead_draft", "Designed for assassinations, this weapon excels at silently executing targets at close range.");
 
         add("scguns.desc.iron_partisan", "The first prototype guns developed to fire the, then in early in development, RicoShot rounds, mostly built using reused parts from Iron series of rifles. Few original units were ever made.");
         add("scguns.desc.rascal", "Compact burst-fire rifle for close-quarters engagements that don't require worrying about what and where you're hitting.");
         add("scguns.desc.recur", "A reverse-engineering of COG's \"Rascal\" rifle. It still keeps its utility as a chaotic close-quarters rifle.");
         add("scguns.desc.charybdis", "The boardroom's ultimate marksmanship test, control its chaos and you will achieve otherworldly destruction.");
+        add("scguns.desc.fusillade", "Designed to instantly saturate an enclosed space with rounds, this volley-gun style firearm shoots all 4 barrels at once with low accuracy.");
 
         add("gun_tier.scguns.gravekeeper", "Gravekeeper");
         add("raid.scguns.gravekeeper", "Gravekeeper Raid");

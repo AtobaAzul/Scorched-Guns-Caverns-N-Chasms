@@ -33,6 +33,7 @@ public class CreativeTabEvent {
             putGunItemsAfterGun(entry, IRON_SPEAR, IRON_PARTISAN);
             putGunItemsAfterGun(entry, PRUSH_GUN, RECUR);
             putGunItemsAfterGun(entry, WHISTLER, HUMMER);
+            putGunItemsAfterGun(entry, HOMEMAKER, FUSILLADE);
         }
     }
 

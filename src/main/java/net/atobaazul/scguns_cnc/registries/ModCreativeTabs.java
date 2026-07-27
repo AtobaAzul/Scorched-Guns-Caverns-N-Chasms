@@ -57,10 +57,10 @@ public class ModCreativeTabs {
 
         addItemWithFullAmmo(pOutput, HUMMER.get());
         addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());
+        addItemWithFullAmmo(pOutput, FUSILLADE.get());
         addItemWithFullAmmo(pOutput, RECUR.get());
         addItemWithFullAmmo(pOutput, RASCAL.get());
         addItemWithFullAmmo(pOutput, CHARYBDIS.get());
-
 
         addItem(pOutput, MALISON_GRENADE.get());
 

@@ -85,7 +85,6 @@ public class GravekeeperSchismEntity extends AbstractGravekeeperGunnerEntity imp
         super.registerControllers(controllers);
         controllers.add(new AnimationController<>(this, "Throw", 1, state -> PlayState.STOP).triggerableAnim("throw", THROW));
         controllers.add(new AnimationController<>(this, "Offhand Melee", 1, state -> PlayState.STOP).triggerableAnim("offhand_melee", OFFHAND_MELEE));
-
     }
 
     @Override

@@ -54,6 +54,7 @@ public class CCClientHandler {
         ModelOverrides.register(ModItems.RECUR.get(), new RecurModel());
         ModelOverrides.register(ModItems.IRON_PARTISAN.get(), new IronPartisanModel());
         ModelOverrides.register(ModItems.HUMMER.get(), new HummerModel());
+        //ModelOverrides.register(ModItems.FUSILLADE.get(), new FusilladeModel());
 
         EntityRenderers.register(ModEntities.GRAVEKEEPER_GHOUL.get(), GravekeeperGhoulEntityRenderer::new);
         EntityRenderers.register(ModEntities.GRAVEKEEPER_NEOPHYTE.get(), GravekeeperNeophyteEntityRenderer::new);

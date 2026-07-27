@@ -116,5 +116,8 @@ public class ModItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvide
 
         tag(ModTags.Items.COPPER_GUN_TIER)
                 .add(HUMMER.get());
+
+        tag(ModTags.Items.WRECKER_GUN_TIER)
+                .add(FUSILLADE.get());
     }
 }
