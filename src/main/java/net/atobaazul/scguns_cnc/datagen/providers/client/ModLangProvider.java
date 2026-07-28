@@ -119,6 +119,7 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns.desc.exhumer", "Gravekeeper infantry support gun, designed to quickly remove cadavers from their mechanized metal coffins.");
         add("scguns.desc.dead_draft", "Designed for assassinations, this weapon excels at silently executing targets at close range.");
 
+        add("scguns.desc.hummer", "A revision of the Whistler designed to fire less powerful rounds in response to Diamond Steel supplies dwindling.");
         add("scguns.desc.iron_partisan", "The first prototype guns developed to fire the, then in early in development, RicoShot rounds, mostly built using reused parts from Iron series of rifles. Few original units were ever made.");
         add("scguns.desc.rascal", "Compact burst-fire rifle for close-quarters engagements that don't require worrying about what and where you're hitting.");
         add("scguns.desc.recur", "A reverse-engineering of COG's \"Rascal\" rifle. It still keeps its utility as a chaotic close-quarters rifle.");
