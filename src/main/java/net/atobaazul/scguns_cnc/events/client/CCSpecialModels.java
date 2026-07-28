@@ -243,6 +243,16 @@ public enum CCSpecialModels {
     DEAD_DRAFT_SIGHTS("dead_draft/sights"),
     DEAD_DRAFT_NO_SIGHTS("dead_draft/no_sights"),
 
+    //  FUSILLADE
+    FUSILLADE_MAIN("fusillade/main"),
+    FUSILLADE_STOCK_WEIGHTED("fusillade/heavy_stock"),
+    FUSILLADE_STOCK_LIGHT("fusillade/light_stock"),
+    FUSILLADE_STOCK_WOODEN("fusillade/wooden_stock"),
+    FUSILLADE_STAN_GRIP("fusillade/stand_grip"),
+    FUSILLADE_SIGHTS("fusillade/sights"),
+
+
+
 
 
 
