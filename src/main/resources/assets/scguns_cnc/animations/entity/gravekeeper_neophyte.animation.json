@@ -1205,7 +1205,7 @@
 			}
 		},
 		"melee": {
-			"loop": true,
+			"loop": false,
 			"animation_length": 0.3906,
 			"bones": {
 				"Waist": {
@@ -1323,7 +1323,7 @@
 			}
 		},
 		"offhand_melee": {
-			"loop": true,
+			"loop": false,
 			"animation_length": 0.4167,
 			"bones": {
 				"gun_body": {
