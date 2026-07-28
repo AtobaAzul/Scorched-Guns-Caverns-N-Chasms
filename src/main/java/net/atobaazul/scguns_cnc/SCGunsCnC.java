@@ -21,6 +21,8 @@ import top.ribs.scguns.client.screen.BlueprintScreen;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.player.GunTierRegistry;
 
+import java.util.List;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
 public class SCGunsCnC {
@@ -46,6 +48,12 @@ public class SCGunsCnC {
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             CCClientHandler.registerClientHandlers(modEventBus);
             BlueprintScreen.registerLoreOnlyItem(new ResourceLocation(MOD_ID, "gravekeeper_blueprint"), "anathema");
+            BlueprintScreen.registerGunOrder(List.of(
+                    "mortician", "bella", "rehearse",
+                    "hangman_carbine", "gallows", "cacophony",
+                    "keteriya", "necrosis",
+                    "silverlining", "ribcage", "dead_draft", "exhumer", "anathema"
+            ));
             //ModItems.setupTabEditors();
         });
 
