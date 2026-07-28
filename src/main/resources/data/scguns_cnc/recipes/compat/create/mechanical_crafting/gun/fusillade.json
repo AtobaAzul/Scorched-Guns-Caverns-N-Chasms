@@ -1,0 +1,38 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns:treated_iron_gun_frame"
+    },
+    "B": {
+      "item": "scguns:firing_unit"
+    },
+    "C": {
+      "item": "scguns:gun_barrel"
+    },
+    "D": {
+      "item": "scguns:gun_parts"
+    },
+    "E": {
+      "item": "scguns:gun_grip"
+    },
+    "F": {
+      "item": "scguns:wrecker_blueprint"
+    }
+  },
+  "pattern": [
+    "ABCC",
+    "DBCC",
+    "EF  "
+  ],
+  "result": {
+    "item": "scguns_cnc:fusillade"
+  }
+}

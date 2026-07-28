@@ -8,14 +8,18 @@
   ],
   "ingredients": [
     {
-      "item": "scguns_cnc:bella"
+      "item": "scguns_cnc:iron_partisan"
     }
   ],
   "processingTime": 250,
   "results": [
     {
       "chance": 0.3,
-      "item": "caverns_and_chasms:necromium_ingot"
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "chance": 0.3,
+      "item": "minecraft:iron_ingot"
     },
     {
       "chance": 0.3,
@@ -28,10 +32,6 @@
     {
       "chance": 0.3,
       "item": "scguns:gun_barrel"
-    },
-    {
-      "chance": 0.3,
-      "item": "scguns:gun_magazine"
     }
   ]
 }

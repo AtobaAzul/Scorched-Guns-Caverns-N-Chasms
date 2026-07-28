@@ -1,0 +1,44 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "tag": "forge:ingots/copper"
+    },
+    "B": {
+      "item": "scguns:copper_gun_frame"
+    },
+    "C": {
+      "item": "scguns:copper_blueprint"
+    },
+    "D": {
+      "item": "scguns:firing_unit"
+    },
+    "E": {
+      "item": "scguns:gun_parts"
+    },
+    "F": {
+      "item": "scguns:gun_barrel"
+    },
+    "G": {
+      "item": "scguns:gun_grip"
+    },
+    "H": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "ABC ",
+    "DEFF",
+    "G H "
+  ],
+  "result": {
+    "item": "scguns_cnc:hummer"
+  }
+}

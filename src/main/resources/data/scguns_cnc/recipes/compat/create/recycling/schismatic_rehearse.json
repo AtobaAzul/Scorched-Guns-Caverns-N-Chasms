@@ -8,25 +8,25 @@
   ],
   "ingredients": [
     {
-      "item": "scguns_cnc:bella"
+      "item": "scguns_cnc:schismatic_rehearse"
     }
   ],
   "processingTime": 250,
   "results": [
     {
-      "chance": 0.3,
+      "chance": 0.1,
       "item": "caverns_and_chasms:necromium_ingot"
+    },
+    {
+      "chance": 0.3,
+      "item": "scguns:heavy_gun_parts"
     },
     {
       "chance": 0.3,
       "item": "scguns:firing_unit"
     },
     {
-      "chance": 0.3,
-      "item": "scguns:gun_parts"
-    },
-    {
-      "chance": 0.3,
+      "chance": 0.1,
       "item": "scguns:gun_barrel"
     },
     {

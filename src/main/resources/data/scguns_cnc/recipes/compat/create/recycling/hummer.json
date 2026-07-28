@@ -8,14 +8,18 @@
   ],
   "ingredients": [
     {
-      "item": "scguns_cnc:bella"
+      "item": "scguns_cnc:hummer"
     }
   ],
   "processingTime": 250,
   "results": [
     {
       "chance": 0.3,
-      "item": "caverns_and_chasms:necromium_ingot"
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "chance": 0.3,
+      "item": "minecraft:copper_ingot"
     },
     {
       "chance": 0.3,
@@ -31,7 +35,7 @@
     },
     {
       "chance": 0.3,
-      "item": "scguns:gun_magazine"
+      "item": "scguns:gun_barrel"
     }
   ]
 }

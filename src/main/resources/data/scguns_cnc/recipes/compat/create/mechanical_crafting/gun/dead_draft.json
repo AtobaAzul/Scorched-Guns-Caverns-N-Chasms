@@ -1,0 +1,41 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "B": {
+      "item": "scguns:gun_barrel"
+    },
+    "C": {
+      "item": "scguns:gun_parts"
+    },
+    "D": {
+      "tag": "forge:ingots/silver"
+    },
+    "E": {
+      "item": "scguns:empty_tank"
+    },
+    "F": {
+      "item": "scguns:gun_grip"
+    },
+    "G": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    }
+  },
+  "pattern": [
+    "ABBB",
+    "CDEG" ,
+    "F   "
+  ],
+  "result": {
+    "item": "scguns_cnc:dead_draft"
+  }
+}

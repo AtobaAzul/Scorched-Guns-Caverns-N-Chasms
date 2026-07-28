@@ -1,0 +1,41 @@
+{
+  "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "scguns_cnc:necromium_gun_frame"
+    },
+    "B": {
+      "item": "scguns:firing_unit"
+    },
+    "C": {
+      "item": "scguns:heavy_gun_barrel"
+    },
+    "D": {
+      "item": "scguns:heavy_gun_parts"
+    },
+    "E": {
+      "item": "scguns:gun_barrel"
+    },
+    "F": {
+      "item": "scguns:gun_grip"
+    },
+    "G": {
+      "item": "scguns_cnc:gravekeeper_blueprint"
+    }
+  },
+  "pattern": [
+    "ABCC",
+    "ADEE",
+    "FGF "
+  ],
+  "result": {
+    "item": "scguns_cnc:exhumer"
+  }
+}

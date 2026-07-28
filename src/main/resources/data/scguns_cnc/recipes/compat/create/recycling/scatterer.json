@@ -1,0 +1,31 @@
+{
+  "type": "create:crushing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "scguns_cnc:scatterer"
+    }
+  ],
+  "processingTime": 250,
+  "results": [
+    {
+      "item": "scguns_cnc:vault_gun_parts"
+    },
+    {
+      "chance": 0.5,
+      "item": "scguns_cnc:scatterer_part"
+    },
+    {
+      "item": "caverns_and_chasms:tin_ingot"
+    },
+    {
+      "chance": 0.5,
+      "item": "caverns_and_chasms:tin_ingot"
+    }
+  ]
+}

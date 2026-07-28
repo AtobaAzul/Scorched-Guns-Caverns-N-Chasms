@@ -32,7 +32,7 @@
     "damageFalloffStart": 40.0,
     "damageFalloffEnd": 100.0,
     "damageFalloffMinMultiplier": 0.9,
-    "advantage": "scguns:heavy",
+    "advantage": "scguns:bot",
     "damage": 65.0,
     "armorPen": 10.0,
     "ejectsCasing": true,

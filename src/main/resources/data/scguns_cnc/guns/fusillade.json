@@ -49,7 +49,7 @@
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.35,
     "knockbackStrength": 0.65,
-    "advantage": "scguns:cog",
+    "advantage": "scguns:bot",
     "damage": 32.0,
     "damageFalloffStart": 10.0,
     "damageFalloffEnd": 30.0,

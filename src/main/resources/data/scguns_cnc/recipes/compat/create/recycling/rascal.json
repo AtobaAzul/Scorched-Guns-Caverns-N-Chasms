@@ -8,18 +8,22 @@
   ],
   "ingredients": [
     {
-      "item": "scguns_cnc:bella"
+      "item": "scguns_cnc:rascal"
     }
   ],
   "processingTime": 250,
   "results": [
     {
       "chance": 0.3,
-      "item": "caverns_and_chasms:necromium_ingot"
+      "item": "scguns:treated_brass_ingot"
     },
     {
       "chance": 0.3,
-      "item": "scguns:firing_unit"
+      "item": "scguns:treated_brass_ingot"
+    },
+    {
+      "chance": 0.3,
+      "item": "scguns:rapid_firing_unit"
     },
     {
       "chance": 0.3,

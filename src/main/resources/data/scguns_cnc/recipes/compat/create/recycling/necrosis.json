@@ -8,7 +8,7 @@
   ],
   "ingredients": [
     {
-      "item": "scguns_cnc:bella"
+      "item": "scguns_cnc:keteriya"
     }
   ],
   "processingTime": 250,
@@ -19,19 +19,19 @@
     },
     {
       "chance": 0.3,
+      "item": "scguns:heavy_gun_parts"
+    },
+    {
+      "chance": 0.3,
       "item": "scguns:firing_unit"
     },
     {
       "chance": 0.3,
-      "item": "scguns:gun_parts"
+      "item": "scguns:heavy_gun_barrel"
     },
     {
       "chance": 0.3,
       "item": "scguns:gun_barrel"
-    },
-    {
-      "chance": 0.3,
-      "item": "scguns:gun_magazine"
     }
   ]
 }

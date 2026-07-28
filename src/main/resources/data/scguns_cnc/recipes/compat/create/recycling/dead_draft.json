@@ -8,18 +8,18 @@
   ],
   "ingredients": [
     {
-      "item": "scguns_cnc:bella"
+      "item": "scguns_cnc:dead_draft"
     }
   ],
   "processingTime": 250,
   "results": [
     {
       "chance": 0.3,
-      "item": "caverns_and_chasms:necromium_ingot"
+      "item": "caverns_and_chasms:silver_ingot"
     },
     {
       "chance": 0.3,
-      "item": "scguns:firing_unit"
+      "item": "caverns_and_chasms:necromium_ingot"
     },
     {
       "chance": 0.3,
@@ -31,7 +31,11 @@
     },
     {
       "chance": 0.3,
-      "item": "scguns:gun_magazine"
+      "item": "scguns:gun_barrel"
+    },
+    {
+      "chance": 0.3,
+      "item": "scguns:empty_tank"
     }
   ]
 }
