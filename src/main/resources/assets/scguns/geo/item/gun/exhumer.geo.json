@@ -21,8 +21,13 @@
 					"pivot": [0, -1, 6]
 				},
 				{
-					"name": "left_arm",
+					"name": "la",
 					"parent": "gun_body",
+					"pivot": [0, -5, -3.5]
+				},
+				{
+					"name": "left_arm",
+					"parent": "la",
 					"pivot": [6, -1.9932, 6.00305],
 					"cubes": [
 						{
@@ -90,8 +95,13 @@
 					]
 				},
 				{
-					"name": "right_arm",
+					"name": "ra",
 					"parent": "gun_body",
+					"pivot": [0, -3.9432, 4.00305]
+				},
+				{
+					"name": "right_arm",
+					"parent": "ra",
 					"pivot": [-6, -3.9432, 6.00305],
 					"cubes": [
 						{
