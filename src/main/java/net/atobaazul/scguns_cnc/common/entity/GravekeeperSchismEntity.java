@@ -1,6 +1,8 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.common.entity.monster.Mime;
+import net.atobaazul.scguns_cnc.ModConfigs;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.common.entity.ai.SchismGunAttackGoal;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.core.BlockPos;
@@ -56,14 +58,14 @@ public class GravekeeperSchismEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static boolean checkValidProgressionSpawn(ServerLevel level, BlockPos pos) {
-        Player nearestPlayer = level.getNearestPlayer(pos.getX(), pos.getY(), pos.getZ(), 128, true);
+        Player nearestPlayer = level.getNearestPlayer(pos.getX(), pos.getY(), pos.getZ(), 128, false);
         if (nearestPlayer == null) {
             return false;
         }
 
         PlayerGunProgression progression = PlayerGunProgression.get(nearestPlayer);
 
-        return progression.getCurrentRaidLevel() >= 4;
+        return ModConfigs.COMMON.required_raid_tier.get() <= 0 || progression.getCurrentRaidLevel() >= ModConfigs.COMMON.required_raid_tier.get();
     }
 
     public static boolean checkSchismSpawnRules(EntityType<? extends Monster> monster, ServerLevelAccessor level, MobSpawnType reason, BlockPos pos, RandomSource random) {

@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import net.atobaazul.scguns_cnc.ModConfigs;
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.core.BlockPos;
@@ -56,22 +57,6 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
                 registerCustomGoals();
             }
         }
-    }
-
-    public static boolean checkValidProgressionSpawn(ServerLevel level, BlockPos pos) {
-        Player nearestPlayer = level.getNearestPlayer(pos.getX(), pos.getY(), pos.getZ(), 128, true);
-
-        if (nearestPlayer == null) {
-            return false;
-        }
-
-        PlayerGunProgression progression = PlayerGunProgression.get(nearestPlayer);
-
-        return progression.getCurrentRaidLevel() >= 4;
-    }
-
-    public static boolean checkAcolyteSpawnRules(EntityType<?> monster, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return !level.getBlockState(pos.below()).is(Blocks.NETHER_WART_BLOCK) && !level.getBlockState(pos.below()).is(Blocks.WARPED_WART_BLOCK) && random.nextFloat() > 0.66 && checkValidProgressionSpawn((ServerLevel) level, pos);
     }
 
     @Override

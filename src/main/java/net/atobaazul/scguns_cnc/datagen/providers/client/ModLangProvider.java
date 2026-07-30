@@ -89,11 +89,12 @@ public class ModLangProvider extends LanguageProvider {
         addEntityType(ModEntities.GRAVEKEEPER_SCHISM, "Gravekeeper Schism");
 
         //tooltips
-        add("tooltip.hex_round.magic_damage", "Deals half of the bullet damage as magic damage.");
+        add("tooltip.hex_round.magic_damage", "Deals %s of the bullet damage as magic damage.");
         add("tooltip.bluntshot.knockback", "Deals increased knockback to hit targets.");
         add("tooltip.anathema", "Melee hits feed the \"gun\", restoring ammo.");
         add("tooltip.scguns_cnc.heat_level", "Heat Level");
-        add("tooltip.ricoshot_round.crit_chance", "Increases crit chance and damage by 50% for every ricochet.");
+        add("tooltip.ricoshot_round.crit_chance", "Increases crit chance by %s for every ricochet.");
+        add("tooltip.ricoshot_round.crit_damage", "Increases crit damage multiplier by %s for every ricochet.");
 
         add("item.scguns_cnc.electrothermal_autocannon.lore", "Rapid-fire energy weapon with a welded experimental rechargeable Energy Core, originally designed for vehicles.\nOverheats during sustained fire, limiting fire rate.");
         add("item.scguns_cnc.lustre.lore", "Repurposed laser cutter with an Energy Core recharge system.\nEnergy Core can be swapped for immediate recharge.");
@@ -133,7 +134,6 @@ public class ModLangProvider extends LanguageProvider {
         add("scguns_cnc.jei.info.found_in_gravekeeper_structures", "Found in Gravekeeper structures.");
         add("scguns_cnc.jei.info.found_in_vaults", "Found in underground Vaults.");
         add("raid.announcement.scguns_cnc.gravekeeper", "The Gravekeepers arrived, the curse demand a sacrifice!");
-        add("raid.boss.scguns_cnc.gravekeeper", "Gravekeeper Herald");
         add("item.scguns_cnc.lesser_strawman.tooltip", "A doll used in rituals. You feel it move when you're not looking.");
         add("item.scguns_cnc.vault_gun_parts.tooltip", "An array of unusually advanced electrical gizmos and doodads used as general parts for standard T.I.N. devices.");
         add("item.scguns_cnc.lustre_part.tooltip", "Technological Innovation Nucleus' advanced optics are highly sought after due to their exceptional quality, and the tools required for their fabrication no longer existing.");

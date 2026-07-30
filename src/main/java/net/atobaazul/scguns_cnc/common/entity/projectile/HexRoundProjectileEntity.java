@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
+import net.atobaazul.scguns_cnc.ModConfigs;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -47,6 +48,9 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
 
     @Override
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
+        Double magicDamageMult = ModConfigs.COMMON.magic_damage_percent.get();
+        float normalDamageMult = (float) (1 - magicDamageMult);
+
         float damage = this.getDamage();
         float newDamage = this.getCriticalDamage(this.getWeapon(), this.random, damage);
         boolean critical = damage != newDamage;
@@ -69,12 +73,14 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             DamageSource source = ModDamageTypes.Sources.projectile(this.level().registryAccess(), this, (LivingEntity) this.getOwner());
 
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
-                entity.hurt(source, damage / 2);
+                entity.hurt(source, damage * normalDamageMult);
 
                 if (entity instanceof LivingEntity livingEntity) {
-                    entity.invulnerableTime = 0;
-                    entity.hurt(entity.damageSources().magic(), damage / 2);
-                    SilverItem.causeMagicParticles(livingEntity, false);
+                    if (magicDamageMult > 0) {
+                        entity.invulnerableTime = 0;
+                        entity.hurt(entity.damageSources().magic(), (float) (damage * magicDamageMult));
+                        SilverItem.causeMagicParticles(livingEntity, false);
+                    }
 
                     ResourceLocation effectLocation = this.getProjectile().getImpactEffect();
                     if (effectLocation != null) {

@@ -1,10 +1,14 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
+import net.atobaazul.scguns_cnc.ModConfigs;
 import net.atobaazul.scguns_cnc.common.entity.ai.AcolyteGunAttackGoal;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +25,9 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -32,6 +38,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.config.EntityEquipmentConfig;
 import top.ribs.scguns.entity.ai.AIType;
+import top.ribs.scguns.entity.player.PlayerGunProgression;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
@@ -66,6 +73,21 @@ public class GravekeeperAcolyteEntity extends AbstractGravekeeperGunnerEntity im
         }
 
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    }
+
+    public static boolean checkValidProgressionSpawn(ServerLevel level, BlockPos pos) {
+        Player nearestPlayer = level.getNearestPlayer(pos.getX(), pos.getY(), pos.getZ(), 128, false);
+        if (nearestPlayer == null) {
+            return false;
+        }
+
+        PlayerGunProgression progression = PlayerGunProgression.get(nearestPlayer);
+
+        return ModConfigs.COMMON.required_raid_tier.get() <= 0 || progression.getCurrentRaidLevel() >= ModConfigs.COMMON.required_raid_tier.get();
+    }
+
+    public static boolean checkAcolyteSpawnRules(EntityType<?> monster, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return !level.getBlockState(pos.below()).is(Blocks.NETHER_WART_BLOCK) && !level.getBlockState(pos.below()).is(Blocks.WARPED_WART_BLOCK) && random.nextFloat() > 0.66 && checkValidProgressionSpawn((ServerLevel) level, pos);
     }
 
     @Override

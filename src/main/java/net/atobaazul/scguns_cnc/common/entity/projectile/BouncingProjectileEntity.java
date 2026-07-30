@@ -1,8 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
-import net.atobaazul.scguns_cnc.SCGunsCnC;
-import net.atobaazul.scguns_cnc.registries.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -19,11 +17,13 @@ import top.ribs.scguns.item.GunItem;
 import top.ribs.scguns.util.GunModifierHelper;
 
 public class BouncingProjectileEntity extends ProjectileEntity {
+    private float bounceCritMult;
     public float bounceCritChance;
 
     public BouncingProjectileEntity(EntityType<? extends Entity> entityType, Level worldIn) {
         super(entityType, worldIn);
         this.bounceCritChance = 0.0f;
+        this.bounceCritMult = 0.0f;
     }
 
     public BouncingProjectileEntity(EntityType<? extends Entity> entityType, Level worldIn, LivingEntity shooter, ItemStack weapon, GunItem item, Gun modifiedGun) {
@@ -35,20 +35,29 @@ public class BouncingProjectileEntity extends ProjectileEntity {
         super.onHitBlock(state, pos, face, x, y, z);
     }
 
-    public void addBounceCritChance(float num) {
-        this.bounceCritChance = this.bounceCritChance + num;
+    public void addBounceCritChance(Double num) {
+        this.bounceCritChance = (float) (this.bounceCritChance + num);
+    }
+
+    public void addBounceCritMult(Double num) {
+        this.bounceCritMult = (float) (this.bounceCritMult + num);
     }
 
     public float getBounceCritChance() {
         return this.bounceCritChance;
     }
 
+    public float getBounceCritMult() {
+        return this.bounceCritMult;
+    }
+
+
     @Override
     public float getCriticalDamage(ItemStack weapon, RandomSource rand, float damage) {
         float chance = GunModifierHelper.getCriticalChance(weapon) + this.getBounceCritChance();
 
         if (rand.nextFloat() < chance) {
-            float critMultiplier = this.modifiedGun.getProjectile().getCritDamageMultiplier() + this.getBounceCritChance();
+            float critMultiplier = this.modifiedGun.getProjectile().getCritDamageMultiplier() + this.getBounceCritMult();
             return damage * critMultiplier;
         } else {
             return damage;

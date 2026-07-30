@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.common.entity.projectile;
 
 import com.teamabnormals.caverns_and_chasms.core.registry.CCParticleTypes;
+import net.atobaazul.scguns_cnc.ModConfigs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -32,9 +33,9 @@ public class BluntshotProjectileEntity extends ProjectileEntity {
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
         entity.invulnerableTime = 0;
 
-        if (entity instanceof LivingEntity livingEntity) {
+        if (entity instanceof LivingEntity livingEntity && ModConfigs.COMMON.bluntshot_knockback.get() > 0) {
             Vec3 direction = entity.position().subtract(this.shooter.position()).normalize();
-            livingEntity.knockback(0.4F + (8 * 0.5F), -direction.x(), -direction.z());
+            livingEntity.knockback(ModConfigs.COMMON.bluntshot_knockback.get(), -direction.x(), -direction.z());
         }
 
         super.onHitEntity(entity, hitVec, startVec, endVec, headshot);

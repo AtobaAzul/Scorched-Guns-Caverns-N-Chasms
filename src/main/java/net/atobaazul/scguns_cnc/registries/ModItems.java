@@ -2,10 +2,12 @@ package net.atobaazul.scguns_cnc.registries;
 
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import net.atobaazul.scguns_cnc.ModConfigs;
+import net.atobaazul.scguns_cnc.common.item.ConfigTooltipAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
+import net.atobaazul.scguns_cnc.common.item.RicoshotRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import top.ribs.scguns.common.item.gun.TooltipGunItem;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
 import net.minecraft.world.item.*;
@@ -253,10 +255,10 @@ public class ModItems {
                     ModSounds.RELOAD_END.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
-                    10000,
-                    40,
-                    300000,
-                    2
+                    ModConfigs.COMMON.lustre_energy_cost,
+                    ModConfigs.COMMON.lustre_refill_cd,
+                    ModConfigs.COMMON.lustre_energy_max,
+                    ModConfigs.COMMON.lustre_recharge_mult
             ).setUseGlowMask(true)
     );
 
@@ -269,10 +271,10 @@ public class ModItems {
                     ModSounds.RELOAD_END.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
-                    750,
-                    2,
-                    300000,
-                    50,
+                    ModConfigs.COMMON.electrothermal_autocannon_energy_cost,
+                    ModConfigs.COMMON.electrothermal_autocannon_refill_cd,
+                    ModConfigs.COMMON.electrothermal_autocannon_energy_max,
+                    ModConfigs.COMMON.electrothermal_autocannon_recharge_mult,
                     true
             ).setUseGlowMask(true)
     );
@@ -288,11 +290,10 @@ public class ModItems {
                     ModSounds.RELOAD_END.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
                     ModSoundEvents.LUSTRE_JAM.get(),
-                    1000,
-                    10,
-                    144000,
-                    10,
-                    false
+                    ModConfigs.COMMON.scatterer_energy_cost,
+                    ModConfigs.COMMON.scatterer_refill_cd,
+                    ModConfigs.COMMON.scatterer_energy_max,
+                    ModConfigs.COMMON.scatterer_recharge_mult
             ).setUseGlowMask(true)
     );
 
@@ -380,11 +381,11 @@ public class ModItems {
     public static final RegistryObject<Item> GRAVEKEEPER_BLUEPRINT = REGISTER.register("gravekeeper_blueprint", () -> new BlueprintItem(new Item.Properties().stacksTo(1).rarity(ModRarity.EXSANGUINATED)));
 
     //rounds
-    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
-    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
-    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new TooltipItem(new Item.Properties(), "tooltip.bluntshot.knockback"));
+    public static final RegistryObject<Item> HEX_ROUND = REGISTER.register("hex_round", () -> new ConfigTooltipAmmoItem(new Item.Properties(), "tooltip.hex_round.magic_damage", ModConfigs.COMMON.magic_damage_percent));
+    public static final RegistryObject<Item> COMPACT_HEX_ROUND = REGISTER.register("compact_hex_round", () -> new ConfigTooltipAmmoItem(new Item.Properties(), "tooltip.hex_round.magic_damage", ModConfigs.COMMON.magic_damage_percent));
+    public static final RegistryObject<Item> BLUNTSHOT = REGISTER.register("bluntshot", () -> new ConfigTooltipAmmoItem(new Item.Properties(), "tooltip.bluntshot.knockback", ModConfigs.COMMON.bluntshot_knockback));
     public static final RegistryObject<Item> COPPER_SLUG = REGISTER.register("copper_slug", () -> new AmmoItem(new Item.Properties()));
-    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new TooltipAmmo(new Item.Properties(), "tooltip.hex_round.magic_damage"));
+    public static final RegistryObject<Item> HEXSHOT = REGISTER.register("hexshot", () -> new ConfigTooltipAmmoItem(new Item.Properties(), "tooltip.hex_round.magic_damage", ModConfigs.COMMON.magic_damage_percent));
     public static final RegistryObject<Item> PULSE_CORE = REGISTER.register("pulse_core", () -> new AmmoItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_HUNGER = REGISTER.register("hunger", () -> new AmmoItem(new Item.Properties()));
@@ -395,7 +396,7 @@ public class ModItems {
     public static final RegistryObject<Item> MEDIUM_NECROMIUM_CASING = REGISTER.register("medium_necromium_casing", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new TooltipAmmo(new Item.Properties(), "tooltip.ricoshot_round.crit_chance"));
+    public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new RicoshotRoundAmmoItem(new Item.Properties(), "tooltip.ricoshot_round.crit_chance", "tooltip.ricoshot_round.crit_damage"));
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");

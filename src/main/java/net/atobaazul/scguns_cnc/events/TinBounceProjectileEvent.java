@@ -10,6 +10,7 @@ import com.teamabnormals.caverns_and_chasms.core.other.tags.CCBlockTags;
 import com.teamabnormals.caverns_and_chasms.core.other.tags.CCEntityTypeTags;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCSoundEvents;
+import net.atobaazul.scguns_cnc.ModConfigs;
 import net.atobaazul.scguns_cnc.common.entity.projectile.BouncingProjectileEntity;
 import net.atobaazul.scguns_cnc.common.event.BulletDeflectEvent;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
@@ -235,7 +236,8 @@ public class TinBounceProjectileEvent {
         ProjectileEntity projectile = event.getProjectile();
 
         if (projectile instanceof BouncingProjectileEntity bProjectile) {
-            bProjectile.addBounceCritChance(.5f);
+            bProjectile.addBounceCritChance(ModConfigs.COMMON.ricoshot_crit_chance.get());
+            bProjectile.addBounceCritMult(ModConfigs.COMMON.ricoshot_crit_damage.get());
         }
     }
 }

@@ -27,6 +27,6 @@ public class ModEntityEvents {
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(GRAVEKEEPER_SCHISM.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, GravekeeperSchismEntity::checkSchismSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
-        event.register(GRAVEKEEPER_ACOLYTE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, GravekeeperNeophyteEntity::checkAcolyteSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
+        event.register(GRAVEKEEPER_ACOLYTE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, GravekeeperAcolyteEntity::checkAcolyteSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
     }
 }

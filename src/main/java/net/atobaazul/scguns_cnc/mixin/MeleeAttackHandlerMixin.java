@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.mixin;
 
 
 import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
+import net.atobaazul.scguns_cnc.ModConfigs;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -59,14 +60,15 @@ public class MeleeAttackHandlerMixin {
 
                     int maxAmmo = GunModifierHelper.getModifiedAmmoCapacity(heldItem, gun.getModifiedGun(heldItem));
 
-                    int newAmmo = Math.min(Math.max(0, currentAmmo + 3), maxAmmo);
+                    int newAmmo = Math.min(Math.max(0, currentAmmo + ModConfigs.COMMON.anathema_reload_amount.get()), maxAmmo);
                     tag.putInt("AmmoCount", newAmmo);
                 }
             }
         } else if (heldItem.is(ModItems.HANGMAN_ACOLYTE.get()) || heldItem.is(ModItems.KETERIYA.get())) {
-            if (raycastTarget != null) {
+            int damage = ModConfigs.COMMON.gun_melee_magic_damage.get();;
+            if (raycastTarget != null && damage > 0) {
                 raycastTarget.invulnerableTime = 0;
-                raycastTarget.hurt(raycastTarget.damageSources().magic(), 4);
+                raycastTarget.hurt(raycastTarget.damageSources().magic(), damage);
                 SilverItem.causeMagicParticles(raycastTarget, false);
             }
         }
