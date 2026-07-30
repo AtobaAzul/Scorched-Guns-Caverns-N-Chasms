@@ -13,13 +13,19 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class EnergyBoltTrailParticle extends TurquoiseParticle {
     public EnergyBoltTrailParticle(ClientLevel level, boolean floor, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
         super(level, floor, x, y, z, xSpeed, ySpeed, zSpeed);
-        this.lifetime = (int) (this.random.nextInt(floor ? 60 : 20) + (floor ? 60 : 20) * 0.125);
-
+        this.lifetime = 20;
     }
+
+    //There has to be SOME util method for this, right????
+    public static float lerp(float point1, float point2, float fraction) {
+        return (1 - fraction) * point1 + fraction * point2;
+    }
+
+
 
     @Override
     public int getLightColor(float partialTick) {
-        return 15728880;
+        return (int) lerp( 256, 120, (float) this.age / this.lifetime);
     }
 
     @OnlyIn(Dist.CLIENT)
