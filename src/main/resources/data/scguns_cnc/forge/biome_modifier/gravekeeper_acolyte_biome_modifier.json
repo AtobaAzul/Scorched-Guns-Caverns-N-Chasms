@@ -1,10 +1,6 @@
 {
   "type": "forge:add_spawns",
-  "biomes": [
-    "minecraft:crimson_forest",
-    "minecraft:warped_forest",
-    "minecraft:basalt_deltas"
-  ],
+  "biomes": "#scguns_cnc:gravekeeper_acolyte_spawns",
   "spawners": {
     "type": "scguns_cnc:gravekeeper_acolyte",
     "weight": 1,

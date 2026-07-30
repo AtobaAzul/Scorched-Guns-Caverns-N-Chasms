@@ -21,8 +21,6 @@ public class EnergyBoltTrailParticle extends TurquoiseParticle {
         return (1 - fraction) * point1 + fraction * point2;
     }
 
-
-
     @Override
     public int getLightColor(float partialTick) {
         return (int) lerp( 256, 120, (float) this.age / this.lifetime);
