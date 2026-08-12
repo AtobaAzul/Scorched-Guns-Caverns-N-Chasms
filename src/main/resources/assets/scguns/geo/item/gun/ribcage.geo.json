@@ -12,13 +12,18 @@
 			},
 			"bones": [
 				{
+					"name": "gun_body3",
+					"pivot": [0, -2.8, -4.5]
+				},
+				{
 					"name": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [0, -2.8, -0.5]
 				},
 				{
 					"name": "gun_body",
 					"parent": "gun_body2",
-					"pivot": [0, -6.5, 2],
+					"pivot": [0, -6.5, 3],
 					"cubes": [
 						{
 							"origin": [-1.425, -8.65, -13],
