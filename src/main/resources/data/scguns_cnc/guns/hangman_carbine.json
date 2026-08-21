@@ -17,7 +17,8 @@
     "meleeCooldownTicks": 15,
     "meleeReach": 2.5,
     "hotBarrelRate": 3,
-    "criticalChance": 0.06
+    "criticalChance": 0.06,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
@@ -51,7 +52,8 @@
     "alwaysSpread": true,
     "criticalChance": 0.05,
     "advantage": "scguns:none",
-    "damage": 7.5,
+    "damage": 8,
+    "armorPen": 1.0,
     "damageFalloffStart": 12.0,
     "damageFalloffEnd": 29.0,
     "damageFalloffMinMultiplier": 0.45,
