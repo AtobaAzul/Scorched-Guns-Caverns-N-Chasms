@@ -18,6 +18,7 @@
     "meleeReach": 2.5,
     "hotBarrelRate": 20,
     "allowAmmoChange": true,
+    "usesCustomMeleeAnimation": true,
     "criticalChance": 0.1
   },
   "modules": {
@@ -44,7 +45,8 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 9.5,
+    "damage": 10,
+    "armorPen": 1.0,
     "damageFalloffStart": 10.0,
     "criticalChance": 0.1,
     "critDamageMultiplier": 1.25,
@@ -60,7 +62,7 @@
     "speed": 6.5,
     "trailLengthMultiplier": 2.0,
     "recoilAngle": 3.0,
-    "recoilKick": 1.6,
+    "recoilKick": 1.7,
     "spread": 1.7
   },
   "projectile_1": {
@@ -84,6 +86,7 @@
     "size": 0.05,
     "speed": 5.5,
     "trailLengthMultiplier": 1.0
+
   },
   "reloads": {
     "emptyMagTimer": 10,
