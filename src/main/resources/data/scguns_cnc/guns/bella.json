@@ -18,7 +18,8 @@
     "meleeCooldownTicks": 20,
     "meleeReach": 2.5,
     "hotBarrelRate": 20,
-    "criticalChance": 0.1
+    "criticalChance": 0.1,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
@@ -42,12 +43,12 @@
   },
   "projectile": {
     "advantage": "scguns:none",
-    "damage": 8.5,
+    "damage": 9,
     "damageFalloffStart": 15.0,
     "criticalChance": 0.1,
-    "critDamageMultiplier": 3.0,
+    "critDamageMultiplier": 2.5,
     "damageFalloffEnd": 45.0,
-    "damageFalloffMinMultiplier": 0.60,
+    "damageFalloffMinMultiplier": 0.75,
     "gravity": false,
     "item": "scguns_cnc:compact_hex_round",
     "casingType": "scguns_cnc:small_necromium_casing",
@@ -60,7 +61,7 @@
     "recoilAngle": 3.0,
     "recoilKick": 1.4,
     "spread": 1.5,
-    "armorPen": 1.0
+    "armorPen": 2.0
   },
   "reloads": {
     "emptyMagTimer": 10,

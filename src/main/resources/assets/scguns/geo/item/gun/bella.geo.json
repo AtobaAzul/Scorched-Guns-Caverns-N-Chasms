@@ -18,7 +18,12 @@
 				{
 					"name": "gun_body2",
 					"parent": "gun_body",
-					"pivot": [0, -6, 4.24881],
+					"pivot": [0, -6, 4.24881]
+				},
+				{
+					"name": "gun_body3",
+					"parent": "gun_body2",
+					"pivot": [0, -6.25, 3.75],
 					"cubes": [
 						{
 							"origin": [-0.73311, -6.19277, 0.75],
@@ -103,7 +108,7 @@
 				},
 				{
 					"name": "sights",
-					"parent": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [0.60611, -0.05723, -0.6],
 					"cubes": [
 						{
@@ -210,7 +215,7 @@
 				},
 				{
 					"name": "barrels",
-					"parent": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [-15.475, -5.85, 0]
 				},
 				{
@@ -431,7 +436,7 @@
 				},
 				{
 					"name": "grips",
-					"parent": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [-24.26287, -3.55233, -9.14767]
 				},
 				{
@@ -738,7 +743,7 @@
 				},
 				{
 					"name": "stocks",
-					"parent": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [-0.52661, -6.10309, 3.14881]
 				},
 				{
@@ -899,7 +904,7 @@
 				},
 				{
 					"name": "bolt",
-					"parent": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [0.16421, -3.93934, 1.25],
 					"cubes": [
 						{
@@ -936,7 +941,7 @@
 				},
 				{
 					"name": "magazines",
-					"parent": "gun_body2",
+					"parent": "gun_body3",
 					"pivot": [6.5, -5.82926, 3.36522]
 				},
 				{
@@ -1074,10 +1079,10 @@
 				{
 					"name": "left_arm",
 					"parent": "magazines",
-					"pivot": [6, -2.8432, 6.00305],
+					"pivot": [7.25, -3.3, 7.6],
 					"cubes": [
 						{
-							"origin": [5.29189, -8.66097, 4.75305],
+							"origin": [5.5, -6, 5.5],
 							"size": [2.5, 10, 2.5],
 							"uv": {
 								"north": {"uv": [0, 0], "uv_size": [2.5, 10]},
@@ -1093,10 +1098,10 @@
 				{
 					"name": "right_arm",
 					"parent": "gun_body2",
-					"pivot": [-6, -4.8432, 6.00305],
+					"pivot": [-7.25, -3.3, 7.6],
 					"cubes": [
 						{
-							"origin": [-6.70811, -8.66097, 4.75305],
+							"origin": [-8, -6, 5.5],
 							"size": [2.5, 10, 2.5],
 							"uv": {
 								"north": {"uv": [0, 0], "uv_size": [2.5, 10]},
