@@ -18,7 +18,8 @@
     "meleeCooldownTicks": 15,
     "meleeReach": 3,
     "hotBarrelRate": 7,
-    "criticalChance": 0.00
+    "criticalChance": 0.00,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
@@ -67,7 +68,7 @@
     "recoilKick": 4.0,
     "spread": 3.0,
     "alwaysSpread": false,
-    "armorPen": 2.0,
+    "armorPen": 3.0,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.05
   },

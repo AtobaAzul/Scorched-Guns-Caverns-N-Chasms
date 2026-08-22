@@ -23,20 +23,13 @@
 				{
 					"name": "gun_body",
 					"parent": "gun_body2",
-					"pivot": [-0.11912, -4.4677, -1.93245],
+					"pivot": [-0.11912, -4.4677, -1.93245]
+				},
+				{
+					"name": "gun_body4",
+					"parent": "gun_body",
+					"pivot": [0, -6.1, 4.85],
 					"cubes": [
-						{
-							"origin": [-0.65, -3.5, 0.9],
-							"size": [1.3, 0.5, 4],
-							"uv": {
-								"north": {"uv": [35, 0], "uv_size": [1.5, 0.5]},
-								"east": {"uv": [17, 31], "uv_size": [4, 0.5]},
-								"south": {"uv": [35, 1], "uv_size": [1.5, 0.5]},
-								"west": {"uv": [31, 19], "uv_size": [4, 0.5]},
-								"up": {"uv": [20, 23], "uv_size": [1.5, 4]},
-								"down": {"uv": [12, 28], "uv_size": [1.5, -4]}
-							}
-						},
 						{
 							"origin": [-0.65, -3.5, 4.9],
 							"size": [1.3, 0.5, 0.7],
@@ -113,17 +106,29 @@
 								"up": {"uv": [31, 20], "uv_size": [1, 2]},
 								"down": {"uv": [21, 33], "uv_size": [1, -2]}
 							}
+						},
+						{
+							"origin": [-0.65, -3.5, 0.9],
+							"size": [1.3, 0.5, 4],
+							"uv": {
+								"north": {"uv": [35, 0], "uv_size": [1.5, 0.5]},
+								"east": {"uv": [17, 31], "uv_size": [4, 0.5]},
+								"south": {"uv": [35, 1], "uv_size": [1.5, 0.5]},
+								"west": {"uv": [31, 19], "uv_size": [4, 0.5]},
+								"up": {"uv": [20, 23], "uv_size": [1.5, 4]},
+								"down": {"uv": [12, 28], "uv_size": [1.5, -4]}
+							}
 						}
 					]
 				},
 				{
 					"name": "attachment_bone",
-					"parent": "gun_body",
+					"parent": "gun_body4",
 					"pivot": [-0.00188, -5.97875, 3.24059]
 				},
 				{
 					"name": "grips",
-					"parent": "gun_body",
+					"parent": "gun_body4",
 					"pivot": [-0.26287, -3.55233, -9.14767]
 				},
 				{
@@ -326,7 +331,7 @@
 				},
 				{
 					"name": "stocks",
-					"parent": "gun_body",
+					"parent": "gun_body4",
 					"pivot": [0, -0.5, 0]
 				},
 				{
@@ -556,45 +561,26 @@
 				},
 				{
 					"name": "left_arm",
-					"parent": "gun_body",
-					"pivot": [6, -4.3432, 7.50305],
+					"parent": "gun_body4",
+					"pivot": [7.25, -3.3, 7.6],
 					"cubes": [
 						{
-							"origin": [4.75, -10.1432, 6.25305],
+							"origin": [5.5, -6, 5.5],
 							"size": [2.5, 10, 2.5],
 							"uv": {
 								"north": {"uv": [0, 0], "uv_size": [2.5, 10]},
 								"east": {"uv": [3, 0], "uv_size": [2.5, 10]},
 								"south": {"uv": [6, 0], "uv_size": [2.5, 10]},
-								"west": {"uv": [9, 0], "uv_size": [2.5, 10]},
-								"up": {"uv": [20, 0], "uv_size": [2.5, 2.5]},
-								"down": {"uv": [6, 22.5], "uv_size": [2.5, -2.5]}
-							}
-						}
-					]
-				},
-				{
-					"name": "right_arm",
-					"parent": "gun_body",
-					"pivot": [-6, -6.3432, 7.50305],
-					"cubes": [
-						{
-							"origin": [-7.25, -10.1432, 6.25305],
-							"size": [2.5, 10, 2.5],
-							"uv": {
-								"north": {"uv": [0, 10], "uv_size": [2.5, 10]},
-								"east": {"uv": [3, 10], "uv_size": [2.5, 10]},
-								"south": {"uv": [6, 10], "uv_size": [2.5, 10]},
-								"west": {"uv": [9, 10], "uv_size": [2.5, 10]},
-								"up": {"uv": [20, 8], "uv_size": [2.5, 2.5]},
-								"down": {"uv": [9, 22.5], "uv_size": [2.5, -2.5]}
+								"west": {"uv": [6, 0], "uv_size": [2.5, 10]},
+								"up": {"uv": [16, 20], "uv_size": [2.5, 2.5]},
+								"down": {"uv": [19, 22.5], "uv_size": [2.5, -2.5]}
 							}
 						}
 					]
 				},
 				{
 					"name": "bolt",
-					"parent": "gun_body",
+					"parent": "gun_body4",
 					"pivot": [-0.675, -3.56667, -1.20833],
 					"cubes": [
 						{
@@ -640,7 +626,7 @@
 				},
 				{
 					"name": "barrels",
-					"parent": "gun_body",
+					"parent": "gun_body4",
 					"pivot": [0, -4, -13.9]
 				},
 				{
@@ -1052,7 +1038,7 @@
 				},
 				{
 					"name": "magazine",
-					"parent": "gun_body",
+					"parent": "gun_body4",
 					"pivot": [0, -7.03518, -0.68105]
 				},
 				{
@@ -1157,6 +1143,25 @@
 								"west": {"uv": [9, 16], "uv_size": [2.5, 3.5]},
 								"up": {"uv": [11, 29], "uv_size": [1, 2.5]},
 								"down": {"uv": [29, 15.5], "uv_size": [1, -2.5]}
+							}
+						}
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "gun_body",
+					"pivot": [-7.25, -3.3, 7.6],
+					"cubes": [
+						{
+							"origin": [-8, -6, 5.5],
+							"size": [2.5, 10, 2.5],
+							"uv": {
+								"north": {"uv": [9, 0], "uv_size": [2.5, 10]},
+								"east": {"uv": [6, 0], "uv_size": [2.5, 10]},
+								"south": {"uv": [6, 0], "uv_size": [2.5, 10]},
+								"west": {"uv": [6, 0], "uv_size": [2.5, 10]},
+								"up": {"uv": [21, 4], "uv_size": [2.5, 2.5]},
+								"down": {"uv": [8.5, 10], "uv_size": [-2.5, -10]}
 							}
 						}
 					]
