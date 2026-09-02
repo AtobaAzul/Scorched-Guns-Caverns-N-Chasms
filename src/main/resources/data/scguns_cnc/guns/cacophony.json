@@ -13,8 +13,8 @@
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 3,
-    "meleeDamage": 2.5,
-    "meleeCooldownTicks": 15,
+    "meleeDamage": 3.5,
+    "meleeCooldownTicks": 20,
     "meleeReach": 3,
     "hotBarrelRate": 1,
     "criticalChance": 0.00
@@ -66,7 +66,7 @@
     "recoilKick": 1.75,
     "spread": 4.0,
     "alwaysSpread": false,
-    "armorPen": 1.5,
+    "armorPen": 2,
     "speedModifier": 0.8,
     "playerKnockBack": true,
     "playerKnockBackStrength": 0.0525

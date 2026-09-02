@@ -70,7 +70,7 @@
     "damageFalloffEnd": 30.0,
     "damageFalloffMinMultiplier": 0.45,
     "damage": 8.5,
-    "armorPen": 0.0,
+    "armorPen": 1.5,
     "gravity": false,
     "item": "scguns:compact_advanced_round",
     "ejectsCasing": true,
