@@ -45,6 +45,8 @@ import javax.annotation.Nullable;
 
 public class GravekeeperAcolyteEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     public static final RawAnimation THROW = RawAnimation.begin().thenPlay("throw");
+    public static final RawAnimation BAYONET_MELEE = RawAnimation.begin().thenPlay("gun_melee.bayonet");
+
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public GravekeeperAcolyteEntity(EntityType<? extends GravekeeperAcolyteEntity> entityType, Level level) {
@@ -111,5 +113,6 @@ public class GravekeeperAcolyteEntity extends AbstractGravekeeperGunnerEntity im
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         super.registerControllers(controllers);
         controllers.add(new AnimationController<>(this, "Throw", 1, state -> PlayState.STOP).triggerableAnim("throw", THROW));
+        controllers.add(new AnimationController<>(this, "Bayonet", 1, state -> PlayState.STOP).triggerableAnim("gun_melee.bayonet", BAYONET_MELEE));
     }
 }

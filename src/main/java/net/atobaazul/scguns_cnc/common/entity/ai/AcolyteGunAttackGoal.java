@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.common.entity.ai;
 
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
+import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -351,7 +352,15 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
             if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
-                    animatable.triggerAnim("Gun Melee", "gun_melee");
+                    if (this.shooter.getMainHandItem().is(ModItems.HANGMAN_ACOLYTE.get())) {
+                        animatable.triggerAnim("Bayonet", "gun_melee.bayonet");
+                        target.hurt(this.shooter.damageSources().magic(), 2);
+                        this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.HOSTILE, 1.0F, 0.4F);
+                    } else {
+                        animatable.triggerAnim("Gun Melee", "gun_melee");
+                        this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(), SoundEvents.GENERIC_EAT, SoundSource.HOSTILE, 1.0F, 0.4F);
+
+                    }
                 }
 
                 if (heldItem.getItem() instanceof AnathemaGunItem) {

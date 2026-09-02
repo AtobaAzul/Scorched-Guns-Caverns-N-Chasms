@@ -77,6 +77,7 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
             this.minRange = gun.getMinAttackRange() * 0.1;
         } else {
             this.idealRange = 15.0;
+            this.idealRange = 15.0;
             this.minRange = 4.0;
         }
 
