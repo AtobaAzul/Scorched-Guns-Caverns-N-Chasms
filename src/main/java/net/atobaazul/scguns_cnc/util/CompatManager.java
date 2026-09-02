@@ -1,7 +1,6 @@
-package net.atobaazul.scguns_cnc;
+package net.atobaazul.scguns_cnc.util;
 
 import net.minecraftforge.fml.loading.FMLLoader;
-import net.minecraftforge.fml.loading.moddiscovery.ModFileInfo;
 
 public class CompatManager {
     public static final boolean CREATE_ENABLED = getModEnabled("create");
