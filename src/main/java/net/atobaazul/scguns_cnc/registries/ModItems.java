@@ -22,7 +22,7 @@ import top.ribs.scguns.item.animated.AnimatedDiamondSteelGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.animated.AnimatedScorchedGunItem;
 
-import static net.atobaazul.scguns_cnc.CompatManager.CREATE_ENABLED;
+import static net.atobaazul.scguns_cnc.util.CompatManager.CREATE_ENABLED;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 import static top.ribs.scguns.init.ModItems.*;

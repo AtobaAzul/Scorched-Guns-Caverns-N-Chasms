@@ -6,6 +6,7 @@ import com.mrcrayfish.framework.api.network.LevelLocation;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.caverns_and_chasms.core.other.CCDataProcessors;
 import net.atobaazul.scguns_cnc.registries.ModItems;
+import net.atobaazul.scguns_cnc.util.ProjectileEntityExtension;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -28,7 +29,7 @@ import top.ribs.scguns.network.message.S2CMessageBulletTrail;
 import top.ribs.scguns.util.GunEnchantmentHelper;
 
 @Mixin(ProjectileEntity.class)
-public abstract class ProjectileEntityMixin extends Entity implements IEntityAdditionalSpawnData {
+public abstract class ProjectileEntityMixin extends Entity implements IEntityAdditionalSpawnData, ProjectileEntityExtension {
     @Shadow
     protected LivingEntity shooter;
 
@@ -44,6 +45,12 @@ public abstract class ProjectileEntityMixin extends Entity implements IEntityAdd
 
     public ProjectileEntityMixin(EntityType<?> p_19870_, Level p_19871_) {
         super(p_19870_, p_19871_);
+    }
+
+    @Override
+    public void scguns_cnc$setShooter(LivingEntity entity) {
+        this.shooter = entity;
+        this.shooterId = entity.getId();
     }
 
     @WrapMethod(method = "calculateChargeSpreadMultiplier", remap = false)

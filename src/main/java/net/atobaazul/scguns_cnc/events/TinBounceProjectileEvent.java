@@ -15,6 +15,7 @@ import net.atobaazul.scguns_cnc.common.entity.projectile.BouncingProjectileEntit
 import net.atobaazul.scguns_cnc.common.event.BulletDeflectEvent;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.util.GrazerExtension;
+import net.atobaazul.scguns_cnc.util.ProjectileEntityExtension;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
@@ -107,32 +108,32 @@ public class TinBounceProjectileEvent {
             BlockState state = level.getBlockState(pos);
             Direction direction = blockHitResult.getDirection();
 
-            boolean flag = state.is(CCBlockTags.DEFLECTS_PROJECTILES);
+            boolean deflectingBlock = state.is(CCBlockTags.DEFLECTS_PROJECTILES);
 
-            if (!flag) {
+            if (!deflectingBlock) {
                 BlockPos blockpos1 = pos.relative(direction.getOpposite());
                 BlockState blockstate1 = level.getBlockState(blockpos1);
                 if (blockstate1.is(CCBlockTags.DEFLECTS_PROJECTILES) && blockstate1.isFaceSturdy(level, blockpos1, direction)) {
-                    flag = true;
+                    deflectingBlock = true;
                     pos = blockpos1;
                     state = blockstate1;
                 }
             }
 
-            if (!flag) {
+            if (!deflectingBlock) {
                 BlockPos blockpos1 = pos.relative(direction);
                 BlockState blockstate1 = level.getBlockState(blockpos1);
                 if (blockstate1.is(CCBlockTags.DEFLECTS_PROJECTILES) && blockstate1.getCollisionShape(level, blockpos1, CollisionContext.of(projectile)).isEmpty() && blockstate1.getShape(level, blockpos1).bounds().inflate(1.0E-7D).move(blockpos1).contains(blockHitResult.getLocation())) {
-                    flag = true;
+                    deflectingBlock = true;
                     pos = blockpos1;
                     state = blockstate1;
                 }
             }
 
             boolean bonus = data.getValue(CCDataProcessors.BONUS_DEFLECT);
-            if (flag || bonus || ricoshotBullet) {
+            if (deflectingBlock || bonus || ricoshotBullet) {
                 double speed = movement.lengthSqr();
-                if (/*direction != Direction.UP ||*/ speed > 0.1D) {
+                if (/*direction != Direction.UP ||*/ speed > 0.4D) {
                     Vec3 location = hitResult.getLocation();
                     Axis axis = direction.getAxis();
                     int i = blockHitResult.getDirection().getAxisDirection().getStep();
@@ -183,6 +184,8 @@ public class TinBounceProjectileEvent {
         } else if (hitResult.getType() == HitResult.Type.ENTITY) {
             EntityHitResult entityHitResult = (EntityHitResult) hitResult;
             if (entityHitResult.getEntity() instanceof LivingEntity living && living.isBlocking() && isBulletProjectileBlocked(living, projectile) && (living.getUseItem().is(CCItems.AEGIS.get()) || ricoshotBullet)) {
+                ProjectileEntityExtension eProjectile = (ProjectileEntityExtension) projectile;
+                eProjectile.scguns_cnc$setShooter(living);
                 AABB aabb = living.getBoundingBox().inflate(0.3D);
                 Vec3 location = aabb.clip(projectile.position(), projectile.position().add(projectile.getDeltaMovement())).or(() -> aabb.clip(projectile.position(), new Vec3(living.getX(), living.getY(0.5D), living.getZ()))).orElse(projectile.position());
                 Vec3 reflect = living.getLookAngle();
