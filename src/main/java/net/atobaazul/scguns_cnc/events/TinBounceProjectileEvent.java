@@ -133,7 +133,8 @@ public class TinBounceProjectileEvent {
             boolean bonus = data.getValue(CCDataProcessors.BONUS_DEFLECT);
             if (deflectingBlock || bonus || ricoshotBullet) {
                 double speed = movement.lengthSqr();
-                if (/*direction != Direction.UP ||*/ speed > 0.4D) {
+
+                if (/*direction != Direction.UP ||*/ speed > 1.5D) {
                     Vec3 location = hitResult.getLocation();
                     Axis axis = direction.getAxis();
                     int i = blockHitResult.getDirection().getAxisDirection().getStep();

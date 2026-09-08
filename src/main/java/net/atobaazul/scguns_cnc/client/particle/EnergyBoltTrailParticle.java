@@ -19,8 +19,6 @@ public class EnergyBoltTrailParticle extends TurquoiseParticle {
         this.lifetime = 20;
     }
 
-
-
     @Override
     public int getLightColor(float partialTick) {
         int packedLight = super.getLightColor(partialTick);
