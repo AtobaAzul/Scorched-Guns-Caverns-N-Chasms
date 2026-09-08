@@ -276,7 +276,7 @@ public class ModItems {
                     ModConfigs.COMMON.electrothermal_autocannon_energy_max,
                     ModConfigs.COMMON.electrothermal_autocannon_recharge_mult,
                     true
-            ).setUseGlowMask(true)
+            )
     );
 
 

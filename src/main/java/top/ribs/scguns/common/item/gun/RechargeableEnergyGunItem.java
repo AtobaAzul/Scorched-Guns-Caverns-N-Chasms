@@ -1,6 +1,8 @@
 package top.ribs.scguns.common.item.gun;
 
 import com.mrcrayfish.framework.api.network.LevelLocation;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
+import net.atobaazul.scguns_cnc.client.render.gun.ETAAnimatedGunRenderer;
 import net.atobaazul.scguns_cnc.client.render.gun.EmmisiveAnimatedGunRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -109,7 +111,9 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
     }
 
     //Not to be confused with get max energy stored.
-    public int getTotalEnergyCapacity() {return this.maxEnergy.get();}
+    public int getTotalEnergyCapacity() {
+        return this.maxEnergy.get();
+    }
 
 
     @Override
@@ -121,9 +125,9 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
             int currentAmmo = tag.getInt("AmmoCount");
             int counter = tag.getInt("RechargeCounter");
 
-            if (useOverheat && entity.tickCount % 10 == 0) {
+            if (useOverheat && entity.tickCount % 5 == 0) {
                 float heatLevel = tag.getFloat("HeatLevel");
-                tag.putFloat("HeatLevel", Math.max(0, (int) heatLevel - 1));
+                tag.putFloat("HeatLevel", Math.max(0, heatLevel - 0.5f));
             }
 
             LazyOptional<IEnergyStorage> capability = stack.getCapability(ForgeCapabilities.ENERGY);
@@ -230,7 +234,14 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
 
     @OnlyIn(Dist.CLIENT)
     private AnimatedGunRenderer getRenderer() {
-        return this.useGlowMask ? new EmmisiveAnimatedGunRenderer(new ResourceLocation("scguns", gunID)) : new AnimatedGunRenderer(new ResourceLocation("scguns", gunID));
+        if (this.useGlowMask) {
+            return new EmmisiveAnimatedGunRenderer(new ResourceLocation("scguns", gunID));
+        } else if (this.gunID.matches("electrothermal_autocannon")) {
+            SCGunsCnC.LOGGER.info("HERE, SETTING ETA RENDERER");
+            return new ETAAnimatedGunRenderer(new ResourceLocation("scguns", gunID));
+        }
+
+        return new AnimatedGunRenderer(new ResourceLocation("scguns", gunID));
     }
 
     @OnlyIn(Dist.CLIENT)
