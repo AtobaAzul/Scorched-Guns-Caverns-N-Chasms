@@ -1,11 +1,14 @@
 package net.atobaazul.scguns_cnc.client.particle;
 
 import com.teamabnormals.caverns_and_chasms.client.particle.TurquoiseParticle;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -16,14 +19,18 @@ public class EnergyBoltTrailParticle extends TurquoiseParticle {
         this.lifetime = 20;
     }
 
-    //There has to be SOME util method for this, right????
-    public static float lerp(float point1, float point2, float fraction) {
-        return (1 - fraction) * point1 + fraction * point2;
-    }
+
 
     @Override
     public int getLightColor(float partialTick) {
-        return (int) lerp( 256, 120, (float) this.age / this.lifetime);
+        int packedLight = super.getLightColor(partialTick);
+
+        int blockLight = LightTexture.block(packedLight);
+        int skyLight = LightTexture.sky(packedLight);
+
+        int light = (int) Math.floor(Mth.lerp((float) this.age / this.lifetime, 15, 0));
+
+        return LightTexture.pack(Mth.clamp(light + blockLight, 0, 15), Mth.clamp(light + skyLight, 0, 15));
     }
 
     @OnlyIn(Dist.CLIENT)
