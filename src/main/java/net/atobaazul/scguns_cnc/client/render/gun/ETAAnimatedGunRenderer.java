@@ -15,6 +15,8 @@ import software.bernie.geckolib.core.object.Color;
 import top.ribs.scguns.client.render.gun.animated.AnimatedGunRenderer;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 
+import java.util.Arrays;
+
 public class ETAAnimatedGunRenderer extends AnimatedGunRenderer {
     private ItemStack currentRenderStack;
 
@@ -34,26 +36,37 @@ public class ETAAnimatedGunRenderer extends AnimatedGunRenderer {
         if (this.currentRenderStack != null) {
             float heat = this.currentRenderStack.getOrCreateTag().getFloat("HeatLevel") / 100;
 
-            if ((bone.getName().matches("barrel_tip"))) {
+            if ((bone.getName().matches("barrel_tip")) && heat > 0.1) {
                 int blockLight = LightTexture.block(packedLight);
                 int skyLight = LightTexture.sky(packedLight);
 
-                int light = (int) Math.floor(Mth.lerp(heat, 0, 10));
+                int light = (int) Math.floor(Mth.lerp(heat-.1f, 0, 10));
                 packedLight = LightTexture.pack(Mth.clamp(light + blockLight, 0, 15), Mth.clamp(light + skyLight, 0, 15));
 
-                blue = Mth.lerp(heat, 1, 0);
-                green = Mth.lerp(heat, 1, 0);
+                blue = Mth.lerp(heat-.1f, 1, 0);
+                green = Mth.lerp(heat-.1f, 1, 0);
             }
 
-            if ((bone.getName().matches("barrel_mid") || bone.getName().matches("heatsink")) && heat > 0.2) {
+            if ((bone.getName().matches("barrel_mid")) && heat > 0.2) {
                 int blockLight = LightTexture.block(packedLight);
                 int skyLight = LightTexture.sky(packedLight);
 
-                int light = (int) Math.floor(Mth.lerp(heat, 0, 5));
+                int light = (int) Math.floor(Mth.lerp(heat-.2f, 0, 10));
                 packedLight = LightTexture.pack(Mth.clamp(light + blockLight, 0, 15), Mth.clamp(light + skyLight, 0, 15));
 
-                blue = Mth.lerp(heat, 1, 0.2f);
-                green = Mth.lerp(heat, 1, 0.2f);
+                blue = Mth.lerp(heat-.2f, 1, 0.2f);
+                green = Mth.lerp(heat-.2f, 1, 0.2f);
+            }
+
+            if ((bone.getName().matches("barrel_end")) && heat > 0.3) {
+                int blockLight = LightTexture.block(packedLight);
+                int skyLight = LightTexture.sky(packedLight);
+
+                int light = (int) Math.floor(Mth.lerp(heat-.3f, 0, 10));
+                packedLight = LightTexture.pack(Mth.clamp(light + blockLight, 0, 15), Mth.clamp(light + skyLight, 0, 15));
+
+                blue = Mth.lerp(heat-.3f, 1, 0.2f);
+                green = Mth.lerp(heat-.3f, 1, 0.2f);
             }
         }
 
