@@ -235,4 +235,29 @@ public abstract class ServerPlayHandlerMixin {
             original.call(player, heldItem);
         }
     }
+
+    @WrapMethod(method = "playFireSound", remap = false)
+    private static void scguns_cnc$playFireSound(ServerPlayer player, Level world, ItemStack heldItem, Gun modifiedGun, ResourceLocation fireSound, Operation<Void> original) {
+        if (heldItem.is(ModItems.SCATTERER.get())) {
+            double posX = player.getX();
+            double posY = player.getY() + player.getEyeHeight();
+            double posZ = player.getZ();
+            float volume = GunModifierHelper.getFireSoundVolume(heldItem);
+            float pitch = 0.9F + world.random.nextFloat() * 0.2F;
+
+            float chargeProgress = player.getPersistentData().getFloat("ChargeProgress");
+
+            float charge_pitch = Mth.lerp(chargeProgress, 1, 0.66f);
+
+            double radius = GunModifierHelper.getModifiedFireSoundRadius(heldItem, Config.SERVER.gunShotMaxDistance.get());
+            boolean muzzle = modifiedGun.getDisplay().getFlash() != null;
+
+            S2CMessageGunSound messageSound = new S2CMessageGunSound(fireSound, SoundSource.PLAYERS, (float) posX, (float) posY, (float) posZ, volume, pitch * charge_pitch, player.getId(), muzzle, false);
+
+            PacketHandler.getPlayChannel().sendToNearbyPlayers(() -> LevelLocation.create(player.level(), posX, posY, posZ, radius), messageSound);
+
+        } else {
+            original.call(player, world, heldItem, modifiedGun, fireSound);
+        }
+    }
 }
