@@ -147,6 +147,6 @@ public class ModLangProvider extends LanguageProvider {
         add("subtitle.scguns_cnc.gravekeeper_herald.ambient", "Herald beckons");
         add("subtitle.scguns_cnc.gravekeeper_herald.death", "Herald dies");
         add("subtitle.scguns_cnc.gravekeeper_herald.enrage", "Herald cries out");
-
+        add("subtitle.scguns_cnc.scatterer_charge", "Scatterer Charges");
     }
 }

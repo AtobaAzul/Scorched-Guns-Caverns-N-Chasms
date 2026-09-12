@@ -294,7 +294,7 @@ public class ModItems {
                     ModConfigs.COMMON.scatterer_refill_cd,
                     ModConfigs.COMMON.scatterer_energy_max,
                     ModConfigs.COMMON.scatterer_recharge_mult
-            ).setUseGlowMask(true)
+            )
     );
 
     //Iron Partisan

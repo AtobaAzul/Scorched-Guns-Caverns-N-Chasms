@@ -4,6 +4,7 @@ import com.mrcrayfish.framework.api.network.LevelLocation;
 import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.client.render.gun.ETAAnimatedGunRenderer;
 import net.atobaazul.scguns_cnc.client.render.gun.EmmisiveAnimatedGunRenderer;
+import net.atobaazul.scguns_cnc.client.render.gun.ScattererAnimatedGunRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.Direction;
@@ -65,6 +66,7 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         this.reloadRechargeTimeMult = reloadRechargeTimeMult;
         this.useOverheat = useOverheat;
         this.gunID = path;
+
     }
 
     public RechargeableEnergyGunItem(Properties properties, String path, SoundEvent reloadSoundMagOut, SoundEvent reloadSoundMagIn, SoundEvent reloadSoundEnd, SoundEvent boltPullSound, SoundEvent boltReleaseSound, ForgeConfigSpec.IntValue energyRequired, ForgeConfigSpec.IntValue refillCooldown, ForgeConfigSpec.IntValue maxEnergy, ForgeConfigSpec.DoubleValue reloadRechargeTimeMult) {
@@ -237,8 +239,9 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         if (this.useGlowMask) {
             return new EmmisiveAnimatedGunRenderer(new ResourceLocation("scguns", gunID));
         } else if (this.gunID.matches("electrothermal_autocannon")) {
-            SCGunsCnC.LOGGER.info("HERE, SETTING ETA RENDERER");
             return new ETAAnimatedGunRenderer(new ResourceLocation("scguns", gunID));
+        } else if (this.gunID.matches("scatterer")) {
+            return new ScattererAnimatedGunRenderer(new ResourceLocation("scguns", gunID));
         }
 
         return new AnimatedGunRenderer(new ResourceLocation("scguns", gunID));
