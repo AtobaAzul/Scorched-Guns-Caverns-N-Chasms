@@ -9,7 +9,9 @@ import net.atobaazul.scguns_cnc.common.ModTags;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -34,7 +36,9 @@ import top.ribs.scguns.item.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.C2SMessageShoot;
 import top.ribs.scguns.network.message.S2CMessageBulletTrail;
+import top.ribs.scguns.network.message.S2CMessageGunSound;
 import top.ribs.scguns.util.GunEnchantmentHelper;
+import top.ribs.scguns.util.GunModifierHelper;
 
 import java.util.Objects;
 
@@ -197,10 +201,12 @@ public abstract class ServerPlayHandlerMixin {
                 if (!player.isCreative()) {
                     CompoundTag tag = heldItem.getOrCreateTag();
                     if (!tag.getBoolean("IgnoreAmmo")) {
-                        int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RECLAIMED.get(), heldItem);
-                        if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
-                            int currentAmmo = tag.getInt("AmmoCount");
-                            tag.putInt("AmmoCount", Math.max(0, currentAmmo - count));
+                        for (int i = 0; i < count; i++) {
+                            int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RECLAIMED.get(), heldItem);
+                            if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
+                                int currentAmmo = tag.getInt("AmmoCount");
+                                tag.putInt("AmmoCount", Math.max(0, currentAmmo - 1));
+                            }
                         }
                     }
                 }
@@ -217,14 +223,41 @@ public abstract class ServerPlayHandlerMixin {
                 if (!player.isCreative()) {
                     if (!tag.getBoolean("IgnoreAmmo")) {
                         int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RECLAIMED.get(), heldItem);
-                        if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
-                            tag.putInt("AmmoCount", Math.max(0, currentAmmo - count));
+                        for (int i = 0; i < count; i++) {
+                            if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
+                                tag.putInt("AmmoCount", Math.max(0, currentAmmo - 1));
+                            }
                         }
                     }
                 }
             }
         } else {
             original.call(player, heldItem);
+        }
+    }
+
+    @WrapMethod(method = "playFireSound", remap = false)
+    private static void scguns_cnc$playFireSound(ServerPlayer player, Level world, ItemStack heldItem, Gun modifiedGun, ResourceLocation fireSound, Operation<Void> original) {
+        if (heldItem.is(ModItems.SCATTERER.get())) {
+            double posX = player.getX();
+            double posY = player.getY() + player.getEyeHeight();
+            double posZ = player.getZ();
+            float volume = GunModifierHelper.getFireSoundVolume(heldItem);
+            float pitch = 0.9F + world.random.nextFloat() * 0.2F;
+
+            float chargeProgress = player.getPersistentData().getFloat("ChargeProgress");
+
+            float charge_pitch = Mth.lerp(chargeProgress, 1, 0.66f);
+
+            double radius = GunModifierHelper.getModifiedFireSoundRadius(heldItem, Config.SERVER.gunShotMaxDistance.get());
+            boolean muzzle = modifiedGun.getDisplay().getFlash() != null;
+
+            S2CMessageGunSound messageSound = new S2CMessageGunSound(fireSound, SoundSource.PLAYERS, (float) posX, (float) posY, (float) posZ, volume, pitch * charge_pitch, player.getId(), muzzle, false);
+
+            PacketHandler.getPlayChannel().sendToNearbyPlayers(() -> LevelLocation.create(player.level(), posX, posY, posZ, radius), messageSound);
+
+        } else {
+            original.call(player, world, heldItem, modifiedGun, fireSound);
         }
     }
 }

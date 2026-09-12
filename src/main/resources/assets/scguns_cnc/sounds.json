@@ -77,6 +77,14 @@
       }
     ]
   },
+  "item.scatterer.charge": {
+    "subtitle": "subtitle.scguns_cnc.scatterer_charge",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/scatterer/charge"
+      }
+    ]
+  },
   "item.hangman_carbine.silenced_fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [
