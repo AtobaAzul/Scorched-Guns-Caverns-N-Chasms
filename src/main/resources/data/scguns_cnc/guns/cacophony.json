@@ -17,7 +17,8 @@
     "meleeCooldownTicks": 20,
     "meleeReach": 3,
     "hotBarrelRate": 1,
-    "criticalChance": 0.00
+    "criticalChance": 0.00,
+    "recoilAdsReduction": 0.25
   },
   "modules": {
     "attachments": {
