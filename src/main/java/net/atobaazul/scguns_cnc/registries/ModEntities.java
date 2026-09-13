@@ -1,9 +1,9 @@
 package net.atobaazul.scguns_cnc.registries;
 
-import net.atobaazul.scguns_cnc.client.render.entity.model.GravekeeperSchismEntityRenderer;
 import net.atobaazul.scguns_cnc.common.entity.*;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowableMalisonGrenadeEntity;
+import net.atobaazul.scguns_cnc.common.entity.projectile.throwable.ThrowablePlasmaBursterEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -30,6 +30,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BouncingProjectileEntity>> RICOSHOT_ROUND_PROJECTILE = registerBasic("ricoshot_round_projectile", BouncingProjectileEntity::new);
 
     public static final RegistryObject<EntityType<ThrowableMalisonGrenadeEntity>> THROWABLE_MALISON_GRENADE = registerBasic("malison_grenade", ThrowableMalisonGrenadeEntity::new);
+    public static final RegistryObject<EntityType<ThrowablePlasmaBursterEntity>> THROWABLE_PLASMA_BURSTER = registerBasic("plasma_burster", ThrowablePlasmaBursterEntity::new);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function)
     {

@@ -31,6 +31,11 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
         return Math.random() > .5f ? -Math.random() : Math.random();
     }
 
+    public void setMaxLife(int life) {
+        this.life = 10;
+
+    }
+
     private void spawnImpactParticles(Level world, Vec3 hitPos) {
         LivingEntity player = this.getShooter();
         ServerLevel serverLevel = (ServerLevel) world;

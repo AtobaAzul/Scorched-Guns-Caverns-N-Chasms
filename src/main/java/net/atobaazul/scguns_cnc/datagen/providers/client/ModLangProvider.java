@@ -62,6 +62,8 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.FUSILLADE, "Fusillade");
 
         addItem(ModItems.MALISON_GRENADE, "Malison Grenade");
+        addItem(ModItems.PLASMA_BURSTER, "Plasma Burster");
+        addItem(ModItems.DEPLETED_PLASMA_BURSTER, "Depleted Plasma Burster");
         addItem(ModItems.UNFINISHED_COMPACT_HEX_ROUND, "Unfinished Compact Hex Round");
         addItem(ModItems.UNFINISHED_HEX_ROUND, "Unfinished Hex Round");
         addItem(ModItems.UNFINISHED_HEXSHOT, "Unfinished Hexshot Shell");

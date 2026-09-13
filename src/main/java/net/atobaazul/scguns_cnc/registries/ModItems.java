@@ -5,6 +5,7 @@ import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.ModConfigs;
 import net.atobaazul.scguns_cnc.common.item.ConfigTooltipAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
+import net.atobaazul.scguns_cnc.common.item.PlasmaBursterItem;
 import net.atobaazul.scguns_cnc.common.item.RicoshotRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import top.ribs.scguns.common.item.gun.TooltipGunItem;
@@ -431,6 +432,8 @@ public class ModItems {
                     "scguns_cnc.jei.info.found_in_vaults"));
 
     public static final RegistryObject<Item> MALISON_GRENADE = REGISTER.register("malison_grenade", () -> new MalisonGrenadeItem(new Item.Properties().stacksTo(32).rarity(ModRarity.EXSANGUINATED), 20 * 3));
+    public static final RegistryObject<Item> PLASMA_BURSTER = REGISTER.register("plasma_burster", () -> new PlasmaBursterItem(new Item.Properties().stacksTo(32).rarity(CCItems.FANCY), 20 * 3));
+    public static final RegistryObject<Item> DEPLETED_PLASMA_BURSTER = REGISTER.register("depleted_plasma_burster", () -> new Item(new Item.Properties().stacksTo(32).rarity(CCItems.FANCY)));
 
     //mob spawn eggs.
     public static final RegistryObject<Item> GRAVEKEEPER_GHOUL_SPAWN_EGG = REGISTER.register("gravekeeper_ghoul_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.GRAVEKEEPER_GHOUL, 0x4f6655, 0xa2acc2, new Item.Properties()));
@@ -459,7 +462,7 @@ public class ModItems {
                 .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE_PART, ELECTROTHERMAL_PART, SCATTERER_PART)
                 .addItemsAfter(of(DIAMOND_STEEL_GUN_FRAME.get()), NECROMIUM_GUN_FRAME)
                 .addItemsAfter(of(CERIMONIAL_COD.get()), LESSER_STRAWMAN)
-                .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE)
+                .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE, PLASMA_BURSTER)
                 .addItemsAfter(of(MEDIUM_DIAMOND_STEEL_CASING.get()), SMALL_NECROMIUM_CASING, MEDIUM_NECROMIUM_CASING)
                 .addItemsAfter(of(GIBBS_ROUND.get()), COMPACT_HEX_ROUND, HEX_ROUND)
                 .addItemsAfter(of(BEARPACK_SHELL.get()), HEXSHOT, COPPER_SLUG, BLUNTSHOT)

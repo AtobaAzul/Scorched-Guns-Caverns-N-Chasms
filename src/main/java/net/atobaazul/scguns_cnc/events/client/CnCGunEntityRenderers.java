@@ -27,5 +27,7 @@ public class CnCGunEntityRenderers {
         event.registerEntityRenderer(ModEntities.RICOSHOT_ROUND_PROJECTILE.get(), ProjectileRenderer::new);
 
         event.registerEntityRenderer(ModEntities.THROWABLE_MALISON_GRENADE.get(), ThrowableGrenadeRenderer::new);
+        event.registerEntityRenderer(ModEntities.THROWABLE_PLASMA_BURSTER.get(), ThrowableGrenadeRenderer::new);
+
     }
 }

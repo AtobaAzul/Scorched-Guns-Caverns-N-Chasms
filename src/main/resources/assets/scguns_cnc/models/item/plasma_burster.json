@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "0": "scguns_cnc:items/plasma_burster",
+    "particle": "scguns_cnc:items/plasma_burster"
+  },
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "scguns_cnc:item/plasma_burster_3d"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "firstperson_lefthand": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "thirdperson_righthand": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "thirdperson_lefthand": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "fixed": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "gui": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "ground": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    },
+    "frame": {
+      "parent": "scguns_cnc:item/plasma_burster_2d"
+    }
+  }
+}

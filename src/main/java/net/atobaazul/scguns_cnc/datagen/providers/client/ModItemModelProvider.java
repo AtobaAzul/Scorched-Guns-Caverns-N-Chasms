@@ -47,6 +47,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(LUSTRE_PART);
         simpleItem(ELECTROTHERMAL_PART);
         simpleItem(SCATTERER_PART);
+        simpleItem(DEPLETED_PLASMA_BURSTER);
 
         withExistingParent(GRAVEKEEPER_GHOUL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(GRAVEKEEPER_NEOPHYTE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

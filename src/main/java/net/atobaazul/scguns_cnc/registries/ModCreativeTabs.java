@@ -2,6 +2,8 @@ package net.atobaazul.scguns_cnc.registries;
 
 import com.google.common.collect.Lists;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
+import net.atobaazul.scguns_cnc.common.item.PlasmaBursterItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -54,6 +56,8 @@ public class ModCreativeTabs {
         addEnergyGunWithFullAmmo(pOutput, LUSTRE.get());
         addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
         addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());
+        addItem(pOutput, PLASMA_BURSTER.get());
+        addItem(pOutput, DEPLETED_PLASMA_BURSTER.get());
 
         addItemWithFullAmmo(pOutput, HUMMER.get());
         addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());
@@ -114,6 +118,5 @@ public class ModCreativeTabs {
         } else {
             output.accept(item);
         }
-
     }
 }

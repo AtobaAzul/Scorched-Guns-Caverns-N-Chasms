@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.registries;
 
 import net.atobaazul.scguns_cnc.client.particle.EnergyBoltTrailParticle;
+import net.atobaazul.scguns_cnc.client.particle.PlasmaBurstParticle;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -23,6 +24,7 @@ public class ModParticleTypes {
     public static final RegistryObject<SimpleParticleType> HEX_CASING_PARTICLE = registerSimpleParticleType(true, "hex_casing");
     public static final RegistryObject<SimpleParticleType> HEX_SHELL_PARTICLE = registerSimpleParticleType(true, "hex_shell");
     public static final RegistryObject<SimpleParticleType> SILVER_LINKS = registerSimpleParticleType(true, "silver_links");
+    public static final RegistryObject<SimpleParticleType> PLASMA_BURST = registerSimpleParticleType(true, "plasma_burst");
 
     private static RegistryObject<SimpleParticleType> registerSimpleParticleType(boolean alwaysShow, String name) {
         return PARTICLE_TYPES.register(name, () -> new SimpleParticleType(alwaysShow));
@@ -37,6 +39,8 @@ public class ModParticleTypes {
             event.registerSpriteSet(HEX_CASING_PARTICLE.get(), CasingParticle.Provider::new);
             event.registerSpriteSet(HEX_SHELL_PARTICLE.get(), CasingParticle.Provider::new);
             event.registerSpriteSet(SILVER_LINKS.get(), CasingParticle.Provider::new);
+            event.registerSpriteSet(ENERGY_BOLT_IMPACT.get(), PlasmaBurstParticle.Provider::new);
+
         }
     }
 }
