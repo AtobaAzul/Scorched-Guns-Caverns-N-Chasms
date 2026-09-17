@@ -38,7 +38,6 @@ public class PlasmaBursterItem extends AmmoItem {
         player.startUsingItem(handIn);
         if (!worldIn.isClientSide() && player instanceof Player && player.isUnderWater()) {
             player.awardStat(Stats.ITEM_USED.get(this));
-            stack.shrink(1);
         }
 
         return InteractionResultHolder.consume(stack);
