@@ -462,7 +462,7 @@ public class ModItems {
                 .addItemsAfter(of(PLASMA_CORE.get()), VAULT_GUN_PARTS, LUSTRE_PART, ELECTROTHERMAL_PART, SCATTERER_PART)
                 .addItemsAfter(of(DIAMOND_STEEL_GUN_FRAME.get()), NECROMIUM_GUN_FRAME)
                 .addItemsAfter(of(CERIMONIAL_COD.get()), LESSER_STRAWMAN)
-                .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE, PLASMA_BURSTER)
+                .addItemsAfter(of(GRENADE.get()), MALISON_GRENADE, PLASMA_BURSTER, DEPLETED_PLASMA_BURSTER)
                 .addItemsAfter(of(MEDIUM_DIAMOND_STEEL_CASING.get()), SMALL_NECROMIUM_CASING, MEDIUM_NECROMIUM_CASING)
                 .addItemsAfter(of(GIBBS_ROUND.get()), COMPACT_HEX_ROUND, HEX_ROUND)
                 .addItemsAfter(of(BEARPACK_SHELL.get()), HEXSHOT, COPPER_SLUG, BLUNTSHOT)

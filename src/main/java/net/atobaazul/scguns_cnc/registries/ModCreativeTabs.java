@@ -56,8 +56,6 @@ public class ModCreativeTabs {
         addEnergyGunWithFullAmmo(pOutput, LUSTRE.get());
         addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
         addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());
-        addItem(pOutput, PLASMA_BURSTER.get());
-        addItem(pOutput, DEPLETED_PLASMA_BURSTER.get());
 
         addItemWithFullAmmo(pOutput, HUMMER.get());
         addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());
@@ -67,6 +65,8 @@ public class ModCreativeTabs {
         addItemWithFullAmmo(pOutput, CHARYBDIS.get());
 
         addItem(pOutput, MALISON_GRENADE.get());
+        addItem(pOutput, PLASMA_BURSTER.get());
+        addItem(pOutput, DEPLETED_PLASMA_BURSTER.get());
 
         addItem(pOutput, HEX_ROUND.get());
         addItem(pOutput, COMPACT_HEX_ROUND.get());
