@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"particle": "scguns_cnc:item/bella",
-		"0": "scguns_cnc:item/mortician"
+		"0": "scguns_cnc:item/mortician",
+		"particle": "scguns_cnc:item/bella"
 	},
 	"elements": [
 		{
@@ -12,14 +12,13 @@
 			"from": [7.35304, 2.84268, 0.6],
 			"to": [8.75304, 4.24268, 1.175],
 			"rotation": {"angle": 45, "axis": "z", "origin": [8.05303, 3.46768, 1.6375]},
-			"color": 6,
 			"faces": {
-				"north": {"uv": [4, 5.25, 4.375, 5.625], "texture": "#missing"},
-				"east": {"uv": [0.75, 5.75, 0.875, 6.125], "texture": "#missing"},
-				"south": {"uv": [5.25, 4, 5.625, 4.375], "texture": "#missing"},
-				"west": {"uv": [5.75, 0.75, 5.875, 1.125], "texture": "#missing"},
-				"up": {"uv": [6.125, 1.625, 5.75, 1.5], "texture": "#missing"},
-				"down": {"uv": [6.125, 1.75, 5.75, 1.875], "texture": "#missing"}
+				"north": {"uv": [8, 10.5, 8.75, 11.25], "texture": "#0"},
+				"east": {"uv": [8.25, 2, 8.5, 2.75], "texture": "#0"},
+				"south": {"uv": [5.25, 4, 5.625, 4.375], "texture": "#0"},
+				"west": {"uv": [8, 2, 8.25, 2.75], "texture": "#0"},
+				"up": {"uv": [7.8, 2.25, 7, 2], "texture": "#0"},
+				"down": {"uv": [7.75, 2.5, 7, 2.75], "texture": "#0"}
 			}
 		},
 		{
@@ -27,14 +26,13 @@
 			"from": [7.10304, 2.59268, 1.175],
 			"to": [9.00304, 4.49268, 4.75],
 			"rotation": {"angle": 45, "axis": "z", "origin": [8.05303, 3.46768, 2.2125]},
-			"color": 6,
 			"faces": {
-				"north": {"uv": [4.25, 3.5, 4.75, 4], "texture": "#missing"},
-				"east": {"uv": [1.5, 3, 2.375, 3.5], "texture": "#missing"},
-				"south": {"uv": [4.25, 4, 4.75, 4.5], "texture": "#missing"},
-				"west": {"uv": [3, 2.25, 3.875, 2.75], "texture": "#missing"},
-				"up": {"uv": [3.5, 3.625, 3, 2.75], "texture": "#missing"},
-				"down": {"uv": [4, 0, 3.5, 0.875], "texture": "#missing"}
+				"north": {"uv": [8.5, 8, 9.5, 9], "texture": "#0"},
+				"east": {"uv": [3, 6, 4.75, 7], "texture": "#0"},
+				"south": {"uv": [8.5, 7, 9.5, 8], "texture": "#0"},
+				"west": {"uv": [6, 4.5, 7.75, 5.5], "texture": "#0"},
+				"up": {"uv": [7, 7.25, 6, 5.5], "texture": "#0"},
+				"down": {"uv": [8, 0, 7, 1.75], "texture": "#0"}
 			}
 		},
 		{
@@ -42,14 +40,13 @@
 			"from": [6.65303, 1.61768, 2.725],
 			"to": [6.65303, 3.51768, 3.225],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 12]},
-			"color": 6,
 			"faces": {
-				"north": {"uv": [0, 0, 0, 0.5], "texture": "#missing"},
-				"east": {"uv": [4.75, 5.5, 4.875, 6], "texture": "#missing"},
-				"south": {"uv": [0, 0, 0, 0.5], "texture": "#missing"},
-				"west": {"uv": [5.5, 4.75, 5.625, 5.25], "texture": "#missing"},
-				"up": {"uv": [0, 0.125, 0, 0], "texture": "#missing"},
-				"down": {"uv": [0, 0, 0, 0.125], "texture": "#missing"}
+				"north": {"uv": [0, 0, 0, 0.5], "texture": "#0"},
+				"east": {"uv": [4.75, 6.25, 4.875, 6.75], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 0.5], "texture": "#0"},
+				"west": {"uv": [11, 9.5, 11.25, 10.5], "texture": "#0"},
+				"up": {"uv": [0, 0.125, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 0.125], "texture": "#0"}
 			}
 		},
 		{
@@ -57,14 +54,13 @@
 			"from": [9.32803, 2.11768, 2.2],
 			"to": [9.32803, 3.51768, 2.7],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 12]},
-			"color": 6,
 			"faces": {
-				"north": {"uv": [0, 0, 0, 0.375], "texture": "#missing"},
-				"east": {"uv": [1, 5.75, 1.125, 6.125], "texture": "#missing"},
-				"south": {"uv": [0, 0, 0, 0.375], "texture": "#missing"},
-				"west": {"uv": [1.5, 5.75, 1.625, 6.125], "texture": "#missing"},
-				"up": {"uv": [0, 0.125, 0, 0], "texture": "#missing"},
-				"down": {"uv": [0, 0, 0, 0.125], "texture": "#missing"}
+				"north": {"uv": [0, 0, 0, 0.375], "texture": "#0"},
+				"east": {"uv": [2.25, 11.5, 2, 12.25], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 0.375], "texture": "#0"},
+				"west": {"uv": [1.75, 6, 1.875, 6.375], "texture": "#0"},
+				"up": {"uv": [0, 0.125, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 0.125], "texture": "#0"}
 			}
 		}
 	],
@@ -102,6 +98,7 @@
 		{
 			"name": "silencer",
 			"origin": [16.48497, 1.98, -4.825],
+			"scope": 0,
 			"color": 6,
 			"children": [0, 1, 2, 3]
 		}

@@ -3,8 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"particle": "scguns_cnc:item/bella",
-		"0": "scguns_cnc:item/mortician"
+		"particle": "scguns_cnc:item/bella"
 	},
 	"elements": [
 		{
@@ -12,14 +11,13 @@
 			"from": [7.74357, 2.25873, 3.7],
 			"to": [9.34357, 3.85873, 5.3],
 			"rotation": {"angle": 45, "axis": "z", "origin": [7.73483, 2.625, 18.0625]},
-			"color": 4,
 			"faces": {
-				"north": {"uv": [5, 5, 5.375, 5.375], "texture": "#missing"},
-				"east": {"uv": [0, 5.25, 0.375, 5.625], "texture": "#missing"},
-				"south": {"uv": [5.25, 0, 5.625, 0.375], "texture": "#missing"},
-				"west": {"uv": [0.5, 5.25, 0.875, 5.625], "texture": "#missing"},
-				"up": {"uv": [5.625, 0.875, 5.25, 0.5], "texture": "#missing"},
-				"down": {"uv": [5.625, 1.5, 5.25, 1.875], "texture": "#missing"}
+				"north": {"uv": [5.75, 6.5, 6.125, 6.875], "texture": "#particle"},
+				"east": {"uv": [2, 6.5, 1.625, 6.875], "texture": "#particle"},
+				"south": {"uv": [6.25, 3.625, 6.625, 4], "texture": "#particle"},
+				"west": {"uv": [1.625, 6.5, 2, 6.875], "texture": "#particle"},
+				"up": {"uv": [6.625, 3.875, 6.25, 3.5], "texture": "#particle"},
+				"down": {"uv": [6.25, 4, 6.625, 3.625], "texture": "#particle"}
 			}
 		}
 	],
@@ -57,6 +55,7 @@
 		{
 			"name": "muzzle_brake",
 			"origin": [16.68996, -5.275, -4.275],
+			"scope": 0,
 			"color": 4,
 			"children": [0]
 		}
