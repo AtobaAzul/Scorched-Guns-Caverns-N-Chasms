@@ -1262,10 +1262,6 @@
 							"lerp_mode": "catmullrom"
 						}
 					}
-				},
-				"weighted_stock": {
-					"rotation": [49.5949, -26.0811, -84.4141],
-					"position": [-3.32494, -7.35756, -8.57462]
 				}
 			}
 		}
