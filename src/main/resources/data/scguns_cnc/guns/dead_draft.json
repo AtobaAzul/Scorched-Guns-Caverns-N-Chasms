@@ -18,7 +18,7 @@
     "attachments": {
       "scope": {
         "size": 0.8,
-        "yOffset": 5.8,
+        "yOffset": 5.3,
         "zOffset": -4
       },
       "stock": {
@@ -28,7 +28,7 @@
     },
     "zoom": {
       "fovModifier": 0.6,
-      "yOffset": 6,
+      "yOffset": 5.5,
       "zOffset": 7
     }
   },
