@@ -11,7 +11,7 @@
     "weaponType": "magnum",
     "fireMode": "scguns:semi_automatic",
     "gripType": "scguns:two_handed",
-    "baseGripType": "scguns:two_handed",
+    "baseGripType": "scguns:one_handed",
     "rate": 18,
 
     "meleeDamage": 3.0,
