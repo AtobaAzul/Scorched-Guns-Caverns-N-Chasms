@@ -13,6 +13,7 @@
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:one_handed",
     "rate": 18,
+    "usesCustomMeleeAnimation": true,
 
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 10,

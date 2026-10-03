@@ -21,7 +21,8 @@
     "meleeCooldownTicks": 10,
     "meleeReach": 2.5,
     "hotBarrelRate": 14,
-    "isRevolver": true
+    "isRevolver": true,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
@@ -52,7 +53,7 @@
     "damageFalloffStart": 24.0,
     "damageFalloffEnd": 40.0,
     "damageFalloffMinMultiplier": 0.6,
-    "armorPen": 2.0,
+    "armorPen": 4.0,
     "gravity": false,
     "item": "scguns_cnc:ricoshot_round",
     "ejectsCasing": false,

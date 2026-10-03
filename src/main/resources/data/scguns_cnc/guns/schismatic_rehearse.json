@@ -16,7 +16,8 @@
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 10,
     "meleeReach": 2.5,
-    "hotBarrelRate": 24
+    "hotBarrelRate": 24,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
