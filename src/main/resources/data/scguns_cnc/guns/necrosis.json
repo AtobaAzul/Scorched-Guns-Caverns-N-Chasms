@@ -17,7 +17,8 @@
     "meleeReach": 3.5,
     "allowAmmoChange": true,
     "meleeCooldownTicks": 20,
-    "hotBarrelRate": 30
+    "hotBarrelRate": 30,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
