@@ -18,7 +18,8 @@
     "meleeReach": 3,
     "hotBarrelRate": 1,
     "criticalChance": 0.00,
-    "recoilAdsReduction": 0.25
+    "recoilAdsReduction": 0.25,
+    "usesCustomMeleeAnimation": true
   },
   "modules": {
     "attachments": {
