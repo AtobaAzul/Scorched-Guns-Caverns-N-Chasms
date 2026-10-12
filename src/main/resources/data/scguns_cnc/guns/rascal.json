@@ -11,7 +11,7 @@
     "weaponType": "rifle",
     "fireMode": "scguns:burst",
     "burstAmount": 3,
-    "burstCooldown": 7,
+    "burstCooldown": 6,
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
     "rate": 4,
@@ -28,8 +28,8 @@
       },
       "scope": {
         "size": 0.8,
-        "yOffset": 6.1,
-        "zOffset": 6
+        "yOffset": 6.0,
+        "zOffset": 5.85
       },
       "stock": {
         "scale": 0.0
@@ -51,7 +51,7 @@
     "spread": 2.5,
     "criticalChance": 0.05,
     "alwaysSpread": true,
-    "critDamageMultiplier": 3.0,
+    "critDamageMultiplier": 2.0,
     "damageFalloffStart": 15.0,
     "damageFalloffEnd": 40.0,
     "damageFalloffMinMultiplier": 0.80,
