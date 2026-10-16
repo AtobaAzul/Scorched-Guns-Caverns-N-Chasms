@@ -23,7 +23,7 @@
     "enchantedSecondaryBeamColor": "#ffd981",
     "gripType": "scguns:bazooka",
     "baseGripType": "scguns:bazooka",
-    "rate": 8,
+    "rate": 10,
     "meleeDamage": 4.0,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
