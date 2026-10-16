@@ -14,9 +14,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class EnergyBoltTrailParticle extends TurquoiseParticle {
+    private final float starting_quad_size;
+
     public EnergyBoltTrailParticle(ClientLevel level, boolean floor, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
         super(level, floor, x, y, z, xSpeed, ySpeed, zSpeed);
         this.lifetime = 20;
+        this.starting_quad_size = this.quadSize;
     }
 
     @Override
@@ -29,6 +32,11 @@ public class EnergyBoltTrailParticle extends TurquoiseParticle {
         int light = (int) Math.floor(Mth.lerp((float) this.age / this.lifetime, 15, 0));
 
         return LightTexture.pack(Mth.clamp(light + blockLight, 0, 15), Mth.clamp(light + skyLight, 0, 15));
+    }
+
+    @Override
+    public float getQuadSize(float pScaleFactor) {
+        return Mth.lerp((float) this.age / this.lifetime, this.starting_quad_size, 0);
     }
 
     @OnlyIn(Dist.CLIENT)
