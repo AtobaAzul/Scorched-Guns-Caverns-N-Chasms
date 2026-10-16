@@ -223,9 +223,10 @@ public abstract class ServerPlayHandlerMixin {
                 if (!player.isCreative()) {
                     if (!tag.getBoolean("IgnoreAmmo")) {
                         int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RECLAIMED.get(), heldItem);
-                        for (int i = 0; i < count; i++) {
+                        for (int i = 0; i <= count; i++) {
                             if (level == 0 || player.level().random.nextInt(4 - Mth.clamp(level, 1, 2)) != 0) {
-                                tag.putInt("AmmoCount", Math.max(0, currentAmmo - 1));
+                                int _currentAmmo = tag.getInt("AmmoCount");
+                                tag.putInt("AmmoCount", Math.max(0, _currentAmmo - 1));
                             }
                         }
                     }
