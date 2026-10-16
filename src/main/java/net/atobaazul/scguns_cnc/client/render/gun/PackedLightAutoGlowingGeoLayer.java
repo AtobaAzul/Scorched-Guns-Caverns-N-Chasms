@@ -14,7 +14,7 @@ import software.bernie.geckolib.cache.texture.AutoGlowingTexture;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
-//Custom auto glowing layer that runs on anything BUT the arm bones.
+
 public class PackedLightAutoGlowingGeoLayer<T extends GeoAnimatable> extends GeoRenderLayer<T> {
     public PackedLightAutoGlowingGeoLayer(GeoRenderer<T> renderer) {
         super(renderer);
@@ -32,5 +32,4 @@ public class PackedLightAutoGlowingGeoLayer<T extends GeoAnimatable> extends Geo
                 bufferSource.getBuffer(emissiveRenderType), partialTick, packedLight, packedOverlay,
                 1, 1, 1, 1);
     }
-
 }
