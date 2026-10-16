@@ -66,9 +66,19 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
     public List<Class<? extends LivingEntity>> hitList = List.of(AbstractVillager.class, AbstractIllager.class, AdjudicatorEntity.class, DissidentEntity.class, CogKnightEntity.class, CogMinionEntity.class, PraetorEntity.class, ScampTankEntity.class, SubjugatorEntity.class, SkyCarrierEntity.class, SupplyScampEntity.class, TraumaUnitEntity.class, SignalBeaconEntity.class, BlundererEntity.class, Witch.class, Ravager.class);
     private int ticksUntilNextAlert = 20;
 
-    protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> p_33002_, Level p_33003_) {
-        super(p_33002_, p_33003_);
+    protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> type, Level level) {
+        super(type, level);
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
+    }
+
+    @Override
+    public int getMaxHeadYRot() {
+        return 90;
+    }
+
+    @Override
+    public int getMaxHeadXRot() {
+        return super.getMaxHeadXRot();
     }
 
     @Override

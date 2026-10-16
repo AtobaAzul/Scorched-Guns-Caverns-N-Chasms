@@ -15,6 +15,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -25,6 +26,8 @@ import top.ribs.scguns.entity.ai.AIType;
 import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.GunItem;
+
+import java.util.Comparator;
 
 import static top.ribs.scguns.event.GunEventBus.ejectCasing;
 
@@ -57,6 +60,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
     private int shot_count = 1;
     private final boolean canMelee = false;
     private int melee_timer = 0;
+    private int lookingAtTeammateTime = 0;
 
     public GhoulGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
         this.shooter = shooter;
@@ -70,7 +74,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             this.idealRange = gun.getIdealAttackRange() * 4;
             this.minRange = gun.getMinAttackRange();
         } else {
-            this.idealRange = 15.0;
+            this.idealRange = 16.0;
             this.minRange = 8.0;
         }
 
@@ -167,13 +171,21 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             boolean canSeeTarget = this.shooter.getSensing().hasLineOfSight(target);
             boolean sawTargetPreviously = this.seeTime > 0;
 
-            HitResult raycast = this.shooter.pick(this.idealRange, 0.0F, false);
+            Vec3 startVector = shooter.getEyePosition(1.0F);
+            Vec3 lookVec = shooter.getLookAngle();
+            Vec3 endVector = startVector.add(lookVec.scale(this.idealRange));
+            AABB boundingBox = new AABB(startVector, endVector);
 
-            if (raycast.getType() == HitResult.Type.ENTITY) {
-                EntityHitResult entityHit = (EntityHitResult) raycast;
-                if (entityHit.getEntity() instanceof AbstractGravekeeperGunnerEntity) {
-                    canSeeTarget = false;
+            LivingEntity hitResult = shooter.level().getEntitiesOfClass(LivingEntity.class, boundingBox, entity -> entity != shooter && entity.isAlive()).stream().min(Comparator.comparingDouble(shooter::distanceToSqr)).orElse(null);
+            if (hitResult instanceof AbstractGravekeeperGunnerEntity) {
+                lookingAtTeammateTime += 1;
+                if (lookingAtTeammateTime > 10) { // Change position to prevent mobs from idling for too long
+                    this.shooter.getMoveControl().strafe(-1, this.shooter.getRandom().nextBoolean() ? 0.5F : -0.5F);
+                    this.aimingStabilityTimer = 0;
                 }
+            }
+            else {
+                lookingAtTeammateTime = 0;
             }
 
             if (canSeeTarget != sawTargetPreviously) {
@@ -260,7 +272,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     this.shooter.getLookControl().setLookAt(target);
                     this.shooter.getNavigation().stop();
                 } else {
-                    this.shooter.getNavigation().moveTo(retreatPos.x, retreatPos.y, retreatPos.z, this.speedModifier * 0.8);
+                    this.shooter.getMoveControl().strafe(-1.5F, 0);
                 }
 
                 this.shouldStrafe = false;
@@ -294,8 +306,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 if (this.aimingStabilityTimer < MIN_AIM_TIME) {
                     this.aimingStabilityTimer++;
                 }
-            } else if (canSeeTarget && this.aiType == AIType.SMART && isNavigating) {
-                this.aimingStabilityTimer = 0;
             } else {
                 this.aimingStabilityTimer = 0;
             }
@@ -306,7 +316,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
             boolean canShootWhileMoving = this.aiType == AIType.RECKLESS || (this.aiType != AIType.SMART && !isNavigating);
             boolean smartShouldShoot = this.aiType == AIType.SMART && !isNavigating && !isMovingFast && this.shooter.getNavigation().isDone();
 
-            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
+            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0 && this.shooter.getSensing().hasLineOfSight(target) && this.seeTime >= 5) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                     animatable.triggerAnim("Gun Melee", "gun_melee");

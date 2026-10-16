@@ -357,7 +357,7 @@ public class SchismGunAttackGoal<T extends PathfinderMob> extends Goal {
                 throwGrenade(target);
             }
 
-            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
+            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0 && this.shooter.getSensing().hasLineOfSight(target) && this.seeTime >= 5) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                     animatable.triggerAnim("Offhand Melee", "offhand_melee");

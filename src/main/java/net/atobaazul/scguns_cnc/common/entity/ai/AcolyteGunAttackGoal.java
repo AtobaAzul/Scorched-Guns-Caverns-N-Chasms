@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity.ai;
 
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.atobaazul.scguns_cnc.registries.ModItems;
@@ -9,6 +10,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -19,6 +21,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -30,6 +34,8 @@ import top.ribs.scguns.entity.ai.AIType;
 import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.init.ModSounds;
 import top.ribs.scguns.item.GunItem;
+
+import java.util.Comparator;
 
 import static top.ribs.scguns.event.GunEventBus.ejectCasing;
 
@@ -48,7 +54,7 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
     protected float accuracyModifier = 1.0F;
     protected int strafingTime = -1;
     protected boolean shouldStrafe = false;
-    protected float strafeAmount = 0.0F;
+    protected float strafeAmount = 0.1F;
     protected int aimingStabilityTimer = 0;
     protected int burstIntervalTimer = 0;
     protected int remainingBursts = 0;
@@ -64,6 +70,7 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
     private int shot_count = 1;
     private int melee_timer = 0;
     private int potion_timer;
+    private int lookingAtTeammateTime = 0;
 
     public AcolyteGunAttackGoal(T shooter, ItemStack gunStack, float speedModifier, AIType aiType, int difficulty) {
         this.shooter = shooter;
@@ -77,10 +84,10 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
         if (gunStack.getItem() instanceof GunItem gunItem) {
             Gun gun = gunItem.getModifiedGun(gunStack);
             this.idealRange = gun.getIdealAttackRange() * 4;
-            this.minRange = gun.getMinAttackRange() * 0.1;
+            this.minRange = gun.getMinAttackRange() * 0.5;
         } else {
-            this.idealRange = 15.0;
-            this.minRange = 4.0;
+            this.idealRange = 16.0;
+            this.minRange = 8.0;
         }
 
 
@@ -193,6 +200,9 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
         shooter.level().addFreshEntity(thrownpotion);
     }
 
+
+
+
     @Override
     public void tick() {
         LivingEntity target = this.shooter.getTarget();
@@ -209,6 +219,7 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
         if (this.shooter.hasEffect(ModEffects.BLINDED.get()) || this.shooter.hasEffect(ModEffects.DEAFENED.get()))
             this.isPanicked = true;
 
+        
         if (target != null && heldItem.getItem() instanceof GunItem gunItem) {
             Gun gun = gunItem.getModifiedGun(heldItem);
 
@@ -216,13 +227,21 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
             boolean canSeeTarget = this.shooter.getSensing().hasLineOfSight(target);
             boolean sawTargetPreviously = this.seeTime > 0;
 
-            HitResult raycast = this.shooter.pick(this.idealRange, 0.0F, false);
+            Vec3 startVector = shooter.getEyePosition(1.0F);
+            Vec3 lookVec = shooter.getLookAngle();
+            Vec3 endVector = startVector.add(lookVec.scale(this.idealRange));
+            AABB boundingBox = new AABB(startVector, endVector);
 
-            if (raycast.getType() == HitResult.Type.ENTITY) {
-                EntityHitResult entityHit = (EntityHitResult) raycast;
-                if (entityHit.getEntity() instanceof AbstractGravekeeperGunnerEntity) {
-                    canSeeTarget = false;
+            LivingEntity hitResult = shooter.level().getEntitiesOfClass(LivingEntity.class, boundingBox, entity -> entity != shooter && entity.isAlive()).stream().min(Comparator.comparingDouble(shooter::distanceToSqr)).orElse(null);
+            if (hitResult instanceof AbstractGravekeeperGunnerEntity) {
+                lookingAtTeammateTime += 1;
+                if (lookingAtTeammateTime > 10) { // Change position to prevent mobs from idling for too long
+                    this.shooter.getMoveControl().strafe(0, this.shooter.getRandom().nextBoolean() ? 0.5F : -0.5F);
+                    this.aimingStabilityTimer = 0;
                 }
+            }
+            else {
+                lookingAtTeammateTime = 0;
             }
 
             if (canSeeTarget != sawTargetPreviously) {
@@ -263,11 +282,11 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
                         animatable.triggerAnim("Reload", "reload");
                     }
 
-
                     if (this.aiType == AIType.TACTICAL) {
                         Vec3 coverLocation = findCoverLocation();
                         this.shooter.getNavigation().moveTo(coverLocation.x, coverLocation.y, coverLocation.z, this.speedModifier);
                     }
+
                     this.isReloading = true;
                     this.reloadTick = gun.getReloads().getReloadTimer() + 40;
                     this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(), ModSounds.ITEM_PISTOL_RELOAD.get(), SoundSource.HOSTILE, 1.0F, 1F);
@@ -284,7 +303,6 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
 
             boolean inRange = distanceToTarget <= this.attackRadiusSqr;
             boolean tooClose = distanceToTarget < (this.minRange * this.minRange);
-            boolean isNavigating = !this.shooter.getNavigation().isDone();
 
             if (!inRange || !canSeeTarget) {
                 if (this.shooter.tickCount % 20 == 0 || this.shooter.getNavigation().isDone()) {
@@ -298,14 +316,11 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
                 this.strafingTime = -1;
                 this.aimingStabilityTimer = 0;
             } else if (tooClose && this.aiType != AIType.RECKLESS) {
-                Vec3 awayVector = this.shooter.position().subtract(target.position()).normalize();
-                Vec3 retreatPos = this.shooter.position().add(awayVector.scale(2.0));
-
                 if (this.melee_timer > 0) {
                     this.shooter.getLookControl().setLookAt(target);
                     this.shooter.getNavigation().stop();
                 } else {
-                    this.shooter.getNavigation().moveTo(retreatPos.x, retreatPos.y, retreatPos.z, this.speedModifier * 0.8);
+                    this.shooter.getMoveControl().strafe(-1.5F, 0);
                 }
 
                 this.shouldStrafe = false;
@@ -349,7 +364,7 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
                 throwPotion(target);
             }
 
-            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0) {
+            if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0 && this.shooter.getSensing().hasLineOfSight(target) && this.seeTime >= 20) {
                 this.shooter.getLookControl().setLookAt(target);
                 if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {
                     if (this.shooter.getMainHandItem().is(ModItems.HANGMAN_ACOLYTE.get())) {
@@ -359,7 +374,6 @@ public class AcolyteGunAttackGoal<T extends PathfinderMob> extends Goal {
                     } else {
                         animatable.triggerAnim("Gun Melee", "gun_melee");
                         this.shooter.level().playSound(null, this.shooter.getX(), this.shooter.getY(), this.shooter.getZ(), SoundEvents.GENERIC_EAT, SoundSource.HOSTILE, 1.0F, 0.4F);
-
                     }
                 }
 
