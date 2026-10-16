@@ -44,6 +44,8 @@ public class ModConfigs {
         public final ForgeConfigSpec.DoubleValue ricoshot_crit_chance;
         public final ForgeConfigSpec.DoubleValue ricoshot_crit_damage;
         public final ForgeConfigSpec.DoubleValue bluntshot_knockback;
+        public final ForgeConfigSpec.IntValue strix_energy_cost;
+        public final ForgeConfigSpec.IntValue strix_energy_max;
 
         Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Items & Guns").push("items");
@@ -73,6 +75,10 @@ public class ModConfigs {
                 this.scatterer_energy_max = builder.comment("The amount of FE energy the gun can store").defineInRange("scatterer_energy_max", 144000, 1, Integer.MAX_VALUE);
                 this.scatterer_refill_cd = builder.comment("The amount of time, in ticks, for the gun to add 1 ammo to the magazine.").defineInRange("scatterer_refill_cd", 10, 0, Integer.MAX_VALUE);
                 this.scatterer_recharge_mult = builder.comment("A multiplier of how much longer it takes to add 1 ammo to the gun's magazine after shooting.").defineInRange("scatterer_recharge_mult", 10f, 1f, Float.MAX_VALUE);
+
+                builder.comment("Strix GRL");
+                this.strix_energy_cost = builder.comment("The amount of FE energy used per tick while a rocket is being guided").defineInRange("strix_energy_cost", 1, 1, Integer.MAX_VALUE);
+                this.strix_energy_max = builder.comment("The amount of FE energy the gun can store").defineInRange("strix_energy_max", 144000, 1, Integer.MAX_VALUE);
             }
             builder.pop();
 

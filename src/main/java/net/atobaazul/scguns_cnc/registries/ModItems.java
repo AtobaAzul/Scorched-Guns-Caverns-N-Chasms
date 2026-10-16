@@ -8,6 +8,7 @@ import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.PlasmaBursterItem;
 import net.atobaazul.scguns_cnc.common.item.RicoshotRoundAmmoItem;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
+import top.ribs.scguns.common.item.gun.GuidedRocketLauncherGunItem;
 import top.ribs.scguns.common.item.gun.TooltipGunItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import top.ribs.scguns.common.item.gun.RechargeableEnergyGunItem;
@@ -298,6 +299,23 @@ public class ModItems {
             )
     );
 
+    //Strix
+    public static final RegistryObject<RechargeableEnergyGunItem> STRIX_RL = REGISTER.register("strix_rl",
+            () -> new GuidedRocketLauncherGunItem(
+                    new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                    "strix_rl",
+                    ModSoundEvents.LUSTRE_MAG_OUT.get(),
+                    ModSoundEvents.LUSTRE_MAG_IN.get(),
+                    ModSounds.RELOAD_END.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModSoundEvents.LUSTRE_JAM.get(),
+                    ModConfigs.COMMON.strix_energy_cost,
+                    ModConfigs.COMMON.scatterer_refill_cd, //just using lustre becasue it doesn't matter.
+                    ModConfigs.COMMON.strix_energy_max,
+                    ModConfigs.COMMON.scatterer_recharge_mult
+            )
+    );
+
     //Iron Partisan
     public static final RegistryObject<AnimatedGunItem> IRON_PARTISAN = REGISTER.register("iron_partisan",
             () -> new AnimatedGunItem(
@@ -398,6 +416,7 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_BULLET = REGISTER.register("silver_bullet", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new RicoshotRoundAmmoItem(new Item.Properties(), "tooltip.ricoshot_round.crit_chance", "tooltip.ricoshot_round.crit_damage"));
+    public static final RegistryObject<Item> GUIDED_ROCKET = REGISTER.register("guided_rocket", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");

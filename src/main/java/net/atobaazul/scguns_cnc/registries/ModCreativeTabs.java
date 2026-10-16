@@ -56,6 +56,7 @@ public class ModCreativeTabs {
         addEnergyGunWithFullAmmo(pOutput, LUSTRE.get());
         addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
         addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());
+        addEnergyGunWithFullAmmo(pOutput, STRIX_RL.get());
 
         addItemWithFullAmmo(pOutput, HUMMER.get());
         addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());

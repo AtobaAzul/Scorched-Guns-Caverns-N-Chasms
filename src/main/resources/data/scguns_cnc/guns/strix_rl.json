@@ -1,0 +1,78 @@
+{
+  "display": {
+    "flash": {
+      "size": 1.3,
+      "yOffset": 4.5,
+      "zOffset": -8.0,
+      "textureLocation": "muzzle_flash_1"
+    }
+  },
+  "general": {
+    "weaponType": "rifle",
+    "fireMode": "scguns:burst",
+    "burstAmount": 4,
+    "burstCooldown": 20,
+    "gripType": "scguns:two_handed",
+    "baseGripType": "scguns:two_handed",
+    "rate": 1,
+    "meleeDamage": 3.0,
+    "meleeCooldownTicks": 20,
+    "meleeReach": 3.5,
+    "hotBarrelRate": 6
+  },
+  "modules": {
+    "attachments": {
+      "scope": {
+        "size": 0.7,
+        "yOffset": 5.8,
+        "zOffset":4.6
+      },
+      "stock": {
+        "scale": 0.0
+      },
+      "underBarrel": {
+        "yOffset": 5.5,
+        "zOffset": -2.5
+      }
+    },
+    "zoom": {
+      "fovModifier": 0.6,
+      "yOffset": 5.9,
+      "zOffset": 0.75
+    }
+  },
+  "projectile": {
+    "recoilAngle": 6.7,
+    "recoilKick": 2.22,
+    "spread": 4.5,
+    "criticalChance": 0.05,
+    "playerKnockBack": true,
+    "playerKnockBackStrength": 0.2,
+    "visible": true,
+    "advantage": "scguns:none",
+    "damage": 7.0,
+    "ejectsCasing": true,
+    "gravity": true,
+    "item": "scguns:rocket",
+    "ejectDuringReload": true,
+    "casingType": "scguns:large_iron_casing",
+    "casingParticle": "scguns:iron_casing",
+    "life": 100,
+    "size": 0.05,
+    "speed": 2.5,
+    "trailLengthMultiplier": 2.0
+  },
+  "reloads": {
+    "emptyMagTimer": 30,
+    "maxAmmo": 12,
+    "reloadItem": "scguns:rocket",
+    "reloadTimer": 40,
+    "reloadType": "scguns:mag_fed"
+  },
+  "sounds": {
+    "cock": "scguns:item.pistol.cock",
+    "enchantedFire": "scguns:item.rocket_rifle.fire_2",
+    "fire": "scguns:item.rocket_rifle.fire_2",
+    "reload": "scguns:item.gauss.reload"
+  }
+}

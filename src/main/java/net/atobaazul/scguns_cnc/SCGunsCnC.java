@@ -76,6 +76,7 @@ public class SCGunsCnC {
         ProjectileManager.getInstance().registerFactory(ModItems.HEXSHOT.get(), (worldIn, entity, weapon, item, modifiedGun) -> new HexRoundProjectileEntity(ModEntities.HEX_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.PULSE_CORE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new EnergyBoltProjectileEntity(ModEntities.ENERGY_BOLT_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
         ProjectileManager.getInstance().registerFactory(ModItems.RICOSHOT_ROUND.get(), (worldIn, entity, weapon, item, modifiedGun) -> new BouncingProjectileEntity(ModEntities.RICOSHOT_ROUND_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
+        ProjectileManager.getInstance().registerFactory(ModItems.GUIDED_ROCKET.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GuidedRocketProjectileEntity(ModEntities.GUIDED_ROCKET_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
 
         // ProjectileManager.getInstance().registerFactory(ModItems.MALISON_GRENADE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GrenadeEntity(ModEntities.MALISON_GRENADE.get(), worldIn, entity, weapon, item, modifiedGun));
     }

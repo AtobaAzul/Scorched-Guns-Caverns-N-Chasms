@@ -231,7 +231,6 @@ public class RechargeableEnergyGunItem extends AnimatedGunItem implements GeoAni
         }
 
         tooltip.add(Component.translatable(stack.getDescriptionId() + ".lore").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-
     }
 
     @OnlyIn(Dist.CLIENT)

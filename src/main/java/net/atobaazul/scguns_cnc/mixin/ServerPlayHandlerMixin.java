@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mrcrayfish.framework.api.network.LevelLocation;
 import com.teamabnormals.caverns_and_chasms.common.entity.projectile.LargeArrow;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.common.ModTags;
 import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.minecraft.core.particles.ParticleOptions;
@@ -117,6 +118,17 @@ public abstract class ServerPlayHandlerMixin {
 
             if (!projectileProps.shouldHideProjectile()) {
                 scguns_cnc$sendProjectileTrail(player, spawnedProjectiles, projectileProps, false);
+            }
+        } else if (heldItem.is(ModItems.STRIX_RL.get())) {
+            int count = modifiedGun.getProjectile().getProjectileAmount();
+
+            for (int i = 0; i < count; i++) {
+                IProjectileFactory factory = ProjectileManager.getInstance().getFactory(ModItems.GUIDED_ROCKET.getId());
+                ProjectileEntity projectileEntity = factory.create(world, player, heldItem, item, modifiedGun);
+                projectileEntity.setWeapon(heldItem);
+                projectileEntity.setAdditionalDamage(Gun.getAdditionalDamage(heldItem));
+                world.addFreshEntity(projectileEntity);
+                projectileEntity.tick();
             }
         } else {
             original.call(world, player, heldItem, item, modifiedGun);
