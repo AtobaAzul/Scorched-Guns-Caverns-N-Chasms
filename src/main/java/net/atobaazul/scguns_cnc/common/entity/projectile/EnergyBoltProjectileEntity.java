@@ -4,6 +4,7 @@ import net.atobaazul.scguns_cnc.registries.ModItems;
 import net.atobaazul.scguns_cnc.registries.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -40,7 +41,7 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
         LivingEntity player = this.getShooter();
         ServerLevel serverLevel = (ServerLevel) world;
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 15; i++) {
             Vec3 playerPos = player.getEyePosition();
             Vec3 velocity = hitPos.subtract(playerPos).normalize().scale(-1);
             Vec3 mirroredVelocity = new Vec3(-velocity.x, velocity.y, -velocity.z).scale(0.5);
@@ -52,7 +53,7 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
             serverLevel.sendParticles(ModParticleTypes.ENERGY_BOLT_IMPACT.get(), hitPos.x + offsetX, hitPos.y + offsetY, hitPos.z + offsetZ, 1, mirroredVelocity.x + offsetX, mirroredVelocity.y + offsetY, mirroredVelocity.z + offsetZ, 1);
         }
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 15; i++) {
             Vec3 dir = new Vec3(negRand(), negRand(), negRand()).scale(0.15);
             double offsetX = (world.random.nextDouble() - 0.5) * 0.2;
             double offsetY = (world.random.nextDouble() - 0.5) * 0.2;
@@ -60,6 +61,8 @@ public class EnergyBoltProjectileEntity extends ProjectileEntity {
 
             serverLevel.sendParticles(ModParticleTypes.ENERGY_BOLT_IMPACT.get(), hitPos.x + offsetX, hitPos.y + offsetY, hitPos.z + offsetZ, 1, dir.x + offsetX, dir.y + offsetY, dir.z + offsetZ, 1);
         }
+
+        serverLevel.sendParticles(ParticleTypes.LARGE_SMOKE, hitPos.x, hitPos.y, hitPos.z, 1, 0,0,0 , 0.001);
     }
 
     @Override
