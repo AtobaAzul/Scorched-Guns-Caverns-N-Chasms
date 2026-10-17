@@ -10,11 +10,11 @@
   "general": {
     "weaponType": "rifle",
     "fireMode": "scguns:burst",
-    "burstAmount": 4,
-    "burstCooldown": 20,
+    "burstAmount": 5,
+    "burstCooldown": 25,
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
-    "rate": 1,
+    "rate": 2,
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
@@ -36,24 +36,25 @@
       }
     },
     "zoom": {
-      "fovModifier": 0.6,
-      "yOffset": 5.9,
-      "zOffset": 0.75
+      "fovModifier": 1.0,
+      "yOffset": 6.45,
+      "zOffset": 0.15,
+      "xOffset": 3.8
     }
   },
   "projectile": {
-    "recoilAngle": 6.7,
-    "recoilKick": 2.22,
+    "recoilAngle": 3.7,
+    "recoilKick": 1.22,
     "spread": 4.5,
     "criticalChance": 0.05,
     "playerKnockBack": true,
-    "playerKnockBackStrength": 0.2,
+    "playerKnockBackStrength": 0.1,
     "visible": true,
     "advantage": "scguns:none",
     "damage": 7.0,
     "ejectsCasing": true,
     "gravity": true,
-    "item": "scguns:rocket",
+    "item": "scguns:microjet",
     "ejectDuringReload": true,
     "casingType": "scguns:large_iron_casing",
     "casingParticle": "scguns:iron_casing",
@@ -64,8 +65,8 @@
   },
   "reloads": {
     "emptyMagTimer": 30,
-    "maxAmmo": 12,
-    "reloadItem": "scguns:rocket",
+    "maxAmmo": 15,
+    "reloadItem": "scguns:microjet",
     "reloadTimer": 40,
     "reloadType": "scguns:mag_fed"
   },
