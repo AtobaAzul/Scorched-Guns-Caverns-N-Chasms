@@ -5,6 +5,7 @@
     "scguns:plasma_projectile",
     "scguns:rocket",
     "scguns:microjet",
-    "scguns:shatter_round_projectile"
+    "scguns:shatter_round_projectile",
+    "scguns_cnc:guided_rocket_projectile"
   ]
 }

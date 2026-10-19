@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
@@ -26,6 +27,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.data.ForgeEntityTypeTagsProvider;
+import net.minecraftforge.common.data.ForgeItemTagsProvider;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -36,6 +39,8 @@ import top.ribs.scguns.entity.player.PlayerGunProgression;
 import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
+
+import static net.atobaazul.scguns_cnc.common.ModTags.GRAVEKEEPER_ENEMY;
 
 public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -102,7 +107,7 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.stream().anyMatch((clazz) -> clazz.isInstance(entity))));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> entity.getType().is(GRAVEKEEPER_ENEMY)));
         this.targetSelector.addGoal(4, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }
 

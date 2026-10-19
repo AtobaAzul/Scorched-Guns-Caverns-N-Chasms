@@ -37,11 +37,11 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.MORTICIAN, "Mortician");
         addItem(ModItems.MORTICIAN_ACOLYTE, "Mortician Acolyte");
         addItem(ModItems.REHEARSE, "Rehearse");
-        addItem(ModItems.SCHISMATIC_REHEARSE, "Schismatic Rehearse");
+        addItem(ModItems.SCHISMATIC_REHEARSE, "Localite Rehearse");
         addItem(ModItems.SILVER_LINING, "Silver Lining");
         addItem(ModItems.KETERIYA, "Keteriya");
         addItem(ModItems.GALLOWS, "Gallows");
-        addItem(ModItems.SCHISMATIC_GALLOWS, "Schismatic Gallows");
+        addItem(ModItems.SCHISMATIC_GALLOWS, "Localite Gallows");
         addItem(ModItems.NECROSIS, "Necrosis");
         addItem(ModItems.CACOPHONY, "Cacophony");
         addItem(ModItems.HANGMAN_ACOLYTE, "Hangman Acolyte");
@@ -81,14 +81,14 @@ public class ModLangProvider extends LanguageProvider {
         addItem(ModItems.GRAVEKEEPER_NEOPHYTE_SPAWN_EGG, "Neophyte Spawn Egg");
         addItem(ModItems.GRAVEKEEPER_HERALD_SPAWN_EGG, "Herald Spawn Egg");
         addItem(ModItems.GRAVEKEEPER_ACOLYTE_SPAWN_EGG, "Acolyte Spawn Egg");
-        addItem(ModItems.GRAVEKEEPER_SCHISM_SPAWN_EGG, "Schism Spawn Egg");
+        addItem(ModItems.GRAVEKEEPER_SCHISM_SPAWN_EGG, "Localite Spawn Egg");
 
         //entities!
         addEntityType(ModEntities.GRAVEKEEPER_GHOUL, "Gravekeeper Ghoul");
         addEntityType(ModEntities.GRAVEKEEPER_NEOPHYTE, "Neophyte");
         addEntityType(ModEntities.GRAVEKEEPER_HERALD, "Herald");
         addEntityType(ModEntities.GRAVEKEEPER_ACOLYTE, "Acolyte");
-        addEntityType(ModEntities.GRAVEKEEPER_SCHISM, "Schism");
+        addEntityType(ModEntities.GRAVEKEEPER_SCHISM, "Localite");
 
         //tooltips
         add("tooltip.hex_round.magic_damage", "Deals %s of the bullet damage as magic damage.");

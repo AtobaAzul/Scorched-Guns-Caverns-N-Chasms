@@ -84,7 +84,7 @@ public class ModConfigs {
 
             builder.comment("Entities").push("entities");
             {
-                this.required_raid_tier = builder.comment("The minimum required unlocked \"raid tier\" for Gravekeeper Schisms and Acolytes to spawn. If 0, ignores raid tier entirely.\nFor reference, use the command /scguns progression check <playername>").defineInRange("required_raid_tier", 4, 0, Integer.MAX_VALUE);
+                this.required_raid_tier = builder.comment("The minimum required unlocked \"raid tier\" for Gravekeeper Localites and Acolytes to spawn. If 0, ignores raid tier entirely.\nFor reference, use the command /scguns progression check <playername>").defineInRange("required_raid_tier", 4, 0, Integer.MAX_VALUE);
             }
             builder.pop();
         }

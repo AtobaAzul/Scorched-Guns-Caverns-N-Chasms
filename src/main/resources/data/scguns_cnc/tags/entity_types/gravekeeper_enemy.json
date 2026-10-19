@@ -1,0 +1,43 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#scguns_orgunized:white_wolf_mobs",
+      "required": false
+    },
+    {
+      "id": "#scguns_orgunized:stellar_order_mobs",
+      "required": false
+    },
+    "#minecraft:raiders",
+    "minecraft:villager",
+    "#scguns:bot",
+    "#scguns:asgharian_mob_types",
+    "scguns:praetor",
+    "minecraft:iron_golem",
+    {
+      "id": "scgextra:factions/asgharian",
+      "required": false
+    },
+    {
+      "id": "scgextra:factions/cog",
+      "required": false
+    },
+    {
+      "id": "scgextra:factions/fac",
+      "required": false
+    },
+    {
+      "id": "scgextra:factions/rrc",
+      "required": false
+    },
+    {
+      "id": "scgextra:factions/whaler",
+      "required": false
+    },
+    {
+      "id": "scgextra:factions/wreckers",
+      "required": false
+    }
+  ]
+}

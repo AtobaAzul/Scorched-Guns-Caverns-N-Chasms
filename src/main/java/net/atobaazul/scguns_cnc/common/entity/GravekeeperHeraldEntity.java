@@ -48,6 +48,8 @@ import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
 
+import static net.atobaazul.scguns_cnc.common.ModTags.GRAVEKEEPER_ENEMY;
+
 public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     public static final EntityDataAccessor<Byte> DATA_ENRAGED = SynchedEntityData.defineId(GravekeeperHeraldEntity.class, EntityDataSerializers.BYTE);
     public static final RawAnimation ENRAGE = RawAnimation.begin().thenPlay("enrage");
@@ -247,7 +249,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.stream().anyMatch((clazz) -> clazz.isInstance(entity))));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> entity.getType().is(GRAVEKEEPER_ENEMY)));
         this.targetSelector.addGoal(4, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
 
     }

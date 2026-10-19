@@ -27,7 +27,7 @@ public class CreativeTabEvent {
         if (event.getTabKey() == ModCreativeModeTabs.SCORCHED_GUNS_TAB.getKey()) {
             MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> entry = event.getEntries();
             putGunItemsAfterGun(entry, SHARD_CULLER, MORTICIAN, MORTICIAN_ACOLYTE, BELLA, REHEARSE, SCHISMATIC_REHEARSE, ANATHEMA, HANGMAN_CARBINE, HANGMAN_ACOLYTE, GALLOWS, SCHISMATIC_GALLOWS, CACOPHONY, KETERIYA, NECROSIS, SILVER_LINING, RIBCAGE, EXHUMER, DEAD_DRAFT);
-            putGunItemsAfterGun(entry, DOZIER_RL, LUSTRE, SCATTERER, ELECTROTHERMAL_AUTOCANNON, STRIX_RL);
+            putGunItemsAfterGun(entry, DOZIER_RL, LUSTRE, SCATTERER, ELECTROTHERMAL_AUTOCANNON/*, STRIX_RL*/);
             putGunItemsAfterGun(entry, PRIMA_MATERIA, CHARYBDIS);
             putGunItemsAfterGun(entry, GRANDLE, RASCAL);
             putGunItemsAfterGun(entry, IRON_SPEAR, IRON_PARTISAN);

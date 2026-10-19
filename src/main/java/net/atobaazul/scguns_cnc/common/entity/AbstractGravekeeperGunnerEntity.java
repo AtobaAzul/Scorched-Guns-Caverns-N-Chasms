@@ -35,6 +35,8 @@ import top.ribs.scguns.item.GunItem;
 
 import java.util.List;
 
+import static net.atobaazul.scguns_cnc.common.ModTags.GRAVEKEEPER_ENEMY;
+
 public abstract class AbstractGravekeeperGunnerEntity extends Monster implements GeoAnimatable, GeoEntity {
     public static final RawAnimation SHOOT = RawAnimation.begin().thenPlay("shoot");
     public static final RawAnimation GUN_MELEE = RawAnimation.begin().thenPlay("gun_melee");
@@ -63,7 +65,6 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
      */
     private static final double ALLIANCE_RANGE = 32.0;
     private static final int ALERT_RANGE_Y = 10;
-    public List<Class<? extends LivingEntity>> hitList = List.of(AbstractVillager.class, AbstractIllager.class, AdjudicatorEntity.class, DissidentEntity.class, CogKnightEntity.class, CogMinionEntity.class, PraetorEntity.class, ScampTankEntity.class, SubjugatorEntity.class, SkyCarrierEntity.class, SupplyScampEntity.class, TraumaUnitEntity.class, SignalBeaconEntity.class, BlundererEntity.class, Witch.class, Ravager.class);
     private int ticksUntilNextAlert = 20;
 
     protected AbstractGravekeeperGunnerEntity(EntityType<? extends Monster> type, Level level) {
@@ -73,7 +74,7 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
 
     @Override
     public int getMaxHeadYRot() {
-        return 90;
+        return 120;
     }
 
     @Override
@@ -173,10 +174,10 @@ public abstract class AbstractGravekeeperGunnerEntity extends Monster implements
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new GhoulGunAttackGoal<>(this, mainHandItem, 2.0F, AIType.SMART, 1));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.9D));
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F, 0.5f, true));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.stream().anyMatch((clazz) -> clazz.isInstance(entity))));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> entity.getType().is(GRAVEKEEPER_ENEMY)));
 
         this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }

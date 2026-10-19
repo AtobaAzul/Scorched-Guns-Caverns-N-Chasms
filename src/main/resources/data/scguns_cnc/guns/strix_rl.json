@@ -9,12 +9,10 @@
   },
   "general": {
     "weaponType": "rifle",
-    "fireMode": "scguns:burst",
-    "burstAmount": 5,
-    "burstCooldown": 25,
+    "fireMode": "scguns:automatic",
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
-    "rate": 2,
+    "rate": 3,
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
@@ -51,7 +49,7 @@
     "playerKnockBackStrength": 0.1,
     "visible": true,
     "advantage": "scguns:none",
-    "damage": 7.0,
+    "damage": 10.0,
     "ejectsCasing": true,
     "gravity": true,
     "item": "scguns:microjet",
@@ -72,8 +70,8 @@
   },
   "sounds": {
     "cock": "scguns:item.pistol.cock",
-    "enchantedFire": "scguns:item.rocket_rifle.fire_2",
-    "fire": "scguns:item.rocket_rifle.fire_2",
+    "enchantedFire": "scguns_cnc:item.strix_rl.fire",
+    "fire": "scguns_cnc:item.strix_rl.fire",
     "reload": "scguns:item.gauss.reload"
   }
 }

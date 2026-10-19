@@ -396,6 +396,23 @@
       }
     ]
   },
+  "item.strix_rl.fire": {
+    "subtitle": "subtitle.scguns.fire",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/strix_rl/fire0",
+        "volume": 0.5
+      },
+      {
+        "name": "scguns_cnc:item/strix_rl/fire1",
+        "volume": 0.5
+      },
+      {
+        "name": "scguns_cnc:item/strix_rl/fire2",
+        "volume": 0.5
+      }
+    ]
+  },
   "item.exhumer.fire": {
     "subtitle": "subtitle.scguns.fire",
     "sounds": [

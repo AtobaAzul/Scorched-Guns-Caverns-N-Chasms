@@ -43,6 +43,8 @@ import top.ribs.scguns.item.GunItem;
 
 import javax.annotation.Nullable;
 
+import static net.atobaazul.scguns_cnc.common.ModTags.GRAVEKEEPER_ENEMY;
+
 public class GravekeeperAcolyteEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     public static final RawAnimation THROW = RawAnimation.begin().thenPlay("throw");
     public static final RawAnimation BAYONET_MELEE = RawAnimation.begin().thenPlay("gun_melee.bayonet");
@@ -104,7 +106,7 @@ public class GravekeeperAcolyteEntity extends AbstractGravekeeperGunnerEntity im
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !((Player) player).isCreative() && !player.isSpectator()));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> hitList.stream().anyMatch((clazz) -> clazz.isInstance(entity))));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> entity.getType().is(GRAVEKEEPER_ENEMY)));
 
         this.targetSelector.addGoal(6, new HurtByTargetGoal(this, AbstractGravekeeperGunnerEntity.class).setAlertOthers(AbstractGravekeeperGunnerEntity.class));
     }

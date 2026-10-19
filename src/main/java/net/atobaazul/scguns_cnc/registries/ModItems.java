@@ -49,7 +49,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> HANGMAN_ACOLYTE = REGISTER.register("hangman_acolyte",
             () -> new TooltipGunItem(
-                    new Item.Properties().stacksTo(1).durability(2600).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(900).rarity(ModRarity.EXSANGUINATED),
                     "hangman_acolyte", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
@@ -99,7 +99,7 @@ public class ModItems {
 
     public static final RegistryObject<AnimatedGunItem> MORTICIAN_ACOLYTE = REGISTER.register("mortician_acolyte",
             () -> new TooltipGunItem(
-                    new Item.Properties().stacksTo(1).durability(1000).rarity(ModRarity.EXSANGUINATED),
+                    new Item.Properties().stacksTo(1).durability(400).rarity(ModRarity.EXSANGUINATED),
                     "mortician_acolyte", // Model path
                     ModSounds.MAG_OUT.get(),        // Reload sound mag out
                     ModSounds.MAG_IN.get(),         // Reload sound mag in
