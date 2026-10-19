@@ -3,10 +3,7 @@ package net.atobaazul.scguns_cnc.registries;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.ModConfigs;
-import net.atobaazul.scguns_cnc.common.item.ConfigTooltipAmmoItem;
-import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
-import net.atobaazul.scguns_cnc.common.item.PlasmaBursterItem;
-import net.atobaazul.scguns_cnc.common.item.RicoshotRoundAmmoItem;
+import net.atobaazul.scguns_cnc.common.item.*;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import top.ribs.scguns.common.item.gun.GuidedRocketLauncherGunItem;
 import top.ribs.scguns.common.item.gun.TooltipGunItem;
@@ -417,7 +414,16 @@ public class ModItems {
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new RicoshotRoundAmmoItem(new Item.Properties(), "tooltip.ricoshot_round.crit_chance", "tooltip.ricoshot_round.crit_damage"));
     public static final RegistryObject<Item> GUIDED_ROCKET = REGISTER.register("guided_rocket", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<ShieldProjectorCurioItem> SHIELD_PROJECTOR_BELT = REGISTER.register("shield_projector_belt", () -> {
+        return new ShieldProjectorCurioItem(new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
+                ModConfigs.COMMON.shield_projector_belt_energy_cost,
+                ModConfigs.COMMON.shield_projector_belt_refill_cd,
+                ModConfigs.COMMON.shield_projector_belt_energy_max,
+                ModConfigs.COMMON.shield_projector_belt_deplete_cd,
+                ModConfigs.COMMON.shield_projector_belt_max_health);
+    });
 
+    //unfinished rounds
     public static final RegistryObject<Item> UNFINISHED_HEX_ROUND = sequencedIngredient("unfinished_hex_round");
     public static final RegistryObject<Item> UNFINISHED_COMPACT_HEX_ROUND = sequencedIngredient("unfinished_compact_hex_round");
     public static final RegistryObject<Item> UNFINISHED_HEXSHOT = sequencedIngredient("unfinished_hexshot");

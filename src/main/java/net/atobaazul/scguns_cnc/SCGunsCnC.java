@@ -3,10 +3,13 @@ package net.atobaazul.scguns_cnc;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
+import net.atobaazul.scguns_cnc.client.render.ShieldBarRenderHandler;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.registries.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
 import top.ribs.scguns.client.screen.BlueprintScreen;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.player.GunTierRegistry;
@@ -79,6 +83,7 @@ public class SCGunsCnC {
         ProjectileManager.getInstance().registerFactory(ModItems.GUIDED_ROCKET.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GuidedRocketProjectileEntity(ModEntities.GUIDED_ROCKET_PROJECTILE.get(), worldIn, entity, weapon, item, modifiedGun));
 
         // ProjectileManager.getInstance().registerFactory(ModItems.MALISON_GRENADE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GrenadeEntity(ModEntities.MALISON_GRENADE.get(), worldIn, entity, weapon, item, modifiedGun));
+
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -87,6 +92,14 @@ public class SCGunsCnC {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(ModItems::setupTabEditors);
+        }
+
+        @SubscribeEvent
+        public static void clientRenderSetup(RegisterGuiOverlaysEvent event) {
+
+            event.registerAbove(VanillaGuiOverlay.ARMOR_LEVEL.id(), "hardlight_shield", (gui, poseStack, partialTick, width, height) ->
+                    ShieldBarRenderHandler.renderShieldBar(gui, poseStack.pose(), width, height, poseStack));
+
         }
     }
 }
