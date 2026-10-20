@@ -429,6 +429,38 @@
       }
     ]
   },
+  "item.hardlight_shield.disintegrate": {
+    "subtitle": "subtitle.scguns_cnc.hardlight_shield.disintegrate",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/hardlight_shield/disintegrate0"
+      },
+      {
+        "name": "scguns_cnc:item/hardlight_shield/disintegrate1"
+      }
+    ]
+  },
+  "item.hardlight_shield.hit": {
+    "subtitle": "subtitle.scguns_cnc.hardlight_shield.hit",
+    "sounds": [
+      {
+        "name": "caverns_and_chasms:block/zirconia/break1",
+        "pitch": 1.2
+      },
+      {
+        "name": "caverns_and_chasms:block/zirconia/break2",
+        "pitch": 1.2
+      },
+      {
+        "name": "caverns_and_chasms:block/zirconia/break3",
+        "pitch": 1.2
+      },
+      {
+        "name": "caverns_and_chasms:block/zirconia/break4",
+        "pitch": 1.2
+      }
+    ]
+  },
   "entity.gravekeeper_ghoul.ambient": {
     "subtitle": "subtitle.scguns_cnc.gravekeeper_ghoul.ambient",
     "sounds": [

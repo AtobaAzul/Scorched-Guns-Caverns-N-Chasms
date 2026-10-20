@@ -146,7 +146,7 @@ public class ShieldProjectorCurioItem extends Item implements ICurioItem {
     public void doHealthDelta(double value) {
         this.health = Mth.clamp(this.health + value, 0, this.getShieldMaxHealth());
 
-        if (this.health <= 0) {
+        if (0 > value) {
             this.cooldown = this.getDisintegrationCooldown();
         }
     }

@@ -46,11 +46,11 @@ public class ModConfigs {
         public final ForgeConfigSpec.DoubleValue bluntshot_knockback;
         public final ForgeConfigSpec.IntValue strix_energy_cost;
         public final ForgeConfigSpec.IntValue strix_energy_max;
-        public final ForgeConfigSpec.IntValue shield_projector_belt_energy_cost;
-        public final ForgeConfigSpec.IntValue shield_projector_belt_energy_max;
-        public final ForgeConfigSpec.IntValue shield_projector_belt_refill_cd;
-        public final ForgeConfigSpec.DoubleValue shield_projector_belt_max_health;
-        public final ForgeConfigSpec.IntValue shield_projector_belt_deplete_cd;
+        public final ForgeConfigSpec.IntValue shield_projector_energy_cost;
+        public final ForgeConfigSpec.IntValue shield_projector_energy_max;
+        public final ForgeConfigSpec.IntValue shield_projector_refill_cd;
+        public final ForgeConfigSpec.DoubleValue shield_projector_max_health;
+        public final ForgeConfigSpec.IntValue shield_projector_deplete_cd;
 
         Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Items & Guns").push("items");
@@ -62,7 +62,7 @@ public class ModConfigs {
                 this.ricoshot_crit_damage = builder.comment("The crit damage increase per RicoShot ricochet").defineInRange("ricoshot_crit_damage", 0.5, 0, Float.MAX_VALUE);
                 this.bluntshot_knockback = builder.comment("The amount of extra knockpack bluntshot applies on hit").defineInRange("bluntshot_knockback", 4.4f, 0f, Float.MAX_VALUE);
 
-                builder.push("energy guns");
+                builder.push("energy items");
                 builder.comment("Lustre");
                 this.lustre_energy_cost = builder.comment("The amount of FE energy used to add 1 ammo to the magazine").defineInRange("lustre_energy_cost", 10000, 1, Integer.MAX_VALUE);
                 this.lustre_energy_max = builder.comment("The amount of FE energy the gun can store").defineInRange("lustre_energy_max", 300000, 1, Integer.MAX_VALUE);
@@ -86,11 +86,11 @@ public class ModConfigs {
                 this.strix_energy_max = builder.comment("The amount of FE energy the gun can store").defineInRange("strix_energy_max", 144000, 1, Integer.MAX_VALUE);
 
                 builder.comment("Shield Projector Belt");
-                this.shield_projector_belt_energy_cost = builder.comment("The amount of FE energy used to regen 1 health").defineInRange("shield_projector_belt_energy_cost", 250, 1, Integer.MAX_VALUE);
-                this.shield_projector_belt_refill_cd = builder.comment("The amount of time, in ticks, to regen 1 health").defineInRange("shield_projector_belt_refill_cd", 100, 1, Integer.MAX_VALUE);
-                this.shield_projector_belt_energy_max = builder.comment("The amount of FE the item can hold").defineInRange("shield_projector_belt_energy_max", 100000, 1, Integer.MAX_VALUE);
-                this.shield_projector_belt_deplete_cd = builder.comment("The amount of time, in ticks, to regen after reaching 0 health").defineInRange("shield_projector_belt_deplete_cd", 200, 1, Integer.MAX_VALUE);
-                this.shield_projector_belt_max_health = builder.comment("The total amount of health the shield has (1 heart = 2 health)").defineInRange("shield_projector_belt_max_health", 30, 1, Double.MAX_VALUE);
+                this.shield_projector_energy_cost = builder.comment("The amount of FE energy used to regen 1 health").defineInRange("shield_projector_energy_cost", 250, 1, Integer.MAX_VALUE);
+                this.shield_projector_refill_cd = builder.comment("The amount of time, in ticks, to regen 1 health after the on-hit cooldown wears off").defineInRange("shield_projector_refill_cd", 1, 1, Integer.MAX_VALUE);
+                this.shield_projector_energy_max = builder.comment("The amount of FE the item can hold").defineInRange("shield_projector_energy_max", 100000, 1, Integer.MAX_VALUE);
+                this.shield_projector_deplete_cd = builder.comment("The amount of time, in ticks, to regen after taking damage").defineInRange("shield_projector_deplete_cd", 200, 1, Integer.MAX_VALUE);
+                this.shield_projector_max_health = builder.comment("The total amount of health the shield has (1 heart = 2 health)").defineInRange("shield_projector_max_health", 30, 1, Double.MAX_VALUE);
 
             }
             builder.pop();

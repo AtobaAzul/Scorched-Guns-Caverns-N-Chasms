@@ -47,8 +47,10 @@ public class ModSoundEvents {
 
     public static final RegistryObject<SoundEvent> SILVER_FLYBY = register("item.flyby.silver_flyby");
 
-    public static final RegistryObject<SoundEvent> GRAVEKEEPER_GHOUL_AMBIENT = register("entity.gravekeeper_ghoul.ambient");
+    public static final RegistryObject<SoundEvent> HARDLIGHT_DISINTEGRATE = register("item.hardlight_shield.disintegrate");
+    public static final RegistryObject<SoundEvent> HARDLIGHT_HIT = register("item.hardlight_shield.hit");
 
+    public static final RegistryObject<SoundEvent> GRAVEKEEPER_GHOUL_AMBIENT = register("entity.gravekeeper_ghoul.ambient");
 
     public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_AMBIENT = register("entity.gravekeeper_herald.ambient");
     public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_DEATH = register("entity.gravekeeper_herald.death");

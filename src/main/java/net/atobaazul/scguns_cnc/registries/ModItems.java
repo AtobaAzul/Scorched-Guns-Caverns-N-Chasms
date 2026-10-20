@@ -414,13 +414,13 @@ public class ModItems {
     public static final RegistryObject<Item> HEX_BUCKSHOT = REGISTER.register("hex_buckshot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RICOSHOT_ROUND = REGISTER.register("ricoshot_round", () -> new RicoshotRoundAmmoItem(new Item.Properties(), "tooltip.ricoshot_round.crit_chance", "tooltip.ricoshot_round.crit_damage"));
     public static final RegistryObject<Item> GUIDED_ROCKET = REGISTER.register("guided_rocket", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<ShieldProjectorCurioItem> SHIELD_PROJECTOR_BELT = REGISTER.register("shield_projector_belt", () -> {
+    public static final RegistryObject<ShieldProjectorCurioItem> HARDLIGHT_SHIELD_PROJECTOR = REGISTER.register("hardlight_shield_projector", () -> {
         return new ShieldProjectorCurioItem(new Item.Properties().stacksTo(1).rarity(CCItems.FANCY),
-                ModConfigs.COMMON.shield_projector_belt_energy_cost,
-                ModConfigs.COMMON.shield_projector_belt_refill_cd,
-                ModConfigs.COMMON.shield_projector_belt_energy_max,
-                ModConfigs.COMMON.shield_projector_belt_deplete_cd,
-                ModConfigs.COMMON.shield_projector_belt_max_health);
+                ModConfigs.COMMON.shield_projector_energy_cost,
+                ModConfigs.COMMON.shield_projector_refill_cd,
+                ModConfigs.COMMON.shield_projector_energy_max,
+                ModConfigs.COMMON.shield_projector_deplete_cd,
+                ModConfigs.COMMON.shield_projector_max_health);
     });
 
     //unfinished rounds

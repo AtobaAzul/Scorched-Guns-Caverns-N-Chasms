@@ -26,7 +26,7 @@ apply plugin: "eclipse"
 apply plugin: "idea"
 apply plugin: "maven-publish"
 apply plugin: "org.spongepowered.mixin"
-// apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 version = mod_version
 group = mod_group_id

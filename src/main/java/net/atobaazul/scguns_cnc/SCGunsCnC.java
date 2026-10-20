@@ -3,11 +3,19 @@ package net.atobaazul.scguns_cnc;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
+import net.atobaazul.scguns_cnc.client.render.HardlightRenderLayer;
 import net.atobaazul.scguns_cnc.client.render.ShieldBarRenderHandler;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.registries.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,6 +34,7 @@ import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.player.GunTierRegistry;
 
 import java.util.List;
+import java.util.Map;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
@@ -97,9 +106,19 @@ public class SCGunsCnC {
         @SubscribeEvent
         public static void clientRenderSetup(RegisterGuiOverlaysEvent event) {
 
-            event.registerAbove(VanillaGuiOverlay.ARMOR_LEVEL.id(), "hardlight_shield", (gui, poseStack, partialTick, width, height) ->
+            event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "hardlight_shield", (gui, poseStack, partialTick, width, height) ->
                     ShieldBarRenderHandler.renderShieldBar(gui, poseStack.pose(), width, height, poseStack));
 
+        }
+
+        @SubscribeEvent
+        public static void addRenderLayers(EntityRenderersEvent.AddLayers event) {
+            for (String skin : event.getSkins()) {
+                PlayerRenderer renderer = event.getSkin(skin);
+                if (renderer != null) {
+                    renderer.addLayer(new HardlightRenderLayer(renderer, renderer.getModel()));
+                }
+            }
         }
     }
 }
