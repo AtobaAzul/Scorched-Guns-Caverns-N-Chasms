@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Final;
@@ -41,8 +42,10 @@ public class ChargeHandlerMixin {
 
         float chargeProgress = (float) playerChargeTime.getOrDefault(playerId, 0) / playerMaxChargeTime.getOrDefault(playerId, 1);
 
+        float pitch = Mth.lerp(chargeProgress, 1.0f, 1.2f);
+
         if (playerChargeTime.getOrDefault(playerId, 0) % modifiedGun.getProjectile().getProjectileAmount() == 0 && !fullyCharged) {
-            player.playSound(SCATTERER_CHARGE.get(), chargeProgress, chargeProgress);
+            player.playSound(SCATTERER_CHARGE.get(), chargeProgress, pitch);
         }
 
         fullyCharged = chargeProgress == 1;

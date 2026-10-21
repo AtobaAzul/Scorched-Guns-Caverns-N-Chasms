@@ -1,5 +1,6 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
+import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.common.entity.ai.GhoulGunAttackGoal;
 import net.atobaazul.scguns_cnc.registries.ModEntities;
 import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
@@ -65,7 +66,16 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 60D).add(Attributes.KNOCKBACK_RESISTANCE, 0.33f).add(Attributes.ATTACK_DAMAGE, 6.0f).add(Attributes.ARMOR, 18f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
+        return Monster.createMonsterAttributes()
+                .add(Attributes.MAX_HEALTH, 60D)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.33f)
+                .add(Attributes.ATTACK_DAMAGE, 6.0f)
+                .add(Attributes.ARMOR, 18f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .add(Attributes.ATTACK_SPEED, 2f)
+                .add(CCAttributes.MAGIC_PROTECTION.get(), 0.25f)
+                .add(CCAttributes.LIFESTEAL.get(), 0.75f)
+                .add(Attributes.FOLLOW_RANGE, 48D).build();
     }
 
     @Override
@@ -122,7 +132,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         summonedRaidParty = true;
 
         for (int i = 0; i <= 5; i++) {
-            GravekeeperNeophyteEntity neophyte = ModEntities.GRAVEKEEPER_NEOPHYTE.get().create(this.level());
+            AbstractGravekeeperGunnerEntity neophyte = this.level().getRandom().nextFloat() > 0.75 ?  ModEntities.GRAVEKEEPER_SCHISM.get().create(this.level()) : ModEntities.GRAVEKEEPER_NEOPHYTE.get().create(this.level()) ;
             neophyte.setPos(this.position());
             ServerLevel serverLevel = (ServerLevel) this.level();
             neophyte.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(this.blockPosition()), MobSpawnType.PATROL, null, null);
@@ -130,7 +140,7 @@ public class GravekeeperHeraldEntity extends AbstractGravekeeperGunnerEntity imp
         }
 
         for (int i = 0; i < 3; i++) {
-            GravekeeperGhoulEntity ghoul = ModEntities.GRAVEKEEPER_GHOUL.get().create(this.level());
+            AbstractGravekeeperGunnerEntity ghoul = this.level().getRandom().nextFloat() > 0.75 ?  ModEntities.GRAVEKEEPER_ACOLYTE.get().create(this.level()) : ModEntities.GRAVEKEEPER_GHOUL.get().create(this.level()) ;
             ghoul.setPos(this.position());
             ServerLevel serverLevel = (ServerLevel) this.level();
             ghoul.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(this.blockPosition()), MobSpawnType.PATROL, null, null);

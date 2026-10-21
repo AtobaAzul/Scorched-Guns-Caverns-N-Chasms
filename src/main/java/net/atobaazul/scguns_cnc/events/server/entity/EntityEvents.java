@@ -1,6 +1,8 @@
 package net.atobaazul.scguns_cnc.events.server.entity;
 
 import com.teamabnormals.caverns_and_chasms.common.item.SanguineArmorItem;
+import com.teamabnormals.caverns_and_chasms.common.item.silver.SilverItem;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
 import net.atobaazul.scguns_cnc.common.item.ShieldProjectorCurioItem;
@@ -10,6 +12,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.player.Player;
@@ -31,7 +34,8 @@ public class EntityEvents {
         DamageSource source = event.getSource();
 
         if (source.getEntity() instanceof GravekeeperHeraldEntity attacker) {
-            float lifeStealAmount = 0.5F;
+            AttributeInstance lifesteal = attacker.getAttribute(CCAttributes.LIFESTEAL.get());
+            float lifeStealAmount = lifesteal != null ? (float) lifesteal.getValue() : 0.0f;
             attacker.heal(lifeStealAmount * event.getAmount());
             SanguineArmorItem.causeHealEffects(attacker, lifeStealAmount);
         }
@@ -49,8 +53,6 @@ public class EntityEvents {
     }
 
 
-
-    //TODO: Sounds.
     @SubscribeEvent
     public static void handleShieldAbsorption(LivingHurtEvent event) {
         if (event.isCanceled() || event.getAmount() <= 0) {
@@ -82,6 +84,30 @@ public class EntityEvents {
 
                 event.setAmount(leftoverDamage);
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void handleGravekeeperMagicResistance(LivingHurtEvent event) {
+        LivingEntity target = event.getEntity();
+        //TODO: Should I make this part of every entity or just gravekeepers? Maybe PR it to C&C...?
+
+        if (!(target instanceof AbstractGravekeeperGunnerEntity)) return;
+
+        DamageSource source = event.getSource();
+
+        float magicProtection = 0.0F;
+        if (source.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
+            AttributeInstance magicProt = target.getAttribute(CCAttributes.MAGIC_PROTECTION.get());
+
+            if (magicProt != null) {
+                magicProtection += (float) magicProt.getValue();
+            }
+        }
+
+        if (magicProtection > 0.0F) {
+            event.setAmount(event.getAmount() - event.getAmount() * magicProtection);
+            SilverItem.causeMagicProtectionEffects(target);
         }
     }
 }

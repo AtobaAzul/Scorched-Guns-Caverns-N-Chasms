@@ -3,7 +3,7 @@
   "biomes": "#scguns_cnc:gravekeeper_schism_spawns",
   "spawners": {
     "type": "scguns_cnc:gravekeeper_schism",
-    "weight": 2,
+    "weight": 3,
     "minCount": 1,
     "maxCount": 1
   }

@@ -152,6 +152,7 @@ public class ThrowablePlasmaBursterEntity extends ThrowableGrenadeEntity {
         ItemEntity grenadeItem = new ItemEntity(this.level(), this.getX(), this.getY() + 1.5, this.getZ(), new ItemStack(ModItems.DEPLETED_PLASMA_BURSTER.get()));
         grenadeItem.setPickUpDelay(20);
         grenadeItem.setDeltaMovement(0.0, 0.2, 0.0);
+        grenadeItem.setGlowingTag(true);
         this.level().addFreshEntity(grenadeItem);
     }
 }

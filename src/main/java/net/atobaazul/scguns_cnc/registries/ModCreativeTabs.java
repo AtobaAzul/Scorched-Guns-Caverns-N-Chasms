@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.PlasmaBursterItem;
+import net.atobaazul.scguns_cnc.common.item.ShieldProjectorCurioItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,73 +29,74 @@ public class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
 
-    public static final RegistryObject<CreativeModeTab> SCGUNS_CNC_TAB = CREATIVE_MODE_TABS.register("scguns_cnc_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RIBCAGE.get())).title(Component.translatable("creativetab.scguns_cnc_tab")).displayItems((pParameters, pOutput) -> {
-        addItemWithFullAmmo(pOutput, MORTICIAN.get());
-        addItemWithFullAmmo(pOutput, MORTICIAN_ACOLYTE.get());
-        addItemWithFullAmmo(pOutput, BELLA.get());
-        addItemWithFullAmmo(pOutput, REHEARSE.get());
-        addItemWithFullAmmo(pOutput, SCHISMATIC_REHEARSE.get());
+    public static final RegistryObject<CreativeModeTab> SCGUNS_CNC_TAB = CREATIVE_MODE_TABS.register("scguns_cnc_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RIBCAGE.get())).title(Component.translatable("creativetab.scguns_cnc_tab")).displayItems((pParameters, out) -> {
+        addItemWithFullAmmo(out, MORTICIAN.get());
+        addItemWithFullAmmo(out, MORTICIAN_ACOLYTE.get());
+        addItemWithFullAmmo(out, BELLA.get());
+        addItemWithFullAmmo(out, REHEARSE.get());
+        addItemWithFullAmmo(out, SCHISMATIC_REHEARSE.get());
 
-        addItemWithFullAmmo(pOutput, ANATHEMA.get());
-        addItemWithFullAmmo(pOutput, HANGMAN_CARBINE.get());
-        addItemWithFullAmmo(pOutput, HANGMAN_ACOLYTE.get());
+        addItemWithFullAmmo(out, ANATHEMA.get());
+        addItemWithFullAmmo(out, HANGMAN_CARBINE.get());
+        addItemWithFullAmmo(out, HANGMAN_ACOLYTE.get());
 
-        addItemWithFullAmmo(pOutput, GALLOWS.get());
-        addItemWithFullAmmo(pOutput, SCHISMATIC_GALLOWS.get());
-        addItemWithFullAmmo(pOutput, CACOPHONY.get());
+        addItemWithFullAmmo(out, GALLOWS.get());
+        addItemWithFullAmmo(out, SCHISMATIC_GALLOWS.get());
+        addItemWithFullAmmo(out, CACOPHONY.get());
 
-        addItemWithFullAmmo(pOutput, KETERIYA.get());
-        addItemWithFullAmmo(pOutput, NECROSIS.get());
+        addItemWithFullAmmo(out, KETERIYA.get());
+        addItemWithFullAmmo(out, NECROSIS.get());
 
-        addItemWithFullAmmo(pOutput, SILVER_LINING.get());
-        addItemWithFullAmmo(pOutput, RIBCAGE.get());
-        addItemWithFullAmmo(pOutput, DEAD_DRAFT.get());
+        addItemWithFullAmmo(out, SILVER_LINING.get());
+        addItemWithFullAmmo(out, RIBCAGE.get());
+        addItemWithFullAmmo(out, DEAD_DRAFT.get());
 
-        addItemWithFullAmmo(pOutput, EXHUMER.get());
+        addItemWithFullAmmo(out, EXHUMER.get());
 
 
-        addEnergyGunWithFullAmmo(pOutput, LUSTRE.get());
-        addEnergyGunWithFullAmmo(pOutput, ELECTROTHERMAL_AUTOCANNON.get());
-        addEnergyGunWithFullAmmo(pOutput, SCATTERER.get());
-        //addEnergyGunWithFullAmmo(pOutput, STRIX_RL.get());
+        addEnergyGunWithFullAmmo(out, LUSTRE.get());
+        addEnergyGunWithFullAmmo(out, ELECTROTHERMAL_AUTOCANNON.get());
+        addEnergyGunWithFullAmmo(out, SCATTERER.get());
+        //addEnergyGunWithFullAmmo(out, STRIX_RL.get());
 
-        addItemWithFullAmmo(pOutput, HUMMER.get());
-        addItemWithFullAmmo(pOutput, IRON_PARTISAN.get());
-        addItemWithFullAmmo(pOutput, FUSILLADE.get());
-        addItemWithFullAmmo(pOutput, RECUR.get());
-        addItemWithFullAmmo(pOutput, RASCAL.get());
-        addItemWithFullAmmo(pOutput, CHARYBDIS.get());
+        addItemWithFullAmmo(out, HUMMER.get());
+        addItemWithFullAmmo(out, IRON_PARTISAN.get());
+        addItemWithFullAmmo(out, FUSILLADE.get());
+        addItemWithFullAmmo(out, RECUR.get());
+        addItemWithFullAmmo(out, RASCAL.get());
+        addItemWithFullAmmo(out, CHARYBDIS.get());
 
-        addItem(pOutput, MALISON_GRENADE.get());
-        addItem(pOutput, PLASMA_BURSTER.get());
-        addItem(pOutput, DEPLETED_PLASMA_BURSTER.get());
+        addItem(out, MALISON_GRENADE.get());
+        addItem(out, PLASMA_BURSTER.get());
+        addItem(out, DEPLETED_PLASMA_BURSTER.get());
+        addShieldItem(out, HARDLIGHT_SHIELD_PROJECTOR.get());
 
-        addItem(pOutput, HEX_ROUND.get());
-        addItem(pOutput, COMPACT_HEX_ROUND.get());
-        addItem(pOutput, BLUNTSHOT.get());
-        addItem(pOutput, HEXSHOT.get());
-        addItem(pOutput, COPPER_SLUG.get());
-        addItem(pOutput, RICOSHOT_ROUND.get());
-        addItem(pOutput, NECROMIUM_GUN_FRAME.get());
-        addItem(pOutput, SMALL_NECROMIUM_CASING.get());
-        addItem(pOutput, MEDIUM_NECROMIUM_CASING.get());
-        addItem(pOutput, SILVER_BULLET.get());
-        addItem(pOutput, HEX_BUCKSHOT.get());
+        addItem(out, HEX_ROUND.get());
+        addItem(out, COMPACT_HEX_ROUND.get());
+        addItem(out, BLUNTSHOT.get());
+        addItem(out, HEXSHOT.get());
+        addItem(out, COPPER_SLUG.get());
+        addItem(out, RICOSHOT_ROUND.get());
+        addItem(out, NECROMIUM_GUN_FRAME.get());
+        addItem(out, SMALL_NECROMIUM_CASING.get());
+        addItem(out, MEDIUM_NECROMIUM_CASING.get());
+        addItem(out, SILVER_BULLET.get());
+        addItem(out, HEX_BUCKSHOT.get());
 
-        addItem(pOutput, GRAVEKEEPER_BLUEPRINT.get());
-        addItem(pOutput, GRAVEKEEPER_FLARE.get());
-        addItem(pOutput, LESSER_STRAWMAN.get());
+        addItem(out, GRAVEKEEPER_BLUEPRINT.get());
+        addItem(out, GRAVEKEEPER_FLARE.get());
+        addItem(out, LESSER_STRAWMAN.get());
 
-        addItem(pOutput, VAULT_GUN_PARTS.get());
-        addItem(pOutput, LUSTRE_PART.get());
-        addItem(pOutput, ELECTROTHERMAL_PART.get());
-        addItem(pOutput, SCATTERER_PART.get());
+        addItem(out, VAULT_GUN_PARTS.get());
+        addItem(out, LUSTRE_PART.get());
+        addItem(out, ELECTROTHERMAL_PART.get());
+        addItem(out, SCATTERER_PART.get());
 
-        addItem(pOutput, GRAVEKEEPER_GHOUL_SPAWN_EGG.get());
-        addItem(pOutput, GRAVEKEEPER_NEOPHYTE_SPAWN_EGG.get());
-        addItem(pOutput, GRAVEKEEPER_HERALD_SPAWN_EGG.get());
-        addItem(pOutput, GRAVEKEEPER_ACOLYTE_SPAWN_EGG.get());
-        addItem(pOutput, GRAVEKEEPER_SCHISM_SPAWN_EGG.get());
+        addItem(out, GRAVEKEEPER_GHOUL_SPAWN_EGG.get());
+        addItem(out, GRAVEKEEPER_NEOPHYTE_SPAWN_EGG.get());
+        addItem(out, GRAVEKEEPER_HERALD_SPAWN_EGG.get());
+        addItem(out, GRAVEKEEPER_ACOLYTE_SPAWN_EGG.get());
+        addItem(out, GRAVEKEEPER_SCHISM_SPAWN_EGG.get());
 
     }).build());
 
@@ -115,6 +117,16 @@ public class ModCreativeTabs {
             ItemStack stack = new ItemStack(gunItem);
             stack.getOrCreateTag().putInt("Energy", gunItem.getMaxEnergyStored(stack));
             stack.getOrCreateTag().putInt("AmmoCount", gunItem.getGun().getReloads().getMaxAmmo());
+            output.accept(stack);
+        } else {
+            output.accept(item);
+        }
+    }
+
+    private static void addShieldItem(CreativeModeTab.Output output, Item item) {
+        if (item instanceof ShieldProjectorCurioItem shield) {
+            ItemStack stack = new ItemStack(shield);
+            stack.getOrCreateTag().putInt("Energy", shield.getMaxEnergyStored(stack));
             output.accept(stack);
         } else {
             output.accept(item);

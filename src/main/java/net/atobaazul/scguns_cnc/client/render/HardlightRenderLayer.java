@@ -15,8 +15,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PowerableMob;
 import net.minecraft.world.entity.player.Player;
 
+import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+
 public class HardlightRenderLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
-    private static final ResourceLocation POWER_LOCATION = new ResourceLocation("textures/entity/creeper/creeper_armor.png");
+    private static final ResourceLocation POWER_LOCATION = new ResourceLocation(MOD_ID, "textures/entity/hardlight_shield.png");
     private final M model;
 
     public HardlightRenderLayer(RenderLayerParent<T, M> pRenderer, M model) {
@@ -35,6 +37,8 @@ public class HardlightRenderLayer<T extends LivingEntity, M extends EntityModel<
             mobModel.renderToBuffer(poseStack, vertexConsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 0.5F, 0.5F, 0.5F, 1.0F);
         }
     }
+
+
 
     protected float xOffset(float v) {
         return v * 0.01f;

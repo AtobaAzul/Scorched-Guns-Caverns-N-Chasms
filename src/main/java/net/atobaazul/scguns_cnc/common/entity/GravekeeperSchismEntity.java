@@ -1,6 +1,7 @@
 package net.atobaazul.scguns_cnc.common.entity;
 
 import com.teamabnormals.caverns_and_chasms.common.entity.monster.Mime;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCAttributes;
 import net.atobaazul.scguns_cnc.ModConfigs;
 import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.common.entity.ai.SchismGunAttackGoal;
@@ -56,7 +57,14 @@ public class GravekeeperSchismEntity extends AbstractGravekeeperGunnerEntity imp
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.ATTACK_DAMAGE, 8f).add(Attributes.ARMOR, 12f).add(Attributes.MOVEMENT_SPEED, 0.2f).add(Attributes.ATTACK_SPEED, 2f).add(Attributes.FOLLOW_RANGE, 48D).build();
+        return Monster.createMonsterAttributes()
+                .add(Attributes.MAX_HEALTH, 30D)
+                .add(Attributes.ATTACK_DAMAGE, 8f)
+                .add(Attributes.ARMOR, 12f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .add(Attributes.ATTACK_SPEED, 2f)
+                .add(CCAttributes.MAGIC_PROTECTION.get(), 0.75f)
+                .add(Attributes.FOLLOW_RANGE, 48D).build();
     }
 
     public static boolean checkValidProgressionSpawn(ServerLevel level, BlockPos pos) {
