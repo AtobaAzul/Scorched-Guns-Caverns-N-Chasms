@@ -13,7 +13,8 @@ import java.util.concurrent.CompletableFuture;
 
 import static com.teamabnormals.caverns_and_chasms.core.other.tags.CCEntityTypeTags.NOT_DEFLECTED_BY_TIN;
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
-import static net.atobaazul.scguns_cnc.registries.ModEntities.GUIDED_ROCKET_PROJECTILE;
+import static net.atobaazul.scguns_cnc.common.ModTags.GRAVEKEEPER;
+import static net.atobaazul.scguns_cnc.registries.ModEntities.*;
 
 public class ModEntityTagsProvider extends EntityTypeTagsProvider {
     public ModEntityTagsProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider,  @Nullable ExistingFileHelper existingFileHelper) {
@@ -29,5 +30,12 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .add(ModEntities.MICROJET.get())
                 .add(ModEntities.SHATTER_ROUND_PROJECTILE.get())
                 .add(GUIDED_ROCKET_PROJECTILE.get());
+
+        this.tag(GRAVEKEEPER)
+                .add(GRAVEKEEPER_GHOUL.get())
+                .add(GRAVEKEEPER_ACOLYTE.get())
+                .add(GRAVEKEEPER_HERALD.get())
+                .add(GRAVEKEEPER_NEOPHYTE.get())
+                .add(GRAVEKEEPER_SCHISM.get());
     }
 }

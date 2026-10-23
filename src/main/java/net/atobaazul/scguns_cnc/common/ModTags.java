@@ -18,7 +18,7 @@ public class ModTags {
 
     //entities
     public static final TagKey<EntityType<?>> GRAVEKEEPER_ENEMY = createEntityTag("gravekeeper_enemy");
-
+    public static final TagKey<EntityType<?>> GRAVEKEEPER = createEntityTag("gravekeeper");
 
     private static TagKey<Block> createBlockTag(String tagName) {
         return TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, tagName));
