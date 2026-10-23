@@ -51,7 +51,7 @@
     "spread": 2.5,
     "criticalChance": 0.05,
     "alwaysSpread": true,
-    "critDamageMultiplier": 2.0,
+    "critDamageMultiplier": 1.2,
     "damageFalloffStart": 15.0,
     "damageFalloffEnd": 40.0,
     "damageFalloffMinMultiplier": 0.80,

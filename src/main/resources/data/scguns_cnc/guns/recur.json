@@ -46,7 +46,7 @@
     "recoilKick": 1.22,
     "spread": 1.0,
     "criticalChance": 0.05,
-    "critDamageMultiplier": 2.0,
+    "critDamageMultiplier": 1.2,
     "damageFalloffStart": 25.0,
     "damageFalloffEnd": 50.0,
     "damageFalloffMinMultiplier": 0.85,
