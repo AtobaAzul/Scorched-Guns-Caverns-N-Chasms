@@ -48,6 +48,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ELECTROTHERMAL_PART);
         simpleItem(SCATTERER_PART);
         simpleItem(DEPLETED_PLASMA_BURSTER);
+        simpleItem(BOOST_PACK);
 
         withExistingParent(GRAVEKEEPER_GHOUL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(GRAVEKEEPER_NEOPHYTE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -57,7 +58,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     }
 
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+    private ItemModelBuilder simpleItem(RegistryObject<? extends Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(MOD_ID, "item/" + item.getId().getPath()));
     }
 }

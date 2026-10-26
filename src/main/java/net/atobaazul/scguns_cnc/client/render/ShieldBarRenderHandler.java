@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.client.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.common.item.ShieldProjectorCurioItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -31,6 +32,8 @@ public class ShieldBarRenderHandler {
             LocalPlayer player = minecraft.player;
             if (!player.isCreative() && !player.isSpectator()) {
                 ItemStack curio = getEquippedCurio(player, HARDLIGHT_SHIELD_PROJECTOR.get());
+                SCGunsCnC.LOGGER.info("curio {}", curio);
+
                 if (curio.isEmpty()) {
                     return;
                 }

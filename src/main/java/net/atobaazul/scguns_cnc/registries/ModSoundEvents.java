@@ -50,6 +50,8 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> HARDLIGHT_DISINTEGRATE = register("item.hardlight_shield.disintegrate");
     public static final RegistryObject<SoundEvent> HARDLIGHT_HIT = register("item.hardlight_shield.hit");
 
+    public static final RegistryObject<SoundEvent> BOOST_PACK_THRUST = register("item.boost_pack.thrust");
+
     public static final RegistryObject<SoundEvent> GRAVEKEEPER_GHOUL_AMBIENT = register("entity.gravekeeper_ghoul.ambient");
 
     public static final RegistryObject<SoundEvent> GRAVEKEEPER_HERALD_AMBIENT = register("entity.gravekeeper_herald.ambient");

@@ -2,6 +2,7 @@ package net.atobaazul.scguns_cnc.registries;
 
 import com.google.common.collect.Lists;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import net.atobaazul.scguns_cnc.common.item.BoostPackArmorItem;
 import net.atobaazul.scguns_cnc.common.item.MalisonGrenadeItem;
 import net.atobaazul.scguns_cnc.common.item.PlasmaBursterItem;
 import net.atobaazul.scguns_cnc.common.item.ShieldProjectorCurioItem;
@@ -70,6 +71,7 @@ public class ModCreativeTabs {
         addItem(out, PLASMA_BURSTER.get());
         addItem(out, DEPLETED_PLASMA_BURSTER.get());
         addShieldItem(out, HARDLIGHT_SHIELD_PROJECTOR.get());
+        addBoostPack(out, BOOST_PACK.get());
 
         addItem(out, HEX_ROUND.get());
         addItem(out, COMPACT_HEX_ROUND.get());
@@ -125,6 +127,16 @@ public class ModCreativeTabs {
 
     private static void addShieldItem(CreativeModeTab.Output output, Item item) {
         if (item instanceof ShieldProjectorCurioItem shield) {
+            ItemStack stack = new ItemStack(shield);
+            stack.getOrCreateTag().putInt("Energy", shield.getMaxEnergyStored(stack));
+            output.accept(stack);
+        } else {
+            output.accept(item);
+        }
+    }
+
+    private static void addBoostPack(CreativeModeTab.Output output, Item item) {
+        if (item instanceof BoostPackArmorItem shield) {
             ItemStack stack = new ItemStack(shield);
             stack.getOrCreateTag().putInt("Energy", shield.getMaxEnergyStored(stack));
             output.accept(stack);

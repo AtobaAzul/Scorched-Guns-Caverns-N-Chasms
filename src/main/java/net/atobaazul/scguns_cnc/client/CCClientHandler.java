@@ -17,6 +17,7 @@ import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 public class CCClientHandler {
     public static void registerClientHandlers(IEventBus bus) {
         bus.addListener(CCClientHandler::onClientSetup);
+        bus.addListener(KeyBinds::registerKeyMappings);
     }
 
     private static void onClientSetup(FMLClientSetupEvent event) {

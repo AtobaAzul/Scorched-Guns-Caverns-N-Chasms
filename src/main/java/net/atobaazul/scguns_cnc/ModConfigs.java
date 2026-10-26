@@ -51,6 +51,9 @@ public class ModConfigs {
         public final ForgeConfigSpec.IntValue shield_projector_refill_cd;
         public final ForgeConfigSpec.DoubleValue shield_projector_max_health;
         public final ForgeConfigSpec.IntValue shield_projector_deplete_cd;
+        public final ForgeConfigSpec.IntValue boost_pack_refill_cd;
+        public final ForgeConfigSpec.IntValue boost_pack_energy_cost;
+        public final ForgeConfigSpec.IntValue boost_pack_energy_max;
 
         Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Items & Guns").push("items");
@@ -85,13 +88,17 @@ public class ModConfigs {
                 this.strix_energy_cost = builder.comment("The amount of FE energy used per tick while a rocket is being guided").defineInRange("strix_energy_cost", 1, 1, Integer.MAX_VALUE);
                 this.strix_energy_max = builder.comment("The amount of FE energy the gun can store").defineInRange("strix_energy_max", 144000, 1, Integer.MAX_VALUE);
 
-                builder.comment("Shield Projector Belt");
+                builder.comment("Hardlight Projector");
                 this.shield_projector_energy_cost = builder.comment("The amount of FE energy used to regen 1 health").defineInRange("shield_projector_energy_cost", 250, 1, Integer.MAX_VALUE);
                 this.shield_projector_refill_cd = builder.comment("The amount of time, in ticks, to regen 1 health after the on-hit cooldown wears off").defineInRange("shield_projector_refill_cd", 1, 1, Integer.MAX_VALUE);
                 this.shield_projector_energy_max = builder.comment("The amount of FE the item can hold").defineInRange("shield_projector_energy_max", 100000, 1, Integer.MAX_VALUE);
                 this.shield_projector_deplete_cd = builder.comment("The amount of time, in ticks, to regen after taking damage").defineInRange("shield_projector_deplete_cd", 200, 1, Integer.MAX_VALUE);
                 this.shield_projector_max_health = builder.comment("The total amount of health the shield has (1 heart = 2 health)").defineInRange("shield_projector_max_health", 30, 1, Double.MAX_VALUE);
 
+                builder.comment("Boost Pack");
+                this.boost_pack_energy_cost = builder.comment("The amount of FE energy used for each recharge").defineInRange("boost_pack_energy_cost", 1000, 1, Integer.MAX_VALUE);
+                this.boost_pack_refill_cd = builder.comment("The amount of time, in ticks, to recharge a boost").defineInRange("boost_pack_refill_cd", 100, 1, Integer.MAX_VALUE);
+                this.boost_pack_energy_max = builder.comment("The amount of FE the item can hold").defineInRange("boost_pack_energy_max", 100000, 1, Integer.MAX_VALUE);
             }
             builder.pop();
 

@@ -461,6 +461,25 @@
       }
     ]
   },
+  "item.boost_pack.thrust": {
+    "subtitle": "subtitle.scguns_cnc.boost_pack.thrust",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/boost_pack/thrust",
+        "volume": 0.75
+      },
+      {
+        "name": "scguns_cnc:item/boost_pack/thrust",
+        "volume": 0.75,
+        "pitch": 0.9
+      },
+      {
+        "name": "scguns_cnc:item/boost_pack/thrust",
+        "volume": 0.75,
+        "pitch": 1.1
+      }
+    ]
+  },
   "entity.gravekeeper_ghoul.ambient": {
     "subtitle": "subtitle.scguns_cnc.gravekeeper_ghoul.ambient",
     "sounds": [
