@@ -145,8 +145,9 @@ public class ModLangProvider extends LanguageProvider {
         add("item.scguns_cnc.lustre_part.tooltip", "Technological Innovation Nucleus' advanced optics are highly sought after due to their exceptional quality, and the tools required for their fabrication no longer existing.");
         add("item.scguns_cnc.electrothermal_part.tooltip", "Technological Innovation Nucleus' plasma power project was cancelled and repurposed into military applications after growing tensions between COG and Asghar demanded more weapons of war.");
         add("item.scguns_cnc.scatterer_part.tooltip", "Technological Innovation Nucleus' plasma systems are able to create usable plasma from the very air, revolutionizing plasma technology.");
-        add("item.scguns_cnc.boost_pack.boost", " To Boost");
+        add("item.scguns_cnc.boost_pack.boost", " to Boost");
         add("key.scguns_cnc.use_boost", "Activate Boost Pack");
+        add("item.scguns_cnc.hardlight_shield_projector.info", "Uses energy to shield the user under a Hardlight barrier.");
 
         add("raid.scguns.gravekeeper.name", "Summons the Gravekeeper Cult");
 
@@ -159,6 +160,7 @@ public class ModLangProvider extends LanguageProvider {
         add("subtitle.scguns_cnc.boost_pack.thrust", "Boost Pack thrusts");
         add("subtitle.scguns_cnc.hardlight_shield.hit", "Hardlight blocks");
         add("subtitle.scguns_cnc.hardlight_shield.disintegrate", "Hardlight disintegrates");
-
+        add("subtitles.item.curio.equip_hardlight_shield", "Hardlight Projector clinks");
+        add("subtitles.item.armor.equip_boost_pack", "Boost Pack clanks");
     }
 }

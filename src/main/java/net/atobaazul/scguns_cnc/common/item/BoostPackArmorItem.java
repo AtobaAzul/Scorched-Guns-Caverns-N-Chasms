@@ -59,7 +59,7 @@ public class BoostPackArmorItem extends ArmorItem implements GeoItem {
         this.maxEnergy = maxEnergy;
     }
 
-    public static final RawAnimation ACTIVE = RawAnimation.begin().thenPlay("misc.active");
+    public static final RawAnimation ACTIVE = RawAnimation.begin().thenLoop("misc.active");
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {

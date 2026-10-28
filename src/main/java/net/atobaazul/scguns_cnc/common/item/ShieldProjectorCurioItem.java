@@ -1,19 +1,20 @@
 package net.atobaazul.scguns_cnc.common.item;
 
-import net.atobaazul.scguns_cnc.SCGunsCnC;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.capabilities.Capability;
@@ -21,23 +22,15 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import top.ribs.scguns.item.exosuit.ExoSuitCoreItem;
-import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
-import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Optional;
-
-import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
+import java.util.Map;
 
 public class ShieldProjectorCurioItem extends Item implements ICurioItem {
     private final ForgeConfigSpec.IntValue energyRequired;
@@ -63,7 +56,7 @@ public class ShieldProjectorCurioItem extends Item implements ICurioItem {
     @NotNull
     @Override
     public ICurio.SoundInfo getEquipSound(SlotContext slotContext, ItemStack stack) {
-        return new ICurio.SoundInfo(SoundEvents.ARMOR_EQUIP_GENERIC, 1.0F, 1.0F);
+        return new ICurio.SoundInfo(ModSoundEvents.HARDLIGHT_SHIELD_EQUIP.get(), 1.0F, 1.0F);
     }
 
     public Double getShieldHealth() {
@@ -195,9 +188,8 @@ public class ShieldProjectorCurioItem extends Item implements ICurioItem {
         int energyStored = getEnergyStored(stack);
         int maxEnergy = getMaxEnergyStored(stack);
 
+        tooltip.add(Component.translatable(stack.getDescriptionId() + ".info").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.translatable("tooltip.scguns.energy").append(": ").withStyle(ChatFormatting.GRAY).append(Component.literal(String.format("%,d", energyStored)).withStyle(ChatFormatting.BLUE)).append(Component.literal(" / ").withStyle(ChatFormatting.GRAY)).append(Component.literal(String.format("%,d", maxEnergy) + " FE").withStyle(ChatFormatting.BLUE)));
-
-        tooltip.add(Component.translatable(stack.getDescriptionId() + ".lore").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 
     public void initializeData(ItemStack stack) {
@@ -220,5 +212,13 @@ public class ShieldProjectorCurioItem extends Item implements ICurioItem {
         this.health = Mth.clamp(tag.getDouble("health"), 0, this.getShieldMaxHealth());
     }
 
+    @Override
+    public void playRightClickEquipSound(LivingEntity livingEntity, ItemStack stack) {
+        livingEntity.level().playSound(null, livingEntity.blockPosition(), getEquipSound(null, stack).soundEvent(), SoundSource.PLAYERS, 1.0f, 1.0f);
+    }
 
+    @Override
+    public boolean canRightClickEquip(ItemStack stack) {
+        return true;
+    }
 }

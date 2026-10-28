@@ -7,6 +7,8 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import top.ribs.scguns.entity.projectile.AdvancedRoundProjectileEntity;
 
+import static net.atobaazul.scguns_cnc.registries.ModSoundEvents.BOOST_PACK_EQUIP;
+
 public class BoostPackMaterial implements ArmorMaterial {
     public static final BoostPackMaterial MATERIAL = new BoostPackMaterial();
 
@@ -27,7 +29,7 @@ public class BoostPackMaterial implements ArmorMaterial {
 
     @Override
     public SoundEvent getEquipSound() {
-        return CCSoundEvents.CCSoundTypes.TINPLATE.getPlaceSound();
+        return BOOST_PACK_EQUIP.get();
     }
 
     @Override
@@ -39,8 +41,6 @@ public class BoostPackMaterial implements ArmorMaterial {
     public String getName() {
         return "boost_pack";
     }
-
-
 
     @Override
     public float getToughness() {

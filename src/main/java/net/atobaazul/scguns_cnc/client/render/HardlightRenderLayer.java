@@ -7,18 +7,16 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.EnergySwirlLayer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.PowerableMob;
 import net.minecraft.world.entity.player.Player;
 
 import static net.atobaazul.scguns_cnc.SCGunsCnC.MOD_ID;
 
 public class HardlightRenderLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
-    private static final ResourceLocation POWER_LOCATION = new ResourceLocation(MOD_ID, "textures/entity/hardlight_shield.png");
+    private static final ResourceLocation SHIELD_TEXTURE = new ResourceLocation(MOD_ID, "textures/entity/hardlight_shield.png");
     private final M model;
 
     public HardlightRenderLayer(RenderLayerParent<T, M> pRenderer, M model) {
@@ -38,14 +36,12 @@ public class HardlightRenderLayer<T extends LivingEntity, M extends EntityModel<
         }
     }
 
-
-
     protected float xOffset(float v) {
         return v * 0.01f;
     }
 
     protected ResourceLocation getTextureLocation() {
-        return POWER_LOCATION;
+        return SHIELD_TEXTURE;
     }
 
     protected EntityModel<T> model() {

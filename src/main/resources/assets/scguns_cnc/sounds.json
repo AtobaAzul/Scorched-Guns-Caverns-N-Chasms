@@ -549,5 +549,39 @@
         "name": "scguns_cnc:entity/herald/enrage"
       }
     ]
+  },
+  "item.armor.equip_boost_pack": {
+    "sounds": [
+      "caverns_and_chasms:block/tin/break1",
+      "caverns_and_chasms:block/tin/break2",
+      "caverns_and_chasms:block/tin/break3",
+      "caverns_and_chasms:block/tin/break4",
+      "caverns_and_chasms:block/tin/break5",
+      "caverns_and_chasms:block/tin/break6",
+      "caverns_and_chasms:block/tin/break7"
+    ],
+    "subtitle": "subtitles.item.armor.equip_boost_pack"
+  },
+
+  "item.curio.equip_hardlight_shield": {
+    "sounds": [
+      {
+        "name": "caverns_and_chasms:block/tin_chain/break1",
+        "volume": 0.4
+      },
+      {
+        "name": "caverns_and_chasms:block/tin_chain/break2",
+        "volume": 0.4
+      },
+      {
+        "name": "caverns_and_chasms:block/tin_chain/break3",
+        "volume": 0.4
+      },
+      {
+        "name": "caverns_and_chasms:block/tin_chain/break4",
+        "volume": 0.4
+      }
+    ],
+    "subtitle": "subtitles.item.curio.equip_hardlight_shield"
   }
 }

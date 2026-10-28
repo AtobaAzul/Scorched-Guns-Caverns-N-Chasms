@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "forge:storage_blocks/tin"
+    },
+    "B": {
+      "item": "scguns_cnc:scatterer_part"
+    },
+    "C": {
+      "item": "scguns:plasma_core"
+    },
+    "D": {
+      "tag": "forge:ingots/tin"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "ACA",
+    "D D"
+  ],
+  "result": {
+    "item": "scguns_cnc:boost_pack",
+    "count": 1
+  }
+}

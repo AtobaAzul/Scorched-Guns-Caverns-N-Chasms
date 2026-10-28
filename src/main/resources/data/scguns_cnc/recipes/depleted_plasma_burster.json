@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "forge:ingots/tin"
+    },
+    "B": {
+      "item": "scguns:charged_amethyst_shard"
+    },
+    "C": {
+      "item": "scguns_cnc:electrothermal_part"
+    },
+    "D": {
+      "tag": "forge:storage_blocks/tin"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "ACA",
+    "ADA"
+  ],
+  "result": {
+    "item": "scguns_cnc:depleted_plasma_burster",
+    "count": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "scguns:lightning_battery",
+  "processingTime": 400,
+  "requiredEnergy": 16000,
+  "ingredients": [
+    {
+      "item": "scguns_cnc:depleted_plasma_burster"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "scguns_cnc:plasma_burster"
+  }
+}

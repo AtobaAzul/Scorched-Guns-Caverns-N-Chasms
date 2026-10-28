@@ -11,10 +11,10 @@
     "weaponType": "rifle",
     "fireMode": "scguns:burst",
     "burstAmount": 3,
-    "burstCooldown": 6,
+    "burstCooldown": 10,
     "gripType": "scguns:two_handed",
     "baseGripType": "scguns:two_handed",
-    "rate": 4,
+    "rate": 3,
     "meleeDamage": 3.0,
     "meleeCooldownTicks": 20,
     "meleeReach": 3.5,
@@ -70,7 +70,7 @@
   },
   "reloads": {
     "emptyMagTimer": 10,
-    "maxAmmo": 12,
+    "maxAmmo": 18,
     "reloadItem": "scguns:advanced_round",
     "reloadTimer": 35,
     "reloadType": "scguns:mag_fed"

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "forge:ingots/tin"
+    },
+    "B": {
+      "tag": "forge:gems/zirconia"
+    },
+    "C": {
+      "tag": "forge:storage_blocks/tin"
+    },
+    "D": {
+      "item": "scguns_cnc:lustre_part"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "CDC",
+    "ABA"
+  ],
+  "result": {
+    "item": "scguns_cnc:hardlight_shield_projector",
+    "count": 1
+  }
+}

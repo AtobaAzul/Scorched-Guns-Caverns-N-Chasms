@@ -65,7 +65,7 @@
   },
   "reloads": {
     "emptyMagTimer": 20,
-    "maxAmmo": 10,
+    "maxAmmo": 15,
     "reloadItem": "scguns_cnc:ricoshot_round",
     "reloadTimer": 40,
     "reloadType": "scguns:mag_fed"

@@ -51,6 +51,9 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> HARDLIGHT_HIT = register("item.hardlight_shield.hit");
 
     public static final RegistryObject<SoundEvent> BOOST_PACK_THRUST = register("item.boost_pack.thrust");
+    public static final RegistryObject<SoundEvent> BOOST_PACK_EQUIP = register("item.armor.equip_boost_pack");
+
+    public static final RegistryObject<SoundEvent> HARDLIGHT_SHIELD_EQUIP = register("item.curio.equip_hardlight_shield");
 
     public static final RegistryObject<SoundEvent> GRAVEKEEPER_GHOUL_AMBIENT = register("entity.gravekeeper_ghoul.ambient");
 

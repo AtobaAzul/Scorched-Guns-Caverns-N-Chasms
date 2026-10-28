@@ -122,7 +122,7 @@ public class SCGunsCnC {
                 ClientLevel level = mc.level;
 
 
-                if (particleTicks > 0 && localPlayer != null & level != null) {
+                if (particleTicks > 0 && localPlayer != null & level != null && !localPlayer.isSpectator()) {
                     particleTicks--;
 
                     for (int i = 0; i < 5; i++) {
