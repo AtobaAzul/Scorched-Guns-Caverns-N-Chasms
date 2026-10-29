@@ -5,11 +5,13 @@ import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import net.atobaazul.scguns_cnc.client.CCClientHandler;
 import net.atobaazul.scguns_cnc.client.render.HardlightRenderLayer;
 import net.atobaazul.scguns_cnc.client.render.ShieldBarRenderHandler;
+import net.atobaazul.scguns_cnc.client.render.item.ShieldProjectorRender;
 import net.atobaazul.scguns_cnc.common.entity.projectile.*;
 import net.atobaazul.scguns_cnc.network.C2SUseBoostMessage;
 import net.atobaazul.scguns_cnc.network.PacketHandler;
 import net.atobaazul.scguns_cnc.registries.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
@@ -36,11 +38,13 @@ import org.slf4j.Logger;
 import top.ribs.scguns.client.screen.BlueprintScreen;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.player.GunTierRegistry;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 import java.util.List;
 
 import static net.atobaazul.scguns_cnc.client.KeyBinds.BOOST_KEY;
 import static net.atobaazul.scguns_cnc.registries.ModItems.BOOST_PACK;
+import static net.atobaazul.scguns_cnc.registries.ModItems.HARDLIGHT_SHIELD_PROJECTOR;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SCGunsCnC.MOD_ID)
@@ -99,6 +103,7 @@ public class SCGunsCnC {
         // ProjectileManager.getInstance().registerFactory(ModItems.MALISON_GRENADE.get(), (worldIn, entity, weapon, item, modifiedGun) -> new GrenadeEntity(ModEntities.MALISON_GRENADE.get(), worldIn, entity, weapon, item, modifiedGun));
         event.enqueueWork(() -> {
             PacketHandler.init();
+            CuriosRendererRegistry.register(HARDLIGHT_SHIELD_PROJECTOR.get(), () -> new ShieldProjectorRender(Minecraft.getInstance().getEntityModels().bakeLayer(ShieldProjectorRender.LAYER)));
         });
     }
 
@@ -106,16 +111,12 @@ public class SCGunsCnC {
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ClientEvents {
-
-
         static int particleTicks = 0;
         static int clientCooldown = 0; //Minor cooldown to let client catch up with server writing NBT;
 
 
         @SubscribeEvent
         public static void onClientTick(TickEvent.ClientTickEvent event) {
-
-
             if (event.phase == TickEvent.Phase.END) {
                 Minecraft mc = Minecraft.getInstance();
                 LocalPlayer localPlayer = mc.player;
@@ -173,6 +174,11 @@ public class SCGunsCnC {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(ModItems::setupTabEditors);
+        }
+
+        @SubscribeEvent
+        public static void onLayerRegister(final EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(ShieldProjectorRender.LAYER, () -> LayerDefinition.create(ShieldProjectorRender.mesh(), 1, 1));
         }
 
         @SubscribeEvent

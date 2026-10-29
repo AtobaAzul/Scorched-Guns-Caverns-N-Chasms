@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "0": "scguns_cnc:item/hardlight_shield_projector",
+    "particle": "scguns_cnc:item/hardlight_shield_projector"
+  },
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    },
+    "firstperson_lefthand": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    },
+    "thirdperson_righthand": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    },
+    "thirdperson_lefthand": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    },
+    "fixed": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_3d"
+    },
+    "gui": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    },
+    "ground": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    },
+    "frame": {
+      "parent": "scguns_cnc:item/hardlight_shield_projector_2d"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "scguns_cnc:item/hardlight_shield_projector"
+	}
+}

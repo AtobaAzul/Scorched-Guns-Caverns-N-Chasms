@@ -32,7 +32,6 @@ public class ShieldBarRenderHandler {
             LocalPlayer player = minecraft.player;
             if (!player.isCreative() && !player.isSpectator()) {
                 ItemStack curio = getEquippedCurio(player, HARDLIGHT_SHIELD_PROJECTOR.get());
-                SCGunsCnC.LOGGER.info("curio {}", curio);
 
                 if (curio.isEmpty()) {
                     return;
