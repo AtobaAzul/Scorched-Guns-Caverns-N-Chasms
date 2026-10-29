@@ -65,7 +65,7 @@ public class ShieldProjectorRender implements ICurioRenderer {
         poseStack.mulPose(new Quaternionf().rotationZ((float) Math.toRadians(180)));
 
 
-        itemRenderer.render(stack, ItemDisplayContext.FIXED, false, poseStack, bufferSource, light, OverlayTexture.NO_OVERLAY, bakedModel);
+        itemRenderer.render(stack, ItemDisplayContext.NONE, false, poseStack, bufferSource, light, OverlayTexture.NO_OVERLAY, bakedModel);
         poseStack.popPose();
     }
 
