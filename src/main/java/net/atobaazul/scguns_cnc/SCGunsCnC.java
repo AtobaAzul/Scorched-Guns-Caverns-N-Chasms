@@ -145,7 +145,7 @@ public class SCGunsCnC {
                     clientCooldown--;
                 }
 
-                if (BOOST_KEY.consumeClick() && localPlayer != null && level != null && !localPlayer.getCooldowns().isOnCooldown(BOOST_PACK.get())) {
+                if (BOOST_KEY.consumeClick() && localPlayer != null && level != null && !localPlayer.getCooldowns().isOnCooldown(BOOST_PACK.get()) && !localPlayer.isSpectator()) {
                     for (ItemStack stack : localPlayer.getArmorSlots()) {
                         if (stack.is(BOOST_PACK.get()) && stack.getOrCreateTag().getBoolean("charged")) {
                             PacketHandler.getPlayChannel().sendToServer(new C2SUseBoostMessage());
