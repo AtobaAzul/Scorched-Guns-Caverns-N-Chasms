@@ -49,7 +49,7 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
     @Override
     protected void onHitEntity(Entity entity, Vec3 hitVec, Vec3 startVec, Vec3 endVec, boolean headshot) {
         Double magicDamageMult = ModConfigs.COMMON.magic_damage_percent.get();
-        float normalDamageMult = (float) (1 - magicDamageMult);
+        float normalDamageMult = (float) (1.0F - magicDamageMult);
 
         float damage = this.getDamage();
         float newDamage = this.getCriticalDamage(this.getWeapon(), this.random, damage);
@@ -63,22 +63,34 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
             damage *= Config.COMMON.gameplay.headShotDamageMultiplier.get();
         }
 
+
+
+//        getPuncturingDamageReduction, at least as of right now, doesn't do anything and returns normal Damage value
+//        Might want to bring it back
+//
+//        if (entity instanceof LivingEntity livingTarget) {
+//            damage = GunEnchantmentHelper.getPuncturingDamageReduction(this.getWeapon(), livingTarget, damage);
+//        }
+
+        float bulletDamage = damage * normalDamageMult;
+        float magicDamage = (float) (damage * magicDamageMult);
+
         if (entity instanceof LivingEntity livingTarget) {
-            damage = GunEnchantmentHelper.getPuncturingDamageReduction(this.getWeapon(), livingTarget, damage);
-            damage = applyProjectileProtection(livingTarget, damage);
-            damage = calculateArmorBypassDamage(livingTarget, damage);
+            bulletDamage = applyProjectileProtection(livingTarget, damage);
+            damage = calculateArmorBypassDamage(livingTarget, damage); // This one also caused magic damage to get reduced by 0.1-0.2
         }
+
         boolean blocked = ProjectileHelper.handleShieldHit(entity, this, damage, ADVANCED_SHIELD_DISABLE_CHANCE);
         if (!blocked) {
             DamageSource source = ModDamageTypes.Sources.projectile(this.level().registryAccess(), this, (LivingEntity) this.getOwner());
 
             if (!(entity.getType().is(ModTags.Entities.GHOST) && !advantage.equals(ModTags.Entities.UNDEAD.location()))) {
-                entity.hurt(source, damage * normalDamageMult);
+                entity.hurt(source, bulletDamage);
 
                 if (entity instanceof LivingEntity livingEntity) {
-                    if (magicDamageMult > 0) {
+                    if (magicDamage > 0) {
                         entity.invulnerableTime = 0;
-                        entity.hurt(entity.damageSources().magic(), (float) (damage * magicDamageMult));
+                        entity.hurt(entity.damageSources().magic(), (magicDamage));
                         if (this.shooter instanceof Player) {
                             SilverItem.causeMagicParticles(livingEntity, false);
                         }
@@ -93,10 +105,6 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
                                 int duration = this.getProjectile().getImpactEffectDuration();
                                 if (headshot) {
                                     duration = (int) (duration * HEADSHOT_EFFECT_DURATION_MULTIPLIER);
-                                }
-                                if (entity instanceof LivingEntity livingTarget) {
-                                    damage = applyProjectileProtection(livingTarget, damage);
-                                    damage = calculateArmorBypassDamage(livingTarget, damage);
                                 }
                                 livingEntity.addEffect(new MobEffectInstance(effect, duration, this.getProjectile().getImpactEffectAmplifier()));
                             }
