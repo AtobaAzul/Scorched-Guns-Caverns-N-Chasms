@@ -162,5 +162,6 @@ public class ModLangProvider extends LanguageProvider {
         add("subtitle.scguns_cnc.hardlight_shield.disintegrate", "Hardlight disintegrates");
         add("subtitles.item.curio.equip_hardlight_shield", "Hardlight Projector clinks");
         add("subtitles.item.armor.equip_boost_pack", "Boost Pack clanks");
+        add("subtitle.scguns_cnc.boost_pack.charge", "Boost Pack charges");
     }
 }

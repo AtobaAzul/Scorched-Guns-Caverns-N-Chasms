@@ -139,6 +139,7 @@ public class ModCreativeTabs {
         if (item instanceof BoostPackArmorItem shield) {
             ItemStack stack = new ItemStack(shield);
             stack.getOrCreateTag().putInt("Energy", shield.getMaxEnergyStored(stack));
+            stack.getOrCreateTag().putBoolean("charged", true);
             output.accept(stack);
         } else {
             output.accept(item);

@@ -122,7 +122,6 @@ public class SCGunsCnC {
                 LocalPlayer localPlayer = mc.player;
                 ClientLevel level = mc.level;
 
-
                 if (particleTicks > 0 && localPlayer != null & level != null && !localPlayer.isSpectator()) {
                     particleTicks--;
 
@@ -152,7 +151,6 @@ public class SCGunsCnC {
                             Vec3 dir = localPlayer.getViewVector(1.0f).normalize().scale(2);
                             localPlayer.setDeltaMovement(localPlayer.getDeltaMovement().add(dir));
 
-                            localPlayer.getCooldowns().addCooldown(BOOST_PACK.get(), ModConfigs.COMMON.boost_pack_refill_cd.get());
 
                             for (int i = 0; i < 20; i++) {
                                 Vec3 particleDir = dir.scale(-1).scale(0.25 + Mth.lerp(level.getRandom().nextFloat(), -0.1, 0.1));
@@ -161,6 +159,7 @@ public class SCGunsCnC {
 
                             particleTicks = 20;
                             clientCooldown = 10;
+                            break;
                         }
                     }
                 }

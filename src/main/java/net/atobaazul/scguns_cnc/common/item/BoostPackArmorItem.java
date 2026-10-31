@@ -1,20 +1,25 @@
 package net.atobaazul.scguns_cnc.common.item;
 
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
+import net.atobaazul.scguns_cnc.SCGunsCnC;
 import net.atobaazul.scguns_cnc.client.KeyBinds;
 import net.atobaazul.scguns_cnc.client.render.item.BoostPackArmorRender;
+import net.atobaazul.scguns_cnc.registries.ModSoundEvents;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -37,29 +42,23 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import top.ribs.scguns.item.exosuit.ExoSuitCoreItem;
-import top.theillusivec4.curios.api.SlotContext;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Consumer;
 
-import static net.atobaazul.scguns_cnc.client.KeyBinds.BOOST_KEY;
-
 public class BoostPackArmorItem extends ArmorItem implements GeoItem {
+    public static final RawAnimation ACTIVE = RawAnimation.begin().thenLoop("misc.active");
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private final ForgeConfigSpec.IntValue energyRequired;
     private final ForgeConfigSpec.IntValue maxEnergy;
     private int age = 0;
-    public boolean charged = false;
 
     public BoostPackArmorItem(Type pType, Properties pProperties, ForgeConfigSpec.IntValue energyRequired, ForgeConfigSpec.IntValue maxEnergy) {
         super(BoostPackMaterial.MATERIAL, pType, pProperties);
         this.energyRequired = energyRequired;
         this.maxEnergy = maxEnergy;
     }
-
-    public static final RawAnimation ACTIVE = RawAnimation.begin().thenLoop("misc.active");
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -165,35 +164,41 @@ public class BoostPackArmorItem extends ArmorItem implements GeoItem {
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int pSlotId, boolean pIsSelected) {
         this.age++;
 
-        if (this.age == 1) {
-            initializeData(stack);
-        }
+        if (level instanceof ServerLevel sLevel && entity instanceof ServerPlayer player) {
+            if (this.age == 1) {
+                if (stack.getOrCreateTag().isEmpty()) {
+                    stack.getOrCreateTag().putBoolean("charged", false);
+                }
+            }
 
-        if (level instanceof ServerLevel sLevel && entity instanceof Player player) {
             LazyOptional<IEnergyStorage> capability = stack.getCapability(ForgeCapabilities.ENERGY);
             int energyStored = capability.map(IEnergyStorage::getEnergyStored).orElse(0);
 
-            boolean _cooldown = player.getCooldowns().isOnCooldown(this);
+            boolean _cooldown = player.getCooldowns().isOnCooldown(stack.getItem());
 
+            if (!_cooldown && energyStored >= getEnergyRequired() && !isCharged(stack)) {
+                stack.getCapability(ForgeCapabilities.ENERGY).map(energyStorage -> {
+                    if (energyStorage.getEnergyStored() >= getEnergyRequired()) {
+                        energyStorage.extractEnergy(getEnergyRequired(), false);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
 
-           if (!_cooldown && energyStored >= getEnergyRequired() && !this.charged) {
-               stack.getCapability(ForgeCapabilities.ENERGY).map(energyStorage -> {
-                   if (energyStorage.getEnergyStored() >= getEnergyRequired()) {
-                       energyStorage.extractEnergy(getEnergyRequired(), false);
-                       return true;
-                   } else {
-                       return false;
-                   }
-               });
-
-               this.charged = true;
-           }
-
-
-            //write data to nbt, so it can be synched to clients easily.
-            this.deserializeData(stack);
+                sLevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSoundEvents.BOOST_PACK_CHARGE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                setCharged(stack, true);
+            }
         }
         super.inventoryTick(stack, level, entity, pSlotId, pIsSelected);
+    }
+
+    public boolean isCharged(ItemStack stack) {
+        return stack.getOrCreateTag().getBoolean("charged");
+    }
+
+    public void setCharged(ItemStack stack, boolean charged) {
+        stack.getOrCreateTag().putBoolean("charged", charged);
     }
 
     @Override
@@ -204,19 +209,7 @@ public class BoostPackArmorItem extends ArmorItem implements GeoItem {
         int energyStored = getEnergyStored(stack);
         int maxEnergy = getMaxEnergyStored(stack);
 
-        tooltip.add(KeyBinds.BOOST_KEY.getKey().getDisplayName().plainCopy().withStyle(ChatFormatting.BLUE).append(Component.translatable(stack.getDescriptionId() + ".boost").withStyle(ChatFormatting.GRAY)));
+        tooltip.add(Component.literal("[").withStyle(ChatFormatting.BLUE).append(KeyBinds.BOOST_KEY.getKey().getDisplayName().plainCopy().withStyle(ChatFormatting.BLUE).append("]")).append(Component.translatable(stack.getDescriptionId() + ".boost").withStyle(ChatFormatting.GRAY)));
         tooltip.add(Component.translatable("tooltip.scguns.energy").append(": ").withStyle(ChatFormatting.GRAY).append(Component.literal(String.format("%,d", energyStored)).withStyle(ChatFormatting.BLUE)).append(Component.literal(" / ").withStyle(ChatFormatting.GRAY)).append(Component.literal(String.format("%,d", maxEnergy) + " FE").withStyle(ChatFormatting.BLUE)));
-    }
-
-    public void initializeData(ItemStack stack) {
-        CompoundTag tag = stack.getOrCreateTag();
-
-        tag.putBoolean("charged", this.charged);
-    }
-
-    public void deserializeData(ItemStack stack) {
-        CompoundTag tag = stack.getOrCreateTag();
-
-        tag.putBoolean("charged", this.charged);
     }
 }

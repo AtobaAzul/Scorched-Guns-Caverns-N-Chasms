@@ -480,6 +480,14 @@
       }
     ]
   },
+  "item.boost_pack.charge": {
+    "subtitle": "subtitle.scguns_cnc.boost_pack.charge",
+    "sounds": [
+      {
+        "name": "scguns_cnc:item/scatterer/charge"
+      }
+    ]
+  },
   "entity.gravekeeper_ghoul.ambient": {
     "subtitle": "subtitle.scguns_cnc.gravekeeper_ghoul.ambient",
     "sounds": [

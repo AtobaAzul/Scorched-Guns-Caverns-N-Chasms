@@ -52,6 +52,7 @@ public class ModSoundEvents {
 
     public static final RegistryObject<SoundEvent> BOOST_PACK_THRUST = register("item.boost_pack.thrust");
     public static final RegistryObject<SoundEvent> BOOST_PACK_EQUIP = register("item.armor.equip_boost_pack");
+    public static final RegistryObject<SoundEvent> BOOST_PACK_CHARGE = register("item.boost_pack.charge");
 
     public static final RegistryObject<SoundEvent> HARDLIGHT_SHIELD_EQUIP = register("item.curio.equip_hardlight_shield");
 
