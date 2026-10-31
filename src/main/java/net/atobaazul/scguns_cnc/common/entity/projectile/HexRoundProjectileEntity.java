@@ -58,7 +58,6 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         ResourceLocation advantage = this.getProjectile().getAdvantage();
         damage *= advantageMultiplier(entity);
 
-        boolean wasAlive = entity instanceof LivingEntity && entity.isAlive();
         if (headshot) {
             damage *= Config.COMMON.gameplay.headShotDamageMultiplier.get();
         }
@@ -76,7 +75,7 @@ public class HexRoundProjectileEntity extends ProjectileEntity {
         float magicDamage = (float) (damage * magicDamageMult);
 
         if (entity instanceof LivingEntity livingTarget) {
-            bulletDamage = applyProjectileProtection(livingTarget, damage);
+            bulletDamage = applyProjectileProtection(livingTarget, bulletDamage);
             damage = calculateArmorBypassDamage(livingTarget, damage); // This one also caused magic damage to get reduced by 0.1-0.2
         }
 
