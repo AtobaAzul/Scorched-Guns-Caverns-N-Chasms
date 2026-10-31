@@ -3,6 +3,7 @@ package net.atobaazul.scguns_cnc.common.entity.ai;
 import net.atobaazul.scguns_cnc.common.entity.AbstractGravekeeperGunnerEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperGhoulEntity;
 import net.atobaazul.scguns_cnc.common.entity.GravekeeperHeraldEntity;
+import net.atobaazul.scguns_cnc.common.entity.GravekeeperNeophyteEntity;
 import net.atobaazul.scguns_cnc.common.item.gun.AnathemaGunItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -183,8 +184,7 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                     this.shooter.getMoveControl().strafe(-1, this.shooter.getRandom().nextBoolean() ? 0.5F : -0.5F);
                     this.aimingStabilityTimer = 0;
                 }
-            }
-            else {
+            } else {
                 lookingAtTeammateTime = 0;
             }
 
@@ -266,7 +266,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
                 this.aimingStabilityTimer = 0;
             } else if (tooClose && this.aiType != AIType.RECKLESS) {
                 Vec3 awayVector = this.shooter.position().subtract(target.position()).normalize();
-                Vec3 retreatPos = this.shooter.position().add(awayVector.scale(2.0));
 
                 if (this.melee_timer > 0) {
                     this.shooter.getLookControl().setLookAt(target);
@@ -313,8 +312,6 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
 
             boolean isStableAndAimed = this.aimingStabilityTimer >= MIN_AIM_TIME;
-            boolean canShootWhileMoving = this.aiType == AIType.RECKLESS || (this.aiType != AIType.SMART && !isNavigating);
-            boolean smartShouldShoot = this.aiType == AIType.SMART && !isNavigating && !isMovingFast && this.shooter.getNavigation().isDone();
 
             if (target.distanceToSqr(this.shooter) < 3 * 3 && this.melee_timer <= 0 && this.shooter.getSensing().hasLineOfSight(target) && this.seeTime >= 5) {
                 this.shooter.getLookControl().setLookAt(target);
@@ -397,9 +394,17 @@ public class GhoulGunAttackGoal<T extends PathfinderMob> extends Goal {
 
         this.attackTime = (int) (baseRate * configMultiplier);
 
-        if (this.shot_count >= Math.floor((double) ammoCount / 5)) {
-            this.attackTime = this.attackTime + 15;
-            this.shot_count = 0;
+        if (!(this.shooter instanceof GravekeeperNeophyteEntity)) {
+            if (this.shot_count >= Math.floor((double) ammoCount / 5)) {
+                this.attackTime = this.attackTime + 15;
+                this.shot_count = 0;
+            }
+        } else {
+            if (target.distanceToSqr(this.shooter) < 10*10) {
+                this.attackTime += 3;
+            } else {
+                this.attackTime += 10;
+            }
         }
 
         if (this.shooter instanceof AbstractGravekeeperGunnerEntity animatable) {

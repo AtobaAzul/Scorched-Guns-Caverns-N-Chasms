@@ -42,6 +42,7 @@ import top.ribs.scguns.item.GunItem;
 import javax.annotation.Nullable;
 
 import static net.atobaazul.scguns_cnc.common.ModTags.GRAVEKEEPER_ENEMY;
+import static net.atobaazul.scguns_cnc.registries.ModItems.MORTICIAN;
 
 public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity implements GeoAnimatable, GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -83,6 +84,11 @@ public class GravekeeperNeophyteEntity extends AbstractGravekeeperGunnerEntity i
         super.setItemSlot(equipmentSlot, itemStack);
         if (equipmentSlot.equals(EquipmentSlot.MAINHAND) && !itemStack.is(oldItem.getItem()) && reassesedGoals) {
             this.reassesedGoals = false;
+        }
+
+        if (itemStack.is(MORTICIAN.get())) {
+           GunItem item = (GunItem) itemStack.getItem();
+           item.getGun().getGeneral().setCurrentAmmoTypeIndex(1);
         }
     }
 
